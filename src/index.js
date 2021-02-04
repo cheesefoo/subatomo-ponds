@@ -73,8 +73,6 @@ class MyGame extends Phaser.Scene
 			loadingText.destroy();
 			percentText.destroy();
 			assetText.destroy();
-			//$("canvas").hide();
-			//$("#screens").show();
 		});
 		
 		this.load.image('logo', logoImg);
@@ -122,20 +120,20 @@ class MyGame extends Phaser.Scene
             frameRate: 1
         });
 		
-		// var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',"base (1).png");
+		var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',"base (1).png");
 		
-		// console.log(sprite);
+		console.log(sprite);
 		
-		// console.log("----");
+		console.log("----");
 		
-		// var sprite2 = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'duck');
-		// console.log(sprite2);
+		var sprite2 = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'duck');
+		console.log(sprite2);
 		
 		
-		for(var a=0;a<30;a++){
+		for(var a=0;a<0;a++){
 		
-			var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'duck');
-			// var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',"base (1).png");
+			//var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'duck');
+			var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',"base (1).png");
 			
 			console.log("entra");
 			
@@ -222,7 +220,7 @@ class MyGame extends Phaser.Scene
     }
 	
 	update(time,delta){
-		if(true){
+		if(false){
 		for(var a=0;a<this.children.list.length;a++){
 			this.children.list[a].setDepth(this.children.list[a].y);
 			this.children.list[a].updateState(this.children.list[a],delta);
