@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <title>Subaru Milestone Submission Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</head>
+
+<body>
+<form action="https://script.google.com/macros/s/#####/exec"
+      id="form" method="post">
+    <div id="data">
+        <div class="displayName">
+            Your display name. If left blank, your name will be (TBD)
+            <input id="name" name="displayName" maxlength="16">
+        </div>
+        <div class="email">
+            Can we email you if there are issues with your submission?
+
+            Yes<input type="radio" name="canEmail" id="radioYes" value="yes" onclick="yesCheck();">
+            No<input type="radio" name="canEmail" id="radioNo" value="no" checked onclick="yesCheck();">
+            <div class="emailInput" id="emailInput" style="display:none">
+                <label for="email">Your email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+        </div>
+    </div>
+    <div class="upload" id="upload">
+        <input type="file" name="file" id="uploadfile" accept="image/png">
+        <input type="submit" id="submit">
+    </div>
+
+</form>
+<script>
+
+    function yesCheck() {
+        if (document.getElementById('radioYes').checked) {
+            document.getElementById('emailInput').style.display = 'block';
+            document.getElementById('emailInput').required = true;
+
+        } else {
+            document.getElementById('emailInput').style.display = 'none';
+            document.getElementById('emailInput').required = false;
+        }
+    }
+
+    $('#uploadfile').on("change", function () {
+        try {
+            document.getElementById('raw-sbm').remove();
+            document.getElementById('mime-sbm').remove();
+            document.getElementById('filetype-sbm').remove();
+        } catch (e) {
+        }
+        const file = this.files[0];
+        const fr = new FileReader();
+        fr.fileName = file.name;
+        fr.onload = function (e) {
+            e.target.result
+            html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
+            html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
+            html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
+            // $("#data").empty().append(html);
+            $("#data").append(html);
+        }
+        fr.readAsDataURL(file);
+    });
+</script>
+</body>
+
+</html>
