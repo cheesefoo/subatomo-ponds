@@ -15,7 +15,6 @@ class MyGame extends Phaser.Scene
 
     preload ()
     {
-        //this.load.image('logo', logoImg);
 		var progressBar = this.add.graphics();
 		var progressBox = this.add.graphics();
 		progressBox.fillStyle(0x222222, 0.8);
@@ -74,21 +73,13 @@ class MyGame extends Phaser.Scene
 			loadingText.destroy();
 			percentText.destroy();
 			assetText.destroy();
-			//$("canvas").hide();
-			//$("#screens").show();
 		});
 
-		// this.load.image('logo', logoImg);
-		this.load.spritesheet('duck', duck, { frameWidth: 100, frameHeight: 100 });
-
-		// this.load.atlas('pond1', ducksi, ducksj);
 		this.load.multiatlas('pond1', ducksj, './src/assets/');
 
-
 		this.load.audio('shuba', [ "./sound/suba.mp3" ]);
-		// for (var i = 0; i < 5000; i++) {
-			// this.load.image('logo'+i, logoImg);
-		// }
+
+		//example json data after parsing, it should produce an array like this to filter it later using .filter
 		this.exampleJsonLoad=
 		[
 			{
@@ -127,64 +118,9 @@ class MyGame extends Phaser.Scene
 
     create ()
     {
-        // const logo = this.add.image(400, 150, 'logo');
-
-        // this.tweens.add({
-            // targets: logo,
-            // y: 450,
-            // duration: 2000,
-            // ease: "Power2",
-            // yoyo: true,
-            // loop: -1
-        // });
-		// console.log(this);
+        
 		this.shuba = this.sound.add('shuba');
-		this.anims.create({
-            key: 'walk',
-            frames: this.anims.generateFrameNumbers('duck',{frames:[1,2]}),
-            frameRate: 24
-        });
-
-		this.anims.create({
-            key: 'idle',
-            frames: this.anims.generateFrameNumbers('duck',{frames:[0]}),
-            frameRate: 1
-        });
-
-		this.anims.create({
-            key: 'cuack',
-            frames: this.anims.generateFrameNumbers('duck',{frames:[3]}),
-            frameRate: 1
-        });
 		
-		// var currentDuck="base (2)";
-		// var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',currentDuck+"/1_1.png");
-		
-		// this.anims.create({ key: 'walk'+currentDuck, frames: [
-		// {key:"pond1",frame:currentDuck+"/1_2.png"},
-		// {key:"pond1",frame:currentDuck+"/2_1.png"}
-		// ], frameRate: 10, repeat: -1 });
-		
-		// this.anims.create({ key: 'cuak'+currentDuck, frames: [
-		// {key:"pond1",frame:currentDuck+"/2_2.png"}
-		// ], frameRate: 10, repeat: -1 });
-		
-		// this.anims.create({ key: 'idle'+currentDuck, frames: [
-		// {key:"pond1",frame:currentDuck+"/1_1.png"}
-		// ], frameRate: 10, repeat: -1 });
-		
-		// sprite.play("walk"+currentDuck);
-		
-		// sprite.name="duck2";
-		
-		
-
-		
-		// console.log("----");
-
-		// var sprite2 = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'duck');
-		// console.log(sprite2);
-
 		let pondManager = this.scene.get('pond-manager');
 
 		pondManager.events.on('reloadPond', function() {
@@ -196,7 +132,7 @@ class MyGame extends Phaser.Scene
 
 	populateDucks(pond=1) {
 		var ducks=this.exampleJsonLoad.filter(function(obj){return obj.pond==pond;});
-		// console.log("ducks",ducks);
+
 		for(var a=0;a<ducks.length;a++){
 
 			var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',ducks[a].image+"/1_1.png");
@@ -219,21 +155,14 @@ class MyGame extends Phaser.Scene
 			{key:"pond1",frame:currentDuck+"/1_1.png"}
 			], frameRate: 10, repeat: -1 });
 			
-			//sprite.play("walk"+currentDuck);
-			
-			
-			// var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',"base (1).png");
-			// console.log("entra",sprite);
 			sprite.setInteractive();
 			this.input.on('gameobjectup', function (pointer,context) {
-				//console.log(pointer);
 				context.state=duckStates.START_CUACK;
 			});
 
 			sprite.state=duckStates.START_IDLE;
 			var that=this;
 			sprite.updateState=function(context,delta){
-				//console.log(context.state);
 				switch(context.state){
 					case duckStates.START_IDLE:
 						context.play(context.duck.image+"idle");
@@ -265,9 +194,6 @@ class MyGame extends Phaser.Scene
 							duration: getRandomInt(minWalkTime,maxWalkTime),
 							ease: 'Linear',
 							onComplete: function () {
-							// console.log('onComplete');
-							// console.log(arguments);
-							//arguments[1][0].play("idle");
 								arguments[1][0].state=duckStates.START_IDLE;
 							}
 						});
@@ -306,11 +232,8 @@ class MyGame extends Phaser.Scene
 		if(true){
 		for(var a=0;a<this.children.list.length;a++){
 			if(this.children.list[a].name=="duck"){
-				// console.log(this.children.list[a]);
 				this.children.list[a].setDepth(this.children.list[a].y);
 				this.children.list[a].updateState(this.children.list[a],delta);
-			}else{
-				// console.log(this.children.list[a]);
 			}
 		}
 		}
