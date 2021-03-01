@@ -5,6 +5,7 @@ import fran from './assets/fran.png';
 import ducksj from './assets/ducks.json';
 import ducksi from './assets/ducks.png';
 
+
 class MyGame extends Phaser.Scene
 {
     constructor ()
@@ -80,13 +81,48 @@ class MyGame extends Phaser.Scene
 		// this.load.image('logo', logoImg);
 		this.load.spritesheet('duck', duck, { frameWidth: 100, frameHeight: 100 });
 
-		this.load.atlas('pond1', ducksi, ducksj);
+		// this.load.atlas('pond1', ducksi, ducksj);
+		this.load.multiatlas('pond1', ducksj, './src/assets/');
 
 
 		this.load.audio('shuba', [ "./sound/suba.mp3" ]);
 		// for (var i = 0; i < 5000; i++) {
 			// this.load.image('logo'+i, logoImg);
 		// }
+		this.exampleJsonLoad=
+		[
+			{
+				name:"Fran",
+				image:"base",
+				pond:1
+			},
+			{
+				name:"Fran",
+				image:"base (1)",
+				pond:1
+			},
+			{
+				name:"Fran",
+				image:"base (2)",
+				pond:2
+			},
+			{
+				name:"Fran",
+				image:"base (3)",
+				pond:2
+			},
+			{
+				name:"Fran",
+				image:"base (10)",
+				pond:3
+			},
+			{
+				name:"Fran",
+				image:"base (9)",
+				pond:3
+			}
+		];
+
     }
 
     create ()
@@ -101,9 +137,8 @@ class MyGame extends Phaser.Scene
             // yoyo: true,
             // loop: -1
         // });
-		console.log(this);
-		const shuba = this.sound.add('shuba');
-		const SCENE=this;
+		// console.log(this);
+		this.shuba = this.sound.add('shuba');
 		this.anims.create({
             key: 'walk',
             frames: this.anims.generateFrameNumbers('duck',{frames:[1,2]}),
@@ -121,11 +156,30 @@ class MyGame extends Phaser.Scene
             frames: this.anims.generateFrameNumbers('duck',{frames:[3]}),
             frameRate: 1
         });
+		
+		// var currentDuck="base (2)";
+		// var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',currentDuck+"/1_1.png");
+		
+		// this.anims.create({ key: 'walk'+currentDuck, frames: [
+		// {key:"pond1",frame:currentDuck+"/1_2.png"},
+		// {key:"pond1",frame:currentDuck+"/2_1.png"}
+		// ], frameRate: 10, repeat: -1 });
+		
+		// this.anims.create({ key: 'cuak'+currentDuck, frames: [
+		// {key:"pond1",frame:currentDuck+"/2_2.png"}
+		// ], frameRate: 10, repeat: -1 });
+		
+		// this.anims.create({ key: 'idle'+currentDuck, frames: [
+		// {key:"pond1",frame:currentDuck+"/1_1.png"}
+		// ], frameRate: 10, repeat: -1 });
+		
+		// sprite.play("walk"+currentDuck);
+		
+		// sprite.name="duck2";
+		
+		
 
-		// var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',"base (1).png");
-
-		// console.log(sprite);
-
+		
 		// console.log("----");
 
 		// var sprite2 = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'duck');
@@ -134,18 +188,42 @@ class MyGame extends Phaser.Scene
 		let pondManager = this.scene.get('pond-manager');
 
 		pondManager.events.on('reloadPond', function() {
-			this.populateDucks();
+			this.populateDucks(currentPond);
 		}, this);
 
-		this.populateDucks();
+		this.populateDucks(currentPond);
     }
 
-	populateDucks() {
-		for(var a=0;a<30;a++){
+	populateDucks(pond=1) {
+		var ducks=this.exampleJsonLoad.filter(function(obj){return obj.pond==pond;});
+		// console.log("ducks",ducks);
+		for(var a=0;a<ducks.length;a++){
 
-			var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'duck');
+			var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',ducks[a].image+"/1_1.png");
+			sprite.name="duck";
+			sprite.duck=ducks[a];
+			
+			var currentDuck=sprite.duck.image;
+			
+			
+			this.anims.create({ key: currentDuck+'walk', frames: [
+			{key:"pond1",frame:currentDuck+"/1_2.png"},
+			{key:"pond1",frame:currentDuck+"/2_1.png"}
+			], frameRate: 10, repeat: -1 });
+			
+			this.anims.create({ key: currentDuck+'cuack', frames: [
+			{key:"pond1",frame:currentDuck+"/2_2.png"}
+			], frameRate: 10, repeat: -1 });
+			
+			this.anims.create({ key: currentDuck+'idle', frames: [
+			{key:"pond1",frame:currentDuck+"/1_1.png"}
+			], frameRate: 10, repeat: -1 });
+			
+			//sprite.play("walk"+currentDuck);
+			
+			
 			// var sprite = this.add.sprite(getRandomInt(0,sceneWidth),getRandomInt(0,sceneHeight), 'pond1',"base (1).png");
-			console.log("entra");
+			// console.log("entra",sprite);
 			sprite.setInteractive();
 			this.input.on('gameobjectup', function (pointer,context) {
 				//console.log(pointer);
@@ -153,11 +231,12 @@ class MyGame extends Phaser.Scene
 			});
 
 			sprite.state=duckStates.START_IDLE;
+			var that=this;
 			sprite.updateState=function(context,delta){
 				//console.log(context.state);
 				switch(context.state){
 					case duckStates.START_IDLE:
-						context.play("idle");
+						context.play(context.duck.image+"idle");
 						context.idle=getRandomInt(minIdle,maxIdle)
 						context.state=duckStates.IDLE;
 					break;
@@ -193,7 +272,7 @@ class MyGame extends Phaser.Scene
 							}
 						});
 
-						context.play({ key: 'walk', repeat: -1 });
+						context.play({ key: context.duck.image+'walk', repeat: -1 });
 
 						context.state=duckStates.WALKING;
 					break;
@@ -204,8 +283,8 @@ class MyGame extends Phaser.Scene
 						if(context.tween){
 						context.tween.stop();
 						}
-						context.play({key:"cuack"});
-						shuba.play();
+						context.play({key:context.duck.image+"cuack"});
+						that.shuba.play();
 						context.cuack=1600;
 						context.state=duckStates.CUACK;
 					break;
@@ -226,13 +305,19 @@ class MyGame extends Phaser.Scene
 	update(time,delta){
 		if(true){
 		for(var a=0;a<this.children.list.length;a++){
-			this.children.list[a].setDepth(this.children.list[a].y);
-			this.children.list[a].updateState(this.children.list[a],delta);
+			if(this.children.list[a].name=="duck"){
+				// console.log(this.children.list[a]);
+				this.children.list[a].setDepth(this.children.list[a].y);
+				this.children.list[a].updateState(this.children.list[a],delta);
+			}else{
+				// console.log(this.children.list[a]);
+			}
 		}
 		}
 	}
 }
 
+var currentPond=1;
 
 class PondManager extends Phaser.Scene {
 
@@ -259,8 +344,10 @@ class PondManager extends Phaser.Scene {
 		var pond = this.scene.get('pond');
 		pond.children.shutdown();
 		// emit event to reload the ducks
-		this.events.emit('reloadPond');
+		
 		this.pondNum = (this.pondNum) % 3 + 1;
+		currentPond=this.pondNum;
+		this.events.emit('reloadPond');
 		this.infoText.setText(`Pond ${this.pondNum}`);
 	}
 }
