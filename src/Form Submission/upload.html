@@ -33,6 +33,15 @@
 </form>
 <script>
 
+    function disallowedChars(e) {
+        let regex = new RegExp(escapeRegExp('<>:"/\\|?*'));
+        return regex.test(e.charCode);
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    }
+
     function yesCheck() {
         if (document.getElementById('radioYes').checked) {
             document.getElementById('emailInput').style.display = 'block';
