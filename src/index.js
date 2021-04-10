@@ -1,10 +1,28 @@
-import Phaser from 'phaser';
-import logoImg from './assets/logo.png';
+/*
+import 'phaser';
 import duck from './assets/base.png';
-import fran from './assets/fran.png';
 import ducksj from './assets/ducks.json';
-import ducksi from './assets/ducks.png';
+import submissions from './assets/submissions/submissions.json';
+*/
+const ducksj = require('./assets/submissions/all_ducks_sheet.json');
+const submissions = require('./assets/submissions/submissions.json')
+const shuba = require('./assets/sound/suba.mp3')
+require('phaser');
 
+function importAll(r) {
+    return r.keys().map(r);
+}
+
+const allDucks = importAll(require.context('./', true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+const ponds = importAll(require.context('./', true, /pond.*\.(json)$/));
+
+const FRAME_RATE = 1;
+
+const USERNAME_DISPLAY_DURATION = 3000;
+
+const SPRITE_WIDTH = 100;
+
+const SPRITE_HEIGHT = 100;
 
 class MyGame extends Phaser.Scene {
     constructor() {
@@ -12,164 +30,134 @@ class MyGame extends Phaser.Scene {
     }
 
     preload() {
-        var progressBar = this.add.graphics();
-        var progressBox = this.add.graphics();
-        progressBox.fillStyle(0x222222, 0.8);
-        progressBox.fillRect(240, 270, 320, 50);
+        function loading() {
+            const progressBar = this.add.graphics();
+            const progressBox = this.add.graphics();
+            progressBox.fillStyle(0x222222, 0.8);
+            progressBox.fillRect(240, 270, 320, 50);
 
-        var width = this.cameras.main.width;
-        var height = this.cameras.main.height;
-        var loadingText = this.make.text({
-            x: width / 2,
-            y: height / 2 - 50,
-            text: 'Loading...',
-            style: {
-                font: '20px monospace',
-                fill: '#ffffff'
-            }
-        });
-        loadingText.setOrigin(0.5, 0.5);
-
-        var percentText = this.make.text({
-            x: width / 2,
-            y: height / 2 - 5,
-            text: '0%',
-            style: {
-                font: '18px monospace',
-                fill: '#ffffff'
-            }
-        });
-        percentText.setOrigin(0.5, 0.5);
-
-        var assetText = this.make.text({
-            x: width / 2,
-            y: height / 2 + 50,
-            text: '',
-            style: {
-                font: '18px monospace',
-                fill: '#ffffff'
-            }
-        });
-
-        assetText.setOrigin(0.5, 0.5);
-
-        this.load.on('progress', function (value) {
-            percentText.setText(parseInt(value * 100) + '%');
-            progressBar.clear();
-            progressBar.fillStyle(0xffffff, 1);
-            progressBar.fillRect(250, 280, 300 * value, 30);
-        });
-
-        this.load.on('fileprogress', function (file) {
-            assetText.setText('Loading asset: ' + file.key);
-        });
-
-        this.load.on('complete', function () {
-            progressBar.destroy();
-            progressBox.destroy();
-            loadingText.destroy();
-            percentText.destroy();
-            assetText.destroy();
-        });
-
-        this.load.multiatlas('pond1', ducksj, './src/assets/');
-
-        this.load.audio('shuba', ["./sound/suba.mp3"]);
-
-        //example json data after parsing, it should produce an array like this to filter it later using .filter
-        this.exampleJsonLoad =
-            [
-                {
-                    name: "Fran",
-                    image: "base",
-                    pond: 1
-                },
-                {
-                    name: "Fran",
-                    image: "base (1)",
-                    pond: 1
-                },
-                {
-                    name: "Fran",
-                    image: "base (2)",
-                    pond: 2
-                },
-                {
-                    name: "Fran",
-                    image: "base (3)",
-                    pond: 2
-                },
-                {
-                    name: "Fran",
-                    image: "base (10)",
-                    pond: 3
-                },
-                {
-                    name: "Fran",
-                    image: "base (9)",
-                    pond: 3
+            const width = this.cameras.main.width;
+            const height = this.cameras.main.height;
+            const loadingText = this.make.text({
+                x: width / 2,
+                y: height / 2 - 50,
+                text: 'Loading...',
+                style: {
+                    font: '20px monospace',
+                    fill: '#ffffff'
                 }
-            ];
+            });
+            loadingText.setOrigin(0.5, 0.5);
 
+            const percentText = this.make.text({
+                x: width / 2,
+                y: height / 2 - 5,
+                text: '0%',
+                style: {
+                    font: '18px monospace',
+                    fill: '#ffffff'
+                }
+            });
+            percentText.setOrigin(0.5, 0.5);
+
+            const assetText = this.make.text({
+                x: width / 2,
+                y: height / 2 + 50,
+                text: '',
+                style: {
+                    font: '18px monospace',
+                    fill: '#ffffff'
+                }
+            });
+            assetText.setOrigin(0.5, 0.5);
+
+            this.load.on('progress', function (value) {
+                percentText.setText(parseInt(value * 100) + '%');
+                progressBar.clear();
+                progressBar.fillStyle(0xffffff, 1);
+                progressBar.fillRect(250, 280, 300 * value, 30);
+            });
+
+            this.load.on('fileprogress', function (file) {
+                assetText.setText('Loading asset: ' + file.key);
+            });
+
+            this.load.on('complete', function () {
+                progressBar.destroy();
+                progressBox.destroy();
+                loadingText.destroy();
+                percentText.destroy();
+                assetText.destroy();
+            });
+        }
+
+        loading.call(this);
+
+        //Load sprite atlas
+        this.load.multiatlas('allDucks', ducksj, 'assets');
+        //Load audio files
+        this.load.audio('shuba', shuba);
     }
 
     create() {
-
-        this.shuba = this.sound.add('shuba');
-
         let pondManager = this.scene.get('pond-manager');
-
         pondManager.events.on('reloadPond', function () {
             this.populateDucks(currentPond);
         }, this);
 
+        this.shuba = this.sound.add('shuba');
         this.populateDucks(currentPond);
     }
 
+    //Fill pond number with their ducks
     populateDucks(pond = 1) {
-        var ducks = this.exampleJsonLoad.filter(function (obj) {
-            return obj.pond == pond;
+
+        //Get submission reference sheet from google sheet and filter by pond #
+        //{strName,strImageName,numPondNumber}
+        const submissionsArray = submissions['submissions'];
+        const ducks = submissionsArray.filter(function (obj) {
+            return obj.pond === pond;
         });
 
-        for (var a = 0; a < ducks.length; a++) {
+        //Create sprite for ducks and add their animations
+        for (let i = 0; i < ducks.length; i++) {
+            const duckGameObject = this.add.sprite(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight), allDucks, ducks[i].image);
+            duckGameObject.name = "duck";
+            duckGameObject.setOrigin(0.5, 0.5)
+            duckGameObject.width = SPRITE_WIDTH;
+            duckGameObject.height = SPRITE_HEIGHT;
+            duckGameObject.displayName = ducks[i].name;
 
-            var sprite = this.add.sprite(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight), 'pond1', ducks[a].image + "/1_1.png");
-            sprite.name = "duck";
-            sprite.duck = ducks[a];
 
-            var currentDuck = sprite.duck.image;
+            //Duck object = {strName,strImageName,numPondNumber}, matches submission json
+            duckGameObject.duck = ducks[i];
+            const currentDuck = duckGameObject.duck.image;
 
-
-            this.anims.create({
-                key: currentDuck + 'walk', frames: [
-                    {key: "pond1", frame: currentDuck + "/1_2.png"},
-                    {key: "pond1", frame: currentDuck + "/2_1.png"}
-                ], frameRate: 10, repeat: -1
+            //Create animations
+            const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3]];
+            //ghetto hardcoded
+            //todo: change depending on frames of animation
+            animationNames.forEach(animationName => {
+                let frameNames = this.anims.generateFrameNames('allDucks', {
+                    start: animationName[1], end: animationName[2],
+                    prefix: currentDuck + '-',
+                    suffix: '.png'
+                });
+                this.anims.create({key: animationName[0], frames: frameNames, frameRate: FRAME_RATE, repeat: -1});
             });
 
-            this.anims.create({
-                key: currentDuck + 'cuack', frames: [
-                    {key: "pond1", frame: currentDuck + "/2_2.png"}
-                ], frameRate: 10, repeat: -1
-            });
+            //Set event for click/press
+            duckGameObject.setInteractive();
+            duckGameObject.input.cursor = 'pointer';
+            duckGameObject.input.hitArea.setSize(duckGameObject.width, duckGameObject.height);
+            duckGameObject.state = duckStates.START_IDLE;
+            let that = this;
 
-            this.anims.create({
-                key: currentDuck + 'idle', frames: [
-                    {key: "pond1", frame: currentDuck + "/1_1.png"}
-                ], frameRate: 10, repeat: -1
-            });
-
-            sprite.setInteractive();
-            this.input.on('gameobjectup', function (pointer, context) {
-                context.state = duckStates.START_CUACK;
-            });
-
-            sprite.state = duckStates.START_IDLE;
-            var that = this;
-            sprite.updateState = function (context, delta) {
+            //Set OnUpdate to use animations
+            duckGameObject.updateState = function (context, delta) {
                 switch (context.state) {
                     case duckStates.START_IDLE:
-                        context.play(context.duck.image + "idle");
+                        context.play("idle");
                         context.idle = getRandomInt(minIdle, maxIdle)
                         context.state = duckStates.IDLE;
                         break;
@@ -180,8 +168,8 @@ class MyGame extends Phaser.Scene {
                         }
                         break;
                     case duckStates.START_WALKING:
-                        var destinationX = getRandomInt(0, sceneWidth);
-                        var destinationY = getRandomInt(0, sceneHeight);
+                        const destinationX = getRandomInt(0, sceneWidth);
+                        const destinationY = getRandomInt(0, sceneHeight);
 
                         if (destinationX > context.x) {
                             context.scaleX = 1;
@@ -189,7 +177,7 @@ class MyGame extends Phaser.Scene {
                             context.scaleX = -1;
                         }
 
-                        var scene = this.scene.scene.get('pond');
+                        const scene = context.scene;//.scene.get('pond');
 
                         context.tween = scene.tweens.add({
                             targets: context,
@@ -202,44 +190,68 @@ class MyGame extends Phaser.Scene {
                             }
                         });
 
-                        context.play({key: context.duck.image + 'walk', repeat: -1});
+                        context.play('walk');
 
                         context.state = duckStates.WALKING;
                         break;
                     case duckStates.WALKING:
 
                         break;
-                    case duckStates.START_CUACK:
+                    case duckStates.START_QUACK:
                         if (context.tween) {
                             context.tween.stop();
                         }
-                        context.play({key: context.duck.image + "cuack"});
+                        context.play("quack");
                         that.shuba.play();
-                        context.cuack = 1600;
-                        context.state = duckStates.CUACK;
+                        context.quack = 1600;
+                        context.state = duckStates.QUACK;
                         break;
-                    case duckStates.CUACK:
-                        context.cuack -= delta;
-                        if (context.cuack <= 0) {
+                    case duckStates.QUACK:
+                        context.quack -= delta;
+                        if (context.quack <= 0) {
                             context.state = duckStates.START_IDLE;
                         }
                         break;
                     default:
-                        alter("cagada");
+
                         break;
                 }
             };
+
+            this.input.enableDebug(duckGameObject, 0x04F404);
+
+        }
+        this.input.on('gameobjectup', onObjectClicked);
+
+        function onObjectClicked(pointer, gameObject) {
+            gameObject.state = duckStates.START_QUACK;
+            if (gameObject.namePopup != null) return;
+            gameObject.namePopup = gameObject.scene.make.text({
+                    x: gameObject.x, y: gameObject.y - 50, text: gameObject.displayName,
+                    style: {font: '20px monospace', fill: '#fff', align: 'center'}
+                }
+            );
+            gameObject.namePopup.setOrigin(0.5, 0.5)
+            console.log(gameObject.namePopup)
+
+            gameObject.scene.time.addEvent({
+                delay: USERNAME_DISPLAY_DURATION, callback: function () {
+                    this.namePopup.destroy();
+                    this.namePopup=null;
+                }, callbackScope: gameObject
+            });
+
         }
     }
 
     update(time, delta) {
-        if (true) {
-            for (var a = 0; a < this.children.list.length; a++) {
-                if (this.children.list[a].name == "duck") {
-                    this.children.list[a].setDepth(this.children.list[a].y);
-                    this.children.list[a].updateState(this.children.list[a], delta);
-                }
+        for (let i = 0; i < this.children.list.length; i++) {
+            let gameObject = this.children.list[i];
+            if (gameObject.name !== "duck") {
+                continue;
             }
+            gameObject.setDepth(gameObject.y);
+            gameObject.updateState(gameObject, delta);
         }
     }
 }
@@ -262,12 +274,13 @@ class PondManager extends Phaser.Scene {
         this.infoText = this.add.text(10, 10, `Pond ${this.pondNum}`, {font: '48px Arial', fill: '#000000'});
         this.infoText.setInteractive();
         this.input.on('gameobjectup', this.clickHandler, this);
+        this.infoText.input.cursor="pointer";
         console.log(this.scene);
     }
 
     clickHandler(pointer, obj) {
         console.log('Click');
-        var pond = this.scene.get('pond');
+        const pond = this.scene.get('pond');
         pond.children.shutdown();
         // emit event to reload the ducks
 
@@ -278,8 +291,15 @@ class PondManager extends Phaser.Scene {
     }
 }
 
-const sceneWidth = window.innerWidth;
-const sceneHeight = window.innerHeight - 3;
+let sceneWidth = window.innerWidth;
+let sceneHeight = window.innerHeight - 3;
+let aspectRatio = sceneWidth / sceneHeight;
+const REFERENCE_ASPECT_RATIO = 1.78;//16/9
+window.addEventListener("resize", () => {
+    sceneWidth = document.querySelector('#width');
+    sceneHeight = document.querySelector('#height');
+
+});
 
 const minWalkTime = 1000;
 const maxWalkTime = 4800;
@@ -293,12 +313,12 @@ const duckStates = {
     IDLE: 1,
     START_WALKING: 2,
     WALKING: 3,
-    START_CUACK: 4,
-    CUACK: 5
+    START_QUACK: 4,
+    QUACK: 5
 };
 
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     parent: 'phaser-example',
     width: sceneWidth,
     height: sceneHeight,

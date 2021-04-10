@@ -1,0 +1,356 @@
+{
+	"textures": [
+		{
+			"image": "all_ducks_sheet_0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 249,
+				"h": 98
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "1551--39385-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 96
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 59,
+						"h": 96
+					}
+				},
+				{
+					"filename": "aaaaa--24580-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 96
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 59,
+						"h": 96
+					}
+				},
+				{
+					"filename": "aaaaa--24635-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 96
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 59,
+						"h": 96
+					}
+				},
+				{
+					"filename": "ujiku--19025-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 96
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 59,
+						"h": 96
+					}
+				},
+				{
+					"filename": "1551--39385-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 64,
+						"h": 95
+					},
+					"frame": {
+						"x": 62,
+						"y": 1,
+						"w": 64,
+						"h": 95
+					}
+				},
+				{
+					"filename": "aaaaa--24580-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 64,
+						"h": 95
+					},
+					"frame": {
+						"x": 62,
+						"y": 1,
+						"w": 64,
+						"h": 95
+					}
+				},
+				{
+					"filename": "aaaaa--24635-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 64,
+						"h": 95
+					},
+					"frame": {
+						"x": 62,
+						"y": 1,
+						"w": 64,
+						"h": 95
+					}
+				},
+				{
+					"filename": "ujiku--19025-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 64,
+						"h": 95
+					},
+					"frame": {
+						"x": 62,
+						"y": 1,
+						"w": 64,
+						"h": 95
+					}
+				},
+				{
+					"filename": "1551--39385-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 95
+					},
+					"frame": {
+						"x": 128,
+						"y": 1,
+						"w": 59,
+						"h": 95
+					}
+				},
+				{
+					"filename": "aaaaa--24580-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 95
+					},
+					"frame": {
+						"x": 128,
+						"y": 1,
+						"w": 59,
+						"h": 95
+					}
+				},
+				{
+					"filename": "aaaaa--24635-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 95
+					},
+					"frame": {
+						"x": 128,
+						"y": 1,
+						"w": 59,
+						"h": 95
+					}
+				},
+				{
+					"filename": "ujiku--19025-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 2,
+						"w": 59,
+						"h": 95
+					},
+					"frame": {
+						"x": 128,
+						"y": 1,
+						"w": 59,
+						"h": 95
+					}
+				},
+				{
+					"filename": "1551--39385-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 59,
+						"h": 92
+					},
+					"frame": {
+						"x": 189,
+						"y": 1,
+						"w": 59,
+						"h": 92
+					}
+				},
+				{
+					"filename": "aaaaa--24580-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 59,
+						"h": 92
+					},
+					"frame": {
+						"x": 189,
+						"y": 1,
+						"w": 59,
+						"h": 92
+					}
+				},
+				{
+					"filename": "aaaaa--24635-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 59,
+						"h": 92
+					},
+					"frame": {
+						"x": 189,
+						"y": 1,
+						"w": 59,
+						"h": 92
+					}
+				},
+				{
+					"filename": "ujiku--19025-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 59,
+						"h": 92
+					},
+					"frame": {
+						"x": 189,
+						"y": 1,
+						"w": 59,
+						"h": 92
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:0c16257ffd8adb3bec4635495c6deb20:2345eced5380bbcc1ac871ed5ed27fd8:c73aa17338e30796d1cf1257cfa39dd8$"
+	}
+}
