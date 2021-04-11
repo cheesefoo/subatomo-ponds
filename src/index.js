@@ -6,8 +6,6 @@ import submissions from './assets/submissions/submissions.json';
 
 */
 
-import './assets/css/style.css';
-
 const ducksj = require('./assets/submissions/all_ducks_sheet.json');
 const submissions = require('./assets/submissions/submissions.json')
 const shuba = require('./assets/sound/suba.mp3')

@@ -60,7 +60,9 @@ module.exports = {
                     from: path.resolve(__dirname, 'index.html'),
                     to: path.resolve(__dirname, 'dist')
                 },
-				{ from: "src/assets/images", to: "images" }
+				{ from: "src/assets/images", to: "images" },
+				{ from: "src/assets/css", to: "css" },
+				{ from: "manifest.webmanifest", to: "manifest.webmanifest" }
 /*                {
                     from: './src/!*',
                     to: path.resolve(__dirname, 'dist')
