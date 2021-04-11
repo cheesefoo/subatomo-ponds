@@ -6,6 +6,8 @@ import submissions from './assets/submissions/submissions.json';
 
 */
 
+import './assets/css/style.css';
+
 const ducksj = require('./assets/submissions/all_ducks_sheet.json');
 const submissions = require('./assets/submissions/submissions.json')
 const shuba = require('./assets/sound/suba.mp3')
@@ -92,10 +94,10 @@ class MyGame extends Phaser.Scene {
                 loadingText.destroy();
                 percentText.destroy();
                 assetText.destroy();
-				$("canvas").hide();
-				window.game.input.enabled=false;
-				$("#screens").show();
-				//$("#home").show();
+                $("canvas").hide();
+                window.game.input.enabled=false;
+                $("#screens").show();
+                //$("#home").show();
             });
         }
 
@@ -115,8 +117,8 @@ class MyGame extends Phaser.Scene {
 
         this.shuba = this.sound.add('shuba');
         this.populateDucks(currentPond);
-		
-		this.generatePondUI();
+
+        this.generatePondUI();
     }
 
     //Fill pond number with their ducks
@@ -127,7 +129,7 @@ class MyGame extends Phaser.Scene {
         const ducks = submissionsArray.filter(function (obj) {
             return obj.pond === pond;
         });
-		console.log(ducks);
+        console.log(ducks);
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
             const duckGameObject = this.add.sprite(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight), "allDucks", ducks[i].image+"-0.png");
@@ -158,9 +160,9 @@ class MyGame extends Phaser.Scene {
             //Set event for click/press
             duckGameObject.setInteractive();
             duckGameObject.input.cursor = 'pointer';
-			console.log(duckGameObject.input.hitArea);
+            console.log(duckGameObject.input.hitArea);
             duckGameObject.input.hitArea.setSize(duckGameObject.width, duckGameObject.height);
-			duckGameObject.input.hitArea.y=duckGameObject.height*0.5+5;
+            duckGameObject.input.hitArea.y=duckGameObject.height*0.5+5;
             duckGameObject.state = duckStates.START_IDLE;
             let that = this;
 
@@ -334,13 +336,13 @@ class PondManager extends Phaser.Scene {
         this.input.on('gameobjectup', this.clickHandler, this);
         this.infoText.input.cursor="pointer";
         console.log(this.scene);
-		var that=this;
-		$("body").on("click",".load-pond",function(){
-			$(".load-pond").removeClass("selectedPond");
-			$(this).addClass("selectedPond");
-			console.log($(this).attr("pond"));
-			that.loadPond(parseInt($(this).attr("pond")));
-		});
+        var that=this;
+        $("body").on("click",".load-pond",function(){
+            $(".load-pond").removeClass("selectedPond");
+            $(this).addClass("selectedPond");
+            console.log($(this).attr("pond"));
+            that.loadPond(parseInt($(this).attr("pond")));
+        });
     }
 
     clickHandler(pointer, obj) {
@@ -348,32 +350,32 @@ class PondManager extends Phaser.Scene {
         const pond = this.scene.get('pond');
         pond.children.shutdown();
         // emit event to reload the ducks
-		
-		
+
+
         this.pondNum = (this.pondNum) % maxPond + 1;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
         this.infoText.setText(`Pond ${this.pondNum}`);
     }
-	
-	loadPond(id){
-		
-		
-		
-		if(this.pondNum==id){
-			return;
-		}
-		console.log("load pond "+id);
-		 const pond = this.scene.get('pond');
+
+    loadPond(id){
+
+
+
+        if(this.pondNum==id){
+            return;
+        }
+        console.log("load pond "+id);
+        const pond = this.scene.get('pond');
         pond.children.shutdown();
         // emit event to reload the ducks
-		
-		
+
+
         this.pondNum = id;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
         this.infoText.setText(`Pond ${this.pondNum}`);
-	}
+    }
 }
 
 let sceneWidth = window.innerWidth;
