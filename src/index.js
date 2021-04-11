@@ -258,9 +258,43 @@ class MyGame extends Phaser.Scene {
 	generatePondUI(){
 		$("body").append("<div id='pond-ui'></div>");
 		$("#pond-ui").append("<h3>Select pond</h3>");
+		$("#pond-ui").append("<div class='button-list'></div>");
 		for(var a=0;a<maxPond;a++){
-			$("#pond-ui").append("<button class='load-pond' pond='"+(a+1)+"'>"+(a+1)+"</button>");
-			$(".load-pond[pond=1]").addClass("selectedPond");
+			$(".button-list").append("<button class='load-pond' pond='"+(a+1)+"'>"+(a+1)+"</button>");
+		}
+		maxPages= Math.floor( maxPond/pondsPerPage);
+		console.log("max pages "+maxPages);
+		$("#pond-ui").append("<button id='prevPage'>Prev</button>");
+		$("#pond-ui").append("<button id='nextPage'>Next</button>");
+		$(".load-pond[pond=1]").addClass("selectedPond");
+		var that=this;
+		$("#prevPage").on("click",function(){
+			if(currentPondPagination!=0){
+				currentPondPagination--;
+				
+			}else{
+				currentPondPagination=maxPages-1;
+			}
+			that.updatePagination();
+		});
+		console.log("max pages",maxPages);
+		$("#nextPage").on("click",function(){
+			if(currentPondPagination<maxPages-1){
+				currentPondPagination++;
+				
+			}else{
+				currentPondPagination=0;
+			}
+			that.updatePagination();
+			
+		});
+		this.updatePagination();
+	}
+	
+	updatePagination(){
+		$(".load-pond").removeClass("visible");
+		for(var a=0;a<pondsPerPage;a++){
+			$($(".load-pond")[currentPondPagination*pondsPerPage+a]).addClass("visible");
 		}
 	}
 
@@ -277,6 +311,10 @@ class MyGame extends Phaser.Scene {
 }
 
 var currentPond = 1;
+
+var currentPondPagination=0;
+var pondsPerPage=3;
+var maxPages;
 
 class PondManager extends Phaser.Scene {
 
