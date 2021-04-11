@@ -3,7 +3,11 @@ import 'phaser';
 import duck from './assets/base.png';
 import ducksj from './assets/ducks.json';
 import submissions from './assets/submissions/submissions.json';
+
 */
+
+import './assets/css/style.css';
+
 const ducksj = require('./assets/submissions/all_ducks_sheet.json');
 const submissions = require('./assets/submissions/submissions.json')
 const shuba = require('./assets/sound/suba.mp3')
@@ -16,13 +20,15 @@ function importAll(r) {
 const allDucks = importAll(require.context('./', true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
 const ponds = importAll(require.context('./', true, /pond.*\.(json)$/));
 
-const FRAME_RATE = 1;
+const FRAME_RATE = 10;
 
 const USERNAME_DISPLAY_DURATION = 3000;
 
 const SPRITE_WIDTH = 100;
 
 const SPRITE_HEIGHT = 100;
+
+const maxPond=		submissions.submissions[submissions.submissions.length-1].pond;
 
 class MyGame extends Phaser.Scene {
     constructor() {
@@ -107,21 +113,22 @@ class MyGame extends Phaser.Scene {
 
         this.shuba = this.sound.add('shuba');
         this.populateDucks(currentPond);
+		
+		this.generatePondUI();
     }
 
     //Fill pond number with their ducks
     populateDucks(pond = 1) {
-
         //Get submission reference sheet from google sheet and filter by pond #
         //{strName,strImageName,numPondNumber}
         const submissionsArray = submissions['submissions'];
         const ducks = submissionsArray.filter(function (obj) {
             return obj.pond === pond;
         });
-
+		console.log(ducks);
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
-            const duckGameObject = this.add.sprite(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight), allDucks, ducks[i].image);
+            const duckGameObject = this.add.sprite(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight), "allDucks", ducks[i].image+"-0.png");
             duckGameObject.name = "duck";
             duckGameObject.setOrigin(0.5, 0.5)
             duckGameObject.width = SPRITE_WIDTH;
@@ -143,7 +150,7 @@ class MyGame extends Phaser.Scene {
                     prefix: currentDuck + '-',
                     suffix: '.png'
                 });
-                this.anims.create({key: animationName[0], frames: frameNames, frameRate: FRAME_RATE, repeat: -1});
+                this.anims.create({key: currentDuck + '-'+animationName[0], frames: frameNames, frameRate: FRAME_RATE, repeat: -1});
             });
 
             //Set event for click/press
@@ -157,7 +164,7 @@ class MyGame extends Phaser.Scene {
             duckGameObject.updateState = function (context, delta) {
                 switch (context.state) {
                     case duckStates.START_IDLE:
-                        context.play("idle");
+                        context.play(currentDuck+"-idle");
                         context.idle = getRandomInt(minIdle, maxIdle)
                         context.state = duckStates.IDLE;
                         break;
@@ -190,7 +197,7 @@ class MyGame extends Phaser.Scene {
                             }
                         });
 
-                        context.play('walk');
+                        context.play(currentDuck+'-walk');
 
                         context.state = duckStates.WALKING;
                         break;
@@ -201,7 +208,7 @@ class MyGame extends Phaser.Scene {
                         if (context.tween) {
                             context.tween.stop();
                         }
-                        context.play("quack");
+                        context.play(currentDuck+"-quack");
                         that.shuba.play();
                         context.quack = 1600;
                         context.state = duckStates.QUACK;
@@ -243,6 +250,14 @@ class MyGame extends Phaser.Scene {
 
         }
     }
+	
+	generatePondUI(){
+		$("body").append("<div id='pond-ui'></div>");
+		$("#pond-ui").append("<h3>Select pond</h3>");
+		for(var a=0;a<maxPond;a++){
+			$("#pond-ui").append("<button class='load-pond' pond='"+(a+1)+"'>"+(a+1)+"</button>");
+		}
+	}
 
     update(time, delta) {
         for (let i = 0; i < this.children.list.length; i++) {
@@ -276,6 +291,11 @@ class PondManager extends Phaser.Scene {
         this.input.on('gameobjectup', this.clickHandler, this);
         this.infoText.input.cursor="pointer";
         console.log(this.scene);
+		var that=this;
+		$("body").on("click",".load-pond",function(){
+			console.log($(this).attr("pond"));
+			that.loadPond(parseInt($(this).attr("pond")));
+		});
     }
 
     clickHandler(pointer, obj) {
@@ -283,12 +303,26 @@ class PondManager extends Phaser.Scene {
         const pond = this.scene.get('pond');
         pond.children.shutdown();
         // emit event to reload the ducks
-
-        this.pondNum = (this.pondNum) % 3 + 1;
+		
+		
+        this.pondNum = (this.pondNum) % maxPond + 1;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
         this.infoText.setText(`Pond ${this.pondNum}`);
     }
+	
+	loadPond(id){
+		console.log("load pond "+id);
+		 const pond = this.scene.get('pond');
+        pond.children.shutdown();
+        // emit event to reload the ducks
+		
+		
+        this.pondNum = id;
+        currentPond = this.pondNum;
+        this.events.emit('reloadPond');
+        this.infoText.setText(`Pond ${this.pondNum}`);
+	}
 }
 
 let sceneWidth = window.innerWidth;

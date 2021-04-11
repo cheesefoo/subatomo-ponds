@@ -1,7 +1,5 @@
 {
   "submissions": [
-   
-   
     {
       "name": 1551,
       "image": "1551--39385",
@@ -21,6 +19,56 @@
       "name": "ujiku",
       "image": "ujiku--19025",
       "pond": 1
+    },
+    {
+      "name": "green hat",
+      "image": "green hat-370578",
+      "pond": 2
+    },
+    {
+      "name": "red hat",
+      "image": "red hat--40736",
+      "pond": 2
+    },
+    {
+      "name": "pink hat",
+      "image": "pink hat-622716",
+      "pond": 2
+    },
+    {
+      "name": "pink bandana",
+      "image": "pink bandana--39568",
+      "pond": 2
+    },
+    {
+      "name": "green bandana",
+      "image": "green bandana-624775",
+      "pond": 3
+    },
+    {
+      "name": "red bandana",
+      "image": "red bandana--10070",
+      "pond": 3
+    },
+    {
+      "name": "green body",
+      "image": "green body-468939",
+      "pond": 3
+    },
+    {
+      "name": "red body",
+      "image": "red body-183126",
+      "pond": 3
+    },
+    {
+      "name": "violet body",
+      "image": "violet body--10835",
+      "pond": 4
+    },
+    {
+      "name": "yellow body",
+      "image": "yellow body-520168",
+      "pond": 4
     }
   ]
 }

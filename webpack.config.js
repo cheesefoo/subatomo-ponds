@@ -43,7 +43,11 @@ module.exports = {
             {
                 test: /\.(mp3|opus|wav)$/i,
                 type: 'asset/resource'
-            }
+            },
+			{
+			  test: /\.css$/,
+			  use: ['style-loader', 'css-loader']
+			}
 
 
         ]
