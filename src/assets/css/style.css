@@ -28,6 +28,14 @@ canvas{display:block;max-width:100%;}
 	padding:10px;
 }
 
+.load-pond{
+	display:none;
+}
+
+.load-pond.visible{
+	display:inline-block;
+}
+
 .load-pond.selectedPond{
 	background-color:red;
 }
