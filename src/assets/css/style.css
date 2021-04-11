@@ -1,7 +1,53 @@
+*{
+	box-sizing:border-box;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;  
+}
+body {
+	margin: 0;
+	overflow:hidden;
+	height:100vh;
+}
+#screens,.screen {
+	display:none;
+}
+
+.screen{padding:10px;}
+
+.ubuntu {
+	font-family: 'Ubuntu', sans-serif;
+}
+canvas{display:block;max-width:100%;}
 #pond-ui{
+	display:none;top:56px;
 	position:fixed;
-	top:0;
 	left:0;
 	background-color:cyan;
 	padding:10px;
+}
+
+.load-pond.selectedPond{
+	background-color:red;
+}
+img{max-width:90%;
+}
+
+h1{text-align:center;}
+
+#spb2{
+	display:block;max-width:300px;font-size:30px;background-color:blue;
+	border-radius:5px;
+	text-align:center; margin:auto;
+}
+
+#about-subaru .about-content{
+	max-width:300px;
+	display:inline-block;
+}
+
+#about-project .project-text{
+	max-width:600px;
+	margin:auto;
 }

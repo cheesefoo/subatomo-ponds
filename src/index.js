@@ -94,6 +94,10 @@ class MyGame extends Phaser.Scene {
                 loadingText.destroy();
                 percentText.destroy();
                 assetText.destroy();
+				$("canvas").hide();
+				window.game.input.enabled=false;
+				$("#screens").show();
+				//$("#home").show();
             });
         }
 
@@ -156,7 +160,9 @@ class MyGame extends Phaser.Scene {
             //Set event for click/press
             duckGameObject.setInteractive();
             duckGameObject.input.cursor = 'pointer';
+			console.log(duckGameObject.input.hitArea);
             duckGameObject.input.hitArea.setSize(duckGameObject.width, duckGameObject.height);
+			duckGameObject.input.hitArea.y=duckGameObject.height*0.5+5;
             duckGameObject.state = duckStates.START_IDLE;
             let that = this;
 
@@ -225,7 +231,7 @@ class MyGame extends Phaser.Scene {
                 }
             };
 
-            this.input.enableDebug(duckGameObject, 0x04F404);
+            //this.input.enableDebug(duckGameObject, 0x04F404);
 
         }
         this.input.on('gameobjectup', onObjectClicked);
@@ -256,6 +262,7 @@ class MyGame extends Phaser.Scene {
 		$("#pond-ui").append("<h3>Select pond</h3>");
 		for(var a=0;a<maxPond;a++){
 			$("#pond-ui").append("<button class='load-pond' pond='"+(a+1)+"'>"+(a+1)+"</button>");
+			$(".load-pond[pond=1]").addClass("selectedPond");
 		}
 	}
 
@@ -293,6 +300,8 @@ class PondManager extends Phaser.Scene {
         console.log(this.scene);
 		var that=this;
 		$("body").on("click",".load-pond",function(){
+			$(".load-pond").removeClass("selectedPond");
+			$(this).addClass("selectedPond");
 			console.log($(this).attr("pond"));
 			that.loadPond(parseInt($(this).attr("pond")));
 		});
@@ -312,6 +321,12 @@ class PondManager extends Phaser.Scene {
     }
 	
 	loadPond(id){
+		
+		
+		
+		if(this.pondNum==id){
+			return;
+		}
 		console.log("load pond "+id);
 		 const pond = this.scene.get('pond');
         pond.children.shutdown();
@@ -326,14 +341,14 @@ class PondManager extends Phaser.Scene {
 }
 
 let sceneWidth = window.innerWidth;
-let sceneHeight = window.innerHeight - 3;
+let sceneHeight = window.innerHeight -56;
 let aspectRatio = sceneWidth / sceneHeight;
 const REFERENCE_ASPECT_RATIO = 1.78;//16/9
-window.addEventListener("resize", () => {
+/*window.addEventListener("resize", () => {
     sceneWidth = document.querySelector('#width');
     sceneHeight = document.querySelector('#height');
 
-});
+});*/
 
 const minWalkTime = 1000;
 const maxWalkTime = 4800;
@@ -361,6 +376,7 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+window.game=game;
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;

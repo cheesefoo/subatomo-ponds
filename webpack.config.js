@@ -60,6 +60,7 @@ module.exports = {
                     from: path.resolve(__dirname, 'index.html'),
                     to: path.resolve(__dirname, 'dist')
                 },
+				{ from: "src/assets/images", to: "images" }
 /*                {
                     from: './src/!*',
                     to: path.resolve(__dirname, 'dist')
@@ -70,7 +71,7 @@ module.exports = {
         new webpack.DefinePlugin({
             CANVAS_RENDERER: JSON.stringify(true),
             WEBGL_RENDERER: JSON.stringify(true)
-        }),
+        })
         /*        new webpack.optimize.CommonsChunkPlugin({
                     name: 'production-dependencies',
                     filename: 'production-dependencies.bundle.js'
