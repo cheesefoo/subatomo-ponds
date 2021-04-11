@@ -7,7 +7,8 @@
 </head>
 
 <body>
-<form action="https://script.google.com/macros/s/#####/exec"
+<div class="contact-us" style="max-width:600px;">
+<form action="https://script.google.com/macros/s/AKfycbwvt7E5cSBSRulXQIwn-fh-SpjUAjKE4U_0n-wEcecm5tgb7KhF0Dtuy3WW6VSMj9f9IA/exec"
       id="form" method="post">
     <div id="data">
         <div class="displayName">
@@ -15,9 +16,9 @@
             <input id="name" name="displayName" maxlength="16">
         </div>
         <div class="email">
-            Can we email you if there are issues with your submission?
-
-            Yes<input type="radio" name="canEmail" id="radioYes" value="yes" onclick="yesCheck();">
+            <p>Can we email you if there are issues with your submission?<p>
+<br>
+            Yes<input type="radio" name="canEmail" id="radioYes" value="yes" onclick="yesCheck();"><span style="margin-right:20px;"></span>
             No<input type="radio" name="canEmail" id="radioNo" value="no" checked onclick="yesCheck();">
             <div class="emailInput" id="emailInput" style="display:none">
                 <label for="email">Your email:</label>
@@ -26,11 +27,14 @@
         </div>
     </div>
     <div class="upload" id="upload">
+		<label>Upload your duck png bellow, it has to be up to the dimensions allowed in the project detailed in xxxxxx</label>
         <input type="file" name="file" id="uploadfile" accept="image/png">
-        <input type="submit" id="submit">
+        <input type="submit" id="submit" onclick="submitting();">
     </div>
 
 </form>
+<div id="submitting" style="display:none;">Uploading duck...</div>
+</div>
 <script>
 
     function disallowedChars(e) {
@@ -73,7 +77,126 @@
         }
         fr.readAsDataURL(file);
     });
+	
+	function submitting(){
+		$("form").hide();
+		$("#submitting").show();
+	}
 </script>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 12pt;
+  font-family: "Spartan";
+  color: #2A293E;
+}
+
+.contact-us {
+  background: #f8f4e5;
+  padding: 50px 100px;
+  border-top: 10px solid #f45702;
+}
+
+label, input, textarea {
+  display: block;
+  width: 100%;
+  font-size: 12pt;
+  line-height: 24pt;
+  font-family: "Spartan";
+}
+
+input {
+  margin-bottom: 24pt;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 10pt;
+  line-height: 24pt;
+  font-style: italic;
+  margin: 0 0 0.5em 0;
+}
+
+span {
+  font-size: 8pt;
+}
+
+em {
+  color: #f45702;
+  font-weight: bold;
+}
+
+input, textarea {
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background: #f8f4e5;
+  padding-left: 5px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #6bd4b1;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  display: block;
+  float: right;
+  line-height: 24pt;
+  padding: 0 20px;
+  border: none;
+  background: #f45702;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+}
+button:hover {
+  background: inherit;
+  color: #f45702;
+  border-bottom: 2px solid #f45702;
+}
+
+::selection {
+  background: #ffc7b8;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid #6bd4b1;
+  -webkit-text-fill-color: #2A293E;
+  -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type=radio]{display:inline-block; width:auto;}
+
+input[type=submit]{transition:0.5s;cursor:pointer;}
+input[type=submit]:hover{background-color:#6bd4b1;color:white;}
+
+</style>
+
 </body>
 
 </html>
