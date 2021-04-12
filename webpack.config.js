@@ -17,7 +17,7 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         // assetModuleFilename: 'assets/[hash][ext][query]',
-         assetModuleFilename: 'assets/[name][ext][query]',
+        assetModuleFilename: 'assets/[name][ext][query]',
         clean: true
     },
     module: {
@@ -44,29 +44,30 @@ module.exports = {
                 test: /\.(mp3|opus|wav)$/i,
                 type: 'asset/resource'
             },
-			{
-			  test: /\.css$/,
-			  use: ['style-loader', 'css-loader']
-			}
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
 
 
         ]
     },
     plugins: [
-    /*    new HtmlWebpackPlugin(),*/
+        /*    new HtmlWebpackPlugin(),*/
         new CopyWebpackPlugin({
             patterns: [
-                 {
+                {
                     from: path.resolve(__dirname, 'index.html'),
                     to: path.resolve(__dirname, 'dist')
                 },
-				{ from: "src/assets/images", to: "images" },
-				{ from: "src/assets/css", to: "css" },
-				{ from: "manifest.webmanifest", to: "manifest.webmanifest" }
-/*                {
-                    from: './src/!*',
-                    to: path.resolve(__dirname, 'dist')
-                }*/
+                {from: "src/assets/images", to: "images"},
+                {from: "src/assets/css", to: "css"},
+                {from: "manifest.webmanifest", to: "manifest.webmanifest"},
+                {from: "src/Form Submission/upload.html", to: "upload/upload.html"}
+                /*                {
+                                    from: './src/!*',
+                                    to: path.resolve(__dirname, 'dist')
+                                }*/
             ]
         }),
 
