@@ -10,7 +10,7 @@ Divided by level of knowledge
 
 //Going from baby knowledge -> expert knowledge
 ### How do I participate?
-tl;dr: Go to __LINK TO SUBMISSION PAGE__ and submit us a __TOBEFINALIZED___  (4 frames, 100x100 each) png sprite sheet of a personalized duck, along with your name (optional). Be sure to follow the __LINK TO SUBMISSION GUIDELINES___. If the dimensions of your submission are wrong, you will be unable to submit it.
+tl;dr: Go to __LINK TO SUBMISSION PAGE__ and submit us a __TOBEFINALIZED___  (4 frames, 100x100 each) png sprite sheet of a personalized duck, facing right, along with your name (optional). Be sure to follow the __LINK TO SUBMISSION GUIDELINES___. If the dimensions of your submission are wrong, you will be unable to submit it.
 
 Draw an animated duck for Subaru! We are taking sprite sheet submissions. If you are interested please continue reading.
 __maybe show internal example scene__
