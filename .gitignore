@@ -6,6 +6,12 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
+
+# Firebase Hosting
+.firebaserc
+firebase-debug.log
+.firebase/
+
 # Vendors
 node_modules/
 
