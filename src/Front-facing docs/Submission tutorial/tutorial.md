@@ -28,7 +28,6 @@ Animation is the capturing of sequential, static images—drawings or photos of 
 A sprite sheet is one big image that contains all the animations of a character instead of dealing with many single files.
 For your submission, you will be placing each animation frame next to each other. All frames have the same size, and the animation is aligned in each frame.
 
-![frame1.png](frame1.png) ![frame2.png](frame2.png) ![frame3.png](frame3.png) ![frame4.png](frame4.png)
 ![spritesheet.png](spritesheet.png)
 
 This is how the animation looks, at 10 frames per second.
