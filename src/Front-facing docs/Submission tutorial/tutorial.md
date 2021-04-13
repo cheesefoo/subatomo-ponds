@@ -10,11 +10,7 @@ Divided by level of knowledge
 
 //Going from baby knowledge -> expert knowledge
 ### How do I participate?
-tl;dr: Go to [submission page](__$LINK__) and submit us a spritesheet with [these specs](#technical-specifications) a personalized duck, along with your name (optional). Be sure to follow the [guidelines](__$LINK__). If the dimensions of your submission are wrong, you will be unable to submit it.
-###### Technical Specifications:
-* __$dimensions__ AxB (4 frames, AxB each) 
-* .png format with background transparency
-* Under __$filesize_limit__
+tl;dr: Go to __LINK TO SUBMISSION PAGE__ and submit us a __TOBEFINALIZED___  (4 frames, 100x100 each) png sprite sheet of a personalized duck, facing right, along with your name (optional). Be sure to follow the __LINK TO SUBMISSION GUIDELINES___. If the dimensions of your submission are wrong, you will be unable to submit it.
 
 Draw an animated duck for Subaru! We are taking sprite sheet submissions. If you are interested please continue reading.
 __maybe show internal example scene__
@@ -32,7 +28,6 @@ Animation is the capturing of sequential, static images—drawings or photos of 
 A sprite sheet is one big image that contains all the animations of a character instead of dealing with many single files.
 For your submission, you will be placing each animation frame next to each other. All frames have the same size, and the animation is aligned in each frame.
 
-![frame1.png](frame1.png) ![frame2.png](frame2.png) ![frame3.png](frame3.png) ![frame4.png](frame4.png)
 ![spritesheet.png](spritesheet.png)
 
 This is how the animation looks, at 10 frames per second.
