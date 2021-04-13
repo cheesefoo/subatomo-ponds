@@ -6,6 +6,8 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
+#PYTHON
+*venv/*
 
 # Firebase Hosting
 .firebaserc
@@ -18,3 +20,11 @@ node_modules/
 # Build
 dist/
 /npm-debug.log
+
+#API keys
+client_secrets.json
+credentials.json
+
+#
+**/all_submissions_raw/*.png
+**/all_submissions_split/*.png

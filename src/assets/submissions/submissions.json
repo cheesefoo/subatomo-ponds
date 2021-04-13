@@ -1,189 +1,99 @@
 {
   "submissions": [
     {
-      "name": 1551,
+      "name": "1551",
       "image": "1551--39385",
-      "pond": 1
+      "pond": "1"
     },
     {
       "name": "aaaaa",
       "image": "aaaaa--24635",
-      "pond": 1
+      "pond": "1"
     },
     {
       "name": "aaaaa",
       "image": "aaaaa--24580",
-      "pond": 1
+      "pond": "1"
     },
     {
       "name": "ujiku",
       "image": "ujiku--19025",
-      "pond": 1
+      "pond": "1"
     },
     {
       "name": "green hat",
       "image": "green hat-370578",
-      "pond": 2
+      "pond": "2"
     },
     {
       "name": "red hat",
       "image": "red hat--40736",
-      "pond": 2
+      "pond": "2"
     },
     {
       "name": "pink hat",
       "image": "pink hat-622716",
-      "pond": 2
+      "pond": "2"
     },
     {
       "name": "pink bandana",
       "image": "pink bandana--39568",
-      "pond": 2
+      "pond": "2"
     },
     {
       "name": "green bandana",
       "image": "green bandana-624775",
-      "pond": 3
+      "pond": "3"
     },
     {
       "name": "red bandana",
       "image": "red bandana--10070",
-      "pond": 3
+      "pond": "3"
     },
     {
       "name": "green body",
       "image": "green body-468939",
-      "pond": 3
+      "pond": "3"
     },
     {
       "name": "red body",
       "image": "red body-183126",
-      "pond": 3
+      "pond": "3"
     },
     {
       "name": "violet body",
       "image": "violet body--10835",
-      "pond": 4
+      "pond": "4"
     },
     {
       "name": "yellow body",
       "image": "yellow body-520168",
-      "pond": 4
-    },
-    {
-      "name": "asda",
-      "image": "asdaNaN",
-      "pond": 4
-    },
-    {
-      "name": "local submission",
-      "image": "local submissionNaN",
-      "pond": 4
-    },
-    {
-      "name": "local submission",
-      "image": "local submissionNaN",
-      "pond": 5
-    },
-    {
-      "name": "asda",
-      "image": "asdaNaN",
-      "pond": 5
-    },
-    {
-      "name": "another local",
-      "image": "another localNaN",
-      "pond": 5
-    },
-    {
-      "name": "another local",
-      "image": "another localNaN",
-      "pond": 5
-    },
-    {
-      "name": "another local",
-      "image": "another localNaN",
-      "pond": 6
-    },
-    {
-      "name": "asd",
-      "image": "asdNaN",
-      "pond": 6
-    },
-    {
-      "name": "asd",
-      "image": "asdNaN",
-      "pond": 6
-    },
-    {
-      "name": "asdas",
-      "image": "asdasNaN",
-      "pond": 6
-    },
-    {
-      "name": "asdas",
-      "image": "asdasNaN",
-      "pond": 7
-    },
-    {
-      "name": "asdasd",
-      "image": "asdasdNaN",
-      "pond": 7
-    },
-    {
-      "name": "asdasd",
-      "image": "asdasdNaN",
-      "pond": 7
-    },
-    {
-      "name": "asdasd",
-      "image": "asdasdNaN",
-      "pond": 7
-    },
-    {
-      "name": "asdasd",
-      "image": "asdasdNaN",
-      "pond": 8
-    },
-    {
-      "name": "asdasd",
-      "image": "asdasdNaN",
-      "pond": 8
-    },
-    {
-      "name": "asdasd",
-      "image": "asdasdNaN",
-      "pond": 8
+      "pond": "4"
     },
     {
       "name": "asdasdasdads",
       "image": "asdasdasdads8292db89-1215-46e7-b47f-41612429df61",
-      "pond": 8
+      "pond": "4"
     },
     {
       "name": "999thdeploy",
       "image": "999thdeploy015ca127-1790-4432-a75a-6c5962a6bb1c",
-      "pond": 9
+      "pond": "4"
     },
     {
       "name": "new duck",
       "image": "new duck115fd802-7582-4ba5-a401-a48501bfc6b4",
-      "pond": 9
+      "pond": "5"
     },
     {
       "name": "upload duck",
       "image": "upload duck51c366a2-54b1-4dab-8569-349ee3dcfa1f",
-      "pond": 9
+      "pond": "5"
     },
     {
       "name": "SWIM-100x100FRME",
       "image": "SWIM-100x100FRMEbfedfbe6-f3b4-493b-93ff-2d7ba1b12be7",
-      "pond": 9
-    },
-    {
-      "name": "WALK100X100FRAME",
-      "image": "WALK100X100FRAME833ec9b3-6844-461e-9f86-4df956fc33dd",
-      "pond": 10
+      "pond": "5"
     }
   ]
 }
