@@ -7,11 +7,11 @@ Thumbs.db
 *.sublime-workspace
 
 #PYTHON
-*venv/*
+**/venv/*
 
 # Firebase Hosting
 .firebaserc
-firebase-debug.log
+**firebase-debug.*
 .firebase/
 
 # Vendors
