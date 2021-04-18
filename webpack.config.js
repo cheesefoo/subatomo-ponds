@@ -2,8 +2,20 @@ const webpack = require("webpack");
 const path = require("path");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 
 module.exports = {
+	optimization: {
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+        },
+      }),
+    ],
+  },
     mode: "development",
     devtool: "eval-source-map",
     devServer: {
