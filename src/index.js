@@ -6,7 +6,6 @@ import submissions from './assets/submissions/submissions.json';
 
 */
 
-import './assets/css/style.css';
 
 const ducksj = require('./assets/submissions/all_ducks_sheet.json');
 const submissions = require('./assets/submissions/submissions.json')
@@ -18,7 +17,10 @@ function importAll(r) {
 }
 
 const allDucks = importAll(require.context('./', true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
-const ponds = importAll(require.context('./', true, /pond.*\.(json)$/));
+/*const ponds = importAll(require.context('./', true, /pond.*\.(json)$/));*/
+
+console.log("ducks",ducksj);
+console.log("ponds",submissions);
 
 const FRAME_RATE = 10;
 
@@ -126,10 +128,11 @@ class MyGame extends Phaser.Scene {
         //Get submission reference sheet from google sheet and filter by pond #
         //{strName,strImageName,numPondNumber}
         const submissionsArray = submissions['submissions'];
+		console.log("submissionArra",submissionsArray);
         const ducks = submissionsArray.filter(function (obj) {
-            return obj.pond === pond;
+            return parseInt(obj.pond) === pond;
         });
-        console.log(ducks);
+        console.log("ducks",ducks);
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
             const duckGameObject = this.add.sprite(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight), "allDucks", ducks[i].image+"-0.png");
@@ -143,6 +146,8 @@ class MyGame extends Phaser.Scene {
             //Duck object = {strName,strImageName,numPondNumber}, matches submission json
             duckGameObject.duck = ducks[i];
             const currentDuck = duckGameObject.duck.image;
+			
+			console.log("currentDuck",currentDuck);
 
             //Create animations
             const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3]];
@@ -170,6 +175,7 @@ class MyGame extends Phaser.Scene {
             duckGameObject.updateState = function (context, delta) {
                 switch (context.state) {
                     case duckStates.START_IDLE:
+						console.log("play iddle",currentDuck);
                         context.play(currentDuck+"-idle");
                         context.idle = getRandomInt(minIdle, maxIdle)
                         context.state = duckStates.IDLE;
@@ -355,7 +361,8 @@ class PondManager extends Phaser.Scene {
         this.pondNum = (this.pondNum) % maxPond + 1;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
-        this.infoText.setText(`Pond ${this.pondNum}`);
+		
+        //this.infoText.setText(`Pond ${this.pondNum}`);
     }
 
     loadPond(id){
@@ -374,7 +381,7 @@ class PondManager extends Phaser.Scene {
         this.pondNum = id;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
-        this.infoText.setText(`Pond ${this.pondNum}`);
+        //this.infoText.setText(`Pond ${this.pondNum}`);
     }
 }
 
