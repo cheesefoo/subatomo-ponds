@@ -1,41 +1,56 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
     <title>Subaru Milestone Submission Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script src="dropzone.bundle.js"></script>
+    <link href="css/upload.css" rel="stylesheet"/>
+        <link href="css/dropzone.css" rel="stylesheet"/>
 </head>
 
 <body>
 <div class="contact-us" style="max-width:600px;">
-<form action="https://script.google.com/macros/s/AKfycbwvt7E5cSBSRulXQIwn-fh-SpjUAjKE4U_0n-wEcecm5tgb7KhF0Dtuy3WW6VSMj9f9IA/exec"
-      id="form" method="post">
-    <div id="data">
-        <div class="displayName">
-            Your display name. If left blank, your name will be (TBD)
-            <input id="name" name="displayName" maxlength="16">
-        </div>
-        <div class="email">
-            <p>Can we email you if there are issues with your submission?<p>
-<br>
-            Yes<input type="radio" name="canEmail" id="radioYes" value="yes" onclick="yesCheck();"><span style="margin-right:20px;"></span>
-            No<input type="radio" name="canEmail" id="radioNo" value="no" checked onclick="yesCheck();">
-            <div class="emailInput" id="emailInput" style="display:none">
-                <label for="email">Your email:</label>
-                <input type="email" name="email" id="email">
+    <form class="dropzone"
+          action="https://script.google.com/macros/s/AKfycbwvt7E5cSBSRulXQIwn-fh-SpjUAjKE4U_0n-wEcecm5tgb7KhF0Dtuy3WW6VSMj9f9IA/exec"
+          id="form" method="post">
+        <div id="data">
+            <div class="displayName">
+                Your display name. If left blank, your name will be (TBD)
+                <input id="name" maxlength="16" name="displayName">
+            </div>
+            <div class="email">
+                <p>Can we email you if there are issues with your submission?
+                <p>
+                    <br>
+                    Yes<input id="radioYes" name="canEmail" onclick="yesCheck();" type="radio" value="yes"><span
+                        style="margin-right:20px;"></span>
+                    No<input checked id="radioNo" name="canEmail" onclick="yesCheck();" type="radio" value="no">
+                <div class="emailInput" id="emailInput" style="display:none">
+                    <label for="email">Your email:</label>
+                    <input id="email" name="email" type="email">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="upload" id="upload">
-		<label>Upload your duck png bellow, it has to be up to the dimensions allowed in the project detailed in xxxxxx</label>
-        <input type="file" name="file" id="uploadfile" accept="image/png">
-        <input type="submit" id="submit" onclick="submitting();">
-    </div>
+        <div id="upload">
+            <label>Upload your duck png bellow, it has to be up to the dimensions allowed in the project detailed in
+                xxxxxx</label>
+            <input accept="image/png" id="uploadFile" name="file" type="file">
+            <input id="submit" onclick="submitting();" type="submit">
+        </div>
 
-</form>
-<div id="submitting" style="display:none;">Uploading duck...</div>
+    </form>
+    <div id="submitting" style="display:none;">Uploading duck...</div>
+    <canvas id="animPreview" style="visibility:hidden"></canvas>
 </div>
 <script>
+    Dropzone.options.form = {
+        paramName: "file", // The name that will be used to transfer the file
+        maxFilesize: 2, // MB
+        accept: function (file, done) {
+            chooseFile(file)
+        }
+    };
 
     function disallowedChars(e) {
         let regex = new RegExp(escapeRegExp('<>:"/\\|?*'));
@@ -47,24 +62,129 @@
     }
 
     function yesCheck() {
+        let email = document.getElementById('emailInput');
         if (document.getElementById('radioYes').checked) {
-            document.getElementById('emailInput').style.display = 'block';
-            document.getElementById('emailInput').required = true;
+            email.style.display = 'block';
+            email.required = true;
 
         } else {
-            document.getElementById('emailInput').style.display = 'none';
-            document.getElementById('emailInput').required = false;
+            email.style.display = 'none';
+            email.required = false;
         }
     }
 
-    $('#uploadfile').on("change", function () {
+    let spritesheet = new Image();
+
+    const uploadFile = document.getElementById("uploadFile");
+    uploadFile.onchange = function () {
+        chooseFile(this.files[0])
+    };
+
+    function chooseFile(file) {
+        const reader = new FileReader();
+        // const file = this.files[0];
+        if (file) {
+            reader.addEventListener("load", function (e) {
+                spritesheet.src = reader.result;
+                canvasElement.style.visibility = "visible";
+                startAnimating(10);
+
+                //todo: check image dimensions?
+            }, false);
+            reader.readAsDataURL(file);
+        }
+    }
+
+    let fps, fpsInterval, startTime, now, then, elapsed;
+
+    // initialize the timer variables and start the animation
+    function startAnimating(fps) {
+        console.log("start animating")
+        fpsInterval = 1000 / fps;
+        then = Date.now();
+        startTime = then;
+        animate();
+    }
+
+    let w = 200;
+    let h = 200;
+    let sx, sy = 0;
+    let scale = 1;
+    let canvasElement = document.getElementById("animPreview");
+    let canvasContext = canvasElement.getContext("2d");
+    let canvas = canvasContext.canvas;
+    let currentFrame = 1;
+    const framesInAnimation = 3;
+    const centerCanvas = () => {
+        canvas.style.marginTop =
+            `${((window.innerHeight / 2) - (canvas.height / 2))}px`;
+    };
+
+    // centerCanvas()
+
+    function animate() {
+
+        // request another frame
+
+        // console.log(currentFrame);
+        requestAnimationFrame(animate);
+
+        // calc elapsed time since last loop
+
+        now = Date.now();
+        elapsed = now - then;
+
+        // if enough time has elapsed, draw the next frame
+
+        if (elapsed > fpsInterval) {
+            then = now - (elapsed % fpsInterval);
+            canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+
+            //Set corner coordinates according to current frame
+            sx = currentFrame % 2 === 0 ? w : 0;
+            sy = currentFrame <= 2 ? 0 : h;
+
+            // console.log(currentFrame + ":" + sx + "x" + sy);
+
+            canvasContext.drawImage(spritesheet, sx, sy, w, h, 0, 0, w * scale, h * scale);
+            currentFrame++;
+            if (currentFrame > framesInAnimation+1)
+                currentFrame = 1;
+        }
+    }
+
+    //$('#uploadFile').on("change", function () {
+    //    try {
+    //        document.getElementById('raw-sbm').remove();
+    //        document.getElementById('mime-sbm').remove();
+    //        document.getElementById('filetype-sbm').remove();
+    //    } catch (e) {
+    //    }
+    //    const file = this.files[0];
+    //    const fr = new FileReader();
+    //    fr.fileName = file.name;
+    //    fr.onload = function (e) {
+    //        e.target.result
+    //        html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
+    //        html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
+    //        html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
+    //        // $("#data").empty().append(html);
+    //        $("#data").append(html);
+    //    }
+    //    fr.readAsDataURL(file);
+    //});
+
+    function submitting() {
+        $("form").hide();
+        $("#submitting").show();
         try {
             document.getElementById('raw-sbm').remove();
             document.getElementById('mime-sbm').remove();
             document.getElementById('filetype-sbm').remove();
         } catch (e) {
         }
-        const file = this.files[0];
+
+        const file = document.getElementById("uploadFile").files[0];
         const fr = new FileReader();
         fr.fileName = file.name;
         fr.onload = function (e) {
@@ -76,127 +196,8 @@
             $("#data").append(html);
         }
         fr.readAsDataURL(file);
-    });
-	
-	function submitting(){
-		$("form").hide();
-		$("#submitting").show();
-	}
+    }
 </script>
-<style>
-@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  font-size: 12pt;
-  font-family: "Spartan";
-  color: #2A293E;
-}
-
-.contact-us {
-  background: #f8f4e5;
-  padding: 50px 100px;
-  border-top: 10px solid #f45702;
-}
-
-label, input, textarea {
-  display: block;
-  width: 100%;
-  font-size: 12pt;
-  line-height: 24pt;
-  font-family: "Spartan";
-}
-
-input {
-  margin-bottom: 24pt;
-}
-
-h3 {
-  font-weight: normal;
-  font-size: 10pt;
-  line-height: 24pt;
-  font-style: italic;
-  margin: 0 0 0.5em 0;
-}
-
-span {
-  font-size: 8pt;
-}
-
-em {
-  color: #f45702;
-  font-weight: bold;
-}
-
-input, textarea {
-  border: none;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  background: #f8f4e5;
-  padding-left: 5px;
-  outline: none;
-}
-
-input:focus, textarea:focus {
-  border: 1px solid #6bd4b1;
-}
-
-textarea {
-  resize: none;
-}
-
-button {
-  display: block;
-  float: right;
-  line-height: 24pt;
-  padding: 0 20px;
-  border: none;
-  background: #f45702;
-  color: white;
-  letter-spacing: 2px;
-  transition: 0.2s all ease-in-out;
-  border-bottom: 2px solid transparent;
-  outline: none;
-}
-button:hover {
-  background: inherit;
-  color: #f45702;
-  border-bottom: 2px solid #f45702;
-}
-
-::selection {
-  background: #ffc7b8;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus {
-  border: 1px solid #6bd4b1;
-  -webkit-text-fill-color: #2A293E;
-  -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-input[type=radio]{display:inline-block; width:auto;}
-
-input[type=submit]{transition:0.5s;cursor:pointer;}
-input[type=submit]:hover{background-color:#6bd4b1;color:white;}
-
-</style>
-
 </body>
 
 </html>
