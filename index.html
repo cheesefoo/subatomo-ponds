@@ -103,6 +103,11 @@
   			changeScreen("#about-subaru");
   			
   		});
+		$("body").on("click",".navbar a",function(){
+			if(!$(".navbar-toggler").hasClass("collapsed")){
+				$(".navbar-toggler").click();
+			}
+		});
   	//});
   </script>
 
