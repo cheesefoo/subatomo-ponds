@@ -261,9 +261,11 @@ class MyGame extends Phaser.Scene {
 		$("body").append("<div id='pond-ui'></div>");
 		$("#pond-ui").append("<h3>Select pond</h3>");
 		$("#pond-ui").append("<div class='button-list'></div>");
+        $(".button-list").append("<button id='previous-pond'>&lt;</button>");
 		for(var a=0;a<maxPond;a++){
 			$(".button-list").append("<button class='load-pond' pond='"+(a+1)+"'>"+(a+1)+"</button>");
 		}
+        $(".button-list").append("<button id='next-pond'>&gt;</button>");
 		maxPages= Math.ceil( maxPond/pondsPerPage);
 		console.log("max pages "+maxPages);
 		$("#pond-ui").append("<button id='prevPage'>Prev</button>");
@@ -273,7 +275,6 @@ class MyGame extends Phaser.Scene {
 		$("#prevPage").on("click",function(){
 			if(currentPondPagination!=0){
 				currentPondPagination--;
-				
 			}else{
 				currentPondPagination=maxPages-1;
 			}
@@ -283,16 +284,16 @@ class MyGame extends Phaser.Scene {
 		$("#nextPage").on("click",function(){
 			if(currentPondPagination<maxPages-1){
 				currentPondPagination++;
-				
+
 			}else{
 				currentPondPagination=0;
 			}
 			that.updatePagination();
-			
+
 		});
 		this.updatePagination();
 	}
-	
+
 	updatePagination(){
 		$(".load-pond").removeClass("visible");
 		for(var a=0;a<pondsPerPage;a++){
