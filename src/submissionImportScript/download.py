@@ -1,6 +1,6 @@
 from json import dumps
 from os import listdir
-from os.path import isfile, join, dirname
+from os.path import isfile, join, dirname, abspath
 from pathlib import PurePath
 from subprocess import run
 
@@ -15,7 +15,7 @@ from tenacity import retry, retry_if_exception_type, wait_random_exponential
 # Set location of texture packer exe
 # client_secrets.json is not committed for security
 TEXTURE_PACKER_EXE = join('K:\\Utilities\\TexturePacker\\bin', 'TexturePacker.exe')
-ASSETS_DIR = PurePath(dirname(dirname(__file__)), 'assets')
+ASSETS_DIR = PurePath(dirname(dirname(abspath(__file__))), 'assets')
 JSON_DESTINATION_DIR = join(ASSETS_DIR, 'submissions')
 RAW_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_raw')
 SPLIT_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_split')
