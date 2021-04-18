@@ -291,6 +291,36 @@ class MyGame extends Phaser.Scene {
 			that.updatePagination();
 
 		});
+        $("#previous-pond").on("click", function() {
+            let pondManager =  that.scene.get('pond-manager');
+            let currentPond = pondManager.pondNum
+            if (currentPond != 1) {
+                currentPond--;
+            } else {
+                currentPond=maxPond;
+            }
+            // Add selectedPond class to current pond's .loadPond element
+            $(".load-pond").removeClass("selectedPond");
+            $(".load-pond:nth-child("+(currentPond+1)+")").addClass("selectedPond");
+            pondManager.loadPond(currentPond);
+            currentPondPagination = Math.floor((currentPond-1)/pondsPerPage)
+            that.updatePagination()
+        });
+        $("#next-pond").on("click", function() {
+            let pondManager =  that.scene.get('pond-manager');
+            let currentPond = pondManager.pondNum
+            if (currentPond != maxPond) {
+                currentPond++;
+            } else {
+                currentPond=1;
+            }
+            // Add selectedPond class to current pond's .loadPond element
+            $(".load-pond").removeClass("selectedPond");
+            $(".load-pond:nth-child("+(currentPond+1)+")").addClass("selectedPond");
+            pondManager.loadPond(currentPond);
+            currentPondPagination = Math.floor((currentPond-1)/pondsPerPage)
+            that.updatePagination()
+        });
 		this.updatePagination();
 	}
 
@@ -375,7 +405,7 @@ class PondManager extends Phaser.Scene {
         this.pondNum = id;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
-        this.infoText.setText(`Pond ${this.pondNum}`);
+        //this.infoText.setText(`Pond ${this.pondNum}`);
     }
 }
 
