@@ -11,8 +11,7 @@
 	<link rel="manifest" href="./manifest.webmanifest">
 </head>
 <body class="ubuntu" >
-	<div id="screens">
-		<nav class="navbar navbar-expand-lg bg-warning p-2">
+<nav class="navbar navbar-expand-lg bg-warning p-2">
 			<a class="navbar-brand text-white font-weight-bold" style="margin-right: auto;" id="menu1" href="#"><span><!--insert logo here-->&#9832; </span>Subatomo Pond Fan Project</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 				<span class="text-white">&#9776;</span>
@@ -37,6 +36,8 @@
 				</ul>
 			</div>
 		</nav>
+<div id="screens">
+		
 
 		<div class="d-flex justify-content-center">
 			<div id="home" class="screen" style="display:block;">
@@ -83,12 +84,14 @@
   	//$(document).ready(function() {
   		//$("#about-project").hide();
   		//$("#about-subaru").hide();
+		//$("#screens").hide();
 		//$("#screens").show();
 		//$("#home").show();
 
 
   		function changeScreen(screen) {
   			hideScreen();
+			$("#screens").show();
 			window.game.input.enabled=false;
 			$("canvas").hide();
   			$(screen).show();
@@ -101,6 +104,7 @@
 
   		$("#spb1,#spb2").click(function() {
   			hideScreen();
+			$("#screens").hide();
   			$("canvas").show();
 			window.game.input.enabled=true;
 			$("#pond-ui").show();

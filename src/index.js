@@ -167,7 +167,7 @@ class MyGame extends Phaser.Scene {
             duckGameObject.input.cursor = 'pointer';
             console.log(duckGameObject.input.hitArea);
             duckGameObject.input.hitArea.setSize(duckGameObject.width, duckGameObject.height);
-            duckGameObject.input.hitArea.y=duckGameObject.height*0.5+5;
+            duckGameObject.input.hitArea.y=0;
             duckGameObject.state = duckStates.START_IDLE;
             let that = this;
 

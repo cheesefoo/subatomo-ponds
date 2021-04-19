@@ -76,7 +76,7 @@ module.exports = {
                 {from: "src/assets/css", to: "css"},
                 {from: "manifest.webmanifest", to: "manifest.webmanifest"},
                 {from: "sw.js", to: "sw.js"},
-                {from: "faicon.ico", to: "faicon.ico"},
+                {from: "favicon.ico", to: "favicon.ico"},
                 {from: "src/Form Submission/upload.html", to: "upload/upload.html"}
                 /*                {
                                     from: './src/!*',
