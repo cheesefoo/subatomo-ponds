@@ -34,21 +34,35 @@ const maxPond=		submissions.submissions[submissions.submissions.length-1].pond;
 
 class MyGame extends Phaser.Scene {
     constructor() {
-        super({key: 'pond', active: true});
+        super({key: 'pond', active: true,
+		
+		files: [
+          /* splash screen and progress bar files could go here */
+          {
+            key: './images/1.png',
+            type: 'image'
+          }
+        ]
+		
+		});
     }
 
     preload() {
         function loading() {
+			
+			
+			var progressWidth=320;
+			
             const progressBar = this.add.graphics();
             const progressBox = this.add.graphics();
             progressBox.fillStyle(0x222222, 0.8);
-            progressBox.fillRect(240, 270, 320, 50);
+            progressBox.fillRect(sceneWidth*0.5-progressWidth*0.5-10, sceneHeight*0.5, progressWidth, 50);
 
             const width = this.cameras.main.width;
             const height = this.cameras.main.height;
             const loadingText = this.make.text({
                 x: width / 2,
-                y: height / 2 - 50,
+                y: height / 2 - 55,
                 text: 'Loading...',
                 style: {
                     font: '20px monospace',
@@ -59,7 +73,7 @@ class MyGame extends Phaser.Scene {
 
             const percentText = this.make.text({
                 x: width / 2,
-                y: height / 2 - 5,
+                y: height / 2 - 30,
                 text: '0%',
                 style: {
                     font: '18px monospace',
@@ -68,43 +82,58 @@ class MyGame extends Phaser.Scene {
             });
             percentText.setOrigin(0.5, 0.5);
 
-            const assetText = this.make.text({
-                x: width / 2,
-                y: height / 2 + 50,
-                text: '',
-                style: {
-                    font: '18px monospace',
-                    fill: '#ffffff'
-                }
-            });
-            assetText.setOrigin(0.5, 0.5);
-
+            
             this.load.on('progress', function (value) {
                 percentText.setText(parseInt(value * 100) + '%');
                 progressBar.clear();
                 progressBar.fillStyle(0xffffff, 1);
-                progressBar.fillRect(250, 280, 300 * value, 30);
+                progressBar.fillRect(sceneWidth*0.5-progressWidth*0.5, sceneHeight*0.5+10, (progressWidth-20) * value, 30);
             });
+
+			var that= this;
+			
 
             this.load.on('fileprogress', function (file) {
-                assetText.setText('Loading asset: ' + file.key);
+                //assetText.setText('Loading asset: ' + file.key);
+				console.log(file.key);
+				
             });
+			
+			
+			
+			
 
             this.load.on('complete', function () {
+				
+				setTimeout(function(){
+				
+				let pondManager = that.scene.get('pond-manager');
+				pondManager.events.on('reloadPond', function () {
+					that.populateDucks(currentPond);
+				}, that);
+
+				that.shuba = that.sound.add('shuba');
+				that.populateDucks(currentPond);
+
+				that.generatePondUI();
+				
+				
                 progressBar.destroy();
                 progressBox.destroy();
                 loadingText.destroy();
                 percentText.destroy();
-                assetText.destroy();
+                $("#loadingDuck").hide();
                 $("canvas").hide();
                 window.game.input.enabled=false;
                 $("#screens").show();
-                //$("#home").show();
+				},1500);
+                
             });
         }
 
         loading.call(this);
-
+		
+		
         //Load sprite atlas
         this.load.multiatlas('allDucks', ducksj, 'assets');
         //Load audio files
@@ -112,15 +141,7 @@ class MyGame extends Phaser.Scene {
     }
 
     create() {
-        let pondManager = this.scene.get('pond-manager');
-        pondManager.events.on('reloadPond', function () {
-            this.populateDucks(currentPond);
-        }, this);
-
-        this.shuba = this.sound.add('shuba');
-        this.populateDucks(currentPond);
-
-        this.generatePondUI();
+        
     }
 
     //Fill pond number with their ducks

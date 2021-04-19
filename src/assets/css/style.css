@@ -41,6 +41,10 @@ background: radial-gradient(circle, rgba(3,188,252,1) 38%, rgba(4,128,171,1) 100
 
 .navbar{position:fixed;z-index:3;width:100%; top:0;}
 
+#loadingDuck{
+	position:fixed;top:0;right:0;left:0; margin:auto; max-height:50vh;
+}
+
 .screen{padding:10px 20px;max-width:600px; margin:auto; min-height:calc(100vh - 55px); background-color:white; -webkit-box-shadow: 0px 1px 15px 4px #FFFFFF; 
 box-shadow: 0px 1px 15px 4px #FFFFFF;
 min-height:calc(100vh-55px);
