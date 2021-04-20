@@ -1,0 +1,111 @@
+{
+  "frames": {
+    "water1.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 23
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "water2.png": {
+      "frame": {
+        "x": 0,
+        "y": 23,
+        "w": 100,
+        "h": 23
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "water3.png": {
+      "frame": {
+        "x": 0,
+        "y": 46,
+        "w": 100,
+        "h": 23
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "water4.png": {
+      "frame": {
+        "x": 0,
+        "y": 69,
+        "w": 100,
+        "h": 23
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.6",
+    "image": "water_sheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 100,
+      "h": 92
+    },
+    "scale": 1
+  }
+}

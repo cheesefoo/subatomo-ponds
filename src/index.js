@@ -1,30 +1,26 @@
-/*
-import 'phaser';
-import duck from './assets/base.png';
-import ducksj from './assets/ducks.json';
-import submissions from './assets/submissions/submissions.json';
-
-*/
 const DEBUGGING = false;
 import './assets/css/style.css';
 
 const ducksj = require('./assets/submissions/all_ducks_sheet.json');
-const submissions = require('./assets/submissions/submissions.json')
-const shuba = require('./assets/sound/suba.mp3')
+const waterj = require('./assets/pond/water_sheet.json')
+const submissions = require('./assets/submissions/submissions.json');
+const shuba = require('./assets/sound/suba.mp3');
 require('phaser');
 
 function importAll(r) {
+    "use strict";
     return r.keys().map(r);
 }
 
-const pondImg = require('./assets/pond/RPGpack_sheet.png')
-const pondTileJson = require('./assets/pond/pondtilemap.json')
-const allDucks = importAll(require.context('./', true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
-const ponds = importAll(require.context('./', true, /pond.*\.(json)$/));
+require('./assets/pond/RPGpack_sheet.png');
+const pondTileJson = require('./assets/pond/pondtilemap.json');
+importAll(require.context('./', true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+const waterImage = importAll(require.context('./', true, /water.*\.(png|jpe?g|svg)$/));
+importAll(require.context('./', true, /pond.*\.(json)$/));
 
 //Tile indices corresponding to water tiles in Tiled .tmx file
-const pondTileIndicies = [10, 11, 12, 13, 14, 30, 31, 32, 33, 34, 50, 51, 52];
-const groundTileIndices = [0,1,2,20,21,22,40,41,42];
+const pondTileIndices = [10, 11, 12, 13, 14, 30, 31, 32, 33, 34, 50, 51, 52];
+const groundTileIndices = [0, 1, 2, 20, 21, 22, 40, 41, 42];
 let pondLayer;
 let groundLayer;
 const FRAME_RATE = 10;
@@ -34,81 +30,117 @@ const SPRITE_HEIGHT = 100;
 const maxPond = submissions.submissions[submissions.submissions.length - 1].pond;
 const QUACK_DURATION = 1600;
 
-class MyGame extends Phaser.Scene {
+let sceneWidth = window.innerWidth;
+let sceneHeight = window.innerHeight - 56;
+
+const MIN_TRAVEL = 1000;
+const MAX_TRAVEL_TIME = 5000;
+const MAX_TRAVEL_DIST_X = sceneWidth / 4;
+const MAX_TRAVEL_DIST_Y = sceneHeight / 4;
+const minIdle = 0;
+const maxIdle = 5000;
+const WATER_SPRITE_HEIGHT = 45;
+
+let currentPond = 1;
+
+let currentPondPagination = 0;
+let pondsPerPage = 3;
+let maxPages;
+
+const DUCK_STATES = {
+    START_IDLE: 0,
+    IDLE: 1,
+    START_WALKING: 2,
+    WALKING: 3,
+    START_QUACK: 4,
+    QUACK: 5,
+    START_SWIM_IDLE: 6,
+    SWIM_IDLE: 7,
+    START_SWIMMING: 8,
+    SWIMMING: 9,
+    START_SWIM_QUACK: 10,
+    SWIM_QUACK: 11
+};
+
+class MyGame extends Phaser.Scene { // jshint ignore:line
     constructor() {
         super({key: 'pond', active: true});
     }
 
+
+    loadingScreen() {
+        const progressBar = this.add.graphics();
+        const progressBox = this.add.graphics();
+        progressBox.fillStyle(0x222222, 0.8);
+        progressBox.fillRect(240, 270, 320, 50);
+
+        const width = this.cameras.main.width;
+        const height = this.cameras.main.height;
+        const loadingText = this.make.text({
+            x: width / 2,
+            y: height / 2 - 50,
+            text: 'Loading...',
+            style: {
+                font: '20px monospace',
+                fill: '#ffffff'
+            }
+        });
+        loadingText.setOrigin(0.5, 0.5);
+
+        const percentText = this.make.text({
+            x: width / 2,
+            y: height / 2 - 5,
+            text: '0%',
+            style: {
+                font: '18px monospace',
+                fill: '#ffffff'
+            }
+        });
+        percentText.setOrigin(0.5, 0.5);
+
+        const assetText = this.make.text({
+            x: width / 2,
+            y: height / 2 + 50,
+            text: '',
+            style: {
+                font: '18px monospace',
+                fill: '#ffffff'
+            }
+        });
+        assetText.setOrigin(0.5, 0.5);
+
+        this.load.on('progress', function (value) {
+            percentText.setText(parseInt(value * 100) + '%');
+            progressBar.clear();
+            progressBar.fillStyle(0xffffff, 1);
+            progressBar.fillRect(250, 280, 300 * value, 30);
+        });
+
+        this.load.on('fileprogress', function (file) {
+            assetText.setText('Loading asset: ' + file.key);
+        });
+
+        this.load.on('complete', function () {
+            progressBar.destroy();
+            progressBox.destroy();
+            loadingText.destroy();
+            percentText.destroy();
+            assetText.destroy();
+            $("canvas").hide();
+            window.game.input.enabled = false;
+            $("#screens").show();
+            //$("#home").show();
+        });
+    }
+
     preload() {
-        function loading() {
-            const progressBar = this.add.graphics();
-            const progressBox = this.add.graphics();
-            progressBox.fillStyle(0x222222, 0.8);
-            progressBox.fillRect(240, 270, 320, 50);
 
-            const width = this.cameras.main.width;
-            const height = this.cameras.main.height;
-            const loadingText = this.make.text({
-                x: width / 2,
-                y: height / 2 - 50,
-                text: 'Loading...',
-                style: {
-                    font: '20px monospace',
-                    fill: '#ffffff'
-                }
-            });
-            loadingText.setOrigin(0.5, 0.5);
 
-            const percentText = this.make.text({
-                x: width / 2,
-                y: height / 2 - 5,
-                text: '0%',
-                style: {
-                    font: '18px monospace',
-                    fill: '#ffffff'
-                }
-            });
-            percentText.setOrigin(0.5, 0.5);
-
-            const assetText = this.make.text({
-                x: width / 2,
-                y: height / 2 + 50,
-                text: '',
-                style: {
-                    font: '18px monospace',
-                    fill: '#ffffff'
-                }
-            });
-            assetText.setOrigin(0.5, 0.5);
-
-            this.load.on('progress', function (value) {
-                percentText.setText(parseInt(value * 100) + '%');
-                progressBar.clear();
-                progressBar.fillStyle(0xffffff, 1);
-                progressBar.fillRect(250, 280, 300 * value, 30);
-            });
-
-            this.load.on('fileprogress', function (file) {
-                assetText.setText('Loading asset: ' + file.key);
-            });
-
-            this.load.on('complete', function () {
-                progressBar.destroy();
-                progressBox.destroy();
-                loadingText.destroy();
-                percentText.destroy();
-                assetText.destroy();
-                $("canvas").hide();
-                window.game.input.enabled = false;
-                $("#screens").show();
-                //$("#home").show();
-            });
-        }
-
-        loading.call(this);
+        this.loadingScreen();
 
         //Load sprite atlas
         this.load.multiatlas('allDucks', ducksj, 'assets');
+        this.load.atlas('water', waterImage, waterj);
         //Load audio files
         this.load.audio('shuba', shuba);
         this.load.image('tiles', 'assets/RPGpack_sheet.png');
@@ -131,7 +163,7 @@ class MyGame extends Phaser.Scene {
         pondLayer.setCollisionByProperty({collides: true});
 
 
-        const debugGraphics = this.add.graphics().setAlpha(0.75);
+        // const debugGraphics = this.add.graphics().setAlpha(0.75);
         // pondLayer.renderDebug(debugGraphics, {
         //     tileColor: null, // Color of non-colliding tiles
         //     collidingTileColor: new Phaser.Display.Color(23, 134, 177, 255), // Color of colliding tiles
@@ -150,19 +182,37 @@ class MyGame extends Phaser.Scene {
     populateDucks(pond = 1) {
         //Get submission reference sheet from google sheet and filter by pond #
         //{strName,strImageName,numPondNumber}
-        const submissionsArray = submissions['submissions'];
+        const submissionsArray = submissions['submissions']
+
         const ducks = submissionsArray.filter(function (obj) {
             return obj.pond == pond;
         });
         console.log(ducks);
-
+        const groupConfig = {
+            runChildUpdate: true,
+        };
         //Create sprite for ducks and add their animations
-        for (let i = 0; i < ducks.length ; i++) {
-            const duckGameObject = this.physics.add.sprite(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight), "allDucks", ducks[i].image + "-0.png")
+        for (let i = 0; i < ducks.length; i++) {
+            let duckContainer = this.add.container(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight));
+
+            const duckGameObject = this.physics.add.sprite(0, 0, "allDucks", ducks[i].image + "-0.png")
                 // .setCollideWorldBounds(true)
                 // .setBounce(1, 1)
                 .setDebug(true, false);//, new Phaser.Display.Color(255, 0, 0, 0));
+            //Create GO group with duck and water overlay
+
+
+            const waterOverlay = this.add.sprite(0, SPRITE_HEIGHT - 65, 'water', 'water1.png');
+            waterOverlay.setVisible(false);
+            waterOverlay.name = 'water';
+            duckContainer.add(duckGameObject)
+            duckContainer.add(waterOverlay);
+            duckContainer.name = 'duckcontainer';
+
+            //Init duck GO properties
+            duckGameObject.parent = duckContainer;
             duckGameObject.name = "duck";
+            duckGameObject.waterOverlay = waterOverlay;
             duckGameObject.displayName = ducks[i].name;
             duckGameObject.setOrigin(0.5, 0.5)
             duckGameObject.width = SPRITE_WIDTH;
@@ -171,24 +221,26 @@ class MyGame extends Phaser.Scene {
             duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x / 2);
             duckGameObject.body.overlapY = Math.floor(duckGameObject.body.y * 0.80);
 
-
             //initialize collision on tiles
-            pondLayer.setTileIndexCallback(pondTileIndicies, function (context) {
+            pondLayer.setTileIndexCallback(pondTileIndices, function (context) {
                 // console.log("swimming");
-                context.isSwimming = true;
+                // context.isSwimming = true;
+                context.waterOverlay.setVisible(true)
             }, this);
             this.physics.add.overlap(duckGameObject, pondLayer);
             groundLayer.setTileIndexCallback(groundTileIndices, function (context) {
                 // console.log("grounded")
-                context.isSwimming = false;
+                // context.isSwimming = false;
+                context.waterOverlay.setVisible(false)
             }, this);
             this.physics.add.overlap(duckGameObject, groundLayer);
 
             //Starting swimming state
-            duckGameObject.isSwimming = this.physics.overlap(duckGameObject, pondLayer);
+            duckGameObject.isSwimming = false;
+            // duckGameObject.isSwimming = this.physics.overlap(duckGameObject, pondLayer);
             if (duckGameObject.isSwimming != null)
                 duckGameObject.animState = duckGameObject.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
-            this.physics.overlap(duckGameObject,groundLayer);
+            this.physics.overlap(duckGameObject, groundLayer);
 
             //Duck object = {strName,strImageName,numPondNumber}, matches submission json
             duckGameObject.duck = ducks[i];
@@ -196,6 +248,7 @@ class MyGame extends Phaser.Scene {
 
             //Create animations
             const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3], ['swim-idle', 4, 4], ['swim', 5, 6], ['swim-quack', 7, 7]];
+            // const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3], ['swim-idle', 4, 4], ['swim', 5, 6], ['swim-quack', 7, 7]];
 
             //Generate frame names
             animationNames.forEach(animationName => {
@@ -222,10 +275,10 @@ class MyGame extends Phaser.Scene {
 
             //Fix hitbox
             this.time.addEvent({
-                delay: 1000, callback: function (context) {
-                    context.input.hitArea.setSize(context.width, context.height, true);
-                    context.setSize(context.width, context.height);
-                    context.input.hitArea.y = context.height/2;
+                delay: 1000, callback: function () {
+                    duckGameObject.input.hitArea.setSize(duckGameObject.width, duckGameObject.height, true);
+                    duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
+                    duckGameObject.input.hitArea.y = duckGameObject.height / 2;
 
                 }, callbackScope: this, loop: false
             });
@@ -236,15 +289,16 @@ class MyGame extends Phaser.Scene {
             //Set OnUpdate to use animations
             duckGameObject.updateState = function (context, delta) {
                 const scene = context.scene;
+                // console.log(context.displayName);
                 // if (context.isSwimming)
                 //     console.log(duckGameObject.displayName + " is swimming");
                 // else
                 //     console.log(duckGameObject.displayName + " is not swimming");
 
-                context.body.debugShowBody=true;
-                context.body.debugBodyColor = context.isSwimming
-                    ? new Phaser.Display.Color(0, 177, 64, 255)
-                    : new Phaser.Display.Color(255, 0, 0, 255);
+                // context.body.debugShowBody = true;
+                // context.body.debugBodyColor = context.isSwimming
+                //     ? new Phaser.Display.Color(0, 177, 64, 255)
+                //     : new Phaser.Display.Color(255, 0, 0, 255);
 
 
                 switch (context.animState) {
@@ -256,19 +310,18 @@ class MyGame extends Phaser.Scene {
                     case DUCK_STATES.IDLE:
                         context.idleTime -= delta;
                         if (context.idleTime <= 0) {
-                            context.animState = context.isSwimming ? DUCK_STATES.START_WALKING : DUCK_STATES.START_SWIMMING;
+                            context.animState = !context.isSwimming ? DUCK_STATES.START_WALKING : DUCK_STATES.START_SWIMMING;
                         }
                         break;
                     case DUCK_STATES.START_WALKING:
-                        const destinationX = getRandomDestinationX(context.x, MAX_TRAVEL_DIST_X);
-                        const destinationY = getRandomDestinationY(context.y, MAX_TRAVEL_DIST_Y);
+                        const destinationX = getRandomDestinationX(context.parent.x, MAX_TRAVEL_DIST_X);
+                        const destinationY = getRandomDestinationY(context.parent.y, MAX_TRAVEL_DIST_Y);
 
-                        if ((context.x > destinationX && !context.flipX)
-                            || context.x < destinationX && context.flipX)
-                            context.toggleFlipX();
+                        context.flipX = destinationX <= context.parent.x;
+
                         context.travelTime = getRandomInt(MIN_TRAVEL, MAX_TRAVEL_TIME);
                         context.tween = scene.tweens.add({
-                            targets: context,
+                            targets: context.parent,
                             x: destinationX,
                             y: destinationY,
                             duration: context.travelTime,
@@ -318,14 +371,10 @@ class MyGame extends Phaser.Scene {
                         const destX = getRandomDestinationX(context.x, MAX_TRAVEL_DIST_X);
                         const destY = getRandomDestinationY(context.y, MAX_TRAVEL_DIST_Y);
 
-                        if (destX > context.x) {
-                            context.flipX = false
-                        } else {
-                            context.flipX = true;
-                        }
+                        context.flipX = destX <= context.x;
                         context.travelTime = getRandomInt(MIN_TRAVEL, MAX_TRAVEL_TIME);
                         context.tween = scene.tweens.add({
-                            targets: context,
+                            targets: context.parent,
                             x: destX,
                             y: destY,
                             duration: context.travelTime,
@@ -396,15 +445,22 @@ class MyGame extends Phaser.Scene {
 
     generatePondUI() {
         $("body").append("<div id='pond-ui'></div>");
-        $("#pond-ui").append("<h3>Select pond</h3>");
-        $("#pond-ui").append("<div class='button-list'></div>");
+        let pond = $("#pond-ui");
+        pond.append("<h3>Select pond</h3>");
+        pond.append("<div class='button-list'></div>");
         for (let a = 0; a < maxPond; a++) {
             $(".button-list").append("<button class='load-pond' pond='" + (a + 1) + "'>" + (a + 1) + "</button>");
         }
         maxPages = Math.ceil(maxPond / pondsPerPage);
         console.log("max pages " + maxPages);
-        $("#pond-ui").append("<button id='prevPage'>Prev</button>");
-        $("#pond-ui").append("<button id='nextPage'>Next</button>");
+        pond.append("<button id='prevPage'>Prev</button>");
+        pond.append("<button id='nextPage'>Next</button>");
+
+        pond.append("<h3>Move water pixel by 1</h3>");
+
+        pond.append("<button id='waterUp'>+</button>")
+        pond.append("<button id='waterDown'>-</button>")
+
         $(".load-pond[pond=1]").addClass("selectedPond");
         let that = this;
         $("#prevPage").on("click", function () {
@@ -428,6 +484,26 @@ class MyGame extends Phaser.Scene {
 
         });
         this.updatePagination();
+        this.adjustWater()
+
+    }
+
+    adjustWater() {
+        let that = this;
+        $('#waterUp').on('click', function () {
+            let gOs = that.children.list;
+            for (let i = 0; i < gOs.length; i++) {
+                if (gOs[i].type == 'Container')
+                    gOs[i].last.y -= 1;
+            }
+        });
+        $('#waterDown').on('click', function () {
+            let gOs = that.children.list;
+            for (let i = 0; i < gOs.length; i++) {
+                if (gOs[i].type == 'Container')
+                    gOs[i].last.y += 1;
+            }
+        });
     }
 
     updatePagination() {
@@ -438,7 +514,24 @@ class MyGame extends Phaser.Scene {
     }
 
     update(time, delta) {
-        for (let i = 0; i < this.children.list.length; i++) {
+        let gameObjectList = this.children.list;
+        let len = gameObjectList.length;
+        for (let i = 0; i < len; i++) {
+            let gameObject = gameObjectList[i];
+            if (gameObject.type != 'Container') {
+                continue;
+            }
+            let duckContainer = gameObject;
+
+            let duckGO = duckContainer.first;
+            duckGO.setDepth(duckGO.y);
+            duckGO.updateState(duckGO, delta);
+
+        }
+    }
+
+    /*
+    for (let i = 0; i < this.children.list.length; i++) {
             let gameObject = this.children.list[i];
             if (gameObject.name !== "duck") {
                 continue;
@@ -446,14 +539,10 @@ class MyGame extends Phaser.Scene {
             gameObject.setDepth(gameObject.y);
             gameObject.updateState(gameObject, delta);
         }
-    }
+
+     */
+
 }
-
-let currentPond = 1;
-
-let currentPondPagination = 0;
-let pondsPerPage = 3;
-let maxPages;
 
 class PondManager extends Phaser.Scene {
 
@@ -514,33 +603,6 @@ class PondManager extends Phaser.Scene {
     }
 }
 
-let sceneWidth = window.innerWidth;
-let sceneHeight = window.innerHeight - 56;
-let aspectRatio = sceneWidth / sceneHeight;
-const REFERENCE_ASPECT_RATIO = 1.78;//16/9
-
-const MIN_TRAVEL = 1000;
-const MAX_TRAVEL_TIME = 5000;
-const MAX_TRAVEL_DIST_X = sceneWidth / 4;
-const MAX_TRAVEL_DIST_Y = sceneHeight / 4;
-const minIdle = 0;
-const maxIdle = 5000;
-
-
-const DUCK_STATES = {
-    START_IDLE: 0,
-    IDLE: 1,
-    START_WALKING: 2,
-    WALKING: 3,
-    START_QUACK: 4,
-    QUACK: 5,
-    START_SWIM_IDLE: 6,
-    SWIM_IDLE: 7,
-    START_SWIMMING: 8,
-    SWIMMING: 9,
-    START_SWIM_QUACK: 10,
-    SWIM_QUACK: 11
-};
 
 const config = {
     type: Phaser.CANVAS,
@@ -581,8 +643,8 @@ function getRandomDestinationX(startPos, maxDist) {
 
 function getRandomDestinationY(startPos, maxDist) {
     let dist = 0;
-    dist = getRandomInt(0, 1) == 1
-        ? -1 * maxDist
+    dist = getRandomInt(0, 1) == 1 ?
+        -1 * maxDist
         : maxDist;
     let destination = getRandomInt(startPos, startPos + dist);
     if (destination < 0 || destination > sceneHeight)
