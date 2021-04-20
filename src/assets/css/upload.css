@@ -124,9 +124,9 @@ input[type=submit]:hover {
 }
 
 #animPreview{
-    background: magenta;
-    display: block;
-    margin:0 auto 0 auto;
+    background: cornflowerblue;
+    /*display: block;*/
+    /*margin:0 auto 0 auto;*/
     width:200px;
     height:200px;
 }

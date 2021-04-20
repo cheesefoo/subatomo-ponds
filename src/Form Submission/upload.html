@@ -4,15 +4,14 @@
 <head>
     <title>Subaru Milestone Submission Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
-    <script src="dropzone.bundle.js"></script>
-    <link href="css/upload.css" rel="stylesheet"/>
-        <link href="css/dropzone.css" rel="stylesheet"/>
+<!--    <script src="../dropzone.bundle.js"></script>-->
+    <link href="/css/upload.css" rel="stylesheet"/>
+<!--    <link href="../css/dropzone.css" rel="stylesheet"/>-->
 </head>
 
 <body>
 <div class="contact-us" style="max-width:600px;">
-    <form class="dropzone"
-          action="https://script.google.com/macros/s/AKfycbwvt7E5cSBSRulXQIwn-fh-SpjUAjKE4U_0n-wEcecm5tgb7KhF0Dtuy3WW6VSMj9f9IA/exec"
+    <form action="https://script.google.com/macros/s/AKfycbwvt7E5cSBSRulXQIwn-fh-SpjUAjKE4U_0n-wEcecm5tgb7KhF0Dtuy3WW6VSMj9f9IA/exec"
           id="form" method="post">
         <div id="data">
             <div class="displayName">
@@ -36,21 +35,22 @@
             <label>Upload your duck png bellow, it has to be up to the dimensions allowed in the project detailed in
                 xxxxxx</label>
             <input accept="image/png" id="uploadFile" name="file" type="file">
-            <input id="submit" onclick="submitting();" type="submit">
+            <input id="submit" type="submit">
         </div>
 
     </form>
     <div id="submitting" style="display:none;">Uploading duck...</div>
-    <canvas id="animPreview" style="visibility:hidden"></canvas>
+    <canvas height="200" id="animPreview1" style="visibility:hidden" width="200"></canvas>
+    <canvas height="200" id="animPreview2" style="visibility:hidden" width="200"></canvas>
 </div>
 <script>
-    Dropzone.options.form = {
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 2, // MB
-        accept: function (file, done) {
-            chooseFile(file)
-        }
-    };
+    // Dropzone.options.form = {
+    //     paramName: "file", // The name that will be used to transfer the file
+    //     maxFilesize: 2, // MB
+    //     accept: function (file, done) {
+    //         chooseFile(file)
+    //     }
+    // };
 
     function disallowedChars(e) {
         let regex = new RegExp(escapeRegExp('<>:"/\\|?*'));
@@ -86,7 +86,8 @@
         if (file) {
             reader.addEventListener("load", function (e) {
                 spritesheet.src = reader.result;
-                canvasElement.style.visibility = "visible";
+                canvas1.style.visibility = "visible";
+                canvas2.style.visibility = "visible";
                 startAnimating(10);
 
                 //todo: check image dimensions?
@@ -108,17 +109,23 @@
 
     let w = 200;
     let h = 200;
-    let sx, sy = 0;
+    let sx1, sy1, sx2, sy2 = 0;
     let scale = 1;
-    let canvasElement = document.getElementById("animPreview");
-    let canvasContext = canvasElement.getContext("2d");
-    let canvas = canvasContext.canvas;
-    let currentFrame = 1;
-    const framesInAnimation = 3;
-    const centerCanvas = () => {
-        canvas.style.marginTop =
-            `${((window.innerHeight / 2) - (canvas.height / 2))}px`;
-    };
+    let canvas1 = document.getElementById("animPreview1");
+    let canvas2 = document.getElementById("animPreview2");
+    // let canvas = document.querySelector("#animPreview");
+    let canvasContext1 = canvas1.getContext("2d");
+    let canvasContext2 = canvas2.getContext("2d");
+
+    let currentFrame = 0;
+    const framesInAnimation = 2;
+    // const framesInAnimation = 4;
+
+
+    // const centerCanvas = () => {
+    //     canvas.style.marginTop =
+    //         `${((window.innerHeight / 2) - (canvas.height / 2))}px`;
+    // };
 
     // centerCanvas()
 
@@ -138,65 +145,93 @@
 
         if (elapsed > fpsInterval) {
             then = now - (elapsed % fpsInterval);
-            canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+            canvasContext1.clearRect(0, 0, canvas1.width, canvas1.height);
+            canvasContext2.clearRect(0, 0, canvas2.width, canvas2.height);
 
             //Set corner coordinates according to current frame
-            sx = currentFrame % 2 === 0 ? w : 0;
-            sy = currentFrame <= 2 ? 0 : h;
+            sx1 = currentFrame === 0 ? w : 0;
+            sy1 = currentFrame === 0 ? 0 : h;
+            // sx = currentFrame % 2 === 0 ? 0 : w;
+            // sy = currentFrame < 2 ? 0 : h;
 
+            sx2 = currentFrame === 0 ? 0 : w;
+            sy2 = currentFrame === 0 ? 0 : h
             // console.log(currentFrame + ":" + sx + "x" + sy);
 
-            canvasContext.drawImage(spritesheet, sx, sy, w, h, 0, 0, w * scale, h * scale);
+            canvasContext1.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
+            canvasContext2.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);
             currentFrame++;
-            if (currentFrame > framesInAnimation+1)
-                currentFrame = 1;
+            if (currentFrame == framesInAnimation)
+                currentFrame = 0;
         }
     }
 
-    //$('#uploadFile').on("change", function () {
-    //    try {
-    //        document.getElementById('raw-sbm').remove();
-    //        document.getElementById('mime-sbm').remove();
-    //        document.getElementById('filetype-sbm').remove();
-    //    } catch (e) {
-    //    }
-    //    const file = this.files[0];
-    //    const fr = new FileReader();
-    //    fr.fileName = file.name;
-    //    fr.onload = function (e) {
-    //        e.target.result
-    //        html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
-    //        html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
-    //        html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
-    //        // $("#data").empty().append(html);
-    //        $("#data").append(html);
-    //    }
-    //    fr.readAsDataURL(file);
-    //});
+    // const form = document.getElementById("form");
+    // form.addEventListener("submit", (e) => {
+    //     e.preventDefault();
+    //     const file = form.file.files[0];
+    //     const fr = new FileReader();
+    //     fr.readAsArrayBuffer(file);
+    //     fr.onload = (f) => {
+    //         const url = "https://script.google.com/macros/s/AKfycby5dNMqdomfxosO_mUQK4buNVONl59c1WS9etBBUVJ1M8sMJ3YxZlnPX1shp43esHmzIg/exec";
+    //
+    //         const qs = new URLSearchParams({
+    //             filename: file.name,
+    //             mimeType: file.type,
+    //         });
+    //         fetch(`${url}?${qs}`, {
+    //             method: "POST",
+    //             body: JSON.stringify([...new Int8Array(f.target.result)]),
+    //         })
+    //             .then((res) => res.json())
+    //             .then(console.log)
+    //             .catch(console.log);
+    //     };
+    // });
+    $('#uploadFile').on("change", function () {
+       try {
+           document.getElementById('raw-sbm').remove();
+           document.getElementById('mime-sbm').remove();
+           document.getElementById('filetype-sbm').remove();
+       } catch (e) {
+       }
+       const file = this.files[0];
+       const fr = new FileReader();
+       fr.fileName = file.name;
+       fr.onload = function (e) {
+           e.target.result
+           html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
+           html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
+           html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
+           // $("#data").empty().append(html);
+           $("#data").append(html);
+       }
+       fr.readAsDataURL(file);
+    });
 
-    function submitting() {
-        $("form").hide();
-        $("#submitting").show();
-        try {
-            document.getElementById('raw-sbm').remove();
-            document.getElementById('mime-sbm').remove();
-            document.getElementById('filetype-sbm').remove();
-        } catch (e) {
-        }
-
-        const file = document.getElementById("uploadFile").files[0];
-        const fr = new FileReader();
-        fr.fileName = file.name;
-        fr.onload = function (e) {
-            e.target.result
-            html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
-            html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
-            html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
-            // $("#data").empty().append(html);
-            $("#data").append(html);
-        }
-        fr.readAsDataURL(file);
-    }
+    // function submitting() {
+    //     $("form").hide();
+    //     $("#submitting").show();
+    //     try {
+    //         document.getElementById('raw-sbm').remove();
+    //         document.getElementById('mime-sbm').remove();
+    //         document.getElementById('filetype-sbm').remove();
+    //     } catch (e) {
+    //     }
+    //
+    //     const file = document.getElementById("uploadFile").files[0];
+    //     const fr = new FileReader();
+    //     fr.fileName = file.name;
+    //     fr.onload = function (e) {
+    //         e.target.result
+    //         html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
+    //         html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
+    //         html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
+    //         // $("#data").empty().append(html);
+    //         $("#data").append(html);
+    //     }
+    //     fr.readAsDataURL(file);
+    // }
 </script>
 </body>
 
