@@ -218,6 +218,9 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             });
         })
 
+        let walkAnim = this.anims.get('walk');
+        walkAnim.addFrameAt(0, this.anims.get('idle').getFrames());
+
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
             let duckContainer = this.add.container(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight));
@@ -253,9 +256,9 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             duckGameObject.setOrigin(0.5, 0.5)
             duckGameObject.width = SPRITE_WIDTH;
             duckGameObject.height = SPRITE_HEIGHT;
-            duckGameObject.body.syncBounds = true;
-            duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x / 2);
-            duckGameObject.body.overlapY = Math.floor(duckGameObject.body.y * 0.80);
+            // duckGameObject.body.syncBounds = true;
+            duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x * 0.50);
+            duckGameObject.body.overlapY = Math.floor(duckGameObject.body.y * 0.90);
 
             //initialize collision on tiles
             pondLayer.setTileIndexCallback(pondTileIndices, function (context) {
@@ -309,9 +312,9 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                 });
             });
             // //insert 1 more frame of idle inbetween the walk frames
-            // //this is for the duck that has legs 'built-in'
-            // let walkAnim = this.anims.get(currentDuck + '-' + 'walk');
-            // walkAnim.addFrameAt(1, this.anims.get(currentDuck + '-' + 'idle').getFrames());
+
+            let walkAnim = this.anims.get(currentDuck + '-' + 'walk');
+            walkAnim.addFrameAt(1, this.anims.get(currentDuck + '-' + 'idle').getFrames());
 
             //Set event for click/press
             duckGameObject.setInteractive();
@@ -322,8 +325,11 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             this.time.addEvent({
                 delay: 1000, callback: function () {
                     duckGameObject.input.hitArea.setSize(duckGameObject.width, duckGameObject.height, true);
-                    duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
+                    // duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
                     duckGameObject.input.hitArea.y = duckGameObject.height / 2;
+
+                    duckGameObject.body.setSize(80,10,false);
+                    duckGameObject.body.setOffset(10,70);
 
                 }, callbackScope: this, loop: false
             });
@@ -340,10 +346,10 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                 // else
                 //     console.log(duckGameObject.displayName + " is not swimming");
 
-                // context.body.debugShowBody = true;
-                // context.body.debugBodyColor = context.isSwimming
-                //     ? new Phaser.Display.Color(0, 177, 64, 255)
-                //     : new Phaser.Display.Color(255, 0, 0, 255);
+                context.body.debugShowBody = true;
+                context.body.debugBodyColor = context.isSwimming
+                    ? new Phaser.Display.Color(0, 177, 64, 255)
+                    : new Phaser.Display.Color(255, 0, 0, 255);
 
 
                 switch (context.animState) {
@@ -479,7 +485,8 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
 
 
     onObjectClicked(pointer, gameObject) {
-        gameObject.animState = gameObject.isSwimming ? DUCK_STATES.START_SWIM_QUACK : DUCK_STATES.START_QUACK;
+        // gameObject.animState = gameObject.isSwimming ? DUCK_STATES.START_SWIM_QUACK : DUCK_STATES.START_QUACK;
+        gameObject.animState = DUCK_STATES.START_QUACK;
         if (gameObject.namePopup != null) return;
         gameObject.namePopup = gameObject.scene.make.text({
                 x: gameObject.x, y: gameObject.y - 50, text: gameObject.displayName,
