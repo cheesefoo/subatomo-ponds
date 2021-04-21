@@ -198,7 +198,7 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
 
 
 
-        const walkingNames = [['idle', 0, 0], ['walk', 0, 2], ['quack', 0, 0]];
+        const walkingNames = [['idle', 1, 1], ['walk', 0, 2], ['quack', 1, 1]];
 
         walkingNames.forEach(animationName => {
             let animName = animationName[0];
@@ -233,14 +233,14 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             waterOverlay.setVisible(false);
             waterOverlay.name = 'water'; */
 
-            const legsOverlay = this.add.sprite(0, -30, 'legs', '1.png');
+            const legsOverlay = this.add.sprite(0, 0, 'legs', '1.png');
             legsOverlay.setVisible(true);
             legsOverlay.name = 'legs';
 
 
+            duckContainer.add(legsOverlay);
             duckContainer.add(duckGameObject)
             // duckContainer.add(waterOverlay);
-            duckContainer.add(legsOverlay);
             duckContainer.name = 'duckcontainer';
             // legsOverlay.parentContainer=duckContainer;
 
@@ -276,8 +276,9 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             //Starting swimming state
             duckGameObject.isSwimming = false;
             // duckGameObject.isSwimming = this.physics.overlap(duckGameObject, pondLayer);
-            if (duckGameObject.isSwimming != null)
-                duckGameObject.animState = duckGameObject.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
+            // if (duckGameObject.isSwimming != null)
+            //     duckGameObject.animState = duckGameObject.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
+            duckGameObject.animState= DUCK_STATES.START_IDLE;
             this.physics.overlap(duckGameObject, groundLayer);
 
             //Duck object = {strName,strImageName,numPondNumber}, matches submission json
@@ -579,7 +580,7 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             }
             let duckContainer = gameObject;
 
-            let duckGO = duckContainer.first;
+            let duckGO = duckContainer.last;
             duckGO.setDepth(duckGO.y);
             duckGO.updateState(duckGO, delta);
 

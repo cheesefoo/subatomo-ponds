@@ -4,8 +4,8 @@
 			"image": "legs.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 250,
-				"h": 57
+				"w": 127,
+				"h": 29
 			},
 			"scale": 1,
 			"frames": [
@@ -14,20 +14,20 @@
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 200,
-						"h": 200
+						"w": 100,
+						"h": 100
 					},
 					"spriteSourceSize": {
-						"x": 58,
-						"y": 133,
-						"w": 107,
-						"h": 57
+						"x": 29,
+						"y": 67,
+						"w": 54,
+						"h": 29
 					},
 					"frame": {
 						"x": 0,
 						"y": 0,
-						"w": 107,
-						"h": 57
+						"w": 54,
+						"h": 29
 					}
 				},
 				{
@@ -35,20 +35,20 @@
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 200,
-						"h": 200
+						"w": 100,
+						"h": 100
 					},
 					"spriteSourceSize": {
-						"x": 62,
-						"y": 140,
-						"w": 96,
-						"h": 36
+						"x": 30,
+						"y": 70,
+						"w": 49,
+						"h": 18
 					},
 					"frame": {
-						"x": 107,
+						"x": 54,
 						"y": 0,
-						"w": 96,
-						"h": 36
+						"w": 49,
+						"h": 18
 					}
 				},
 				{
@@ -56,20 +56,20 @@
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 200,
-						"h": 200
+						"w": 100,
+						"h": 100
 					},
 					"spriteSourceSize": {
-						"x": 75,
-						"y": 155,
-						"w": 47,
-						"h": 37
+						"x": 37,
+						"y": 77,
+						"w": 24,
+						"h": 19
 					},
 					"frame": {
-						"x": 203,
+						"x": 103,
 						"y": 0,
-						"w": 47,
-						"h": 37
+						"w": 24,
+						"h": 19
 					}
 				}
 			]
