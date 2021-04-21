@@ -1,0 +1,82 @@
+{
+	"textures": [
+		{
+			"image": "legs.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 250,
+				"h": 57
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 200,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 133,
+						"w": 107,
+						"h": 57
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 107,
+						"h": 57
+					}
+				},
+				{
+					"filename": "0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 200,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 140,
+						"w": 96,
+						"h": 36
+					},
+					"frame": {
+						"x": 107,
+						"y": 0,
+						"w": 96,
+						"h": 36
+					}
+				},
+				{
+					"filename": "1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 200,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 75,
+						"y": 155,
+						"w": 47,
+						"h": 37
+					},
+					"frame": {
+						"x": 203,
+						"y": 0,
+						"w": 47,
+						"h": 37
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.6"
+	}
+}

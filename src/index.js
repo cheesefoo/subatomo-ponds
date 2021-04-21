@@ -3,6 +3,7 @@ import './assets/css/style.css';
 
 const ducksj = require('./assets/submissions/all_ducks_sheet.json');
 const waterj = require('./assets/pond/water_sheet.json')
+const legsj = require('./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json')
 const submissions = require('./assets/submissions/submissions.json');
 const shuba = require('./assets/sound/suba.mp3');
 require('phaser');
@@ -16,6 +17,7 @@ require('./assets/pond/RPGpack_sheet.png');
 const pondTileJson = require('./assets/pond/pondtilemap.json');
 importAll(require.context('./', true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
 const waterImage = importAll(require.context('./', true, /water.*\.(png|jpe?g|svg)$/));
+const legs = importAll(require.context('./', true, /legs.*\.(png|jpe?g|svg)$/));
 importAll(require.context('./', true, /pond.*\.(json)$/));
 
 //Tile indices corresponding to water tiles in Tiled .tmx file
@@ -141,6 +143,8 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
         //Load sprite atlas
         this.load.multiatlas('allDucks', ducksj, 'assets');
         this.load.atlas('water', waterImage, waterj);
+        // this.load.atlas('legs', legs, legsj);
+        this.load.multiatlas('legs', legsj, 'assets');
         //Load audio files
         this.load.audio('shuba', shuba);
         this.load.image('tiles', 'assets/RPGpack_sheet.png');
@@ -191,6 +195,29 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
         const groupConfig = {
             runChildUpdate: true,
         };
+
+
+
+        const walkingNames = [['idle', 0, 0], ['walk', 0, 2], ['quack', 0, 0]];
+
+        walkingNames.forEach(animationName => {
+            let animName = animationName[0];
+            let startFrame = animationName[1];
+            let endFrame = animationName[2];
+            let frameNames = this.anims.generateFrameNames('legs', {
+                start: startFrame, end: endFrame,
+
+                suffix: '.png'
+            });
+
+            this.anims.create({
+                key: animName,
+                frames: frameNames,
+                frameRate: FRAME_RATE,
+                repeat: -1
+            });
+        })
+
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
             let duckContainer = this.add.container(getRandomInt(0, sceneWidth), getRandomInt(0, sceneHeight));
@@ -202,17 +229,26 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             //Create GO group with duck and water overlay
 
 
-            const waterOverlay = this.add.sprite(0, SPRITE_HEIGHT - 65, 'water', 'water1.png');
+            /*const waterOverlay = this.add.sprite(0, SPRITE_HEIGHT - 65, 'water', 'water1.png');
             waterOverlay.setVisible(false);
-            waterOverlay.name = 'water';
+            waterOverlay.name = 'water'; */
+
+            const legsOverlay = this.add.sprite(0, -30, 'legs', '1.png');
+            legsOverlay.setVisible(true);
+            legsOverlay.name = 'legs';
+
+
             duckContainer.add(duckGameObject)
-            duckContainer.add(waterOverlay);
+            // duckContainer.add(waterOverlay);
+            duckContainer.add(legsOverlay);
             duckContainer.name = 'duckcontainer';
+            // legsOverlay.parentContainer=duckContainer;
 
             //Init duck GO properties
             duckGameObject.parent = duckContainer;
             duckGameObject.name = "duck";
-            duckGameObject.waterOverlay = waterOverlay;
+            // duckGameObject.waterOverlay = waterOverlay;
+            duckGameObject.legsOverlay = legsOverlay;
             duckGameObject.displayName = ducks[i].name;
             duckGameObject.setOrigin(0.5, 0.5)
             duckGameObject.width = SPRITE_WIDTH;
@@ -224,14 +260,16 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             //initialize collision on tiles
             pondLayer.setTileIndexCallback(pondTileIndices, function (context) {
                 // console.log("swimming");
-                // context.isSwimming = true;
-                context.waterOverlay.setVisible(true)
+                context.isSwimming = true;
+                // context.waterOverlay.setVisible(true)
+                context.legsOverlay.setVisible(false)
             }, this);
             this.physics.add.overlap(duckGameObject, pondLayer);
             groundLayer.setTileIndexCallback(groundTileIndices, function (context) {
                 // console.log("grounded")
-                // context.isSwimming = false;
-                context.waterOverlay.setVisible(false)
+                context.isSwimming = false;
+                // context.waterOverlay.setVisible(false)
+                context.legsOverlay.setVisible(true)
             }, this);
             this.physics.add.overlap(duckGameObject, groundLayer);
 
@@ -247,7 +285,8 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             const currentDuck = duckGameObject.duck.image;
 
             //Create animations
-            const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3], ['swim-idle', 4, 4], ['swim', 5, 6], ['swim-quack', 7, 7]];
+            // const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3], ['swim-idle', 4, 4], ['swim', 5, 6], ['swim-quack', 7, 7]];
+            const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3]];//, ['swim-idle', 0, 0], ['swim', 1, 2], ['swim-quack', 3, 3]];
             // const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3], ['swim-idle', 4, 4], ['swim', 5, 6], ['swim-quack', 7, 7]];
 
             //Generate frame names
@@ -260,6 +299,7 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                     prefix: currentDuck + '-',
                     suffix: '.png'
                 });
+
                 this.anims.create({
                     key: currentDuck + '-' + animName,
                     frames: frameNames,
@@ -267,6 +307,10 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                     repeat: -1
                 });
             });
+            // //insert 1 more frame of idle inbetween the walk frames
+            // //this is for the duck that has legs 'built-in'
+            // let walkAnim = this.anims.get(currentDuck + '-' + 'walk');
+            // walkAnim.addFrameAt(1, this.anims.get(currentDuck + '-' + 'idle').getFrames());
 
             //Set event for click/press
             duckGameObject.setInteractive();
@@ -304,13 +348,16 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                 switch (context.animState) {
                     case DUCK_STATES.START_IDLE:
                         context.play(currentDuck + "-idle");
+                        // if (!context.isSwimming)
+                            context.legsOverlay.play("idle");
                         context.idleTime = getRandomInt(minIdle, maxIdle)
                         context.animState = DUCK_STATES.IDLE;
                         break;
                     case DUCK_STATES.IDLE:
                         context.idleTime -= delta;
                         if (context.idleTime <= 0) {
-                            context.animState = !context.isSwimming ? DUCK_STATES.START_WALKING : DUCK_STATES.START_SWIMMING;
+                            // context.animState = !context.isSwimming ? DUCK_STATES.START_WALKING : DUCK_STATES.START_SWIMMING;
+                            context.animState = DUCK_STATES.START_WALKING;
                         }
                         break;
                     case DUCK_STATES.START_WALKING:
@@ -318,6 +365,7 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                         const destinationY = getRandomDestinationY(context.parent.y, MAX_TRAVEL_DIST_Y);
 
                         context.flipX = destinationX <= context.parent.x;
+                        context.legsOverlay.flipX = destinationX <= context.parent.x;
 
                         context.travelTime = getRandomInt(MIN_TRAVEL, MAX_TRAVEL_TIME);
                         context.tween = scene.tweens.add({
@@ -329,16 +377,19 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                         });
 
                         context.play(currentDuck + '-walk');
+                        // if (!context.isSwimming)
+                            context.legsOverlay.play('walk');
                         context.animState = DUCK_STATES.WALKING;
                         break;
                     case DUCK_STATES.WALKING:
                         context.travelTime -= delta;
-                        if (context.isSwimming) {
-                            context.animState = DUCK_STATES.SWIMMING;
-                            context.play(currentDuck + '-swim');
-                        }
+                        // if (context.isSwimming) {
+                        //     context.animState = DUCK_STATES.SWIMMING;
+                        //     context.play(currentDuck + '-swim');
+                        // }
                         if (context.travelTime <= 0) {
-                            context.animState = context.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
+                            // context.animState = context.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
+                            context.animState = DUCK_STATES.START_IDLE;
                         }
                         break;
                     case DUCK_STATES.START_QUACK:
@@ -346,6 +397,9 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                             context.tween.stop();
                         }
                         context.play(currentDuck + "-quack");
+                        if(!context.isSwimming)
+                            context.legsOverlay.play( "quack");
+
                         that.shuba.play();
                         context.quackTime = QUACK_DURATION;
                         context.animState = DUCK_STATES.QUACK;
@@ -356,60 +410,61 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                             context.animState = DUCK_STATES.START_IDLE;
                         }
                         break;
-                    case DUCK_STATES.START_SWIM_IDLE:
-                        context.play(currentDuck + "-swim-idle");
-                        context.idleTime = getRandomInt(minIdle, maxIdle)
-                        context.animState = DUCK_STATES.SWIM_IDLE;
-                        break;
-                    case DUCK_STATES.SWIM_IDLE:
-                        context.idleTime -= delta;
-                        if (context.idleTime <= 0) {
-                            context.animState = context.isSwimming ? DUCK_STATES.START_SWIMMING : DUCK_STATES.START_WALKING;
-                        }
-                        break;
-                    case DUCK_STATES.START_SWIMMING:
-                        const destX = getRandomDestinationX(context.x, MAX_TRAVEL_DIST_X);
-                        const destY = getRandomDestinationY(context.y, MAX_TRAVEL_DIST_Y);
+                    /*
+                                        case DUCK_STATES.START_SWIM_IDLE:
+                                            context.play(currentDuck + "-swim-idle");
+                                            context.idleTime = getRandomInt(minIdle, maxIdle)
+                                            context.animState = DUCK_STATES.SWIM_IDLE;
+                                            break;
+                                        case DUCK_STATES.SWIM_IDLE:
+                                            context.idleTime -= delta;
+                                            if (context.idleTime <= 0) {
+                                                context.animState = context.isSwimming ? DUCK_STATES.START_SWIMMING : DUCK_STATES.START_WALKING;
+                                            }
+                                            break;
+                                        case DUCK_STATES.START_SWIMMING:
+                                            const destX = getRandomDestinationX(context.x, MAX_TRAVEL_DIST_X);
+                                            const destY = getRandomDestinationY(context.y, MAX_TRAVEL_DIST_Y);
 
-                        context.flipX = destX <= context.x;
-                        context.travelTime = getRandomInt(MIN_TRAVEL, MAX_TRAVEL_TIME);
-                        context.tween = scene.tweens.add({
-                            targets: context.parent,
-                            x: destX,
-                            y: destY,
-                            duration: context.travelTime,
-                            ease: 'Linear',
-                        });
+                                            context.flipX = destX <= context.x;
+                                            context.travelTime = getRandomInt(MIN_TRAVEL, MAX_TRAVEL_TIME);
+                                            context.tween = scene.tweens.add({
+                                                targets: context.parent,
+                                                x: destX,
+                                                y: destY,
+                                                duration: context.travelTime,
+                                                ease: 'Linear',
+                                            });
 
-                        context.play(currentDuck + '-swim');
-                        context.animState = DUCK_STATES.SWIMMING;
-                        break;
-                    case DUCK_STATES.SWIMMING:
-                        context.travelTime -= delta;
-                        if (!context.isSwimming) {
-                            context.animState = DUCK_STATES.WALKING;
-                            context.play(currentDuck + '-walk');
-                        }
-                        if (context.travelTime <= 0) {
-                            context.animState = context.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
-                        }
-                        break;
-
-                    case DUCK_STATES.START_SWIM_QUACK:
-                        if (context.tween) {
-                            context.tween.stop();
-                        }
-                        context.play(currentDuck + "-swim-quack");
-                        that.shuba.play();
-                        context.quackTime = QUACK_DURATION;
-                        context.animState = DUCK_STATES.SWIM_QUACK;
-                        break;
-                    case DUCK_STATES.SWIM_QUACK:
-                        context.quackTime -= delta;
-                        if (context.quackTime <= 0) {
-                            context.animState = DUCK_STATES.START_SWIM_IDLE;
-                        }
-                        break;
+                                            context.play(currentDuck + '-swim');
+                                            context.animState = DUCK_STATES.SWIMMING;
+                                            break;
+                                        case DUCK_STATES.SWIMMING:
+                                            context.travelTime -= delta;
+                                            if (!context.isSwimming) {
+                                                context.animState = DUCK_STATES.WALKING;
+                                                context.play(currentDuck + '-walk');
+                                            }
+                                            if (context.travelTime <= 0) {
+                                                context.animState = context.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
+                                            }
+                                            break;
+                                        case DUCK_STATES.START_SWIM_QUACK:
+                                            if (context.tween) {
+                                                context.tween.stop();
+                                            }
+                                            context.play(currentDuck + "-swim-quack");
+                                            that.shuba.play();
+                                            context.quackTime = QUACK_DURATION;
+                                            context.animState = DUCK_STATES.SWIM_QUACK;
+                                            break;
+                                        case DUCK_STATES.SWIM_QUACK:
+                                            context.quackTime -= delta;
+                                            if (context.quackTime <= 0) {
+                                                context.animState = DUCK_STATES.START_SWIM_IDLE;
+                                            }
+                                            break;
+                                       */
                     default:
                         break;
                 }
@@ -456,7 +511,8 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
         pond.append("<button id='prevPage'>Prev</button>");
         pond.append("<button id='nextPage'>Next</button>");
 
-        pond.append("<h3>Move water pixel by 1</h3>");
+        // pond.append("<h3>Move water pixel by 1</h3>");
+        pond.append("<h3>Move legs by 1 pixel</h3>");
 
         pond.append("<button id='waterUp'>+</button>")
         pond.append("<button id='waterDown'>-</button>")
