@@ -12,7 +12,7 @@ module.exports = {
     entry: {
         main: './src/index.js',
         phaser: ['phaser'],
-        dropzone: ['dropzone']
+        // dropzone: ['dropzone']
 
     },
     output: {
