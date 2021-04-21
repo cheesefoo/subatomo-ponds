@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="/css/style.css" integrity=>
+	<link rel="stylesheet" href="./css/style.css" integrity=>
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="manifest" href="/manifest.webmanifest">
+	<title>大空スバルのスバ友池</title>
 </head>
 <body class="ubuntu" >
-	<div id="screens">
-		<nav class="navbar navbar-expand-lg bg-warning p-2">
+
+<img id="loadingDuck" src="./images/loading_duck.gif" >
+
+<nav class="navbar navbar-expand-lg bg-warning p-2">
 			<a class="navbar-brand text-white font-weight-bold" style="margin-right: auto;" id="menu1" href="#"><span><!--insert logo here-->&#9832; </span>Subatomo Pond Fan Project</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 				<span class="text-white">&#9776;</span>
@@ -37,11 +40,15 @@
 				</ul>
 			</div>
 		</nav>
+<div id="screens">
+
 
 		<div class="d-flex justify-content-center">
 			<div id="home" class="screen" style="display:block;">
+				<div class="content">
 				<img src="images/logo.png" />
 				<a class="nav-link text-white" id="spb2" href="#">Enter the ponds!</a>
+				</div>
 			</div>
 
 			<div id="about-project" class="screen">
@@ -56,7 +63,7 @@
 				<h1>Oozora Subaru</h1>
 				<img src="images/subaru.webp">
 				<div class="about-content"><p>The manager of an MMA club and an E-sports club. A supremely spirited, cheerful, lively girl who can talk to anyone without breaking a sweat. She’s currently practicing her pro-gamer skills.<br>
-				She is tottally not a duck
+				She is totally not a duck
 				</p><br>
 				<a href="https://www.youtube.com/channel/UCvzGlP9oQwU--Y0r9id_jnA">Youtube channel</a>
 				</div>
@@ -77,6 +84,7 @@
 
   		function changeScreen(screen) {
   			hideScreen();
+			$("#screens").show();
 			window.game.input.enabled=false;
 			$("canvas").hide();
   			$(screen).show();
@@ -89,6 +97,7 @@
 
   		$("#spb1,#spb2").click(function() {
   			hideScreen();
+			$("#screens").hide();
   			$("canvas").show();
 			window.game.input.enabled=true;
 			$("#pond-ui").show();
@@ -103,6 +112,12 @@
   			changeScreen("#about-subaru");
   			
   		});
+
+		$("body").on("click",".navbar a",function(){
+			if(!$(".navbar-toggler").hasClass("collapsed")){
+				$(".navbar-toggler").click();
+			}
+		});
   	//});
   </script>
 

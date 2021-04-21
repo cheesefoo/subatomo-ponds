@@ -9,7 +9,6 @@ const shuba = require('./assets/sound/suba.mp3');
 require('phaser');
 
 function importAll(r) {
-    "use strict";
     return r.keys().map(r);
 }
 
@@ -66,79 +65,103 @@ const DUCK_STATES = {
 
 class MyGame extends Phaser.Scene { // jshint ignore:line
     constructor() {
-        super({key: 'pond', active: true});
-    }
+        super({
+            key: 'pond', active: true,
 
+            files: [
+                /* splash screen and progress bar files could go here */
+                {
+                    key: './images/1.png',
+                    type: 'image'
+                }
+            ]
 
-    loadingScreen() {
-        const progressBar = this.add.graphics();
-        const progressBox = this.add.graphics();
-        progressBox.fillStyle(0x222222, 0.8);
-        progressBox.fillRect(240, 270, 320, 50);
-
-        const width = this.cameras.main.width;
-        const height = this.cameras.main.height;
-        const loadingText = this.make.text({
-            x: width / 2,
-            y: height / 2 - 50,
-            text: 'Loading...',
-            style: {
-                font: '20px monospace',
-                fill: '#ffffff'
-            }
-        });
-        loadingText.setOrigin(0.5, 0.5);
-
-        const percentText = this.make.text({
-            x: width / 2,
-            y: height / 2 - 5,
-            text: '0%',
-            style: {
-                font: '18px monospace',
-                fill: '#ffffff'
-            }
-        });
-        percentText.setOrigin(0.5, 0.5);
-
-        const assetText = this.make.text({
-            x: width / 2,
-            y: height / 2 + 50,
-            text: '',
-            style: {
-                font: '18px monospace',
-                fill: '#ffffff'
-            }
-        });
-        assetText.setOrigin(0.5, 0.5);
-
-        this.load.on('progress', function (value) {
-            percentText.setText(parseInt(value * 100) + '%');
-            progressBar.clear();
-            progressBar.fillStyle(0xffffff, 1);
-            progressBar.fillRect(250, 280, 300 * value, 30);
-        });
-
-        this.load.on('fileprogress', function (file) {
-            assetText.setText('Loading asset: ' + file.key);
-        });
-
-        this.load.on('complete', function () {
-            progressBar.destroy();
-            progressBox.destroy();
-            loadingText.destroy();
-            percentText.destroy();
-            assetText.destroy();
-            $("canvas").hide();
-            window.game.input.enabled = false;
-            $("#screens").show();
-            //$("#home").show();
         });
     }
 
     preload() {
+        function loading() {
 
 
-        this.loadingScreen();
+            var progressWidth = 320;
+
+            const progressBar = this.add.graphics();
+            const progressBox = this.add.graphics();
+            progressBox.fillStyle(0x222222, 0.8);
+            progressBox.fillRect(sceneWidth * 0.5 - progressWidth * 0.5 - 10, sceneHeight * 0.5, progressWidth, 50);
+
+            const width = this.cameras.main.width;
+            const height = this.cameras.main.height;
+            const loadingText = this.make.text({
+                x: width / 2,
+                y: height / 2 - 55,
+                text: 'Loading...',
+                style: {
+                    font: '20px monospace',
+                    fill: '#ffffff'
+                }
+            });
+            loadingText.setOrigin(0.5, 0.5);
+
+            const percentText = this.make.text({
+                x: width / 2,
+                y: height / 2 - 30,
+                text: '0%',
+                style: {
+                    font: '18px monospace',
+                    fill: '#ffffff'
+                }
+            });
+            percentText.setOrigin(0.5, 0.5);
+
+
+            this.load.on('progress', function (value) {
+                percentText.setText(parseInt(value * 100) + '%');
+                progressBar.clear();
+                progressBar.fillStyle(0xffffff, 1);
+                progressBar.fillRect(sceneWidth * 0.5 - progressWidth * 0.5, sceneHeight * 0.5 + 10, (progressWidth - 20) * value, 30);
+            });
+
+            var that = this;
+
+
+            this.load.on('fileprogress', function (file) {
+                //assetText.setText('Loading asset: ' + file.key);
+                console.log(file.key);
+
+            });
+
+
+            this.load.on('complete', function () {
+
+                setTimeout(function () {
+
+                    let pondManager = that.scene.get('pond-manager');
+                    pondManager.events.on('reloadPond', function () {
+                        that.populateDucks(currentPond);
+                    }, that);
+
+                    that.shuba = that.sound.add('shuba');
+                    that.populateDucks(currentPond);
+
+                    that.generatePondUI();
+
+
+                    progressBar.destroy();
+                    progressBox.destroy();
+                    loadingText.destroy();
+                    percentText.destroy();
+                    $("#loadingDuck").hide();
+                    $("canvas").hide();
+                    window.game.input.enabled = false;
+                    $("#screens").show();
+                }, 1500);
+
+            });
+        }
+
+        loading.call(this);
+
 
         //Load sprite atlas
         this.load.multiatlas('allDucks', ducksj, 'assets');
@@ -189,13 +212,12 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
         const submissionsArray = submissions['submissions']
 
         const ducks = submissionsArray.filter(function (obj) {
-            return obj.pond == pond;
+            return parseInt(obj.pond) === pond;
         });
         console.log(ducks);
         const groupConfig = {
             runChildUpdate: true,
         };
-
 
 
         const walkingNames = [['idle', 1, 1], ['walk', 0, 2], ['quack', 1, 1]];
@@ -281,7 +303,7 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
             // duckGameObject.isSwimming = this.physics.overlap(duckGameObject, pondLayer);
             // if (duckGameObject.isSwimming != null)
             //     duckGameObject.animState = duckGameObject.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
-            duckGameObject.animState= DUCK_STATES.START_IDLE;
+            duckGameObject.animState = DUCK_STATES.START_IDLE;
             this.physics.overlap(duckGameObject, groundLayer);
 
             //Duck object = {strName,strImageName,numPondNumber}, matches submission json
@@ -328,8 +350,8 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                     // duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
                     duckGameObject.input.hitArea.y = duckGameObject.height / 2;
 
-                    duckGameObject.body.setSize(80,10,false);
-                    duckGameObject.body.setOffset(10,70);
+                    duckGameObject.body.setSize(80, 10, false);
+                    duckGameObject.body.setOffset(10, 70);
 
                 }, callbackScope: this, loop: false
             });
@@ -356,7 +378,7 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                     case DUCK_STATES.START_IDLE:
                         context.play(currentDuck + "-idle");
                         // if (!context.isSwimming)
-                            context.legsOverlay.play("idle");
+                        context.legsOverlay.play("idle");
                         context.idleTime = getRandomInt(minIdle, maxIdle)
                         context.animState = DUCK_STATES.IDLE;
                         break;
@@ -385,7 +407,7 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
 
                         context.play(currentDuck + '-walk');
                         // if (!context.isSwimming)
-                            context.legsOverlay.play('walk');
+                        context.legsOverlay.play('walk');
                         context.animState = DUCK_STATES.WALKING;
                         break;
                     case DUCK_STATES.WALKING:
@@ -404,8 +426,8 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
                             context.tween.stop();
                         }
                         context.play(currentDuck + "-quack");
-                        if(!context.isSwimming)
-                            context.legsOverlay.play( "quack");
+                        if (!context.isSwimming)
+                            context.legsOverlay.play("quack");
 
                         that.shuba.play();
                         context.quackTime = QUACK_DURATION;
@@ -605,8 +627,11 @@ class MyGame extends Phaser.Scene { // jshint ignore:line
         }
 
      */
-
 }
+    var currentPond = 1;
+var currentPondPagination=0;
+var pondsPerPage=3;
+var maxPages;
 
 class PondManager extends Phaser.Scene {
 
@@ -645,7 +670,8 @@ class PondManager extends Phaser.Scene {
         this.pondNum = (this.pondNum) % maxPond + 1;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
-        this.infoText.setText(`Pond ${this.pondNum}`);
+
+        //this.infoText.setText(`Pond ${this.pondNum}`);
     }
 
     loadPond(id) {
@@ -663,7 +689,7 @@ class PondManager extends Phaser.Scene {
         this.pondNum = id;
         currentPond = this.pondNum;
         this.events.emit('reloadPond');
-        this.infoText.setText(`Pond ${this.pondNum}`);
+        //this.infoText.setText(`Pond ${this.pondNum}`);
     }
 }
 
