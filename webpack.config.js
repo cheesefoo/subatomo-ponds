@@ -23,7 +23,9 @@ module.exports = {
     },
     entry: {
         main: './src/index.js',
-        vendor: ['phaser']
+        phaser: ['phaser'],
+        // dropzone: ['dropzone']
+
     },
     output: {
         filename: '[name].bundle.js',
@@ -57,7 +59,7 @@ module.exports = {
                 type: 'asset/resource'
             },
             {
-                test: /\.css$/,
+                test: /\.css$/i,
                 use: ['style-loader', 'css-loader']
             }
 
@@ -73,7 +75,8 @@ module.exports = {
                     to: path.resolve(__dirname, 'dist')
                 },
                 {from: "src/assets/images", to: "images"},
-                {from: "src/assets/css", to: "css"},
+                {from: "src/assets/css/upload.css", to: "upload/css/upload.css"},
+                {from: "src/assets/css/style.css", to: "css/style.css"},
                 {from: "manifest.webmanifest", to: "manifest.webmanifest"},
                 {from: "sw.js", to: "sw.js"},
                 {from: "favicon.ico", to: "favicon.ico"},

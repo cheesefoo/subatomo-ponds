@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "babel": "^6.23.0",
+    "dropzone": "^5.9.2",
     "phaser": "^3.54.0"
   }
 }

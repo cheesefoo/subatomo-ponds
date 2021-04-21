@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="utf-8">
@@ -8,7 +8,8 @@
 	<link rel="stylesheet" href="./css/style.css" integrity=>
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<link rel="manifest" href="./manifest.webmanifest">
+	<link rel="manifest" href="/manifest.webmanifest">
+	<title>大空スバルのスバ友池</title>
 </head>
 <body class="ubuntu" >
 
@@ -40,7 +41,7 @@
 			</div>
 		</nav>
 <div id="screens">
-		
+
 
 		<div class="d-flex justify-content-center">
 			<div id="home" class="screen" style="display:block;">
@@ -62,7 +63,7 @@
 				<h1>Oozora Subaru</h1>
 				<img src="images/subaru.webp">
 				<div class="about-content"><p>The manager of an MMA club and an E-sports club. A supremely spirited, cheerful, lively girl who can talk to anyone without breaking a sweat. She’s currently practicing her pro-gamer skills.<br>
-				She is tottally not a duck
+				She is totally not a duck
 				</p><br>
 				<a href="https://www.youtube.com/channel/UCvzGlP9oQwU--Y0r9id_jnA">Youtube channel</a>
 				</div>
@@ -74,20 +75,9 @@
 	canvas{background:blue;}
 </style>
  <script>
- 
- /*window.onload = () => {
-  'use strict';
-
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('./sw.js');
-  }
-};*/
- 
   	//$(document).ready(function() {
   		//$("#about-project").hide();
   		//$("#about-subaru").hide();
-		//$("#screens").hide();
 		//$("#screens").show();
 		//$("#home").show();
 
@@ -122,7 +112,7 @@
   			changeScreen("#about-subaru");
   			
   		});
-		
+
 		$("body").on("click",".navbar a",function(){
 			if(!$(".navbar-toggler").hasClass("collapsed")){
 				$(".navbar-toggler").click();
