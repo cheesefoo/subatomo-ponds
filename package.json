@@ -10,6 +10,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.13.10",
+    "@types/fabric": "^4.2.5",
     "@webpack-cli/serve": "^1.3.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
@@ -27,7 +28,9 @@
   },
   "dependencies": {
     "babel": "^6.23.0",
+    "canvas": "^2.7.0",
     "dropzone": "^5.9.2",
+    "fabric": "^4.4.0",
     "phaser": "^3.54.0"
   }
 }

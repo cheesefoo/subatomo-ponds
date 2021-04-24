@@ -12,6 +12,9 @@ module.exports = {
     entry: {
         main: './src/index.js',
         phaser: ['phaser'],
+        editor: './src/editor/editor.js',
+        fabric: ['fabric'],
+        // modernizr:['modernizr']
         // dropzone: ['dropzone']
 
     },
@@ -64,9 +67,13 @@ module.exports = {
                 },
                 {from: "src/assets/images", to: "images"},
                 {from: "src/assets/css/upload.css", to: "upload/css/upload.css"},
+                {from: "src/assets/css/editor.css", to: "editor/css/editor.css"},
                 {from: "src/assets/css/style.css", to: "css/style.css"},
                 {from: "manifest.webmanifest", to: "manifest.webmanifest"},
-                {from: "src/Form Submission/upload.html", to:  "upload/upload.html"}
+                {from: "src/Form Submission/upload.html", to: "upload/upload.html"},
+                {from: "src/editor/editor.html", to: "editor.html"},
+                {from: "src/assets/Duck Templates Resized/The Strut resized/200x200/Ducks concept walk idle.png", to: "assets/template200x200.png"}
+                // {from: "src/editor/editor.js", to: "editor/editor.js"}
                 /*                {
                                     from: './src/!*',
                                     to: path.resolve(__dirname, 'dist')
