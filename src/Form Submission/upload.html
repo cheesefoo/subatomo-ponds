@@ -1,65 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Subaru Milestone Submission Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 
     <!--    <script src="../dropzone.bundle.js"></script>-->
-    <link href="./css/upload.css" rel="stylesheet"/>
+    <link href="upload.css" rel="stylesheet" />
     <!--    <link href="../css/dropzone.css" rel="stylesheet"/>-->
-</head>
+  </head>
 
-<body>
-<div class="contact-us" style="max-width:600px;">
-    <form action="https://script.google.com/macros/s/AKfycbyIK7vqXBm_VQcEm3KHAghshg9K4TZWfqDEeVFmmkJR5kfAi3W34Ywdovg3t27TPaXTyw/exec"
-          id="form" method="post">
+  <body>
+    <div class="contact-us" style="max-width: 600px">
+      <form
+        action="https://script.google.com/macros/s/AKfycbyIK7vqXBm_VQcEm3KHAghshg9K4TZWfqDEeVFmmkJR5kfAi3W34Ywdovg3t27TPaXTyw/exec"
+        id="form"
+        method="post"
+      >
         <div id="data">
-            <div class="displayName">
-                Your display name. If left blank, your name will be (TBD)
-                <input id="name" maxlength="16" name="displayName">
+          <div class="displayName">
+            <label for="name"
+              >Your display name. If left blank, your name will be (TBD)</label
+            >
+            <input id="name" maxlength="16" name="displayName" />
+            <label for="message">Your congratulatory message for Subaru</label>
+            <input id="message" maxlength="128" name="message" />
+          </div>
+          <div class="contact">
+            <p>
+              Can we contact you if there are issues with your submission? This
+              is optional.
+            </p>
+            <p style="font-weight: bold">
+              We will only contact you if there's a problem!
+            </p>
+            <span>
+              <label for="radioYes">Yes</label>
+              <input
+                id="radioYes"
+                name="canContact"
+                onclick="yesCheck();"
+                type="radio"
+                value="yes"
+              />
+
+              <label for="radioNo">No</label>
+              <input
+                checked
+                id="radioNo"
+                name="canContact"
+                onclick="yesCheck();"
+                type="radio"
+                value="no"
+              />
+            </span>
+
+            <div class="contact-fields">
+              <div class="emailInput" id="emailInput" style="display: none">
+                <label for="email">Your email:</label>
+                <input id="email" name="email" type="email" />
+              </div>
+              <div class="discordInput" id="discordInput" style="display: none">
+                <label for="discord">Your discord name and id:</label>
+                <a class="tooltip" href="">
+                  Make sure you have the correct privacy settings.
+                  <span
+                    ><img src="discordprivacysetting.png" />
+                    <h3>Under User Settings -> Privacy & Safety</h3>
+                    You must also be in the discord server.
+                  </span>
+                </a>
+                <input id="discord" name="discord" type="text" />
+              </div>
             </div>
-            <div class="contact">
-                <p>Can we contact you if there are issues with your submission?
-                <p>
-                    <br>
-                    <label for="radioYes">Yes</label><input id="radioYes" name="canContact" onclick="yesCheck();"
-                                                            type="radio" value="yes"><span
-                        style="margin-right:20px;"></span>
-                    <label for="radioNo">No</label><input checked id="radioNo" name="canContact" onclick="yesCheck();"
-                                                          type="radio" value="no">
-                <div class="emailInput" id="emailInput" style="display:none">
-                    <label for="email">Your email:</label>
-                    <input id="email" name="email" type="email">
-                </div>
-            </div>
+          </div>
         </div>
 
         <label for="soundSelection">Sound to play when pressed:</label>
         <select id="soundSelection">
-            <option value="">- Select sound -</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
+          <option value="random">Picked Randomly</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
         </select>
 
-        <audio id="player" autoplay>
-            <source id="mp3_src" src="suba_1.mp3" type="audio/mp3"/>
-            Your browser does not support the audio element.
+        <audio autoplay id="player">
+          <source id="mp3_src" src="suba_1.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
         </audio>
 
         <div id="upload">
-            <label>Upload your duck bellow., it has to be up to the dimensions allowed in the project detailed in
-                xxxxxx</label>
-            <input accept="image/png" id="uploadFile" name="file" type="file">
-            <input id="submit" type="submit">
+          <label
+            >Upload your duck bellow</label
+          >
+          <input accept="image/png" id="uploadFile" name="file" type="file" />
+          <input id="submit" type="submit" />
         </div>
-
-    </form>
-    <div id="submitting" style="display:none;">Uploading duck...</div>
-    <canvas height="200" id="animPreview1" style="visibility:hidden" width="200"></canvas>
-    <canvas height="200" id="animPreview2" style="visibility:hidden" width="200"></canvas>
-</div>
-<script src="upload.js"></script>
-</body>
-
+      </form>
+      <div id="submitting" style="display: none">Uploading duck...</div>
+      <canvas
+        height="200"
+        id="animPreview1"
+        style="visibility: hidden"
+        width="200"
+      ></canvas>
+      <canvas
+        height="200"
+        id="animPreview2"
+        style="visibility: hidden"
+        width="200"
+      ></canvas>
+    </div>
+    <script src="upload.js"></script>
+  </body>
 </html>

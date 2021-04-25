@@ -108,7 +108,7 @@ textarea:-webkit-autofill:focus {
 }
 
 input[type=radio] {
-    display: inline-block;
+    display: inline ;
     width: auto;
 }
 

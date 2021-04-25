@@ -160,7 +160,7 @@ $('#soundSelection').on('change', function () {
 
 function change(index) {
     // audio.pause();
-    if (index) {
+    if (index !== 'random') {
         source.src = soundMap.sounds[parseInt(index)- 1] ;
         audio.load();
         audio.play();
