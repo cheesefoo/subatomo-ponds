@@ -3,12 +3,13 @@
 <style>
 #canvas-container {
     position: relative;
-    width: 800px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
     box-shadow: 0 0 5px 1px black;
     margin: 10px auto;
     border: 5px solid transparent;
 	display:inline-block;
+	;
 }
 #canvas-container.over {
     border: 5px dashed cyan;
@@ -39,6 +40,8 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 }
 #images{
 	width:120px;
+	background-color:olive;
+	padding:20px;
 }
 </style>
 
@@ -52,12 +55,19 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
 <body>
 	<!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
-	
+	<h1 style="text-align:center;">Duck editor</h1>
+	<img id="duck" crossOrigin="Anonymous"src="duck300.png" style="opacity:0; position:fixed; top:-10000px; left:-10000px;"></img>
 <div class="editor-container">
 <div id="images">
+	<h3>Objects</h3>
     <!--<img draggable="true" src="http://i.imgur.com/8rmMZI3.jpg" width="100" height="100"></img>
     <img draggable="true" src="http://i.imgur.com/q9aLMza.png" width="100" height="100"></img>!-->
-    <img crossOrigin="Anonymous" draggable="true" src="http://i.imgur.com/wMU4SFn.jpg" width="100" height="100"></img>
+    <img crossOrigin="Anonymous" draggable="true" src="hat1.png" width="100" ></img>
+    <img crossOrigin="Anonymous" draggable="true" src="hat2.png" width="100" ></img>
+    <img crossOrigin="Anonymous" draggable="true" src="hat3.png" width="100" ></img>
+    <img crossOrigin="Anonymous" draggable="true" src="baseballhat.png" width="100" ></img>
+    <img crossOrigin="Anonymous" draggable="true" src="bow1.png" width="100" ></img>
+    <img crossOrigin="Anonymous" draggable="true" src="bow2.png" width="100" ></img>
 	
 </div>
 
@@ -68,14 +78,15 @@ I'm just going to wrap the canvas in a container and bind events to that, which 
 less intrusive.
  -->
 <div id="canvas-container">
-    <canvas id="canvas" width="800" height="600"></canvas>
+    <canvas id="canvas" width="300" height="300"></canvas>
 </div>
 
-<div style="display: inline-block; margin-left: 10px">
-  <button id="drawing-mode" class="btn btn-info">Cancel drawing mode</button><br>
+<div style="display: inline-block; margin-left: 10px; width:300px;background-color:olive;padding:20px;">
+	<h3>Drawing</h3>
+  <button id="drawing-mode" class="btn btn-info">Enter drawing mode</button><br>
   <button id="clear-canvas" class="btn btn-info">Clear</button><br>
 
-  <div id="drawing-mode-options" style="">
+  <div id="drawing-mode-options" style="display:none;">
     <label for="drawing-mode-selector">Mode:</label>
     <select id="drawing-mode-selector">
       <option>Pencil</option>
@@ -91,7 +102,7 @@ less intrusive.
     </select><br>
 
     <label for="drawing-line-width">Line width:</label>
-    <span class="info">30</span><input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+    <span class="info">8</span><input type="range" value="8" min="0" max="150" id="drawing-line-width"><br>
 
     <label for="drawing-color">Line color:</label>
     <input type="color" value="#005E7A" id="drawing-color"><br>
@@ -112,6 +123,18 @@ less intrusive.
 
 var canvas;
 
+function addDuck(){
+	var duckimg = document.querySelector('#duck');
+  var duck = new fabric.Image(duckimg, {
+        width:duckimg.width,
+        height: duckimg.height,
+        left: 0,
+        top: 0,
+		evented: false
+    });
+    canvas.add(duck);
+}
+
 (function() {
   var $ = function(id){return document.getElementById(id)};
 
@@ -119,8 +142,11 @@ var canvas;
 /* Drag and Drop code adapted from http://www.html5rocks.com/en/tutorials/dnd/basics/ */
 
 canvas = new fabric.Canvas('canvas',{
-    isDrawingMode: true
+    isDrawingMode: false
   });
+  
+  addDuck();
+	
 
 /* 
 NOTE: the start and end handlers are events for the <img> elements; the rest are bound to 
@@ -217,7 +243,7 @@ var drawingModeEl = $('drawing-mode'),
       drawingShadowOffset = $('drawing-shadow-offset'),
       clearEl = $('clear-canvas');
 
-  clearEl.onclick = function() { canvas.clear() };
+  clearEl.onclick = function() { canvas.clear(); addDuck() };
 
   drawingModeEl.onclick = function() {
     canvas.isDrawingMode = !canvas.isDrawingMode;
@@ -396,7 +422,7 @@ var drawingModeEl = $('drawing-mode'),
 
 </script>
 
-<button type="button" onclick="download();">Guardar</button>
+<div style="text-align:center;"><button type="button" style="margin:auto; font-size:20px; padding:10px;" onclick="download();">Save duck</button></div>
 <a id="link"></a>
 
 <script>
