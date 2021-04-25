@@ -4,8 +4,9 @@
 <head>
     <title>Subaru Milestone Submission Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
     <!--    <script src="../dropzone.bundle.js"></script>-->
-    <link href="/css/upload.css" rel="stylesheet"/>
+    <link href="./css/upload.css" rel="stylesheet"/>
     <!--    <link href="../css/dropzone.css" rel="stylesheet"/>-->
 </head>
 
@@ -18,21 +19,36 @@
                 Your display name. If left blank, your name will be (TBD)
                 <input id="name" maxlength="16" name="displayName">
             </div>
-            <div class="email">
-                <p>Can we email you if there are issues with your submission?
+            <div class="contact">
+                <p>Can we contact you if there are issues with your submission?
                 <p>
                     <br>
-                    Yes<input id="radioYes" name="canEmail" onclick="yesCheck();" type="radio" value="yes"><span
+                    <label for="radioYes">Yes</label><input id="radioYes" name="canContact" onclick="yesCheck();"
+                                                            type="radio" value="yes"><span
                         style="margin-right:20px;"></span>
-                    No<input checked id="radioNo" name="canEmail" onclick="yesCheck();" type="radio" value="no">
+                    <label for="radioNo">No</label><input checked id="radioNo" name="canContact" onclick="yesCheck();"
+                                                          type="radio" value="no">
                 <div class="emailInput" id="emailInput" style="display:none">
                     <label for="email">Your email:</label>
                     <input id="email" name="email" type="email">
                 </div>
             </div>
         </div>
+
+        <label for="soundSelection">Sound to play when pressed:</label>
+        <select id="soundSelection">
+            <option value="">- Select sound -</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+
+        <audio id="player" autoplay>
+            <source id="mp3_src" src="suba_1.mp3" type="audio/mp3"/>
+            Your browser does not support the audio element.
+        </audio>
+
         <div id="upload">
-            <label>Upload your duck png bellow, it has to be up to the dimensions allowed in the project detailed in
+            <label>Upload your duck bellow., it has to be up to the dimensions allowed in the project detailed in
                 xxxxxx</label>
             <input accept="image/png" id="uploadFile" name="file" type="file">
             <input id="submit" type="submit">
@@ -43,152 +59,7 @@
     <canvas height="200" id="animPreview1" style="visibility:hidden" width="200"></canvas>
     <canvas height="200" id="animPreview2" style="visibility:hidden" width="200"></canvas>
 </div>
-<script>
-    // Dropzone.options.form = {
-    //     paramName: "file", // The name that will be used to transfer the file
-    //     maxFilesize: 2, // MB
-    //     accept: function (file, done) {
-    //         chooseFile(file)
-    //     }
-    // };
-
-    function disallowedChars(e) {
-        let regex = new RegExp(escapeRegExp('<>:"/\\|?*'));
-        return regex.test(e.charCode);
-    }
-
-    function escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-    }
-
-    function yesCheck() {
-        let email = document.getElementById('emailInput');
-        if (document.getElementById('radioYes').checked) {
-            email.style.display = 'block';
-            email.required = true;
-
-        } else {
-            email.style.display = 'none';
-            email.required = false;
-        }
-    }
-
-    let spritesheet = new Image();
-
-    const uploadFile = document.getElementById("uploadFile");
-    uploadFile.onchange = function () {
-        chooseFile(this.files[0])
-    };
-
-    function chooseFile(file) {
-        const reader = new FileReader();
-        // const file = this.files[0];
-        if (file) {
-            reader.addEventListener("load", function (e) {
-                spritesheet.src = reader.result;
-                canvas1.style.visibility = "visible";
-                canvas2.style.visibility = "visible";
-                startAnimating(10);
-
-                //todo: check image dimensions?
-            }, false);
-            reader.readAsDataURL(file);
-        }
-    }
-
-    let fps, fpsInterval, startTime, now, then, elapsed;
-
-    // initialize the timer variables and start the animation
-    function startAnimating(fps) {
-        console.log("start animating")
-        fpsInterval = 1000 / fps;
-        then = Date.now();
-        startTime = then;
-        animate();
-    }
-
-    let w = 100;
-    let h = 100;
-    let sx1, sy1, sx2, sy2 = 0;
-    let scale = 1;
-    let canvas1 = document.getElementById("animPreview1");
-    let canvas2 = document.getElementById("animPreview2");
-    // let canvas = document.querySelector("#animPreview");
-    let canvasContext1 = canvas1.getContext("2d");
-    let canvasContext2 = canvas2.getContext("2d");
-
-    let currentFrame1 = 0;
-    let currentFrame2 = 0;
-    const framesInAnimation1 = 4;
-    const framesInAnimation2 = 2;
-
-    function animate() {
-
-        // request another frame
-
-        // console.log(currentFrame);
-        requestAnimationFrame(animate);
-
-        // calc elapsed time since last loop
-
-        now = Date.now();
-        elapsed = now - then;
-
-        // if enough time has elapsed, draw the next frame
-
-        if (elapsed > fpsInterval) {
-            then = now - (elapsed % fpsInterval);
-            canvasContext1.clearRect(0, 0, canvas1.width, canvas1.height);
-            canvasContext2.clearRect(0, 0, canvas2.width, canvas2.height);
-
-            //Set corner coordinates according to current frame
-            //   x  y
-            // 0 0  0
-            // 1 w  0
-            // 2 0  0
-            // 3 0  h
-            sx1 = currentFrame1 != 1 ? 0 : w;
-            sy1 = currentFrame1 != 3 ? 0 : h;
-            // sx = currentFrame % 2 === 0 ? 0 : w;
-            // sy = currentFrame < 2 ? 0 : h;
-
-            sx2 = currentFrame2 === 0 ? 0 : w;
-            sy2 = currentFrame2 === 0 ? 0 : h
-            // console.log(currentFrame + ":" + sx + "x" + sy);
-
-            canvasContext1.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
-            canvasContext2.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);
-            currentFrame1++;
-            currentFrame2++;
-            if (currentFrame1 == framesInAnimation1)
-                currentFrame1 = 0;
-            if (currentFrame2 == framesInAnimation2)
-                currentFrame2 = 0;
-        }
-    }
-
-    $('#uploadFile').on("change", function () {
-        try {
-            document.getElementById('raw-sbm').remove();
-            document.getElementById('mime-sbm').remove();
-            document.getElementById('filetype-sbm').remove();
-        } catch (e) {
-        }
-        const file = this.files[0];
-        const fr = new FileReader();
-        fr.fileName = file.name;
-        fr.onload = function (e) {
-            e.target.result
-            html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
-            html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
-            html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
-            // $("#data").empty().append(html);
-            $("#data").append(html);
-        }
-        fr.readAsDataURL(file);
-    });
-
-</script>
+<script src="upload.js"></script>
 </body>
 
 </html>
