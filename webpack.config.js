@@ -74,22 +74,17 @@ module.exports = {
         { from: "manifest.webmanifest", to: "manifest.webmanifest" },
         { from: "sw.js", to: "sw.js" },
         { from: "favicon.ico", to: "favicon.ico" },
-        // { from: "src/Form Submission/upload.html", to: "upload/upload.html" },
-        // { from: "src/assets/upload.html", to: "upload/upload.html" },
-        /*                {
-                                    from: './src/!*',
-                                    to: path.resolve(__dirname, 'dist')
-                                }*/
-      ],
+          {from: "src/assets/Duck Templates Resized/The Strut resized/200x200/Ducks concept walk idle.png", to: "assets/template200x200.png"}
+          {from: "src/editor/editor.html", to: "editor.html"},
+
+
+      ]
     }),
 
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),
-    }),
-    /*        new webpack.optimize.CommonsChunkPlugin({
-                    name: 'production-dependencies',
-                    filename: 'production-dependencies.bundle.js'
-                })*/
-  ],
+    })
+
+  ]
 };
