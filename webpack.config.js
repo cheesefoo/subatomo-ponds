@@ -74,17 +74,18 @@ module.exports = {
         { from: "manifest.webmanifest", to: "manifest.webmanifest" },
         { from: "sw.js", to: "sw.js" },
         { from: "favicon.ico", to: "favicon.ico" },
-          {from: "src/assets/Duck Templates Resized/The Strut resized/200x200/Ducks concept walk idle.png", to: "assets/template200x200.png"}
-          {from: "src/editor/editor.html", to: "editor.html"},
-
-
-      ]
+        {
+          from:
+            "src/assets/Duck Templates Resized/The Strut resized/200x200/Ducks concept walk idle.png",
+          to: "assets/template200x200.png",
+        },
+        { from: "src/editor/editor.html", to: "editor.html" },
+      ],
     }),
 
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),
-    })
-
-  ]
+    }),
+  ],
 };
