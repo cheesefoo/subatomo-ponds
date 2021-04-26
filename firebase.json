@@ -29,6 +29,21 @@
           "destination": "/upload.html"
         }
       ]
+    },
+    {
+      "target": "editor",
+      "public": "./dist/editor",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/4frame.html"
+        }
+      ]
     }
   ],
   "functions": {
