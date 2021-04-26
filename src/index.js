@@ -5,7 +5,7 @@ const ducksj = require("./assets/submissions/all_ducks_sheet.json");
 const waterj = require("./assets/pond/water_sheet.json");
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
 const submissions = require("./assets/submissions/submissions.json");
-const shuba = require("./assets/sound/suba.mp3");
+const shuba = require("./assets/sound/suba_1.mp3");
 require("phaser");
 
 function importAll(r) {
