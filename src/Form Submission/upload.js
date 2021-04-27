@@ -1,11 +1,11 @@
-function importAll(r) {
-    return r.keys().map(r);
-}
+// function importAll(r) {
+//     return r.keys().map(r);
+// }
 
-importAll(require.context('../assets/sound/', true, /suba.*\.mp3/));
+// importAll(require.context('../assets/sound/', true, /suba.*\.mp3/));
 // const su1 = require('../assets/sound/suba_1.mp3');
 // const su2 = require('../assets/sound/suba_2.mp3');
-const soundMap = require('./soundfilemap.json');
+// const soundMap = require('./soundfilemap.json');
 // Dropzone.options.form = {
 //     paramName: "file", // The name that will be used to transfer the file
 //     maxFilesize: 2, // MB
@@ -13,6 +13,7 @@ const soundMap = require('./soundfilemap.json');
 //         chooseFile(file)
 //     }
 // };
+
 
 function disallowedChars(e) {
     let regex = new RegExp(escapeRegExp('<>:"/\\|?*'));
@@ -156,9 +157,27 @@ $('#soundSelection').on('change', function () {
 
 function change(index) {
     // audio.pause();
-    if (index !== 'random') {
-        source.src = soundMap.sounds[parseInt(index) - 1];
+    if(index === 'random')
+        index = getRandomIntInclusive(1,2)
+        let src;
+        switch (index) {
+            case "1":
+                src = './suba_1.mp3';
+                break;
+            case "2":
+                src = './suba_2.mp3';
+                break;
+            default:
+                break;
+
+        }
+        source.src =src;
         audio.load();
         audio.play();
-    }
+
+}
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
