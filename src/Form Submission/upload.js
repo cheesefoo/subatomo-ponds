@@ -25,14 +25,10 @@ function escapeRegExp(string) {
 
 function yesCheck() {
     let email = document.getElementById('emailInput');
-    if (document.getElementById('radioYes').checked) {
-        email.style.display = 'block';
-        email.required = true;
-
-    } else {
-        email.style.display = 'none';
-        email.required = false;
-    }
+    let discord = document.getElementById('discordInput');
+    let style = document.getElementById('radioYes').checked ? 'block' : 'none';
+    email.style.display = style;
+    discord.style.display = style;
 }
 
 let spritesheet = new Image();
@@ -161,7 +157,7 @@ $('#soundSelection').on('change', function () {
 function change(index) {
     // audio.pause();
     if (index !== 'random') {
-        source.src = soundMap.sounds[parseInt(index)- 1] ;
+        source.src = soundMap.sounds[parseInt(index) - 1];
         audio.load();
         audio.play();
     }

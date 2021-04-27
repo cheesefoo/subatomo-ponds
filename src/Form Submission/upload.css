@@ -14,7 +14,7 @@ body {
     align-items: center;
     justify-items: center;
     font-size: 12pt;
-    font-family: "Spartan";
+    font-family: "Spartan", serif;
     color: #2A293E;
 }
 
@@ -55,7 +55,6 @@ em {
 }
 
 input, textarea {
-    border: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     background: #f8f4e5;
@@ -107,10 +106,6 @@ textarea:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-input[type=radio] {
-    display: inline ;
-    width: auto;
-}
 
 input[type=submit] {
     transition: 0.5s;
@@ -121,9 +116,50 @@ input[type=submit]:hover {
     background-color: #6bd4b1;
     color: white;
 }
-audio{
+
+input[type=radio] {
+    display: inline;
+    width: auto;
+}
+audio {
 
 }
+
+.tooltip {
+    text-decoration: none;
+    position: relative;
+}
+
+.tooltip span {
+    display: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    color: black;
+    background: white;
+}
+
+.tooltip span img {
+    float: left;
+    margin: 0px 8px 8px 0;
+}
+
+.tooltip:hover span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: auto;
+    max-width: 320px;
+    min-height: 128px;
+    border: 1px solid black;
+    margin-top: 12px;
+    margin-left: 32px;
+    overflow: hidden;
+    padding: 8px;
+}
+
 #animPreview {
     background: cornflowerblue;
     /*display: block;*/

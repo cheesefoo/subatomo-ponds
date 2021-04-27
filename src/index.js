@@ -11,6 +11,10 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
+let grassVibrant, waterVibrant;
+require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
+require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
+
 require("./assets/pond/pond1920x1035.png");
 const pondTileJson = require("./assets/pond/pond.json");
 importAll(require.context("./", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
@@ -45,6 +49,9 @@ const minIdle = 0;
 const maxIdle = 5000;
 const WATER_SPRITE_HEIGHT = 45;
 
+const TINT_TOP_COLOR = new Phaser.Display.Color(103, 103, 103, 255);
+const TINT_BOTTOM_COLOR = new Phaser.Display.Color(0, 0, 0, 0);
+
 let currentPond = 1;
 
 let currentPondPagination = 0;
@@ -69,6 +76,7 @@ const DUCK_STATES = {
 class MyGame extends Phaser.Scene {
     // jshint ignore:line
     constructor() {
+        console.log('mygame constructor called')
         super({
             key: "pond",
             active: true,
@@ -177,6 +185,10 @@ class MyGame extends Phaser.Scene {
         this.load.audio("shuba", shuba);
         this.load.image("tiles", "assets/pond1920x1035.png");
         this.load.tilemapTiledJSON("map", pondTileJson);
+
+        let g = this.load.image("grassVibrant","assets/grass_vibrant_1920x1080.png");
+
+        let w = this.load.image("waterVibrant","assets/water_vibrant_1920x1080.png");
         // this.add.image(0, 0, 'tiles')
     }
 
@@ -196,6 +208,11 @@ class MyGame extends Phaser.Scene {
         groundLayer.setCollisionByProperty({collides: true});
         pondLayer = this.map.createLayer("pond", tileset, 0, 0);
         pondLayer.setCollisionByProperty({collides: true});
+
+        waterVibrant=this.add.image(0,0,'waterVibrant');
+        waterVibrant.setOrigin(0,0);
+        grassVibrant=this.add.image(0,0,'grassVibrant');
+        grassVibrant.setOrigin(0,0);
 
         // const debugGraphics = this.add.graphics().setAlpha(0.75);
         // pondLayer.renderDebug(debugGraphics, {
@@ -325,7 +342,7 @@ class MyGame extends Phaser.Scene {
             // if (duckGameObject.isSwimming != null)
             //     duckGameObject.animState = duckGameObject.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
             duckGameObject.animState = DUCK_STATES.START_IDLE;
-            this.physics.overlap(duckGameObject, groundLayer);
+            // this.physics.overlap(duckGameObject, groundLayer);
 
             //Duck object = {strName,strImageName,numPondNumber}, matches submission json
             duckGameObject.duck = ducks[i];
@@ -651,6 +668,12 @@ class MyGame extends Phaser.Scene {
             let duckGO = duckContainer.last;
             duckGO.setDepth(duckGO.y);
             duckGO.updateState(duckGO, delta);
+            // let tintIndex = Math.floor(100*(duckGO.body.transform.y / sceneHeight));
+            // let tint = Phaser.Display.Color.Interpolate.ColorWithColor(TINT_TOP_COLOR, TINT_BOTTOM_COLOR, 100, tintIndex)
+            // console.log(tint);
+            // duckGO.setTint(tint);
+
+
         }
     }
 
@@ -740,6 +763,7 @@ const config = {
 
 const game = new Phaser.Game(config);
 window.game = game;
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);

@@ -41,9 +41,13 @@ def download_json():
         name = row[1]
         filename = row[4]
         pond = row[5]
+        msg = row[6]
+        sound = row[7]
         entry = {"name": name,
                  "image": filename,
-                 "pond": pond}
+                 "pond": pond,
+                 "message": msg,
+                 "sound": sound}
         return entry
 
     for i in range(2, num_of_entries):
