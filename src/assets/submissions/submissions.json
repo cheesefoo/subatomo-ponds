@@ -1,35 +1,46 @@
 {
   "submissions": [
     {
-      "name": "MASTER OF LAND, SEA, AND AIR.",
+      "name": "doubleduck",
       "image": "doubleduck",
-      "pond": "1"
+      "pond": "1",
+      "message": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "sound": "1"
     },
     {
-      "name": "RED",
-      "image": "red",
-      "pond": "1"
-    },
-    {
-      "name": "BLUE",
+      "name": "blue",
       "image": "blue",
-      "pond": "1"
+      "pond": "1",
+      "message": "i am duck",
+      "sound": "2"
     },
     {
-      "name": "green",
-      "image": "green",
-      "pond": "1"
+      "name": "red",
+      "image": "red",
+      "pond": "1",
+      "message": "aaaaaaaaaaaaaaaaaaa",
+      "sound": "2"
     },
     {
       "name": "yellow",
       "image": "yellow",
-      "pond": "1"
+      "pond": "1",
+      "message": "i dont know how to count",
+      "sound": "2"
     },
     {
-      "name": "GAMER",
+      "name": "green",
+      "image": "green",
+      "pond": "1",
+      "message": "give me money",
+      "sound": "2"
+    },
+    {
+      "name": "gaming duck",
       "image": "rgb",
-      "pond": "1"
+      "pond": "1",
+      "message": "now i can finally top frag",
+      "sound": "1"
     }
-
   ]
 }
