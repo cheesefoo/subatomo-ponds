@@ -14,8 +14,8 @@ from tenacity import retry, retry_if_exception_type, wait_random_exponential
 # run this from 'src/submissionImportScript'
 # Set location of texture packer exe
 # client_secrets.json is not committed for security
-#TEXTURE_PACKER_EXE = join('K:\\Utilities\\TexturePacker\\bin', 'TexturePacker.exe')
-TEXTURE_PACKER_EXE = join('C:\\Program Files\\CodeAndWeb\\TexturePacker\\bin', 'TexturePacker.exe')
+TEXTURE_PACKER_EXE = join('K:\\Utilities\\TexturePacker\\bin', 'TexturePacker.exe')
+# TEXTURE_PACKER_EXE = join('C:\\Program Files\\CodeAndWeb\\TexturePacker\\bin', 'TexturePacker.exe')
 ASSETS_DIR = PurePath(dirname(dirname(abspath(__file__))), 'assets')
 JSON_DESTINATION_DIR = join(ASSETS_DIR, 'submissions')
 RAW_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_raw')
@@ -39,8 +39,8 @@ def download_json():
     def try_to_get_row(index):
         row = worksheet.row_values(index)
         name = row[1]
-        filename = row[4]
-        pond = row[5]
+        filename = row[5]
+        pond = row[8]
         msg = row[6]
         sound = row[7]
         entry = {"name": name,

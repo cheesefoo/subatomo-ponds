@@ -1,36 +1,42 @@
 const DEBUGGING = false;
-import "./assets/css/style.css";
-
-const ducksj = require("./assets/submissions/all_ducks_sheet.json");
-const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
-const submissions = require("./assets/submissions/submissions.json");
-const shuba = require("./assets/sound/suba_1.mp3");
-require('./assets/cameralayer.png')
-require("phaser");
 
 function importAll(r) {
     return r.keys().map(r);
 }
 
-let grassVibrant, waterVibrant;
-require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
-require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
+import "./assets/css/style.css";
 
-require("./assets/pond/pond1920x1035.png");
+const ducksj = require("./assets/submissions/all_ducks_sheet.json");
+const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
+const submissions = require("./assets/submissions/submissions.json");
+const splashj = require("./assets/pond/WaterSplashAnimation/splash.json")
 const pondTileJson = require("./assets/pond/pond.json");
+
+require('./assets/cameralayer.png')
+require("phaser");
+// require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
+// require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
+require("./assets/pond/pond_vibrant_1920x1080.jpg");
+require("./assets/pond/WaterSplashAnimation/splash.png");
+
 importAll(require.context("./", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
-
-const legs = importAll(require.context("./", true, /legs.*\.(png|jpe?g|svg)$/));
+importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
 importAll(require.context("./", true, /pond.*\.(json)$/));
-
+importAll(require.context("./assets/sound/", true, /suba.*\.(mp3|ogg|wav)$/));
 //Tile indices corresponding to water tiles in Tiled .tmx file
-const pondTileIndices = [36, 37, 38, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 63, 64, 65, 66, 67, 68, 69,
-    70, 71, 72, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 94, 95, 96,];
-const groundTileIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-    26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 40, 41, 42, 43, 44, 58, 59, 60, 61, 62, 73, 74, 75, 76, 77, 88, 89, 90, 91,
-    92, 93, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,];
+// const pondTileIndices = [36, 37, 38, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 63, 64, 65, 66, 67, 68, 69,
+//     70, 71, 72, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 94, 95, 96,];
+// const groundTileIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
+//     26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 40, 41, 42, 43, 44, 58, 59, 60, 61, 62, 73, 74, 75, 76, 77, 88, 89, 90, 91,
+//     92, 93, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,];
+const groundTileIndices = [1, 2, 3, 4, 0, 9, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28, 29, 30, 33, 34, 35, 36, 37, 38, 43, 44, 45, 46, 47, 48, 51, 62, 63, 64, 79, 80, 81, 82, 83, 95, 96, 97, 98, 99, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141];
+let obstacleTileIndices = [0, 5, 6, 7, 8, 10, 15, 16, 24, 25, 31, 32, 67, 128, 142, 143, 144]
+let pondTileIndices = [0, 39, 40, 41, 42, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 65, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109]
 let pondLayer;
 let groundLayer;
+let obstacleLayer;
+let grassVibrant, waterVibrant;
+
 const FRAME_RATE = 10;
 const USERNAME_DISPLAY_DURATION = 3000;
 const SPRITE_WIDTH = 100;
@@ -164,7 +170,6 @@ class MyGame extends Phaser.Scene {
                     //     that
                     // );
 
-                    // that.shuba = that.sound.add("shuba");
                     // that.populateDucks(currentPond);
                     // console.log('on preload complete settimeout')
                     // that.generatePondUI();
@@ -186,13 +191,16 @@ class MyGame extends Phaser.Scene {
         //Load sprite atlas
         this.load.multiatlas("allDucks", ducksj, "assets");
         this.load.multiatlas("legs", legsj, "assets");
+        this.load.multiatlas("splash", splashj, "assets");
         //Load audio files
-        this.load.audio("shuba", shuba);
-        this.load.image("tiles", "assets/pond1920x1035.png");
+        this.load.audio("suba_1", "assets/suba_1.mp3");
+        this.load.audio("suba_2", "assets/suba_2.mp3");
+        this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.tilemapTiledJSON("map", pondTileJson);
+        this.listOfDucks = [];
 
-        this.load.image("grassVibrant", "assets/grass_vibrant_1920x1080.png");
-        this.load.image("waterVibrant", "assets/water_vibrant_1920x1080.png");
+        // this.load.image("grassVibrant", "assets/grass_vibrant_1920x1080.png");
+        // this.load.image("waterVibrant", "assets/water_vibrant_1920x1080.png");
         // this.load.image("camerafilter", "assets/camerafilter.png");
 
         // this.add.image(0, 0, 'tiles')
@@ -211,13 +219,14 @@ class MyGame extends Phaser.Scene {
             },
             this
         );
+
         this.makeTileMap();
 
-        waterVibrant = this.add.image(0, 0, 'waterVibrant');
-        waterVibrant.setOrigin(0, 0);
-        // waterVibrant.setPipeline('Light2D');
-        grassVibrant = this.add.image(0, 0, 'grassVibrant');
-        grassVibrant.setOrigin(0, 0);
+        // waterVibrant = this.physics.add.image(0, 0, 'waterVibrant');
+        // waterVibrant.setOrigin(0, 0);
+        // // waterVibrant.setPipeline('Light2D');
+        // grassVibrant = this.physics.add.image(0, 0, 'grassVibrant');
+        // grassVibrant.setOrigin(0, 0);
         // grassVibrant.setPipeline('Light2D');
 
         // const debugGraphics = this.add.graphics().setAlpha(0.75);
@@ -232,26 +241,60 @@ class MyGame extends Phaser.Scene {
         // });
 
         this.makeWalkingAnimationFrames();
-        this.shuba = this.sound.add("shuba");
+        this.makeSplashAnimationFrames();
         this.populateDucks(currentPond);
         this.generatePondUI();
         this.applyTileCollisionCallbacks();
-
+        this.makeSounds();
+        // this.applyCollisions();
         // this.lights.enable().setAmbientColor(0x828282);
         // let light = this.lights.addLight(0, 0, 200).setScrollFactor(0.0).setIntensity(1);
         // this.input.on('pointermove', function (pointer) {
         //     light.x = pointer.x;
         //     light.y = pointer.y;
         // });
+        this.input.on("gameobjectup", this.onObjectClicked);
+
+    }
+
+    makeSounds() {
+        this.suba1 = this.sound.add("suba_1");
+        this.suba2 = this.sound.add("suba_2");
     }
 
     makeTileMap() {
         this.map = this.make.tilemap({key: "map"}); //, tileWidth: 64, tileHeight: 64 });
-        let tileset = this.map.addTilesetImage("pond1920x1035", "tiles");
+        let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
         groundLayer = this.map.createLayer("ground", tileset, 0, 0);
         groundLayer.setCollisionByProperty({collides: true});
         pondLayer = this.map.createLayer("pond", tileset, 0, 0);
         pondLayer.setCollisionByProperty({collides: true});
+        obstacleLayer = this.map.createLayer("obstacle", tileset, 0, 0);
+        obstacleLayer.setCollisionByProperty({collides: true});
+
+    }
+
+    applyCollisions() {
+        let gameObjectList = this.children.list;
+        let that = this;
+        gameObjectList.forEach(function (gameObject) {
+            if (gameObject.type === "Container") {
+                let duckGO = gameObject.last;
+                that.physics.add.overlap(duckGO, waterVibrant, function (context) {
+                    console.log(context.displayName + " swimming");
+                    context.isSwimming = true;
+                    // context.waterOverlay.setVisible(true)
+                    context.legsOverlay.setVisible(false);
+                }, null, this);
+                that.physics.add.overlap(duckGO, grassVibrant, function (context) {
+                    console.log(context.displayName + " grounded");
+                    context.isSwimming = false;
+                    // context.waterOverlay.setVisible(true)
+                    context.legsOverlay.setVisible(true);
+
+                }, null, this);
+            }
+        });
     }
 
     applyTileCollisionCallbacks() {
@@ -265,9 +308,10 @@ class MyGame extends Phaser.Scene {
                     function (context) {
                         // console.log("swimming");
                         context.isSwimming = true;
-                        // context.waterOverlay.setVisible(true)
+                        context.splashOverlay.setVisible(true);
                         context.legsOverlay.setVisible(false);
                     },
+                    null,
                     this
                 );
                 that.physics.add.overlap(duckGO, pondLayer);
@@ -276,14 +320,36 @@ class MyGame extends Phaser.Scene {
                     function (context) {
                         // console.log("grounded")
                         context.isSwimming = false;
-                        // context.waterOverlay.setVisible(false)
+                        context.splashOverlay.setVisible(false);
                         context.legsOverlay.setVisible(true);
                     },
+                    null,
                     this
                 );
                 that.physics.add.overlap(duckGO, groundLayer);
+                // that.physics.add.collider(duckGO,obstacleLayer);
+
+                that.physics.world.addCollider(duckGO, obstacleLayer, function (c) {
+                    console.log(c.displayName + ' obstacle')
+                }, null, this);
+
+                //if duck enters a spot it shouldn't path, just tell it to stop
+                //this is very bad, maybe one day ill fix it
+                // obstacleLayer.setTileIndexCallback(obstacleTileIndices,
+                //     function (context){
+                //         context.travelTime=0;
+                //     },null,this);
+
             }
         });
+        if (DEBUGGING) {
+            const debugGraphics = this.add.graphics().setAlpha(0.75);
+            obstacleLayer.renderDebug(debugGraphics, {
+                tileColor: null, // Color of non-colliding tiles
+                collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+                faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
+            });
+        }
     }
 
     makeWalkingAnimationFrames() {
@@ -316,6 +382,33 @@ class MyGame extends Phaser.Scene {
         walkAnim.addFrameAt(0, this.anims.get("idle").getFrames());
     }
 
+    makeSplashAnimationFrames() {
+        const splashNames = [
+            ["splash-idle", 0, 13],
+            ["splash-walk", 0, 13],
+            ["splash-quack", 0, 13],
+        ];
+
+        splashNames.forEach((animationName) => {
+            let animName = animationName[0];
+            let startFrame = animationName[1];
+            let endFrame = animationName[2];
+            let frameNames = this.anims.generateFrameNames("splash", {
+                start: startFrame,
+                end: endFrame,
+                suffix: ".png",
+            });
+
+            this.anims.create({
+                key: animName,
+                frames: frameNames,
+                frameRate: FRAME_RATE,
+                repeat: -1,
+            });
+        });
+
+    }
+
     //Fill pond number with their ducks
     populateDucks(pond = 1) {
         //Get submission reference sheet from google sheet and filter by pond #
@@ -337,45 +430,46 @@ class MyGame extends Phaser.Scene {
                 .sprite(0, 0, "allDucks", ducks[i].image + "-0.png")
                 // .setCollideWorldBounds(true)
                 // .setBounce(1, 1)
-                .setDebug(true, false); //, new Phaser.Display.Color(255, 0, 0, 0));
-            //Create GO group with duck and water overlay
-
-            /*const waterOverlay = this.add.sprite(0, SPRITE_HEIGHT - 65, 'water', 'water1.png');
-                  waterOverlay.setVisible(false);
-                  waterOverlay.name = 'water'; */
+                .setDebugBodyColor(0x00FF)
+                .setDebug(true, false, 0x00ff); //, new Phaser.Display.Color(255, 0, 0, 0));
 
             const legsOverlay = this.add.sprite(0, 0, "legs", "1.png");
             legsOverlay.setVisible(true);
             legsOverlay.name = "legs";
 
-            duckContainer.add(legsOverlay);
-            duckContainer.add(duckGameObject);
-            // duckContainer.add(waterOverlay);
+            const splashOverlay = this.add.sprite(0, 0, "splash", "0.png")
+            splashOverlay.setVisible(false);
+            splashOverlay.name = "splash";
+            splashOverlay.setOrigin(0.5, 0.1);
+            splashOverlay.setScale(0.6);
+
             duckContainer.name = "duckcontainer";
-            // legsOverlay.parentContainer=duckContainer;
+            duckContainer.add(legsOverlay);
+            duckContainer.add(splashOverlay);
+            duckContainer.add(duckGameObject);
 
             //Init duck GO properties
             duckGameObject.parent = duckContainer;
             duckGameObject.name = "duck";
-            // duckGameObject.waterOverlay = waterOverlay;
             duckGameObject.legsOverlay = legsOverlay;
+            duckGameObject.splashOverlay = splashOverlay;
             duckGameObject.displayName = ducks[i].name;
+            duckGameObject.message = ducks[i].message;
+            duckGameObject.sound = ducks[i].sound;
+
             duckGameObject.setOrigin(0.5, 0.5);
             duckGameObject.width = SPRITE_WIDTH;
             duckGameObject.height = SPRITE_HEIGHT;
             duckGameObject.setPipeline('Light2D');
-            // duckGameObject.body.syncBounds = true;
+
             duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x * 0.5);
             duckGameObject.body.overlapY = Math.floor(duckGameObject.body.y * 0.9);
 
 
-            //Starting swimming state
+            //Starting swimming state (unused)
             duckGameObject.isSwimming = false;
-            // duckGameObject.isSwimming = this.physics.overlap(duckGameObject, pondLayer);
-            // if (duckGameObject.isSwimming != null)
-            //     duckGameObject.animState = duckGameObject.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
+
             duckGameObject.animState = DUCK_STATES.START_IDLE;
-            // this.physics.overlap(duckGameObject, groundLayer);
 
             //Duck object = {strName,strImageName,numPondNumber}, matches submission json
             duckGameObject.duck = ducks[i];
@@ -388,7 +482,7 @@ class MyGame extends Phaser.Scene {
                 ["walk", 1, 2],
                 ["quack", 3, 3],
             ]; //, ['swim-idle', 0, 0], ['swim', 1, 2], ['swim-quack', 3, 3]];
-            // const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3], ['swim-idle', 4, 4], ['swim', 5, 6], ['swim-quack', 7, 7]];
+
 
             //Generate frame names
             animationNames.forEach((animationName) => {
@@ -409,8 +503,8 @@ class MyGame extends Phaser.Scene {
                     repeat: -1,
                 });
             });
-            // //insert 1 more frame of idle inbetween the walk frames
 
+            // //insert 1 more frame of idle inbetween the walk frames
             let walkAnim = this.anims.get(currentDuck + "-" + "walk");
             walkAnim.addFrameAt(
                 1,
@@ -446,11 +540,6 @@ class MyGame extends Phaser.Scene {
             //Set OnUpdate to use animations
             duckGameObject.updateState = function (context, delta) {
                 const scene = context.scene;
-                // console.log(context.displayName);
-                // if (context.isSwimming)
-                //     console.log(duckGameObject.displayName + " is swimming");
-                // else
-                //     console.log(duckGameObject.displayName + " is not swimming");
 
                 context.body.debugShowBody = true;
                 context.body.debugBodyColor = context.isSwimming
@@ -462,13 +551,14 @@ class MyGame extends Phaser.Scene {
                         context.play(currentDuck + "-idle");
                         // if (!context.isSwimming)
                         context.legsOverlay.play("idle");
+                        context.splashOverlay.play("splash-idle");
                         context.idleTime = getRandomInt(minIdle, maxIdle);
                         context.animState = DUCK_STATES.IDLE;
                         break;
                     case DUCK_STATES.IDLE:
                         context.idleTime -= delta;
                         if (context.idleTime <= 0) {
-                            // context.animState = !context.isSwimming ? DUCK_STATES.START_WALKING : DUCK_STATES.START_SWIMMING;
+
                             context.animState = DUCK_STATES.START_WALKING;
                         }
                         break;
@@ -497,16 +587,12 @@ class MyGame extends Phaser.Scene {
                         context.play(currentDuck + "-walk");
                         // if (!context.isSwimming)
                         context.legsOverlay.play("walk");
+                        context.splashOverlay.play("splash-walk");
                         context.animState = DUCK_STATES.WALKING;
                         break;
                     case DUCK_STATES.WALKING:
                         context.travelTime -= delta;
-                        // if (context.isSwimming) {
-                        //     context.animState = DUCK_STATES.SWIMMING;
-                        //     context.play(currentDuck + '-swim');
-                        // }
                         if (context.travelTime <= 0) {
-                            // context.animState = context.isSwimming ? DUCK_STATES.START_SWIM_IDLE : DUCK_STATES.START_IDLE;
                             context.animState = DUCK_STATES.START_IDLE;
                         }
                         break;
@@ -515,9 +601,10 @@ class MyGame extends Phaser.Scene {
                             context.tween.stop();
                         }
                         context.play(currentDuck + "-quack");
-                        if (!context.isSwimming) context.legsOverlay.play("quack");
+                        // if (!context.isSwimming)
+                        context.legsOverlay.play("quack");
+                        context.splashOverlay.play("splash-quack");
 
-                        that.shuba.play();
                         context.quackTime = QUACK_DURATION;
                         context.animState = DUCK_STATES.QUACK;
                         break;
@@ -534,15 +621,21 @@ class MyGame extends Phaser.Scene {
                 }
             };
             //end OnUpdate
+            this.listOfDucks.push(duckGameObject);
         }
 
-        this.input.on("gameobjectup", this.onObjectClicked);
+
     }
 
     onObjectClicked(pointer, gameObject) {
-        // gameObject.animState = gameObject.isSwimming ? DUCK_STATES.START_SWIM_QUACK : DUCK_STATES.START_QUACK;
+        // if the text is already being displayed, do nothing
+        if (gameObject.namePopup != null || gameObject.msgPopup != null)
+            return;
+
         gameObject.animState = DUCK_STATES.START_QUACK;
-        if (gameObject.namePopup != null) return;
+        this.sound.play("suba_" + gameObject.sound);
+
+
         gameObject.namePopup = gameObject.scene.make.text({
             x: gameObject.x,
             y: gameObject.y - 50,
@@ -550,13 +643,23 @@ class MyGame extends Phaser.Scene {
             style: {font: "20px monospace", fill: "#fff", align: "center"},
         });
         gameObject.namePopup.setOrigin(0.5, 0.5);
-        console.log(gameObject.namePopup);
+        gameObject.msgPopup = gameObject.scene.make.text({
+            x: gameObject.x,
+            y: gameObject.y - 10,
+            text: gameObject.message,
+            style: {font: "20px monospace", fill: "#fff", align: "center"},
+        });
+        gameObject.msgPopup.setOrigin(0.5, 0.5);
+
+        console.log(gameObject.msgPopup);
 
         gameObject.scene.time.addEvent({
             delay: USERNAME_DISPLAY_DURATION,
             callback: function () {
                 this.namePopup.destroy();
                 this.namePopup = null;
+                this.msgPopup.destroy();
+                this.msgPopup = null;
             },
             callbackScope: gameObject,
         });
@@ -614,16 +717,12 @@ class MyGame extends Phaser.Scene {
     }
 
     update(time, delta) {
-        let gameObjectList = this.children.list;
-        let len = gameObjectList.length;
+        //todo: find a way to call update on every duck without looping thru every single object every frame holy crap
+        let len = this.listOfDucks.length;
         for (let i = 0; i < len; i++) {
-            let gameObject = gameObjectList[i];
-            if (gameObject.type != "Container") {
-                continue;
-            }
-            let duckContainer = gameObject;
 
-            let duckGO = duckContainer.last;
+
+            let duckGO = this.listOfDucks[i];
             duckGO.setDepth(duckGO.y);
             duckGO.updateState(duckGO, delta);
             // let tintIndex = Math.floor(100*(duckGO.body.transform.y / sceneHeight));
@@ -713,10 +812,10 @@ const config = {
         arcade: {
             debug: DEBUGGING,
             gravity: {y: 0}, // Top down game, so no gravity
-            tileBias: 64,
+            tileBias: 120,
         },
     },
-    scene: [MyGame, PondManager],
+    scene: [PondManager, MyGame],
 };
 
 const game = new Phaser.Game(config);
