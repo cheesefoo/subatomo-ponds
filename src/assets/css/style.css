@@ -1,8 +1,33 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #111;
+    color: #eee;
+    font: caption;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* <https://caniuse.com/#feat=object-fit> */
+}
+/*
+#version {
+    position: absolute;
+    left: 5px;
+    top: 605px;
+}*/
+/*
 * {
     box-sizing: border-box;
-    -webkit-user-select: none; /* Chrome all / Safari all */
-    -moz-user-select: none; /* Firefox all */
-    -ms-user-select: none; /* IE 10+ */
+    -webkit-user-select: none; !* Chrome all / Safari all *!
+    -moz-user-select: none; !* Firefox all *!
+    -ms-user-select: none; !* IE 10+ *!
     user-select: none;
 }
 
@@ -12,25 +37,26 @@ body {
     padding-top: 55px;
 }
 
-/*!* width *!*/
-/*::-webkit-scrollbar {*/
-/*    width: 10px;*/
-/*}*/
+!* width *!
+::-webkit-scrollbar {
+    width: 10px;
+}
 
-/*!* Track *!*/
-/*::-webkit-scrollbar-track {*/
-/*    background: #f1f1f1;*/
-/*}*/
+!* Track *!
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
-/*!* Handle *!*/
-/*::-webkit-scrollbar-thumb {*/
-/*    background: #888;*/
-/*}*/
+!* Handle *!
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
 
-/*!* Handle on hover *!*/
-/*::-webkit-scrollbar-thumb:hover {*/
-/*    background: #555;*/
-/*}*/
+!* Handle on hover *!
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+*/
 
 #pond-ui {
     /*width: 390px;*/

@@ -57,9 +57,10 @@ const MIN_IDLE_TIME = 0;
 const MAX_IDLE_TIME = 5000;
 
 
-new Phaser.Display.Color(103, 103, 103, 255);
-new Phaser.Display.Color(0, 0, 0, 0);
-
+//the width of the panel
+const TEXT_PADDING_CONFIG = {left:5, right:20, top:5,bottom:10};
+const WORD_WRAP_CONFIG = {width: 370, useAdvancedWrap:true};
+const MSG_TEXT_CONFIG = {fontFamily: "Ubuntu", fontSize: "14px", color: "#000", stroke: "#fcd73f",strokeThickness: 2, padding: TEXT_PADDING_CONFIG, wordWrap:WORD_WRAP_CONFIG};
 let currentPond = 1;
 
 let currentPondPagination = 0;
@@ -801,26 +802,24 @@ class PondManager extends Phaser.Scene {
         // uiscene.add.text();
         pond.events.on("duckclick", function (gameObject) {
 
-            console.log(img);
             let x = gameObject.parentContainer.x;
             let y = gameObject.parentContainer.y;
-            console.log(gameObject);
-            console.log(gameObject.displayName);
-            console.log(gameObject.message);
-            let panel = this.add.container(x, y);
+            let panel = this.add.container(x-50, y-120);
+            
             let img = this.add.image(0, 0, "panel");
-            let name = this.add.text(0, 0, gameObject.displayName, {font: "Ubuntu"});
+            let name = this.add.text(0, 0, gameObject.displayName, MSG_TEXT_CONFIG);
             gameObject.namePopup = name;
 
-            let msg = this.add.text(0, 10, gameObject.message, {font: "Ubuntu"});
+            let msg = this.add.text(0, 20, gameObject.message, MSG_TEXT_CONFIG);
             gameObject.msgPopup = msg;
             panel.add(img);
             panel.add(name);
             panel.add(msg);
-            console.log(name);
+            img.setOrigin(0,0);
             panel.sendToBack(img);
-            name.visible = true;
-            msg.visible = true;
+
+            console.log(name);
+            console.log(img);
 
             this.time.addEvent({
                 delay: USERNAME_DISPLAY_DURATION,
