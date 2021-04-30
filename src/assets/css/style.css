@@ -1,105 +1,172 @@
-*{
-	box-sizing:border-box;
-	-webkit-user-select: none;  /* Chrome all / Safari all */
-	-moz-user-select: none;     /* Firefox all */
-	-ms-user-select: none;      /* IE 10+ */
-	user-select: none;  
+* {
+    box-sizing: border-box;
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
 }
+
 body {
-	margin: 0;
-	min-height:100vh;
-	padding-top:55px;
+    margin: 0;
+    min-height: 100vh;
+    padding-top: 55px;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
+/*!* width *!*/
+/*::-webkit-scrollbar {*/
+/*    width: 10px;*/
+/*}*/
+
+/*!* Track *!*/
+/*::-webkit-scrollbar-track {*/
+/*    background: #f1f1f1;*/
+/*}*/
+
+/*!* Handle *!*/
+/*::-webkit-scrollbar-thumb {*/
+/*    background: #888;*/
+/*}*/
+
+/*!* Handle on hover *!*/
+/*::-webkit-scrollbar-thumb:hover {*/
+/*    background: #555;*/
+/*}*/
+
+#pond-ui {
+    /*width: 390px;*/
+    /*height: 83px;*/
+    background: url("/src/assets/ui/subaru_uitest_1.png") no-repeat;
+    background-size: 100% 100%;
+    max-width: 100%;
+    margin: 1em 1em 1em;
+    display: none;
+    top: 56px;
+    position: fixed;
+    left: 0;
+
+    padding: 1em 2em 2em;
+    z-index: 2;
+}
+#screens, .screen {
+    display: none;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+#screens {
+    background: rgb(3, 188, 252);
+    background: radial-gradient(circle, rgba(3, 188, 252, 1) 38%, rgba(4, 128, 171, 1) 100%);
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
+.navbar {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    top: 0;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+#loadingDuck {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    max-height: 50vh;
 }
 
-#screens,.screen {
-	display:none;
-}
-#screens{
-	background: rgb(3,188,252);
-background: radial-gradient(circle, rgba(3,188,252,1) 38%, rgba(4,128,171,1) 100%);	
-}
-
-.navbar{position:fixed;z-index:3;width:100%; top:0;}
-
-#loadingDuck{
-	position:fixed;top:0;right:0;left:0; margin:auto; max-height:50vh;
+.screen {
+    padding: 10px 20px;
+    max-width: 600px;
+    margin: auto;
+    min-height: calc(100vh - 55px);
+    background-color: white;
+    -webkit-box-shadow: 0 1px 15px 4px #FFFFFF;
+    box-shadow: 0 1px 15px 4px #FFFFFF;
+    /*min-height: calc(100 vh-55px);*/
 }
 
-.screen{padding:10px 20px;max-width:600px; margin:auto; min-height:calc(100vh - 55px); background-color:white; -webkit-box-shadow: 0px 1px 15px 4px #FFFFFF; 
-box-shadow: 0px 1px 15px 4px #FFFFFF;
-min-height:calc(100vh-55px);
+.screen img {
+    margin: auto;
+    text-align: center;
+    display: block;
+    padding-bottom: 20px;
 }
-
-.screen img{margin:auto; text-align:center; display:block; padding-bottom:20px;}
 
 .ubuntu {
-	font-family: 'Ubuntu', sans-serif;
-}
-canvas{display:block;max-width:100%; }
-#pond-ui{
-	display:none;top:56px;
-	position:fixed;
-	left:0;
-	background-color:cyan;
-	padding:10px;
-	z-index:2;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.load-pond{
-	display:none;
+canvas {
+    display: block;
+    max-width: 100%;
 }
 
-.load-pond.visible{
-	display:inline-block;
+/*#pond-ui img{    */
+/*}*/
+/*div.ui-img{*/
+/*    content : url("/src/assets/ui/subaru_uitest_1.png");*/
+/*}*/
+
+.button-list {
+
+    /*background: cyan url("/src/assets/ui/subaru_uitest_1.png");*/
+    /*object-fit: contain;*/
+
 }
 
-.load-pond.selectedPond{
-	background-color:red;
-}
-img{max-width:90%;
+.load-pond {
+    display: none;
 }
 
-h1{text-align:center;}
-
-#spb2{
-	display:block;max-width:300px;font-size:30px;background-color:blue;
-	border-radius:5px;
-	text-align:center; margin:auto;
+.load-pond.visible {
+    display: inline-block;
 }
 
-#about-subaru .about-content{
-	display:inline-block;
+.load-pond.selectedPond {
+    background-color: red;
 }
 
-#about-project .project-text{
-	max-width:600px;
-	margin:auto;
+img {
+    max-width: 90%;
 }
 
-#home .content{
-	align-items:center;
-	display:flex;
-	flex-wrap:wrap;
-	align-content:center;
-	height:calc(100vh - 75px);
+h1 {
+    text-align: center;
+}
+
+#spb2 {
+    display: block;
+    max-width: 300px;
+    font-size: 30px;
+    background-color: blue;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+}
+
+#about-subaru .about-content {
+    display: inline-block;
+}
+
+#about-project .project-text {
+    max-width: 600px;
+    margin: auto;
+}
+
+#home {
+    display: none;
+}
+
+#about-project {
+    display: none;
+}
+
+#about-subaru {
+    display: none;
+}
+
+#home .content {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: calc(100vh - 75px);
 }

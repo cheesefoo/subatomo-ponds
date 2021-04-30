@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true,
+        "jquery": true
+
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "WEBGL_RENDERER": true,
+        "CANVAS_RENDERER": true,
+        "Phaser": true,
+        "process": true,
+        "ActiveXObject": true,
+        "FBInstant": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}

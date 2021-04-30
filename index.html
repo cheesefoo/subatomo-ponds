@@ -74,9 +74,9 @@
 </nav>
 <div id="screens">
     <div class="d-flex justify-content-center">
-        <div class="screen" id="home" style="display: block">
+        <div class="screen" id="home">
             <div class="content">
-                <img src="images/logo.png"/>
+                <img alt="logo" src="images/logo.png"/>
                 <a class="nav-link text-white" href="#" id="spb2"
                 >Enter the ponds!</a
                 >
@@ -84,7 +84,7 @@
         </div>
         <div class="screen" id="about-project">
             <h1>About the Project</h1>
-            <img src="images/subatomo army.png"/>
+            <img alt="subatomo army" src="images/subatomo army.png"/>
             <div class="project-text">
                 This project was created as a gift for Oozora Subaru for her 1
                 million subscriber milestone. It came to be first as a gift from the
@@ -96,7 +96,7 @@
         </div>
         <div class="screen" id="about-subaru">
             <h1>Oozora Subaru</h1>
-            <img src="images/subaru.webp"/>
+            <img alt="subaru" src="images/subaru.webp"/>
             <div class="about-content">
                 <p>
                     The manager of an MMA club and an E-sports club. A supremely
@@ -113,17 +113,15 @@
         </div>
     </div>
 </div>
-<style>
-    canvas {
-        background: white;
-    }
-</style>
+
+
 <script>
-    //$(document).ready(function() {
-    //$("#about-project").hide();
-    //$("#about-subaru").hide();
-    //$("#screens").show();
-    //$("#home").show();
+    $(function () {
+        // Handler when the DOM is fully loaded
+
+        $("#screens").show();
+
+    });
 
     function changeScreen(screen) {
         hideScreen();
@@ -138,26 +136,26 @@
         $(".screen").hide();
     }
 
-    $("#spb1,#spb2").click(function () {
+    $("#spb1,#spb2").on('click', function () {
         hideScreen();
         $("#screens").hide();
         $("canvas").show();
         window.game.input.enabled = true;
         $("#pond-ui").show();
     });
-    $("#menu1").click(function () {
+    $("#menu1").on('click', function () {
         changeScreen("#home");
     });
-    $("#menu2").click(function () {
+    $("#menu2").on('click', function () {
         changeScreen("#about-project");
     });
-    $("#menu3").click(function () {
+    $("#menu3").on('click', function () {
         changeScreen("#about-subaru");
     });
 
     $("body").on("click", ".navbar a", function () {
         if (!$(".navbar-toggler").hasClass("collapsed")) {
-            $(".navbar-toggler").click();
+            $(".navbar-toggler").trigger("click");
         }
     });
     //});

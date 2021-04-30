@@ -17,6 +17,7 @@
     "compression-webpack-plugin": "^7.1.2",
     "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.2.1",
+    "eslint": "^7.25.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
     "prettier": "^2.2.1",
@@ -32,7 +33,6 @@
   "dependencies": {
     "babel": "^6.23.0",
     "dropzone": "^5.9.2",
-    "eslint": "^7.24.0",
     "phaser": "^3.54.0"
   }
 }
