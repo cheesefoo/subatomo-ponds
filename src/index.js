@@ -12,12 +12,15 @@ const submissions = require("./assets/submissions/submissions.json");
 const splashj = require("./assets/pond/WaterSplashAnimation/splash.json");
 const pondTileJson = require("./assets/pond/pond.json");
 
+window.logSwim=true;
 
 require("phaser");
 // require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
 // require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
 require("./assets/pond/pond_vibrant_1920x1080.jpg");
 require("./assets/pond/WaterSplashAnimation/splash.png");
+
+import { Plugin as NineSlicePlugin } from 'phaser3-nineslice';
 
 importAll(require.context("./", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
 importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
@@ -310,8 +313,12 @@ class MyGame extends Phaser.Scene {
 
             pondLayer.setTileIndexCallback(
                 pondTileIndices,
-                function (context) {
+                function (context,con2) {
                     // console.log("swimming");
+					if(window.logSwim){
+						console.log("swi context",context,con2);
+						window.logSwim=false;
+					}
                     context.setVisible(true);
                     context.duck.legsOverlay.setVisible(false);
                 },
@@ -820,16 +827,25 @@ class PondManager extends Phaser.Scene {
             let y = gameObject.parentContainer.y;
             let panel = this.add.container(x-50, y-120);
             
-            let img = this.add.image(0, 0, "panel");
+            //let img = this.add.image(0, 0, "panel");
+			
+			
+			
             let name = this.add.text(0, 0, gameObject.displayName, MSG_TEXT_CONFIG);
             gameObject.namePopup = name;
 
             let msg = this.add.text(0, 20, gameObject.message, MSG_TEXT_CONFIG);
-			console.log("mensaje",msg,img);
+			//console.log("mensaje",msg,img);
             gameObject.msgPopup = msg;
-			if(msg.displayHeight>33){
-				img.displayHeight+=30;
-			}
+			
+			let img = this.add.nineslice(
+			  -10, -10,   // this is the starting x/y location
+			  msg.displayWidth+20, msg.displayHeight+name.displayHeight+20,   // the width and height of your object
+			  'panel', // a key to an already loaded image
+			  30,         // the width and height to offset for a corner slice
+			  10          // (optional) pixels to offset when computing the safe usage area
+			);
+			
             panel.add(img);
             panel.add(name);
             panel.add(msg);
@@ -884,6 +900,8 @@ class PondManager extends Phaser.Scene {
     }
 }
 
+
+
 const config = {
     type: Phaser.CANVAS,
     width: sceneWidth,
@@ -897,6 +915,9 @@ const config = {
             tileBias: 120,
         },
     },
+	plugins: {
+		global: [ NineSlicePlugin.DefaultCfg ],
+	},
     scene: [PondManager, MyGame],
 };
 
