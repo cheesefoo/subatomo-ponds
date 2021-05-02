@@ -12,7 +12,7 @@ const submissions = require("./assets/submissions/submissions.json");
 const splashj = require("./assets/pond/WaterSplashAnimation/splash.json");
 const pondTileJson = require("./assets/pond/pond.json");
 
-require("./assets/cameralayer.png");
+
 require("phaser");
 // require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
 // require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
@@ -160,9 +160,11 @@ class MyGame extends Phaser.Scene {
                 if (percentComplete === 1)
                     console.log(file.key);
             });
+			
+			$("body").css("opacity","1");
 
             this.load.on("complete", function () {
-                setTimeout(function () {
+                //setTimeout(function () {
                     that.scene.get("pond-manager");
                     // pondManager.events.on(
                     //     "reloadPond",
@@ -181,11 +183,11 @@ class MyGame extends Phaser.Scene {
                     loadingText.destroy();
                     percentText.destroy();
                     $("#loadingDuck").hide();
-                    // $("canvas").hide();
+                    $("canvas").hide();
                     $("#home").show();
                     $("#screens").show();
                     window.game.input.enabled = false;
-                }, 1500);
+                //}, 1500);
             });
         }
 
@@ -429,6 +431,7 @@ class MyGame extends Phaser.Scene {
 
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
+        //for (let i = 0; i < 1; i++) {
 
 
             const duckGameObject = this.physics.add
@@ -472,8 +475,8 @@ class MyGame extends Phaser.Scene {
             duckGameObject.sound = ducks[i].sound ??= "1";
 
             duckGameObject.setOrigin(0.5, 0.5);
-            duckGameObject.width = SPRITE_WIDTH;
-            duckGameObject.height = SPRITE_HEIGHT;
+            duckGameObject.displayWidth = SPRITE_WIDTH;
+            duckGameObject.displayHeight = SPRITE_HEIGHT;
             duckGameObject.setPipeline("Light2D");
 
             // duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x * 0.5);
@@ -522,21 +525,30 @@ class MyGame extends Phaser.Scene {
             // //insert 1 more frame of idle inbetween the walk frames
             let walkAnim = this.anims.get(currentDuck + "-" + "walk");
             walkAnim.addFrameAt(1, this.anims.get(currentDuck + "-" + "idle").getFrames());
-
+			
+			let clickContainer=this.add.rectangle(0, 0, SPRITE_WIDTH, SPRITE_HEIGHT, 0x6666ff,0);
+			clickContainer.duck=duckGameObject;
+			duckContainer.add(clickContainer);
             //Set event for click/press
-            duckGameObject.setInteractive();
-            duckGameObject.input.cursor = "pointer";
+            clickContainer.setInteractive();
+            clickContainer.input.cursor="pointer";
+            clickContainer.input.hitArea.y+=25;
+            //duckGameObject.input.cursor = "pointer";
+			//duckGameObject.input.hitArea.setTo(0,25,100,100);
+			
+			
             this.input.enableDebug(duckGameObject, 0x04F404);
+			console.log("duck",duckGameObject);
 
             //Fix hitbox
             this.time.addEvent({
                 delay: 1000,
                 callback: function () {
-                    duckGameObject.input.hitArea.setSize(
+                    /*duckGameObject.input.hitArea.setSize(
                         duckGameObject.width,
                         duckGameObject.height / 2,
                         true
-                    );
+                    );*/
                     duckGameObject.parentContainer.body.setSize(duckGameObject.width, duckGameObject.height / 2, false);
                     duckGameObject.parentContainer.body.setOffset(-duckGameObject.width / 2, -duckGameObject.height / 4);
                     // duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
@@ -650,13 +662,15 @@ class MyGame extends Phaser.Scene {
     }
 
     onObjectClicked(pointer, gameObject) {
+		var duck= gameObject.duck;
         // if the text is already being displayed, do nothing
-        if (gameObject.namePopup != null || gameObject.msgPopup != null)
+        if (duck.namePopup != null || duck.msgPopup != null)
             return;
-
-        gameObject.animState = DUCK_STATES.START_QUACK;
-        this.scene.sound.play("suba_" + gameObject.sound);
-        this.scene.events.emit("duckclick", gameObject);
+		
+		
+        duck.animState = DUCK_STATES.START_QUACK;
+        this.scene.sound.play("suba_" + duck.sound);
+        this.scene.events.emit("duckclick", duck);
         //
         // gameObject.namePopup = gameObject.scene.make.text({
         //     x: gameObject.x,
@@ -690,8 +704,8 @@ class MyGame extends Phaser.Scene {
 
     generatePondUI() {
         console.log("generate pond ui");
-        $("body").append("<div class='ui-img' id='pond-ui'></div>");
-        let pond = $("#pond-ui");
+        $("body").append("<div class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
+        let pond = $("#pond-ui .inner-ui");
         // pond.append("<img src='assets/subaru_uitest_1.png'></img>")
         pond.append("<h3>Select pond</h3>");
         pond.append("<div class='button-list'></div>");
@@ -811,7 +825,11 @@ class PondManager extends Phaser.Scene {
             gameObject.namePopup = name;
 
             let msg = this.add.text(0, 20, gameObject.message, MSG_TEXT_CONFIG);
+			console.log("mensaje",msg,img);
             gameObject.msgPopup = msg;
+			if(msg.displayHeight>33){
+				img.displayHeight+=30;
+			}
             panel.add(img);
             panel.add(name);
             panel.add(msg);
