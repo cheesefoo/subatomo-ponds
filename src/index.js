@@ -187,7 +187,11 @@ class MyGame extends Phaser.Scene {
                     percentText.destroy();
                     $("#loadingDuck").hide();
                     $("canvas").hide();
-                    $("#home").show();
+					if (localStorage.getItem("userLang") === null) {
+						$("#lng").show();
+					}else{
+						$("#home").show();
+					}
                     $("#screens").show();
                     window.game.input.enabled = false;
                 //}, 1500);

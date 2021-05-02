@@ -71,6 +71,7 @@ module.exports = {
         },
         { from: "src/assets/images", to: "images" },
         { from: "src/assets/css", to: "css" },
+        { from: "src/assets/js", to: "js" },
         { from: "manifest.webmanifest", to: "manifest.webmanifest" },
         { from: "sw.js", to: "sw.js" },
         { from: "favicon.ico", to: "favicon.ico" },

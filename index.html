@@ -16,6 +16,7 @@
             href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
             rel="stylesheet"
     />
+	<script src="./js/language.js"></script>
     <script
             crossorigin="anonymous"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -33,8 +34,7 @@
             href="#"
             id="menu1"
             style="margin-right: auto"
-    ><span><!--insert logo here-->&#9832; </span>Subatomo Pond Fan
-        Project</a
+    ><span><!--insert logo here-->&#9832; </span><script>document.write(langs[lng][0])</script></a
     >
     <button
             class="navbar-toggler"
@@ -75,7 +75,14 @@
 </nav>
 <div id="screens">
     <div class="d-flex justify-content-center">
-        <div class="screen" id="home">
+        <div class="screen" id="lng">
+            <div class="content">
+                <img alt="logo" src="images/logo.png"/>
+                <button class="nav-link text-white selectLang" lng="en" type="button">ENGLISH</button>
+                <button class="nav-link text-white selectLang" lng="es" type="button">SPANISH</button>
+            </div>
+        </div>
+		<div class="screen" id="home">
             <div class="content">
                 <img alt="logo" src="images/logo.png"/>
                 <a class="nav-link text-white" href="#" id="spb2"
@@ -121,8 +128,14 @@
         // Handler when the DOM is fully loaded
 
         $("#screens").show();
+		
+		$("body").on("click",".selectLang",function(){
+			localStorage['userLang']=$(this).attr("lng");
+			location.reload();
+		});
 
     });
+	
 
     function changeScreen(screen) {
         hideScreen();
