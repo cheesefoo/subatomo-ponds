@@ -134,15 +134,15 @@
 
 <script>
 
-    var canvas;
+    let canvas;
 
-    var ducks = [];
+    let ducks = [];
 
     function addDuck() {
         ducks = [];
-        var duckimg = document.querySelector('#duck');
+        let duckimg = document.querySelector("#duck");
 
-        var duck = new fabric.Image(duckimg, {
+        let duck = new fabric.Image(duckimg, {
             width: duckimg.width,
             height: duckimg.height,
             left: 0,
@@ -199,8 +199,8 @@
     }
 
     function init() {
-        var $ = function (id) {
-            return document.getElementById(id)
+        const $ = function (id) {
+            return document.getElementById(id);
         };
 
 
@@ -252,13 +252,13 @@
                 e.stopPropagation(); // stops the browser from redirecting.
             }
 
-            var img = document.querySelector('#images img.img_dragging');
+            const img = document.querySelector("#images img.img_dragging");
 
             console.log('event: ', e);
 
             console.log(img);
 
-            var newImage = new fabric.Image(img, {
+            const newImage = new fabric.Image(img, {
                 width: img.width,
                 height: img.height,
                 // Set the center of the new object based on the event coordinates relative
@@ -282,13 +282,13 @@
             // Browser supports HTML5 DnD.
 
             // Bind the event listeners for the image elements
-            var images = document.querySelectorAll('#images img');
+            const images = document.querySelectorAll("#images img");
             [].forEach.call(images, function (img) {
                 img.addEventListener('dragstart', handleDragStart, false);
                 img.addEventListener('dragend', handleDragEnd, false);
             });
             // Bind the event listeners for the canvas
-            var canvasContainer = document.getElementById('canvas-container');
+            const canvasContainer = document.getElementById("canvas-container");
             canvasContainer.addEventListener('dragenter', handleDragEnter, false);
             canvasContainer.addEventListener('dragover', handleDragOver, false);
             canvasContainer.addEventListener('dragleave', handleDragLeave, false);
@@ -299,14 +299,14 @@
         }
 
 
-        var drawingModeEl = $('drawing-mode'),
-            drawingOptionsEl = $('drawing-mode-options'),
-            drawingColorEl = $('drawing-color'),
-            drawingShadowColorEl = $('drawing-shadow-color'),
-            drawingLineWidthEl = $('drawing-line-width'),
-            drawingShadowWidth = $('drawing-shadow-width'),
-            drawingShadowOffset = $('drawing-shadow-offset'),
-            clearEl = $('clear-canvas');
+        const drawingModeEl = $("drawing-mode"),
+            drawingOptionsEl = $("drawing-mode-options"),
+            drawingColorEl = $("drawing-color"),
+            drawingShadowColorEl = $("drawing-shadow-color"),
+            drawingLineWidthEl = $("drawing-line-width"),
+            drawingShadowWidth = $("drawing-shadow-width"),
+            drawingShadowOffset = $("drawing-shadow-offset"),
+            clearEl = $("clear-canvas");
 
         clearEl.onclick = function () {
             canvas.clear();
@@ -325,12 +325,12 @@
         };
 
         if (fabric.PatternBrush) {
-            var vLinePatternBrush = new fabric.PatternBrush(canvas);
+            const vLinePatternBrush = new fabric.PatternBrush(canvas);
             vLinePatternBrush.getPatternSrc = function () {
 
-                var patternCanvas = fabric.document.createElement('canvas');
+                const patternCanvas = fabric.document.createElement("canvas");
                 patternCanvas.width = patternCanvas.height = 10;
-                var ctx = patternCanvas.getContext('2d');
+                const ctx = patternCanvas.getContext("2d");
 
                 ctx.strokeStyle = this.color;
                 ctx.lineWidth = 5;
@@ -343,12 +343,12 @@
                 return patternCanvas;
             };
 
-            var hLinePatternBrush = new fabric.PatternBrush(canvas);
+            const hLinePatternBrush = new fabric.PatternBrush(canvas);
             hLinePatternBrush.getPatternSrc = function () {
 
-                var patternCanvas = fabric.document.createElement('canvas');
+                const patternCanvas = fabric.document.createElement("canvas");
                 patternCanvas.width = patternCanvas.height = 10;
-                var ctx = patternCanvas.getContext('2d');
+                const ctx = patternCanvas.getContext("2d");
 
                 ctx.strokeStyle = this.color;
                 ctx.lineWidth = 5;
@@ -361,14 +361,14 @@
                 return patternCanvas;
             };
 
-            var squarePatternBrush = new fabric.PatternBrush(canvas);
+            const squarePatternBrush = new fabric.PatternBrush(canvas);
             squarePatternBrush.getPatternSrc = function () {
 
-                var squareWidth = 10, squareDistance = 2;
+                const squareWidth = 10, squareDistance = 2;
 
-                var patternCanvas = fabric.document.createElement('canvas');
+                const patternCanvas = fabric.document.createElement("canvas");
                 patternCanvas.width = patternCanvas.height = squareWidth + squareDistance;
-                var ctx = patternCanvas.getContext('2d');
+                const ctx = patternCanvas.getContext("2d");
 
                 ctx.fillStyle = this.color;
                 ctx.fillRect(0, 0, squareWidth, squareWidth);
@@ -376,24 +376,24 @@
                 return patternCanvas;
             };
 
-            var diamondPatternBrush = new fabric.PatternBrush(canvas);
+            const diamondPatternBrush = new fabric.PatternBrush(canvas);
             diamondPatternBrush.getPatternSrc = function () {
 
-                var squareWidth = 10, squareDistance = 5;
-                var patternCanvas = fabric.document.createElement('canvas');
-                var rect = new fabric.Rect({
+                const squareWidth = 10, squareDistance = 5;
+                const patternCanvas = fabric.document.createElement("canvas");
+                const rect = new fabric.Rect({
                     width: squareWidth,
                     height: squareWidth,
                     angle: 45,
                     fill: this.color
                 });
 
-                var canvasWidth = rect.getBoundingRect().width;
+                const canvasWidth = rect.getBoundingRect().width;
 
                 patternCanvas.width = patternCanvas.height = canvasWidth + squareDistance;
                 rect.set({left: canvasWidth / 2, top: canvasWidth / 2});
 
-                var ctx = patternCanvas.getContext('2d');
+                const ctx = patternCanvas.getContext("2d");
                 rect.render(ctx);
 
                 return patternCanvas;
@@ -423,7 +423,7 @@
             }
 
             if (canvas.freeDrawingBrush) {
-                var brush = canvas.freeDrawingBrush;
+                const brush = canvas.freeDrawingBrush;
                 brush.color = drawingColorEl.value;
                 if (brush.getPatternSrc) {
                     brush.source = brush.getPatternSrc.call(brush);
@@ -440,7 +440,7 @@
         };
 
         drawingColorEl.onchange = function () {
-            var brush = canvas.freeDrawingBrush;
+            const brush = canvas.freeDrawingBrush;
             brush.color = this.value;
             if (brush.getPatternSrc) {
                 brush.source = brush.getPatternSrc.call(brush);
@@ -491,20 +491,20 @@
 
         canvas.deactivateAll().renderAll();
 
-        var sheet = document.getElementById("spritesheet");
-        var duckCan = document.getElementById("canvas");
-        var source = document.getElementById("source");
-        var copy = document.getElementById("copy");
+        const sheet = document.getElementById("spritesheet");
+        const duckCan = document.getElementById("canvas");
+        const source = document.getElementById("source");
+        const copy = document.getElementById("copy");
 
-        var sourceCtx = source.getContext('2d');
-        var copyCtx = copy.getContext('2d');
-        var sheetCtx = sheet.getContext('2d');
+        const sourceCtx = source.getContext("2d");
+        const copyCtx = copy.getContext("2d");
+        const sheetCtx = sheet.getContext("2d");
 
         //call its drawImage() function passing it the source canvas directly
 
-        var auxWidth = 300;
-        var destination = 200;
-        var step = 100;
+        let auxWidth = 300;
+        const destination = 200;
+        const step = 100;
 
         copyCtx.drawImage(duckCan, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
 
@@ -541,7 +541,7 @@
 
 <script>
     function download() {
-        var link = document.getElementById('link');
+        const link = document.getElementById("link");
         link.setAttribute('download', 'avatar.png');
         link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
         link.click();
