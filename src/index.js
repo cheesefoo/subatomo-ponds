@@ -1,4 +1,4 @@
-let DEBUGGING = false;
+let DEBUGGING = true;
 
 function importAll(r) {
     return r.keys().map(r);
@@ -10,14 +10,16 @@ const ducksj = require("./assets/submissions/all_ducks_sheet.json");
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
 const submissions = require("./assets/submissions/submissions.json");
 const splashj = require("./assets/pond/WaterSplashAnimation/splash.json");
-const pondTileJson = require("./assets/pond/pond.json");
+const pondTileJson = require("./assets/pond/pond_isometric.json");
+// const pondTileJson = require("./assets/pond/pond.json");
 
 window.logSwim=true;
 
 require("phaser");
 // require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
 // require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
-require("./assets/pond/pond_vibrant_1920x1080.jpg");
+// require("./assets/pond/pond_vibrant_1920x1080.jpg");
+require("./assets/pond/Subapond_vibrantHD-min.jpg");
 require("./assets/pond/WaterSplashAnimation/splash.png");
 
 import { Plugin as NineSlicePlugin } from 'phaser3-nineslice';
@@ -32,9 +34,16 @@ importAll(require.context("./assets/sound/", true, /suba.*\.(mp3|ogg|wav)$/));
 // const groundTileIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
 //     26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 40, 41, 42, 43, 44, 58, 59, 60, 61, 62, 73, 74, 75, 76, 77, 88, 89, 90, 91,
 //     92, 93, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,];
-const groundTileIndices = [1, 2, 3, 4, 9, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28, 29, 30, 33, 34, 35, 36, 37, 38, 43, 44, 45, 46, 47, 48, 51, 62, 63, 64, 79, 80, 81, 82, 83, 95, 96, 97, 98, 99, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141];
 
-let pondTileIndices = [39, 40, 41, 42, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 65, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109];
+//ORTHOGNAL
+// const groundTileIndices = [1, 2, 3, 4, 9, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28, 29, 30, 33, 34, 35, 36, 37, 38, 43, 44, 45, 46, 47, 48, 51, 62, 63, 64, 79, 80, 81, 82, 83, 95, 96, 97, 98, 99, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141];
+// let pondTileIndices = [39, 40, 41, 42, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 65, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109];
+
+//ISOMETRIC
+let groundTileIndices = [1,2,3,4,5,11,12,14,15,16,17,18,21,22,23,24,25,26,27,28,29,32,33,34,35,36,37,38,41,42,43,44,45,46,47,48,54,55,56,57,58,59,61,62,63,64,65,66,67,68,77,78,79,83,84,98,99,118,119,121,122,123,124,138,139,141,142,143,144,158,159,161,162,163,164,177,178,179,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197];
+let pondTileIndices = [49,69,70,71,72,73,74,81,82,85,86,87,88,89,90,91,92,93,94,95,96,97,101,102,105,106,107,108,109,110,111,112,113,114,115,116,117,125,126,127,128,129,130,131,132,133,134,135,136,137,145,146,147,148,149,150,151,152,153,154,155,156,157,165,166,167,168,169,170,171,172,173,174];
+// let obstacleTileIndices = [0,6,7,8,9,10,13,19,30,31,39,50,51,52,53,75,76,103,104,175,176,199,200];
+
 let pondLayer;
 let groundLayer;
 let obstacleLayer;
@@ -108,7 +117,7 @@ class MyGame extends Phaser.Scene {
 
         function loading() {
             console.log("loading call");
-            var progressWidth = 320;
+            const progressWidth = 320;
 
             const progressBar = this.add.graphics();
             const progressBox = this.add.graphics();
@@ -203,7 +212,8 @@ class MyGame extends Phaser.Scene {
         //Load audio files
         this.load.audio("suba_1", "assets/suba_1.mp3");
         this.load.audio("suba_2", "assets/suba_2.mp3");
-        this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
+        // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
+        this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
         this.load.tilemapTiledJSON("map", pondTileJson);
         this.listOfDucks = [];
 
@@ -272,7 +282,8 @@ class MyGame extends Phaser.Scene {
 
     makeTileMap() {
         this.map = this.make.tilemap({key: "map"}); //, tileWidth: 64, tileHeight: 64 });
-        let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
+        let tileset = this.map.addTilesetImage("Subapond_vibrantHD-min", "tiles");
+        // let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
         groundLayer = this.map.createLayer("ground", tileset);
         groundLayer.setCollisionByProperty({collides: true});
         pondLayer = this.map.createLayer("pond", tileset);
@@ -364,6 +375,11 @@ class MyGame extends Phaser.Scene {
             obstacleLayer.renderDebug(debugGraphics, {
                 tileColor: null, // Color of non-colliding tiles
                 collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+                faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
+            });
+           pondLayer.renderDebug(debugGraphics, {
+                tileColor: null, // Color of non-colliding tiles
+                collidingTileColor: new Phaser.Display.Color(48, 134, 255, 255), // Color of colliding tiles
                 faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
             });
         }
