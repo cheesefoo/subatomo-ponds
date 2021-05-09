@@ -4,6 +4,7 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
+
 require("./assets/css/style.css");
 
 const ducksj = require("./assets/submissions/all_ducks_sheet.json");
@@ -214,6 +215,7 @@ class MyGame extends Phaser.Scene {
         this.load.audio("suba_2", "assets/suba_2.mp3");
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
+        this.load.image("col", "images/col.jpg");
         this.load.tilemapTiledJSON("map", pondTileJson);
         this.listOfDucks = [];
 
@@ -300,9 +302,11 @@ class MyGame extends Phaser.Scene {
         gameObjectList.forEach(function (gameObject) {
             if (gameObject.type === "Container") {
                 let duckGO = gameObject.last;
+				console.log("watery",waterVibrant);
                 that.physics.add.overlap(duckGO, waterVibrant, function (context) {
                     console.log(context.displayName + " swimming");
                     context.isSwimming = true;
+					console.log("SWIOIIIMMMMM");
                     // context.waterOverlay.setVisible(true)
                     context.legsOverlay.setVisible(false);
                 }, null, this);
@@ -318,6 +322,7 @@ class MyGame extends Phaser.Scene {
     }
 
     applyTileCollisionCallbacks() {
+		return false;
         let gameObjectList = this.listOfDucks;
         let that = this;
         gameObjectList.forEach(function (gameObject) {
@@ -592,6 +597,14 @@ class MyGame extends Phaser.Scene {
 
             //Set OnUpdate to use animations
             duckGameObject.updateState = function (context, delta) {
+				
+				if(window.game.textures.getPixel(context.legsOverlay.body.x,context.legsOverlay.body.y,"col").r==0){
+				context.legsOverlay.setVisible(false);
+				context.splashOverlay.setVisible(true);
+				}else{
+						context.legsOverlay.setVisible(true);
+						context.splashOverlay.setVisible(false);
+				}
 
 
                 context.body.debugShowBody = true;
