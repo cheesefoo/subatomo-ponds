@@ -322,12 +322,12 @@ class MyGame extends Phaser.Scene {
     }
 
     applyTileCollisionCallbacks() {
-		return false;
+		
         let gameObjectList = this.listOfDucks;
         let that = this;
         gameObjectList.forEach(function (gameObject) {
 
-            pondLayer.setTileIndexCallback(
+           /* pondLayer.setTileIndexCallback(
                 pondTileIndices,
                 function (context,con2) {
                     // console.log("swimming");
@@ -351,7 +351,7 @@ class MyGame extends Phaser.Scene {
                 },
                 null,
                 this
-            );
+            );*/
             that.physics.add.overlap(gameObject.legsOverlay, groundLayer);
             that.physics.add.collider(gameObject.parentContainer, obstacleLayer, function (c) {
                 c.body.stop();
