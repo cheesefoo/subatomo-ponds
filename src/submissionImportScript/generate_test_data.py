@@ -1,3 +1,4 @@
+import json
 import random
 from json import dumps
 from os import listdir
@@ -63,10 +64,9 @@ class DuckMaker:
                     image.save(filename=join(RAW_IMAGES_DIR, '{0}.png'.format(n)))
                     image.clear()
 
-
     def make_json(self, ducks_per_pond):
         entries = []
-        pond = 1
+        pond = 0
         for i in range(0, self.num):
             if i % ducks_per_pond == 0:
                 pond = pond + 1
@@ -131,12 +131,26 @@ def pack_spritesheet_free():
     run(args, shell=True, check=True)
 
 
+def merge_json():
+    single = '{"textures": [], "meta": {"app": "http://github.com/odrick/free-tex-packer-cli", "version": "0.3.0"}}'
+    s = json.loads(single)
+    t = s["textures"]
+    for file in listdir(SPRITESHEET_DIR):
+        if file.startswith("all_ducks_sheet") and file.endswith("json"):
+            with open(join(SPRITESHEET_DIR, file)) as f:
+                j = json.load(f)
+                t +=j["textures"]
+    output = dumps(s)
+    with open(join(JSON_DESTINATION_DIR, "all_ducks_sheet.json"), 'w') as f:
+        f.write(output)
+
 def main():
     maker = DuckMaker(500, template)
     maker.make_images()
     maker.make_json(20)
     split_images()
     pack_spritesheet_free()
+    merge_json()
 
 
 if __name__ == '__main__':

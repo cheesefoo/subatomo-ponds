@@ -1,4 +1,5 @@
 let DEBUGGING = false;
+let TEST_DATA = true;
 
 function importAll(r) {
     return r.keys().map(r);
@@ -6,10 +7,21 @@ function importAll(r) {
 
 
 require("./assets/css/style.css");
+let ducksj, submissions;
 
-const ducksj = require("./assets/submissions/all_ducks_sheet.json");
+if (TEST_DATA) {
+    ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
+    submissions = require("./assets/test_submissions/submissions.json");
+    importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+} else {
+    ducksj = require("./assets/submissions/all_ducks_sheet.json");
+    submissions = require("./assets/submissions/submissions.json");
+    importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+
+}
+
+
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
-const submissions = require("./assets/submissions/submissions.json");
 const splashj = require("./assets/pond/WaterSplashAnimation/splash.json");
 // const pondTileJson = require("./assets/pond/pond_isometric.json");
 // const pondTileJson = require("./assets/pond/pond.json");
@@ -30,7 +42,6 @@ require("./assets/pond/pond_color_invert.png");
 require("./assets/pond/WaterSplashAnimation/splash.png");
 
 
-importAll(require.context("./", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
 importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
 importAll(require.context("./", true, /pond.*\.(json)$/));
 importAll(require.context("./assets/sound/", true, /.*\.(mp3|ogg|wav)$/));
@@ -62,8 +73,7 @@ const FRAME_RATE = 10;
 const USERNAME_DISPLAY_DURATION = 3000;
 const SPRITE_WIDTH = 100;
 const SPRITE_HEIGHT = 100;
-const maxPond =
-    submissions.submissions[submissions.submissions.length - 1].pond;
+const maxPond = submissions.submissions[submissions.submissions.length - 1].pond;
 const QUACK_DURATION = 1600;
 
 let sceneWidth = window.innerWidth;
@@ -494,12 +504,15 @@ class MyGame extends Phaser.Scene {
             const legsOverlay = this.physics.add.sprite(0, 0, "legs", "1.png");
             legsOverlay.setVisible(true);
             legsOverlay.name = "legs";
+            legsOverlay.setOrigin(0.5, 0.5);
+            legsOverlay.y = 20;
 
             const splashOverlay = this.physics.add.sprite(0, 0, "splash", "0.png");
             splashOverlay.setVisible(false);
             splashOverlay.name = "splash";
-            splashOverlay.setOrigin(0.5, 0.1);
+            splashOverlay.setOrigin(0.5, 0.5);
             splashOverlay.setScale(0.6);
+            splashOverlay.y = 40;
 
             let duckContainer = this.add.container(
                 getRandomInt(sceneWidth / 3, 2 * sceneWidth / 3),
