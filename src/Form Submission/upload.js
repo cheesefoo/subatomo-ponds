@@ -47,6 +47,8 @@ function chooseFile(file) {
             spritesheet.src = reader.result;
             canvas1.style.visibility = "visible";
             canvas2.style.visibility = "visible";
+            canvas1Flipped.style.visibility = "visible";
+            canvas2Flipped.style.visibility = "visible";
             startAnimating(10);
 
             //todo: check image dimensions?
@@ -72,9 +74,13 @@ let sx1, sy1, sx2, sy2 = 0;
 let scale = 1;
 let canvas1 = document.getElementById("animPreview1");
 let canvas2 = document.getElementById("animPreview2");
+let canvas1Flipped = document.getElementById("animPreview1-flipped");
+let canvas2Flipped = document.getElementById("animPreview2-flipped");
 // let canvas = document.querySelector("#animPreview");
 let canvasContext1 = canvas1.getContext("2d");
 let canvasContext2 = canvas2.getContext("2d");
+let canvasContext1Flipped = canvas1Flipped.getContext("2d");
+let canvasContext2Flipped = canvas2Flipped.getContext("2d");
 
 let currentFrame1 = 0;
 let currentFrame2 = 0;
@@ -99,6 +105,8 @@ function animate() {
         then = now - (elapsed % fpsInterval);
         canvasContext1.clearRect(0, 0, canvas1.width, canvas1.height);
         canvasContext2.clearRect(0, 0, canvas2.width, canvas2.height);
+        canvasContext1Flipped.clearRect(0, 0, canvas1Flipped.width, canvas1Flipped.height);
+        canvasContext2Flipped.clearRect(0, 0, canvas2Flipped.width, canvas2Flipped.height);
 
         //Set corner coordinates according to current frame
         //   x  y
@@ -117,6 +125,10 @@ function animate() {
 
         canvasContext1.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
         canvasContext2.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);
+        canvasContext1Flipped.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
+        canvasContext2Flipped.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);
+
+
         currentFrame1++;
         currentFrame2++;
         if (currentFrame1 == framesInAnimation1)
@@ -212,6 +224,7 @@ function play(val) {
     audio.play();
 }
 
+/*
 function fetchVideoAndPlay(src) {
     fetch(src)
         .then(response => response.blob())
@@ -226,6 +239,7 @@ function fetchVideoAndPlay(src) {
             console.log(e);
         });
 }
+*/
 
 
 function getRandomIntInclusive(min, max) {
