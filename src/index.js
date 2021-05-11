@@ -31,8 +31,8 @@ const soundsj = require("./assets/sound/soundfilemap.json");
 window.logSwim = true;
 
 require("phaser");
-const NineSlicePlugin = require("phaser3-nineslice");
-// import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
+// const NineSlicePlugin = require("phaser3-nineslice");
+import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
 
 // require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
 // require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
@@ -100,11 +100,11 @@ const MSG_TEXT_CONFIG = {
     padding: TEXT_PADDING_CONFIG,
     wordWrap: WORD_WRAP_CONFIG
 };
-let $loadpond = $(".load-pond");
+
 let currentPond = 1;
 
 let currentPondPagination = 0;
-let pondsPerPage = 3;
+let pondsPerPage = 6;
 let maxPages;
 
 const DUCK_STATES = {
@@ -121,6 +121,8 @@ const DUCK_STATES = {
     START_SWIM_QUACK: 10,
     SWIM_QUACK: 11,
 };
+
+let $body = $("body");
 
 class MyGame extends Phaser.Scene {
     // jshint ignore:line
@@ -193,7 +195,7 @@ class MyGame extends Phaser.Scene {
                 );
             });
 
-            var that = this;
+            const that = this;
 
             this.load.on("fileprogress", function (file, percentComplete) {
                 //assetText.setText('Loading asset: ' + file.key);
@@ -201,7 +203,7 @@ class MyGame extends Phaser.Scene {
                     console.log(file.key);
             });
 
-            $("body").css("opacity", "1");
+            $body.css("opacity", "1");
 
             this.load.on("complete", function () {
                 //setTimeout(function () {
@@ -226,7 +228,7 @@ class MyGame extends Phaser.Scene {
                 $("canvas").hide();
                 $("#home").show();
                 $("#screens").show();
-                that.input.enabled = false;
+                window.game.input.enabled = false;
                 //}, 1500);
             });
         }
@@ -269,6 +271,8 @@ class MyGame extends Phaser.Scene {
             "reloadPond",
             function () {
                 this.populateDucks(currentPond);
+                this.applyTileCollisionCallbacks();
+                last_collision_check = COLLISION_CHECK_RATE-1;
             },
             this
         );
@@ -311,6 +315,7 @@ class MyGame extends Phaser.Scene {
         transitionLayer.setCollisionByProperty({collides: true});
     }
 
+    /// Unused
     applyCollisions() {
         let gameObjectList = this.children.list;
         let that = this;
@@ -606,18 +611,13 @@ class MyGame extends Phaser.Scene {
             this.time.addEvent({
                 delay: 1000,
                 callback: function () {
-                    /*duckGameObject.input.hitArea.setSize(
-                        duckGameObject.width,
-                        duckGameObject.height / 2,
-                        true
-                    );*/
+                    //in case we were destroyed before executing
+                    if(duckGameObject.parentContainer == null)
+                        return;
+
                     duckGameObject.parentContainer.body.setSize(duckGameObject.width, duckGameObject.height / 2, false);
                     duckGameObject.parentContainer.body.setOffset(-duckGameObject.width / 2, -duckGameObject.height / 4);
-                    // duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
-                    // duckGameObject.input.hitArea.y = duckGameObject.height / 2;
-                    // duckGameObject.body.syncBounds = true;
 
-                    // duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
                     duckGameObject.legsOverlay.body.setSize(80, 10, false);
                     duckGameObject.legsOverlay.body.setOffset(10, 70);
                     duckGameObject.splashOverlay.body.setSize(135, 10, false);
@@ -631,13 +631,6 @@ class MyGame extends Phaser.Scene {
 
             //Set OnUpdate to use animations
             duckGameObject.updateState = function (context, delta) {
-
-
-                context.body.debugShowBody = true;
-                context.body.debugBodyColor = context.isSwimming
-                    ? new Phaser.Display.Color(0, 177, 64, 255)
-                    : new Phaser.Display.Color(255, 0, 0, 255);
-
                 switch (context.animState) {
                 case DUCK_STATES.START_IDLE:
                     context.play(currentDuck + "-idle");
@@ -724,7 +717,7 @@ class MyGame extends Phaser.Scene {
     }
 
     onObjectClicked(pointer, gameObject) {
-        var duck = gameObject.duck;
+        const duck = gameObject.duck;
         // if the text is already being displayed, do nothing
         if (duck.namePopup != null || duck.msgPopup != null)
             return;
@@ -766,14 +759,14 @@ class MyGame extends Phaser.Scene {
 
     generatePondUI() {
         // console.log("generate pond ui");
-        $("body").append("<div class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
+        $body.append("<div class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
         let pond = $("#pond-ui .inner-ui");
         // pond.append("<img src='assets/subaru_uitest_1.png'></img>")
         pond.append("<h3>Select pond</h3>");
         pond.append("<div class='button-list'></div>");
         for (let a = 0; a < maxPond; a++) {
             $(".button-list").append(
-                "<button class='load-pond' pond='" +
+                "<button class='load-pond'  pond='" +
                 (a + 1) +
                 "'>" +
                 (a + 1) +
@@ -808,9 +801,10 @@ class MyGame extends Phaser.Scene {
     }
 
     updatePagination() {
-        $loadpond.removeClass("visible");
-        for (let a = 0; a < pondsPerPage; a++) {
-            $($loadpond[currentPondPagination * pondsPerPage + a]).addClass(
+        $(".load-pond").removeClass("visible");
+        for (let i = 0; i < pondsPerPage; i++) {
+            let pondnum = currentPondPagination * pondsPerPage + i;
+            $(`.load-pond[pond=${pondnum}]`).addClass(
                 "visible"
             );
         }
@@ -860,8 +854,8 @@ class PondManager extends Phaser.Scene {
                     this.infoText.input.cursor="pointer";*/
         // console.log(this.scene);
         let that = this;
-        $("body").on("click", ".load-pond", function () {
-            $loadpond.removeClass("selectedPond");
+        $body.on("click", ".load-pond", function () {
+            $(".load-pond").removeClass("selectedPond");
             $(this).addClass("selectedPond");
             // console.log($(this).attr("pond"));
             that.loadPond(parseInt($(this).attr("pond")));
@@ -900,8 +894,8 @@ class PondManager extends Phaser.Scene {
             img.setOrigin(0, 0);
             panel.sendToBack(img);
 
-            // console.log(name);
-            // console.log(img);
+            console.log(name);
+            console.log(img);
 
             this.time.addEvent({
                 delay: USERNAME_DISPLAY_DURATION,
@@ -938,7 +932,11 @@ class PondManager extends Phaser.Scene {
         }
         // console.log("load pond " + id);
         const pond = this.scene.get("pond");
-        pond.children.shutdown();
+        //todo: if performance becomes issue look into pooling
+        pond.listOfDucks.forEach(function (duck) {
+            duck.parentContainer.destroy();
+        });
+        pond.listOfDucks = [];
         // emit event to reload the ducks
 
         this.pondNum = id;
@@ -972,7 +970,54 @@ const config = {
 const game = new Phaser.Game(config);
 window.game = game;
 
+//Other page scripts
+$(function () {
+    // Handler when the DOM is fully loaded
 
+    $("#screens").show();
+
+});
+
+function changeScreen(screen) {
+    hideScreen();
+    $("#screens").show();
+    window.game.input.enabled = false;
+    $("canvas").hide();
+    $(screen).show();
+}
+
+function hideScreen() {
+    console.log("hidescreen");
+    $("#pond-ui").hide();
+    $(".screen").hide();
+}
+
+$("#spb1,#spb2").on("click", function () {
+    hideScreen();
+    $("#screens").hide();
+    $("canvas").show();
+    window.game.input.enabled = true;
+    $("#pond-ui").show();
+    window.game.scene.getScene("pond").updatePagination();
+});
+$("#menu1").on("click", function () {
+    changeScreen("#home");
+});
+$("#menu2").on("click", function () {
+    changeScreen("#about-project");
+});
+$("#menu3").on("click", function () {
+    changeScreen("#about-subaru");
+});
+
+$body.on("click", ".navbar a", function () {
+    let $navbar = $(".navbar-toggler");
+    if (!$navbar.hasClass("collapsed")) {
+        $navbar.trigger("click");
+    }
+});
+
+//helpers
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

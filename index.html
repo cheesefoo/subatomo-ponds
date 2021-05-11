@@ -116,51 +116,6 @@
 </div>
 
 
-<script>
-    $(function () {
-        // Handler when the DOM is fully loaded
-
-        $("#screens").show();
-
-    });
-
-    function changeScreen(screen) {
-        hideScreen();
-        $("#screens").show();
-        window.game.input.enabled = false;
-        $("canvas").hide();
-        $(screen).show();
-    }
-
-    function hideScreen() {
-        $("#pond-ui").hide();
-        $(".screen").hide();
-    }
-
-    $("#spb1,#spb2").on('click', function () {
-        hideScreen();
-        $("#screens").hide();
-        $("canvas").show();
-        window.game.input.enabled = true;
-        $("#pond-ui").show();
-    });
-    $("#menu1").on('click', function () {
-        changeScreen("#home");
-    });
-    $("#menu2").on('click', function () {
-        changeScreen("#about-project");
-    });
-    $("#menu3").on('click', function () {
-        changeScreen("#about-subaru");
-    });
-
-    $("body").on("click", ".navbar a", function () {
-        if (!$(".navbar-toggler").hasClass("collapsed")) {
-            $(".navbar-toggler").trigger("click");
-        }
-    });
-    //});
-</script>
 
 <!--<script src="production-dependencies.bundle.js"></script>-->
 <script src="main.bundle.js"></script>
