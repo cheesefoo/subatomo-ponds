@@ -1,51 +1,79 @@
 let DEBUGGING = false;
+let TEST_DATA = true;
 
 function importAll(r) {
     return r.keys().map(r);
 }
 
+
 require("./assets/css/style.css");
+let ducksj, submissions;
 
-const ducksj = require("./assets/submissions/all_ducks_sheet.json");
+if (TEST_DATA) {
+    ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
+    submissions = require("./assets/test_submissions/submissions.json");
+    importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+} else {
+    ducksj = require("./assets/submissions/all_ducks_sheet.json");
+    submissions = require("./assets/submissions/submissions.json");
+    importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+
+}
+
+
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
-const submissions = require("./assets/submissions/submissions.json");
 const splashj = require("./assets/pond/WaterSplashAnimation/splash.json");
+// const pondTileJson = require("./assets/pond/pond_isometric.json");
+// const pondTileJson = require("./assets/pond/pond.json");
 const pondTileJson = require("./assets/pond/pond.json");
+const soundsj = require("./assets/sound/soundfilemap.json");
 
-window.logSwim=true;
+window.logSwim = true;
 
 require("phaser");
+// const NineSlicePlugin = require("phaser3-nineslice");
+import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
+
 // require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
 // require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
-require("./assets/pond/pond_vibrant_1920x1080.jpg");
+// require("./assets/pond/pond_vibrant_1920x1080.jpg");
+require("./assets/pond/Subapond_vibrantHD-min.jpg");
+require("./assets/pond/pond_color_invert.png");
 require("./assets/pond/WaterSplashAnimation/splash.png");
 
-import { Plugin as NineSlicePlugin } from 'phaser3-nineslice';
 
-importAll(require.context("./", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
 importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
 importAll(require.context("./", true, /pond.*\.(json)$/));
-importAll(require.context("./assets/sound/", true, /suba.*\.(mp3|ogg|wav)$/));
+importAll(require.context("./assets/sound/", true, /.*\.(mp3|ogg|wav)$/));
 //Tile indices corresponding to water tiles in Tiled .tmx file
 // const pondTileIndices = [36, 37, 38, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 63, 64, 65, 66, 67, 68, 69,
 //     70, 71, 72, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 94, 95, 96,];
 // const groundTileIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
 //     26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 40, 41, 42, 43, 44, 58, 59, 60, 61, 62, 73, 74, 75, 76, 77, 88, 89, 90, 91,
 //     92, 93, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,];
-const groundTileIndices = [1, 2, 3, 4, 9, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28, 29, 30, 33, 34, 35, 36, 37, 38, 43, 44, 45, 46, 47, 48, 51, 62, 63, 64, 79, 80, 81, 82, 83, 95, 96, 97, 98, 99, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141];
 
-let pondTileIndices = [39, 40, 41, 42, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 65, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109];
-let pondLayer;
-let groundLayer;
-let obstacleLayer;
+//ORTHOGNAL
+let groundTileIndices = [1, 2, 3, 4, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 44, 45, 46, 47, 48, 51, 63, 64, 80, 81, 82, 83, 96, 97, 98, 99, 111, 112, 114, 115, 116, 121, 122, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142];
+let pondTileIndices = [40, 41, 42, 53, 56, 57, 58, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 101, 102, 103, 104, 105, 106, 107, 108];
+let obstacleTileIndices = [5, 6, 7, 8, 11, 16, 24, 25, 26, 32, 60, 61, 62, 67, 109, 110, 113, 129, 130, 143, 144];
+let transitionTileIndices = [39, 43, 49, 50, 52, 54, 55, 65, 66, 79, 95, 100, 117, 118, 119, 120];
+//ISOMETRIC
+// let groundTileIndices = [1, 2, 3, 4, 5, 11, 12, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 44, 45, 46, 47, 48, 54, 55, 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 77, 78, 79, 83, 84, 98, 99, 118, 119, 121, 122, 123, 124, 138, 139, 141, 142, 143, 144, 158, 159, 161, 162, 163, 164, 177, 178, 179, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197];
+// let pondTileIndices = [49, 69, 70, 71, 72, 73, 74, 81, 82, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174];
+// let obstacleTileIndices = [0,6,7,8,9,10,13,19,30,31,39,50,51,52,53,75,76,103,104,175,176,199,200];
+
+let pondLayer, groundLayer, obstacleLayer, transitionLayer;
 let grassVibrant, waterVibrant;
+
+//number of frames to wait before each collision check
+const COLLISION_CHECK_RATE = 10;
+let last_collision_check = 0;
 
 const FRAME_RATE = 10;
 const USERNAME_DISPLAY_DURATION = 3000;
 const SPRITE_WIDTH = 100;
 const SPRITE_HEIGHT = 100;
-const maxPond =
-    submissions.submissions[submissions.submissions.length - 1].pond;
+const maxPond = submissions.submissions[submissions.submissions.length - 1].pond;
 const QUACK_DURATION = 1600;
 
 let sceneWidth = window.innerWidth;
@@ -61,13 +89,22 @@ const MAX_IDLE_TIME = 5000;
 
 
 //the width of the panel
-const TEXT_PADDING_CONFIG = {left:5, right:20, top:5,bottom:10};
-const WORD_WRAP_CONFIG = {width: 370, useAdvancedWrap:true};
-const MSG_TEXT_CONFIG = {fontFamily: "Ubuntu", fontSize: "14px", color: "#000", stroke: "#fcd73f",strokeThickness: 2, padding: TEXT_PADDING_CONFIG, wordWrap:WORD_WRAP_CONFIG};
+const TEXT_PADDING_CONFIG = {left: 5, right: 20, top: 5, bottom: 10};
+const WORD_WRAP_CONFIG = {width: 370, useAdvancedWrap: true};
+const MSG_TEXT_CONFIG = {
+    fontFamily: "Ubuntu",
+    fontSize: "14px",
+    color: "#000",
+    stroke: "#fcd73f",
+    strokeThickness: 2,
+    padding: TEXT_PADDING_CONFIG,
+    wordWrap: WORD_WRAP_CONFIG
+};
+
 let currentPond = 1;
 
 let currentPondPagination = 0;
-let pondsPerPage = 3;
+let pondsPerPage = 6;
 let maxPages;
 
 const DUCK_STATES = {
@@ -85,10 +122,12 @@ const DUCK_STATES = {
     SWIM_QUACK: 11,
 };
 
+let $body = $("body");
+
 class MyGame extends Phaser.Scene {
     // jshint ignore:line
     constructor() {
-        console.log("mygame constructor called");
+        // console.log("mygame constructor called");
         super({
             key: "pond",
             active: true,
@@ -104,11 +143,11 @@ class MyGame extends Phaser.Scene {
     }
 
     preload() {
-        console.log("mygame preload");
+        // console.log("mygame preload");
 
         function loading() {
-            console.log("loading call");
-            var progressWidth = 320;
+            // console.log("loading call");
+            const progressWidth = 320;
 
             const progressBar = this.add.graphics();
             const progressBox = this.add.graphics();
@@ -156,30 +195,30 @@ class MyGame extends Phaser.Scene {
                 );
             });
 
-            var that = this;
+            const that = this;
 
             this.load.on("fileprogress", function (file, percentComplete) {
                 //assetText.setText('Loading asset: ' + file.key);
                 if (percentComplete === 1)
                     console.log(file.key);
             });
-			
-			$("body").css("opacity","1");
+
+            $body.css("opacity", "1");
 
             this.load.on("complete", function () {
                 //setTimeout(function () {
-                    that.scene.get("pond-manager");
-                    // pondManager.events.on(
-                    //     "reloadPond",
-                    //     function () {
-                    //         that.populateDucks(currentPond);
-                    //     },
-                    //     that
-                    // );
+                that.scene.get("pond-manager");
+                // pondManager.events.on(
+                //     "reloadPond",
+                //     function () {
+                //         that.populateDucks(currentPond);
+                //     },
+                //     that
+                // );
 
-                    // that.populateDucks(currentPond);
-                    // console.log('on preload complete settimeout')
-                    // that.generatePondUI();
+                // that.populateDucks(currentPond);
+                // console.log('on preload complete settimeout')
+                // that.generatePondUI();
 
                     progressBar.destroy();
                     progressBox.destroy();
@@ -200,6 +239,11 @@ class MyGame extends Phaser.Scene {
 
         loading.call(this);
 
+        let sounds = soundsj.sounds;
+        let soundsLen = sounds.length;
+        for (let i = 0; i < soundsLen; i++) {
+            this.load.audio("suba_" + i, "assets/" + sounds[i]);
+        }
         //Load sprite atlas
         this.load.multiatlas("allDucks", ducksj, "assets");
         this.load.multiatlas("legs", legsj, "assets");
@@ -207,7 +251,10 @@ class MyGame extends Phaser.Scene {
         //Load audio files
         this.load.audio("suba_1", "assets/suba_1.mp3");
         this.load.audio("suba_2", "assets/suba_2.mp3");
-        this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
+        // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
+        this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
+        this.load.image("col", "assets/pond_color_invert.png");
+        // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.tilemapTiledJSON("map", pondTileJson);
         this.listOfDucks = [];
 
@@ -219,7 +266,7 @@ class MyGame extends Phaser.Scene {
     }
 
     create() {
-        console.log("create call");
+        // console.log("create call");
         // let shader = this.add.shader("camerafilter")
         // let gameObjectCamera = this.cameras.add();
         // gameObjectCamera.set
@@ -228,80 +275,67 @@ class MyGame extends Phaser.Scene {
             "reloadPond",
             function () {
                 this.populateDucks(currentPond);
+                this.applyTileCollisionCallbacks();
+                last_collision_check = COLLISION_CHECK_RATE-1;
             },
             this
         );
 
+
         this.makeSounds();
         this.makeTileMap();
 
-        // waterVibrant = this.physics.add.image(0, 0, 'waterVibrant');
-        // waterVibrant.setOrigin(0, 0);
-        // // waterVibrant.setPipeline('Light2D');
-        // grassVibrant = this.physics.add.image(0, 0, 'grassVibrant');
-        // grassVibrant.setOrigin(0, 0);
-        // grassVibrant.setPipeline('Light2D');
-
-        // const debugGraphics = this.add.graphics().setAlpha(0.75);
-        // pondLayer.renderDebug(debugGraphics, {
-        //     tileColor: null, // Color of non-colliding tiles
-        //     collidingTileColor: new Phaser.Display.Color(23, 134, 177, 255), // Color of colliding tiles
-        //     faceColor: new Phaser.Display.Color(255, 0, 255, 255) // Color of colliding face edges
-        // });groundLayer.renderDebug(debugGraphics, {
-        //     tileColor: null, // Color of non-colliding tiles
-        //     collidingTileColor: new Phaser.Display.Color(44, 185, 48, 255), // Color of colliding tiles
-        //     faceColor: new Phaser.Display.Color(255, 0, 255, 255) // Color of colliding face edges
-        // });
 
         this.makeWalkingAnimationFrames();
         this.makeSplashAnimationFrames();
         this.populateDucks(currentPond);
         this.generatePondUI();
-        this.applyTileCollisionCallbacks();
         // this.applyCollisions();
-        // this.lights.enable().setAmbientColor(0x828282);
-        // let light = this.lights.addLight(0, 0, 200).setScrollFactor(0.0).setIntensity(1);
-        // this.input.on('pointermove', function (pointer) {
-        //     light.x = pointer.x;
-        //     light.y = pointer.y;
-        // });
+        this.applyTileCollisionCallbacks();
+
         this.input.on("gameobjectup", this.onObjectClicked);
 
     }
 
     makeSounds() {
-        this.sound.add("suba_1");
-        this.sound.add("suba_2");
+        let sounds = soundsj.sounds;
+        let soundsLen = sounds.length;
+        for (let i = 0; i < soundsLen; i++) {
+            this.sound.add("suba_" + i);
+        }
     }
 
     makeTileMap() {
         this.map = this.make.tilemap({key: "map"}); //, tileWidth: 64, tileHeight: 64 });
-        let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
+        let tileset = this.map.addTilesetImage("Subapond_vibrantHD-min", "tiles");
+        // let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
         groundLayer = this.map.createLayer("ground", tileset);
         groundLayer.setCollisionByProperty({collides: true});
         pondLayer = this.map.createLayer("pond", tileset);
         pondLayer.setCollisionByProperty({collides: true});
         obstacleLayer = this.map.createLayer("obstacle", tileset);
         obstacleLayer.setCollisionByProperty({collides: true});
-
-
+        transitionLayer = this.map.createLayer("transition", tileset);
+        transitionLayer.setCollisionByProperty({collides: true});
     }
 
+    /// Unused
     applyCollisions() {
         let gameObjectList = this.children.list;
         let that = this;
         gameObjectList.forEach(function (gameObject) {
             if (gameObject.type === "Container") {
                 let duckGO = gameObject.last;
+                // console.log("watery", waterVibrant);
                 that.physics.add.overlap(duckGO, waterVibrant, function (context) {
-                    console.log(context.displayName + " swimming");
-                    context.isSwimming = true;
+                    // console.log(context.displayName + " swimming");
+                    // context.isSwimming = true;
                     // context.waterOverlay.setVisible(true)
                     context.legsOverlay.setVisible(false);
                 }, null, this);
                 that.physics.add.overlap(duckGO, grassVibrant, function (context) {
-                    console.log(context.displayName + " grounded");
-                    context.isSwimming = false;
+                    // console.log(context.displayName + " grounded");
+                    // context.isSwimming = false;
                     // context.waterOverlay.setVisible(true)
                     context.legsOverlay.setVisible(true);
 
@@ -311,18 +345,27 @@ class MyGame extends Phaser.Scene {
     }
 
     applyTileCollisionCallbacks() {
+
         let gameObjectList = this.listOfDucks;
         let that = this;
+        // if (window.game.textures.getPixel(context.legsOverlay.body.x, context.legsOverlay.body.y, "col").r == 0) {
+        //     context.legsOverlay.setVisible(false);
+        //     context.splashOverlay.setVisible(true);
+        // } else {
+        //     context.legsOverlay.setVisible(true);
+        //     context.splashOverlay.setVisible(false);
+        // }
         gameObjectList.forEach(function (gameObject) {
-
+            //pond
             pondLayer.setTileIndexCallback(
                 pondTileIndices,
-                function (context,con2) {
+                function (context, con2) {
+                    if (last_collision_check < COLLISION_CHECK_RATE) return;
                     // console.log("swimming");
-					if(window.logSwim){
-						console.log("swi context",context,con2);
-						window.logSwim=false;
-					}
+                    if (window.logSwim) {
+                        // console.log("swi context", context, con2);
+                        window.logSwim = false;
+                    }
                     context.setVisible(true);
                     context.duck.legsOverlay.setVisible(false);
                 },
@@ -330,9 +373,12 @@ class MyGame extends Phaser.Scene {
                 this
             );
             that.physics.add.overlap(gameObject.splashOverlay, pondLayer);
+            //ground
             groundLayer.setTileIndexCallback(
                 groundTileIndices,
                 function (context) {
+                    if (last_collision_check < COLLISION_CHECK_RATE) return;
+
                     // console.log("grounded")
                     context.duck.splashOverlay.setVisible(false);
                     context.setVisible(true);
@@ -341,27 +387,33 @@ class MyGame extends Phaser.Scene {
                 this
             );
             that.physics.add.overlap(gameObject.legsOverlay, groundLayer);
-            that.physics.add.collider(gameObject.parentContainer, obstacleLayer, function (c) {
-                c.body.stop();
+            //transition
+            that.physics.add.overlap(gameObject.legsOverlay, transitionLayer);
+
+            //Check collision on tiles that need more precise checking by comparing a pixel on legs against a 'collision map'
+            transitionLayer.setTileIndexCallback(
+                transitionTileIndices,
+                function (legs) {
+                    if (last_collision_check < COLLISION_CHECK_RATE) return;
+                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "col");
+                    let isInWater = colorAtPosn.red < 100;
+                    // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
+                    legs.setVisible(!isInWater);
+                    legs.duck.splashOverlay.setVisible(isInWater);
+                },
+                null,
+                this
+            );
+
+
+            //obstacle
+            that.physics.add.collider(gameObject.parentContainer, obstacleLayer, function (container) {
+                container.body.stop();
                 gameObject.animState = DUCK_STATES.START_IDLE;
 
             }, null, this);
-
-
-            // that.physics.world.addCollider(gameObject, obstacleLayer, function (c) {
-            //     console.log(c.displayName + ' obstacle')
-            // }, null, this);
-
-            //if duck enters a spot it shouldn't path, just tell it to stop
-            //this is very bad, maybe one day ill fix it
-            // obstacleLayer.setTileIndexCallback(obstacleTileIndices,
-            //     function (context){
-            //         context.travelTime=0;
-            //     },null,this);
-
-
         });
-        // this.physics.add.collider(this.listOfDucks,obstacleLayer);
+
 
         if (DEBUGGING) {
             const debugGraphics = this.add.graphics().setAlpha(0.75);
@@ -369,6 +421,11 @@ class MyGame extends Phaser.Scene {
                 tileColor: null, // Color of non-colliding tiles
                 collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
                 faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
+            });
+            transitionLayer.renderDebug(debugGraphics, {
+                tileColor: null, // Color of non-colliding tiles
+                collidingTileColor: new Phaser.Display.Color(255, 134, 255, 255), // Color of colliding tiles
+                faceColor: new Phaser.Display.Color(255, 39, 37, 255) // Color of colliding face edges
             });
         }
     }
@@ -442,7 +499,7 @@ class MyGame extends Phaser.Scene {
 
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
-        //for (let i = 0; i < 1; i++) {
+            //for (let i = 0; i < 1; i++) {
 
 
             const duckGameObject = this.physics.add
@@ -451,17 +508,20 @@ class MyGame extends Phaser.Scene {
                 // .setBounce(1, 1)
                 .setDebugBodyColor(0x00FF)
                 .setDebug(true, false, 0x00ff); //, new Phaser.Display.Color(255, 0, 0, 0));
-
+            // console.log(duckGameObject);
             this.physics.add.collider(duckGameObject, obstacleLayer);
             const legsOverlay = this.physics.add.sprite(0, 0, "legs", "1.png");
             legsOverlay.setVisible(true);
             legsOverlay.name = "legs";
+            legsOverlay.setOrigin(0.5, 0.5);
+            legsOverlay.y = 20;
 
             const splashOverlay = this.physics.add.sprite(0, 0, "splash", "0.png");
             splashOverlay.setVisible(false);
             splashOverlay.name = "splash";
-            splashOverlay.setOrigin(0.5, 0.1);
+            splashOverlay.setOrigin(0.5, 0.5);
             splashOverlay.setScale(0.6);
+            splashOverlay.y = 40;
 
             let duckContainer = this.add.container(
                 getRandomInt(sceneWidth / 3, 2 * sceneWidth / 3),
@@ -472,7 +532,7 @@ class MyGame extends Phaser.Scene {
             duckContainer.add(legsOverlay);
             duckContainer.add(splashOverlay);
             duckContainer.add(duckGameObject);
-
+            duckContainer.duck = duckGameObject;
             //Init duck GO properties
             duckGameObject.name = "duck";
             duckGameObject.parentContainer = duckContainer;
@@ -483,7 +543,7 @@ class MyGame extends Phaser.Scene {
 
             duckGameObject.displayName = ducks[i].name;
             duckGameObject.message = ducks[i].message;
-            duckGameObject.sound = ducks[i].sound ??= "1";
+            duckGameObject.sound = ducks[i].sound ? ducks[i].sound : "1";
 
             duckGameObject.setOrigin(0.5, 0.5);
             duckGameObject.displayWidth = SPRITE_WIDTH;
@@ -536,37 +596,32 @@ class MyGame extends Phaser.Scene {
             // //insert 1 more frame of idle inbetween the walk frames
             let walkAnim = this.anims.get(currentDuck + "-" + "walk");
             walkAnim.addFrameAt(1, this.anims.get(currentDuck + "-" + "idle").getFrames());
-			
-			let clickContainer=this.add.rectangle(0, 0, SPRITE_WIDTH, SPRITE_HEIGHT, 0x6666ff,0);
-			clickContainer.duck=duckGameObject;
-			duckContainer.add(clickContainer);
+
+            let clickContainer = this.add.rectangle(0, 0, SPRITE_WIDTH, SPRITE_HEIGHT, 0x6666ff, 0);
+            clickContainer.duck = duckGameObject;
+            duckContainer.add(clickContainer);
             //Set event for click/press
             clickContainer.setInteractive();
-            clickContainer.input.cursor="pointer";
-            clickContainer.input.hitArea.y+=25;
+            clickContainer.input.cursor = "pointer";
+            clickContainer.input.hitArea.y += 25;
             //duckGameObject.input.cursor = "pointer";
-			//duckGameObject.input.hitArea.setTo(0,25,100,100);
-			
-			
+            //duckGameObject.input.hitArea.setTo(0,25,100,100);
+
+
             this.input.enableDebug(duckGameObject, 0x04F404);
-			console.log("duck",duckGameObject);
+            // console.log("duck", duckGameObject);
 
             //Fix hitbox
             this.time.addEvent({
                 delay: 1000,
                 callback: function () {
-                    /*duckGameObject.input.hitArea.setSize(
-                        duckGameObject.width,
-                        duckGameObject.height / 2,
-                        true
-                    );*/
+                    //in case we were destroyed before executing
+                    if(duckGameObject.parentContainer == null)
+                        return;
+
                     duckGameObject.parentContainer.body.setSize(duckGameObject.width, duckGameObject.height / 2, false);
                     duckGameObject.parentContainer.body.setOffset(-duckGameObject.width / 2, -duckGameObject.height / 4);
-                    // duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
-                    // duckGameObject.input.hitArea.y = duckGameObject.height / 2;
-                    // duckGameObject.body.syncBounds = true;
 
-                    // duckGameObject.setSize(duckGameObject.width, duckGameObject.height);
                     duckGameObject.legsOverlay.body.setSize(80, 10, false);
                     duckGameObject.legsOverlay.body.setOffset(10, 70);
                     duckGameObject.splashOverlay.body.setSize(135, 10, false);
@@ -580,13 +635,6 @@ class MyGame extends Phaser.Scene {
 
             //Set OnUpdate to use animations
             duckGameObject.updateState = function (context, delta) {
-
-
-                context.body.debugShowBody = true;
-                context.body.debugBodyColor = context.isSwimming
-                    ? new Phaser.Display.Color(0, 177, 64, 255)
-                    : new Phaser.Display.Color(255, 0, 0, 255);
-
                 switch (context.animState) {
                 case DUCK_STATES.START_IDLE:
                     context.play(currentDuck + "-idle");
@@ -673,12 +721,12 @@ class MyGame extends Phaser.Scene {
     }
 
     onObjectClicked(pointer, gameObject) {
-		var duck= gameObject.duck;
+        const duck = gameObject.duck;
         // if the text is already being displayed, do nothing
         if (duck.namePopup != null || duck.msgPopup != null)
             return;
-		
-		
+
+
         duck.animState = DUCK_STATES.START_QUACK;
         this.scene.sound.play("suba_" + duck.sound);
         this.scene.events.emit("duckclick", duck);
@@ -714,15 +762,15 @@ class MyGame extends Phaser.Scene {
     }
 
     generatePondUI() {
-        console.log("generate pond ui");
-        $("body").append("<div class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
+        // console.log("generate pond ui");
+        $body.append("<div class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
         let pond = $("#pond-ui .inner-ui");
         // pond.append("<img src='assets/subaru_uitest_1.png'></img>")
         pond.append("<h3>Select pond</h3>");
         pond.append("<div class='button-list'></div>");
         for (let a = 0; a < maxPond; a++) {
             $(".button-list").append(
-                "<button class='load-pond' pond='" +
+                "<button class='load-pond'  pond='" +
                 (a + 1) +
                 "'>" +
                 (a + 1) +
@@ -758,28 +806,23 @@ class MyGame extends Phaser.Scene {
 
     updatePagination() {
         $(".load-pond").removeClass("visible");
-        for (let a = 0; a < pondsPerPage; a++) {
-            $($(".load-pond")[currentPondPagination * pondsPerPage + a]).addClass(
+        for (let i = 0; i < pondsPerPage; i++) {
+            let pondnum = currentPondPagination * pondsPerPage + i;
+            $(`.load-pond[pond=${pondnum}]`).addClass(
                 "visible"
             );
         }
     }
 
     update(time, delta) {
+        last_collision_check = last_collision_check > COLLISION_CHECK_RATE ? 0 : last_collision_check + 1;
         //todo: find a way to call update on every duck without looping thru every single object every frame holy crap
         let len = this.listOfDucks.length;
         for (let i = 0; i < len; i++) {
-
-
             let duckGO = this.listOfDucks[i];
-            duckGO.setDepth(duckGO.y);
             duckGO.updateState(duckGO, delta);
-            // let tintIndex = Math.floor(100*(duckGO.body.transform.y / sceneHeight));
-            // let tint = Phaser.Display.Color.Interpolate.ColorWithColor(TINT_TOP_COLOR, TINT_BOTTOM_COLOR, 100, tintIndex)
-            // console.log(tint);
-            // duckGO.setTint(tint);
-
-
+            // console.log(duckGO.displayName + duckGO.parentContainer.y);
+            duckGO.parentContainer.setDepth(duckGO.parentContainer.y);
         }
     }
 
@@ -798,7 +841,7 @@ class MyGame extends Phaser.Scene {
 
 class PondManager extends Phaser.Scene {
     constructor() {
-        console.log("pond manager constructor");
+        // console.log("pond manager constructor");
         super({key: "pond-manager", active: true});
         this.pondNum = 1;
 
@@ -813,12 +856,12 @@ class PondManager extends Phaser.Scene {
                     this.infoText.setInteractive();
                     this.input.on('gameobjectup', this.clickHandler, this);
                     this.infoText.input.cursor="pointer";*/
-        console.log(this.scene);
+        // console.log(this.scene);
         let that = this;
-        $("body").on("click", ".load-pond", function () {
+        $body.on("click", ".load-pond", function () {
             $(".load-pond").removeClass("selectedPond");
             $(this).addClass("selectedPond");
-            console.log($(this).attr("pond"));
+            // console.log($(this).attr("pond"));
             that.loadPond(parseInt($(this).attr("pond")));
         });
         let pond = this.scene.get("pond");
@@ -829,31 +872,30 @@ class PondManager extends Phaser.Scene {
 
             let x = gameObject.parentContainer.x;
             let y = gameObject.parentContainer.y;
-            let panel = this.add.container(x-50, y-120);
-            
+            let panel = this.add.container(x - 50, y - 120);
+
             //let img = this.add.image(0, 0, "panel");
-			
-			
-			
+
+
             let name = this.add.text(0, 0, gameObject.displayName, MSG_TEXT_CONFIG);
             gameObject.namePopup = name;
 
             let msg = this.add.text(0, 20, gameObject.message, MSG_TEXT_CONFIG);
-			//console.log("mensaje",msg,img);
+            //console.log("mensaje",msg,img);
             gameObject.msgPopup = msg;
-			
-			let img = this.add.nineslice(
-			  -10, -10,   // this is the starting x/y location
-			  msg.displayWidth+20, msg.displayHeight+name.displayHeight+20,   // the width and height of your object
-			  'panel', // a key to an already loaded image
-			  30,         // the width and height to offset for a corner slice
-			  10          // (optional) pixels to offset when computing the safe usage area
-			);
-			
+
+            let img = this.add.nineslice(
+                -10, -10,   // this is the starting x/y location
+                msg.displayWidth + 20, msg.displayHeight + name.displayHeight + 20,   // the width and height of your object
+                "panel", // a key to an already loaded image
+                30,         // the width and height to offset for a corner slice
+                10          // (optional) pixels to offset when computing the safe usage area
+            );
+
             panel.add(img);
             panel.add(name);
             panel.add(msg);
-            img.setOrigin(0,0);
+            img.setOrigin(0, 0);
             panel.sendToBack(img);
 
             console.log(name);
@@ -892,9 +934,13 @@ class PondManager extends Phaser.Scene {
         if (this.pondNum == id) {
             return;
         }
-        console.log("load pond " + id);
+        // console.log("load pond " + id);
         const pond = this.scene.get("pond");
-        pond.children.shutdown();
+        //todo: if performance becomes issue look into pooling
+        pond.listOfDucks.forEach(function (duck) {
+            duck.parentContainer.destroy();
+        });
+        pond.listOfDucks = [];
         // emit event to reload the ducks
 
         this.pondNum = id;
@@ -905,7 +951,6 @@ class PondManager extends Phaser.Scene {
 }
 
 
-
 const config = {
     type: Phaser.CANVAS,
     width: sceneWidth,
@@ -914,21 +959,69 @@ const config = {
     physics: {
         default: "arcade",
         arcade: {
+            // fps: 30,
             debug: DEBUGGING,
             gravity: {y: 0},
             tileBias: 120,
         },
     },
-	plugins: {
-		global: [ NineSlicePlugin.DefaultCfg ],
-	},
+    plugins: {
+        global: [NineSlicePlugin.DefaultCfg],
+    },
     scene: [PondManager, MyGame],
 };
 
 const game = new Phaser.Game(config);
 window.game = game;
 
+//Other page scripts
+$(function () {
+    // Handler when the DOM is fully loaded
 
+    $("#screens").show();
+
+});
+
+function changeScreen(screen) {
+    hideScreen();
+    $("#screens").show();
+    window.game.input.enabled = false;
+    $("canvas").hide();
+    $(screen).show();
+}
+
+function hideScreen() {
+    console.log("hidescreen");
+    $("#pond-ui").hide();
+    $(".screen").hide();
+}
+
+$("#spb1,#spb2").on("click", function () {
+    hideScreen();
+    $("#screens").hide();
+    $("canvas").show();
+    window.game.input.enabled = true;
+    $("#pond-ui").show();
+    window.game.scene.getScene("pond").updatePagination();
+});
+$("#menu1").on("click", function () {
+    changeScreen("#home");
+});
+$("#menu2").on("click", function () {
+    changeScreen("#about-project");
+});
+$("#menu3").on("click", function () {
+    changeScreen("#about-subaru");
+});
+
+$body.on("click", ".navbar a", function () {
+    let $navbar = $(".navbar-toggler");
+    if (!$navbar.hasClass("collapsed")) {
+        $navbar.trigger("click");
+    }
+});
+
+//helpers
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

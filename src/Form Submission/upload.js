@@ -16,18 +16,18 @@
 
 
 function disallowedChars(e) {
-    let regex = new RegExp(escapeRegExp('<>:"/\\|?*'));
+    let regex = new RegExp(escapeRegExp("<>:\"/\\|?*"));
     return regex.test(e.charCode);
 }
 
 function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 }
 
 function yesCheck() {
-    let email = document.getElementById('emailInput');
-    let discord = document.getElementById('discordInput');
-    let style = document.getElementById('radioYes').checked ? 'block' : 'none';
+    let email = document.getElementById("emailInput");
+    let discord = document.getElementById("discordInput");
+    let style = document.getElementById("radioYes").checked ? "block" : "none";
     email.style.display = style;
     discord.style.display = style;
 }
@@ -36,7 +36,7 @@ let spritesheet = new Image();
 
 const uploadFile = document.getElementById("uploadFile");
 uploadFile.onchange = function () {
-    chooseFile(this.files[0])
+    chooseFile(this.files[0]);
 };
 
 function chooseFile(file) {
@@ -47,6 +47,8 @@ function chooseFile(file) {
             spritesheet.src = reader.result;
             canvas1.style.visibility = "visible";
             canvas2.style.visibility = "visible";
+            canvas1Flipped.style.visibility = "visible";
+            canvas2Flipped.style.visibility = "visible";
             startAnimating(10);
 
             //todo: check image dimensions?
@@ -59,22 +61,26 @@ let fps, fpsInterval, startTime, now, then, elapsed;
 
 // initialize the timer variables and start the animation
 function startAnimating(fps) {
-    console.log("start animating")
+    console.log("start animating");
     fpsInterval = 1000 / fps;
     then = Date.now();
     startTime = then;
     animate();
 }
 
-let w = 100;
-let h = 100;
+let w = 200;
+let h = 200;
 let sx1, sy1, sx2, sy2 = 0;
 let scale = 1;
 let canvas1 = document.getElementById("animPreview1");
 let canvas2 = document.getElementById("animPreview2");
+let canvas1Flipped = document.getElementById("animPreview1-flipped");
+let canvas2Flipped = document.getElementById("animPreview2-flipped");
 // let canvas = document.querySelector("#animPreview");
 let canvasContext1 = canvas1.getContext("2d");
 let canvasContext2 = canvas2.getContext("2d");
+let canvasContext1Flipped = canvas1Flipped.getContext("2d");
+let canvasContext2Flipped = canvas2Flipped.getContext("2d");
 
 let currentFrame1 = 0;
 let currentFrame2 = 0;
@@ -99,6 +105,8 @@ function animate() {
         then = now - (elapsed % fpsInterval);
         canvasContext1.clearRect(0, 0, canvas1.width, canvas1.height);
         canvasContext2.clearRect(0, 0, canvas2.width, canvas2.height);
+        canvasContext1Flipped.clearRect(0, 0, canvas1Flipped.width, canvas1Flipped.height);
+        canvasContext2Flipped.clearRect(0, 0, canvas2Flipped.width, canvas2Flipped.height);
 
         //Set corner coordinates according to current frame
         //   x  y
@@ -112,11 +120,15 @@ function animate() {
         // sy = currentFrame < 2 ? 0 : h;
 
         sx2 = currentFrame2 === 0 ? 0 : w;
-        sy2 = currentFrame2 === 0 ? 0 : h
+        sy2 = currentFrame2 === 0 ? 0 : h;
         // console.log(currentFrame + ":" + sx + "x" + sy);
 
         canvasContext1.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
         canvasContext2.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);
+        canvasContext1Flipped.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
+        canvasContext2Flipped.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);
+
+
         currentFrame1++;
         currentFrame2++;
         if (currentFrame1 == framesInAnimation1)
@@ -126,58 +138,131 @@ function animate() {
     }
 }
 
-$('#uploadFile').on("change", function () {
+$("#uploadFile").on("change", function () {
     try {
-        document.getElementById('raw-sbm').remove();
-        document.getElementById('mime-sbm').remove();
-        document.getElementById('filetype-sbm').remove();
+        document.getElementById("raw-sbm").remove();
+        document.getElementById("mime-sbm").remove();
+        document.getElementById("filetype-sbm").remove();
     } catch (e) {
     }
     const file = this.files[0];
     const fr = new FileReader();
     fr.fileName = file.name;
     fr.onload = function (e) {
-        e.target.result
-        html = '<input type="hidden" name="data" id="raw-sbm" value="' + e.target.result.replace(/^.*,/, '') + '" >';
-        html += '<input type="hidden" name="mimetype" id="mime-sbm" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
-        html += '<input type="hidden" name="filename" id="filename-sbm" value="' + e.target.fileName + '" >';
+        e.target.result;
+        html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.target.result.replace(/^.*,/, "") + "\" >";
+        html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + e.target.result.match(/^.*(?=;)/)[0] + "\" >";
+        html += "<input type=\"hidden\" name=\"filename\" id=\"filename-sbm\" value=\"" + e.target.fileName + "\" >";
         // $("#data").empty().append(html);
         $("#data").append(html);
-    }
+    };
     fr.readAsDataURL(file);
 });
 
 const audio = document.getElementById("player");
 const source = document.getElementById("mp3_src");
 
-$('#soundSelection').on('change', function () {
-    change($(this).val());
+
+let soundmap;
+
+//generating the html dynamically as suggestions are added, consider hardcoding the html in the final version
+$(window).on("load", function () {
+
+    loadJSON(function (response) {
+        soundmap = JSON.parse(response);
+        console.log(soundmap);
+
+        let options = $("select");
+        let container = $("#soundButtons");
+
+        let len = soundmap.sounds.length;
+        for (let i = 0; i < len; i++) {
+            let sound = soundmap.sounds[i];
+            let txt = sound.replace(".mp3", "");
+            options.append(`<option class='soundOption' value="${i}">${txt}</option>`);
+            container.append(`<button class='soundButton' type='button' value="${i}">${txt}</button>`);
+        }
+        $("#soundSelection").on("change", function () {
+            let f = $(this).val();
+            console.log(f);
+            play(f);
+        });
+
+        $(".soundButton").on("click", function () {
+            let f = $(this).attr("value");
+
+            console.log(f);
+            play(f);
+        });
+    });
 });
 
 
-function change(index) {
-    // audio.pause();
-    if(index === 'random')
-        index = getRandomIntInclusive(1,2)
-        let src;
-        switch (index) {
-            case "1":
-                src = './suba_1.mp3';
-                break;
-            case "2":
-                src = './suba_2.mp3';
-                break;
-            default:
-                break;
+function loadJSON(callback) {
 
+    let xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open("GET", "soundfilemap.json", true);
+
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+
+            callback(xobj.responseText);
         }
-        source.src =src;
-        audio.load();
-        audio.play();
-
+    };
+    xobj.send(null);
 }
+
+
+function play(val) {
+    if (val === -1)
+        val = getRandomIntInclusive(0, soundmap.sounds.length - 1);
+    let src = soundmap.sounds[val];
+    console.log(src);
+    audio.src = "./" + src;
+    audio.load();
+    audio.play();
+}
+
+/*
+function fetchVideoAndPlay(src) {
+    fetch(src)
+        .then(response => response.blob())
+        .then(blob => {
+            audio.src = blob;
+            return audio.play();
+        })
+        .then(_ => {
+            // Video playback started ;)
+        })
+        .catch(e => {
+            console.log(e);
+        });
+}
+*/
+
+
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
+
+// $(window).on("load",function () {
+//     let player = document.getElementById("mp3_src");
+//     let options = $("select").children();
+//     let len = options.length;
+//     let container = $("#soundButtons");
+//     for (let i = 0; i < len; i++) {
+//         let txt = options[i].value;
+//         container.append(`<button class='soundButton' id='${txt}' type='button' onclick="document.getElementById('mp3_src').src='./${txt}.mp3'">${txt}</button>`);
+//     }
+
+// });
+// let btns = document.getElementsByClassName(".soundButton");
+// btns.forEach(btn => btn.addEventListener("click", onButtonClick));
+// $(".soundButton").on("click", function () {
+//     let name = $(this).val();
+//     let src = `./${name}`;
+//     play(src);
+// }));

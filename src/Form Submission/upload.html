@@ -60,14 +60,16 @@
 
 
             <label for="soundSelection">Sound to play when pressed:</label>
-            <select id="soundSelection" name="soundSelection" form="form">
-                <option value="random">Picked Randomly</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
+            <select form="form" id="soundSelection" name="soundSelection">
+                <option value="-1">Picked Randomly</option>
+
             </select>
+            <div id="soundButtons">
+
+            </div>
         </div>
         <audio autoplay id="player">
-            <source id="mp3_src" src="suba_1.mp3" type="audio/mp3"/>
+            <source id="mp3_src" src="" type="audio/mp3"/>
             Your browser does not support the audio element.
         </audio>
 
@@ -82,19 +84,13 @@
     </form>
 </div>
 <div id="submitting" style="display: none">Uploading duck...</div>
-<canvas
-        height="200"
-        id="animPreview1"
-        style="visibility: hidden"
-        width="200"
-></canvas>
-<canvas
-        height="200"
-        id="animPreview2"
-        style="visibility: hidden"
-        width="200"
-></canvas>
-
+<div id="previewSection">
+    <span id="previewText">Preview</span>
+    <canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
+    <canvas height="200" id="animPreview2" style="visibility: hidden" width="200"></canvas>
+    <canvas height="200" id="animPreview1-flipped" style="visibility: hidden; transform:scale(-1,1)" width="200"></canvas>
+    <canvas height="200" id="animPreview2-flipped" style="visibility: hidden; transform:scale(-1,1)" width="200"></canvas>
+</div>
 <script crossorigin="anonymous"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -104,8 +100,10 @@
 <script src="upload.js"></script>
 <script>    // popovers initialization - on hover
 
-$('[data-toggle="popover"]').popover({
-    trigger: 'hover'
-});</script>
+$("[data-toggle=\"popover\"]").popover({
+    trigger: "hover"
+});
+
+</script>
 </body>
 </html>

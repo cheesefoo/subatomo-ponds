@@ -128,14 +128,14 @@
         // Handler when the DOM is fully loaded
 
         $("#screens").show();
-		
+
 		$("body").on("click",".selectLang",function(){
 			localStorage['userLang']=$(this).attr("lng");
 			location.reload();
 		});
 
     });
-	
+
 
     function changeScreen(screen) {
         hideScreen();
