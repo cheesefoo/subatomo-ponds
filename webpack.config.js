@@ -76,6 +76,7 @@ module.exports = {
                 {from: "sw.js", to: "sw.js"},
                 {from: "favicon.ico", to: "favicon.ico"},
                 {from: "src/editor", to: "editor"},
+                {from: "src/assets/duck_accessories", to: "editor"},
                 {from: "src/Form Submission", to: "upload"},
                 // {from: "src/assets/sound", to: "assets"},
                 {from: "src/assets/sound", to: "upload"},
