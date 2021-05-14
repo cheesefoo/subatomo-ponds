@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <style>
         #canvas-container {
@@ -50,17 +50,19 @@
         /*#spritesheet{width:200px;}*/
     </style>
 
+    <link href="accessories.css" rel="stylesheet"/>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.js"></script>
+    <title>Subaru Duck Editor</title>
 
 </head>
 
 <body onload="init();">
 <!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
 <h1 style="text-align:center;">Duck editor</h1>
-<img crossOrigin="Anonymous" id="duck" src="1.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
+<img crossOrigin="Anonymous" id="duck1" src="1.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
 <img crossOrigin="Anonymous" id="duck2" src="2.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
 <img crossOrigin="Anonymous" id="duck3" src="3.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
 <img crossOrigin="Anonymous" id="duck4" src="4.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
@@ -69,18 +71,25 @@
         <h3>Objects</h3>
         <!--<img draggable="true" src="http://i.imgur.com/8rmMZI3.jpg" width="100" height="100"></img>
         <img draggable="true" src="http://i.imgur.com/q9aLMza.png" width="100" height="100"></img>!-->
-        <img crossOrigin="Anonymous" draggable="true" src="hat1.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="hat2.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="hat3.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="baseballhat.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="bow1.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="bow2.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="eyepatch.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="glassestint.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="glasses.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="policehat.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="stopwatch.png" width="100"/>
-        <img crossOrigin="Anonymous" draggable="true" src="tophat.png" width="100"/>
+        <img class="accessory Suba_Hairpin" draggable="true" src="accessories.png" width="100">
+        <img class="accessory policehat" draggable="true" src="accessories.png" width="100">
+        <img class="accessory Little_Duck1" draggable="true" src="accessories.png" width="100">
+        <img class="accessory Little_Ambulance_1" draggable="true" src="accessories.png" width="100">
+        <img class="accessory Little_Megaphone" draggable="true" src="accessories.png" width="100">
+        <img class="accessory tophat" draggable="true" src="accessories.png" width="100">
+        <img class="accessory SubaBeret_1" draggable="true" src="accessories.png" width="100">
+        <img class="accessory stopwatch" draggable="true" src="accessories.png" width="100">
+        <img class="accessory glassestint" draggable="true" src="accessories.png" width="100">
+        <img class="accessory hat1" draggable="true" src="accessories.png" width="100">
+        <img class="accessory baseballhat" draggable="true" src="accessories.png" width="100">
+        <img class="accessory bow1" draggable="true" src="accessories.png" width="100">
+        <img class="accessory hat2" draggable="true" src="accessories.png" width="100">
+        <img class="accessory bow2" draggable="true" src="accessories.png" width="100">
+        <img class="accessory hat3" draggable="true" src="accessories.png" width="100">
+        <img class="accessory eyepatch" draggable="true" src="accessories.png" width="100">
+        <img class="accessory Little_Ambulance_2" draggable="true" src="accessories.png" width="100">
+        <img class="accessory glasses" draggable="true" src="accessories.png" width="100">
+
 
     </div>
 
@@ -144,64 +153,25 @@
 
     let ducks = [];
 
-    function addDuck() {
+    function addDucks() {
         ducks = [];
-        let duckimg = document.querySelector("#duck");
+        for (i = 1; i < 5; i++) {
+            let duckImage = document.querySelector("#duck" + i);
 
-        let duck = new fabric.Image(duckimg, {
-            width: duckimg.width,
-            height: duckimg.height,
-            left: 0,
-            top: 0,
-            evented: false,
-            selectable: false
-        });
-        canvas.add(duck);
-        ducks.push(duck);
-
-        duckimg = document.querySelector('#duck2');
-
-        duck = new fabric.Image(duckimg, {
-            width: duckimg.width,
-            height: duckimg.height,
-            left: 0,
-            top: 0,
-            evented: false,
-            selectable: false
-        });
-        duck.opacity = 0;
-        canvas.add(duck);
-        ducks.push(duck);
-
-        duckimg = document.querySelector('#duck3');
-
-        duck = new fabric.Image(duckimg, {
-            width: duckimg.width,
-            height: duckimg.height,
-            left: 0,
-            top: 0,
-            evented: false,
-            selectable: false
-        });
-        duck.opacity = 0;
-        canvas.add(duck);
-        ducks.push(duck);
-
-        duckimg = document.querySelector('#duck4');
-
-        duck = new fabric.Image(duckimg, {
-            width: duckimg.width,
-            height: duckimg.height,
-            left: 0,
-            top: 0,
-            evented: false,
-            selectable: false
-        });
-        duck.opacity = 0;
-        canvas.add(duck);
-        ducks.push(duck);
-
-        canvas.renderAll()
+            let duck = new fabric.Image(duckImage, {
+                width: duckImage.width,
+                height: duckImage.height,
+                left: 0,
+                top: 0,
+                evented: false,
+                selectable: false
+            });
+            duck.opacity = 0;
+            canvas.add(duck);
+            ducks.push(duck);
+        }
+        ducks[0].opacity = 1;
+        canvas.renderAll();
     }
 
     function init() {
@@ -209,14 +179,13 @@
             return document.getElementById(id);
         };
 
-
         /* Drag and Drop code adapted from http://www.html5rocks.com/en/tutorials/dnd/basics/ */
 
-        canvas = new fabric.Canvas('canvas', {
+        canvas = new fabric.Canvas("canvas", {
             isDrawingMode: false
         });
 
-        addDuck();
+        addDucks();
 
 
         /*
@@ -226,9 +195,9 @@
 
         function handleDragStart(e) {
             [].forEach.call(images, function (img) {
-                img.classList.remove('img_dragging');
+                img.classList.remove("img_dragging");
             });
-            this.classList.add('img_dragging');
+            this.classList.add("img_dragging");
         }
 
         function handleDragOver(e) {
@@ -236,7 +205,7 @@
                 e.preventDefault(); // Necessary. Allows us to drop.
             }
 
-            e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
+            e.dataTransfer.dropEffect = "copy"; // See the section on the DataTransfer object.
             // NOTE: comment above refers to the article (see top) -natchiketa
 
             return false;
@@ -244,11 +213,11 @@
 
         function handleDragEnter(e) {
             // this / e.target is the current hover target.
-            this.classList.add('over');
+            this.classList.add("over");
         }
 
         function handleDragLeave(e) {
-            this.classList.remove('over'); // this / e.target is previous target element.
+            this.classList.remove("over"); // this / e.target is previous target element.
         }
 
         function handleDrop(e) {
@@ -260,7 +229,7 @@
 
             const img = document.querySelector("#images img.img_dragging");
 
-            console.log('event: ', e);
+            console.log("event: ", e);
 
             console.log(img);
 
@@ -280,7 +249,7 @@
         function handleDragEnd(e) {
             // this/e.target is the source node.
             [].forEach.call(images, function (img) {
-                img.classList.remove('img_dragging');
+                img.classList.remove("img_dragging");
             });
         }
 
@@ -290,15 +259,15 @@
             // Bind the event listeners for the image elements
             const images = document.querySelectorAll("#images img");
             [].forEach.call(images, function (img) {
-                img.addEventListener('dragstart', handleDragStart, false);
-                img.addEventListener('dragend', handleDragEnd, false);
+                img.addEventListener("dragstart", handleDragStart, false);
+                img.addEventListener("dragend", handleDragEnd, false);
             });
             // Bind the event listeners for the canvas
             const canvasContainer = document.getElementById("canvas-container");
-            canvasContainer.addEventListener('dragenter', handleDragEnter, false);
-            canvasContainer.addEventListener('dragover', handleDragOver, false);
-            canvasContainer.addEventListener('dragleave', handleDragLeave, false);
-            canvasContainer.addEventListener('drop', handleDrop, false);
+            canvasContainer.addEventListener("dragenter", handleDragEnter, false);
+            canvasContainer.addEventListener("dragover", handleDragOver, false);
+            canvasContainer.addEventListener("dragleave", handleDragLeave, false);
+            canvasContainer.addEventListener("drop", handleDrop, false);
         } else {
             // Replace with a fallback to a library solution.
             alert("This browser doesn't support the HTML5 Drag and Drop API.");
@@ -316,17 +285,17 @@
 
         clearEl.onclick = function () {
             canvas.clear();
-            addDuck()
+            addDucks();
         };
 
         drawingModeEl.onclick = function () {
             canvas.isDrawingMode = !canvas.isDrawingMode;
             if (canvas.isDrawingMode) {
-                drawingModeEl.innerHTML = 'Cancel drawing mode';
-                drawingOptionsEl.style.display = '';
+                drawingModeEl.innerHTML = "Cancel drawing mode";
+                drawingOptionsEl.style.display = "";
             } else {
-                drawingModeEl.innerHTML = 'Enter drawing mode';
-                drawingOptionsEl.style.display = 'none';
+                drawingModeEl.innerHTML = "Enter drawing mode";
+                drawingOptionsEl.style.display = "none";
             }
         };
 
@@ -405,27 +374,27 @@
                 return patternCanvas;
             };
 
-            var img = new Image();
-            img.src = 'honey_im_subtle.png';
+            let img = new Image();
+            img.src = "honey_im_subtle.png";
 
-            var texturePatternBrush = new fabric.PatternBrush(canvas);
+            let texturePatternBrush = new fabric.PatternBrush(canvas);
             texturePatternBrush.source = img;
         }
 
-        $('drawing-mode-selector').onchange = function () {
+        $("drawing-mode-selector").onchange = function () {
 
-            if (this.value === 'hline') {
+            if (this.value === "hline") {
                 canvas.freeDrawingBrush = vLinePatternBrush;
-            } else if (this.value === 'vline') {
+            } else if (this.value === "vline") {
                 canvas.freeDrawingBrush = hLinePatternBrush;
-            } else if (this.value === 'square') {
+            } else if (this.value === "square") {
                 canvas.freeDrawingBrush = squarePatternBrush;
-            } else if (this.value === 'diamond') {
+            } else if (this.value === "diamond") {
                 canvas.freeDrawingBrush = diamondPatternBrush;
-            } else if (this.value === 'texture') {
+            } else if (this.value === "texture") {
                 canvas.freeDrawingBrush = texturePatternBrush;
             } else {
-                canvas.freeDrawingBrush = new fabric[this.value + 'Brush'](canvas);
+                canvas.freeDrawingBrush = new fabric[this.value + "Brush"](canvas);
             }
 
             if (canvas.freeDrawingBrush) {
@@ -488,12 +457,12 @@
 
 
     function drawSpriteSheet(x = 0, y = 0, dindex = 0) {
-        for (var a = 0; a < ducks.length; a++) {
+        for (let a = 0; a < ducks.length; a++) {
             ducks[a].opacity = 0;
         }
         ducks[dindex].opacity = 1;
 
-        canvas.renderAll()
+        canvas.renderAll();
 
         canvas.deactivateAll().renderAll();
 
@@ -514,7 +483,7 @@
 
         copyCtx.drawImage(duckCan, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
 
-        for (var a = 0; auxWidth > destination; a++) {
+        for (let a = 0; auxWidth > destination; a++) {
             sourceCtx.clearRect(0, 0, 300, 300);
             sourceCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
 
@@ -538,7 +507,8 @@
 </script>
 
 <div style="text-align:center;">
-    <button onclick="drawSpriteSheet();drawSpriteSheet(200,0,1);drawSpriteSheet(0,200,2);drawSpriteSheet(200,200,3);" style="margin:auto; font-size:20px; padding:10px;"
+    <button onclick="drawSpriteSheet();drawSpriteSheet(200,0,1);drawSpriteSheet(0,200,2);drawSpriteSheet(200,200,3);"
+            style="margin:auto; font-size:20px; padding:10px;"
             type="button">
         Save duck
     </button>
@@ -548,8 +518,8 @@
 <script>
     function download() {
         const link = document.getElementById("link");
-        link.setAttribute('download', 'avatar.png');
-        link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        link.setAttribute("download", "avatar.png");
+        link.setAttribute("href", canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
         link.click();
     }
 </script>

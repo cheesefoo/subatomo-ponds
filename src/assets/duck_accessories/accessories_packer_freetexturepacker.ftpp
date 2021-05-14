@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "version": "0.6.7"
+  },
+  "savePath": "M:\\JetBrains Projects\\WebstormProjects\\Kaigai-Nikki-Pond\\src\\editor",
+  "images": [],
+  "folders": [
+    "M:/JetBrains Projects/WebstormProjects/Kaigai-Nikki-Pond/src/assets/duck_accessories"
+  ],
+  "packOptions": {
+    "textureName": "accessories",
+    "textureFormat": "png",
+    "removeFileExtension": true,
+    "prependFolderName": false,
+    "base64Export": false,
+    "tinify": false,
+    "tinifyKey": "",
+    "scale": 1,
+    "filter": "none",
+    "exporter": "css (modern)",
+    "fileName": "pack-result",
+    "savePath": "M:\\JetBrains Projects\\WebstormProjects\\Kaigai-Nikki-Pond\\src\\editor",
+    "width": 2048,
+    "height": 2048,
+    "fixedSize": false,
+    "powerOfTwo": false,
+    "padding": 0,
+    "extrude": 0,
+    "allowRotation": false,
+    "allowTrim": true,
+    "trimMode": "trim",
+    "alphaThreshold": "0",
+    "detectIdentical": true,
+    "packer": "OptimalPacker",
+    "packerMethod": "Automatic"
+  }
+}
