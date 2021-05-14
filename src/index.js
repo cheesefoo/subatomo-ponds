@@ -220,37 +220,35 @@ class MyGame extends Phaser.Scene {
                 // console.log('on preload complete settimeout')
                 // that.generatePondUI();
 
-                    progressBar.destroy();
-                    progressBox.destroy();
-                    loadingText.destroy();
-                    percentText.destroy();
-                    $("#loadingDuck").hide();
-                    $("canvas").hide();
-					if (localStorage.getItem("userLang") === null) {
-						$("#lng").show();
-					}else{
-						$("#home").show();
-					}
-                    $("#screens").show();
-                    window.game.input.enabled = false;
+                progressBar.destroy();
+                progressBox.destroy();
+                loadingText.destroy();
+                percentText.destroy();
+                $("#loadingDuck").hide();
+                $("canvas").hide();
+                if (localStorage.getItem("userLang") === null) {
+                    $("#lng").show();
+                } else {
+                    $("#home").show();
+                }
+                $("#screens").show();
+                window.game.input.enabled = false;
                 //}, 1500);
             });
         }
 
         loading.call(this);
+        //Load sprite atlas
+        this.load.multiatlas("allDucks", ducksj, "assets");
+        this.load.multiatlas("legs", legsj, "assets");
+        this.load.multiatlas("splash", splashj, "assets");
+        //Load audio files
 
         let sounds = soundsj.sounds;
         let soundsLen = sounds.length;
         for (let i = 0; i < soundsLen; i++) {
             this.load.audio("suba_" + i, "assets/" + sounds[i]);
         }
-        //Load sprite atlas
-        this.load.multiatlas("allDucks", ducksj, "assets");
-        this.load.multiatlas("legs", legsj, "assets");
-        this.load.multiatlas("splash", splashj, "assets");
-        //Load audio files
-        this.load.audio("suba_1", "assets/suba_1.mp3");
-        this.load.audio("suba_2", "assets/suba_2.mp3");
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
         this.load.image("col", "assets/pond_color_invert.png");
@@ -276,7 +274,7 @@ class MyGame extends Phaser.Scene {
             function () {
                 this.populateDucks(currentPond);
                 this.applyTileCollisionCallbacks();
-                last_collision_check = COLLISION_CHECK_RATE-1;
+                last_collision_check = COLLISION_CHECK_RATE - 1;
             },
             this
         );
@@ -616,7 +614,7 @@ class MyGame extends Phaser.Scene {
                 delay: 1000,
                 callback: function () {
                     //in case we were destroyed before executing
-                    if(duckGameObject.parentContainer == null)
+                    if (duckGameObject.parentContainer == null)
                         return;
 
                     duckGameObject.parentContainer.body.setSize(duckGameObject.width, duckGameObject.height / 2, false);

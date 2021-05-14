@@ -1,0 +1,142 @@
+/*
+   ---------------------------
+   created with Free texture packer v0.6.7
+   http://free-tex-packer.com
+   ---------------------------
+*/
+.accessory {
+    display: inline-block;  object-fit: none;
+    object-position: 0 0;
+    width: 100px;
+    height: 100px;
+}
+
+.Little_Duck1 {
+    object-position: -0px -0px;
+    width: 274px;
+    height: 299px;
+    margin-left: 13px;
+    margin-top: 1px
+}
+
+.Little_Ambulance_1 {
+    object-position: -274px -0px;
+    width: 297px;
+    height: 247px;
+    margin-left: 3px;
+    margin-top: 26px
+}
+
+.SubaBeret_1 {
+    object-position: -274px -247px;
+    width: 286px;
+    height: 238px;
+    margin-left: 18px;
+    margin-top: 32px
+}
+
+.Little_Megaphone {
+    object-position: -0px -485px;
+    width: 290px;
+    height: 210px;
+    margin-left: 3px;
+    margin-top: 57px
+}
+
+.Suba_Hairpin {
+    object-position: -290px -485px;
+    width: 385px;
+    height: 158px;
+    margin-left: 7px;
+    margin-top: 9px
+}
+
+.tophat {
+    object-position: -560px -247px;
+    width: 287px;
+    height: 198px;
+}
+
+.stopwatch {
+    object-position: -675px -445px;
+    width: 259px;
+    height: 211px;
+}
+
+.policehat {
+    object-position: -571px -0px;
+    width: 320px;
+    height: 169px;
+}
+
+.bow1 {
+    object-position: -0px -299px;
+    width: 198px;
+    height: 152px;
+    margin-left: 1px;
+    margin-top: 1px
+}
+
+.baseballhat {
+    object-position: -290px -643px;
+    width: 200px;
+    height: 147px;
+}
+
+.hat2 {
+    object-position: -0px -695px;
+    width: 198px;
+    height: 138px;
+    margin-left: 1px;
+    margin-top: 0px
+}
+
+.bow2 {
+    object-position: -490px -656px;
+    width: 194px;
+    height: 138px;
+    margin-left: 3px;
+    margin-top: 12px
+}
+
+.hat1 {
+    object-position: -198px -790px;
+    width: 200px;
+    height: 92px;
+    margin-left: 0px;
+    margin-top: 4px
+}
+
+.glassestint {
+    object-position: -398px -794px;
+    width: 204px;
+    height: 87px;
+}
+
+.hat3 {
+    object-position: -602px -794px;
+    width: 191px;
+    height: 89px;
+    margin-left: 5px;
+    margin-top: 5px
+}
+
+.Little_Ambulance_2 {
+    object-position: -684px -656px;
+    width: 139px;
+    height: 117px;
+    margin-left: 83px;
+    margin-top: 91px
+}
+
+.eyepatch {
+    object-position: -571px -169px;
+    width: 191px;
+    height: 64px;
+}
+
+.glasses {
+    object-position: -793px -773px;
+    width: 105px;
+    height: 86px;
+}

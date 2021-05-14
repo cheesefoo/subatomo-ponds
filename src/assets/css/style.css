@@ -212,3 +212,5 @@ h1 {
     align-content: center;
     height: calc(100vh - 75px);
 }
+
+#flag-en {background-image: url("../images/en.svg")}
