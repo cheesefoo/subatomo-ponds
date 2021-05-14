@@ -14,7 +14,7 @@ from wand.image import Image
 # Set location of texture packer exe
 # client_secrets.json is not committed for security
 # TEXTURE_PACKER_EXE = join('K:\\Utilities\\TexturePacker\\bin', 'TexturePacker.exe')
-# TEXTURE_PACKER_EXE = join('C:\\Program Files\\CodeAndWeb\\TexturePacker\\bin', 'TexturePacker.exe')
+TEXTURE_PACKER_EXE = join('C:\\Program Files\\CodeAndWeb\\TexturePacker\\bin', 'TexturePacker.exe')
 ASSETS_DIR = PurePath(dirname(dirname(abspath(__file__))), 'assets')
 JSON_DESTINATION_DIR = join(ASSETS_DIR, 'test_submissions')
 RAW_IMAGES_DIR = join(ASSETS_DIR, 'test_all_submissions_raw')
@@ -129,6 +129,17 @@ def pack_spritesheet_free():
     project = 'project.ftpp'
     args = ['free-tex-packer-cli', '--project', project, '--output', SPRITESHEET_DIR]
     run(args, shell=True, check=True)
+    merge_json()
+
+
+def pack_spritesheet():
+    json_filename = join(SPRITESHEET_DIR, 'all_ducks_sheet.json')
+    sheet_filename = join(SPRITESHEET_DIR, 'all_ducks_sheet_{n}.png')
+    args = [
+        TEXTURE_PACKER_EXE, '--format', "phaser", '--png-opt-level', '1', '--multipack', '--data', json_filename,
+        '--sheet',
+        sheet_filename, '--max-width', '2048', '--max-height', '2048', SPLIT_IMAGES_DIR]
+    run(args, shell=True, check=True)
 
 
 def merge_json():
@@ -139,10 +150,11 @@ def merge_json():
         if file.startswith("all_ducks_sheet") and file.endswith("json"):
             with open(join(SPRITESHEET_DIR, file)) as f:
                 j = json.load(f)
-                t +=j["textures"]
+                t += j["textures"]
     output = dumps(s)
     with open(join(JSON_DESTINATION_DIR, "all_ducks_sheet.json"), 'w') as f:
         f.write(output)
+
 
 def main():
     maker = DuckMaker(500, template)
@@ -150,7 +162,6 @@ def main():
     maker.make_json(20)
     split_images()
     pack_spritesheet_free()
-    merge_json()
 
 
 if __name__ == '__main__':
