@@ -993,6 +993,8 @@ function hideScreen() {
     $("#pond-ui").hide();
     $(".screen").hide();
 }
+$(function() {
+    console.log("indexjs load");});
 
 $("#spb1,#spb2").on("click", function () {
     hideScreen();

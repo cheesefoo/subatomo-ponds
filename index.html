@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<style>body{opacity:0;}</style>
+    <style>body {
+        opacity: 0;
+    }</style>
     <meta content="width=device-width, user-scalable=no" name="viewport"/>
     <meta charset="utf-8"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -16,7 +18,7 @@
             href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
             rel="stylesheet"
     />
-	<script src="./localization/language.js"></script>
+    <script src="localization/language.js"></script>
     <script
             crossorigin="anonymous"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -34,7 +36,9 @@
             href="#"
             id="menu1"
             style="margin-right: auto"
-    ><span><!--insert logo here-->&#9832; </span><script>document.write(strings[lang][0][0])</script></a
+    ><span text="main-0"><!--insert logo here-->&#9832; </span>
+
+    </a
     >
     <button
             class="navbar-toggler"
@@ -56,19 +60,13 @@
                                 <button class="dropdown-item" type="button" id="spb2">Subatomo Pond 2</button>
                                 <button class="dropdown-item" type="button" id="spb3">Subatomo Pond 3</button>
                             </div>!-->
-                <a class="nav-link text-white" href="#" id="spb1"
-                >Visit the Ponds</a
-                >
+                <a class="nav-link text-white" href="#" id="spb1" text="main-1"></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#" id="menu2"
-                >About the Project</a
-                >
+                <a class="nav-link text-white" href="#" id="menu2" text="main-2"></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#" id="menu3"
-                >About Oozora Subaru</a
-                >
+                <a class="nav-link text-white" href="#" id="menu3" text="main-3"></a>
             </li>
         </ul>
     </div>
@@ -78,29 +76,29 @@
         <div class="screen" id="lng">
             <div class="content">
                 <img alt="logo" src="images/logo.png"/>
-                <img class="nav-link text-white selectLang" id="flag-en" lang="en" src="/images/en.svg">ENGLISH</img>
-                <img class="nav-link text-white selectLang" id="flag-es" lang="es" src="/images/es.svg">SPANISH</img>
-                <img class="nav-link text-white selectLang" id="flag-br" lang="pt" src="/images/br.svg">Portugese</img>
+                <div class="lang-selection">
+                    <img alt="EN" class="nav-link text-white selectLang" id="flag-en"
+                         lang="EN" src="/images/en.svg"/>
+                    <img alt="ES" class="nav-link text-white selectLang" id="flag-es"
+                         lang="ES" src="/images/es.svg"/>
+                    <img alt="PT" class="nav-link text-white selectLang" id="flag-br"
+                         lang="PT" src="/images/br.svg"/>
+                </div>
             </div>
         </div>
-		<div class="screen" id="home">
+        <div class="screen" id="home">
             <div class="content">
                 <img alt="logo" src="images/logo.png"/>
-                <a class="nav-link text-white" href="#" id="spb2"
-                >Enter the ponds!</a
-                >
+                <a class="nav-link text-white" href="#" id="spb2" text="main-10"></a>
             </div>
         </div>
         <div class="screen" id="about-project">
-            <h1>About the Project</h1>
+            <h1 text="main-3"></h1>
             <img alt="subatomo army" src="images/subatomo army.png"/>
             <div class="project-text">
-                This project was created as a gift for Oozora Subaru for her 1
-                million subscriber milestone. It came to be first as a gift from the
-                Subatomo EN discord server, but we want it to be as a gift from the
-                whole Hololive community as a whole, no borders, no fandom, just the
-                love for Subaru and her duckness. <br/><br/>
-                Shuba Shuba Shuba!
+                <span text="main-15"></span>
+                <br/><br/>
+                <span text="main-16"></span>
             </div>
         </div>
         <div class="screen" id="about-subaru">
@@ -108,14 +106,14 @@
             <img alt="subaru" src="images/subaru.webp"/>
             <div class="about-content">
                 <p>
-                    The manager of an MMA club and an E-sports club. A supremely
-                    spirited, cheerful, lively girl who can talk to anyone without
-                    breaking a sweat. She’s currently practicing her pro-gamer
-                    skills.<br/>
-                    She is totally not a duck
+
+                    <span text="main-17"></span>
+                    <br/>
+                    <span text="main-18"></span>
+
                 </p>
                 <br/>
-                <a href="https://www.youtube.com/channel/UCvzGlP9oQwU--Y0r9id_jnA"
+                <a text="main-14" href="https://www.youtube.com/channel/UCvzGlP9oQwU--Y0r9id_jnA"
                 >Youtube channel</a
                 >
             </div>
@@ -124,20 +122,42 @@
 </div>
 
 
-<script>
-    $(function () {
+<script defer>
+    $(async function () {
+        console.log("index load");
         // Handler when the DOM is fully loaded
+        await loadJSON();
 
+        if (lang != null)
+            loadTexts();
+
+        localStorage.clear();
         $("#screens").show();
-
-		$("body").on("click",".selectLang",function(){
-			localStorage['userLang']=$(this).attr("lang");
-			location.reload();
-		});
-
     });
 
+    function loadTexts() {
+        if (strings == null) {
+            loadJSON(function (response) {
+                strings = JSON.parse(response);
+            });
+        }
+        let tags = $("[text]");
+        let texts = strings[lang]["Main page"];
+        console.log(texts);
+        [...tags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(5);
 
+            t.textContent = texts[index];
+        });
+    }
+    $(".selectLang").on("click", function () {
+        lang = $(this).attr("lang");
+        // localStorage["userLang"] = $(this).attr("lang");
+        // location.reload();
+        loadTexts();
+        $(".selectLang").hide();
+    });
     function changeScreen(screen) {
         hideScreen();
         $("#screens").show();
@@ -151,20 +171,22 @@
         $(".screen").hide();
     }
 
-    $("#spb1,#spb2").on('click', function () {
+
+
+    $("#spb1,#spb2").on("click", function () {
         hideScreen();
         $("#screens").hide();
         $("canvas").show();
         window.game.input.enabled = true;
         $("#pond-ui").show();
     });
-    $("#menu1").on('click', function () {
+    $("#menu1").on("click", function () {
         changeScreen("#home");
     });
-    $("#menu2").on('click', function () {
+    $("#menu2").on("click", function () {
         changeScreen("#about-project");
     });
-    $("#menu3").on('click', function () {
+    $("#menu3").on("click", function () {
         changeScreen("#about-subaru");
     });
 

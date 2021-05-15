@@ -34,7 +34,7 @@ def download_json():
         for line in lines:
             # print(line)
             if line is None or line == "":
-                continue
+                section.append("~NOT YET TRANSLATED~")
             elif line[0] == "[":
                 section = []
                 lang[line[1:]] = section
