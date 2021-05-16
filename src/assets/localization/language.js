@@ -1,11 +1,10 @@
 let strings;
 let lang;
 
-$(function () {
-    console.log("language load in rdy");
-
-
-});
+// $(function () {
+//     loadJSON().catch(console.error);
+//     console.log("language load in languagejs");
+// });
 
 function getLang() {
     if (localStorage.getItem("userLang") == null) {
@@ -19,7 +18,7 @@ async function loadJSON() {
     await fetch("localization/languages.json")
         .then(response => response.json())
         .then(data => strings = data)
-        // .then(getLang)
+        .then(getLang)
         .catch(err => console.log(err));
     // let xobj = new XMLHttpRequest();
     // xobj.overrideMimeType("application/json");

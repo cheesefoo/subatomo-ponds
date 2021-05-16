@@ -44,6 +44,21 @@
           "destination": "/4frame.html"
         }
       ]
+    },
+    {
+      "target": "info",
+      "public": "./dist/docs",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ],
   "functions": {
