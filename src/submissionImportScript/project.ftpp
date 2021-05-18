@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "version": "0.6.7"
+  },
+  "savePath": "M:\\JetBrains Projects\\WebstormProjects\\Kaigai-Nikki-Pond\\src\\assets\\test_submissions",
+  "images": [],
+  "folders": [
+    "M:/JetBrains Projects/WebstormProjects/Kaigai-Nikki-Pond/src/assets/test_all_submissions_split"
+  ],
+  "packOptions": {
+    "textureName": "all_ducks_sheet",
+    "textureFormat": "png",
+    "removeFileExtension": false,
+    "prependFolderName": false,
+    "base64Export": false,
+    "tinify": true,
+    "tinifyKey": "FB4bB2pn1qmKHmmKKGvF9jRKKvmG3rCX",
+    "scale": 1,
+    "filter": "none",
+    "exporter": "Phaser 3",
+    "fileName": "pack-result",
+    "savePath": "M:\\JetBrains Projects\\WebstormProjects\\Kaigai-Nikki-Pond\\src\\assets\\test_submissions",
+    "width": 2048,
+    "height": 2048,
+    "fixedSize": false,
+    "powerOfTwo": false,
+    "padding": 0,
+    "extrude": 0,
+    "allowRotation": false,
+    "allowTrim": true,
+    "trimMode": "trim",
+    "alphaThreshold": "0",
+    "detectIdentical": true,
+    "packer": "OptimalPacker",
+    "packerMethod": "Automatic"
+  }
+}
