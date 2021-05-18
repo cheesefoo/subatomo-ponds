@@ -165,54 +165,44 @@ const source = document.getElementById("mp3_src");
 
 let soundmap;
 
-//generating the html dynamically as suggestions are added, consider hardcoding the html in the final version
-$(window).on("load", function () {
 
-    loadJSON(function (response) {
-        soundmap = JSON.parse(response);
-        console.log(soundmap);
+function makeSoundButtons() {
+    console.log(soundmap);
 
-        let options = $("select");
-        let container = $("#soundButtons");
+    let options = $("select");
+    let container = $("#soundButtons");
 
-        let len = soundmap.sounds.length;
-        for (let i = 0; i < len; i++) {
-            let sound = soundmap.sounds[i];
-            let txt = sound.replace(".mp3", "");
-            options.append(`<option class='soundOption' value="${i}">${txt}</option>`);
-            container.append(`<button class='soundButton' type='button' value="${i}">${txt}</button>`);
-        }
-        $("#soundSelection").on("change", function () {
-            let f = $(this).val();
-            console.log(f);
-            play(f);
-        });
+    //The index of the localized string in languages.json, after "Picked Randomly"
+    let soundStringIndex = 14;
 
-        $(".soundButton").on("click", function () {
-            let f = $(this).attr("value");
 
-            console.log(f);
-            play(f);
-        });
+    let len = soundmap.sounds.length;
+    for (let i = 0; i < len; i++) {
+        let sound = soundmap.sounds[i];
+        let txt = sound.replace(".mp3", "");
+        let l18nStrIndex = i + soundStringIndex;
+        options.append(`<option class='soundOption' value="${i}" text="u-${l18nStrIndex}">${txt}</option>`);
+        container.append(`<button class='soundButton' type='button' value="${i}" text="u-${l18nStrIndex}">${txt}</button>`);
+    }
+    $("#soundSelection").on("change", function () {
+        let f = $(this).val();
+        console.log(f);
+        play(f);
     });
-});
 
-
-function loadJSON(callback) {
-
-    let xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open("GET", "soundfilemap.json", true);
-
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-
-            callback(xobj.responseText);
-        }
-    };
-    xobj.send(null);
+    $(".soundButton").on("click", function () {
+        let f = $(this).attr("value");
+        console.log(f);
+        play(f);
+    });
 }
 
+async function loadsounds() {
+    await fetch("soundfilemap.json")
+        .then(response => response.json())
+        .then(data => soundmap = data)
+        .catch(err => console.log(err));
+}
 
 function play(val) {
     if (val === -1)

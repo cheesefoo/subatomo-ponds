@@ -54,13 +54,13 @@ em {
     font-weight: bold;
 }
 
-input, textarea {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    background: #f8f4e5;
-    padding-left: 5px;
-    outline: none;
-}
+/*input, textarea {*/
+/*    border: 1px solid rgba(0, 0, 0, 0.1);*/
+/*    border-radius: 2px;*/
+/*    background: #f8f4e5;*/
+/*    padding-left: 5px;*/
+/*    outline: none;*/
+/*}*/
 
 input:focus, textarea:focus {
     border: 1px solid #6bd4b1;
@@ -94,17 +94,17 @@ button:hover {
     background: #ffc7b8;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus {
-    border: 1px solid #6bd4b1;
-    -webkit-text-fill-color: #2A293E;
-    -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
-    transition: background-color 5000s ease-in-out 0s;
-}
+/*input:-webkit-autofill,*/
+/*input:-webkit-autofill:hover,*/
+/*input:-webkit-autofill:focus,*/
+/*textarea:-webkit-autofill,*/
+/*textarea:-webkit-autofill:hover,*/
+/*textarea:-webkit-autofill:focus {*/
+/*    border: 1px solid #6bd4b1;*/
+/*    -webkit-text-fill-color: #2A293E;*/
+/*    -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;*/
+/*    transition: background-color 5000s ease-in-out 0s;*/
+/*}*/
 
 
 input[type=submit] {
@@ -117,10 +117,10 @@ input[type=submit]:hover {
     color: white;
 }
 
-input[type=radio] {
-    display: inline;
-    width: auto;
-}
+/*input[type=radio] {*/
+/*    display: inline;*/
+/*    width: auto;*/
+/*}*/
 audio {
 
 }

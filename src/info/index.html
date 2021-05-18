@@ -21,8 +21,12 @@
                 </a>
                 <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
                     <li><a class="dropdown-item selectLang flag-icon flag-icon-us" href="#" lang="EN"></a>EN</li>
+                    <li><a class="dropdown-item selectLang flag-icon flag-icon-jp" href="#" lang="JP"></a>JP</li>
+                    <li><a class="dropdown-item selectLang flag-icon flag-icon-id" href="#" lang="ID"></a>ID</li>
                     <li><a class="dropdown-item selectLang flag-icon flag-icon-mx" href="#" lang="ES"></a>ES</li>
                     <li><a class="dropdown-item selectLang flag-icon flag-icon-br" href="#" lang="PT"></a>PT</li>
+                    <li><a class="dropdown-item selectLang flag-icon flag-icon-kr" href="#" lang="KR"></a>KR</li>
+                    <li><a class="dropdown-item selectLang flag-icon flag-icon-nl" href="#" lang="NL"></a>NL</li>
                 </ul>
             </li>
             <li class="nav-item" role="presentation">
@@ -47,7 +51,7 @@
     </div>
 </nav>
 
-<div id="tab-content" class="d-flex ">
+<div class="d-flex " id="tab-content">
     <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
         <h1 text="a-0"></h1>
         <div text="a-1"></div>
@@ -263,8 +267,32 @@
         // localStorage["userLang"] = $(this).attr("lang");
         // location.reload();
         loadTexts();
+        changeDropdown();
 
     });
+
+    function changeDropdown() {
+
+        let dropdown = $("#dropdown-inner");
+        dropdown.removeClass();
+        dropdown.addClass("flag-icon");
+        let cls = "flag-icon-";
+        switch (lang) {
+        case "EN":
+            cls += "us";
+            break;
+        case "ES":
+            cls += "mx";
+            break;
+        case "PT":
+            cls += "br";
+            break;
+        default:
+            cls += lang.toLowerCase();
+            break;
+        }
+        dropdown.addClass(cls);
+    }
 
 
 </script>

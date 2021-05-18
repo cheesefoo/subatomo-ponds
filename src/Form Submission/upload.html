@@ -4,12 +4,32 @@
     <title>Subaru Milestone Submission Form</title>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <link href="upload.css" rel="stylesheet"/>
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="localization/language.js"></script>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
+
 </head>
 
 <body style="background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg') center center no-repeat;">
-<div class="container bg-primary">
+
+<div class="container bg-warning">
+    <div class="dropdown justify-content-end">
+        <button aria-expanded="false" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                id="dropdownMenuButton1" type="button">
+            <a class="" id="dropdown-inner"></a>Language Selection
+        </button>
+        <ul aria-labelledby="dropdownMenuButton1" class="dropdown-menu">
+            <li><a class="dropdown-item selectLang flag-icon flag-icon-us" href="#" lang="EN"></a>EN</li>
+            <li><a class="dropdown-item selectLang flag-icon flag-icon-jp" href="#" lang="JP"></a>JP</li>
+            <li><a class="dropdown-item selectLang flag-icon flag-icon-id" href="#" lang="ID"></a>ID</li>
+            <li><a class="dropdown-item selectLang flag-icon flag-icon-mx" href="#" lang="ES"></a>ES</li>
+            <li><a class="dropdown-item selectLang flag-icon flag-icon-br" href="#" lang="PT"></a>PT</li>
+            <li><a class="dropdown-item selectLang flag-icon flag-icon-kr" href="#" lang="KR"></a>KR</li>
+            <li><a class="dropdown-item selectLang flag-icon flag-icon-nl" href="#" lang="NL"></a>NL</li>
+        </ul>
+    </div>
     <form
             action="https://script.google.com/macros/s/AKfycbxCWy0-NP1gjCIVw3JqbZMX7YD96j34coeSaXc91hAnGJbVuDmiRYrGR3UgCPzpfDg1-A/exec"
             id="form"
@@ -17,51 +37,50 @@
     >
         <div id="data">
             <div class="displayName">
-                <label for="name"
-                >Your display name. If left blank, your name will be (TBD)</label
-                >
+                <label for="name" text="u-1">Your display name. If left blank, your name will be (TBD)</label>
                 <input id="name" maxlength="16" name="displayName"/>
-                <label for="message">Your congratulatory message for Subaru</label>
+                <label for="message" text="u-2">Your congratulatory message for Subaru</label>
                 <input id="message" maxlength="128" name="message"/>
             </div>
             <div class="contact">
-                <label class="form-text">
+                <label class="form-text text-white" text="u-3">
                     Can we contact you if there are issues with your submission? This
                     is optional.</label>
-                <small class="form-text text-muted"> We will only contact you if there's a problem! </small>
+                <small class="form-text text-white" text="u-4"> We will only contact you if there's a problem! </small>
                 <div class="form-check form-check-inline">
-                    <input checked class="form-check-input" data-target=".collapseOne.show" data-toggle="collapse"
+                    <input checked class="form-check-input" data-bs-target=".collapseOne.show" data-bs-toggle="collapse"
                            id="inlineRadio1" name="canContact" type="radio"
                            value="no">
-                    <label class="form-check-label" for="inlineRadio1">No</label>
+                    <label class="form-check-label" for="inlineRadio1" text="u-5">No</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" data-target=".collapseOne:not(.show)" data-toggle="collapse"
+                    <input class="form-check-input" data-bs-target=".collapseOne:not(.show)" data-bs-toggle="collapse"
                            id="inlineRadio2"
                            name="canContact" type="radio" value="yes">
-                    <label class="form-check-label" for="inlineRadio2">Yes</label>
+                    <label class="form-check-label" for="inlineRadio2" text="u-6">Yes</label>
                 </div>
             </div>
 
             <div class="collapseOne panel-collapse collapse">
                 <div class="emailInput" id="emailInput">
-                    <label for="email">Your email:</label>
+                    <label for="email" text="u-7">Your email:</label>
                     <input id="email" name="email" type="email"/>
                 </div>
                 <div class="discordInput" id="discordInput">
-                    <label for="discord">Your discord name and id:</label>
-                    <span class="tooltip-item">Make sure your <a
-                            href="https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings-">
-                        privacy settings</a> allow us to DM you.</span>
+                    <label for="discord" text="u-8">Your discord name and id:</label>
+                    <span class="tooltip-item" text="u-9">Make sure your                        </span>
+                    <a href="https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings-"
+                       text="u-10"> privacy settings</a>
+                    <span text="u-11"> allow us to DM you.</span>
 
                 </div>
                 <input id="discord" name="discord" type="text"/>
             </div>
 
 
-            <label for="soundSelection">Sound to play when pressed:</label>
+            <label for="soundSelection" text="u-12">Sound to play when pressed:</label>
             <select form="form" id="soundSelection" name="soundSelection">
-                <option value="-1">Picked Randomly</option>
+                <option text="u-13" value="-1">Picked Randomly</option>
 
             </select>
             <div id="soundButtons">
@@ -74,35 +93,88 @@
         </audio>
 
         <div id="upload">
-            <label
-            >Upload your duck bellow</label
-            >
+            <label text="u-27">Upload your duck bellow</label>
             <input accept="image/png" id="uploadFile" name="file" type="file"/>
             <input id="submit" type="submit"/>
         </div>
 
     </form>
 </div>
-<div id="submitting" style="display: none">Uploading duck...</div>
-<div id="previewSection">
-    <span id="previewText">Preview</span>
-    <canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
-    <canvas height="200" id="animPreview2" style="visibility: hidden" width="200"></canvas>
-    <canvas height="200" id="animPreview1-flipped" style="visibility: hidden; transform:scale(-1,1)" width="200"></canvas>
-    <canvas height="200" id="animPreview2-flipped" style="visibility: hidden; transform:scale(-1,1)" width="200"></canvas>
+<div class="container bg-secondary" id="previewSection">
+    <h3 class="mx-auto" id="previewText" text="u-29">Preview</h3>
+    <div class="justify-content-end">
+        <canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
+        <canvas height="200" id="animPreview2" style="visibility: hidden" width="200"></canvas>
+        <canvas height="200" id="animPreview1-flipped" style="visibility: hidden; transform:scale(-1,1)"
+                width="200"></canvas>
+        <canvas height="200" id="animPreview2-flipped" style="visibility: hidden; transform:scale(-1,1)"
+                width="200"></canvas>
+    </div>
 </div>
-<script crossorigin="anonymous"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="upload.js"></script>
-<script>    // popovers initialization - on hover
+<div id="submitting" style="display: none" text="u-28">Uploading duck...</div>
 
-$("[data-toggle=\"popover\"]").popover({
-    trigger: "hover"
-});
+<script crossorigin="anonymous"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="upload.js"></script>
+<script defer>
+    $(function () {
+        loadJSON().then(loadTexts);
+        loadsounds().then(makeSoundButtons);
+    });
+
+
+    function loadTexts() {
+        if (strings == null) {
+            console.error("strings weren't loaded");
+        }
+        if (lang == null) {
+            console.error("lang not set");
+        }
+        let tags = $("[text]");
+        let texts = strings[lang]["UPLOAD"];
+        console.log(texts);
+        [...tags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(2);
+
+            t.textContent = texts[index];
+        });
+    }
+
+    $(".selectLang").on("click", function () {
+        lang = $(this).attr("lang");
+        console.log(lang);
+        localStorage["userLang"] = lang;
+        // localStorage["userLang"] = $(this).attr("lang");
+        // location.reload();
+        loadTexts();
+        changeDropdown();
+
+    });
+
+    function changeDropdown() {
+
+        let dropdown = $("#dropdown-inner");
+        dropdown.removeClass();
+        dropdown.addClass("flag-icon");
+        let cls = "flag-icon-";
+        switch (lang) {
+        case "EN":
+            cls += "us";
+            break;
+        case "ES":
+            cls += "mx";
+            break;
+        case "PT":
+            cls += "br";
+            break;
+        default:
+            cls += lang.toLowerCase();
+            break;
+        }
+        dropdown.addClass(cls)
+    }
 
 </script>
 </body>

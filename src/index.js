@@ -226,11 +226,7 @@ class MyGame extends Phaser.Scene {
                 percentText.destroy();
                 $("#loadingDuck").hide();
                 $("canvas").hide();
-                if (localStorage.getItem("userLang") === null) {
-                    $("#lng").show();
-                } else {
-                    $("#home").show();
-                }
+                $("#home").show();
                 $("#screens").show();
                 window.game.input.enabled = false;
                 //}, 1500);
@@ -764,7 +760,7 @@ class MyGame extends Phaser.Scene {
         $body.append("<div class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
         let pond = $("#pond-ui .inner-ui");
         // pond.append("<img src='assets/subaru_uitest_1.png'></img>")
-        pond.append("<h3>Select pond</h3>");
+        pond.append("<h3 text='main-15'>Select pond</h3>");
         pond.append("<div class='button-list'></div>");
         for (let a = 0; a < maxPond; a++) {
             $(".button-list").append(
@@ -776,8 +772,8 @@ class MyGame extends Phaser.Scene {
             );
         }
         maxPages = Math.ceil(maxPond / pondsPerPage);
-        pond.append("<button class='button-list' id='prevPage'>Prev</button>");
-        pond.append("<button class='button-list' id='nextPage'>Next</button>");
+        pond.append("<button class='button-list' id='prevPage' text='main-16'>Prev</button>");
+        pond.append("<button class='button-list' id='nextPage' text='main-17'>Next</button>");
 
 
         $(".load-pond[pond=1]").addClass("selectedPond");
