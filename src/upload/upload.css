@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
-
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0.1em;
+    padding: 0.1em;
 }
 
 body {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat;
+    background: url("../images/bg1-white.png");
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -14,23 +12,54 @@ body {
     align-items: center;
     justify-items: center;
     font-size: 12pt;
-    font-family: "Spartan", serif;
+    font-family: 'Noto Sans JP', sans-serif;
     color: #2A293E;
 }
+.main, #previewSection, .soundButton {
+    vertical-align: middle;
+    border-radius: 5px;
+    margin: 8px 0 0 8px;
+    border: 2px solid #518db9 ;
+    max-width: 600px;
+    background: white;
+    display: block;
 
-.contact-us {
-    background: #f8f4e5;
-    padding: 50px 100px;
-    border-top: 10px solid #f45702;
+    box-shadow: #518db9 1px 1px 0,
+    #518db9 2px 2px 0,
+    #518db9 3px 3px 0,
+    #518db9 4px 4px 0,
+    #518db9 5px 5px 0,
+    #518db9 6px 6px 0,
+    #518db9 7px 7px 0,
+    #518db9 8px 8px 0;
 }
+
+.soundButton:hover{
+    margin: 16px 0 0 16px;
+    box-shadow: #000 0 0 0,
+    #000 0 0 0,
+    #000 0 0 0,
+    #000 0 0 0,
+    #000 0 0 0,
+    #000 0 0 0,
+    #000 0 0 0,
+    #000 0 0 0;
+    max-width: none;
+}
+/*.contact-us {*/
+/*    background: #f8f4e5;*/
+/*    padding: 50px 100px;*/
+/*    border-top: 10px solid #f45702;*/
+/*}*/
 
 
 label, input, textarea {
     display: block;
     width: 100%;
-    font-size: 12pt;
+
     line-height: 24pt;
-    font-family: "Spartan";
+    font-size: 12pt;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 input {
@@ -125,7 +154,8 @@ audio {
 
 }
 #soundButtons{
-    align-items: center;
+    align-items: self-start;
+    justify-items: start;
 }
 .tooltip {
     text-decoration: none;
@@ -143,7 +173,7 @@ audio {
 
 .tooltip span img {
     float: left;
-    margin: 0px 8px 8px 0;
+    margin: 0 8px 8px 0;
 }
 
 .tooltip:hover span {

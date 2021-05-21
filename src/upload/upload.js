@@ -14,7 +14,6 @@
 //     }
 // };
 
-
 function disallowedChars(e) {
     let regex = new RegExp(escapeRegExp("<>:\"/\\|?*"));
     return regex.test(e.charCode);
@@ -169,7 +168,7 @@ let soundmap;
 function makeSoundButtons() {
     console.log(soundmap);
 
-    let options = $("select");
+    let options = $("#soundSelection");
     let container = $("#soundButtons");
 
     //The index of the localized string in languages.json, after "Picked Randomly"

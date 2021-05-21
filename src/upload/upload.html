@@ -6,15 +6,24 @@
     <link href="upload.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="localization/language.js"></script>
+
+
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css"
+          rel="stylesheet"/>
+
 
 </head>
 
-<body style="background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg') center center no-repeat;">
+<body>
 
-<div class="container bg-warning">
+<div class="container main">
     <div class="dropdown justify-content-end">
         <button aria-expanded="false" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
                 id="dropdownMenuButton1" type="button">
@@ -35,18 +44,18 @@
             id="form"
             method="post"
     >
-        <div id="data">
+        <div class="form-group row" id="data">
             <div class="displayName">
                 <label for="name" text="u-1">Your display name. If left blank, your name will be (TBD)</label>
-                <input id="name" maxlength="16" name="displayName"/>
+                <input class="input-sm col-xs-1" id="name" maxlength="16" name="displayName"/>
                 <label for="message" text="u-2">Your congratulatory message for Subaru</label>
-                <input id="message" maxlength="128" name="message"/>
+                <textarea class="textarea-sm col-xs-1" id="message" maxlength="128" name="message"></textarea>
             </div>
             <div class="contact">
-                <label class="form-text text-white" text="u-3">
+                <label text="u-3">
                     Can we contact you if there are issues with your submission? This
                     is optional.</label>
-                <small class="form-text text-white" text="u-4"> We will only contact you if there's a problem! </small>
+
                 <div class="form-check form-check-inline">
                     <input checked class="form-check-input" data-bs-target=".collapseOne.show" data-bs-toggle="collapse"
                            id="inlineRadio1" name="canContact" type="radio"
@@ -59,6 +68,7 @@
                            name="canContact" type="radio" value="yes">
                     <label class="form-check-label" for="inlineRadio2" text="u-6">Yes</label>
                 </div>
+                <small text="u-4"> We will only contact you if there's a problem! </small>
             </div>
 
             <div class="collapseOne panel-collapse collapse">
@@ -78,29 +88,75 @@
             </div>
 
 
-            <label for="soundSelection" text="u-12">Sound to play when pressed:</label>
-            <select form="form" id="soundSelection" name="soundSelection">
-                <option text="u-13" value="-1">Picked Randomly</option>
+            <div id="soundSection">
+                <label for="soundSelection" text="u-12">Sound to play when pressed:</label>
+                <select form="form" id="soundSelection" name="soundSelection">
+                    <option text="u-13" value="-1">Picked Randomly</option>
+                    <option class="soundOption" text="u-14" value="0">Ajimaru Kazoo</option>
+                    <option class="soundOption" text="u-15" value="1">Chuba Chuba Chuba</option>
+                    <option class="soundOption" text="u-16" value="2">Chubaaaaaaa</option>
+                    <option class="soundOption" text="u-17" value="3">here we go</option>
+                    <option class="soundOption" text="u-18" value="4">Jakajakajanjan</option>
+                    <option class="soundOption" text="u-19" value="5">morning shuba</option>
+                    <option class="soundOption" text="u-20" value="6">Oyasumi (ASMR)</option>
+                    <option class="soundOption" text="u-21" value="7">Quack Quack</option>
+                    <option class="soundOption" text="u-22" value="8">secret</option>
+                    <option class="soundOption" text="u-23" value="9">Shuba (x4)</option>
+                    <option class="soundOption" text="u-24" value="10">Shuba!</option>
+                    <option class="soundOption" text="u-25" value="11">Shushushushu</option>
+                    <option class="soundOption" text="u-26" value="12">UN</option>
+                </select>
+            </div>
 
-            </select>
             <div id="soundButtons">
+                <button class="soundButton" text="u-14" type="button" value="0">Ajimaru Kazoo</button>
+                <button class="soundButton" text="u-15" type="button" value="1">Chuba Chuba Chuba</button>
+                <button class="soundButton" text="u-16" type="button" value="2">mesu shuba</button>
+                <button class="soundButton" text="u-17" type="button" value="3">here we go</button>
+                <button class="soundButton" text="u-18" type="button" value="4">Jakajakajanjan</button>
+                <button class="soundButton" text="u-19" type="button" value="5">morning shuba</button>
+                <button class="soundButton" text="u-20" type="button" value="6">Oyasumi (ASMR)</button>
+                <button class="soundButton" text="u-21" type="button" value="7">Quack Quack</button>
+                <button class="soundButton" text="u-22" type="button" value="8">secret</button>
+                <button class="soundButton" text="u-23" type="button" value="9">Shuba (x4)</button>
+                <button class="soundButton" text="u-24" type="button" value="10">Shuba</button>
+                <button class="soundButton" text="u-25" type="button" value="11">Shushushushu</button>
+                <button class="soundButton" text="u-26" type="button" value="12">UN</button>
+            </div>
+            <div id="countrySection">
+                <label for="country" text="u-31">Where are you from? (Optional)</label>
+                <input id="country" maxlength="2" placeholder="Country Abbreviation"/>
+                <!--                <select class="selectpicker countrypicker" data-default="ZZ" data-flag="true" data-live-search="true"-->
+                <!--                        id="country">-->
+                <!--                    <option value="abstain">I prefer not to answer</option>-->
+                <!--                </select>-->
 
             </div>
-        </div>
-        <audio autoplay id="player">
-            <source id="mp3_src" src="" type="audio/mp3"/>
-            Your browser does not support the audio element.
-        </audio>
+            <div id="refererSection">
+                <label for="referer">How did you hear about this project? </label>
 
-        <div id="upload">
-            <label text="u-27">Upload your duck bellow</label>
-            <input accept="image/png" id="uploadFile" name="file" type="file"/>
-            <input id="submit" type="submit"/>
+                <select aria-label="referer" id="referer">
+                    <option value="disc">A hololive fan Discord</option>
+                    <option value="reddit">Reddit</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div id="upload">
+                <label text="u-27">Upload your duck bellow</label>
+                <input accept="image/png" class="form-control" id="uploadFile" name="file" type="file"/>
+                <input class="form-control" id="submit" type="submit"/>
+            </div>
         </div>
+
 
     </form>
+    <audio autoplay id="player">
+        <source id="mp3_src" src="" type="audio/mp3"/>
+        Your browser does not support the audio element.
+    </audio>
 </div>
-<div class="container bg-secondary" id="previewSection">
+<div class="container" id="previewSection">
     <h3 class="mx-auto" id="previewText" text="u-29">Preview</h3>
     <div class="justify-content-end">
         <canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
@@ -116,13 +172,19 @@
 <script crossorigin="anonymous"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-maxlength@1.10.1/dist/bootstrap-maxlength.min.js"></script>
 <script src="upload.js"></script>
 <script defer>
-    $(function () {
-        loadJSON().then(loadTexts);
-        loadsounds().then(makeSoundButtons);
-    });
 
+    $(function () {
+        $(".countrypicker").countrypicker();
+        $("#country").prepend("<option text='u-32' value='abstain' data-tokens='' data-countrycode='ZZ'></option>");
+        loadJSON().then(loadTexts);
+        // loadsounds().then(makeSoundButtons);
+    });
 
     function loadTexts() {
         if (strings == null) {
@@ -173,8 +235,14 @@
             cls += lang.toLowerCase();
             break;
         }
-        dropdown.addClass(cls)
+        dropdown.addClass(cls);
     }
+
+    $("input[maxlength], textarea").maxlength({
+        alwaysShow: true,
+        warningClass: "form-text text-muted mt-1",
+        limitReachedClass: "form-text text-muted mt-1",
+    });
 
 </script>
 </body>
