@@ -301,7 +301,9 @@ class MyGame extends Phaser.Scene {
 
     makeTileMap() {
         this.map = this.make.tilemap({key: "map"}); //, tileWidth: 64, tileHeight: 64 });
+		window.map=this.map;
         let tileset = this.map.addTilesetImage("Subapond_vibrantHD-min", "tiles");
+		window.tileset=tileset;
         // let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
         groundLayer = this.map.createLayer("ground", tileset);
         groundLayer.setCollisionByProperty({collides: true});
@@ -311,6 +313,15 @@ class MyGame extends Phaser.Scene {
         obstacleLayer.setCollisionByProperty({collides: true});
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
+		
+		window.groundLayer=groundLayer;
+		window.pondLayer=pondLayer;
+		window.obstacleLayer=obstacleLayer;
+		window.transitionLayer=transitionLayer;
+		window.groundLayer.setDisplaySize(sceneWidth,sceneHeight);
+		window.pondLayer.setDisplaySize(sceneWidth,sceneHeight);
+		window.obstacleLayer.setDisplaySize(sceneWidth,sceneHeight);
+		window.transitionLayer.setDisplaySize(sceneWidth,sceneHeight);
     }
 
     /// Unused
