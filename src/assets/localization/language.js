@@ -1,5 +1,6 @@
 let strings;
 let lang;
+let codes;
 
 // $(function () {
 //     loadJSON().catch(console.error);
@@ -14,7 +15,15 @@ function getLang() {
     }
 }
 
-async function loadJSON() {
+async function loadCountryCodesJSON() {
+    await fetch("localization/countrycodes.json")
+        .then(response => response.json())
+        .then(data => codes = data)
+        .catch(err => console.log(err));
+}
+
+
+async function loadTranslationsJSON() {
     await fetch("localization/languages.json")
         .then(response => response.json())
         .then(data => strings = data)

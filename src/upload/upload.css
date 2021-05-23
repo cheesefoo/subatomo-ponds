@@ -20,10 +20,8 @@ body {
     border-radius: 5px;
     margin: 8px 0 0 8px;
     border: 2px solid #518db9 ;
-    max-width: 600px;
     background: white;
     display: block;
-
     box-shadow: #518db9 1px 1px 0,
     #518db9 2px 2px 0,
     #518db9 3px 3px 0,
@@ -32,6 +30,20 @@ body {
     #518db9 6px 6px 0,
     #518db9 7px 7px 0,
     #518db9 8px 8px 0;
+}
+#soundButtons{
+    align-items: self-start;
+    justify-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.soundButton{
+    font-size: small;
+    color: #518db9;
+    min-width: 150px;
+    max-width: 150px;
+    max-height: 50px;
 }
 
 .soundButton:hover{
@@ -44,7 +56,10 @@ body {
     #000 0 0 0,
     #000 0 0 0,
     #000 0 0 0;
-    max-width: none;
+    min-width: 150px;
+    max-width: 150px;
+    max-height: 50px;
+
 }
 /*.contact-us {*/
 /*    background: #f8f4e5;*/
@@ -153,10 +168,6 @@ input[type=submit]:hover {
 audio {
 
 }
-#soundButtons{
-    align-items: self-start;
-    justify-items: start;
-}
 .tooltip {
     text-decoration: none;
     position: relative;
@@ -196,6 +207,6 @@ audio {
     background: cornflowerblue;
     /*display: block;*/
     /*margin:0 auto 0 auto;*/
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }

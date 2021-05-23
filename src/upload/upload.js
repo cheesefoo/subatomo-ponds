@@ -183,18 +183,19 @@ function makeSoundButtons() {
         options.append(`<option class='soundOption' value="${i}" text="u-${l18nStrIndex}">${txt}</option>`);
         container.append(`<button class='soundButton' type='button' value="${i}" text="u-${l18nStrIndex}">${txt}</button>`);
     }
-    $("#soundSelection").on("change", function () {
-        let f = $(this).val();
-        console.log(f);
-        play(f);
-    });
 
-    $(".soundButton").on("click", function () {
-        let f = $(this).attr("value");
-        console.log(f);
-        play(f);
-    });
 }
+$("#soundSelection").on("change", function () {
+    let f = $(this).val();
+    console.log(f);
+    play(f);
+});
+
+$(".soundButton").on("click", function () {
+    let f = $(this).attr("value");
+    console.log(f);
+    play(f);
+});
 
 async function loadsounds() {
     await fetch("soundfilemap.json")

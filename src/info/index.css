@@ -7,11 +7,13 @@ body {
     /* pink superchat bg #fedce3*/
     /* old blue opening bg  #aff5e0*/
 }
-.screen-container{
+
+.screen-container {
     display: grid;
     align-items: center;
     justify-items: center;
 }
+
 .screen {
 
     /*transition: all .25s;*/
@@ -20,8 +22,8 @@ body {
     /*position: relative;*/
     vertical-align: middle;
     border-radius: 5px;
-    margin: 8px 0 0 8px;
-    border: 2px solid #518db9 ;
+    margin: 8px 0 32px 8px;
+    border: 2px solid #518db9;
     max-width: 600px;
     background: white;
     display: block;
@@ -34,4 +36,14 @@ body {
     #518db9 6px 6px 0,
     #518db9 7px 7px 0,
     #518db9 8px 8px 0;
+}
+
+.screen-inner {
+    padding: 1.15rem ;
+    margin: 8px 8px 8px 8px;
+    line-height: 1.5rem;
+}
+
+.screen-inner > div,li {
+    padding: 1.15rem 0 0 0;
 }

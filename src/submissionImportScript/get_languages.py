@@ -24,7 +24,7 @@ def download_json():
     result = {}
     # for language in languages:
     #     result[language] = {}
-    for i in range(1, num_of_cols):
+    for i in range(1, num_of_cols+1):
         lines = worksheet.col_values(i)
         print(lines[0])
         result[lines[0]] = {}

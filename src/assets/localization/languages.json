@@ -19,14 +19,15 @@
       "Select pond",
       "Prev",
       "Next",
-      "This project was created as a gift for Oozora Subaru for her 1 million subscriber milestone. It came to be first as a gift from the Subatomo EN discord server, but we want it to be as a gift from the whole Hololive community as a whole, no borders, no fandom, just the love for Subaru and her duckness.",
+      "This project was created as a gift for Oozora Subaru for her birthday and 1 million subscriber milestone. It came to be first as a gift from the Subatomo EN discord server, but we want it to be as a gift from the whole Hololive community as a whole, no borders, no fandom, just the love for Subaru and her duckness.",
       "Shuba Shuba Shuba!",
       "The manager of an MMA club and an E-sports club. A supremely spirited, cheerful, lively girl who can talk to anyone without breaking a sweat. She\u2019s currently practicing her pro-gamer skills.",
-      "She is totally not a duck"
+      "She is totally not a duck",
+      "Happy birthday and congratulations on 1 million subscribers, Subaru!!!"
     ],
     "UPLOAD": [
       "UPLOAD",
-      "Your display name. If left blank, your name will be Subatomo + a generated ID",
+      "Your display name",
       "Your congratulatory message for Subaru",
       "Can we contact you if there are issues with your submission? This is optional.",
       "We will only contact you if there's a problem! ",
@@ -62,7 +63,10 @@
       "A hololive fan Discord",
       "Reddit",
       "Twitter",
-      "Other"
+      "Other",
+      "If left blank, your name will be Subatomo + a generated ID",
+      "2-letter country code",
+      "Submit"
     ],
     "TUTORIAL": [
       "Tutorial",
@@ -107,32 +111,34 @@
       "Click to download"
     ],
     "Advertisement": [
-      "Advertisement",
-      "Subaru is approaching 1 million subscribers! The Subatomo EN Fan Server has created a webpage to show our support for Subaru, and everyone is invited to participate! It's a little winded to explain through text, so here is a small video to demonstrate what we're working on:",
+      "Oozora Subaru Celebration Project",
+      "Subaru's birthday is approaching, as well as her 1 million subscriber milestone! The Subatomo EN Fan Server has created a webpage to show our support for Subaru, and everyone is invited to participate! It's a little winded to explain through text, so here is a small video to demonstrate what we're working on:",
       "How do I participate?",
       "tl;dr here",
       "Draw an animated duck for Subaru! We are taking sprite sheet submissions. The technical specifications are ",
-      "here.",
-      "It's okay if you can't draw! The developers can't either! We have a template duck that you may use . ",
-      "here$LINK TO TEMPLATE",
+      "here",
+      "It's okay if you can't draw! The developers can't either! We have a template duck that you may use ",
+      "here",
       "If you are unfamiliar with graphic design, we have a small tutorial ",
-      "here$LINK TO TUT.",
+      "here.",
       "If you absolutely cannot draw anything, we also made a tool where you can drag & drop accessories on to your duck ",
-      "$LINK TO EDITOR",
-      "When you are ready, go to the ",
+      "here.",
+      "When you are ready, go to the",
       "submission page",
       "When you choose a file to upload, you should see a preview of how your duck will look. If you don't see anything, it's likely your",
       "technical specifications",
-      " are off. When you submit your duck, you won't be able to see it until Subaru's milestone. You can provide your email address with your submission if you would like to be informed if there was anything wrong with your submission. However, if there was something wrong and you don't give us contact info, it will be lost to the void.",
+      "are off. ",
       "TLDR:",
-      "Go to",
+      "Go to the",
       "submission page",
       "and submit us a sprite sheet with",
       "these specs",
-      " a personalized duck, along with your name (optional). Be sure to follow the ",
-      "guidelines.$LINK TO GUIDELINES",
+      " of a personalized duck, along with your name (optional). Be sure to follow the ",
+      "guidelines.",
       "Please do not share it on Twitter with Subaru\u2019s art tag.",
-      "Every duck is drawn by a Subatomo in the community! We want everyone and anyone to participate!"
+      "Every duck is drawn by a Subatomo in the community! We want everyone and anyone to participate!",
+      "When you submit your duck, you won't be able to see it until Subaru's milestone. ",
+      "You can provide your email address with your submission if you would like to be informed if there was anything wrong with your submission. However, if there was something wrong and you don't give us contact info, it will be lost to the void."
     ],
     "GUIDELINES": [
       "GUIDELINES",
@@ -157,13 +163,13 @@
       "How do I know if my submission is accepted?",
       "You can assume it was accepted. However, if there was something wrong, we will contact you and tell you what was wrong (if you provided your contact info).",
       "When will we be able to see the finished project?",
-      "The web page with all of the submissions will be publicly released as close to Subaru's 1 million subscriber milestone as possible. Keep an eye out for posts on Discord and SNS.",
+      "The web page with all of the submissions will be publicly released on June 30th. Keep an eye out for posts on Discord and SNS.",
       "Can I post my submission on Twitter using Subaru's art tag, or Reddit?",
       "Please keep it a secret! Subaru checks her art tag daily, and she has mentioned that she checks Reddit sometimes. We want it to be a surprise. You may share your designs on Discord!",
       "Can I just paste something on the duck?",
       "Yes, if the clip art is royalty free. You can use our provided assets as well. Don't steal anyone's artwork.",
       "I can't draw, but I still want to show my support!",
-      "We made it as easy as possible to submit something with our $LINK TO EDITOR. If you have spent the time to read the instructions thus far, you can also spend 2 minutes dragging some accessories on a duck.",
+      "We made it as easy as possible to submit something with our ",
       "I don't have drawing software!",
       "There are options, visit the",
       "tutorial.",
@@ -180,7 +186,8 @@
       "Can I help in some other way?",
       "Contact us in discord!",
       "I don't use Discord, is there another way to contact you?",
-      "subatomoen(at)gmail(dot)com . "
+      "subatomoen(at)gmail(dot)com . ",
+      "editor."
     ],
     "Links": [
       "Links:",
@@ -224,11 +231,12 @@
       "Este proyecto fue creado como un regalo para Oozora Subaru por conseguir un mill\u00f3n de subscriptores en YouTube. Al principio iba a ser un regalo del servidor de discord Subatomo EN, pero  queremos que sea un regalo de toda la comunidad de Hololive unida, sin fronteras, sin fandom,  solo el amor hacia Subaru  y su \"patificencia\"",
       "Shuba Shuba Shuba!",
       "La manager de un club de MMA y uno de E-Sports. Una chica sorprendentemente llena de esp\u00edritu, alegre y din\u00e1mica que puede hablar con cualquiera sin derramar ni una gota de sudor. Actualmente est\u00e1 practicando sus habilidades pro-gamer.",
-      "Definitivamente ella no es un pato"
+      "Definitivamente ella no es un pato",
+      "~NOT YET TRANSLATED~"
     ],
     "UPLOAD": [
       "~NOT YET TRANSLATED~",
-      "Nombre a ense\u00f1ar. En caso de dejar en blanco, tu nombre ser\u00e1 Subatomo + una ID aleatoria",
+      "Nombre a ense\u00f1ar",
       "Tu mensaje de felicitaciones a Subaru",
       "\u00bfPodemos contactarte si hay problemas con lo que subiste? Esto es opcional",
       "\u00a1Solo te contactaremos si hay un problema!",
@@ -263,6 +271,9 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "En caso de dejar en blanco, tu nombre ser\u00e1 Subatomo + una ID aleatoria",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~"
     ],
@@ -320,6 +331,7 @@
       "Si no est\u00e1s acostumbrado con el dise\u00f1o gr\u00e1fico, tenemos un peque\u00f1o tutorial.",
       "aqu\u00ed.",
       "Si definitivamente no puedes dibujar nada, tambien hicimos una herramienta que te permite poner accesorios a tu pato",
+      "aqu\u00ed.",
       "Cuando est\u00e9s listo, ve a la",
       "p\u00e1gina de propuestas",
       "Cuando escojas un archivo a subir, deber\u00edas ver una vista previa de como se ver\u00e1 tu pato. Si no puedes ver nada, podr\u00edan ser que tus",
@@ -333,7 +345,9 @@
       "un pato personalizado, adem\u00e1s de tu nombre (opcional). Asegurate de leer las pautas.",
       "gu\u00eda",
       "Por favor no compartir en Twitter con el tag de arte para Subaru.",
-      "\u00a1Cada pato ha sido dibujado por un Subatomo en la comunidad! \u00a1Queremos que todo el mundo participe!"
+      "\u00a1Cada pato ha sido dibujado por un Subatomo en la comunidad! \u00a1Queremos que todo el mundo participe!",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "GU\u00cdA",
@@ -381,7 +395,8 @@
       "\u00bfPuedo ayudar de alguna otra manera?",
       "\u00a1Cont\u00e1ctanos en discord!",
       "No uso discord. \u00bfHay alguna otra manera de contactarlos?",
-      "subatomoen(at)gmail(dot)com . "
+      "subatomoen(at)gmail(dot)com . ",
+      "~NOT YET TRANSLATED~"
     ],
     "Links": [
       "Links:",
@@ -425,11 +440,12 @@
       "Proyek ini diciptakan sebagai sebuah hadiah kepada Oozora Subaru karena telah mencapai 1 juta subscriber. Awalnya ini merupakan hadiah dari Server Discord Subatomo EN, namun kami ingin menjadikan proyek ini sebagai hadiah dari seluruh komunitas Hololive, tanpa batasan, tanpa fandom, hanya rasa cinta pada Subaru dan keimutannya.",
       "Shuba Shuba Shuba!",
       "Seorang manager klub MMA dan E-sports. Seorang gadis yang bersemangat, ceria, dan girang yang dapat berbicara dengan siapapun. Dia sedang melatih kemampuan bermain video gamenya",
-      "Dia pastinya bukan seekor bebek"
+      "Dia pastinya bukan seekor bebek",
+      "~NOT YET TRANSLATED~"
     ],
     "UPLOAD": [
       "~NOT YET TRANSLATED~",
-      "Nama kamu. Jika dikosongkan, namamu akan menjadi Subatomo + ID acak",
+      "Nama kamu",
       "Pesan selamat untuk Subaru",
       "Bisakah kami menghubungi kamu jika ada masalah dengan kirimanmu? ini opsional",
       "Kami akan menghubungi kamu jika ada masalah!",
@@ -464,6 +480,9 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "Jika dikosongkan, namamu akan menjadi Subatomo + ID acak",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~"
     ],
@@ -521,6 +540,7 @@
       "Jika kamu tidak terbiasa dengan desain grafis, kami punya tutorial buat kamu ",
       "di sini",
       "Jika kamu benar-benar tidak dapat menggambar apapun, kami juga menciptakan alat dimana kau dapat menyeret dan memasang aksesoris pada bebekmu",
+      "di sini",
       "Sudah siap? Kalau sudah, kunjungi ",
       "halaman pengumpulan",
       "Saat kamu memilih file untuk diunggah, kamu bisa melihat preview bebek yang telah kamu buat. Jika tidak terlihat apa-apa, kemungkinan file yang kamu kirim belum memenuhi ",
@@ -534,7 +554,9 @@
       "Seekor bebek yang sudah didekorasi, beserta nama kamu (opsional). Pastikan untuk mengikuti",
       "ketentuan.",
       "Mohon untuk TIDAK membagikan gambar yang dibuat di Twitter dengan tag gambar Subaru",
-      "Setiap bebek digambar oleh Subatomo dalam komunitas! Kami ingin semua untuk ikut serta!"
+      "Setiap bebek digambar oleh Subatomo dalam komunitas! Kami ingin semua untuk ikut serta!",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "Pedoman",
@@ -582,7 +604,8 @@
       "Bisakah aku membantu dengan cara lain?",
       "Hubungi kami lewat Discord!",
       "Aku tidak punya Discord. Apakah ada cara lain untuk menghubungi kalian?",
-      "subatomoen(at)gmail(dot)com . "
+      "subatomoen(at)gmail(dot)com . ",
+      "~NOT YET TRANSLATED~"
     ],
     "Links": [
       "~NOT YET TRANSLATED~",
@@ -626,11 +649,12 @@
       "Este Projeto foi criado como um presente para Oozora Subaru ao alcan\u00e7ar 1 milh\u00e3o de inscritos. Foi iniciado como um presente do Subatomo EN discord server, mas n\u00f3s queremos que esse presente seja algo feito pela comunidade Hololive como um todo, sem limite de bordas, sem fandom, s\u00f3 o amor \u00e0 Subaru e a patisse dela.",
       "Shuba Shuba Shuba!",
       "Gerente do clube de MMA e de um clube de E-sports. Uma garota extremamente alegre, energ\u00e9tica e motivada que conversa com qualquer pessoa sem nenhum problema. Ela est\u00e1 atualmente praticando as suas habilidades de pro-gamer.",
-      "Ela com certeza n\u00e3o \u00e9 um pato"
+      "Ela com certeza n\u00e3o \u00e9 um pato",
+      "Feliz anivers\u00e1rio e parab\u00e9ns por 1 milh\u00e3o de inscritos Subaru!!!"
     ],
     "UPLOAD": [
       "~NOT YET TRANSLATED~",
-      "Nome que ser\u00e1 mostrado. Se deixar em branco, seu nome ser\u00e1 Subatomo + um n\u00famero de ID gerado",
+      "Nome que ser\u00e1 mostrado",
       "Sua mensagem de parab\u00e9ns para a Subaru",
       "Podemos te contatar caso haja problemas com seu envio? Isso \u00e9 opcional.",
       "S\u00f3 te contataremos se houver problema!",
@@ -659,14 +683,17 @@
       "Envie seu pato abaixo",
       "Enviando pato...",
       "Pr\u00e9via",
+      "Seu navegador n\u00e3o suporta \u00e1udio.",
+      "De onde voc\u00ea \u00e9? (Opcional)",
+      "Prefiro n\u00e3o responder",
+      "Onde escutou sobre o projeto?",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "Outro",
+      "Se deixar em branco, seu nome ser\u00e1 Subatomo + um n\u00famero de ID gerado",
       "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~"
+      "Enviar"
     ],
     "TUTORIAL": [
       "Tutorial",
@@ -708,7 +735,7 @@
       "Refer\u00eancias usadas",
       "https://99designs.com/blog/video-animation/what-is-animation/",
       "https://www.codeandweb.com/texturepacker/tutorials/how-to-create-a-sprite-sheet",
-      "~NOT YET TRANSLATED~"
+      "Clique para baixar"
     ],
     "Advertisement": [
       "An\u00fancio",
@@ -722,6 +749,7 @@
       "Se voc\u00ea n\u00e3o est\u00e1 acostumado com design gr\u00e1fico, n\u00f3s temos um pequeno tutorial",
       "aqui",
       "Se voc\u00ea n\u00e3o consegue desenhar absolutamente nada, n\u00f3s fizemos uma ferramenta que voc\u00ea pode arrastar e colocar acess\u00f3rios no seu pato",
+      "aqui",
       "Quando estiver pronto, v\u00e1 para a",
       "p\u00e1gina de envio",
       "Quando for escolher um arquivo para enviar, voc\u00ea vai ver uma pr\u00e9via de como seu pato vai ficar. Se n\u00e3o ver nada, \u00e9 porque suas",
@@ -735,7 +763,9 @@
       "um pato personalizado, junto com seu nome (opcional). Tenha certeza de seguir",
       "as orienta\u00e7\u00f5es.",
       "Por favor n\u00e3o compartilhe no Twitter com o hashtag de arte da Subaru.",
-      "Todo pato \u00e9 desenhado por um Subatomo da comunidade! N\u00f3s queremos que toda e qualquer pessoa participe!"
+      "Todo pato \u00e9 desenhado por um Subatomo da comunidade! N\u00f3s queremos que toda e qualquer pessoa participe!",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "ORIENTA\u00c7\u00d5ES",
@@ -783,7 +813,8 @@
       "Posso ajudar de alguma outra forma?",
       "Nos contate pelo discord!",
       "N\u00e3o uso o Discord, tem outra forma de contat\u00e1-los?",
-      "subatomoen(at)gmail(dot)com . "
+      "subatomoen(at)gmail(dot)com . ",
+      "~NOT YET TRANSLATED~"
     ],
     "Links": [
       "Links:",
@@ -827,11 +858,12 @@
       "Dit project was gecree\u00ebrd als een cadeau voor Oozora Subaru voor haar 1 milioen subscriber mijlpaal. Het kwam eerst als een cadeau van de Subamoto EN discord server, maar we willen het een cadeau maken van de helen Hololive community gezamelijk. Geen grenzen, geen fandom, gewoon de leifde voor Subaru en haar eendelijkheid.",
       "Shuba Shuba Shuba!",
       "De manager van een vechtspoort en een E-sports club. een opperst geestelijk, vrolijk, levendig meisje die met iedereen kan praaten zonder te zweten. Ze is op het moment haar pro-gamer skills aan het oefenen.",
-      "Ze is totaal geen eend."
+      "Ze is totaal geen eend.",
+      "~NOT YET TRANSLATED~"
     ],
     "UPLOAD": [
       "~NOT YET TRANSLATED~",
-      "Uw weergavenaam. als uw het blank laat, zult uw naamSubamoto + een gegenereerde ID zijn.",
+      "Uw weergavenaam",
       "Uw felicitatie bericht voor Subaru.",
       "Kunnen we u contacteren als er een probleem is met uw inzending. dit is optioneel.",
       "We zullen alleen contact opnemen als er een probleem is!",
@@ -866,6 +898,9 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "als uw het blank laat, zult uw naamSubamoto + een gegenereerde ID zijn",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~"
     ],
@@ -923,6 +958,7 @@
       "Als u onbekend bent met grafisch ontwerpen, hebben we een kleine totorial",
       "hier",
       "Als u echt, echt niet kan tekenen. hebben we ook een tool gemaakt waar je accessoires kan slepen & neerzetten op je eend",
+      "hier",
       "Waarneer u klaar bent, ga naar de",
       "inzending pagina",
       "Waarneer je een file kiest om te uploaden, zou je een preview moeten kunnen zien van hoe jou eend er uit gaat zien. Als je helemaal niks ziet, licht het waarschijnlijk aan uw",
@@ -937,7 +973,9 @@
       "een gepersonaliseerde eend, met uw naam (optioneel). volg de",
       "richtlijnen",
       "Deel het alstublieft niet op twitter met Subaru's kunst tag",
-      "Elke eend is getekend ddo een Subamoto in de comunity! we willen idereen vragen om deel te nemen!"
+      "Elke eend is getekend ddo een Subamoto in de comunity! we willen idereen vragen om deel te nemen!",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "RICHTLIJNEN",
@@ -985,7 +1023,8 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
-      "subatomoen(at)gmail(dot)com . "
+      "subatomoen(at)gmail(dot)com . ",
+      "~NOT YET TRANSLATED~"
     ],
     "Links": [
       "~NOT YET TRANSLATED~",
@@ -1029,9 +1068,13 @@
       "~NOT YET TRANSLATED~",
       "Shuba Shuba Shuba!",
       "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~"
     ],
     "UPLOAD": [
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
@@ -1140,6 +1183,9 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
@@ -1188,7 +1234,8 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
-      "subatomoen(at)gmail(dot)com . "
+      "subatomoen(at)gmail(dot)com . ",
+      "~NOT YET TRANSLATED~"
     ],
     "Links": [
       "~NOT YET TRANSLATED~",
@@ -1232,11 +1279,12 @@
       "\uc774 \ud504\ub85c\uc81d\ud2b8\ub294 \uc624\uc624\uc870\ub77c \uc2a4\ubc14\ub8e8 \uc720\ud29c\ube0c \ucc44\ub110 \uad6c\ub3c5\uc790 \uc218 100\ub9cc\uba85 \ub3cc\ud30c \uae30\ub150\uc120\ubb3c\uc785\ub2c8\ub2e4. Subatomo EN \ub514\uc2a4\ucf54\ub4dc \uc11c\ubc84\uc5d0\uc11c \uacc4\ud68d\ub418\uae34 \ud588\uc9c0\ub9cc \uc11c\ubc84, \ud39c\ub364, \uad6d\uacbd\uacfc \ubb34\uad00\ud558\uac8c \ud638\ub85c\ub77c\uc774\ube0c \ucee4\ubba4\ub2c8\ud2f0\uc758 \ubaa8\ub450\ub97c \uc704\ud55c \uc120\ubb3c\ub85c \uc900\ube44\ub41c \ud504\ub85c\uc81d\ud2b8\uc785\ub2c8\ub2e4. \uc2a4\ubc14\ub8e8\uc640 \uc2a4\ubc14\ub8e8\uc758 \uc624\ub9ac\uc131\uc5d0 \ub300\ud55c \uc560\uc815\uc774 \uc911\uc694\ud558\uc9c0, \ub204\uac00 \uc560\uc815\ud558\ub294\uc9c0\ub294 \uc911\uc694\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4!",
       "\"\uc288\ubc14\uc288\ubc14\uc288\ubc14\"\ub294 \uc880 \uc5d0\ubc18\uac70 \uac19\uc740\ub370 \uc5b4\uca4c\uc9c0..",
       "MMA\ub3d9\uc544\ub9ac \ubc0f E-Sports\ub3d9\uc544\ub9ac\uc758 \ub9e4\ub2c8\uc800. \ub9e4\uc6b0 \ud65c\uae30\ucc28\uace0, \ud65c\ubc1c\ud558\uba70, \uc0dd\uae30 \ub118\uce58\ub294 \uc5ec\uc790\uc598\ub85c\uc11c \ub204\uad6c\ud55c\ud14c\ub098 \ud3b8\ud558\uac8c \ub9d0\uc744 \uac78 \uc904 \uc555\ub2c8\ub2e4. \ud604\uc7ac\ub85c\uc11c\ub294 \ud504\ub85c\uac8c\uc774\uba38\uac00 \ub418\uae30 \uc704\ud574 \uc5f0\uc2b5\uc911\uc785\ub2c8\ub2e4.",
-      "\uadf8\ub7f0 \uc598\uac00 \uc624\ub9ac\uc77c \ub9ac\uac00 \uc5c6\uc8e0^^"
+      "\uadf8\ub7f0 \uc598\uac00 \uc624\ub9ac\uc77c \ub9ac\uac00 \uc5c6\uc8e0^^",
+      "~NOT YET TRANSLATED~"
     ],
     "UPLOAD": [
       "~NOT YET TRANSLATED~",
-      "\uc0ac\uc6a9\uc790ID. \uc785\ub825\ub41c ID\uac00 \uc5c6\uc744 \uacbd\uc6b0, \uc0ac\uc6a9\uc790ID\ub294 \"Subatomo + \ub80c\ub364\uc22b\uc790ID\"\ub85c \uc800\uc7a5\ub429\ub2c8\ub2e4.",
+      "\uc0ac\uc6a9\uc790ID",
       "\uc2a4\ubc14\ub8e8\ub97c \uc704\ud55c \ucd95\ud558 \uba54\uc2dc\uc9c0",
       "\ubb38\uc81c\uac00 \uc788\uc744 \uacbd\uc6b0 \uc5f0\ub77d\ub4dc\ub824\ub3c4 \ub418\uaca0\uc2b5\ub2c8\uae4c? (\uc120\ud0dd\uc0ac\ud56d)",
       "\ubb38\uc81c\uac00 \uc5c6\uc744 \uacbd\uc6b0\uc5d0\ub294 \ub530\ub85c \uc5f0\ub77d\ub4dc\ub9ac\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.",
@@ -1274,6 +1322,9 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "\uc785\ub825\ub41c ID\uac00 \uc5c6\uc744 \uacbd\uc6b0, \uc0ac\uc6a9\uc790ID\ub294 \"Subatomo + \ub80c\ub364\uc22b\uc790ID\"\ub85c \uc800\uc7a5\ub429\ub2c8\ub2e4",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~"
     ],
@@ -1344,6 +1395,9 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
@@ -1392,7 +1446,8 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
-      "subatomoen(at)gmail(dot)com . "
+      "subatomoen(at)gmail(dot)com . ",
+      "~NOT YET TRANSLATED~"
     ],
     "Link": [
       "~NOT YET TRANSLATED~",
@@ -1410,6 +1465,216 @@
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
       "~NOT YET TRANSLATED~",
+      "!END"
+    ]
+  },
+  "DE": {
+    "Main page": [
+      "Hauptseite",
+      "Subatomo Teiche",
+      "Besuche den Teich",
+      "\u00dcber das Projekt",
+      "\u00dcber Subaru",
+      "Sprachauswahl",
+      "Englisch",
+      "Spanisch",
+      "Indonesisch",
+      "Japanisch",
+      "Portugiesisch",
+      "Betrete den Teich!",
+      "\u00dcber das Projekt",
+      "Oozora Subaru",
+      "Youtube Kanal",
+      "W\u00e4hle ein Teich aus",
+      "Vorheriger",
+      "N\u00e4chster",
+      "Dieses Projekt wurde als Geschenk f\u00fcr Oozora Subarus Geburtstag und f\u00fcr ihren 1 Millionen Abonnenten Meilenstein erschaffen. Es sollte zuerst als ein Geschenk vom SubatomoEN Discord Server sein, aber wir wollen es als ein Geschenk von der ganzen Hololive Community als ganzes; keine Grenzen, keine Fandoms, nur die Liebe zu Subaru und ihre Entenhaftigkeit.",
+      "Shuba Shuba Shuba!",
+      "Der Manager eines MMA und E-Sport Vereins. Ein schwunghaftes, gutgelauntes, flottes M\u00e4dchen, welche reden kann, ohne ins Schwitzen zu kommen. Im Moment \u00fcbt sie gerade an ihre Pro-Gamer Skills.",
+      "Sie ist definitiv keine Ente",
+      "Alles gute und gl\u00fcckwunsch zu deinen 1 Millionen Abos, Subaru!!!"
+    ],
+    "UPLOAD": [
+      "~NOT YET TRANSLATED~",
+      "Dein Benutzername. Falls leergelassen, wird dein Name Subatomo + eine generierte ID",
+      "Dein Gl\u00fcckwunschschreiben an Subaru ",
+      "K\u00f6nnen wir dich kontaktieren, falls es Probleme mit deiner Einreichung gibt? Dies ist optional.",
+      "Wir werden dich nur kontaktieren, falls es Probleme gibt!",
+      "Nein",
+      "Ja",
+      "Deine E-Mail:",
+      "Dein Discord Name und ID:",
+      "Stelle sicher, dass deine",
+      "Privateinstellungen",
+      "uns erlauben, dich zu DM'en",
+      "Der abgespielte Sound, wenn gedr\u00fcckt: ",
+      "Zuf\u00e4llig ausgew\u00e4hlt",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "Los geht's!",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "Lade deine Ente hier hoch",
+      "Ente wird hochgeladen\u2026",
+      "Vorschau",
+      "Dein Browser unterst\u00fctzt das Audio Element nicht.",
+      "Aus welchem Land kommst du? (Optional)",
+      "Ich m\u00f6chte dazu keine Antwort geben",
+      "Von woher hast du von unseren Projekt geh\u00f6rt?",
+      "Von einem Hololive Fan Discord",
+      "Reddit",
+      "Twitter",
+      "Sonstiges",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~",
+      "Zweibuchstabiges L\u00e4nderk\u00fcrzel",
+      "Einreichen"
+    ],
+    "TUTORIAL": [
+      "Tutorial",
+      "Getrennt nach Wissenslevel",
+      "Wie kann ich teilnehmen? (Eine kurze Zusammenfassung)",
+      "Ich habe keine Ahnung von irgendwas",
+      "Ich habe etw. Erfahrung mit Animationen",
+      "Ich habe Erfahrung in Graphikdesign",
+      "Uploaden",
+      "FAQ",
+      "Wie kann ich mitmachen?",
+      "Bitte lies das zuerst $link",
+      "Wie kann ich Animationen erstellen?",
+      "Animation ist das Aufnehmen von aufeinander folgenden, statischen Bildern- Zeichnungen oder Fotos von Objekten- und das Absspielen in schneller Abfolge, um Bewegungen aus der echten Welt nachzuahmen. Falls du jemals einen Daumenkino gesehen hast, kennst du ja das Prinzip.",
+      "Was ist ein Sprite Sheet?",
+      "Ein Sprite Sheet ist ein gro\u00dfes Bild, welches alle Animationen eines Charakters beinhaltet, statt mit einzelnen Dateien zu hantieren. F\u00fcr deine Einreichung wirst du jeden der einzelnen Animationsframe nebeneinander platzieren m\u00fcssen. Alle Frames haben die selbe Gr\u00f6\u00dfe und die Animation muss zu jedem Frame angepasst sein.",
+      "Die Frame-Reihenfolge ist 1>2>1>3>Wiederholung. Frame1 ist auch die Idle Pose. So w\u00fcrde die Animation in 10 Frames pro Sekunde aussehen.",
+      "Was muss ich eigentlich tuen?",
+      "Wir haben eine Vorlage zum \u00dcbermalen und Personalisieren zur Verf\u00fcgung gestellt. Du kannst dich frei entfalten, musst allerdings folgendes beachten, die",
+      "Richtlinien",
+      "und deine finale Datei muss abgestimmt sein mit den",
+      "Technische Spezifikationen",
+      "Falls du keinen Zugriff auf eine Bildbearbeitung-Software hast, kannst du diese Website kostenlos nutzen und unsere Vorlage importieren.  ",
+      "https://prominentdetail.github.io/Pixel.Tools/",
+      "Diese Website unterst\u00fctzt kooperatives zeichnen online sowie den Wacom Plug-in, falls du Firefox nutzt.",
+      "Nat\u00fcrlich kannst du auch deine eigene bevorzugte Software nutzen, du hast freie Wahl.",
+      "Notizen zu Piskel",
+      "Piskelapp ist ein weiterer Browser Editor mit Sprite Sheet Tools, jedoch raten wir von Piskel ab, falls du unsere Vorlage nutzen willst.  Piskel verursacht ein Aliasing (Treppen-Effekt) bei den importierten Dateien-",
+      "Uploaden",
+      "Upload",
+      "Hier",
+      "FAQ",
+      "Hilfe!!!",
+      "Jemand auf Discord steht sicherlich zu Hilfe",
+      "Kann ich _das_tuen?",
+      "Unwahrscheinlich, kontaktiere uns auf Discord",
+      "Ich habe weitere Fragen, die nicht im FAQ standen",
+      "Kontaktiere uns auf Discord",
+      "Benutzten Referenzen:",
+      "https://99designs.com/blog/video-animation/what-is-animation/",
+      "https://www.codeandweb.com/texturepacker/tutorials/how-to-create-a-sprite-sheet",
+      "Klicke zum Downloaden"
+    ],
+    "Advertisement": [
+      "Werbung",
+      "Subarus Geburtstag ist bald und sie ist au\u00dferdem dicht dran die 1 Millionen Abos zu knacken! Der Subatomo EN Fan Server hat eine Webseite kreiert, um unseren Support f\u00fcr Subaru zu zeigen und jeder ist herzlich eingeladen mitzumachen! Es ist etwas langwierig das schriftlich zu erkl\u00e4ren, deswegen ist hier ein kleines Video, um zu demonstrieren, woran wir gerade arbeiten:",
+      "Wie kann ich mitmachen?",
+      "Hier eine kurze Zusammenfassung",
+      "Zeichne eine animierte Ente f\u00fcr Subaru! Wir nehmen Sprite Sheet Einreichungen an. Technischen Spezifikationen sind",
+      "hier.",
+      "Es ist vollkommen OK, falls du nicht zeichnen kannst! Die Entwickler k\u00f6nnen es auch nicht! Wir haben eine Ente als Vorlage, die du nutzen kannst .",
+      "~NOT YET TRANSLATED~",
+      "Falls Grafikdesign Neuland f\u00fcr dich ist, haben wir ein kleines Tutorial",
+      "hier",
+      "Falls du \u00fcberhaupt nicht zeichnen kannst, haben wir einen Tool, wo man Accessoires auf die Ente ziehen & packen kann",
+      "hier",
+      "Falls du bereit bist, gehe zur ",
+      "Seite zum Einreichen",
+      "Wenn du eine Datei zum Hochladen ausw\u00e4hlst, solltest du eine Vorschau sehen, wie deine Ente aussehen w\u00fcrde. Falls das nicht der Fall ist, ist es wahrscheinlich, dass deine",
+      "technischen Spezifikationen ",
+      "Probleme machen. Wenn du eine Ente einreichst, wirst du die nicht mehr sehen bis zu Subarus Meilenstein. Du kannst deine E-Mail Adresse zu deiner Einreichuung beilegen, falls du informiert werden willst, wenn es Probleme mit deiner Einreichung gab. Wenn es jedoch zu Probleme kam und du uns deine Kontaktinfo nicht gabst, wird es im Nirgendwo verschwinden.",
+      "Kurzzusammenfassung",
+      "Geh auf",
+      "~NOT YET TRANSLATED~",
+      "und reiche uns einen Sprite Sheet mit",
+      "folgenden Specs",
+      "Eine personalisierte Ente, zusammen mit deinen Namen (optional). Bitte halte dich an die",
+      "Richtlinien",
+      "Bitte teile es nicht auf Twitter mit Subarus Art-Tag.",
+      "Jede Ente wurde von einem Subatomo aus der Community gezeichnet! Wir wollen das alle und jeder mitmacht!",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
+    ],
+    "GUIDELINES": [
+      "Richtlinien",
+      "Subaru Meilenstein Einreichungsregeln & Richtlinien",
+      "Falls du es bis hier geschafft hast, ohne zu wissen, worum es eigentlich geht, ",
+      "lese das zuerst",
+      "Common Sense Regeln gelten - keine Referenzen zu Religion oder Politik, keine Schimpfw\u00f6rter, Beleidigungen, etc. oder generell Kombinationen von Buchstaben, Nummern, Zeichen, Symbole, etc., die man so interpretieren k\u00f6nnte. ",
+      "Name",
+      "Dein Name muss unter 16 Zeichen sein.",
+      "Symbole wie -_():; etc. werden akzeptiert, aber falls die anst\u00f6\u00dfig sind, werden wir es ausmustern.",
+      "Bitte nutze nur eine Sprache, die wir unterst\u00fctzen (Englisch, Japanisch, Indonesisch, Spanisch, Portugisich, Deutsch, Niederl\u00e4ndisch). Falls du eine andere Sprache nutzt, werden wir es eventuell ausmustern.",
+      "Nachricht",
+      "Unter 128 Zeichen lang, alle oben genannten Regeln gelten",
+      "Ente",
+      "Deine Abgabe muss eine Ente sein. Es ist OK, falls es wie ein Huhn oder eine andere Vogelart aussieht.",
+      "Positioniere deine Ente \u00e4hnlich wie in unserer Vorlage in Richtung der Unterseite des Frames.",
+      "~NOT YET TRANSLATED~",
+      "Es ist nicht zwingend unsere Vorlage zu nutzen. Du kannst auf der Uploadseite ansehen, wie deine Ente aussehen w\u00fcrde.",
+      "Bitte halte deine Ententhematik konsistent in jedem Frame",
+      "Du kannst mehr als eine Einreichung haben.",
+      "FAQ",
+      "Wie wei\u00df ich, dass meine Einreichung angenommen wurde?",
+      "Du kannst annehmen, dass es angenommen wurde. Jedoch werden wir dich kontaktieren, falls ein Fehler eintrat und werden dich benachrichtigen, was das genaue Problem ist (Falls du uns deine Kontaktinfo gabst).",
+      "Wann werden wir das fertige Projekt sehen?",
+      "Die Webseite mit all den Einreichungen wird am 30. Juni ver\u00f6ffentlicht. Halte Ausschau nach Posts auf Discord und SNS.",
+      "Kann ich meine Einreichung mit Subarus Art-Tag auf Twitter oder auf Reddit posten?",
+      "Bitte halte es als Geheimnis! Subaru checkt ihre Fanarts t\u00e4glich und sie hat auch erw\u00e4hnt, dass sie manchmal auf Reddit unterwegs ist. Wir wollen es als eine \u00dcberraschung. Du kannst deinen Designs aber auf Discord teilen!",
+      "Kann ich nicht einfach auf die Ente was raufkopieren?",
+      "Ja, falls die Clip Art lizensfrei ist. Du kannst auch unsere zur Verf\u00fcgung gestellten Assets nutzen. Plagiier aber nicht die Kunstwerke anderer.",
+      "Ich kann nicht zeichnen, aber ich will euch trotzdem irgendwie unterst\u00fctzen!",
+      "Wir haben es so einfach wie m\u00f6glich gestaltet etwas einzusenden mit unseren $LINK TO EDITOR. Falls du es soweit geschafft hast, die Anweisungen zu lesen, dann wirst du es sicherlich schaffen ein paar Accesoires auf eine Ente zu packen, was nicht mehr als 2 Minuten beanspruchen sollte.",
+      "Ich habe keine Zeichen Software!",
+      "Es gibt Optionen, besuche den",
+      "Tutorial.($LINK TO TUT)",
+      "Du kannst auch unseren Editor nutzen, aber seine Features sind begrenzt",
+      "Link",
+      "Ich kann auf Papier zeichnen, kann ich nicht einfach ein Bild einreichen?",
+      "Leider nein, es muss abgestimmt sein mit unseren",
+      "Technischen Spezifikationen",
+      "Scheue dich nicht davor in der Community zu fragen, ob jemand deine Zeichnung in Grafikform umzeichnen w\u00fcrde.",
+      "Kann ich mehr Animationsframes zeichnen?",
+      "Wir wollen die Animation einheitlich auf der gesamten Webseite, also leider nein.",
+      "Ich habe eine andere Fankreation zum Zelebrieren gemacht, k\u00f6nnt ihr es hinzuf\u00fcgen?",
+      "Falls es irgendwie zu unseren Hauptprojekt passt, k\u00f6nnen wir es versuchen! Wenn nicht, k\u00f6nnen wir es wenigstens separat verlinken!",
+      "Kann ich irgendwie anders behilflich sein?",
+      "Konatktiere uns auf Discord!",
+      "Ich habe kein Discord, gibt es eine andere Alternative?",
+      "subatomoen(at)gmail(dot)com . ",
+      "~NOT YET TRANSLATED~"
+    ],
+    "Links": [
+      "~NOT YET TRANSLATED~",
+      "Hauptseite wird ver\u00f6ffentlicht, wenn wir nahe dem Meilenstein stehen!",
+      "Seite zum Einreichen",
+      "Tutorial ",
+      "Template",
+      "Richtlinien",
+      "Werbeseite"
+    ],
+    "Technical Specifications": [
+      "~NOT YET TRANSLATED~",
+      "400x400 Sprite Sheet (4 Frames in 200x200). Animation l\u00e4uft auf 10 frames pro Sekunde.",
+      "Die Ente soll nach rechts schauen ->",
+      "~NOT YET TRANSLATED~",
+      ".png Format mit Hintergrundtransparenz (Es wird zu ein PNG-8 reduziert)",
+      "Dateigr\u00f6\u00dfe unter 100KB",
       "!END"
     ]
   }
