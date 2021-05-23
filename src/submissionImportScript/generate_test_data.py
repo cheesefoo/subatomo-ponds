@@ -161,7 +161,8 @@ def main():
     maker.make_images()
     maker.make_json(20)
     split_images()
-    pack_spritesheet_free()
+    ##pack_spritesheet_free()
+    pack_spritesheet()
 
 
 if __name__ == '__main__':
