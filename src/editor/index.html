@@ -246,7 +246,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.js"></script>
+    <script src="fabric.min.js"></script>
     <title>Subaru Duck Editor</title>
 
 </head>
@@ -461,6 +461,34 @@
                 img.classList.remove("img_dragging");
             });
         }
+		
+		function spawn(e){
+			
+
+            const img = this;
+			
+			
+			
+            console.log("event: ", e);
+
+            
+			
+			console.log("imagen",img);
+			console.log(img.width);
+            const newImage = new fabric.Image(img, {
+			
+                width: img.naturalWidth,
+                height: img.naturalHeight,
+                // Set the center of the new object based on the event coordinates relative
+                // to the canvas container.
+                left: 0,
+                top: 0
+            });
+			newImage.scaleToWidth(150);
+            canvas.add(newImage);
+			
+			window.$(".img_dragging").removeClass("img_dragging");
+		}
 
         if (Modernizr.draganddrop) {
             // Browser supports HTML5 DnD.
@@ -468,15 +496,17 @@
             // Bind the event listeners for the image elements
             const images = document.querySelectorAll("#images img");
             [].forEach.call(images, function (img) {
-                img.addEventListener("dragstart", handleDragStart, false);
-                img.addEventListener("dragend", handleDragEnd, false);
+                //img.addEventListener("dragstart", handleDragStart, false);
+                //img.addEventListener("dragend", handleDragEnd, false);
+                img.addEventListener("click", spawn, false);
             });
             // Bind the event listeners for the canvas
-            const canvasContainer = document.getElementById("canvas-container");
+            /*const canvasContainer = document.getElementById("canvas-container");
             canvasContainer.addEventListener("dragenter", handleDragEnter, false);
             canvasContainer.addEventListener("dragover", handleDragOver, false);
             canvasContainer.addEventListener("dragleave", handleDragLeave, false);
-            canvasContainer.addEventListener("drop", handleDrop, false);
+            canvasContainer.addEventListener("drop", handleDrop, false);*/
+			
         } else {
             // Replace with a fallback to a library solution.
             alert("This browser doesn't support the HTML5 Drag and Drop API.");
