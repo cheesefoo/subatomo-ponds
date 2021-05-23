@@ -286,8 +286,17 @@ class MyGame extends Phaser.Scene {
         this.generatePondUI();
         // this.applyCollisions();
         this.applyTileCollisionCallbacks();
-
         this.input.on("gameobjectup", this.onObjectClicked);
+
+        // let f =  this.add.rectangle(500, 500, 500, 500, '#ff8000', 1);
+        // f.setInteractive();
+        // f.on('pointerdown', function(){alert("asdfihjadfuih")});
+        //  this.input.enableDebug(f, 0x04F404);
+        //
+        // this.input.setTopOnly(false);
+        // this.input.on("gameobjectmove", function(){alert("asdfihjadfuih")});
+        // this.input.on("gameobjectdown", function(){alert("asdfihjadfuih")});
+        // this.input.on('pointerdown', function(){alert("asdfihjadfuih")});
 
     }
 
@@ -409,19 +418,19 @@ class MyGame extends Phaser.Scene {
         });
 
 
-        if (DEBUGGING) {
-            const debugGraphics = this.add.graphics().setAlpha(0.75);
-            obstacleLayer.renderDebug(debugGraphics, {
-                tileColor: null, // Color of non-colliding tiles
-                collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-                faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-            });
-            transitionLayer.renderDebug(debugGraphics, {
-                tileColor: null, // Color of non-colliding tiles
-                collidingTileColor: new Phaser.Display.Color(255, 134, 255, 255), // Color of colliding tiles
-                faceColor: new Phaser.Display.Color(255, 39, 37, 255) // Color of colliding face edges
-            });
-        }
+        // if (DEBUGGING) {
+        //     const debugGraphics = this.add.graphics().setAlpha(0.75);
+        //     obstacleLayer.renderDebug(debugGraphics, {
+        //         tileColor: null, // Color of non-colliding tiles
+        //         collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+        //         faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
+        //     });
+        //     transitionLayer.renderDebug(debugGraphics, {
+        //         tileColor: null, // Color of non-colliding tiles
+        //         collidingTileColor: new Phaser.Display.Color(255, 134, 255, 255), // Color of colliding tiles
+        //         faceColor: new Phaser.Display.Color(255, 39, 37, 255) // Color of colliding face edges
+        //     });
+        // }
     }
 
     makeWalkingAnimationFrames() {
@@ -500,8 +509,8 @@ class MyGame extends Phaser.Scene {
                 .sprite(0, 0, "allDucks", ducks[i].image + "-0.png")
                 // .setCollideWorldBounds(true)
                 // .setBounce(1, 1)
-                .setDebugBodyColor(0x00FF)
-                .setDebug(true, false, 0x00ff); //, new Phaser.Display.Color(255, 0, 0, 0));
+                // .setDebugBodyColor(0x00FF)
+                // .setDebug(true, false, 0x00ff); //, new Phaser.Display.Color(255, 0, 0, 0));
             // console.log(duckGameObject);
             this.physics.add.collider(duckGameObject, obstacleLayer);
             const legsOverlay = this.physics.add.sprite(0, 0, "legs", "1.png");
@@ -602,7 +611,7 @@ class MyGame extends Phaser.Scene {
             //duckGameObject.input.hitArea.setTo(0,25,100,100);
 
 
-            this.input.enableDebug(duckGameObject, 0x04F404);
+            this.input.enableDebug(clickContainer, 0x04F404);
             // console.log("duck", duckGameObject);
 
             //Fix hitbox
@@ -949,6 +958,10 @@ const config = {
     type: Phaser.CANVAS,
     width: sceneWidth,
     height: sceneHeight,
+    scale: {
+        mode: Phaser.Scale.ENVELOP,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
     // transparent: true,
     physics: {
         default: "arcade",
@@ -968,13 +981,9 @@ const config = {
 const game = new Phaser.Game(config);
 window.game = game;
 
-//Other page scripts
-$(function () {
-    // Handler when the DOM is fully loaded
 
-    $("#screens").show();
 
-});
+$("#screens").show();
 
 function changeScreen(screen) {
     hideScreen();
