@@ -1,14 +1,22 @@
 <html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
+		*{
+			box-sizing:border-box;
+			font-family:Arial;
+		}
         #canvas-container {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             box-shadow: 0 0 5px 1px black;
             margin: 10px auto;
-            border: 5px solid transparent;
+            border: 5px solid black;
             display: inline-block;;
+			box-sizing:content-box;
+			background-color:white;
         }
 
         #canvas-container.over {
@@ -38,16 +46,195 @@
         .editor-container {
             display: flex;
             flex-wrap: wrap;
-            flex-direction: row;
+            flex-direction: column;
+			height:90vh;
+			width:100%;
+			align-content:space-between;
         }
+		
+		#imagesToolbar{
+			width:200px;
+			border-top-right-radius:20px;
+			border-bottom-right-radius:20px;
+			overflow:hidden;
+			height:100%;
+			background-color:#ffc107;
+		}
 
         #images {
-            width: 120px;
-            background-color: olive;
+            width: 100%;
             padding: 20px;
+			overflow:auto;
+			height:100%;
+			
         }
+				
+		#images img{
+			max-width:100%;
+			
+		}
+		
+		body{
+			margin:0;
+			background:radial-gradient(circle, rgba(3, 188, 252, 1) 38%, rgba(4, 128, 171, 1) 100%)
+		}
 
-        /*#spritesheet{width:200px;}*/
+        ::-webkit-scrollbar {
+		  width: 10px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+		  background: #f1f1f1;
+		}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+		  background: #888;
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+		  background: #555;
+		}
+		
+		#result{
+			width:500px;
+		}
+		
+		
+		
+		#center-interface{
+			width:500px;
+			flex:1 0 100%;
+			text-align:center;
+		}
+		
+		#right-tools{
+			display: inline-block; margin-left: 10px; width:200px;background-color:olive;padding:20px;
+			border-top-left-radius:20px;
+			border-bottom-left-radius:20px;
+			height:100%;
+			background-color:#ffc107;
+		}
+		
+		#source,#copy{
+			position:fixed;
+			left:-1000px;
+		}
+		
+		#resultCanvas{
+			box-sizing:content-box;
+			border:3px solid black;
+			background-color:white;
+			width:400px;
+			margin:auto;
+			margin-bottom:5px;
+		}
+		
+		#generateDuck{
+			background:gray;
+			color:white;
+			border-radius:10px;
+			padding:10px;
+			font-size:20px;
+			margin-top:40px;
+		}
+		
+		.btn.btn-info{
+			background-color:rgb(3, 188, 252);
+			padding:10px;
+			width:100%;
+			margin:10px auto;
+			border:2px solid white;
+			border-radius:10px;
+			color:white;
+			font-weight:bold;
+		}
+		
+		#downloadLink{
+		display:none;
+			background-color:green;
+			color:white;
+			border-radius:10px;
+			padding:10px;
+			font-size:20px;
+			margin-top:40px;
+		}
+		
+		#menuMobile{
+			display:none;
+		}
+		
+		@media (max-width: 900px){
+			#right-tools{
+				position:fixed;
+				
+				z-index:1000;
+			}
+			
+			
+			
+			#imagesToolbar{
+				position:fixed;
+				width:100%;
+				bottom:0;
+				left:0;
+				right:0;
+				height:20vh;
+				z-index:1000;
+				-webkit-box-shadow: -5px 0px 8px 2px rgba(0,0,0,0.58); 
+				box-shadow: -5px 0px 8px 2px rgba(0,0,0,0.58);
+			}
+			#imagesToolbar img{
+				height:100%;
+				width:auto;
+				max-width:20vh;
+				object-fit:contain;
+			}
+			
+			#imagesToolbar h3{
+				display:none;
+			}
+			#imagesToolbar #images{
+				display:flex;
+			}
+			
+			#imagesToolbar.active{
+				left:0;
+			}
+			
+			#right-tools{
+				top:0;
+				right:-100vw;
+				transition:0.5s;
+				-webkit-box-shadow: 0px -5px 8px 2px rgba(0,0,0,0.58); 
+				box-shadow: 0px -5px 8px 2px rgba(0,0,0,0.58);
+			}
+			
+			#right-tools.active{
+				right:0;
+			}
+			
+			#center-interface,#result{
+				width:100%;
+			}
+			
+			#menuMobile{
+				position:fixed;
+				top:20px;
+				right:20px;
+				z-index:900;
+				display:block;
+				width:30px;
+				height:30px;
+				cursor:pointer;
+			}
+			
+			body{
+				padding-bottom:26vh;
+			}
+		}
     </style>
 
     <link href="accessories.css" rel="stylesheet"/>
@@ -59,12 +246,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.js"></script>
+    <script src="fabric.min.js"></script>
     <title>Subaru Duck Editor</title>
 
 </head>
 
 <body onload="init();">
+
+<img src="bars-solid.svg" id="menuMobile" onclick="$('#right-tools').addClass('active');">
 <!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
 <h1 style="text-align:center;">Duck editor</h1>
 <div id="newImg"></div>
@@ -73,11 +262,13 @@
 <img crossOrigin="Anonymous" id="duck3" src="3.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
 <img crossOrigin="Anonymous" id="duck4" src="4.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
 <div class="editor-container">
+	<div id="imagesToolbar">
     <div id="images">
         <h3>Objects</h3>
         
 
     </div>
+	</div>
 
     <!-- NOTE: Fabric.js sets both the <canvas> element and the wrapper element which it
     creates to be user-unselectable using CSS properties (e.g. for Webkit, this is
@@ -85,15 +276,31 @@
     I'm just going to wrap the canvas in a container and bind events to that, which is
     less intrusive.
      -->
-    <div id="canvas-container">
-        <canvas height="300" id="canvas" width="300"></canvas>
+    
+	<div id="center-interface" onclick="$('#right-tools').removeClass('active');">
+	<div id="canvas-container">
+        <canvas height="200" id="canvas" width="200"></canvas>
     </div>
+	
+	<div id="result">
+	<hr>
+		<h1>Result</h1>
+		<canvas height="300" id="source" width="300"></canvas>
+		<canvas height="300" id="copy" width="300"></canvas>
+		<div id="resultCanvas">
+		<canvas height="400" id="spritesheet" width="400"></canvas>
+		</div>
+	</div>
+	
+	</div>
+	
+	
 
-    <div style="display: inline-block; margin-left: 10px; width:300px;background-color:olive;padding:20px;">
+    <div id="right-tools">
         <h3>Drawing</h3>
         <button class="btn btn-info" id="drawing-mode">Enter drawing mode</button>
         <br>
-        <button class="btn btn-info" id="clear-canvas">Clear</button>
+        <button class="btn btn-info" id="clear-canvas">Reset Duck</button>
         <br>
 
         <div id="drawing-mode-options" style="display:none;">
@@ -103,12 +310,6 @@
                 <option>Circle</option>
                 <option>Spray</option>
                 <option>Pattern</option>
-
-                <option>hline</option>
-                <option>vline</option>
-                <option>square</option>
-                <option>diamond</option>
-                <option>texture</option>
             </select><br>
 
             <label for="drawing-line-width">Line width:</label>
@@ -126,12 +327,23 @@
             <label for="drawing-shadow-offset">Shadow offset:</label>
             <span class="info">0</span><input id="drawing-shadow-offset" max="50" min="0" type="range" value="0"><br>
         </div>
+		<div style="text-align:center;">
+			<button id="generateDuck" onclick="drawSpriteSheet();drawSpriteSheet(200,0,1);drawSpriteSheet(0,200,2);drawSpriteSheet(200,200,3);$('#downloadLink').show();"
+					type="button">
+				Generate Duck Spritesheet
+			</button>
+			
+			<button id="downloadLink" onclick="download();"
+					type="button">
+				Download
+			</button>
+		</div>
+		<a id="link"></a>
     </div>
+	
 </div>
-<canvas height="300" id="source" width="300"></canvas>
-<canvas height="300" id="copy" width="300"></canvas>
 
-<canvas height="400" id="spritesheet" style="border:1px solid black;" width="400"></canvas>
+
 
 <script>
 
@@ -249,6 +461,34 @@
                 img.classList.remove("img_dragging");
             });
         }
+		
+		function spawn(e){
+			
+
+            const img = this;
+			
+			
+			
+            console.log("event: ", e);
+
+            
+			
+			console.log("imagen",img);
+			console.log(img.width);
+            const newImage = new fabric.Image(img, {
+			
+                width: img.naturalWidth,
+                height: img.naturalHeight,
+                // Set the center of the new object based on the event coordinates relative
+                // to the canvas container.
+                left: 0,
+                top: 0
+            });
+			newImage.scaleToWidth(150);
+            canvas.add(newImage);
+			
+			window.$(".img_dragging").removeClass("img_dragging");
+		}
 
         if (Modernizr.draganddrop) {
             // Browser supports HTML5 DnD.
@@ -256,15 +496,17 @@
             // Bind the event listeners for the image elements
             const images = document.querySelectorAll("#images img");
             [].forEach.call(images, function (img) {
-                img.addEventListener("dragstart", handleDragStart, false);
-                img.addEventListener("dragend", handleDragEnd, false);
+                //img.addEventListener("dragstart", handleDragStart, false);
+                //img.addEventListener("dragend", handleDragEnd, false);
+                img.addEventListener("click", spawn, false);
             });
             // Bind the event listeners for the canvas
-            const canvasContainer = document.getElementById("canvas-container");
+            /*const canvasContainer = document.getElementById("canvas-container");
             canvasContainer.addEventListener("dragenter", handleDragEnter, false);
             canvasContainer.addEventListener("dragover", handleDragOver, false);
             canvasContainer.addEventListener("dragleave", handleDragLeave, false);
-            canvasContainer.addEventListener("drop", handleDrop, false);
+            canvasContainer.addEventListener("drop", handleDrop, false);*/
+			
         } else {
             // Replace with a fallback to a library solution.
             alert("This browser doesn't support the HTML5 Drag and Drop API.");
@@ -281,6 +523,13 @@
             clearEl = $("clear-canvas");
 
         clearEl.onclick = function () {
+			var txt;
+			var r = confirm("Reset Duck? All elements and drawings will be deleted");
+			if (r == true) {
+			  
+			} else {
+			  return;
+			}
             canvas.clear();
             addDucks();
         };
@@ -463,28 +712,28 @@
 
         canvas.deactivateAll().renderAll();
 
-        const sheet = document.getElementById("spritesheet");
-        const duckCan = document.getElementById("canvas");
-        const source = document.getElementById("source");
-        const copy = document.getElementById("copy");
+        var sheet = document.getElementById("spritesheet");
+        var duckCan = document.getElementById("canvas");
+        var source = document.getElementById("source");
+        var copy = document.getElementById("copy");
 
-        const sourceCtx = source.getContext("2d");
-        const copyCtx = copy.getContext("2d");
-        const sheetCtx = sheet.getContext("2d");
+        var sourceCtx = source.getContext("2d");
+        var copyCtx = copy.getContext("2d");
+        var sheetCtx = sheet.getContext("2d");
 
         //call its drawImage() function passing it the source canvas directly
 
-        let auxWidth = 300;
-        const destination = 200;
-        const step = 100;
+        let auxWidth = 200;
+        var destination = 200;
+        var step = 100;
 
         copyCtx.drawImage(duckCan, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
 
         for (let a = 0; auxWidth > destination; a++) {
-            sourceCtx.clearRect(0, 0, 300, 300);
+            sourceCtx.clearRect(0, 0, 200, 200);
             sourceCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
 
-            copyCtx.clearRect(0, 0, 300, 300);
+            copyCtx.clearRect(0, 0, 200, 200);
 
             copyCtx.drawImage(source, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth - step, auxWidth - step);
 
@@ -493,8 +742,8 @@
             auxWidth -= step;
         }
         sheetCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, x, y, auxWidth, auxWidth);
-        sourceCtx.clearRect(0, 0, 300, 300);
-        copyCtx.clearRect(0, 0, 300, 300);
+        sourceCtx.clearRect(0, 0, 200, 200);
+        copyCtx.clearRect(0, 0, 200, 200);
         //destCtx.drawImage(duckCan, 300, 0);
         //destCtx.drawImage(duckCan, 0, 300);
         //destCtx.drawImage(duckCan, 300, 300);
@@ -503,20 +752,13 @@
 
 </script>
 
-<div style="text-align:center;">
-    <button onclick="drawSpriteSheet();drawSpriteSheet(200,0,1);drawSpriteSheet(0,200,2);drawSpriteSheet(200,200,3);"
-            style="margin:auto; font-size:20px; padding:10px;"
-            type="button">
-        Save duck
-    </button>
-</div>
-<a id="link"></a>
 
 <script>
     function download() {
+		var sheet = document.getElementById("spritesheet");
         const link = document.getElementById("link");
-        link.setAttribute("download", "avatar.png");
-        link.setAttribute("href", canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        link.setAttribute("download", "MyDuck.png");
+        link.setAttribute("href", sheet.toDataURL("image/png").replace("image/png", "image/octet-stream"));
         link.click();
     }
 </script>
@@ -535,14 +777,7 @@
 .stopwatch { display:inline-block;overflow:hidden;background:url(texture.png) no-repeat -1561px -198px;width:259px;height:211px }
 .glassestint { display:inline-block;overflow:hidden;background:url(texture.png) no-repeat -1820px -198px;width:204px;height:87px }
 
-#images{
-	height:600px;
-	overflow:auto;
-}
-#images img{
-	max-width:100%;
-	
-}
+
 
 
 </style>

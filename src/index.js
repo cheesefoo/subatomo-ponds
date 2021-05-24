@@ -310,7 +310,9 @@ class MyGame extends Phaser.Scene {
 
     makeTileMap() {
         this.map = this.make.tilemap({key: "map"}); //, tileWidth: 64, tileHeight: 64 });
+		window.map=this.map;
         let tileset = this.map.addTilesetImage("Subapond_vibrantHD-min", "tiles");
+		window.tileset=tileset;
         // let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
         groundLayer = this.map.createLayer("ground", tileset);
         groundLayer.setCollisionByProperty({collides: true});
@@ -320,6 +322,25 @@ class MyGame extends Phaser.Scene {
         obstacleLayer.setCollisionByProperty({collides: true});
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
+		
+		
+		groundLayer.setDisplaySize(sceneWidth,sceneHeight);
+		pondLayer.setDisplaySize(sceneWidth,sceneHeight);
+		obstacleLayer.setDisplaySize(sceneWidth,sceneHeight);
+		transitionLayer.setDisplaySize(sceneWidth,sceneHeight);
+		console.log("img",this.textures.list.col.source[0].source);
+		$("#ghost").append(this.textures.list.col.source[0].source);
+		$("#ghost img").attr("id","ghostIMG");
+		
+		var canvasGhost = document.createElement('canvas');
+		canvasGhost.width = sceneWidth;
+		canvasGhost.height = sceneHeight;
+		
+		var ghost2d= canvasGhost.getContext("2d");
+		ghost2d.drawImage(document.getElementById("ghostIMG"),0,0,sceneWidth,sceneHeight);
+		
+		this.textures.addBase64("ghostCollision", canvasGhost.toDataURL())
+		
     }
 
     /// Unused
@@ -398,7 +419,7 @@ class MyGame extends Phaser.Scene {
                 transitionTileIndices,
                 function (legs) {
                     if (last_collision_check < COLLISION_CHECK_RATE) return;
-                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "col");
+                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
                     let isInWater = colorAtPosn.red < 100;
                     // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
                     legs.setVisible(!isInWater);
