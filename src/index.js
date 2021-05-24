@@ -314,7 +314,8 @@ class MyGame extends Phaser.Scene {
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
 		
-		var newHeight=(sceneWidth/2003)*1080;
+		var newHeight=sceneWidth*(1080/2003);
+		console.log("height",newHeight);
 		groundLayer.setDisplaySize(sceneWidth,newHeight);
 		pondLayer.setDisplaySize(sceneWidth,newHeight);
 		obstacleLayer.setDisplaySize(sceneWidth,newHeight);
