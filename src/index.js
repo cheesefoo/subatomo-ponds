@@ -314,14 +314,24 @@ class MyGame extends Phaser.Scene {
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
 		
-		window.groundLayer=groundLayer;
-		window.pondLayer=pondLayer;
-		window.obstacleLayer=obstacleLayer;
-		window.transitionLayer=transitionLayer;
-		window.groundLayer.setDisplaySize(sceneWidth,sceneHeight);
-		window.pondLayer.setDisplaySize(sceneWidth,sceneHeight);
-		window.obstacleLayer.setDisplaySize(sceneWidth,sceneHeight);
-		window.transitionLayer.setDisplaySize(sceneWidth,sceneHeight);
+		
+		groundLayer.setDisplaySize(sceneWidth,sceneHeight);
+		pondLayer.setDisplaySize(sceneWidth,sceneHeight);
+		obstacleLayer.setDisplaySize(sceneWidth,sceneHeight);
+		transitionLayer.setDisplaySize(sceneWidth,sceneHeight);
+		console.log("img",this.textures.list.col.source[0].source);
+		$("#ghost").append(this.textures.list.col.source[0].source);
+		$("#ghost img").attr("id","ghostIMG");
+		
+		var canvasGhost = document.createElement('canvas');
+		canvasGhost.width = sceneWidth;
+		canvasGhost.height = sceneHeight;
+		
+		var ghost2d= canvasGhost.getContext("2d");
+		ghost2d.drawImage(document.getElementById("ghostIMG"),0,0,sceneWidth,sceneHeight);
+		
+		this.textures.addBase64("ghostCollision", canvasGhost.toDataURL())
+		
     }
 
     /// Unused
@@ -400,7 +410,7 @@ class MyGame extends Phaser.Scene {
                 transitionTileIndices,
                 function (legs) {
                     if (last_collision_check < COLLISION_CHECK_RATE) return;
-                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "col");
+                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
                     let isInWater = colorAtPosn.red < 100;
                     // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
                     legs.setVisible(!isInWater);
