@@ -314,21 +314,21 @@ class MyGame extends Phaser.Scene {
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
 		
-		
-		groundLayer.setDisplaySize(sceneWidth,sceneHeight);
-		pondLayer.setDisplaySize(sceneWidth,sceneHeight);
-		obstacleLayer.setDisplaySize(sceneWidth,sceneHeight);
-		transitionLayer.setDisplaySize(sceneWidth,sceneHeight);
+		var newHeight=(sceneWidth/2003)*1080;
+		groundLayer.setDisplaySize(sceneWidth,newHeight);
+		pondLayer.setDisplaySize(sceneWidth,newHeight);
+		obstacleLayer.setDisplaySize(sceneWidth,newHeight);
+		transitionLayer.setDisplaySize(sceneWidth,newHeight);
 		console.log("img",this.textures.list.col.source[0].source);
 		$("#ghost").append(this.textures.list.col.source[0].source);
 		$("#ghost img").attr("id","ghostIMG");
 		
 		var canvasGhost = document.createElement('canvas');
 		canvasGhost.width = sceneWidth;
-		canvasGhost.height = sceneHeight;
+		canvasGhost.height = newHeight;
 		
 		var ghost2d= canvasGhost.getContext("2d");
-		ghost2d.drawImage(document.getElementById("ghostIMG"),0,0,sceneWidth,sceneHeight);
+		ghost2d.drawImage(document.getElementById("ghostIMG"),0,0,sceneWidth,newHeight);
 		
 		this.textures.addBase64("ghostCollision", canvasGhost.toDataURL())
 		
