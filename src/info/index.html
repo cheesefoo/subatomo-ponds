@@ -11,9 +11,15 @@
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">
     <link crossorigin="anonymous" href="index.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
+    <link href="editor.css" rel="stylesheet">
+    <link href="upload.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+    <script src="fabric.min.js"></script>
     <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
-<body>
+<body onload="init();">
 <nav class="sticky-top bg-warning">
     <div class="container-fluid">
         <a class="navbar-brand links" href="#">Subaru Milestone Celebration</a>
@@ -57,10 +63,10 @@
                             data-bs-toggle="tab" id="specs-tab" role="tab" text="l-4" type="button">Technical
                         Specifications
                     </button>
-                    <a aria-controls="upload" aria-selected="false" class="nav-link" data-bs-toggle="tab"
-                            role="tab" type="button"
-                          href="../upload/upload.html" id="upload-tab" target="_blank" text="l-5"> Upload
-                    </a>
+                    <button aria-controls="upload" aria-selected="false" class="nav-link"
+                            data-bs-target="#upload-container"
+                            data-bs-toggle="tab" id="upload-tab" role="tab" text="l-5" type="button">Upload
+                    </button>
 
                 </div>
             </nav>
@@ -262,13 +268,874 @@
             <img alt="template" src="template.png"/>
         </div>
     </div>
+    <div aria-labelledby="upload-tab" class="screen tab-pane fade" id="upload-container" role="tabpanel">
+        <div class="screen-inner">
+
+
+            <form
+                    action="https://script.google.com/macros/s/AKfycbxCWy0-NP1gjCIVw3JqbZMX7YD96j34coeSaXc91hAnGJbVuDmiRYrGR3UgCPzpfDg1-A/exec"
+                    id="form"
+                    method="post"
+            >
+                <div class="form-group row" id="data">
+                    <div class="displayName">
+                        <label for="name" text="u-1">Your display name. If left blank, your name will be (TBD)</label>
+                        <input class="input-sm col-xs-1" id="name" maxlength="16" name="displayName"/>
+                        <label for="message" text="u-2">Your congratulatory message for Subaru</label>
+                        <textarea class="textarea-sm col-xs-1" id="message" maxlength="128" name="message"></textarea>
+                    </div>
+                    <div class="contact">
+                        <label text="u-3">
+                            Can we contact you if there are issues with your submission? This
+                            is optional.</label>
+
+                        <div class="form-check form-check-inline">
+                            <input checked class="form-check-input" data-bs-target=".collapseOne.show"
+                                   data-bs-toggle="collapse"
+                                   id="inlineRadio1" name="canContact" type="radio"
+                                   value="no">
+                            <label class="form-check-label" for="inlineRadio1" text="u-5">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" data-bs-target=".collapseOne:not(.show)"
+                                   data-bs-toggle="collapse"
+                                   id="inlineRadio2"
+                                   name="canContact" type="radio" value="yes">
+                            <label class="form-check-label" for="inlineRadio2" text="u-6">Yes</label>
+                        </div>
+                        <small text="u-4"> We will only contact you if there's a problem! </small>
+                    </div>
+
+                    <div class="collapseOne panel-collapse collapse">
+                        <div class="emailInput" id="emailInput">
+                            <label for="email" text="u-7">Your email:</label>
+                            <input id="email" name="email" type="email"/>
+                        </div>
+                        <div class="discordInput" id="discordInput">
+                            <label for="discord" text="u-8">Your discord name and id:</label>
+                            <span class="tooltip-item" text="u-9">Make sure your                        </span>
+                            <a href="https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings-"
+                               text="u-10"> privacy settings</a>
+                            <span text="u-11"> allow us to DM you.</span>
+
+                        </div>
+                        <input id="discord" name="discord" type="text"/>
+                    </div>
+
+
+                    <div id="soundSection">
+                        <label for="soundSelection" text="u-12">Sound to play when pressed:</label>
+                        <select form="form" id="soundSelection" name="soundSelection">
+                            <option text="u-13" value="-1">Picked Randomly</option>
+                            <option class="soundOption" text="u-14" value="0">Ajimaru Kazoo</option>
+                            <option class="soundOption" text="u-15" value="1">Chuba Chuba Chuba</option>
+                            <option class="soundOption" text="u-16" value="2">Chubaaaaaaa</option>
+                            <option class="soundOption" text="u-17" value="3">here we go</option>
+                            <option class="soundOption" text="u-18" value="4">Jakajakajanjan</option>
+                            <option class="soundOption" text="u-19" value="5">morning shuba</option>
+                            <option class="soundOption" text="u-20" value="6">Oyasumi (ASMR)</option>
+                            <option class="soundOption" text="u-21" value="7">Quack Quack</option>
+                            <option class="soundOption" text="u-22" value="8">secret</option>
+                            <option class="soundOption" text="u-23" value="9">Shuba (x4)</option>
+                            <option class="soundOption" text="u-24" value="10">Shuba!</option>
+                            <option class="soundOption" text="u-25" value="11">Shushushushu</option>
+                            <option class="soundOption" text="u-26" value="12">UN</option>
+                        </select>
+                    </div>
+
+                    <div id="soundButtons">
+                        <button class="soundButton" text="u-14" type="button" value="0">Ajimaru Kazoo</button>
+                        <button class="soundButton" text="u-15" type="button" value="1">Chuba Chuba Chuba</button>
+                        <button class="soundButton" text="u-16" type="button" value="2">mesu shuba</button>
+                        <button class="soundButton" text="u-17" type="button" value="3">here we go</button>
+                        <button class="soundButton" text="u-18" type="button" value="4">Jakajakajanjan</button>
+                        <button class="soundButton" text="u-19" type="button" value="5">morning shuba</button>
+                        <button class="soundButton" text="u-20" type="button" value="6">Oyasumi (ASMR)</button>
+                        <button class="soundButton" text="u-21" type="button" value="7">Quack Quack</button>
+                        <button class="soundButton" text="u-22" type="button" value="8">secret</button>
+                        <button class="soundButton" text="u-23" type="button" value="9">Shuba (x4)</button>
+                        <button class="soundButton" text="u-24" type="button" value="10">Shuba</button>
+                        <button class="soundButton" text="u-25" type="button" value="11">Shushushushu</button>
+                        <button class="soundButton" text="u-26" type="button" value="12">UN</button>
+                    </div>
+                    <p></p>
+                    <div id="countrySection">
+                        <label for="country" text="u-31">Where are you from? (Optional)</label>
+                        <input id="country" maxlength="2" name="country" placeholder="Country Abbreviation"/>
+                        <!--                <select class="selectpicker countrypicker" data-default="ZZ" data-flag="true" data-live-search="true"-->
+                        <!--                        id="country">-->
+                        <!--                    <option value="abstain">I prefer not to answer</option>-->
+                        <!--                </select>-->
+
+                    </div>
+                    <div id="refererSection">
+                        <label for="referer" text="u-33">How did you hear about this project? </label>
+
+                        <select aria-label="referer" id="referer" name="referer">
+                            <option text="u-34"
+                                    value="subaru-discord"></option>
+                            <option text="u-35"
+                                    value="fan-discord">A hololive fan Discord
+                            </option>
+                            <option text="u-36"
+                                    value="reddit">Reddit
+                            </option>
+                            <option text="u-37"
+                                    value="twitter">Twitter
+                            </option>
+                            <option text="u-38"
+                                    value="other">Other
+                            </option>
+                        </select>
+                        <div class="refererInput panel-collapse collapse">
+                            <input maxlength="32">
+                        </div>
+                    </div>
+                    <div id="upload">
+                        <!--                        <label text="u-27">Upload your duck bellow</label>-->
+                        <label text="u-42">Choose how you will upload your duck:</label>
+                        <p></p>
+
+                        <select aria-label="uploadMethod" id="uploadMethodChoice" name="uploadMethod">
+
+                            <option text="u-43" value="upload">Upload my file</option>
+
+                            <option text="u-44" value="editor">Use our editor (limited
+                                functionality)
+                            </option>
+
+                            <option text="u-45" value="template">Just use the template (no
+                                customizations)
+                            </option>
+                        </select>
+
+                        <div class="upload">
+                            <input accept="image/png" class="form-control uploadFile" id="uploadFile" name="file"
+                                   type="file"/>
+
+                            <div class="editor" id="editor" style="display: none">NYI
+
+                                <img id="menuMobile" onclick="$('#right-tools').addClass('active');" src="bars-solid.svg">
+                                <!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
+                                <h1 style="text-align:center;">Duck editor</h1>
+                                <div id="newImg"></div>
+                                <img crossOrigin="Anonymous" id="duck1" src="1.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
+                                <img crossOrigin="Anonymous" id="duck2" src="2.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
+                                <img crossOrigin="Anonymous" id="duck3" src="3.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
+                                <img crossOrigin="Anonymous" id="duck4" src="4.png" style=" position:fixed; top:-10000px; left:-10000px;"/>
+                                <div class="editor-container">
+                                    <div id="imagesToolbar">
+                                        <div id="images">
+                                            <h3>Objects</h3>
+
+
+                                        </div>
+                                    </div>
+
+                                    <!-- NOTE: Fabric.js sets both the <canvas> element and the wrapper element which it
+                                    creates to be user-unselectable using CSS properties (e.g. for Webkit, this is
+                                    -webkit-user-select: none;). We could remove that property during the dragging, but
+                                    I'm just going to wrap the canvas in a container and bind events to that, which is
+                                    less intrusive.
+                                     -->
+
+                                    <div id="center-interface" onclick="$('#right-tools').removeClass('active');">
+                                        <div id="canvas-container">
+                                            <canvas height="200" id="canvas" width="200"></canvas>
+                                        </div>
+
+                                        <div id="result">
+                                            <hr>
+                                            <h1>Result</h1>
+                                            <canvas height="300" id="source" width="300"></canvas>
+                                            <canvas height="300" id="copy" width="300"></canvas>
+                                            <div id="resultCanvas">
+                                                <canvas height="400" id="spritesheet" width="400"></canvas>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div id="right-tools">
+                                        <h3>Drawing</h3>
+                                        <button class="btn btn-info" id="drawing-mode">Enter drawing mode</button>
+                                        <br>
+                                        <button class="btn btn-info" id="clear-canvas">Reset Duck</button>
+                                        <br>
+
+                                        <div id="drawing-mode-options" style="display:none;">
+                                            <label for="drawing-mode-selector">Mode:</label>
+                                            <select id="drawing-mode-selector">
+                                                <option>Pencil</option>
+                                                <option>Circle</option>
+                                                <option>Spray</option>
+                                                <option>Pattern</option>
+                                            </select><br>
+
+                                            <label for="drawing-line-width">Line width:</label>
+                                            <span class="info">8</span><input id="drawing-line-width" max="150" min="0" type="range" value="8"><br>
+
+                                            <label for="drawing-color">Line color:</label>
+                                            <input id="drawing-color" type="color" value="#005E7A"><br>
+
+                                            <label for="drawing-shadow-color">Shadow color:</label>
+                                            <input id="drawing-shadow-color" type="color" value="#005E7A"><br>
+
+                                            <label for="drawing-shadow-width">Shadow width:</label>
+                                            <span class="info">16</span><input id="drawing-shadow-width" max="50" min="0" type="range" value="0"><br>
+
+                                            <label for="drawing-shadow-offset">Shadow offset:</label>
+                                            <span class="info">0</span><input id="drawing-shadow-offset" max="50" min="0" type="range" value="0"><br>
+                                        </div>
+                                        <div style="text-align:center;">
+                                            <button id="generateDuck"
+                                                    onclick="drawSpriteSheet();drawSpriteSheet(200,0,1);drawSpriteSheet(0,200,2);drawSpriteSheet(200,200,3);$('#downloadLink').show();"
+                                                    type="button">
+                                                Generate Duck Spritesheet
+                                            </button>
+
+                                            <button id="downloadLink" onclick="download();"
+                                                    type="button">
+                                                Download
+                                            </button>
+                                        </div>
+                                        <a id="link"></a>
+                                    </div>
+
+                                </div>
+
+
+                                <script>
+
+                                    let canvas;
+
+                                    let ducks = [];
+
+                                    function addDucks() {
+                                        ducks = [];
+                                        for (i = 1; i < 5; i++) {
+                                            let duckImage = document.querySelector("#duck" + i);
+
+                                            let duck = new fabric.Image(duckImage, {
+                                                width: duckImage.width,
+                                                height: duckImage.height,
+                                                left: 0,
+                                                top: 0,
+                                                evented: false,
+                                                selectable: false
+                                            });
+                                            duck.opacity = 0;
+                                            canvas.add(duck);
+                                            ducks.push(duck);
+                                        }
+                                        ducks[0].opacity = 1;
+                                        canvas.renderAll();
+                                    }
+
+                                    function init() {
+                                        const $ = function (id) {
+                                            return document.getElementById(id);
+                                        };
+
+                                        /* Drag and Drop code adapted from http://www.html5rocks.com/en/tutorials/dnd/basics/ */
+
+                                        canvas = new fabric.Canvas("canvas", {
+                                            isDrawingMode: false
+                                        });
+
+                                        addDucks();
+
+
+                                        /*
+                                        NOTE: the start and end handlers are events for the <img> elements; the rest are bound to
+                                        the canvas container.
+                                        */
+
+                                        function handleDragStart(e) {
+
+                                            [].forEach.call(images, function (img) {
+                                                img.classList.remove("img_dragging");
+                                            });
+                                            this.classList.add("img_dragging");
+                                        }
+
+                                        function handleDragOver(e) {
+                                            if (e.preventDefault) {
+                                                e.preventDefault(); // Necessary. Allows us to drop.
+                                            }
+
+                                            e.dataTransfer.dropEffect = "copy"; // See the section on the DataTransfer object.
+                                            // NOTE: comment above refers to the article (see top) -natchiketa
+
+                                            return false;
+                                        }
+
+                                        function handleDragEnter(e) {
+                                            // this / e.target is the current hover target.
+                                            this.classList.add("over");
+                                        }
+
+                                        function handleDragLeave(e) {
+                                            this.classList.remove("over"); // this / e.target is previous target element.
+                                        }
+
+                                        function handleDrop(e) {
+                                            // this / e.target is current target element.
+
+                                            if (e.stopPropagation) {
+                                                e.stopPropagation(); // stops the browser from redirecting.
+                                            }
+
+                                            const img = document.querySelector("#images img.img_dragging");
+
+
+                                            console.log("event: ", e);
+
+                                            console.log(img);
+
+                                            console.log(img);
+                                            const newImage = new fabric.Image(img, {
+
+                                                width: img.width,
+                                                height: img.height,
+                                                // Set the center of the new object based on the event coordinates relative
+                                                // to the canvas container.
+                                                left: e.layerX,
+                                                top: e.layerY
+                                            });
+                                            canvas.add(newImage);
+
+                                            window.$(".img_dragging").removeClass("img_dragging");
+
+
+                                            return false;
+                                        }
+
+                                        function handleDragEnd(e) {
+
+                                            // this/e.target is the source node.
+                                            [].forEach.call(images, function (img) {
+                                                img.classList.remove("img_dragging");
+                                            });
+                                        }
+
+                                        function spawn(e) {
+
+
+                                            const img = this;
+
+
+                                            console.log("event: ", e);
+
+
+                                            console.log("imagen", img);
+                                            console.log(img.width);
+                                            const newImage = new fabric.Image(img, {
+
+                                                width: img.naturalWidth,
+                                                height: img.naturalHeight,
+                                                // Set the center of the new object based on the event coordinates relative
+                                                // to the canvas container.
+                                                left: 0,
+                                                top: 0
+                                            });
+                                            newImage.scaleToWidth(150);
+                                            canvas.add(newImage);
+
+                                            window.$(".img_dragging").removeClass("img_dragging");
+                                        }
+
+                                        if (Modernizr.draganddrop) {
+                                            // Browser supports HTML5 DnD.
+
+                                            // Bind the event listeners for the image elements
+                                            const images = document.querySelectorAll("#images img");
+                                            [].forEach.call(images, function (img) {
+                                                //img.addEventListener("dragstart", handleDragStart, false);
+                                                //img.addEventListener("dragend", handleDragEnd, false);
+                                                img.addEventListener("click", spawn, false);
+                                            });
+                                            // Bind the event listeners for the canvas
+                                            /*const canvasContainer = document.getElementById("canvas-container");
+                                            canvasContainer.addEventListener("dragenter", handleDragEnter, false);
+                                            canvasContainer.addEventListener("dragover", handleDragOver, false);
+                                            canvasContainer.addEventListener("dragleave", handleDragLeave, false);
+                                            canvasContainer.addEventListener("drop", handleDrop, false);*/
+
+                                        } else {
+                                            // Replace with a fallback to a library solution.
+                                            alert("This browser doesn't support the HTML5 Drag and Drop API.");
+                                        }
+
+
+                                        const drawingModeEl = $("drawing-mode"),
+                                            drawingOptionsEl = $("drawing-mode-options"),
+                                            drawingColorEl = $("drawing-color"),
+                                            drawingShadowColorEl = $("drawing-shadow-color"),
+                                            drawingLineWidthEl = $("drawing-line-width"),
+                                            drawingShadowWidth = $("drawing-shadow-width"),
+                                            drawingShadowOffset = $("drawing-shadow-offset"),
+                                            clearEl = $("clear-canvas");
+
+                                        clearEl.onclick = function () {
+                                            var txt;
+                                            var r = confirm("Reset Duck? All elements and drawings will be deleted");
+                                            if (r == true) {
+
+                                            } else {
+                                                return;
+                                            }
+                                            canvas.clear();
+                                            addDucks();
+                                        };
+
+                                        drawingModeEl.onclick = function () {
+                                            canvas.isDrawingMode = !canvas.isDrawingMode;
+                                            if (canvas.isDrawingMode) {
+                                                drawingModeEl.innerHTML = "Cancel drawing mode";
+                                                drawingOptionsEl.style.display = "";
+                                            } else {
+                                                drawingModeEl.innerHTML = "Enter drawing mode";
+                                                drawingOptionsEl.style.display = "none";
+                                            }
+                                        };
+
+                                        if (fabric.PatternBrush) {
+                                            const vLinePatternBrush = new fabric.PatternBrush(canvas);
+                                            vLinePatternBrush.getPatternSrc = function () {
+
+                                                const patternCanvas = fabric.document.createElement("canvas");
+                                                patternCanvas.width = patternCanvas.height = 10;
+                                                const ctx = patternCanvas.getContext("2d");
+
+                                                ctx.strokeStyle = this.color;
+                                                ctx.lineWidth = 5;
+                                                ctx.beginPath();
+                                                ctx.moveTo(0, 5);
+                                                ctx.lineTo(10, 5);
+                                                ctx.closePath();
+                                                ctx.stroke();
+
+                                                return patternCanvas;
+                                            };
+
+                                            const hLinePatternBrush = new fabric.PatternBrush(canvas);
+                                            hLinePatternBrush.getPatternSrc = function () {
+
+                                                const patternCanvas = fabric.document.createElement("canvas");
+                                                patternCanvas.width = patternCanvas.height = 10;
+                                                const ctx = patternCanvas.getContext("2d");
+
+                                                ctx.strokeStyle = this.color;
+                                                ctx.lineWidth = 5;
+                                                ctx.beginPath();
+                                                ctx.moveTo(5, 0);
+                                                ctx.lineTo(5, 10);
+                                                ctx.closePath();
+                                                ctx.stroke();
+
+                                                return patternCanvas;
+                                            };
+
+                                            const squarePatternBrush = new fabric.PatternBrush(canvas);
+                                            squarePatternBrush.getPatternSrc = function () {
+
+                                                const squareWidth = 10, squareDistance = 2;
+
+                                                const patternCanvas = fabric.document.createElement("canvas");
+                                                patternCanvas.width = patternCanvas.height = squareWidth + squareDistance;
+                                                const ctx = patternCanvas.getContext("2d");
+
+                                                ctx.fillStyle = this.color;
+                                                ctx.fillRect(0, 0, squareWidth, squareWidth);
+
+                                                return patternCanvas;
+                                            };
+
+                                            const diamondPatternBrush = new fabric.PatternBrush(canvas);
+                                            diamondPatternBrush.getPatternSrc = function () {
+
+                                                const squareWidth = 10, squareDistance = 5;
+                                                const patternCanvas = fabric.document.createElement("canvas");
+                                                const rect = new fabric.Rect({
+                                                    width: squareWidth,
+                                                    height: squareWidth,
+                                                    angle: 45,
+                                                    fill: this.color
+                                                });
+
+                                                const canvasWidth = rect.getBoundingRect().width;
+
+                                                patternCanvas.width = patternCanvas.height = canvasWidth + squareDistance;
+                                                rect.set({left: canvasWidth / 2, top: canvasWidth / 2});
+
+                                                const ctx = patternCanvas.getContext("2d");
+                                                rect.render(ctx);
+
+                                                return patternCanvas;
+                                            };
+
+                                            let img = new Image();
+                                            img.src = "honey_im_subtle.png";
+
+                                            let texturePatternBrush = new fabric.PatternBrush(canvas);
+                                            texturePatternBrush.source = img;
+                                        }
+
+                                        $("drawing-mode-selector").onchange = function () {
+
+                                            if (this.value === "hline") {
+                                                canvas.freeDrawingBrush = vLinePatternBrush;
+                                            } else if (this.value === "vline") {
+                                                canvas.freeDrawingBrush = hLinePatternBrush;
+                                            } else if (this.value === "square") {
+                                                canvas.freeDrawingBrush = squarePatternBrush;
+                                            } else if (this.value === "diamond") {
+                                                canvas.freeDrawingBrush = diamondPatternBrush;
+                                            } else if (this.value === "texture") {
+                                                canvas.freeDrawingBrush = texturePatternBrush;
+                                            } else {
+                                                canvas.freeDrawingBrush = new fabric[this.value + "Brush"](canvas);
+                                            }
+
+                                            if (canvas.freeDrawingBrush) {
+                                                const brush = canvas.freeDrawingBrush;
+                                                brush.color = drawingColorEl.value;
+                                                if (brush.getPatternSrc) {
+                                                    brush.source = brush.getPatternSrc.call(brush);
+                                                }
+                                                brush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+                                                brush.shadow = new fabric.Shadow({
+                                                    blur: parseInt(drawingShadowWidth.value, 10) || 0,
+                                                    offsetX: 0,
+                                                    offsetY: 0,
+                                                    affectStroke: true,
+                                                    color: drawingShadowColorEl.value,
+                                                });
+                                            }
+                                        };
+
+                                        drawingColorEl.onchange = function () {
+                                            const brush = canvas.freeDrawingBrush;
+                                            brush.color = this.value;
+                                            if (brush.getPatternSrc) {
+                                                brush.source = brush.getPatternSrc.call(brush);
+                                            }
+                                        };
+                                        drawingShadowColorEl.onchange = function () {
+                                            canvas.freeDrawingBrush.shadow.color = this.value;
+                                        };
+                                        drawingLineWidthEl.onchange = function () {
+                                            canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
+                                            this.previousSibling.innerHTML = this.value;
+                                        };
+                                        drawingShadowWidth.onchange = function () {
+                                            canvas.freeDrawingBrush.shadow.blur = parseInt(this.value, 10) || 0;
+                                            this.previousSibling.innerHTML = this.value;
+                                        };
+                                        drawingShadowOffset.onchange = function () {
+                                            canvas.freeDrawingBrush.shadow.offsetX = parseInt(this.value, 10) || 0;
+                                            canvas.freeDrawingBrush.shadow.offsetY = parseInt(this.value, 10) || 0;
+                                            this.previousSibling.innerHTML = this.value;
+                                        };
+
+                                        if (canvas.freeDrawingBrush) {
+                                            canvas.freeDrawingBrush.color = drawingColorEl.value;
+                                            console.log(canvas.freeDrawingBrush);
+                                            if (canvas.freeDrawingBrush.getPatternSrc) {
+                                                canvas.freeDrawingBrush.source = canvas.freeDrawingBrush.getPatternSrc.call(this);
+                                            }
+                                            canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+                                            canvas.freeDrawingBrush.shadow = new fabric.Shadow({
+                                                blur: parseInt(drawingShadowWidth.value, 10) || 0,
+                                                offsetX: 0,
+                                                offsetY: 0,
+                                                affectStroke: true,
+                                                color: drawingShadowColorEl.value,
+                                            });
+                                        }
+                                    };
+
+
+                                    function drawSpriteSheet(x = 0, y = 0, dindex = 0) {
+                                        for (let a = 0; a < ducks.length; a++) {
+                                            ducks[a].opacity = 0;
+                                        }
+                                        ducks[dindex].opacity = 1;
+
+                                        canvas.renderAll();
+
+                                        //deactivateAll() deprecated in fabric 2
+                                        canvas.discardActiveObject().renderAll();
+                                        // canvas.deactivateAll().renderAll();
+
+                                        var sheet = document.getElementById("spritesheet");
+                                        var duckCan = document.getElementById("canvas");
+                                        var source = document.getElementById("source");
+                                        var copy = document.getElementById("copy");
+
+                                        var sourceCtx = source.getContext("2d");
+                                        var copyCtx = copy.getContext("2d");
+                                        var sheetCtx = sheet.getContext("2d");
+
+                                        //call its drawImage() function passing it the source canvas directly
+
+                                        let auxWidth = 200;
+                                        var destination = 200;
+                                        var step = 100;
+
+                                        copyCtx.drawImage(duckCan, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
+
+                                        for (let a = 0; auxWidth > destination; a++) {
+                                            sourceCtx.clearRect(0, 0, 200, 200);
+                                            sourceCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
+
+                                            copyCtx.clearRect(0, 0, 200, 200);
+
+                                            copyCtx.drawImage(source, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth - step, auxWidth - step);
+
+                                            //copyCtx.drawImage(aux, 0, 0,280,300,0,0,250,250);
+
+                                            auxWidth -= step;
+                                        }
+                                        sheetCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, x, y, auxWidth, auxWidth);
+                                        sourceCtx.clearRect(0, 0, 200, 200);
+                                        copyCtx.clearRect(0, 0, 200, 200);
+                                        //destCtx.drawImage(duckCan, 300, 0);
+                                        //destCtx.drawImage(duckCan, 0, 300);
+                                        //destCtx.drawImage(duckCan, 300, 300);
+
+                                    }
+
+                                </script>
+
+
+                                <script>
+                                    function download() {
+                                        var sheet = document.getElementById("spritesheet");
+                                        const link = document.getElementById("link");
+                                        link.setAttribute("download", "MyDuck.png");
+                                        link.setAttribute("href", sheet.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+                                        link.click();
+                                    }
+                                </script>
+
+                                <style>
+                                    .SubaBeret_1 {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -0px -0px;
+                                        width: 335px;
+                                        height: 300px
+                                    }
+
+                                    .policehat {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -335px -0px;
+                                        width: 320px;
+                                        height: 169px
+                                    }
+
+                                    .Little_Ambulance_1 {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -655px -0px;
+                                        width: 302px;
+                                        height: 300px
+                                    }
+
+                                    .Little_Ambulance_2 {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -335px -169px;
+                                        width: 302px;
+                                        height: 300px
+                                    }
+
+                                    .Little_Cap_1 {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -0px -300px;
+                                        width: 302px;
+                                        height: 300px
+                                    }
+
+                                    .Little_Duck1 {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -957px -0px;
+                                        width: 302px;
+                                        height: 300px
+                                    }
+
+                                    .Little_Megaphone {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -1259px -0px;
+                                        width: 302px;
+                                        height: 300px
+                                    }
+
+                                    .tophat {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -1561px -0px;
+                                        width: 287px;
+                                        height: 198px
+                                    }
+
+                                    .eyepatch {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -1848px -0px;
+                                        width: 191px;
+                                        height: 64px
+                                    }
+
+                                    .glasses {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -1848px -64px;
+                                        width: 105px;
+                                        height: 86px
+                                    }
+
+                                    .stopwatch {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -1561px -198px;
+                                        width: 259px;
+                                        height: 211px
+                                    }
+
+                                    .glassestint {
+                                        display: inline-block;
+                                        overflow: hidden;
+                                        background: url(texture.png) no-repeat -1820px -198px;
+                                        width: 204px;
+                                        height: 87px
+                                    }
+
+
+                                </style>
+                                <div style="position:fixed;left:-10000000px;">
+                                    <img id="bigTexture" onload="loadAccesoriesTexture()" src="texture.png">
+                                    <div id="templateImages">
+                                        <div class="SubaBeret_1"></div>
+                                        <div class="policehat"></div>
+                                        <div class="Little_Ambulance_1"></div>
+                                        <div class="Little_Ambulance_2"></div>
+                                        <div class="Little_Cap_1"></div>
+                                        <div class="Little_Duck1"></div>
+                                        <div class="Little_Megaphone"></div>
+                                        <div class="tophat"></div>
+                                        <div class="eyepatch"></div>
+                                        <div class="glasses"></div>
+                                        <div class="stopwatch"></div>
+                                        <div class="glassestint"></div>
+                                    </div>
+                                </div>
+                                <!--<canvas id="cropped" width=200 height=200 style="border:2px solid black;"></canvas>!-->
+
+                                <script>
+
+                                    function createCrop(selector) {
+                                        console.log("selector", selector);
+                                        var cropWidth = $(selector).css("width");
+                                        var cropHeight = $(selector).css("height");
+                                        var cropX = $(selector).css("background-position-x");
+                                        var cropY = $(selector).css("background-position-y");
+
+                                        cropX = cropX.replace("-", "");
+                                        cropY = cropY.replace("-", "");
+
+                                        console.log(cropWidth, cropHeight, cropX, cropY);
+
+                                        $("body").append("<canvas id=\"cropped\" width=" + cropWidth + " height=" + cropHeight + " style=\"border:2px solid black;\"></canvas>");
+
+                                        var cropCanvas = document.getElementById("cropped");
+                                        var cropCtx = cropCanvas.getContext("2d");
+                                        var imageCrop = document.getElementById("bigTexture");
+
+                                        cropWidth = parseInt(cropWidth.replace("px", ""));
+                                        cropHeight = parseInt(cropHeight.replace("px", ""));
+                                        cropX = parseInt(cropX.replace("px", ""));
+                                        cropY = parseInt(cropY.replace("px", ""));
+
+//	imageCrop.addEventListener('load', e => {
+                                        cropCtx.drawImage(imageCrop, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+                                        var image = new Image();
+                                        image.src = cropCanvas.toDataURL();
+                                        ;
+                                        $("#images").append(image);
+
+
+                                        $(cropCanvas).remove();
+                                        if (images.length > 0) {
+                                            createCrop("." + $(images.pop()).attr("class"));
+                                        } else {
+                                            $("#templateImages").remove();
+                                        }
+                                        //});
+
+                                    }
+
+                                    var images = $("#templateImages div").toArray().reverse();
+
+                                    function loadAccesoriesTexture() {
+
+
+                                        createCrop("." + $(images.pop()).attr("class"));
+                                    }
+
+
+                                </script>
+                            </div>
+
+                                <input class="form-control" id="submit" text="u-41" type="submit"/>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </form>
+            <audio autoplay id="player">
+                <source id="mp3_src" src="" type="audio/mp3"/>
+                <div text="u-30">Your browser does not support the audio element.</div>
+            </audio>
+        </div>
+        <div class="container" id="previewSection">
+            <h3 class="justify-content-center" id="previewText" text="u-29">Preview</h3>
+            <div class="justify-content-end">
+                <canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
+                <canvas height="200" id="animPreview2" style="visibility: hidden" width="200"></canvas>
+                <canvas height="200" id="animPreview1-flipped" style="visibility: hidden; transform:scale(-1,1)"
+                        width="200"></canvas>
+                <canvas height="200" id="animPreview2-flipped" style="visibility: hidden; transform:scale(-1,1)"
+                        width="200"></canvas>
+            </div>
+        </div>
+        <div id="submitting" style="display: none" text="u-28">Uploading duck...</div>
+    </div>
 </div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-maxlength@1.10.1/dist/bootstrap-maxlength.min.js"></script>
+<script src="upload.js"></script>
 <script defer>
     console.log("index load");
     $(function () {
+
+        $(".countrypicker").countrypicker();
+        $("#country").prepend("<option text='u-32' value='abstain' data-tokens='' data-countrycode='ZZ'></option>");
         loadTranslationsJSON().then(loadTexts);
+        loadCountryCodesJSON().then(makeValidCodes);
+        loadsounds();//.then(makeSoundButtons);
     });
 
 
@@ -284,11 +1151,22 @@
         let homeTags = $("#home [text]");
         let guidelinesTags = $("#guidelines [text]");
         let specsTags = $("#specs [text]");
+        let uploadTags = $("#upload-container [text]");
         let links = strings[lang]["Links"];
         let tutorial = strings[lang]["TUTORIAL"];
         let home = strings[lang]["Advertisement"];
         let guidelines = strings[lang]["GUIDELINES"];
         let specs = strings[lang]["Technical Specifications"];
+        let upload = strings[lang]["UPLOAD"];
+
+        [...uploadTags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(2);
+
+            t.textContent = upload[index];
+        });
+        document.getElementById("name").setAttribute("placeholder", upload[39]);
+        document.getElementById("country").setAttribute("placeholder", upload[40]);
 
         [...tutorialTags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
@@ -320,6 +1198,15 @@
 
             t.textContent = specs[index];
         });
+    }
+
+    function makeValidCodes() {
+        $("body").append("<datalist id ='validCodes'>");
+        let validcodes = $("#validCodes");
+        codes.countries.forEach((c) => {
+            validcodes.append(`<option>${c}</option>`);
+        });
+        $("#country").attr("list", "validCodes");
     }
 
     $(".selectLang").on("click", function () {
@@ -360,6 +1247,43 @@
         dropdown.addClass(cls);
     }
 
+    $("input[maxlength], textarea").maxlength({
+        alwaysShow: true,
+        warningClass: "form-text text-muted mt-1",
+        limitReachedClass: "form-text text-muted mt-1",
+    });
+
+    $("#referer").on("change", function () {
+        let v = $(this).val();
+        let refInput = $(".refererInput");
+        if (v == "other") {
+            refInput.show();
+            refInput.attr("required");
+        } else {
+            refInput.hide();
+            refInput.removeAttr("required");
+        }
+    });
+
+    $("#uploadMethodChoice").on("change", function () {
+        let v = $(this).val();
+        let $uploadFile = $("#uploadFile");
+        let $editor = $("#editor");
+        switch (v) {
+        case "upload":
+            $uploadFile.show();
+            $editor.hide();
+            break;
+        case "editor":
+            $uploadFile.hide();
+            $editor.show();
+            break;
+        default:
+            $uploadFile.hide();
+            $editor.hide();
+            break;
+        }
+    });
 
 </script>
 <script crossorigin="anonymous"

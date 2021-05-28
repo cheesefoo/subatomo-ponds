@@ -74,6 +74,8 @@ module.exports = {
                 {from: "src/assets/localization", to:"upload/localization"},
                 {from: "src/info", to:"docs"},
                 {from: "src/assets/images", to: "images"},
+                {from: "src/assets/images/bg1-white.png", to: "docs/bg1-white.png"},
+                {from: "src/assets/images/bg1-gr-white.png", to: "docs/bg1-gr-white.png"},
                 {from: "src/assets/css", to: "css"},
                 {from: "manifest.webmanifest", to: "manifest.webmanifest"},
                 {from: "sw.js", to: "sw.js"},
@@ -81,8 +83,8 @@ module.exports = {
                 {from: "src/editor", to: "editor"},
                 {from: "src/assets/duck_accessories", to: "editor"},
                 {from: "src/upload", to: "upload"},
-                // {from: "src/assets/sound", to: "assets"},
-                {from: "src/assets/sound", to: "upload"},
+
+                {from: "src/assets/sound", to: "docs"},
             ],
         }),
 

@@ -1,21 +1,6 @@
-* {
-    margin: 0.1em;
-    padding: 0.1em;
-}
 
-body {
-    background: url("bg1-white.png");
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    font-size: 12pt;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #2A293E;
-}
-.main, .soundButton {
+
+.main, #previewSection, .soundButton {
     vertical-align: middle;
     border-radius: 5px;
     margin: 8px 0 0 8px;
@@ -68,20 +53,20 @@ body {
 /*}*/
 
 
-label, input, textarea {
+#upload-container label, input, textarea {
     display: block;
     width: 100%;
-    padding: 0.1rem;
+
     line-height: 24pt;
     font-size: 12pt;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-input {
+#upload-container input {
     margin-bottom: 24pt;
 }
 
-h3 {
+#upload-container h3 {
     font-weight: normal;
     font-size: 10pt;
     line-height: 24pt;
@@ -89,11 +74,11 @@ h3 {
     margin: 0 0 0.5em 0;
 }
 
-span {
+#upload-container span {
     font-size: 8pt;
 }
 
-em {
+#upload-container em {
     color: #f45702;
     font-weight: bold;
 }
@@ -107,19 +92,6 @@ textarea {
     resize: none;
 }
 
-button {
-    display: block;
-    float: right;
-    line-height: 24pt;
-    padding: 0 20px;
-    border: none;
-    background: #f45702;
-    color: white;
-    letter-spacing: 2px;
-    transition: 0.2s all ease-in-out;
-    border-bottom: 2px solid transparent;
-    outline: none;
-}
 
 button:hover {
     background: inherit;
@@ -140,44 +112,6 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #6bd4b1;
     color: white;
-}
-
-audio {
-
-}
-.tooltip {
-    text-decoration: none;
-    position: relative;
-}
-
-.tooltip span {
-    display: none;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    color: black;
-    background: white;
-}
-
-.tooltip span img {
-    float: left;
-    margin: 0 8px 8px 0;
-}
-
-.tooltip:hover span {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: auto;
-    max-width: 320px;
-    min-height: 128px;
-    border: 1px solid black;
-    margin-top: 12px;
-    margin-left: 32px;
-    overflow: hidden;
-    padding: 8px;
 }
 
 #animPreview {

@@ -1,0 +1,232 @@
+#canvas-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 5px 1px black;
+    margin: 10px auto;
+    border: 5px solid black;
+    display: inline-block;;
+    box-sizing: content-box;
+    background-color: white;
+}
+
+#canvas-container.over {
+    border: 5px dashed cyan;
+}
+
+#images img.img_dragging {
+    opacity: 0.4;
+}
+
+/*
+Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
+*/
+
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+    cursor: move;
+}
+
+.editor-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 90vh;
+    width: 100%;
+    align-content: space-between;
+}
+
+#imagesToolbar {
+    width: 200px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    background-color: #ffc107;
+}
+
+#images {
+    width: 100%;
+    padding: 20px;
+    overflow: auto;
+    height: 100%;
+
+}
+
+#images img {
+    max-width: 100%;
+
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle, rgba(3, 188, 252, 1) 38%, rgba(4, 128, 171, 1) 100%)
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#result {
+    width: 500px;
+}
+
+
+#center-interface {
+    width: 500px;
+    flex: 1 0 100%;
+    text-align: center;
+}
+
+#right-tools {
+    display: inline-block;
+    margin-left: 10px;
+    width: 200px;
+    background-color: olive;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 100%;
+    background-color: #ffc107;
+}
+
+#source, #copy {
+    position: fixed;
+    left: -1000px;
+}
+
+#resultCanvas {
+    box-sizing: content-box;
+    border: 3px solid black;
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+#generateDuck {
+    background: gray;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.btn.btn-info {
+    background-color: rgb(3, 188, 252);
+    padding: 10px;
+    width: 100%;
+    margin: 10px auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#downloadLink {
+    display: none;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+#menuMobile {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    #right-tools {
+        position: fixed;
+
+        z-index: 1000;
+    }
+
+
+    #imagesToolbar {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20vh;
+        z-index: 1000;
+        -webkit-box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
+        box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
+    }
+
+    #imagesToolbar img {
+        height: 100%;
+        width: auto;
+        max-width: 20vh;
+        object-fit: contain;
+    }
+
+    #imagesToolbar h3 {
+        display: none;
+    }
+
+    #imagesToolbar #images {
+        display: flex;
+    }
+
+    #imagesToolbar.active {
+        left: 0;
+    }
+
+    #right-tools {
+        top: 0;
+        right: -100vw;
+        transition: 0.5s;
+        -webkit-box-shadow: 0px -5px 8px 2px rgba(0, 0, 0, 0.58);
+        box-shadow: 0px -5px 8px 2px rgba(0, 0, 0, 0.58);
+    }
+
+    #right-tools.active {
+        right: 0;
+    }
+
+    #center-interface, #result {
+        width: 100%;
+    }
+
+    #menuMobile {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 900;
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    body {
+        padding-bottom: 26vh;
+    }
+}
