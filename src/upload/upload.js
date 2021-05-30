@@ -1,19 +1,3 @@
-// function importAll(r) {
-//     return r.keys().map(r);
-// }
-
-// importAll(require.context('../assets/sound/', true, /suba.*\.mp3/));
-// const su1 = require('../assets/sound/suba_1.mp3');
-// const su2 = require('../assets/sound/suba_2.mp3');
-// const soundMap = require('./soundfilemap.json');
-// Dropzone.options.form = {
-//     paramName: "file", // The name that will be used to transfer the file
-//     maxFilesize: 2, // MB
-//     accept: function (file, done) {
-//         chooseFile(file)
-//     }
-// };
-
 function disallowedChars(e) {
     let regex = new RegExp(escapeRegExp("<>:\"/\\|?*"));
     return regex.test(e.charCode);
@@ -148,14 +132,28 @@ $("#uploadFile").on("change", function () {
     const fr = new FileReader();
     fr.fileName = file.name;
     fr.onload = function (e) {
-        e.target.result;
-        html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.target.result.replace(/^.*,/, "") + "\" >";
-        html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + e.target.result.match(/^.*(?=;)/)[0] + "\" >";
+        let result = e.target.result;
+        let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + result.replace(/^.*,/, "") + "\" >";
+        html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + result.match(/^.*(?=;)/)[0] + "\" >";
         html += "<input type=\"hidden\" name=\"filename\" id=\"filename-sbm\" value=\"" + e.target.fileName + "\" >";
         // $("#data").empty().append(html);
         $("#data").append(html);
     };
     fr.readAsDataURL(file);
+});
+
+//For editor method, append the image data to the post before it is submitted.
+$("form").on("submit", function () {
+    if ($("#uploadMethodChoice").val() == "editor") {
+        try {
+            document.getElementById("raw-sbm").remove();
+            document.getElementById("mime-sbm").remove();
+            document.getElementById("filetype-sbm").remove();
+        } catch (ex) {
+        }
+        generateSpriteSheet();
+
+    }
 });
 
 const audio = document.getElementById("player");
@@ -185,6 +183,7 @@ function makeSoundButtons() {
     }
 
 }
+
 $("#soundSelection").on("change", function () {
     let f = $(this).val();
     console.log(f);

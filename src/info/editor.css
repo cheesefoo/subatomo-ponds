@@ -65,10 +65,10 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
 }
 
-body {
-    margin: 0;
-    background: radial-gradient(circle, rgba(3, 188, 252, 1) 38%, rgba(4, 128, 171, 1) 100%)
-}
+/*body {*/
+/*    margin: 0;*/
+/*    background: radial-gradient(circle, rgba(3, 188, 252, 1) 38%, rgba(4, 128, 171, 1) 100%)*/
+/*}*/
 
 ::-webkit-scrollbar {
     width: 10px;
