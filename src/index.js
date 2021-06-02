@@ -1,12 +1,12 @@
 let DEBUGGING = false;
 let TEST_DATA = true;
 
+require("./assets/css/style.css");
+
 function importAll(r) {
     return r.keys().map(r);
 }
 
-
-require("./assets/css/style.css");
 let ducksj, submissions;
 
 if (TEST_DATA) {
@@ -31,6 +31,7 @@ const soundsj = require("./assets/sound/soundfilemap.json");
 window.logSwim = true;
 
 require("phaser");
+
 // const NineSlicePlugin = require("phaser3-nineslice");
 import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
 
@@ -40,6 +41,7 @@ import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
 require("./assets/pond/Subapond_vibrantHD-min.jpg");
 require("./assets/pond/pond_color_invert.png");
 require("./assets/pond/WaterSplashAnimation/splash.png");
+require("./assets/ui/subaru_uitest_1.png");
 
 
 importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
@@ -77,7 +79,7 @@ const maxPond = submissions.submissions[submissions.submissions.length - 1].pond
 const QUACK_DURATION = 1600;
 
 let sceneWidth = window.innerWidth;
-let sceneHeight = window.innerHeight - 56;
+let sceneHeight = window.innerHeight;
 
 const MIN_TRAVEL = 1000;
 const MAX_TRAVEL_TIME = 5000;
@@ -123,6 +125,73 @@ const DUCK_STATES = {
 };
 
 let $body = $("body");
+
+function startHomepageAnimation() {
+    $("#home").show();
+
+    // animate ".box" from an opacity of 0 and a y position of 100 (like transform: translateY(100px))
+// to the current values (an opacity of 1 and y position of 0).
+    gsap.fromTo("#logo-panel",
+        {
+            autoAlpha: 0,
+            opacity: 0,
+            x: "-100%"
+        },
+        {
+            autoAlpha: 1,
+            opacity: 1,
+            x: 0,
+            duration: 3
+        });
+    gsap.from("#logo-bg", {
+        opacity: 0,
+        duration: 3
+    });
+    gsap.delayedCall(3, function () {
+        gsap.to("#logo", {
+            opacity: 1,
+            duration: 3
+        });
+    });
+    gsap.delayedCall(4, function () {
+        gsap.fromTo("#enterPondButton", {
+            opacity: 0,
+            y: 0,
+        }, {
+            opacity: 1,
+            y: "20vh",
+            duration: 5
+        });
+    });
+    let appearFrameNums = 27;
+    let appearWidth = 133.25;
+
+    let master = gsap.timeline();
+    gsap.to("#logo-duck", {
+        backgroundPosition: (-appearWidth * appearFrameNums) + "px 0",
+        ease: "steps(" + appearFrameNums + ")",
+        duration: 2.8,
+        onComplete: function () {
+            console.log("duck done");
+            document.getElementById("logo-duck").style.backgroundImage = "url(../images/idle.png)";
+            document.getElementById("logo-duck").style.backgroundPositionX = "0";
+            let idleFrameNums = 66;
+            let idleWidth = 133.25;
+            let idleFPS = 10;
+            gsap.to("#logo-duck", {
+                backgroundPosition: (-idleWidth * idleFrameNums) + "px 0",
+                ease: "steps(" + idleFrameNums + ")",
+                duration: 6.7,
+                repeat:-1,
+                delay: 1
+            });
+        }
+    });
+
+
+// master.add(appear);//.add(idle);
+
+}
 
 class MyGame extends Phaser.Scene {
     // jshint ignore:line
@@ -197,11 +266,11 @@ class MyGame extends Phaser.Scene {
 
             const that = this;
 
-            this.load.on("fileprogress", function (file, percentComplete) {
-                //assetText.setText('Loading asset: ' + file.key);
-                if (percentComplete === 1)
-                    console.log(file.key);
-            });
+            // this.load.on("fileprogress", function (file, percentComplete) {
+            //     //assetText.setText('Loading asset: ' + file.key);
+            //     if (percentComplete === 1)
+            //         console.log(file.key);
+            // });
 
             $body.css("opacity", "1");
 
@@ -224,10 +293,10 @@ class MyGame extends Phaser.Scene {
                 progressBox.destroy();
                 loadingText.destroy();
                 percentText.destroy();
-                $("#loadingDuck").hide();
+                // $("#loadingDuck").hide();
                 $("canvas").hide();
                 $("#home").show();
-                $("#screens").show();
+                startHomepageAnimation();
                 window.game.input.enabled = false;
                 //}, 1500);
             });
@@ -310,9 +379,9 @@ class MyGame extends Phaser.Scene {
 
     makeTileMap() {
         this.map = this.make.tilemap({key: "map"}); //, tileWidth: 64, tileHeight: 64 });
-		window.map=this.map;
+        window.map = this.map;
         let tileset = this.map.addTilesetImage("Subapond_vibrantHD-min", "tiles");
-		window.tileset=tileset;
+        window.tileset = tileset;
         // let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
         groundLayer = this.map.createLayer("ground", tileset);
         groundLayer.setCollisionByProperty({collides: true});
@@ -322,26 +391,26 @@ class MyGame extends Phaser.Scene {
         obstacleLayer.setCollisionByProperty({collides: true});
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
-		
-		var newHeight=sceneWidth*(1080/2003);
-		console.log("height",newHeight);
-		groundLayer.setDisplaySize(sceneWidth,newHeight);
-		pondLayer.setDisplaySize(sceneWidth,newHeight);
-		obstacleLayer.setDisplaySize(sceneWidth,newHeight);
-		transitionLayer.setDisplaySize(sceneWidth,newHeight);
-		console.log("img",this.textures.list.col.source[0].source);
-		$("#ghost").append(this.textures.list.col.source[0].source);
-		$("#ghost img").attr("id","ghostIMG");
-		
-		var canvasGhost = document.createElement('canvas');
-		canvasGhost.width = sceneWidth;
-		canvasGhost.height = newHeight;
-		
-		var ghost2d= canvasGhost.getContext("2d");
-		ghost2d.drawImage(document.getElementById("ghostIMG"),0,0,sceneWidth,newHeight);
-		
-		this.textures.addBase64("ghostCollision", canvasGhost.toDataURL())
-		
+
+        var newHeight = sceneWidth * (1080 / 2003);
+        // console.log("height", newHeight);
+        groundLayer.setDisplaySize(sceneWidth, newHeight);
+        pondLayer.setDisplaySize(sceneWidth, newHeight);
+        obstacleLayer.setDisplaySize(sceneWidth, newHeight);
+        transitionLayer.setDisplaySize(sceneWidth, newHeight);
+        // console.log("img", this.textures.list.col.source[0].source);
+        $("#ghost").append(this.textures.list.col.source[0].source);
+        $("#ghost img").attr("id", "ghostIMG");
+
+        var canvasGhost = document.createElement("canvas");
+        canvasGhost.width = sceneWidth;
+        canvasGhost.height = newHeight;
+
+        var ghost2d = canvasGhost.getContext("2d");
+        ghost2d.drawImage(document.getElementById("ghostIMG"), 0, 0, sceneWidth, newHeight);
+
+        this.textures.addBase64("ghostCollision", canvasGhost.toDataURL());
+
     }
 
     /// Unused
@@ -528,11 +597,11 @@ class MyGame extends Phaser.Scene {
 
 
             const duckGameObject = this.physics.add
-                .sprite(0, 0, "allDucks", ducks[i].image + "-0.png")
-                // .setCollideWorldBounds(true)
-                // .setBounce(1, 1)
-                // .setDebugBodyColor(0x00FF)
-                // .setDebug(true, false, 0x00ff); //, new Phaser.Display.Color(255, 0, 0, 0));
+                .sprite(0, 0, "allDucks", ducks[i].image + "-0.png");
+            // .setCollideWorldBounds(true)
+            // .setBounce(1, 1)
+            // .setDebugBodyColor(0x00FF)
+            // .setDebug(true, false, 0x00ff); //, new Phaser.Display.Color(255, 0, 0, 0));
             // console.log(duckGameObject);
             this.physics.add.collider(duckGameObject, obstacleLayer);
             const legsOverlay = this.physics.add.sprite(0, 0, "legs", "1.png");
@@ -923,8 +992,8 @@ class PondManager extends Phaser.Scene {
             img.setOrigin(0, 0);
             panel.sendToBack(img);
 
-            console.log(name);
-            console.log(img);
+            // console.log(name);
+            // console.log(img);
 
             this.time.addEvent({
                 delay: USERNAME_DISPLAY_DURATION,
@@ -1003,10 +1072,6 @@ const config = {
 const game = new Phaser.Game(config);
 window.game = game;
 
-
-
-$("#screens").show();
-
 function changeScreen(screen) {
     hideScreen();
     $("#screens").show();
@@ -1020,10 +1085,9 @@ function hideScreen() {
     $("#pond-ui").hide();
     $(".screen").hide();
 }
-$(function() {
-    console.log("indexjs load");});
 
-$("#spb1,#spb2").on("click", function () {
+
+$("#spb1,#enterPondButton").on("click", function () {
     hideScreen();
     $("#screens").hide();
     $("canvas").show();
@@ -1031,13 +1095,13 @@ $("#spb1,#spb2").on("click", function () {
     $("#pond-ui").show();
     window.game.scene.getScene("pond").updatePagination();
 });
-$("#menu1").on("click", function () {
+$("#home-tab").on("click", function () {
     changeScreen("#home");
 });
-$("#menu2").on("click", function () {
+$("#about-project-tab").on("click", function () {
     changeScreen("#about-project");
 });
-$("#menu3").on("click", function () {
+$("#about-subaru-tab").on("click", function () {
     changeScreen("#about-subaru");
 });
 

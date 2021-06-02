@@ -22,7 +22,7 @@ module.exports = {
     },
     entry: {
         main: "./src/index.js",
-        vendor: ["phaser"],
+        vendor: ["phaser", "gsap"],
     },
     output: {
         filename: "[name].bundle.js",
