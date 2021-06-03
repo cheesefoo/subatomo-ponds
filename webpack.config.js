@@ -73,7 +73,7 @@ module.exports = {
                 {from: "src/assets/localization", to:"docs/localization"},
                 {from: "src/assets/localization", to:"upload/localization"},
                 {from: "src/info", to:"docs"},
-                {from: "src/assets/images", to: "images"},
+                // {from: "src/assets/images", to: "images"},
                 {from: "src/assets/images/bg1-white.png", to: "docs/bg1-white.png"},
                 {from: "src/assets/images/bg1-gr-white.png", to: "docs/bg1-gr-white.png"},
                 {from: "src/assets/css", to: "css"},

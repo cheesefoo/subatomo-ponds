@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta content="width=device-width, user-scalable=no" name="viewport"/>
     <meta charset="utf-8"/>
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="localization/language.js"></script>
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">
+    <!--    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
 
 
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
     <!--    <link href="./css/style.css">-->
     <link href="/manifest.webmanifest" rel="manifest"/>
     <title text="main-1">大空スバルのスバ友池</title>
@@ -21,7 +20,42 @@
 <body>
 
 <div id="ghost" style="display:none;"></div>
+<img alt="loading" id="loadingDuck" src="assets/loading.gif">
+<div id="home">
 
+    <div class="logo logo-bg logo-sky"></div>
+    <div class="logo logo-bg logo-mid"></div>
+    <div class="logo logo-bg logo-front"></div>
+    <!--            <img src="../images/HHeader.svg" onerror="this.onerror=null; this.src='../images/HHeader.png'">-->
+
+    <div class="logo logo-duck"></div>
+
+    <div class="logo logo-title"></div>
+    <div class="logo-panel" style="visibility: hidden;">
+        <label>
+            Language
+            <select aria-labelledby="navbarDropdown" class="dropdown-menu">
+                <option  class="dropdown-item selectLang flag-icon flag-icon-us" href="#" lang="EN" >EN</option>
+                <option><a class="dropdown-item selectLang flag-icon flag-icon-jp" href="#" lang="JP"></a>JP</option>
+                <option><a class="dropdown-item selectLang flag-icon flag-icon-id" href="#" lang="ID"></a>ID</option>
+                <option><a class="dropdown-item selectLang flag-icon flag-icon-es" href="#" lang="ES"></a>ES</option>
+                <option><a class="dropdown-item selectLang flag-icon flag-icon-br" href="#" lang="PT"></a>PT</option>
+                <option><a class="dropdown-item selectLang flag-icon flag-icon-kr" href="#" lang="KR"></a>KR</option>
+                <option><a class="dropdown-item selectLang flag-icon flag-icon-nl" href="#" lang="NL"></a>NL</option>
+                <option><a class="dropdown-item selectLang flag-icon flag-icon-de" href="#" lang="DE"></a>DE</option>
+            </select>
+        </label>
+        <div class="nav-button-container">
+            <button class="nav-button" href="#">About the project</button>
+            <button class="nav-button" href="#">About Oozora Subaru</button>
+            <button class="nav-button" href="#">Submit your own duck</button>
+            <button class="nav-button" href="#">Credits</button>
+        </div>
+
+    </div>
+    <a class="nav-link logo" href="#" id="enterPondButton" text="main-11"> </a>
+
+</div>
 <!--
 
 <nav class="sticky-top bg-warning">
@@ -70,19 +104,19 @@
 
 -->
 
-<div class="tab-content screen-container" id="screens">
-
+<!--<div class="tab-content screen-container" id="screens">
     <div class="screen tab-pane active" id="home" role="tabpanel">
-        <div class="screen-inner logo" id="logo-bg">
-<!--            <img src="../images/HHeader.svg" onerror="this.onerror=null; this.src='../images/HHeader.png'">-->
+        <div class="screen-inner home-inner">
+            <div class="logo logo-bg logo-mid"></div>
+            <div class="logo logo-bg logo-sky"></div>
+            &lt;!&ndash;            <img src="../images/HHeader.svg" onerror="this.onerror=null; this.src='../images/HHeader.png'">&ndash;&gt;
 
-            <div class="logo" id="logo-duck"></div>
-            <div class="logo" id="logo">
-<!--                <img id="logo" src="../images/LogoAdjustedSize.png"/>-->
-            </div>
             <a class="nav-link logo" href="#" id="enterPondButton" text="main-11"> </a>
-            <div class="logo" id="logo-panel"></div>
+            <div class="logo logo-duck"></div>
+            <div class="logo logo-bg logo-front"></div>
 
+            <div class="logo logo-title"></div>
+            <div class="logo-panel"></div>
         </div>
     </div>
 
@@ -111,14 +145,13 @@
 
                 </p>
                 <br/>
-                <a href="https://www.youtube.com/channel/UCvzGlP9oQwU--Y0r9id_jnA" text="main-14"
+                <a href="https://www.youtube.com/channel/UCvzGlP9oQwU&#45;&#45;Y0r9id_jnA" text="main-14"
                 >Youtube channel</a
                 >
             </div>
         </div>
     </div>
-
-</div>
+</div>-->
 
 
 <script defer>
@@ -178,9 +211,9 @@
 </script>
 
 <!--<script src="production-dependencies.bundle.js"></script>-->
-<script crossorigin="anonymous"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<!--<script crossorigin="anonymous"-->
+<!--        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"-->
+<!--        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->

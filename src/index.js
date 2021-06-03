@@ -41,7 +41,7 @@ import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
 require("./assets/pond/Subapond_vibrantHD-min.jpg");
 require("./assets/pond/pond_color_invert.png");
 require("./assets/pond/WaterSplashAnimation/splash.png");
-require("./assets/ui/subaru_uitest_1.png");
+require("./assets/images/ui/subaru_uitest_1.png");
 
 
 importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
@@ -94,7 +94,7 @@ const MAX_IDLE_TIME = 5000;
 const TEXT_PADDING_CONFIG = {left: 5, right: 20, top: 5, bottom: 10};
 const WORD_WRAP_CONFIG = {width: 370, useAdvancedWrap: true};
 const MSG_TEXT_CONFIG = {
-    fontFamily: "Ubuntu",
+    fontFamily: "Nodo Sans JP",
     fontSize: "14px",
     color: "#000",
     stroke: "#fcd73f",
@@ -128,10 +128,7 @@ let $body = $("body");
 
 function startHomepageAnimation() {
     $("#home").show();
-
-    // animate ".box" from an opacity of 0 and a y position of 100 (like transform: translateY(100px))
-// to the current values (an opacity of 1 and y position of 0).
-    gsap.fromTo("#logo-panel",
+    gsap.fromTo(".logo-panel",
         {
             autoAlpha: 0,
             opacity: 0,
@@ -141,48 +138,109 @@ function startHomepageAnimation() {
             autoAlpha: 1,
             opacity: 1,
             x: 0,
-            duration: 3
+            duration: 3,
+            delay: 5
         });
-    gsap.from("#logo-bg", {
-        opacity: 0,
+    gsap.from(".logo-bg", {
+        autoAlpha: 0,
         duration: 3
     });
-    gsap.delayedCall(3, function () {
-        gsap.to("#logo", {
-            opacity: 1,
-            duration: 3
-        });
+    gsap.fromTo(".logo-front", {
+        autoAlpha: 0,
+        opacity: 0,
+        top: "200%"
+    }, {
+        autoAlpha: 1,
+        opacity: 1,
+        top: 0,
+        duration: 1,
+        delay: 1
     });
-    gsap.delayedCall(4, function () {
-        gsap.fromTo("#enterPondButton", {
-            opacity: 0,
-            y: 0,
-        }, {
-            opacity: 1,
-            y: "20vh",
-            duration: 5
-        });
+
+    gsap.fromTo(".logo-mid", {
+
+        bottom: "-200%",
+        delay: 0.5,
+    }, {
+        bottom: "0%",
+        duration: 3,
+        delay: 0.5,
+        // ease: "bounce.out"
     });
+
+    gsap.fromTo(".logo-mid", {
+        autoAlpha: 0,
+        opacity: 0,
+    }, {
+        autoAlpha: 1,
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+    });
+
+
+    gsap.fromTo(".logo-title", {
+        autoAlpha: 0,
+        opacity: 0,
+
+    }, {
+        autoAlpha: 1,
+        opacity: 1,
+        duration: 3,
+        delay: 3
+    });
+
+    gsap.fromTo("#enterPondButton", {
+        autoAlpha: 0,
+        opacity: 0,
+        y: 0,
+    }, {
+        autoAlpha: 1,
+        opacity: 1,
+        y: "20vh",
+        duration: 5,
+        delay: 4
+    });
+
+    gsap.fromTo(".nav-button", {
+        autoAlpha: 0,
+        x: "-100%"
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+        x: 0,
+        delay: 4,
+        ease: "power1.inOut",
+        stagger: {
+
+            amount: 1.5
+        }
+    });
+
+    gsap.set(".nav-button-container",{autoAlpha:1,delay:4})
+
     let appearFrameNums = 27;
-    let appearWidth = 133.25;
+    let frameWidth = 266.5;
 
     let master = gsap.timeline();
-    gsap.to("#logo-duck", {
-        backgroundPosition: (-appearWidth * appearFrameNums) + "px 0",
+    gsap.set(".logo-duck", {autoAlpha: 1, delay: 4});
+    gsap.to(".logo-duck", {
+        backgroundPosition: (-frameWidth * appearFrameNums) + "px 0",
         ease: "steps(" + appearFrameNums + ")",
         duration: 2.8,
+        delay: 4,
         onComplete: function () {
             console.log("duck done");
-            document.getElementById("logo-duck").style.backgroundImage = "url(../images/idle.png)";
-            document.getElementById("logo-duck").style.backgroundPositionX = "0";
+            let duck = document.getElementsByClassName("logo-duck")[0];
+            duck.style.backgroundImage = "url(assets/idle.png)";
+            duck.style.backgroundPositionX = "0";
             let idleFrameNums = 66;
-            let idleWidth = 133.25;
-            let idleFPS = 10;
-            gsap.to("#logo-duck", {
-                backgroundPosition: (-idleWidth * idleFrameNums) + "px 0",
+
+            gsap.to(".logo-duck", {
+                backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
                 ease: "steps(" + idleFrameNums + ")",
                 duration: 6.7,
-                repeat:-1,
+                repeat: -1,
                 delay: 1
             });
         }
@@ -201,13 +259,6 @@ class MyGame extends Phaser.Scene {
             key: "pond",
             active: true,
 
-            files: [
-                /* splash screen and progress bar files could go here */
-                {
-                    key: "./images/1.png",
-                    type: "image",
-                },
-            ],
         });
     }
 
@@ -235,7 +286,7 @@ class MyGame extends Phaser.Scene {
                 y: height / 2 - 55,
                 text: "Loading...",
                 style: {
-                    font: "20px monospace",
+                    font: "20px 'Nodo Sans JP'",
                     fill: "#ffffff",
                 },
             });
@@ -246,7 +297,7 @@ class MyGame extends Phaser.Scene {
                 y: height / 2 - 30,
                 text: "0%",
                 style: {
-                    font: "18px monospace",
+                    font: "18px 'Nodo Sans JP'",
                     fill: "#ffffff",
                 },
             });
@@ -289,20 +340,36 @@ class MyGame extends Phaser.Scene {
                 // console.log('on preload complete settimeout')
                 // that.generatePondUI();
 
+                console.log("preload finish")
                 progressBar.destroy();
                 progressBox.destroy();
                 loadingText.destroy();
                 percentText.destroy();
-                // $("#loadingDuck").hide();
+                $("#loadingDuck").hide();
                 $("canvas").hide();
-                $("#home").show();
                 startHomepageAnimation();
                 window.game.input.enabled = false;
                 //}, 1500);
             });
         }
 
+        var t0 = performance.now()
         loading.call(this);
+        var t1 = performance.now()
+        console.log(  (t1 - t0) + " milliseconds.")
+
+
+        //load intro files
+        //preload the intro idle duck so it doesn't flicker
+        this.load.image("introduckidle", "assets/idle.png");
+        this.load.image("introduckappear", "assets/appear.png");
+        this.load.image("intromid", "assets/mid.png");
+        this.load.image("introfront", "assets/front.png");
+        this.load.image("introsky", "assets/sky.png");
+        this.load.image("introheader", "assets/hheader.svg");
+        this.load.image("introtitle", "assets/LogoAdjustedSize.png");
+
+
         //Load sprite atlas
         this.load.multiatlas("allDucks", ducksj, "assets");
         this.load.multiatlas("legs", legsj, "assets");
@@ -317,6 +384,7 @@ class MyGame extends Phaser.Scene {
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
         this.load.image("col", "assets/pond_color_invert.png");
+
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.tilemapTiledJSON("map", pondTileJson);
         this.listOfDucks = [];
@@ -830,14 +898,14 @@ class MyGame extends Phaser.Scene {
         //     y: gameObject.y - 50,
         //
         //     text: gameObject.displayName,
-        //     style: {font: "20px monospace", fill: "#fff", align: "center"},
+        //     style: {font: "20px 'Nodo Sans JP'", fill: "#fff", align: "center"},
         // });
         // gameObject.namePopup.setOrigin(0.5, 0.5);
         // gameObject.msgPopup = gameObject.scene.make.text({
         //     x: gameObject.x,
         //     y: gameObject.y - 10,
         //     text: gameObject.message,
-        //     style: {font: "20px monospace", fill: "#fff", align: "center"},
+        //     style: {font: "20px 'Nodo Sans JP'", fill: "#fff", align: "center"},
         // });
         // gameObject.msgPopup.setOrigin(0.5, 0.5);
         //
@@ -1088,8 +1156,9 @@ function hideScreen() {
 
 
 $("#spb1,#enterPondButton").on("click", function () {
-    hideScreen();
-    $("#screens").hide();
+    // hideScreen();
+    // $("#screens").hide();
+    $("#home").hide();
     $("canvas").show();
     window.game.input.enabled = true;
     $("#pond-ui").show();
