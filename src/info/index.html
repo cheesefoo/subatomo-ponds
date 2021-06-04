@@ -363,6 +363,25 @@
                         <button class="soundButton" text="u-26" type="button" value="12">UN</button>
                     </div>
                     <p></p>
+                    <div id="hair">
+                        <label text="u-46">Best hairstyle? (optional)</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="shorthair" name="hairstyle" type="radio"
+                                   value="short">
+                            <label class="form-check-label" for="shorthair" text="u-47">Short</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="longhair" name="hairstyle" type="radio"
+                                   value="long">
+                            <label class="form-check-label" for="longhair" text="u-48">Long</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="twintails" name="hairstyle" type="radio"
+                                   value="twintails">
+                            <label class="form-check-label" for="twintails" text="u-49">Twintails</label>
+                        </div>
+
+                    </div>
                     <div id="countrySection">
                         <label for="country" text="u-31">Where are you from? (Optional)</label>
                         <input id="country" maxlength="2" name="country" placeholder="Country Abbreviation"/>
@@ -398,6 +417,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div id="upload">
                         <!--                        <label text="u-27">Upload your duck bellow</label>-->
                         <label text="u-42">Choose how you will upload your duck:</label>
@@ -883,10 +903,10 @@
                                         const sheet = document.getElementById("spritesheet");
 
                                         let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
-                                        alert(e)
+                                        alert(e);
                                         spritesheet.src = e;
 
-                                        let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.split(',')[1] + "\" >";
+                                        let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.split(",")[1] + "\" >";
                                         html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + "image/octet-stream" + "\" >";
                                         html += "<input type=\"hidden\" name=\"filename\" id=\"filename-sbm\" value=\"" + "editor_creation" + "\" >";
                                         $("#data").append(html);
@@ -1038,7 +1058,8 @@
 
                                 </script>
                             </div>
-                            <label id="editor-sub">If you made changes, generate the spritesheet again before submitting.</label>
+                            <label id="editor-sub">If you made changes, generate the spritesheet again before
+                                submitting.</label>
                             <input class="form-control" id="submit" text="u-41" type="submit"/>
                         </div>
 

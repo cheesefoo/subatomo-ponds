@@ -72,7 +72,7 @@ function doPost(e) {
         message = DEFAULT_MESSAGE;
 
     let canContact = params.canContact.toString();
-    let email, discord, country, referer;
+    let email, discord, country, referer,hairstyle;
     if (canContact == "yes") {
         email = params.email.toString();
         discord = params.discord.toString();
@@ -83,10 +83,15 @@ function doPost(e) {
     if (discord == "")
         discord = "Not provided";
 
+    if (hairstyle == "")
+        hairstyle = "Not Provided";
+
     if (country == "")
         country = "Not Provided";
     country = params.country.toString();
     referer = params.referer.toString();
+    hairstyle= params.hairstyle.toString();
+
     if (referer == "other")
         referer = params.refererOther.toString();
 
@@ -100,7 +105,7 @@ function doPost(e) {
     //Creates the file in the google drive account under which the deployment is executed as.
     if (uploadMethod == "template") {
         fileId = TEMPLATE_FILE_ID;
-        filename = "TEMPLATE"
+        filename = "TEMPLATE";
     } else{
         let file = DriveApp.createFile(blob);
         file = file.setName(filename);
@@ -116,7 +121,7 @@ function doPost(e) {
     const ss = SpreadsheetApp.getActiveSpreadsheet();
     const s = ss.getActiveSheet();
     // let row = [timestamp, displayName, email, url, filename];
-    let row = ["", displayName, email, discord, fileUrl, filename, message, sound, "", "", "", country, referer];
+    let row = ["", displayName, email, discord, fileUrl, filename, message, sound, "", "", "", hairstyle, country, referer];
     s.appendRow(row);
     let rowNum = s.getLastRow();
 
