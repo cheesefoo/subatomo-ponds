@@ -8,12 +8,12 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="localization/language.js"></script>
-    <!--    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"-->
-    <!--          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">-->
+    <!--	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"-->
+    <!--		  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
 
 
-    <!--    <link href="./css/style.css">-->
+    <!--	<link href="./css/style.css">-->
     <link href="/manifest.webmanifest" rel="manifest"/>
     <title text="main-1">大空スバルのスバ友池</title>
 </head>
@@ -26,104 +26,91 @@
     <div class="logo logo-bg logo-sky"></div>
     <div class="logo logo-bg logo-mid"></div>
     <div class="logo logo-bg logo-front"></div>
-    <!--            <img src="../images/HHeader.svg" onerror="this.onerror=null; this.src='../images/HHeader.png'">-->
+    <!--			<img src="../images/HHeader.svg" onerror="this.onerror=null; this.src='../images/HHeader.png'">-->
 
     <div class="logo logo-duck"></div>
 
-    <div class="logo logo-title"></div>
+    <div class="logo-title-container">
+
+        <div class="logo logo-title"></div>
+        <div class="logo-text" style="visibility: hidden;" text="main-22">Happy birthday and congratulations on 1
+            million subscribers, Subaru!!!
+        </div>
+
+        <a class="nav-link logo" href="#" id="enterPondButton" text="main-11"></a>
+    </div>
     <div class="logo-panel" style="visibility: hidden;">
-        <label>
-            Language
-            <select aria-labelledby="navbarDropdown" class="dropdown-menu">
-                <option  class="dropdown-item selectLang flag-icon flag-icon-us" href="#" lang="EN" >EN</option>
-                <option><a class="dropdown-item selectLang flag-icon flag-icon-jp" href="#" lang="JP"></a>JP</option>
-                <option><a class="dropdown-item selectLang flag-icon flag-icon-id" href="#" lang="ID"></a>ID</option>
-                <option><a class="dropdown-item selectLang flag-icon flag-icon-es" href="#" lang="ES"></a>ES</option>
-                <option><a class="dropdown-item selectLang flag-icon flag-icon-br" href="#" lang="PT"></a>PT</option>
-                <option><a class="dropdown-item selectLang flag-icon flag-icon-kr" href="#" lang="KR"></a>KR</option>
-                <option><a class="dropdown-item selectLang flag-icon flag-icon-nl" href="#" lang="NL"></a>NL</option>
-                <option><a class="dropdown-item selectLang flag-icon flag-icon-de" href="#" lang="DE"></a>DE</option>
-            </select>
-        </label>
-        <div class="nav-button-container">
-            <button class="nav-button" href="#">About the project</button>
-            <button class="nav-button" href="#">About Oozora Subaru</button>
-            <button class="nav-button" href="#">Submit your own duck</button>
-            <button class="nav-button" href="#">Credits</button>
-        </div>
+        <div class="lang-container">
+            <div class="select">
+                <!-- You can toggle select (disabled) -->
+                <input name="option" type="radio">
+                <i class="toggle icon icon-arrow-down"></i>
+                <i class="toggle icon icon-arrow-up"></i>
+                <span class="placeholder">Language</span>
+                <label class="option">
+                    <input class="lang-radio" lang="EN" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-us selectLang"></i>EN</span>
+                </label>
+                <label class="option">
+                    <input class="lang-radio" lang="JP" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-jp selectLang"></i>JP</span>
+                </label>
+                <label class="option">
+                    <input class="lang-radio" lang="ID" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-id selectLang"></i>ID</span>
+                </label>
+                <label class="option">
+                    <input class="lang-radio" lang="ES" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-es selectLang"></i>ES</span>
+                </label>
+                <label class="option">
+                    <input class="lang-radio" lang="PT" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-pt selectLang"></i>PT</span>
+                </label>
+                <label class="option">
+                    <input class="lang-radio" lang="KR" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-kr selectLang"></i>KR</span>
+                </label>
+                <label class="option">
+                    <input class="lang-radio" lang="NL" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-nl selectLang"></i>NL</span>
+                </label>
+                <label class="option">
+                    <input class="lang-radio" lang="DE" name="option" type="radio">
+                    <span class="title"><i class="icon flag-icon flag-icon-de selectLang"></i>DE</span>
+                </label>
 
-    </div>
-    <a class="nav-link logo" href="#" id="enterPondButton" text="main-11"> </a>
 
-</div>
-<!--
-
-<nav class="sticky-top bg-warning">
-    <div class="container-fluid">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="navbar-brand"  href="#">
-
-                    <div id="navbarLogo"></div>
-                </a>
-                <button aria-controls="home" aria-selected="false" class="nav-link active"
-                        data-bs-target="#home"
-                        data-bs-toggle="tab" id="home-tab" role="tab" text="main-2" type="button">
-                    Visit the Ponds
-                </button>
-                <button aria-controls="about-project" aria-selected="false" class="nav-link"
-                        data-bs-target="#about-project"
-                        data-bs-toggle="tab" id="about-project-tab" role="tab" text="main-3" type="button">
-                    About the Project
-                </button>
-                <button aria-controls="about-subaru" aria-selected="false" class="nav-link"
-                        data-bs-target="#about-subaru"
-                        data-bs-toggle="tab" id="about-subaru-tab" role="tab" text="main-4" type="button">
-                    About Oozora Subaru
-                </button>
-                <a class="nav-item dropdown">
-                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                       id="navbarDropdown" role="button">
-                        LANGUAGE
-                    </a>
-                    <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-us" href="#" lang="EN"></a>EN</li>
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-jp" href="#" lang="JP"></a>JP</li>
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-id" href="#" lang="ID"></a>ID</li>
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-es" href="#" lang="ES"></a>ES</li>
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-br" href="#" lang="PT"></a>PT</li>
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-kr" href="#" lang="KR"></a>KR</li>
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-nl" href="#" lang="NL"></a>NL</li>
-                        <li><a class="dropdown-item selectLang flag-icon flag-icon-de" href="#" lang="DE"></a>DE</li>
-                    </ul>
-                </a>
             </div>
-        </nav>
-    </div>
-</nav>
-
--->
-
-<!--<div class="tab-content screen-container" id="screens">
-    <div class="screen tab-pane active" id="home" role="tabpanel">
-        <div class="screen-inner home-inner">
-            <div class="logo logo-bg logo-mid"></div>
-            <div class="logo logo-bg logo-sky"></div>
-            &lt;!&ndash;            <img src="../images/HHeader.svg" onerror="this.onerror=null; this.src='../images/HHeader.png'">&ndash;&gt;
-
-            <a class="nav-link logo" href="#" id="enterPondButton" text="main-11"> </a>
-            <div class="logo logo-duck"></div>
-            <div class="logo logo-bg logo-front"></div>
-
-            <div class="logo logo-title"></div>
-            <div class="logo-panel"></div>
         </div>
+
+        <div class="nav-button-container">
+            <div class="container">
+                <div class="interior">
+                    <a class="btn" href="#about-project">About the project</a>
+                </div>
+
+                <div class="interior">
+                    <a class="btn" href="#about-subaru">About Oozora Subaru</a>
+                </div>
+
+                <div class="interior">
+                    <a class="btn" href="src/info/index.html">Submit your own duck</a>
+                </div>
+
+                <div class="interior">
+                    <a class="btn" href="#credits">Credits</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="screen tab-pane" id="about-project" role="tabpanel">
-        <div class="screen-inner justify-content-center">
+    <div class="modal-window" id="about-project" style="visibility: hidden;">
+        <div>
+            <a class="modal-close" href="#" title="Close">X</a>
             <h1 text="main-3"></h1>
-            <img alt="subatomo army" src="images/subatomo army.png"/>
+            <img alt="subatomo army" src="src/assets/images/subatomo army.png"/>
             <div class="project-text">
                 <span text="main-18"></span>
                 <br/><br/>
@@ -131,12 +118,13 @@
             </div>
         </div>
     </div>
+    <div class="modal-window" id="about-subaru" style="visibility: hidden;">
 
-    <div class="screen tab-pane" id="about-subaru">
-        <div class="screen-inner justify-content-center">
+        <div>
+            <a class="modal-close" href="#" title="Close">X</a>
 
-            <h1 text="main-13">Oozora Subaru</h1>
-            <img alt="subaru" src="images/subahug3.png"/>
+            <h1 text="main-13">About Oozora Subaru</h1>
+            <img alt="subaru" src="src/assets/images/subahug3.png"/>
             <div class="about-content">
                 <p>
                     <span text="main-20"></span>
@@ -145,14 +133,21 @@
 
                 </p>
                 <br/>
-                <a href="https://www.youtube.com/channel/UCvzGlP9oQwU&#45;&#45;Y0r9id_jnA" text="main-14"
-                >Youtube channel</a
-                >
+                <a href="https://www.youtube.com/channel/UCvzGlP9oQwU&#45;&#45;Y0r9id_jnA" text="main-14">Youtube
+                    channel</a>
             </div>
         </div>
     </div>
-</div>-->
+    <div class="modal-window" id="credits" style="visibility: hidden;">
+        <div>
+            <a class="modal-close" href="#" title="Close">X</a>
 
+            <h1 text="c-1">Credits</h1>
+            <img alt="subaru" src="images/subahug3.png"/>
+        </div>
+    </div>
+
+</div>
 
 <script defer>
     $(function () {
@@ -178,49 +173,51 @@
         });
     }
 
-    $(".selectLang").on("click", function () {
-        lang = $(this).attr("lang");
-        console.log(lang);
-        localStorage["userLang"] = lang;
-        // localStorage["userLang"] = $(this).attr("lang");
-        // location.reload();
-        loadTexts();
-        changeDropdown();
-
+    $(".lang-radio").on("change", function () {
+        if ($(this).attr("checked")) {
+            lang = $(this).attr("lang");
+            console.log(lang);
+            localStorage["userLang"] = lang;
+            // localStorage["userLang"] = $(this).attr("lang");
+            // location.reload();
+            loadTexts();
+            // changeDropdown();
+        }
+        console.log($(this).attr("lang"));
     });
 
-    function changeDropdown() {
-
-        let dropdown = $("#dropdown-inner");
-        dropdown.removeClass();
-        dropdown.addClass("flag-icon");
-        let cls = "flag-icon-";
-        switch (lang) {
-        case "EN":
-            cls += "us";
-            break;
-        case "PT":
-            cls += "br";
-            break;
-        default:
-            cls += lang.toLowerCase();
-            break;
-        }
-        dropdown.addClass(cls);
-    }
+    // function changeDropdown() {
+    //
+    //     let dropdown = $("#dropdown-inner");
+    //     dropdown.removeClass();
+    //     dropdown.addClass("flag-icon");
+    //     let cls = "flag-icon-";
+    //     switch (lang) {
+    //     case "EN":
+    //         cls += "us";
+    //         break;
+    //     case "PT":
+    //         cls += "br";
+    //         break;
+    //     default:
+    //         cls += lang.toLowerCase();
+    //         break;
+    //     }
+    //     dropdown.addClass(cls);
+    // }
 </script>
 
 <!--<script src="production-dependencies.bundle.js"></script>-->
 <!--<script crossorigin="anonymous"-->
-<!--        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"-->
-<!--        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"-->
+<!--		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/8.6.2/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="/__/firebase/8.6.2/firebase-analytics.js"></script>
 
 <!-- Initialize Firebase -->

@@ -1,7 +1,10 @@
 let DEBUGGING = false;
 let TEST_DATA = true;
 
-require("./assets/css/style.css");
+require("./assets/css/style.min.css");
+require("./assets/css/modal.min.css");
+require("./assets/css/dropdown-img.min.css");
+require("./assets/images/intro/loading.gif");
 
 function importAll(r) {
     return r.keys().map(r);
@@ -128,36 +131,37 @@ let $body = $("body");
 
 function startHomepageAnimation() {
     $("#home").show();
-    gsap.fromTo(".logo-panel",
-        {
-            autoAlpha: 0,
-            opacity: 0,
-            x: "-100%"
-        },
-        {
-            autoAlpha: 1,
-            opacity: 1,
-            x: 0,
-            duration: 3,
-            delay: 5
-        });
-    gsap.from(".logo-bg", {
-        autoAlpha: 0,
-        duration: 3
-    });
-    gsap.fromTo(".logo-front", {
+    gsap.set(".modal-window", {visibility: "inherit", delay: 5});
+    let tl = gsap.timeline();
+    tl.fromTo(".logo-panel", {
         autoAlpha: 0,
         opacity: 0,
-        top: "200%"
+        x: "-100%"
     }, {
         autoAlpha: 1,
         opacity: 1,
-        top: 0,
+        x: 0,
+        duration: 3,
+        delay: 5
+    }, 0);
+
+    tl.from(".logo-bg", {
+        autoAlpha: 0,
+        duration: 3
+    }, 0);
+    tl.fromTo(".logo-front", {
+        autoAlpha: 0,
+        opacity: 0,
+        bottom: "200%"
+    }, {
+        autoAlpha: 1,
+        opacity: 1,
+        bottom: 0,
         duration: 1,
         delay: 1
-    });
+    }, 0);
 
-    gsap.fromTo(".logo-mid", {
+    tl.fromTo(".logo-mid", {
 
         bottom: "-200%",
         delay: 0.5,
@@ -166,9 +170,9 @@ function startHomepageAnimation() {
         duration: 3,
         delay: 0.5,
         // ease: "bounce.out"
-    });
+    }, 0);
 
-    gsap.fromTo(".logo-mid", {
+    tl.fromTo(".logo-mid", {
         autoAlpha: 0,
         opacity: 0,
     }, {
@@ -176,10 +180,8 @@ function startHomepageAnimation() {
         opacity: 1,
         duration: 1,
         delay: 0.5,
-    });
-
-
-    gsap.fromTo(".logo-title", {
+    }, 0);
+    tl.fromTo(".logo-title", {
         autoAlpha: 0,
         opacity: 0,
 
@@ -188,9 +190,20 @@ function startHomepageAnimation() {
         opacity: 1,
         duration: 3,
         delay: 3
-    });
+    }, 0);
 
-    gsap.fromTo("#enterPondButton", {
+    tl.fromTo(".logo-text", {
+        autoAlpha: 0,
+        opacity: 0,
+
+    }, {
+        autoAlpha: 1,
+        opacity: 1,
+        duration: 3,
+        delay: 3
+    }, 0);
+
+    tl.fromTo("#enterPondButton", {
         autoAlpha: 0,
         opacity: 0,
         y: 0,
@@ -200,9 +213,10 @@ function startHomepageAnimation() {
         y: "20vh",
         duration: 5,
         delay: 4
-    });
 
-    gsap.fromTo(".nav-button", {
+    }, 0);
+
+    tl.fromTo(".interior", {
         autoAlpha: 0,
         x: "-100%"
     }, {
@@ -215,39 +229,85 @@ function startHomepageAnimation() {
 
             amount: 1.5
         }
-    });
+    }, 0);
 
-    gsap.set(".nav-button-container",{autoAlpha:1,delay:4})
+    tl.set(".nav-button-container", {
+        autoAlpha: 1, delay: 4
+    }, 0);
 
     let appearFrameNums = 27;
     let frameWidth = 266.5;
 
-    let master = gsap.timeline();
-    gsap.set(".logo-duck", {autoAlpha: 1, delay: 4});
-    gsap.to(".logo-duck", {
+    tl.set(".logo-duck", {
+        autoAlpha: 1, delay: 4
+    }, 0);
+    tl.to(".logo-duck", {
+        backgroundImage: "url(assets/appear.png)",
         backgroundPosition: (-frameWidth * appearFrameNums) + "px 0",
         ease: "steps(" + appearFrameNums + ")",
         duration: 2.8,
         delay: 4,
-        onComplete: function () {
-            console.log("duck done");
-            let duck = document.getElementsByClassName("logo-duck")[0];
-            duck.style.backgroundImage = "url(assets/idle.png)";
-            duck.style.backgroundPositionX = "0";
-            let idleFrameNums = 66;
+        // onComplete: function () {
+        //     console.log("duck done");
+        //     let duck = document.getElementsByClassName("logo-duck")[0];
+        //     duck.style.backgroundImage = "url(assets/idle.png)";
+        //     duck.style.backgroundPositionX = "0";
+        //     let idleFrameNums = 66;
+        //
+        //     gsap.to(".logo-duck", {
+        //         backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
+        //         ease: "steps(" + idleFrameNums + ")",
+        //         duration: 6.7,
+        //         repeat: -1,
+        //         delay: 1
+        //     });
+        // }
 
-            gsap.to(".logo-duck", {
-                backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
-                ease: "steps(" + idleFrameNums + ")",
-                duration: 6.7,
-                repeat: -1,
-                delay: 1
-            });
-        }
+    }, 0);
+    let idleFrameNums = 66;
+
+    gsap.set(".logo-duck", {backgroundImage: "url(assets/idle.png)", backgroundPosition: 0, delay: 6.8});
+    gsap.to(".logo-duck", {
+        backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
+        ease: "steps(" + idleFrameNums + ")",
+        duration: 6.7,
+        repeat: -1,
+        delay: 7.8
     });
 
 
-// master.add(appear);//.add(idle);
+    // let master = gsap.timeline();
+    // master.add(panel)
+    //     .add(bg)
+    //     .add(mid)
+    //     .add(front)
+    //     .add(title)
+    //     .add(enterBtn)
+    //     .add(btns)
+    //     .add(buttonContainer)
+    //     .add(duck);
+
+    // master.play()
+    $("#enterPondButton").on("click", function () {
+
+        console.log("enter pond clicked");
+        //play intro anim backwards
+        tl.timeScale(2).reverse(0, true).then(function () {
+            console.log("after click callback");
+            // tl.timeScale(1);
+            $("canvas").show();
+            $("#home").hide();
+            gsap.fromTo("canvas", {opacity: 0}, {opacity: 1, duration: 3})
+                .then(function () {
+                    gsap.fromTo("#pond-ui", {opacity: 1}, {opacity: 1, duration: 1});
+
+                    $("#pond-ui").show();
+                    window.game.input.enabled = true;
+                    window.game.scene.getScene("pond").updatePagination();
+                });
+        });
+    });
+
 
 }
 
@@ -340,7 +400,7 @@ class MyGame extends Phaser.Scene {
                 // console.log('on preload complete settimeout')
                 // that.generatePondUI();
 
-                console.log("preload finish")
+                console.log("preload finish");
                 progressBar.destroy();
                 progressBox.destroy();
                 loadingText.destroy();
@@ -353,10 +413,10 @@ class MyGame extends Phaser.Scene {
             });
         }
 
-        var t0 = performance.now()
+        var t0 = performance.now();
         loading.call(this);
-        var t1 = performance.now()
-        console.log(  (t1 - t0) + " milliseconds.")
+        var t1 = performance.now();
+        console.log((t1 - t0) + " milliseconds.");
 
 
         //load intro files
@@ -1155,15 +1215,6 @@ function hideScreen() {
 }
 
 
-$("#spb1,#enterPondButton").on("click", function () {
-    // hideScreen();
-    // $("#screens").hide();
-    $("#home").hide();
-    $("canvas").show();
-    window.game.input.enabled = true;
-    $("#pond-ui").show();
-    window.game.scene.getScene("pond").updatePagination();
-});
 $("#home-tab").on("click", function () {
     changeScreen("#home");
 });
