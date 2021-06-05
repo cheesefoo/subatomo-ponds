@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "version": "0.6.7"
+  },
+  "savePath": "M:\\JetBrains Projects\\WebstormProjects\\Kaigai-Nikki-Pond\\src\\assets\\images",
+  "images": [],
+  "folders": [
+    "M:/JetBrains Projects/WebstormProjects/Kaigai-Nikki-Pond/src/assets/images/DuckAnimation/Idle"
+  ],
+  "packOptions": {
+    "textureName": "idle",
+    "textureFormat": "png",
+    "removeFileExtension": false,
+    "prependFolderName": false,
+    "base64Export": false,
+    "tinify": true,
+    "tinifyKey": "FB4bB2pn1qmKHmmKKGvF9jRKKvmG3rCX",
+    "scale": 0.25,
+    "filter": "none",
+    "exporter": "JSON (array)",
+    "fileName": "pack-result",
+    "savePath": "M:\\JetBrains Projects\\WebstormProjects\\Kaigai-Nikki-Pond\\src\\assets\\images",
+    "width": 35711,
+    "height": 556,
+    "fixedSize": true,
+    "powerOfTwo": false,
+    "padding": 0,
+    "extrude": 0,
+    "allowRotation": false,
+    "allowTrim": false,
+    "trimMode": "trim",
+    "alphaThreshold": "0",
+    "detectIdentical": false,
+    "packer": "MaxRectsBin",
+    "packerMethod": "ContactPointRule"
+  }
+}
