@@ -4,7 +4,7 @@
     <meta content="width=device-width, user-scalable=no" name="viewport"/>
     <meta charset="utf-8"/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="localization/language.js"></script>
@@ -15,7 +15,7 @@
 
     <!--	<link href="./css/style.css">-->
     <link href="/manifest.webmanifest" rel="manifest"/>
-    <title text="main-1">大空スバルのスバ友池</title>
+    <title text="main-1">Subatomo Ponds</title>
 </head>
 <body>
 
@@ -46,7 +46,7 @@
                 <input name="option" type="radio">
                 <i class="toggle icon icon-arrow-down"></i>
                 <i class="toggle icon icon-arrow-up"></i>
-                <span class="placeholder">Language</span>
+                <span class="placeholder" text="main-5">Language</span>
                 <label class="option">
                     <input class="lang-radio" lang="EN" name="option" type="radio">
                     <span class="title"><i class="icon flag-icon flag-icon-us selectLang"></i>EN</span>
@@ -87,19 +87,19 @@
         <div class="nav-button-container">
             <div class="container">
                 <div class="interior">
-                    <a class="btn" href="#about-project">About the project</a>
+                    <a class="btn" href="#about-project" text="main-12">About the project</a>
                 </div>
 
                 <div class="interior">
-                    <a class="btn" href="#about-subaru">About Oozora Subaru</a>
+                    <a class="btn" href="#about-subaru" text="main-13">About Oozora Subaru</a>
                 </div>
 
                 <div class="interior">
-                    <a class="btn" href="src/info/index.html">Submit your own duck</a>
+                    <a class="btn" href="src/info/index.html" text="main-24">Submit your own duck</a>
                 </div>
 
                 <div class="interior">
-                    <a class="btn" href="#credits">Credits</a>
+                    <a class="btn credits" href="#credits" text="c-0">Credits</a>
                 </div>
             </div>
         </div>
@@ -142,8 +142,8 @@
         <div>
             <a class="modal-close" href="#" title="Close">X</a>
 
-            <h1 text="c-1">Credits</h1>
-            <img alt="subaru" src="images/subahug3.png"/>
+            <h1 class="credits" text="c-1">Credits</h1>
+            <img alt="subaru" src="src/assets/images/subahug3.png"/>
         </div>
     </div>
 
@@ -163,14 +163,24 @@
             console.error("lang not set");
         }
         let tags = $("[text]");
-        let texts = strings[lang]["Main page"];
+        let creditsTags = $(".credits");
+
+        let mainTexts = strings[lang]["Main page"];
+        let creditsTexts = strings[lang]["CREDITS"];
         // console.log(texts);
         [...tags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
             let index = textAttr.substr(5);
 
-            t.textContent = texts[index];
+            t.textContent = mainTexts[index];
         });
+        [...creditsTags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(2);
+
+            t.textContent = creditsTexts[index];
+        });
+
     }
 
     $(".lang-radio").on("change", function () {

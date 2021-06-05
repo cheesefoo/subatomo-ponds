@@ -1,73 +1,100 @@
-body, button {
-    font: 12pt 'Noto Sans JP', sans-serif;
+body
+{
+    font:             12pt "Noto Sans JP", sans-serif;
 
-    font-weight: bold;
-    margin: 0;
-    opacity: 0;
-    padding: 0;
+    font-weight:      400;
+    margin:           0;
+    padding:          0;
+    opacity:          0;
+    color:            rgb(205, 201, 195);
+    background-color: rgb(13, 14, 14);
+    background-image: initial;
 }
 
-button {
+body
+{
+    position:                    relative;
+    color:                       #2B2929;
+
+    -webkit-text-size-adjust:    100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button
+{
     font-size: 1.5rem
 }
 
-.screen {
+.screen
+{
     display: none;
 }
 
-.screen img {
-    display: block;
-    margin: auto;
+.screen img
+{
+    display:        block;
+    margin:         auto;
     padding-bottom: 20px;
 }
 
-canvas {
-    display: block;
-    height: 100%;
-    max-width: 100%;
+canvas
+{
+    display:    block;
+    width:      100%;
+    max-width:  100%;
+    height:     100%;
     object-fit: contain;
-    width: 100%;
 }
 
-#home {
-    position: relative;
-    overflow: hidden;
-    display: block;
+#home
+{
+    position:      relative;
+    display:       block;
+    overflow:      hidden;
     align-content: center;
-    align-items: center;
-    height: 100%;
+    align-items:   center;
+    height:        100%;
 }
 
-.logo {
+#loadingDuck
+{
+    object-fit: cover;
+}
+
+.logo
+{
     visibility: hidden;
 }
 
-.logo-bg {
-    width: 100%;
-    height: 100%;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+.logo-bg
+{
+    width:                   100%;
+    height:                  100%;
+    background-repeat:       no-repeat;
+    -moz-background-size:    cover;
+    -o-background-size:      cover;
     -webkit-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size:         cover;
 
 }
 
-.logo-sky, .logo-mid {
+.logo-sky, .logo-mid
+{
+    position:         absolute;
+    z-index:          0;
+    visibility:       hidden;
     background-image: url(../images/intro/sky.png);
-    visibility: hidden;
-    z-index: 0;
-    position: absolute;
     /*height: 1080px;*/
     /*max-height: 100%;*/
 }
 
-.logo-mid {
-    background-image: url(../images/intro/mid.png);
-    max-width: 100vw;
+.logo-mid
+{
+    bottom:           0;
+    max-width:        100vw;
     /*max-height: 656px;*/
-    max-height: 70%;
-    bottom: 0;
+    max-height:       70%;
+    background-image: url(../images/intro/mid.png);
 
     /*position: absolute;*/
     /*!*height:100vh;*!*/
@@ -83,43 +110,46 @@ canvas {
 
 }
 
-.logo-front {
+.logo-front
+{
+    position:         absolute;
+    z-index:          2;
+    top:              1px;
+    max-height:       100%;
     background-image: url(../images/intro/front.png);
-    position: absolute;
-    top: 1px;
-    z-index: 2;
-    max-height: 100%;
 
 
 }
 
 
-.logo-duck {
-    background-image: url(../images/intro/appear.png);
-    position: absolute;
-    left: 75%;
-    bottom: 9%;
-    width: 266.5px;
-    height: 278px;
+.logo-duck
+{
+    position:          absolute;
+    z-index:           10;
+    bottom:            9%;
+    left:              75%;
+    width:             266.5px;
+    height:            278px;
     /*background-position: 0;*/
+    background-image:  url(../images/intro/appear.png);
     background-repeat: no-repeat;
-    z-index: 10;
 
 
 }
 
-.logo-panel {
-    background-image: url(../images/intro/HHeader.svg);
-    height: 100%;
-    width: 20%;
-    max-width: 20%;
+.logo-panel
+{
+    position:          absolute;
+    z-index:           9;
+    visibility:        hidden;
+    width:             20%;
 
-    background-size: auto;
+    max-width:         20%;
+    height:            100%;
+
+    background-image:  url(../images/intro/HHeader.svg);
     background-repeat: no-repeat;
-
-    z-index: 9;
-    position: absolute;
-    visibility: hidden;
+    background-size:   auto;
 }
 
 /*.nav-button-container {*/
@@ -131,185 +161,251 @@ canvas {
 /*    visibility: hidden;*/
 /*}*/
 
-.interior, .nav-button {
-    transition: all .25s;
-    text-align: center;
+.interior, .nav-button
+{
+    position:       relative;
+    display:        block;
+    width:          200px;
+    height:         40px;
+    margin:         8px 0 0 8px;
+    transition:     all .25s;
+    text-align:     center;
     vertical-align: middle;
-    border-radius: 5px;
-    margin: 8px 0 0 8px;
-    border: 2px solid #03a4db;
-    width: 200px;
-    height: 40px;
-    background: white;
-    display: block;
-    position: relative;
+    border:         2px solid #03A4DB;
+    border-radius:  5px;
+    background:     white;
 
-    box-shadow: #03a4db 1px 1px 0,
-    #03a4db 2px 2px 0,
-    #03a4db 3px 3px 0,
-    #03a4db 4px 4px 0,
-    #03a4db 5px 5px 0,
-    #03a4db 6px 6px 0,
-    #03a4db 7px 7px 0,
-    #03a4db 8px 8px 0;
+    box-shadow:     #03A4DB 1px 1px 0,
+                    #03A4DB 2px 2px 0,
+                    #03A4DB 3px 3px 0,
+                    #03A4DB 4px 4px 0,
+                    #03A4DB 5px 5px 0,
+                    #03A4DB 6px 6px 0,
+                    #03A4DB 7px 7px 0,
+                    #03A4DB 8px 8px 0;
 }
 
-.nav-button:hover {
-    margin: 16px 0 0 16px;
-    box-shadow: #03a4db 0px 0px 0,
-    #03a4db 0px 0px 0,
-    #03a4db 0px 0px 0,
-    #03a4db 0px 0px 0,
-    #03a4db 0px 0px 0,
-    #03a4db 0px 0px 0,
-    #03a4db 0px 0px 0,
-    #03a4db 0px 0px 0;
+.nav-button:hover
+{
+    margin:     16px 0 0 16px;
+    box-shadow: #03A4DB 0px 0px 0,
+                #03A4DB 0px 0px 0,
+                #03A4DB 0px 0px 0,
+                #03A4DB 0px 0px 0,
+                #03A4DB 0px 0px 0,
+                #03A4DB 0px 0px 0,
+                #03A4DB 0px 0px 0,
+                #03A4DB 0px 0px 0;
 }
 
-.logo-title-container {
-    height: 100%;
-    width: 40%;
+.logo-title-container
+{
     position: absolute;
-    left: 35%;
+    left:     35%;
+    width:    40%;
+    height:   100%;
+    color:    #000;
     /*display:flex;*/
     /*flex-direction: column;*/
     /*justify-content: center;*/
 }
 
 
-.logo-text {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-40%);
+.logo-text
+{
     font-size: 1.5rem;
+    position:  absolute;
+    top:       50%;
+    left:      50%;
+    width:     100%;
+    height:    100%;
+    transform: translateX(-40%);
 }
 
-.logo-title {
+.logo-title
+{
 
-    background-image: url(../images/intro/LogoAdjustedSize.png);
-    height: 100%;
-    width: 100%;
-    top: 25%;
+    position:                absolute;
+    z-index:                 8;
+    top:                     25%;
+    width:                   100%;
     /*left: 41%;*/
     /*top: 30%;*/
     /*max-width: 671px;*/
     /*max-height: 231px;*/
-    opacity: 0;
-    position: absolute;
-    z-index: 8;
-    -moz-background-size: contain;
-    -o-background-size: contain;
+    height:                  100%;
+    opacity:                 0;
+    background-image:        url(../images/intro/LogoAdjustedSize.png);
+    background-repeat:       no-repeat;
+    -moz-background-size:    contain;
+    -o-background-size:      contain;
     -webkit-background-size: contain;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size:         contain;
 }
 
-#enterPondButton {
-    background-color: #03a4db;
-    border-radius: 5px;
-    color: #ffffef;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2.5rem;
-    margin: auto;
-    opacity: 0;
-    text-align: center;
+#enterPondButton
+{
+    font-size:        2.5rem;
+    position:         absolute;
+    z-index:          9;
+    top:              50%;
+    left:             50%;
+    margin:           auto;
+    transform:        translate(-50%, -50%);
+    text-align:       center;
+    text-decoration:  none;
+    opacity:          0;
+    color:            #FFFFEF;
     /*width: 20%;*/
 
-    z-index: 9;
-    text-decoration: none;
+    border-radius:    5px;
+    background-color: #03A4DB;
 
 }
 
+#pond-ui
+{
+    position:             fixed;
+    z-index:              2;
+    /*background: url("/src/assets/images/ui/subaru_uitest_1.png") no-repeat;*/
+    top:                  56px;
+    left:                 0;
+    display:              none;
+    width:                220px;
+    max-width:            100%;
+    height:               200px;
+    margin:               1em 1em 1em;
 
-#pond-ui {
-    -moz-border-image: url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;
-    -o-border-image: url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;
-    -webkit-border-image: url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;
-    background-color: transparent;
-    background-size: 100% 100%;
-    border: 30px solid transparent;
-    border-image: url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;
-    display: none;
-    height: 200px;
-    left: 0;
-    margin: 1em;
-    max-width: 100%;
+    /*padding: 1em 2em 2em;*/
+    border:               30px solid transparent;
+
+    -moz-border-image:    url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat; /* Old firefox */
+    -o-border-image:      url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat; /* Opera */
+    -webkit-border-image: url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat; /* Safari */
+    border-image:         url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat;
+    background-color:     transparent;
+    background-size:      100% 100%;
+}
+
+#pond-ui .inner-ui
+{
+    position:         relative;
+    top:              -1px;
+    left:             -1px;
+    width:            102%;
+    height:           102%;
+    background-color: #FFFFEF;
+}
+
+.inner-ui, .button-list
+{
+
+    box-sizing: border-box
+}
+
+.inner-ui h3
+{
+    font-size:     2rem;
+    margin-top:    0;
+    margin-bottom: 0.5rem;
+}
+
+/*#pond-ui*/
+/*{*/
+/*    -moz-border-image    : url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;*/
+/*    -o-border-image      : url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;*/
+/*    -webkit-border-image : url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;*/
+/*    background-color     : transparent;*/
+/*    background-size      : 100% 100%;*/
+/*    border               : 30px solid transparent;*/
+/*    border-image         : url(/src/assets/images/ui/subaru_uitest_1.png) 30 30 repeat;*/
+/*    display              : none;*/
+/*    height               : 200px;*/
+/*    left                 : 0;*/
+/*    margin               : 1em;*/
+/*    max-width            : 100%;*/
+/*    position             : fixed;*/
+/*    top                  : 56px;*/
+/*    width                : 220px;*/
+/*    z-index              : 2;*/
+/*}*/
+
+/*#pond-ui .inner-ui*/
+/*{*/
+/*    background-color : #FFFFEF;*/
+/*    height           : 102%;*/
+/*    left             : -1px;*/
+/*    position         : relative;*/
+/*    top              : -1px;*/
+/*    width            : 102%;*/
+
+/*}*/
+
+.navbar
+{
     position: fixed;
-    top: 56px;
-    width: 220px;
-    z-index: 2;
+    z-index:  3;
+    top:      0;
+    width:    100%;
 }
 
-#pond-ui .inner-ui {
-    background-color: #ffffef;
-    height: 102%;
-    left: -1px;
-    position: relative;
-    top: -1px;
-    width: 102%;
-
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 3;
-}
-
-#loadingDuck {
-    left: 0;
-    margin: auto;
+#loadingDuck
+{
+    position:   fixed;
+    top:        0;
+    right:      0;
+    left:       0;
     max-height: 50vh;
-    position: fixed;
-    right: 0;
-    top: 0;
+    margin:     auto;
 }
 
-.load-pond {
+.load-pond
+{
     display: none;
 }
 
-#about-subaru .about-content, .load-pond.visible {
+#about-subaru .about-content, .load-pond.visible
+{
     display: inline-block;
 }
 
-.load-pond.selectedPond {
+.load-pond.selectedPond
+{
     background-color: red;
 }
 
-img {
+img
+{
     max-width: 90%;
 }
 
-.screen img, h1 {
+.screen img, h1
+{
     text-align: center;
 }
 
-#about-project .project-text {
-    margin: auto;
+#about-project .project-text
+{
     max-width: 600px;
+    margin:    auto;
 }
 
 
-#screens {
+#screens
+{
+    display:       block;
     align-content: center;
-    align-items: center;
-    display: block;
-    height: 100%;
+    align-items:   center;
+    height:        100%;
 }
 
-.selectLang {
+.selectLang
+{
+    max-width:  200px;
     max-height: 200px;
-    max-width: 200px;
 }
 
-.none {
+.none
+{
     background-image: url(../images/intro/idle.png);
 }

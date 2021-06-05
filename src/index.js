@@ -306,6 +306,7 @@ function startHomepageAnimation() {
                     window.game.scene.getScene("pond").updatePagination();
                 });
         });
+        $(this).off();
     });
 
 
