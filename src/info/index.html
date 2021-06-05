@@ -445,7 +445,7 @@
                                 <img id="menuMobile" onclick="$('#right-tools').addClass('active');"
                                      src="bars-solid.svg">
                                 <!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
-                                <h1 style="text-align:center;">Duck editor</h1>
+                                <h1 style="text-align:center;" text="e-0">Duck editor</h1>
                                 <div id="newImg"></div>
                                 <img crossOrigin="Anonymous" id="duck1" src="1.png"
                                      style=" position:fixed; top:-10000px; left:-10000px;"/>
@@ -458,8 +458,8 @@
                                 <div class="editor-container">
                                     <div id="imagesToolbar">
                                         <div id="images">
-                                            <h3>Accessories</h3>
-                                            <h3>Click to add to canvas</h3>
+                                            <h3 text="e-1">Accessories</h3>
+                                            <h3 text="e-2">Click to add to canvas</h3>
 
                                         </div>
                                     </div>
@@ -478,7 +478,7 @@
 
                                         <div id="result">
                                             <hr>
-                                            <h1>Result</h1>
+                                            <h1 text="e-3">Result</h1>
                                             <canvas height="300" id="source" width="300"></canvas>
                                             <canvas height="300" id="copy" width="300"></canvas>
                                             <div id="resultCanvas">
@@ -490,50 +490,53 @@
 
 
                                     <div id="right-tools">
-                                        <h3>Drawing</h3>
-                                        <button class="btn btn-info" id="drawing-mode" type="button">Enter drawing
+                                        <h3 text="e-4">Drawing</h3>
+                                        <button class="btn btn-info" id="drawing-mode" text="e-5" type="button">Enter
+                                            drawing
                                             mode
                                         </button>
                                         <br>
-                                        <button class="btn btn-info" id="clear-canvas" type="button">Reset Duck</button>
+                                        <button class="btn btn-info" id="clear-canvas" text="e-6" type="button">Reset
+                                            Duck
+                                        </button>
                                         <br>
 
                                         <div id="drawing-mode-options" style="display:none;">
-                                            <label for="drawing-mode-selector">Mode:</label>
+                                            <label for="drawing-mode-selector" text="e-7">Mode:</label>
                                             <select id="drawing-mode-selector">
-                                                <option>Pencil</option>
-                                                <option>Circle</option>
-                                                <option>Spray</option>
-                                                <option>Pattern</option>
+                                                <option text="e-8">Pencil</option>
+                                                <option text="e-9">Circle</option>
+                                                <option text="e-10">Spray</option>
+                                                <option text="e-11">Pattern</option>
                                             </select><br>
 
-                                            <label for="drawing-line-width">Line width:</label>
+                                            <label for="drawing-line-width" text="e-12">Line width:</label>
                                             <span class="info">8</span><input id="drawing-line-width" max="150" min="0"
                                                                               type="range" value="8"><br>
 
-                                            <label for="drawing-color">Line color:</label>
+                                            <label for="drawing-color" text="e-13">Line color:</label>
                                             <input id="drawing-color" type="color" value="#005E7A"><br>
 
-                                            <label for="drawing-shadow-color">Shadow color:</label>
+                                            <label for="drawing-shadow-color" text="e-14">Shadow color:</label>
                                             <input id="drawing-shadow-color" type="color" value="#005E7A"><br>
 
-                                            <label for="drawing-shadow-width">Shadow width:</label>
+                                            <label for="drawing-shadow-width" text="e-15">Shadow width:</label>
                                             <span class="info">16</span><input id="drawing-shadow-width" max="50"
                                                                                min="0" type="range" value="0"><br>
 
-                                            <label for="drawing-shadow-offset">Shadow offset:</label>
+                                            <label for="drawing-shadow-offset" text="e-16">Shadow offset:</label>
                                             <span class="info">0</span><input id="drawing-shadow-offset" max="50"
                                                                               min="0" type="range" value="0"><br>
                                         </div>
                                         <div style="text-align:center;">
                                             <button id="generateDuck"
                                                     onclick="generateSpriteSheet()"
-                                                    type="button">
+                                                    text="e-17" type="button">
                                                 Generate Duck Spritesheet
                                             </button>
 
                                             <button id="downloadLink" onclick="download();"
-                                                    type="button">
+                                                    text="e-18" type="button">
                                                 Download
                                             </button>
                                         </div>
@@ -703,7 +706,8 @@
                                         } else {
                                             // Replace with a fallback to a library solution.
                                             //todo: tl string
-                                            alert("This browser doesn't support the HTML5 Drag and Drop API.");
+                                            // alert("This browser doesn't support the HTML5 Drag and Drop API.");
+                                            alert(strings[lang]["Editor"][19]);
                                         }
 
 
@@ -718,7 +722,8 @@
 
                                         clearEl.onclick = function () {
                                             let txt;
-                                            const r = confirm("Reset Duck? All elements and drawings will be deleted");
+                                            // const r = confirm("Reset Duck? All elements and drawings will be deleted");
+                                            const r = confirm(strings[lang]["Editor"][20]);
                                             if (r == true) {
 
                                             } else {
@@ -731,10 +736,12 @@
                                         drawingModeEl.onclick = function () {
                                             canvas.isDrawingMode = !canvas.isDrawingMode;
                                             if (canvas.isDrawingMode) {
-                                                drawingModeEl.innerHTML = "Cancel drawing mode";
+                                                drawingModeEl.innerHTML = strings[lang]["Editor"][21];
+                                                // drawingModeEl.innerHTML = "Cancel drawing mode";
                                                 drawingOptionsEl.style.display = "";
                                             } else {
-                                                drawingModeEl.innerHTML = "Enter drawing mode";
+                                                drawingModeEl.innerHTML = strings[lang]["Editor"][5];
+                                                // drawingModeEl.innerHTML = "Enter drawing mode";
                                                 drawingOptionsEl.style.display = "none";
                                             }
                                         };
@@ -1033,7 +1040,7 @@
                                         cropCtx.drawImage(imageCrop, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
                                         const image = new Image();
                                         image.src = cropCanvas.toDataURL();
-                                        ;
+
                                         $("#images").append(image);
 
 
@@ -1058,7 +1065,8 @@
 
                                 </script>
                             </div>
-                            <label id="editor-sub">If you made changes, generate the spritesheet again before
+                            <label id="editor-sub" text="e-22">If you made changes, generate the spritesheet again
+                                before
                                 submitting.</label>
                             <input class="form-control" id="submit" text="u-41" type="submit"/>
                         </div>
@@ -1118,12 +1126,14 @@
         let guidelinesTags = $("#guidelines [text]");
         let specsTags = $("#specs [text]");
         let uploadTags = $("#upload-container [text]");
+        let editorTags = $("#editor [text]");
         let links = strings[lang]["Links"];
         let tutorial = strings[lang]["TUTORIAL"];
         let home = strings[lang]["Advertisement"];
         let guidelines = strings[lang]["GUIDELINES"];
         let specs = strings[lang]["Technical Specifications"];
         let upload = strings[lang]["UPLOAD"];
+        let editor = strings[lang]["Editor"];
 
         [...uploadTags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
@@ -1163,6 +1173,12 @@
             let index = textAttr.substr(2);
 
             t.textContent = specs[index];
+        });
+        [...editorTags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(2);
+
+            t.textContent = editor[index];
         });
     }
 
