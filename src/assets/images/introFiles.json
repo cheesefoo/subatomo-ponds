@@ -1,0 +1,177 @@
+{
+  "textures": [
+    {
+      "image": "introFiles-0",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1920,
+        "h": 2003
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "bg1-gr-white.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 1920,
+            "h": 1080
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 1920,
+            "h": 1080
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1920,
+            "h": 1080
+          }
+        },
+        {
+          "filename": "HomePageWhole_Adjusted.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 1534,
+            "h": 720
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 1534,
+            "h": 720
+          },
+          "frame": {
+            "x": 0,
+            "y": 1080,
+            "w": 1534,
+            "h": 720
+          }
+        },
+        {
+          "filename": "HHeader.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 217,
+            "h": 720
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 217,
+            "h": 720
+          },
+          "frame": {
+            "x": 1534,
+            "y": 1080,
+            "w": 217,
+            "h": 720
+          }
+        },
+        {
+          "filename": "LogoAdjustedSize.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 671,
+            "h": 231
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 9,
+            "w": 653,
+            "h": 203
+          },
+          "frame": {
+            "x": 0,
+            "y": 1800,
+            "w": 653,
+            "h": 203
+          }
+        }
+      ]
+    },
+    {
+      "image": "introFiles-1",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1920,
+        "h": 1580
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "bg1-white.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 1920,
+            "h": 1080
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 1920,
+            "h": 1080
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1920,
+            "h": 1080
+          }
+        },
+        {
+          "filename": "subatomo army.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 800,
+            "h": 500
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 800,
+            "h": 500
+          },
+          "frame": {
+            "x": 0,
+            "y": 1080,
+            "w": 800,
+            "h": 500
+          }
+        },
+        {
+          "filename": "subahug3.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 370,
+            "h": 372
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 370,
+            "h": 372
+          },
+          "frame": {
+            "x": 800,
+            "y": 1080,
+            "w": 370,
+            "h": 372
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7"
+  }
+}
