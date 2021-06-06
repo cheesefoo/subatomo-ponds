@@ -20,22 +20,22 @@ body {
     /*text-align: center;*/
     /*height: 40px;*/
     /*position: relative;*/
+    display:        block;
+    max-width:      80%;
+    margin:         8px 0 32px 8px;
     vertical-align: middle;
-    border-radius: 5px;
-    margin: 8px 0 32px 8px;
-    border: 2px solid #518db9;
-    max-width: 600px;
-    background: white;
-    display: block;
+    border:         2px solid #518DB9;
+    border-radius:  5px;
+    background:     white;
 
-    box-shadow: #518db9 1px 1px 0,
-    #518db9 2px 2px 0,
-    #518db9 3px 3px 0,
-    #518db9 4px 4px 0,
-    #518db9 5px 5px 0,
-    #518db9 6px 6px 0,
-    #518db9 7px 7px 0,
-    #518db9 8px 8px 0;
+    box-shadow:     #518DB9 1px 1px 0,
+                    #518DB9 2px 2px 0,
+                    #518DB9 3px 3px 0,
+                    #518DB9 4px 4px 0,
+                    #518DB9 5px 5px 0,
+                    #518DB9 6px 6px 0,
+                    #518DB9 7px 7px 0,
+                    #518DB9 8px 8px 0;
 }
 
 .screen-inner {

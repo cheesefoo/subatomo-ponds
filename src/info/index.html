@@ -84,17 +84,18 @@
             <div>~NYI~ anyone wanna do it? :^)</div>
             <div text="a-25"></div>
             <div><h3 text="a-2"></h3><a href="#home-tldr" text="a-3"></a></div>
-            <div><span text="a-4"></span><a href="#specs-h" text="a-5"></a></div>
-            <div><span text="a-6"></span><a href="template.png" text="a-7"></a></div>
-            <div><span text="a-8"></span><a href="#tutorial" text="a-9"></a></div>
+            <div><span text="a-4"></span><a href="#specs-tab" text="a-5"></a></div>
+            <div><span text="a-6"></span><a href="template.png" target="_blank" text="a-7"></a></div>
+            <div><span text="a-8"></span><a href="#tutorial-tab" text="a-9"></a></div>
             <div><span text="a-10"></span>
-                <a href="../upload/upload.html" target="_blank" text="a-11"></a>
+                <a href="#upload-tab" text="a-11"></a>
             </div>
             <div>
                 <p>
                     <span text="a-12"></span>
+                    <a href="#upload-tab" text="a-13"></a>
                     <span text="a-14"></span>
-                    <a href="#specs-h" text="a-15"></a>
+                    <a href="#specs-tab" text="a-15"></a>
                     <span text="a-16"></span>
                 </p>
             </div>
@@ -102,9 +103,9 @@
                 <h3 id="home-tldr" text="a-17"></h3>
 
                 <span text="a-18"></span>
-                <a href="../upload/upload.html" text="a-19"></a>
+                <a href="#upload-tab" text="a-19"></a>
                 <span text="a-20"></span>
-                <a href="#specs-h" text="a-21"></a>
+                <a href="#specs-tab" text="a-21"></a>
                 <span text="a-22"></span>
                 <a href="#guidelines-tab" text="a-23"></a>
                 <div text="a-24"></div>
@@ -118,7 +119,7 @@
 
             <h1 text="g-0"></h1>
             <h2 text="g-1"></h2>
-            <span text="g-2"></span><a href="#home" text="g-3"></a>
+            <span text="g-2"></span><a href="#home-tab" text="g-3"></a>
             <p text="g-4"></p>
             <h3 text="g-5"></h3>
             <ul text="g-6"></ul>
@@ -161,16 +162,16 @@
                 <li>
                     <span text="g-29"></span>
                     <ul><span text="g-30"></span>
-                        <a href="#tutorial" text="g-31"></a>
+                        <a href="#tutorial-tab" text="g-31"></a>
                         <span text="g-32"></span>
-                        <a href="../editor/index.html" text="g-33"></a>
+                        <a class="editor-link" href="#upload-tab" text="g-33"></a>
                     </ul>
                 </li>
                 <li>
                     <span text="g-34"></span>
                     <ul>
                         <span text="g-35"></span>
-                        <a href="#specs-g" text="g-36"></a>
+                        <a href="#specs-tab" text="g-36"></a>
                         <span text="g-37"></span>
                     </ul>
                 </li>
@@ -220,9 +221,9 @@
             <h2 id="what-do-i-do" text="t-15"></h2>
             <div>
                 <span text="t-16"></span>
-                <a href="#guidelines" text="t-17"></a>
+                <a href="#guidelines-tab" text="t-17"></a>
                 <span text="t-18"></span>
-                <a href="#specs-tut" text="t-19"></a>
+                <a href="#specs-tab" text="t-19"></a>
             </div>
             <p></p>
             <p text="t-20"></p>
@@ -424,16 +425,13 @@
                         <p></p>
 
                         <select aria-label="uploadMethod" id="uploadMethodChoice" name="uploadMethod">
-
-                            <option text="u-43" value="upload">Upload my file</option>
-
-                            <option text="u-44" value="editor">Use our editor (limited
-                                functionality)
-                            </option>
-
                             <option text="u-45" value="template">Just use the template (no
                                 customizations)
                             </option>
+                            <option text="u-44" value="editor">Use our editor (limited
+                                functionality)
+                            </option>
+                            <option text="u-43" value="upload">Upload my file</option>
                         </select>
 
                         <div class="upload">
@@ -910,7 +908,7 @@
                                         const sheet = document.getElementById("spritesheet");
 
                                         let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
-                                        alert(e);
+                                        // alert(e);
                                         spritesheet.src = e;
 
                                         let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.split(",")[1] + "\" >";
@@ -992,6 +990,7 @@
                                     }
                                 </script>
 
+                                <!--                                <div style="position:absolute;left:0;">-->
                                 <div style="position:fixed;left:-10000000px;">
                                     <img id="bigTexture" onload="loadAccesoriesTexture()" src="texture.png">
                                     <div id="templateImages">
@@ -1009,7 +1008,7 @@
                                         <div class="glassestint"></div>
                                     </div>
                                 </div>
-                                <!--<canvas id="cropped" width=200 height=200 style="border:2px solid black;"></canvas>!-->
+
 
                                 <script>
 
@@ -1064,10 +1063,11 @@
 
 
                                 </script>
+                                <label id="editor-sub" style="display:none" text="e-22">If you made changes, generate
+                                    the spritesheet again
+                                    before
+                                    submitting.</label>
                             </div>
-                            <label id="editor-sub" text="e-22">If you made changes, generate the spritesheet again
-                                before
-                                submitting.</label>
                             <input class="form-control" id="submit" text="u-41" type="submit"/>
                         </div>
 
@@ -1268,7 +1268,38 @@
             break;
         }
     });
+    // deep linking - load tab on refresh
+    let url = location.href.replace(/\/$/, "");
+    if (location.hash) {
+        const hash = url.split("#");
+        const currentTab = document.querySelector("#nav-tab a[href=\"#" + hash[1] + "\"]");
+        const curTab = new bootstrap.Tab(currentTab);
+        curTab.show();
+        url = location.href.replace(/\/#/, "#");
+        history.replaceState(null, null, url);
+        setTimeout(() => {
+            window.scrollTop = 0;
+        }, 400);
+    }
+    // change url based on selected tab
+    const selectableTabList = [].slice.call(document.querySelectorAll("a[data-toggle=\"tab\"]"));
+    selectableTabList.forEach((selectableTab) => {
+        const selTab = new bootstrap.Tab(selectableTab);
+        selectableTab.addEventListener("click", function () {
+            var newUrl;
+            const hash = selectableTab.getAttribute("href");
+            if (hash == "#home-tab") {
+                newUrl = url.split("#")[0];
+            } else {
+                newUrl = url.split("#")[0] + hash;
+            }
+            history.replaceState(null, null, newUrl);
+        });
+    });
 
+    $(".editor-link").on("click", function () {
+        $("#uploadMethodChoice").val("editor");
+    });
 </script>
 <script crossorigin="anonymous"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
