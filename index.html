@@ -21,6 +21,11 @@
 
 <div id="ghost" style="display:none;"></div>
 <img alt="loading" id="loadingDuck" src="assets/loading.gif">
+<div id="hamburguer">
+<span></span>
+<span></span>
+<span></span>
+</div>
 <div id="home">
 
     <div class="logo logo-bg logo-sky"></div>
@@ -43,7 +48,7 @@
         <div class="lang-container">
             <div class="select">
                 <!-- You can toggle select (disabled) -->
-                <input name="option" type="radio">
+                <input name="option" type="checkbox">
                 <i class="toggle icon icon-arrow-down"></i>
                 <i class="toggle icon icon-arrow-up"></i>
                 <span class="placeholder" text="main-5">Language</span>
@@ -152,7 +157,9 @@
 <script defer>
     $(function () {
         loadTranslationsJSON().then(loadTexts);
-
+		$("#hamburguer").click(function(){
+		$(".logo-panel").toggleClass("active");
+		});
     });
 
     function loadTexts() {

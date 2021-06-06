@@ -1,9 +1,9 @@
 let DEBUGGING = false;
 let TEST_DATA = true;
 
-require("./assets/css/style.min.css");
 require("./assets/css/modal.min.css");
 require("./assets/css/dropdown-img.min.css");
+require("./assets/css/style.css");
 require("./assets/images/intro/loading.gif");
 
 function importAll(r) {
@@ -133,6 +133,8 @@ function startHomepageAnimation() {
     $("#home").show();
     gsap.set(".modal-window", {visibility: "inherit", delay: 5});
     let tl = gsap.timeline();
+	
+	if(window.innerWidth>900){
     tl.fromTo(".logo-panel", {
         autoAlpha: 0,
         opacity: 0,
@@ -144,6 +146,7 @@ function startHomepageAnimation() {
         duration: 3,
         delay: 5
     }, 0);
+	}
 
     tl.from(".logo-bg", {
         autoAlpha: 0,
@@ -207,15 +210,18 @@ function startHomepageAnimation() {
         autoAlpha: 0,
         opacity: 0,
         y: 0,
+		x:"50%",
     }, {
         autoAlpha: 1,
         opacity: 1,
+		x:"50%",
         y: "20vh",
         duration: 5,
         delay: 4
 
     }, 0);
-
+	
+	if(window.innerWidth>900){
     tl.fromTo(".interior", {
         autoAlpha: 0,
         x: "-100%"
@@ -230,11 +236,13 @@ function startHomepageAnimation() {
             amount: 1.5
         }
     }, 0);
+	
 
     tl.set(".nav-button-container", {
         autoAlpha: 1, delay: 4
     }, 0);
-
+	}
+	
     let appearFrameNums = 27;
     let frameWidth = 266.5;
 

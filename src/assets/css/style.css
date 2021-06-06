@@ -95,7 +95,7 @@ canvas
     /*max-height: 656px;*/
     max-height:       70%;
     background-image: url(../images/intro/mid.png);
-
+	background-position:center;
     /*position: absolute;*/
     /*!*height:100vh;*!*/
     /*!*width:100vh;*!*/
@@ -408,4 +408,137 @@ img
 .none
 {
     background-image: url(../images/intro/idle.png);
+}
+
+.lang-container{
+		min-height:initial;
+	}
+	.container{
+		height:85vh;
+		padding-top:15vh;
+	}
+
+@media (max-width: 900px) {
+	.logo-title-container{
+		width:100%;
+		left:0;
+	}
+	
+	.logo-title{
+		position:initial;
+		top:0;
+		height:20vh;
+		margin-top:8vh;
+	}
+	
+	.logo-front{
+		    position: absolute;
+    z-index: 2;
+    top: 1px;
+    max-height: 100%;
+    height: 30vh;
+	margin-top:5vh;
+    background-size: 100% auto;
+    background-position: top center;
+    width: 100%;
+    top: initial;
+    bottom: 0;
+	}
+	
+	.logo-panel{
+		display:block;
+		width:100vw;
+		max-width:initial;
+		left:-100vw;
+		transition:0.5s;
+		visibility:initial !important;
+		opacity:0;
+		position:fixed;
+		z-index:10;
+	}
+	.logo-panel.active{
+		left:0;
+		opacity:1;
+	}
+	
+	.logo-text{
+		position:initial;
+		text-align:center;
+		transform:initial;
+		height:auto;
+		margin-bottom:2vh;
+	}
+	
+	#enterPondButton{
+		font-size: 2.5rem;
+		position: relative;
+		z-index: 9;
+		top: initial;
+		margin: auto;
+		text-align: center;
+		text-decoration: none;
+		opacity: 0;
+		color: #FFFFEF;
+		border-radius: 5px;
+		background-color: #03A4DB;
+		margin: auto;
+		width: 90%;
+		display: block;
+		top:-15vh;
+		left:initial;
+	}
+	
+	.logo-mid{
+		background-position:center;
+	}
+	
+	.logo-sky{
+		position: absolute;
+		z-index: 0;
+		visibility: hidden;
+		background-size: auto 100%;
+		background-position: 20% top;
+	}
+	.logo-mid{
+		background-position:center top;
+	}
+	.logo-duck{
+		left:15vw;
+		bottom:0;
+	}
+	
+	#hamburguer{
+		position:fixed;
+		top:10px;
+		left:10px;
+		z-index:100;
+		padding:5px;
+		background-color:rgba(0,0,0,0.5);
+		padding-top:10px;
+		border-radius:5px;
+	}
+	
+	#hamburguer span{
+	    display: block;
+		width: 33px;
+		height: 4px;
+		margin-bottom: 5px;
+		position: relative;
+		background: #cdcdcd;
+		border-radius: 3px;
+		z-index: 1;
+		transform-origin: 4px 0px;
+		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				  opacity 0.55s ease;
+	}
+	
+	.modal-window>div{
+		width:80vw;
+	}
+	
+	.modal-window{
+		background-color:rgba(0,0,0,0.5);
+	}
+	
 }
