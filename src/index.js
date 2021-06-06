@@ -215,11 +215,13 @@ function startHomepageAnimation() {
 			opacity: 0,
 			y: 0,
 			x:0,
+			top:"100vh",
 		}, {
 			autoAlpha: 1,
 			opacity: 1,
 			x:0,
 			y: "20vh",
+			top:"65vh",
 			duration: 5,
 			delay: 4
 
@@ -229,12 +231,12 @@ function startHomepageAnimation() {
 			autoAlpha: 0,
 			opacity: 0,
 			y: 0,
-			x:"50%",
+			x:0,
 		}, {
 			autoAlpha: 1,
 			opacity: 1,
-			x:"50%",
-			y: "20vh",
+			x:0,
+			y: "10vh",
 			duration: 5,
 			delay: 4
 
@@ -265,17 +267,19 @@ function startHomepageAnimation() {
 	
     let appearFrameNums = 27;
     let frameWidth = 266.5;
-
+	$("#duck-idle").hide();
     tl.set(".logo-duck", {
         autoAlpha: 1, delay: 4
     }, 0);
-    tl.to(".logo-duck", {
-        backgroundImage: "url(assets/appear.png)",
+    tl.to("#duck-emerge", {
         backgroundPosition: (-frameWidth * appearFrameNums) + "px 0",
         ease: "steps(" + appearFrameNums + ")",
-        duration: 2.8,
+        duration: 2,
         delay: 4,
-        // onComplete: function () {
+        onComplete: function () {
+			$("#duck-emerge").hide();
+			$("#duck-idle").show();
+		}
         //     console.log("duck done");
         //     let duck = document.getElementsByClassName("logo-duck")[0];
         //     duck.style.backgroundImage = "url(assets/idle.png)";
@@ -294,13 +298,13 @@ function startHomepageAnimation() {
     }, 0);
     let idleFrameNums = 66;
 
-    gsap.set(".logo-duck", {backgroundImage: "url(assets/idle.png)", backgroundPosition: 0, delay: 6.8});
-    gsap.to(".logo-duck", {
+    //gsap.set("#duck-idle", {backgroundImage: "url(assets/idle.png)", backgroundPosition: 0, delay: 6.8});
+    gsap.to("#duck-idle", {
         backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
         ease: "steps(" + idleFrameNums + ")",
         duration: 5,
         repeat: -1,
-        delay: 7.8
+        delay: 7
     });
 
 
@@ -363,7 +367,7 @@ class MyGame extends Phaser.Scene {
             progressBox.fillStyle(0x222222, 0.8);
             progressBox.fillRect(
                 sceneWidth * 0.5 - progressWidth * 0.5 - 10,
-                sceneHeight * 0.5,
+                sceneHeight * 0.9,
                 progressWidth,
                 50
             );
@@ -372,7 +376,7 @@ class MyGame extends Phaser.Scene {
             const height = this.cameras.main.height;
             const loadingText = this.make.text({
                 x: width / 2,
-                y: height / 2 - 55,
+                y: sceneHeight * 0.9 - 55,
                 text: "Loading...",
                 style: {
                     font: "20px 'Nodo Sans JP'",
@@ -383,7 +387,7 @@ class MyGame extends Phaser.Scene {
 
             const percentText = this.make.text({
                 x: width / 2,
-                y: height / 2 - 30,
+                y: sceneHeight * 0.9 - 30,
                 text: "0%",
                 style: {
                     font: "18px 'Nodo Sans JP'",
@@ -398,7 +402,7 @@ class MyGame extends Phaser.Scene {
                 progressBar.fillStyle(0xffffff, 1);
                 progressBar.fillRect(
                     sceneWidth * 0.5 - progressWidth * 0.5,
-                    sceneHeight * 0.5 + 10,
+                    sceneHeight * 0.9 + 10,
                     (progressWidth - 20) * value,
                     30
                 );

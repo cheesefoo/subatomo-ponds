@@ -127,7 +127,35 @@ canvas
     width:             266.5px;
     height:            278px;
     /*background-position: 0;*/
+    
+    background-repeat: no-repeat;
+
+
+}
+
+#duck-emerge
+{
+    position:          absolute;
+    z-index:           10;
+    bottom:            0;
+    left:              0;
+    width:             100%;
+    height:            100%;
     background-image:  url(../images/intro/appear.png);
+    background-repeat: no-repeat;
+
+
+}
+
+#duck-idle
+{
+    position:          absolute;
+    z-index:           10;
+    bottom:            0;
+    left:              0;
+    width:             100%;
+    height:            100%;
+    background-image:  url(../images/intro/idle.png);
     background-repeat: no-repeat;
 
 
@@ -164,7 +192,7 @@ canvas
 {
     position:       relative;
     display:        block;
-    width:          200px;
+    width:          230px;
     height:         40px;
     margin:         8px 0 0 8px;
     transition:     all .25s;
@@ -173,7 +201,6 @@ canvas
     border:         2px solid #03A4DB;
     border-radius:  5px;
     background:     white;
-
     box-shadow:     #03A4DB 1px 1px 0,
                     #03A4DB 2px 2px 0,
                     #03A4DB 3px 3px 0,
@@ -200,10 +227,11 @@ canvas
 .logo-title-container
 {
     position: absolute;
-    left:     35%;
-    width:    40%;
+    left:     30vw;
+    width:    40vw;
     height:   100%;
     color:    #000;
+	text-align:center;
     /*display:flex;*/
     /*flex-direction: column;*/
     /*justify-content: center;*/
@@ -215,10 +243,10 @@ canvas
     font-size: 1.5rem;
     position:  absolute;
     top:       50%;
-    left:      50%;
+   
     width:     100%;
     height:    100%;
-    transform: translateX(-40%);
+   
 }
 
 .logo-title
@@ -245,12 +273,9 @@ canvas
 #enterPondButton
 {
     font-size:        2.5rem;
-    position:         absolute;
+    position:         relative;
     z-index:          9;
-    top:              50%;
-    left:             50%;
     margin:           auto;
-    transform:        translate(-50%, -50%);
     text-align:       center;
     text-decoration:  none;
     opacity:          0;
@@ -258,7 +283,10 @@ canvas
     /*width: 20%;*/
 
     border-radius:    5px;
-    background-color: #03A4DB;
+    background-color: #e54e17;
+	width:auto;
+	max-width:initial;
+	padding:15px 20px;
 
 }
 
@@ -425,6 +453,13 @@ img
     align-content: stretch;
 }
 
+.nav-button-container .btn{
+	position:relative;
+	top:7px;
+	font-weight:800;
+		color:#e54e17 !important;
+}
+
 .nav-button-container .container .interior{
 	margin-top:35px;
 }
@@ -432,6 +467,11 @@ img
 .select label.option input:checked~span.title{
 	position:relative;
 	background-color:#ffda3e;
+}
+
+.modal-window>div{
+	max-height:80vh;
+	overflow:scroll;
 }
 
 @media (max-width: 900px) {
@@ -486,22 +526,23 @@ img
 	}
 	
 	#enterPondButton{
-		font-size: 2.5rem;
-		position: relative;
-		z-index: 9;
-		top: initial;
-		margin: auto;
-		text-align: center;
-		text-decoration: none;
-		opacity: 0;
-		color: #FFFFEF;
-		border-radius: 5px;
-		background-color: #03A4DB;
-		margin: auto;
-		width: 90%;
-		display: block;
-		top:-15vh;
-		left:initial;
+		    font-size: 1.5rem;
+    position: relative;
+    z-index: 9;
+    top: initial;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    color: #FFFFEF;
+    border-radius: 5px;
+    background-color: #e54e17;
+    margin: auto;
+    width: 80%;
+    display: block;
+    top: -10vh;
+    left: initial;
+		
 	}
 	
 	.logo-mid{
