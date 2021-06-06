@@ -15,16 +15,16 @@
 
     <!--	<link href="./css/style.css">-->
     <link href="/manifest.webmanifest" rel="manifest"/>
-    <title text="main-1">Subatomo Ponds</title>
+    <title class="main" text="main-1">Subatomo Ponds</title>
 </head>
 <body>
 
 <div id="ghost" style="display:none;"></div>
 <img alt="loading" id="loadingDuck" src="assets/loading.gif">
 <div id="hamburguer">
-<span></span>
-<span></span>
-<span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 </div>
 <div id="home">
 
@@ -38,11 +38,11 @@
     <div class="logo-title-container">
 
         <div class="logo logo-title"></div>
-        <div class="logo-text" style="visibility: hidden;" text="main-22">Happy birthday and congratulations on 1
+        <div class="logo-text main" style="visibility: hidden;" text="main-22">Happy birthday and congratulations on 1
             million subscribers, Subaru!!!
         </div>
 
-        <a class="nav-link logo" href="#" id="enterPondButton" text="main-11"></a>
+        <a class="nav-link logo main" href="#" id="enterPondButton" text="main-11"></a>
     </div>
     <div class="logo-panel" style="visibility: hidden;">
         <div class="lang-container">
@@ -51,7 +51,7 @@
                 <input name="option" type="checkbox">
                 <i class="toggle icon icon-arrow-down"></i>
                 <i class="toggle icon icon-arrow-up"></i>
-                <span class="placeholder" text="main-5">Language</span>
+                <span class="placeholder main" text="main-5">Language</span>
                 <label class="option">
                     <input class="lang-radio" lang="EN" name="option" type="radio">
                     <span class="title"><i class="icon flag-icon flag-icon-us selectLang"></i>EN</span>
@@ -92,19 +92,19 @@
         <div class="nav-button-container">
             <div class="container">
                 <div class="interior">
-                    <a class="btn" href="#about-project" text="main-12">About the project</a>
+                    <a class="btn main" href="#about-project" text="main-12">About the project</a>
                 </div>
 
                 <div class="interior">
-                    <a class="btn" href="#about-subaru" text="main-13">About Oozora Subaru</a>
+                    <a class="btn main" href="#about-subaru" text="main-13">About Oozora Subaru</a>
                 </div>
 
                 <div class="interior">
-                    <a class="btn" href="src/info/index.html" text="main-24">Submit your own duck</a>
+                    <a class="btn main" href="src/info/index.html" text="main-23">Submit your own duck</a>
                 </div>
 
                 <div class="interior">
-                    <a class="btn credits" href="#credits" text="c-0">Credits</a>
+                    <a class="btn main credits" href="#credits" text="c-0">Credits</a>
                 </div>
             </div>
         </div>
@@ -114,12 +114,12 @@
     <div class="modal-window" id="about-project" style="visibility: hidden;">
         <div>
             <a class="modal-close" href="#" title="Close">X</a>
-            <h1 text="main-3"></h1>
-            <img alt="subatomo army" src="src/assets/images/subatomo army.png"/>
+            <h1 class="main" text="main-3"></h1>
+            <img alt="subatomo army" src="assets/subatomo army.png"/>
             <div class="project-text">
-                <span text="main-18"></span>
+                <span class="main" text="main-18"></span>
                 <br/><br/>
-                <span text="main-19"></span>
+                <span class="main" text="main-19"></span>
             </div>
         </div>
     </div>
@@ -128,17 +128,17 @@
         <div>
             <a class="modal-close" href="#" title="Close">X</a>
 
-            <h1 text="main-13">About Oozora Subaru</h1>
-            <img alt="subaru" src="src/assets/images/subahug3.png"/>
+            <h1 class="main" text="main-13">About Oozora Subaru</h1>
+            <img alt="subaru" src="assets/SubaBlush_Transparent1.png"/>
             <div class="about-content">
                 <p>
-                    <span text="main-20"></span>
+                    <span class="main" text="main-20"></span>
                     <br/>
-                    <span text="main-21"></span>
+                    <span class="main" text="main-21"></span>
 
                 </p>
                 <br/>
-                <a href="https://www.youtube.com/channel/UCvzGlP9oQwU&#45;&#45;Y0r9id_jnA" text="main-14">Youtube
+                <a class="main" href="https://www.youtube.com/channel/UCvzGlP9oQwU&#45;&#45;Y0r9id_jnA" text="main-14">Youtube
                     channel</a>
             </div>
         </div>
@@ -148,7 +148,7 @@
             <a class="modal-close" href="#" title="Close">X</a>
 
             <h1 class="credits" text="c-1">Credits</h1>
-            <img alt="subaru" src="src/assets/images/subahug3.png"/>
+            <img alt="subaru" src="assets/subahug3.png"/>
         </div>
     </div>
 
@@ -157,9 +157,9 @@
 <script defer>
     $(function () {
         loadTranslationsJSON().then(loadTexts);
-		$("#hamburguer").click(function(){
-		$(".logo-panel").toggleClass("active");
-		});
+        $("#hamburguer").click(function () {
+            $(".logo-panel").toggleClass("active");
+        });
     });
 
     function loadTexts() {
@@ -169,7 +169,7 @@
         if (lang == null) {
             console.error("lang not set");
         }
-        let tags = $("[text]");
+        let tags = $(".main");
         let creditsTags = $(".credits");
 
         let mainTexts = strings[lang]["Main page"];
@@ -191,16 +191,12 @@
     }
 
     $(".lang-radio").on("change", function () {
-        if ($(this).attr("checked")) {
-            lang = $(this).attr("lang");
-            console.log(lang);
-            localStorage["userLang"] = lang;
-            // localStorage["userLang"] = $(this).attr("lang");
-            // location.reload();
-            loadTexts();
-            // changeDropdown();
-        }
-        console.log($(this).attr("lang"));
+        lang = $(this).attr("lang");
+        localStorage["userLang"] = lang;
+        // localStorage["userLang"] = $(this).attr("lang");
+        // location.reload();
+        loadTexts();
+        // console.log("texts loaded to " + $(this).attr("lang"));
     });
 
     // function changeDropdown() {
