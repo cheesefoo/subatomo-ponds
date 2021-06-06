@@ -56,10 +56,6 @@ canvas
     height:        100%;
 }
 
-#loadingDuck
-{
-    object-fit: cover;
-}
 
 .logo
 {
@@ -147,9 +143,12 @@ canvas
     max-width:         20%;
     height:            100%;
 
-    background-image:  url(../images/intro/HHeader.svg);
+    background-image:  url(../images/intro/HHeader.jpg);
     background-repeat: no-repeat;
-    background-size:   auto;
+    background-size:   100% 86%;
+	background-position:center bottom;
+	background-color:#5dcde3;
+	
 }
 
 /*.nav-button-container {*/
@@ -355,8 +354,11 @@ canvas
     top:        0;
     right:      0;
     left:       0;
-    max-height: 50vh;
     margin:     auto;
+	z-index:10000;
+	height:100vh;
+	max-width:30vw;
+	object-fit:contain;
 }
 
 .load-pond
@@ -413,10 +415,24 @@ img
 .lang-container{
 		min-height:initial;
 	}
-	.container{
-		height:85vh;
-		padding-top:15vh;
-	}
+.nav-button-container .container{
+	height: 85vh;
+    padding-top: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+.nav-button-container .container .interior{
+	margin-top:35px;
+}
+	
+.select label.option input:checked~span.title{
+	position:relative;
+	background-color:#ffda3e;
+}
 
 @media (max-width: 900px) {
 	.logo-title-container{

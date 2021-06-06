@@ -205,21 +205,38 @@ function startHomepageAnimation() {
         duration: 3,
         delay: 3
     }, 0);
+	
+	if(window.innerWidth>900){
+		tl.fromTo("#enterPondButton", {
+			autoAlpha: 0,
+			opacity: 0,
+			y: 0,
+			x:0,
+		}, {
+			autoAlpha: 1,
+			opacity: 1,
+			x:0,
+			y: "20vh",
+			duration: 5,
+			delay: 4
 
-    tl.fromTo("#enterPondButton", {
-        autoAlpha: 0,
-        opacity: 0,
-        y: 0,
-		x:"50%",
-    }, {
-        autoAlpha: 1,
-        opacity: 1,
-		x:"50%",
-        y: "20vh",
-        duration: 5,
-        delay: 4
+		}, 0);
+	}else{
+		tl.fromTo("#enterPondButton", {
+			autoAlpha: 0,
+			opacity: 0,
+			y: 0,
+			x:"50%",
+		}, {
+			autoAlpha: 1,
+			opacity: 1,
+			x:"50%",
+			y: "20vh",
+			duration: 5,
+			delay: 4
 
-    }, 0);
+		}, 0);
+	}
 	
 	if(window.innerWidth>900){
     tl.fromTo(".interior", {
@@ -278,7 +295,7 @@ function startHomepageAnimation() {
     gsap.to(".logo-duck", {
         backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
         ease: "steps(" + idleFrameNums + ")",
-        duration: 6.7,
+        duration: 5,
         repeat: -1,
         delay: 7.8
     });
