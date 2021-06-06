@@ -5,6 +5,9 @@ require("./assets/css/modal.min.css");
 require("./assets/css/dropdown-img.min.css");
 require("./assets/css/style.css");
 require("./assets/images/intro/loading.gif");
+require("./assets/images/subahug3.png");
+require("./assets/images/SubaBlush_Transparent1.png");
+require("./assets/images/subatomo army.png");
 
 function importAll(r) {
     return r.keys().map(r);
@@ -1208,7 +1211,7 @@ const config = {
 
 const game = new Phaser.Game(config);
 window.game = game;
-
+$("#home").hide();
 function changeScreen(screen) {
     hideScreen();
     $("#screens").show();
