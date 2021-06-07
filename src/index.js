@@ -875,7 +875,9 @@ class MyGame extends Phaser.Scene {
             //duckGameObject.input.hitArea.setTo(0,25,100,100);
 
 
-            this.input.enableDebug(clickContainer, 0x04F404);
+            if (DEBUGGING) {
+                this.input.enableDebug(clickContainer, 0x04F404);
+            }
             // console.log("duck", duckGameObject);
 
             //Fix hitbox
