@@ -103,7 +103,7 @@ const MSG_TEXT_CONFIG = {
     fontFamily: "Nodo Sans JP",
     fontSize: "14px",
     color: "#000",
-    stroke: "#fcd73f",
+    stroke: "#FCD73F",
     strokeThickness: 2,
     padding: TEXT_PADDING_CONFIG,
     wordWrap: WORD_WRAP_CONFIG
@@ -136,20 +136,20 @@ function startHomepageAnimation() {
     $("#home").show();
     gsap.set(".modal-window", {visibility: "inherit", delay: 5});
     let tl = gsap.timeline();
-	
-	if(window.innerWidth>900){
-    tl.fromTo(".logo-panel", {
-        autoAlpha: 0,
-        opacity: 0,
-        x: "-100%"
-    }, {
-        autoAlpha: 1,
-        opacity: 1,
-        x: 0,
-        duration: 3,
-        delay: 5
-    }, 0);
-	}
+
+    if (window.innerWidth > 900) {
+        tl.fromTo(".logo-panel", {
+            autoAlpha: 0,
+            opacity: 0,
+            x: "-100%"
+        }, {
+            autoAlpha: 1,
+            opacity: 1,
+            x: 0,
+            duration: 3,
+            delay: 5
+        }, 0);
+    }
 
     tl.from(".logo-bg", {
         autoAlpha: 0,
@@ -208,66 +208,66 @@ function startHomepageAnimation() {
         duration: 3,
         delay: 3
     }, 0);
-	
-	if(window.innerWidth>900){
-		tl.fromTo("#enterPondButton", {
-			autoAlpha: 0,
-			opacity: 0,
-			y: 0,
-			x:0,
-			top:"100vh",
-		}, {
-			autoAlpha: 1,
-			opacity: 1,
-			x:0,
-			y: "20vh",
-			top:"65vh",
-			duration: 5,
-			delay: 4
 
-		}, 0);
-	}else{
-		tl.fromTo("#enterPondButton", {
-			autoAlpha: 0,
-			opacity: 0,
-			y: 0,
-			x:0,
-		}, {
-			autoAlpha: 1,
-			opacity: 1,
-			x:0,
-			y: "10vh",
-			duration: 5,
-			delay: 4
+    if (window.innerWidth > 900) {
+        tl.fromTo("#enterPondButton", {
+            autoAlpha: 0,
+            opacity: 0,
+            y: 0,
+            x: 0,
+            top: "100vh",
+        }, {
+            autoAlpha: 1,
+            opacity: 1,
+            x: 0,
+            y: "20vh",
+            top: "65vh",
+            duration: 5,
+            delay: 4
 
-		}, 0);
-	}
-	
-	if(window.innerWidth>900){
-    tl.fromTo(".interior", {
-        autoAlpha: 0,
-        x: "-100%"
-    }, {
-        autoAlpha: 1,
-        duration: 1,
-        x: 0,
-        delay: 4,
-        ease: "power1.inOut",
-        stagger: {
+        }, 0);
+    } else {
+        tl.fromTo("#enterPondButton", {
+            autoAlpha: 0,
+            opacity: 0,
+            y: 0,
+            x: 0,
+        }, {
+            autoAlpha: 1,
+            opacity: 1,
+            x: 0,
+            y: "10vh",
+            duration: 5,
+            delay: 4
 
-            amount: 1.5
-        }
-    }, 0);
-	
+        }, 0);
+    }
 
-    tl.set(".nav-button-container", {
-        autoAlpha: 1, delay: 4
-    }, 0);
-	}
-	
+    if (window.innerWidth > 900) {
+        tl.fromTo(".interior", {
+            autoAlpha: 0,
+            x: "-100%"
+        }, {
+            autoAlpha: 1,
+            duration: 1,
+            x: 0,
+            delay: 4,
+            ease: "power1.inOut",
+            stagger: {
+
+                amount: 1.5
+            }
+        }, 0);
+
+
+        tl.set(".nav-button-container", {
+            autoAlpha: 1, delay: 4
+        }, 0);
+    }
+
     let appearFrameNums = 27;
     let frameWidth = 266.5;
-	$("#duck-idle").hide();
+    $("#duck-idle").hide();
     tl.set(".logo-duck", {
         autoAlpha: 1, delay: 4
     }, 0);
@@ -277,9 +277,9 @@ function startHomepageAnimation() {
         duration: 2,
         delay: 4,
         onComplete: function () {
-			$("#duck-emerge").hide();
-			$("#duck-idle").show();
-		}
+            $("#duck-emerge").hide();
+            $("#duck-idle").show();
+        }
         //     console.log("duck done");
         //     let duck = document.getElementsByClassName("logo-duck")[0];
         //     duck.style.backgroundImage = "url(assets/idle.png)";
@@ -328,7 +328,7 @@ function startHomepageAnimation() {
             console.log("after click callback");
             // tl.timeScale(1);
             $("canvas").show();
-			$("#ponds-collapse").fadeIn();
+            $("#ponds-collapse").fadeIn();
             $("#home").hide();
             gsap.fromTo("canvas", {opacity: 0}, {opacity: 1, duration: 3})
                 .then(function () {
@@ -341,9 +341,9 @@ function startHomepageAnimation() {
         });
         $(this).off();
     });
-	$("#ponds-collapse").on("click",function(){
-		$("#pond-ui").fadeToggle();
-	});
+    $("#ponds-collapse").on("click", function () {
+        $("#pond-ui").fadeToggle();
+    });
 
 }
 
@@ -383,7 +383,7 @@ class MyGame extends Phaser.Scene {
                 text: "Loading...",
                 style: {
                     font: "20px 'Nodo Sans JP'",
-                    fill: "#ffffff",
+                    fill: "#FFF",
                 },
             });
             loadingText.setOrigin(0.5, 0.5);
@@ -394,7 +394,7 @@ class MyGame extends Phaser.Scene {
                 text: "0%",
                 style: {
                     font: "18px 'Nodo Sans JP'",
-                    fill: "#ffffff",
+                    fill: "#FFF",
                 },
             });
             percentText.setOrigin(0.5, 0.5);
@@ -555,22 +555,27 @@ class MyGame extends Phaser.Scene {
         obstacleLayer.setCollisionByProperty({collides: true});
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
-		var newHeight;
-		var newWidth;
-		if(sceneHeight>sceneWidth){
-			newHeight=sceneHeight;
-			newWidth= sceneHeight *(2003/1080);
-         
-		}else{
-			newHeight= sceneWidth * (1080 / 2003);
-		 newWidth= sceneWidth;
-		}
+
+        let layers = [groundLayer, pondLayer, obstacleLayer, transitionLayer];
+
+        var newHeight;
+        var newWidth;
+        if (sceneHeight > sceneWidth) {
+            newHeight = sceneHeight;
+            newWidth = sceneHeight * (2003 / 1080);
+
+        } else {
+            newHeight = sceneWidth * (1080 / 2003);
+            newWidth = sceneWidth;
+        }
         // console.log("height", newHeight);
-		console.log("pond size",newWidth, newHeight);
-        groundLayer.setDisplaySize(newWidth, newHeight);
-        pondLayer.setDisplaySize(newWidth, newHeight);
-        obstacleLayer.setDisplaySize(newWidth, newHeight);
-        transitionLayer.setDisplaySize(newWidth, newHeight);
+        console.log("pond size", newWidth, newHeight);
+        layers.forEach(function (l) {
+            l.setDisplaySize(newWidth, newHeight);
+            l.alpha = 0;
+        });
+
+        let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
         // console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
         $("#ghost img").attr("id", "ghostIMG");
@@ -1247,12 +1252,13 @@ const config = {
 const game = new Phaser.Game(config);
 window.game = game;
 $("#home").hide();
+
 function changeScreen(screen) {
     hideScreen();
     $("#screens").show();
     window.game.input.enabled = false;
     $("canvas").hide();
-	$("#ponds-collapse").fadeOut();
+    $("#ponds-collapse").fadeOut();
     $(screen).show();
 }
 
