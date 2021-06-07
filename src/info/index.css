@@ -12,6 +12,8 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
+	width:100%;
+	overflow:hidden;
 }
 
 .screen {
@@ -21,7 +23,7 @@ body {
     /*height: 40px;*/
     /*position: relative;*/
     display:        block;
-    max-width:      80%;
+    max-width:      90%;
     margin:         8px 0 32px 8px;
     vertical-align: middle;
     border:         2px solid #518DB9;
@@ -46,4 +48,58 @@ body {
 
 .screen-inner > div,li {
     padding: 1.15rem 0 0 0;
+}
+
+
+
+.editor-container{
+	position:relative;
+}
+
+
+@media (max-width: 600px) {
+	.screen-inner{
+		padding:5px;
+		margin:3px;
+		
+	}
+	
+	.screen{
+		max-width:95%;
+		margin-left:-10px;
+	}
+	
+	#previewSection{
+		margin:3px !important;
+		padding:2px !important;
+	}
+	
+	#result{
+		display:none;
+	}
+	
+	.editor-container{
+		height:auto !important;
+	}
+	#drawingStuff{
+		display:none;
+	}
+	
+	#right-tools{
+		
+		position:absolute !important;
+		right:0 !important;
+		background-color:transparent !important;
+		box-shadow:none !important;
+		padding:0 !important;
+		width:150px !important;
+	}
+	
+	#right-tools button{
+		font-size:15px !important;
+	}
+	
+	#center-interface{
+		text-align:left !important;
+	}
 }

@@ -18,6 +18,14 @@
     opacity: 0.4;
 }
 
+select{
+	max-width:100%;
+}
+
+#upload{
+	overflow:hidden;
+}
+
 /*
 Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 */
@@ -38,7 +46,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     align-content: space-between;
 }

@@ -488,6 +488,7 @@
 
 
                                     <div id="right-tools">
+										<div id="drawingStuff"> 
                                         <h3 text="e-4">Drawing</h3>
                                         <button class="btn btn-info" id="drawing-mode" text="e-5" type="button">Enter
                                             drawing
@@ -526,7 +527,9 @@
                                             <span class="info">0</span><input id="drawing-shadow-offset" max="50"
                                                                               min="0" type="range" value="0"><br>
                                         </div>
-                                        <div style="text-align:center;">
+                                        </div>
+										
+										<div style="text-align:center;">
                                             <button id="generateDuck"
                                                     onclick="generateSpriteSheet()"
                                                     text="e-17" type="button">
@@ -903,11 +906,23 @@
                                     }
 
                                     function generateSpriteSheet() {
+									
+										const sheet = document.getElementById("spritesheet");
+                                       
+                                        const sheetCtx = sheet.getContext("2d");
+										
+										sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
+										
+										$(".canvas-container canvas").attr("width",200);
+										$(".canvas-container canvas").attr("height",200);
+									
                                         drawSpriteSheet();
                                         drawSpriteSheet(200, 0, 1);
                                         drawSpriteSheet(0, 200, 2);
                                         drawSpriteSheet(200, 200, 3);
-                                        const sheet = document.getElementById("spritesheet");
+										
+										
+                                        
 
                                         let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
                                         // alert(e);
@@ -930,6 +945,7 @@
                                     }
 
                                     function drawSpriteSheet(x = 0, y = 0, dindex = 0) {
+										
                                         for (let a = 0; a < ducks.length; a++) {
                                             ducks[a].opacity = 0;
                                         }
@@ -949,6 +965,7 @@
                                         const sourceCtx = source.getContext("2d");
                                         const copyCtx = copy.getContext("2d");
                                         const sheetCtx = sheet.getContext("2d");
+										
 
                                         //call its drawImage() function passing it the source canvas directly
 
