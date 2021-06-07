@@ -913,8 +913,8 @@
 										
 										sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
 										
-										$(".canvas-container canvas").attr("width",200);
-										$(".canvas-container canvas").attr("height",200);
+										//$(".canvas-container canvas").attr("width",200);
+										//$(".canvas-container canvas").attr("height",200);
 									
                                         drawSpriteSheet();
                                         drawSpriteSheet(200, 0, 1);
@@ -971,9 +971,9 @@
 
                                         let auxWidth = 200;
                                         const destination = 200;
-                                        const step = 100;
+                                        const step = 50;
 
-                                        copyCtx.drawImage(duckCan, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
+                                        copyCtx.drawImage(duckCan, 0, 0, 250, 250, 0, 0, auxWidth, auxWidth);
 
                                         for (let a = 0; auxWidth > destination; a++) {
                                             sourceCtx.clearRect(0, 0, 200, 200);
@@ -987,7 +987,7 @@
 
                                             auxWidth -= step;
                                         }
-                                        sheetCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, x, y, auxWidth, auxWidth);
+                                        sheetCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, x, y, 200, 200);
                                         sourceCtx.clearRect(0, 0, 200, 200);
                                         copyCtx.clearRect(0, 0, 200, 200);
                                         //destCtx.drawImage(duckCan, 300, 0);
