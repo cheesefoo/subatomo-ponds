@@ -88,6 +88,8 @@ function animate() {
         sx2 = currentFrame2 === 0 ? 0 : w;
         sy2 = currentFrame2 === 0 ? 0 : h;
         // console.log(currentFrame + ":" + sx + "x" + sy);
+		
+		
 
         canvasContext1.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
         canvasContext2.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);

@@ -488,6 +488,7 @@ img
 
 #pond-ui{
 	display:none;
+	top:150px;
 }
 
 @media (max-width: 900px) {
