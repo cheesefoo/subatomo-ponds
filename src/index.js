@@ -328,19 +328,22 @@ function startHomepageAnimation() {
             console.log("after click callback");
             // tl.timeScale(1);
             $("canvas").show();
+			$("#ponds-collapse").fadeIn();
             $("#home").hide();
             gsap.fromTo("canvas", {opacity: 0}, {opacity: 1, duration: 3})
                 .then(function () {
                     gsap.fromTo("#pond-ui", {opacity: 1}, {opacity: 1, duration: 1});
 
-                    $("#pond-ui").show();
+                    //$("#pond-ui").show();
                     window.game.input.enabled = true;
                     window.game.scene.getScene("pond").updatePagination();
                 });
         });
         $(this).off();
     });
-
+	$("#ponds-collapse").on("click",function(){
+		$("#pond-ui").fadeToggle();
+	});
 
 }
 
@@ -1027,7 +1030,7 @@ class MyGame extends Phaser.Scene {
 
     generatePondUI() {
         // console.log("generate pond ui");
-        $body.append("<div class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
+        $body.append("<div style='display:none;' class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
         let pond = $("#pond-ui .inner-ui");
         // pond.append("<img src='assets/subaru_uitest_1.png'></img>")
         pond.append("<h3 text='main-15'>Select pond</h3>");
@@ -1247,6 +1250,7 @@ function changeScreen(screen) {
     $("#screens").show();
     window.game.input.enabled = false;
     $("canvas").hide();
+	$("#ponds-collapse").fadeOut();
     $(screen).show();
 }
 

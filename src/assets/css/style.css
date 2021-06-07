@@ -474,6 +474,22 @@ img
 	overflow:scroll;
 }
 
+#ponds-collapse{
+	display:none;
+	position:fixed;
+	top:80px;
+	left: 10px;
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+	cursor:pointer;
+	z-index:10;
+	padding:30px;
+}
+
+#pond-ui{
+	display:none;
+}
+
 @media (max-width: 900px) {
 	.logo-title-container{
 		width:100%;
