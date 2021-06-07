@@ -1,10 +1,10 @@
 
 
 .main, #previewSection, .soundButton {
-    vertical-align: middle;
+        vertical-align: middle;
     border-radius: 5px;
-    margin: 8px 0 0 8px;
-    border: 2px solid #518db9 ;
+    margin: 12px 0 0 16px;
+    border: 2px solid #518db9;
     background: white;
     display: block;
     box-shadow: #518db9 1px 1px 0,
@@ -32,7 +32,7 @@
 }
 
 .soundButton:hover{
-    margin: 16px 0 0 16px;
+       margin: 12px 0 0 16px;
     box-shadow: #000 0 0 0,
     #000 0 0 0,
     #000 0 0 0,
@@ -44,6 +44,9 @@
     min-width: 150px;
     max-width: 150px;
     max-height: 50px;
+    position: relative;
+    top: 8px;
+    left: 8px;
 
 }
 /*.contact-us {*/

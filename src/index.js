@@ -552,23 +552,32 @@ class MyGame extends Phaser.Scene {
         obstacleLayer.setCollisionByProperty({collides: true});
         transitionLayer = this.map.createLayer("transition", tileset);
         transitionLayer.setCollisionByProperty({collides: true});
-
-        var newHeight = sceneWidth * (1080 / 2003);
+		var newHeight;
+		var newWidth;
+		if(sceneHeight>sceneWidth){
+			newHeight=sceneHeight;
+			newWidth= sceneHeight *(2003/1080);
+         
+		}else{
+			newHeight= sceneWidth * (1080 / 2003);
+		 newWidth= sceneWidth;
+		}
         // console.log("height", newHeight);
-        groundLayer.setDisplaySize(sceneWidth, newHeight);
-        pondLayer.setDisplaySize(sceneWidth, newHeight);
-        obstacleLayer.setDisplaySize(sceneWidth, newHeight);
-        transitionLayer.setDisplaySize(sceneWidth, newHeight);
+		console.log("pond size",newWidth, newHeight);
+        groundLayer.setDisplaySize(newWidth, newHeight);
+        pondLayer.setDisplaySize(newWidth, newHeight);
+        obstacleLayer.setDisplaySize(newWidth, newHeight);
+        transitionLayer.setDisplaySize(newWidth, newHeight);
         // console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
         $("#ghost img").attr("id", "ghostIMG");
 
         var canvasGhost = document.createElement("canvas");
-        canvasGhost.width = sceneWidth;
+        canvasGhost.width = newWidth;
         canvasGhost.height = newHeight;
 
         var ghost2d = canvasGhost.getContext("2d");
-        ghost2d.drawImage(document.getElementById("ghostIMG"), 0, 0, sceneWidth, newHeight);
+        ghost2d.drawImage(document.getElementById("ghostIMG"), 0, 0, newWidth, newHeight);
 
         this.textures.addBase64("ghostCollision", canvasGhost.toDataURL());
 
