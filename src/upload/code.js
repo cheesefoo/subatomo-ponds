@@ -76,26 +76,21 @@ function doPost(e) {
         email = "Do not contact";
         discord = "Do not contact";
     } else {
-        email = params.email.toString();
-        discord = params.discord.toString();
-        if (email == "")
-            email = "Not provided";
-
-        if (discord == "")
-            discord = "Not provided";
+        email = getParam(params.email);
+        discord = getParam(params.discord);
     }
 
-    country = params.country.toString();
-    referer = params.referer.toString();
+    country = getParam(params.country);
+    hairstyle = getParam(params.hairstyle);
 
-    if (country == "")
-        country = "Not Provided";
-    if (hairstyle == "")
-        hairstyle = "Not Provided";
-
-    hairstyle = params.hairstyle.toString();
-    if (referer == "other")
-        referer = params.refererOther.toString();
+    referer = getParam(params.referer);
+    if (referer == "other") {
+        if (params.refererOther == null) {
+            referer = "Not Provided";
+        } else {
+            referer = params.refererOther.toString();
+        }
+    }
 
     //create a unique filename
     const timestamp = new Date();
@@ -110,7 +105,7 @@ function doPost(e) {
         filename = "TEMPLATE";
     } else {
         if (uploadMethod == "editor") {
-            filename = "EDITOR";
+            filename = MakeFileName("EDITOR_" + displayName, timestamp);
         }
         let file = DriveApp.createFile(blob);
         file = file.setName(filename);
@@ -141,6 +136,17 @@ function doPost(e) {
 
     output.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
     return output;
+}
+
+function getParam(param) {
+    if (param == null)
+        return "Not Provided";
+    else {
+        let s = param.toString();
+        if (s == "")
+            return "Not Provided";
+        return s;
+    }
 }
 
 //create html output for success. currently simple.

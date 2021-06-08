@@ -86,6 +86,10 @@
     font-weight: bold;
 }
 
+#submit, #uploadFile
+{
+    margin-top: 2em;
+}
 
 input:focus, textarea:focus {
     border: 1px solid #6bd4b1;
