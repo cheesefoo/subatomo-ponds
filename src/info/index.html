@@ -46,7 +46,7 @@
 
                     <button aria-controls="home" aria-selected="false" class="nav-link active"
                             data-bs-target="#home"
-                            data-bs-toggle="tab" id="home-tab" role="tab" text="l-5" type="button">Home
+                            data-bs-toggle="tab" id="home-tab" role="tab" text="l-8" type="button">Home
                     </button>
 
                     <button aria-controls="guidelines" aria-selected="false" class="nav-link"
@@ -66,7 +66,7 @@
                     </button>
                     <button aria-controls="upload" aria-selected="false" class="nav-link"
                             data-bs-target="#upload-container"
-                            data-bs-toggle="tab" id="upload-tab" role="tab" text="l-5" type="button">Upload
+                            data-bs-toggle="tab" id="upload-tab" role="tab" text="l-7" type="button">Upload
                     </button>
 
                 </div>
@@ -83,7 +83,7 @@
             <div text="a-1"></div>
             <div>~NYI~ anyone wanna do it? :^)</div>
             <div text="a-25"></div>
-            <div><h3 text="a-2"></h3><a href="#home-tldr" text="a-3"></a></div>
+            <div><h3 text="a-2"></h3><a href="#home-tldr" id="home-tldr-link" text="a-3"></a></div>
             <div><span text="a-4"></span><a href="#specs-tab" text="a-5"></a></div>
             <div><span text="a-6"></span><a href="template.png" target="_blank" text="a-7"></a></div>
             <div><span text="a-8"></span><a href="#tutorial-tab" text="a-9"></a></div>
@@ -222,8 +222,8 @@
             <div>
                 <span text="t-16"></span>
                 <a href="#guidelines-tab" text="t-17"></a>
-                <span text="t-18"></span>
-                <a href="#specs-tab" text="t-19"></a>
+                <span id="jp-ex-1" text="t-18"></span>
+                <a href="#specs-tab" id="jp-ex-2" text="t-19"></a>
             </div>
             <p></p>
             <p text="t-20"></p>
@@ -488,48 +488,51 @@
 
 
                                     <div id="right-tools">
-										<div id="drawingStuff"> 
-                                        <h3 text="e-4">Drawing</h3>
-                                        <button class="btn btn-info" id="drawing-mode" text="e-5" type="button">Enter
-                                            drawing
-                                            mode
-                                        </button>
-                                        <br>
-                                        <button class="btn btn-info" id="clear-canvas" text="e-6" type="button">Reset
-                                            Duck
-                                        </button>
-                                        <br>
+                                        <div id="drawingStuff">
+                                            <h3 text="e-4">Drawing</h3>
+                                            <button class="btn btn-info" id="drawing-mode" text="e-5" type="button">
+                                                Enter
+                                                drawing
+                                                mode
+                                            </button>
+                                            <br>
+                                            <button class="btn btn-info" id="clear-canvas" text="e-6" type="button">
+                                                Reset
+                                                Duck
+                                            </button>
+                                            <br>
 
-                                        <div id="drawing-mode-options" style="display:none;">
-                                            <label for="drawing-mode-selector" text="e-7">Mode:</label>
-                                            <select id="drawing-mode-selector">
-                                                <option text="e-8">Pencil</option>
-                                                <option text="e-9">Circle</option>
-                                                <option text="e-10">Spray</option>
-                                                <option text="e-11">Pattern</option>
-                                            </select><br>
+                                            <div id="drawing-mode-options" style="display:none;">
+                                                <label for="drawing-mode-selector" text="e-7">Mode:</label>
+                                                <select id="drawing-mode-selector">
+                                                    <option text="e-8">Pencil</option>
+                                                    <option text="e-9">Circle</option>
+                                                    <option text="e-10">Spray</option>
+                                                    <option text="e-11">Pattern</option>
+                                                </select><br>
 
-                                            <label for="drawing-line-width" text="e-12">Line width:</label>
-                                            <span class="info">8</span><input id="drawing-line-width" max="150" min="0"
-                                                                              type="range" value="8"><br>
+                                                <label for="drawing-line-width" text="e-12">Line width:</label>
+                                                <span class="info">8</span><input id="drawing-line-width" max="150"
+                                                                                  min="0"
+                                                                                  type="range" value="8"><br>
 
-                                            <label for="drawing-color" text="e-13">Line color:</label>
-                                            <input id="drawing-color" type="color" value="#005E7A"><br>
+                                                <label for="drawing-color" text="e-13">Line color:</label>
+                                                <input id="drawing-color" type="color" value="#005E7A"><br>
 
-                                            <label for="drawing-shadow-color" text="e-14">Shadow color:</label>
-                                            <input id="drawing-shadow-color" type="color" value="#005E7A"><br>
+                                                <label for="drawing-shadow-color" text="e-14">Shadow color:</label>
+                                                <input id="drawing-shadow-color" type="color" value="#005E7A"><br>
 
-                                            <label for="drawing-shadow-width" text="e-15">Shadow width:</label>
-                                            <span class="info">16</span><input id="drawing-shadow-width" max="50"
-                                                                               min="0" type="range" value="0"><br>
+                                                <label for="drawing-shadow-width" text="e-15">Shadow width:</label>
+                                                <span class="info">16</span><input id="drawing-shadow-width" max="50"
+                                                                                   min="0" type="range" value="0"><br>
 
-                                            <label for="drawing-shadow-offset" text="e-16">Shadow offset:</label>
-                                            <span class="info">0</span><input id="drawing-shadow-offset" max="50"
-                                                                              min="0" type="range" value="0"><br>
+                                                <label for="drawing-shadow-offset" text="e-16">Shadow offset:</label>
+                                                <span class="info">0</span><input id="drawing-shadow-offset" max="50"
+                                                                                  min="0" type="range" value="0"><br>
+                                            </div>
                                         </div>
-                                        </div>
-										
-										<div style="text-align:center;">
+
+                                        <div style="text-align:center;">
                                             <button id="generateDuck"
                                                     onclick="generateSpriteSheet()"
                                                     text="e-17" type="button">
@@ -584,8 +587,7 @@
                                         canvas = new fabric.Canvas("canvas", {
                                             isDrawingMode: false
                                         });
-										
-										
+
 
                                         addDucks();
 
@@ -906,23 +908,21 @@
                                     }
 
                                     function generateSpriteSheet() {
-									
-										const sheet = document.getElementById("spritesheet");
-                                       
+
+                                        const sheet = document.getElementById("spritesheet");
+
                                         const sheetCtx = sheet.getContext("2d");
-										
-										sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
-										
-										//$(".canvas-container canvas").attr("width",200);
-										//$(".canvas-container canvas").attr("height",200);
-									
+
+                                        sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
+
+                                        //$(".canvas-container canvas").attr("width",200);
+                                        //$(".canvas-container canvas").attr("height",200);
+
                                         drawSpriteSheet();
                                         drawSpriteSheet(200, 0, 1);
                                         drawSpriteSheet(0, 200, 2);
                                         drawSpriteSheet(200, 200, 3);
-										
-										
-                                        
+
 
                                         let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
                                         // alert(e);
@@ -945,7 +945,7 @@
                                     }
 
                                     function drawSpriteSheet(x = 0, y = 0, dindex = 0) {
-										
+
                                         for (let a = 0; a < ducks.length; a++) {
                                             ducks[a].opacity = 0;
                                         }
@@ -965,14 +965,14 @@
                                         const sourceCtx = source.getContext("2d");
                                         const copyCtx = copy.getContext("2d");
                                         const sheetCtx = sheet.getContext("2d");
-										
+
 
                                         //call its drawImage() function passing it the source canvas directly
 
                                         let auxWidth = 200;
                                         const destination = 200;
                                         const step = 50;
-										console.log("canvas width",canvas.width);
+                                        console.log("canvas width", canvas.width);
                                         copyCtx.drawImage(duckCan, 0, 0, $("#canvas").attr("width"), $("#canvas").attr("height"), 0, 0, auxWidth, auxWidth);
 
                                         for (let a = 0; auxWidth > destination; a++) {
@@ -1139,7 +1139,7 @@
         if (lang == null) {
             console.error("lang not set");
         }
-        let linksTags = $("#links [text]");
+        let linksTags = $("#nav-tab [text]");
         let tutorialTags = $("#tutorial [text]");
         let homeTags = $("#home [text]");
         let guidelinesTags = $("#guidelines [text]");
@@ -1199,6 +1199,19 @@
 
             t.textContent = editor[index];
         });
+
+        //exception for jp, line 105/106 in doc
+        if ($("#jp-ex-3") != null)
+            $("#jp-ex-3").remove();
+        if (lang == "JP") {
+            let ln105 = $("#jp-ex-1")[0];
+            let texts = ln105.textContent.split("技術的仕様");
+            ln105.textContent = texts[0];
+            let ln106 = $("#jp-ex-2");
+            ln106[0].textContent = "技術的仕様";
+            let span = `<span id="jp-ex-3">${texts[1]}</span>`;
+            ln106.parent().append(span);
+        }
     }
 
     function makeValidCodes() {
@@ -1318,6 +1331,21 @@
 
     $(".editor-link").on("click", function () {
         $("#uploadMethodChoice").val("editor");
+    });
+
+    function inViewport(elem, callback, options = {}) {
+        return new IntersectionObserver(entries => {
+            entries.forEach(entry => callback(entry));
+        }, options).observe(document.querySelector(elem));
+    }
+
+    inViewport("#home-tldr", element => {
+        if (element.isIntersecting)
+            $("#home-tldr-link").hide();
+        else
+            $("#home-tldr-link").show();
+    }, {
+        root: document.querySelector("#home > div > div:nth-child(11)")
     });
 </script>
 <script crossorigin="anonymous"

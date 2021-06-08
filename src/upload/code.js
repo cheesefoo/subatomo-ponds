@@ -1,4 +1,3 @@
-//this is just a backup copy of whatever's on the google sheet
 const VALID_WIDTH = 400;
 const VALID_HEIGHT = 400;
 const SUBJECT_TEXT = "Your submission to the Subaru Milestone Project is invalid";
@@ -72,26 +71,29 @@ function doPost(e) {
         message = DEFAULT_MESSAGE;
 
     let canContact = params.canContact.toString();
-    let email, discord, country, referer,hairstyle;
-    if (canContact == "yes") {
+    let email, discord, country, referer, hairstyle;
+    if (canContact == "no") {
+        email = "Do not contact";
+        discord = "Do not contact";
+    } else {
         email = params.email.toString();
         discord = params.discord.toString();
+        if (email == "")
+            email = "Not provided";
+
+        if (discord == "")
+            discord = "Not provided";
     }
-    if (email == "")
-        email = "Not provided";
 
-    if (discord == "")
-        discord = "Not provided";
-
-    if (hairstyle == "")
-        hairstyle = "Not Provided";
+    country = params.country.toString();
+    referer = params.referer.toString();
 
     if (country == "")
         country = "Not Provided";
-    country = params.country.toString();
-    referer = params.referer.toString();
-    hairstyle= params.hairstyle.toString();
+    if (hairstyle == "")
+        hairstyle = "Not Provided";
 
+    hairstyle = params.hairstyle.toString();
     if (referer == "other")
         referer = params.refererOther.toString();
 
@@ -100,13 +102,16 @@ function doPost(e) {
     // timestamp = timestamp.setNumberFormat("yyyy-MM-dd HH:mm:ss");
 
     let sound = params.soundSelection.toString();
-    let fileId,filename;
+    let fileId, filename;
 
     //Creates the file in the google drive account under which the deployment is executed as.
     if (uploadMethod == "template") {
         fileId = TEMPLATE_FILE_ID;
         filename = "TEMPLATE";
-    } else{
+    } else {
+        if (uploadMethod == "editor") {
+            filename = "EDITOR";
+        }
         let file = DriveApp.createFile(blob);
         file = file.setName(filename);
         const folder = DriveApp.getFolderById(FOLDER_ID);
