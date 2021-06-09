@@ -143,12 +143,22 @@ function startHomepageAnimation() {
             opacity: 0,
             x: "-100%"
         }, {
-            autoAlpha: 1,
-            opacity: 1,
+            autoAlpha: .75,
+            opacity: .75,
             x: 0,
             duration: 3,
             delay: 5
         }, 0);
+        let o = gsap.timeline();
+        o.fromTo(".logo-panel", {opacity: 1, duration: .25}, {opacity: .75, duration: .25});
+
+        function opacitytransition() {
+            o.reversed(!o.reversed());
+
+        }
+
+        $(".logo-panel")[0].addEventListener("mouseenter", opacitytransition);
+        $(".logo-panel")[0].addEventListener("mouseleave", opacitytransition);
     }
 
     tl.from(".logo-bg", {
@@ -271,29 +281,16 @@ function startHomepageAnimation() {
     tl.set(".logo-duck", {
         autoAlpha: 1, delay: 4
     }, 0);
-    tl.to("#duck-emerge", {
+    tl.to("#duck-appear", {
         backgroundPosition: (-frameWidth * appearFrameNums) + "px 0",
         ease: "steps(" + appearFrameNums + ")",
         duration: 2,
         delay: 4,
         onComplete: function () {
-            $("#duck-emerge").hide();
+            $("#duck-appear").hide();
             $("#duck-idle").show();
         }
-        //     console.log("duck done");
-        //     let duck = document.getElementsByClassName("logo-duck")[0];
-        //     duck.style.backgroundImage = "url(assets/idle.png)";
-        //     duck.style.backgroundPositionX = "0";
-        //     let idleFrameNums = 66;
-        //
-        //     gsap.to(".logo-duck", {
-        //         backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
-        //         ease: "steps(" + idleFrameNums + ")",
-        //         duration: 6.7,
-        //         repeat: -1,
-        //         delay: 1
-        //     });
-        // }
+
 
     }, 0);
     let idleFrameNums = 66;
@@ -307,22 +304,32 @@ function startHomepageAnimation() {
         delay: 7
     });
 
-
-    // let master = gsap.timeline();
-    // master.add(panel)
-    //     .add(bg)
-    //     .add(mid)
-    //     .add(front)
-    //     .add(title)
-    //     .add(enterBtn)
-    //     .add(btns)
-    //     .add(buttonContainer)
-    //     .add(duck);
+    let grassFrames = 29;
+    let grassLwidth = 598;
+    // let grassLwidth = 597.86;
+    // let grassRwidth = 307.66;
+    let grassRwidth = 308.2;
+    gsap.to("#grass-L", {
+        backgroundPosition: (-grassLwidth * grassFrames) + "px 0",
+        ease: "steps(" + grassFrames + ")",
+        duration: 2,
+        repeat: -1
+    }, 0);
+    gsap.to("#grass-R", {
+        backgroundPosition: (-grassRwidth * grassFrames) + "px 0",
+        ease: "steps(" + grassFrames + ")",
+        duration: 2,
+        repeat: -1
+    }, 0);
 
     // master.play()
     $("#enterPondButton").on("click", function () {
-
         console.log("enter pond clicked");
+        if ($("#duck-appear").css("display") == "none" &&
+            $("#duck-idle").css("display") == "block") {
+            $("#duck-idle").hide();
+            $("#duck-appear").show();
+        }
         //play intro anim backwards
         tl.timeScale(2).reverse(0, true).then(function () {
             console.log("after click callback");
