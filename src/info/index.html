@@ -397,7 +397,7 @@
 
                         <select aria-label="referer" id="referer" name="referer">
                             <option text="u-34"
-                                    value="subaru-discord"></option>
+                                    selected value="subaru-discord"></option>
                             <option text="u-35"
                                     value="fan-discord">A hololive fan Discord
                             </option>
@@ -436,7 +436,7 @@
 
                         <div class="upload">
                             <input accept="image/png" class="form-control uploadFile" id="uploadFile" name="file"
-                                   type="file"/>
+                                   style="display:none" type="file"/>
 
                             <div class="editor" id="editor" style="display: none">
 
@@ -558,7 +558,7 @@
 
                                     function addDucks() {
                                         ducks = [];
-                                        for (i = 1; i < 5; i++) {
+                                        for (let i = 1; i < 5; i++) {
                                             let duckImage = document.querySelector("#duck" + i);
 
                                             let duck = new fabric.Image(duckImage, {
@@ -925,8 +925,6 @@
 
 
                                         let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
-                                        // alert(e);
-                                        spritesheet.src = e;
 
                                         let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.split(",")[1] + "\" >";
                                         html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + "image/octet-stream" + "\" >";

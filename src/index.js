@@ -143,8 +143,6 @@ function startHomepageAnimation() {
             opacity: 0,
             x: "-100%"
         }, {
-            autoAlpha: 1,
-            opacity: 1,
             x: 0,
             duration: 3,
             delay: 5
@@ -271,7 +269,6 @@ function startHomepageAnimation() {
     tl.set(".logo-duck", {
         autoAlpha: 1, delay: 4
     }, 0);
-    tl.to("#duck-emerge", {
         backgroundPosition: (-frameWidth * appearFrameNums) + "px 0",
         ease: "steps(" + appearFrameNums + ")",
         duration: 2,
@@ -280,20 +277,6 @@ function startHomepageAnimation() {
             $("#duck-emerge").hide();
             $("#duck-idle").show();
         }
-        //     console.log("duck done");
-        //     let duck = document.getElementsByClassName("logo-duck")[0];
-        //     duck.style.backgroundImage = "url(assets/idle.png)";
-        //     duck.style.backgroundPositionX = "0";
-        //     let idleFrameNums = 66;
-        //
-        //     gsap.to(".logo-duck", {
-        //         backgroundPosition: (-frameWidth * idleFrameNums) + "px 0",
-        //         ease: "steps(" + idleFrameNums + ")",
-        //         duration: 6.7,
-        //         repeat: -1,
-        //         delay: 1
-        //     });
-        // }
 
     }, 0);
     let idleFrameNums = 66;
@@ -307,17 +290,6 @@ function startHomepageAnimation() {
         delay: 7
     });
 
-
-    // let master = gsap.timeline();
-    // master.add(panel)
-    //     .add(bg)
-    //     .add(mid)
-    //     .add(front)
-    //     .add(title)
-    //     .add(enterBtn)
-    //     .add(btns)
-    //     .add(buttonContainer)
-    //     .add(duck);
 
     // master.play()
     $("#enterPondButton").on("click", function () {
