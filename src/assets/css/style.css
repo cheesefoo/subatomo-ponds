@@ -117,9 +117,68 @@ canvas
     top:              1px;
     max-height:       100%;
     background-image: url(../images/intro/front.png);
-
-
 }
+
+
+/*.logo-front*/
+/*{*/
+/*    position: absolute;*/
+/*    z-index:  2;*/
+/*    bottom:   0;*/
+/*    left:     0;*/
+/*    width:    100%;*/
+/*    height:   100%;*/
+/*}*/
+
+/*.logo-front-L*/
+/*{*/
+/*    position:   absolute;*/
+/*    z-index:    2;*/
+/*    left:       1px;*/
+/*    width:      597.86px;*/
+/*    height:     1080px;*/
+/*    max-height: 100%;*/
+/*}*/
+
+/*.logo-front-R*/
+/*{*/
+/*    position:   absolute;*/
+/*    z-index:    2;*/
+/*    right:      0px;*/
+/*    overflow:   hidden;*/
+/*    width:      308px;*/
+/*    height:     1080px;*/
+/*    !*width:      307.66px;*!*/
+/*    max-height: 100%;*/
+
+/*}*/
+
+/*#grass-L*/
+/*{*/
+/*    position:          absolute;*/
+/*    z-index:           10;*/
+/*    bottom:            0;*/
+/*    left:              0;*/
+/*    width:             100%;*/
+/*    height:            100%;*/
+/*    background-image:  url(../images/intro/grassL-tiny.png);*/
+/*    background-repeat: no-repeat;*/
+
+/*}*/
+
+/*#grass-R*/
+/*{*/
+/*    position:          absolute;*/
+/*    z-index:           10;*/
+/*    bottom:            0;*/
+/*    left:              0;*/
+/*    width:             100%;*/
+/*    height:            100%;*/
+
+/*    background-image:  url(../images/intro/grassR-tiny.png);*/
+/*    background-repeat: no-repeat;*/
+
+/*}*/
 
 
 .logo-duck
@@ -138,7 +197,7 @@ canvas
 
 }
 
-#duck-emerge
+#duck-appear
 {
     position:          absolute;
     z-index:           10;
@@ -296,14 +355,14 @@ box-shadow: 5px 0px 10px -3px rgba(0,0,0,0.75);
 
 .logo-text
 {
-        font-size: 1.6rem;
-    position: absolute;
-    top: 55%;
-    font-family: 'corsva';
-    width: 100%;
-    height: 100%;
+        font-size:  1.6rem;
+    position:       absolute;
+    top:            55%;
+    font-family:    "corsva";
+    width:          100%;
+    height:         100%;
     text-transform: capitalize;
-    color: #0d191e;
+    color:          #0d191e;
    
 }
 

@@ -309,13 +309,13 @@ function startHomepageAnimation() {
     // let grassLwidth = 597.86;
     // let grassRwidth = 307.66;
     let grassRwidth = 308.2;
-    tl.to("#grass-L", {
+    gsap.to("#grass-L", {
         backgroundPosition: (-grassLwidth * grassFrames) + "px 0",
         ease: "steps(" + grassFrames + ")",
         duration: 2,
         repeat: -1
     }, 0);
-    tl.to("#grass-R", {
+    gsap.to("#grass-R", {
         backgroundPosition: (-grassRwidth * grassFrames) + "px 0",
         ease: "steps(" + grassFrames + ")",
         duration: 2,
@@ -324,7 +324,6 @@ function startHomepageAnimation() {
 
     // master.play()
     $("#enterPondButton").on("click", function () {
-
         console.log("enter pond clicked");
         if ($("#duck-appear").css("display") == "none" &&
             $("#duck-idle").css("display") == "block") {
