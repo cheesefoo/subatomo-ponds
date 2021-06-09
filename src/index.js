@@ -8,6 +8,8 @@ require("./assets/images/intro/loading.gif");
 require("./assets/images/subahug3.png");
 require("./assets/images/SubaBlush_Transparent1.png");
 require("./assets/images/subatomo army.png");
+require("./assets/images/ui/volume.png");
+require("./assets/images/ui/volume_mute.png");
 
 function importAll(r) {
     return r.keys().map(r);
@@ -336,6 +338,8 @@ function startHomepageAnimation() {
             // tl.timeScale(1);
             $("canvas").show();
             $("#ponds-collapse").fadeIn();
+            $("#ponds-volume").fadeIn();
+            $("#ponds-logo-home").fadeIn();
             $("#home").hide();
             gsap.fromTo("canvas", {opacity: 0}, {opacity: 1, duration: 3})
                 .then(function () {
@@ -348,11 +352,15 @@ function startHomepageAnimation() {
         });
         $(this).off();
     });
+    $("#ponds-volume").on("click", function () {
+    });
+
     $("#ponds-collapse").on("click", function () {
         $("#pond-ui").fadeToggle();
     });
 
 }
+
 
 class MyGame extends Phaser.Scene {
     // jshint ignore:line
@@ -518,7 +526,7 @@ class MyGame extends Phaser.Scene {
 
         this.makeSounds();
         this.makeTileMap();
-
+        this.makeVolumeButton();
 
         this.makeWalkingAnimationFrames();
         this.makeSplashAnimationFrames();
@@ -597,6 +605,21 @@ class MyGame extends Phaser.Scene {
         this.textures.addBase64("ghostCollision", canvasGhost.toDataURL());
 
     }
+
+    makeVolumeButton() {
+        //volume toggler
+        let scene = this;
+        $("#ponds-volume").on("click", function () {
+            isMuted = !isMuted;
+            if (isMuted) {
+                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/volume_mute.png)";
+            } else {
+                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/volume.png)";
+            }
+            scene.sound.setMute(isMuted);
+        });
+    }
+
 
     /// Unused
     applyCollisions() {

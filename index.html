@@ -16,22 +16,25 @@
     <!--	<link href="./css/style.css">-->
     <link href="/manifest.webmanifest" rel="manifest"/>
     <title class="main" text="main-1">Subatomo Ponds</title>
-	<style>
-	@font-face {
-	  font-family: kei;
-	  src: url("./fonts/keifont.ttf");
-	}
+    <style>
+        @font-face
+        {
+            font-family: kei;
+            src:         url("./fonts/keifont.ttf");
+        }
 
-	@font-face {
-	  font-family: meyro;
-	  src: url("./fonts/Meiryo W53 Regular.ttf");
-	}
+        @font-face
+        {
+            font-family: meyro;
+            src:         url("./fonts/Meiryo W53 Regular.ttf");
+        }
 
-	@font-face {
-	  font-family: corsva;
-	  src: url("./fonts/MTCORSVA.ttf");
-	}
-	</style>
+        @font-face
+        {
+            font-family: corsva;
+            src:         url("./fonts/MTCORSVA.ttf");
+        }
+    </style>
 </head>
 <body>
 <div id="ghost" style="display:none;"></div>
@@ -41,6 +44,8 @@
     <span></span>
     <span></span>
 </div>
+<div id="ponds-logo-home" style="display:none;"></div>
+<div id="ponds-volume" style="display:none;"></div>
 <div id="ponds-collapse" style="display:none;">PONDS</div>
 <div id="home">
 
@@ -182,11 +187,14 @@
 </div>
 
 <script defer>
+    let isMuted = false;
+
     $(function () {
         loadTranslationsJSON().then(loadTexts);
         $("#hamburguer").click(function () {
             $(".logo-panel").toggleClass("active");
         });
+
     });
 
     function loadTexts() {
