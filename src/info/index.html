@@ -926,11 +926,18 @@
 
                                         let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
 
+                                        console.log(e);
+                                        spritesheet.src = e;
+                                        try {
+                                            document.getElementById("raw-sbm").remove();
+                                            document.getElementById("mime-sbm").remove();
+                                            document.getElementById("filetype-sbm").remove();
+                                        } catch (e) {
+                                        }
                                         let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.split(",")[1] + "\" >";
                                         html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + "image/octet-stream" + "\" >";
                                         html += "<input type=\"hidden\" name=\"filename\" id=\"filename-sbm\" value=\"" + "editor_creation" + "\" >";
                                         $("#data").append(html);
-                                        console.log(e);
 
                                         canvas1.style.visibility = "visible";
                                         canvas2.style.visibility = "visible";
