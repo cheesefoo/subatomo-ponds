@@ -1,3 +1,6 @@
+*{
+	font-family:meyro;
+}
 body
 {
     font:             12pt "Noto Sans JP", sans-serif;
@@ -7,7 +10,7 @@ body
     padding:          0;
     opacity:          0;
     color:            rgb(205, 201, 195);
-    background-color: rgb(13, 14, 14);
+    background-color: #97cafd;
     background-image: initial;
 }
 
@@ -22,7 +25,8 @@ body
 
 button
 {
-    font-size: 1.5rem
+    font-size: 1.5rem;
+	font-family:kei;
 }
 
 .screen
@@ -123,11 +127,12 @@ canvas
     position:          absolute;
     z-index:           10;
     bottom:            9%;
-    left:              75%;
+    left:              78%;
     width:             266.5px;
     height:            278px;
     /*background-position: 0;*/
-    
+    zoom:0.7;
+	z-index:1;
     background-repeat: no-repeat;
 
 
@@ -176,7 +181,9 @@ canvas
     background-size:   100% 86%;
 	background-position:center bottom;
 	background-color:#5dcde3;
-	
+	-webkit-box-shadow: 5px 0px 10px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 0px 10px -3px rgba(0,0,0,0.75);
+box-shadow: 5px 0px 10px -3px rgba(0,0,0,0.75);
 }
 
 /*.nav-button-container {*/
@@ -211,6 +218,54 @@ canvas
                     #03A4DB 8px 8px 0;
 }
 
+.interior:nth-child(2){
+	border-color:#518DB9;
+	box-shadow:     #518DB9 1px 1px 0,
+                    #518DB9 2px 2px 0,
+                    #518DB9 3px 3px 0,
+                    #518DB9 4px 4px 0,
+                    #518DB9 5px 5px 0,
+                    #518DB9 6px 6px 0,
+                    #518DB9 7px 7px 0,
+                    #518DB9 8px 8px 0;
+}
+
+.interior:nth-child(1){
+	border-color:#037283;
+	box-shadow:     #037283 1px 1px 0,
+                    #037283 2px 2px 0,
+                    #037283 3px 3px 0,
+                    #037283 4px 4px 0,
+                    #037283 5px 5px 0,
+                    #037283 6px 6px 0,
+                    #037283 7px 7px 0,
+                    #037283 8px 8px 0;
+}
+
+.interior:nth-child(4){
+	border-color:#FD705E;
+	box-shadow:     #FD705E 1px 1px 0,
+                    #FD705E 2px 2px 0,
+                    #FD705E 3px 3px 0,
+                    #FD705E 4px 4px 0,
+                    #FD705E 5px 5px 0,
+                    #FD705E 6px 6px 0,
+                    #FD705E 7px 7px 0,
+                    #FD705E 8px 8px 0;
+}
+
+.interior:nth-child(3){
+	border-color:#3E6A8F;
+	box-shadow:     #3E6A8F 1px 1px 0,
+                    #3E6A8F 2px 2px 0,
+                    #3E6A8F 3px 3px 0,
+                    #3E6A8F 4px 4px 0,
+                    #3E6A8F 5px 5px 0,
+                    #3E6A8F 6px 6px 0,
+                    #3E6A8F 7px 7px 0,
+                    #3E6A8F 8px 8px 0;
+}
+
 .nav-button:hover
 {
     margin:     16px 0 0 16px;
@@ -227,11 +282,12 @@ canvas
 .logo-title-container
 {
     position: absolute;
-    left:     30vw;
-    width:    40vw;
+    left:     25vw;
+    width:    50vw;
     height:   100%;
     color:    #000;
 	text-align:center;
+	margin-left:20vh;
     /*display:flex;*/
     /*flex-direction: column;*/
     /*justify-content: center;*/
@@ -240,12 +296,14 @@ canvas
 
 .logo-text
 {
-    font-size: 1.5rem;
-    position:  absolute;
-    top:       50%;
-   
-    width:     100%;
-    height:    100%;
+        font-size: 1.6rem;
+    position: absolute;
+    top: 55%;
+    font-family: 'corsva';
+    width: 100%;
+    height: 100%;
+    text-transform: capitalize;
+    color: #0d191e;
    
 }
 
@@ -254,7 +312,7 @@ canvas
 
     position:                absolute;
     z-index:                 8;
-    top:                     25%;
+    top:                     18%;
     width:                   100%;
     /*left: 41%;*/
     /*top: 30%;*/
@@ -272,22 +330,25 @@ canvas
 
 #enterPondButton
 {
-    font-size:        2.5rem;
-    position:         relative;
-    z-index:          9;
-    margin:           auto;
-    text-align:       center;
-    text-decoration:  none;
-    opacity:          0;
-    color:            #FFFFEF;
-    /*width: 20%;*/
-
-    border-radius:    5px;
+        font-size: 2rem;
+    position: relative;
+    z-index: 9;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    color: #FFFFEF;
+    /* width: 20%; */
+    border-radius: 5px;
     background-color: #e54e17;
-	width:auto;
-	max-width:initial;
-	padding:15px 20px;
-
+    width: auto;
+    max-width: initial;
+    padding: 10px 15px;
+    border: 5px solid #994115;
+    background: rgb(171,71,18);
+    background: linear-gradient(0deg, rgba(171,71,18,1) 0%, rgba(231,92,55,1) 48%);
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 #pond-ui
@@ -385,7 +446,7 @@ canvas
     margin:     auto;
 	z-index:10000;
 	height:100vh;
-	max-width:30vw;
+	max-width:20vw;
 	object-fit:contain;
 }
 
@@ -444,24 +505,28 @@ img
 		min-height:initial;
 	}
 .nav-button-container .container{
-	height: 85vh;
-    padding-top: 15vh;
+	height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     align-content: stretch;
 }
 
 .nav-button-container .btn{
-	position:relative;
-	top:7px;
-	font-weight:800;
-		color:#e54e17 !important;
+	    position: relative;
+    top: 10px;
+    font-weight: 800;
+    color: #e54e17 !important;
+    font-family: kei;
+    left: -8px;
+    font-size: 21px;
+    text-transform: capitalize;
 }
 
 .nav-button-container .container .interior{
 	margin-top:35px;
+	margin-left:-8px;
 }
 	
 .select label.option input:checked~span.title{
@@ -495,13 +560,14 @@ img
 	.logo-title-container{
 		width:100%;
 		left:0;
+		margin-left:initial;
 	}
 	
 	.logo-title{
 		position:initial;
 		top:0;
 		height:20vh;
-		margin-top:8vh;
+		margin-top:18vh;
 	}
 	
 	.logo-front{
@@ -540,11 +606,12 @@ img
 		transform:initial;
 		height:auto;
 		margin-bottom:2vh;
+		
 	}
 	
 	#enterPondButton{
-		    font-size: 1.5rem;
-    position: relative;
+		    font-size: 1.8rem;
+    position: relative	;
     z-index: 9;
     top: initial;
     margin: auto;
@@ -555,11 +622,12 @@ img
     border-radius: 5px;
     background-color: #e54e17;
     margin: auto;
-    width: 80%;
+    width: 70%;
     display: block;
-    top: -10vh;
+    top: 0vh;
     left: initial;
-		
+    margin-top: -10vh;
+    /* zoom: 0.9; */
 	}
 	
 	.logo-mid{
@@ -574,11 +642,11 @@ img
 		background-position: 20% top;
 	}
 	.logo-mid{
-		background-position:center top;
+		background-position:71% top;
 	}
 	.logo-duck{
-		left:15vw;
-		bottom:0;
+		left:33vw;
+		bottom:10vh;
 	}
 	
 	#hamburguer{
@@ -614,5 +682,7 @@ img
 	.modal-window{
 		background-color:rgba(0,0,0,0.5);
 	}
-	
+	#loadingDuck{
+		max-width:50vw;
+	}
 }

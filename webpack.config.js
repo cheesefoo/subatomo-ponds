@@ -77,6 +77,7 @@ module.exports = {
                 {from: "src/assets/images/bg1-white.png", to: "docs/bg1-white.png"},
                 {from: "src/assets/images/bg1-gr-white.png", to: "docs/bg1-gr-white.png"},
                 {from: "src/assets/css", to: "css"},
+                {from: "src/assets/fonts", to: "fonts"},
                 {from: "manifest.webmanifest", to: "manifest.webmanifest"},
                 {from: "sw.js", to: "sw.js"},
                 {from: "favicon.ico", to: "favicon.ico"},

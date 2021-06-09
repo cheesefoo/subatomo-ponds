@@ -221,7 +221,7 @@ function startHomepageAnimation() {
             opacity: 1,
             x: 0,
             y: "20vh",
-            top: "65vh",
+            top: "66.5vh",
             duration: 5,
             delay: 4
 
