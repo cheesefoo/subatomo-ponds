@@ -2,9 +2,9 @@
   "name": "idk",
   "version": "0.0.1",
   "scripts": {
-    "serve": "webpack serve --mode=development",
-    "build": "webpack --mode=development",
-    "start": "webpack serve --mode=development --open",
+    "serve": "webpack serve --mode=development --config webpack.dev.js",
+    "build": "webpack  --config webpack.production.js",
+    "start": "webpack serve --mode=development --config webpack.dev.js --open",
     "emulate": "firebase emulators:start"
   },
   "main": "src/index.js",
@@ -27,7 +27,8 @@
     "webpack": "^5.20.0",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "babel": "^6.23.0",

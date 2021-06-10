@@ -6,6 +6,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     optimization: {
+        minimize: true,
         minimizer: [
             new TerserPlugin({
                 parallel: true,
@@ -14,11 +15,6 @@ module.exports = {
                 },
             }),
         ],
-    },
-    mode: "development",
-    devtool: "eval-source-map",
-    devServer: {
-        contentBase: "./dist",
     },
     entry: {
         main: "./src/index.js",
@@ -59,6 +55,10 @@ module.exports = {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: "asset/resource",
+            }
         ],
     },
     plugins: [
