@@ -117,6 +117,8 @@ let currentPondPagination = 0;
 let pondsPerPage = 6;
 let maxPages;
 
+let isEnteringPond = false;
+
 const DUCK_STATES = {
     START_IDLE: 0,
     IDLE: 1,
@@ -324,8 +326,13 @@ function startHomepageAnimation() {
         repeat: -1
     }, 0);
 
+
+    let tl2 = gsap.timeline();
     // master.play()
     $("#enterPondButton").on("click", function () {
+        if (isEnteringPond)
+            return;
+        isEnteringPond = true;
         console.log("enter pond clicked");
         if ($("#duck-appear").css("display") == "none" &&
             $("#duck-idle").css("display") == "block") {
@@ -337,22 +344,34 @@ function startHomepageAnimation() {
             console.log("after click callback");
             // tl.timeScale(1);
             $("canvas").show();
-            $("#ponds-collapse").fadeIn();
-            $("#ponds-volume").fadeIn();
-            $("#ponds-logo-home").fadeIn();
             $("#home").hide();
-            gsap.fromTo("canvas", {opacity: 0}, {opacity: 1, duration: 3})
-                .then(function () {
-                    gsap.fromTo("#pond-ui", {opacity: 1}, {opacity: 1, duration: 1});
-
-                    //$("#pond-ui").show();
-                    window.game.input.enabled = true;
-                    window.game.scene.getScene("pond").updatePagination();
-                });
+            tl2.fromTo("#ponds-collapse", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
+            tl2.fromTo("#ponds-volume", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
+            tl2.fromTo("#ponds-logo-home", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
+            tl2.fromTo("canvas", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
+            tl2.fromTo("#pond-ui", {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, "+=3").then(function () {
+                //$("#pond-ui").show();
+                window.game.input.enabled = true;
+                window.game.scene.getScene("pond").updatePagination();
+                isEnteringPond = false;
+            });
+            tl2.play();
         });
-        $(this).off();
     });
-    $("#ponds-volume").on("click", function () {
+
+    $("#ponds-logo-home").on("click", function () {
+        if (isEnteringPond)
+            return;
+        isEnteringPond = true;
+        window.game.input.enabled = false;
+
+        tl2.timeScale(2).reverse(0, true).then(function () {
+            $("canvas").hide();
+            $("#home").show();
+            tl.play().then(function () {
+                isEnteringPond = false;
+            });
+        });
     });
 
     $("#ponds-collapse").on("click", function () {

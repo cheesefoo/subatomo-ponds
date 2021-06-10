@@ -39,14 +39,14 @@
 <body>
 <div id="ghost" style="display:none;"></div>
 <img alt="loading" id="loadingDuck" src="assets/loading.gif">
-<div id="hamburguer">
+<div id="hamburger">
     <span></span>
     <span></span>
     <span></span>
 </div>
-<div id="ponds-logo-home" style="display:none;"></div>
-<div id="ponds-volume" style="display:none;"></div>
-<div id="ponds-collapse" style="display:none;">PONDS</div>
+<div id="ponds-logo-home" style="visibility:hidden;"></div>
+<div id="ponds-volume" style="visibility:hidden;"></div>
+<div id="ponds-collapse" style="visibility:hidden;">PONDS</div>
 <div id="home">
 
     <div class="logo logo-bg logo-sky"></div>
@@ -191,7 +191,7 @@
 
     $(function () {
         loadTranslationsJSON().then(loadTexts);
-        $("#hamburguer").click(function () {
+        $("#hamburger").click(function () {
             $(".logo-panel").toggleClass("active");
         });
 

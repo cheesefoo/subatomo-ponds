@@ -635,7 +635,7 @@ img
     z-index:          10;
     top:              80px;
     left:             10px;
-    display:          none;
+
     padding:          30px;
     cursor:           pointer;
     color:            white;
@@ -655,7 +655,7 @@ img
 
     top:                     50px;
     left:                    10px;
-    display:                 none;
+
     width:                   4vh;
     padding:                 10px;
     cursor:                  pointer;
@@ -785,7 +785,7 @@ img
         left:   33vw;
     }
 
-    #hamburguer
+    #hamburger
     {
         position:         fixed;
         z-index:          100;
@@ -797,7 +797,7 @@ img
         background-color: rgba(0, 0, 0, 0.5);
     }
 
-    #hamburguer span
+    #hamburger span
     {
         position:         relative;
         z-index:          1;
