@@ -2,23 +2,12 @@ const webpack = require("webpack");
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new TerserPlugin({
-                parallel: true,
-                terserOptions: {
-                    // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
-                },
-            }),
-        ],
-    },
+
     entry: {
         main: "./src/index.js",
-        vendor: ["phaser", "gsap"],
+        vendor: ["phaser"],
     },
     output: {
         filename: "[name].bundle.js",
