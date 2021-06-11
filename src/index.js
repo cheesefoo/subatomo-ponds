@@ -86,13 +86,14 @@ const SPRITE_HEIGHT = 100;
 const maxPond = submissions.submissions[submissions.submissions.length - 1].pond;
 const QUACK_DURATION = 1600;
 
-let sceneWidth = window.innerWidth;
-let sceneHeight = window.innerHeight;
+let sceneWidth = innerWidth;
+let sceneHeight = innerHeight;
+
 
 const MIN_TRAVEL = 1000;
 const MAX_TRAVEL_TIME = 5000;
-const MAX_TRAVEL_DIST_X = sceneWidth / 4;
-const MAX_TRAVEL_DIST_Y = sceneHeight / 4;
+const MAX_TRAVEL_DIST_X = sceneHeight / 4;
+const MAX_TRAVEL_DIST_Y = sceneWidth / 4;
 const WALK_SPEED = 100;
 const MIN_IDLE_TIME = 0;
 const MAX_IDLE_TIME = 5000;
@@ -141,7 +142,7 @@ function startHomepageAnimation() {
     gsap.set(".modal-window", {visibility: "inherit", delay: 5});
     let tl = gsap.timeline();
 
-    if (window.innerWidth > 900) {
+    if (innerWidth > 900) {
         tl.fromTo(".logo-panel", {
             autoAlpha: 0,
             opacity: 0,
@@ -223,7 +224,7 @@ function startHomepageAnimation() {
         delay: 3
     }, 0);
 
-    if (window.innerWidth > 900) {
+    if (innerWidth > 900) {
         tl.fromTo("#enterPondButton", {
             autoAlpha: 0,
             opacity: 0,
@@ -257,7 +258,7 @@ function startHomepageAnimation() {
         }, 0);
     }
 
-    if (window.innerWidth > 900) {
+    if (innerWidth > 900) {
         tl.fromTo(".interior", {
             autoAlpha: 0,
             x: "-100%"
@@ -349,7 +350,7 @@ function startHomepageAnimation() {
             tl2.fromTo("#ponds-volume", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("#ponds-logo-home", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("canvas", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
-            tl2.fromTo("#pond-ui", {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, "+=3").then(function () {
+            tl2.fromTo("#pond-ui", {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, 0).then(function () {
                 //$("#pond-ui").show();
                 window.game.input.enabled = true;
                 window.game.scene.getScene("pond").updatePagination();
@@ -380,6 +381,15 @@ function startHomepageAnimation() {
 
 }
 
+let newHeight, newWidth;
+if (sceneHeight > sceneWidth) {
+    newHeight = sceneHeight;
+    newWidth = sceneHeight * (2003 / 1080);
+
+} else {
+    newHeight = sceneWidth * (1080 / 2003);
+    newWidth = sceneWidth;
+}
 
 class MyGame extends Phaser.Scene {
     // jshint ignore:line
@@ -483,9 +493,9 @@ class MyGame extends Phaser.Scene {
             });
         }
 
-        var t0 = performance.now();
+        const t0 = performance.now();
         loading.call(this);
-        var t1 = performance.now();
+        const t1 = performance.now();
         console.log((t1 - t0) + " milliseconds.");
 
 
@@ -524,13 +534,12 @@ class MyGame extends Phaser.Scene {
         // this.load.image("camerafilter", "assets/camerafilter.png");
 
         // this.add.image(0, 0, 'tiles')
+
+
     }
 
     create() {
-        // console.log("create call");
-        // let shader = this.add.shader("camerafilter")
-        // let gameObjectCamera = this.cameras.add();
-        // gameObjectCamera.set
+
         let pondManager = this.scene.get("pond-manager");
         pondManager.events.on(
             "reloadPond",
@@ -592,37 +601,52 @@ class MyGame extends Phaser.Scene {
 
         let layers = [groundLayer, pondLayer, obstacleLayer, transitionLayer];
 
-        var newHeight;
-        var newWidth;
-        if (sceneHeight > sceneWidth) {
-            newHeight = sceneHeight;
-            newWidth = sceneHeight * (2003 / 1080);
 
-        } else {
-            newHeight = sceneWidth * (1080 / 2003);
-            newWidth = sceneWidth;
-        }
-        // console.log("height", newHeight);
-        console.log("pond size", newWidth, newHeight);
+        console.log(`pond size (${innerWidth}, ${innerHeight})->(${sceneWidth}, ${sceneHeight})`);
         layers.forEach(function (l) {
             l.setDisplaySize(newWidth, newHeight);
             l.alpha = 0;
         });
 
         let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
+        pondImg.setOrigin(0.5);
+        pondImg.setDisplaySize(newWidth, newHeight);
+        // pondImg.setDisplayOrigin();
         // console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
         $("#ghost img").attr("id", "ghostIMG");
 
-        var canvasGhost = document.createElement("canvas");
+        const canvasGhost = document.createElement("canvas");
         canvasGhost.width = newWidth;
         canvasGhost.height = newHeight;
 
-        var ghost2d = canvasGhost.getContext("2d");
+        const ghost2d = canvasGhost.getContext("2d");
         ghost2d.drawImage(document.getElementById("ghostIMG"), 0, 0, newWidth, newHeight);
 
         this.textures.addBase64("ghostCollision", canvasGhost.toDataURL());
 
+        if (innerWidth < 900) {
+            console.log("camera panning");
+            this.cameras.main.pan(newWidth * 0.43, newHeight / 2, 0, "none", true);
+
+            let wv = this.cameras.main.worldView;
+            let that = this;
+            this.time.addEvent({
+                delay: 1000,
+                callback: function () {
+                    that.physics.world.setBounds(wv.left - 50, wv.top,
+                        wv.width + 100, wv.height);
+                    console.log(wv.left, wv.top, wv.right, wv.bottom);
+                }
+            });
+            // this.physics.world.setBounds((sceneWidth / 3),-sceneHeight,
+            //     (sceneWidth / 3), sceneHeight*2);
+
+
+        }
+        this.boundsX = this.physics.world.bounds.x;
+        this.boundsY = this.physics.world.bounds.y;
+        console.log(this.boundsX, this.boundsY);
     }
 
     makeVolumeButton() {
@@ -638,7 +662,6 @@ class MyGame extends Phaser.Scene {
             scene.sound.setMute(isMuted);
         });
     }
-
 
     /// Unused
     applyCollisions() {
@@ -736,19 +759,19 @@ class MyGame extends Phaser.Scene {
         });
 
 
-        // if (DEBUGGING) {
-        //     const debugGraphics = this.add.graphics().setAlpha(0.75);
-        //     obstacleLayer.renderDebug(debugGraphics, {
-        //         tileColor: null, // Color of non-colliding tiles
-        //         collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-        //         faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-        //     });
-        //     transitionLayer.renderDebug(debugGraphics, {
-        //         tileColor: null, // Color of non-colliding tiles
-        //         collidingTileColor: new Phaser.Display.Color(255, 134, 255, 255), // Color of colliding tiles
-        //         faceColor: new Phaser.Display.Color(255, 39, 37, 255) // Color of colliding face edges
-        //     });
-        // }
+        if (DEBUGGING) {
+            const debugGraphics = this.add.graphics().setAlpha(0.75);
+            obstacleLayer.renderDebug(debugGraphics, {
+                tileColor: null, // Color of non-colliding tiles
+                collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+                faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
+            });
+            transitionLayer.renderDebug(debugGraphics, {
+                tileColor: null, // Color of non-colliding tiles
+                collidingTileColor: new Phaser.Display.Color(255, 134, 255, 255), // Color of colliding tiles
+                faceColor: new Phaser.Display.Color(255, 39, 37, 255) // Color of colliding face edges
+            });
+        }
     }
 
     makeWalkingAnimationFrames() {
@@ -811,7 +834,6 @@ class MyGame extends Phaser.Scene {
     //Fill pond number with their ducks
     populateDucks(pond = 1) {
         //Get submission reference sheet from google sheet and filter by pond #
-        //{strName,strImageName,numPondNumber}
         const submissionsArray = submissions["submissions"];
 
         const ducks = submissionsArray.filter(function (obj) {
@@ -820,8 +842,6 @@ class MyGame extends Phaser.Scene {
 
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
-            //for (let i = 0; i < 1; i++) {
-
 
             const duckGameObject = this.physics.add
                 .sprite(0, 0, "allDucks", ducks[i].image + "-0.png");
@@ -848,6 +868,7 @@ class MyGame extends Phaser.Scene {
                 getRandomInt(sceneWidth / 3, 2 * sceneWidth / 3),
                 getRandomInt(sceneHeight / 3, 2 * sceneHeight / 3),
             );
+
             duckContainer = this.physics.add.existing(duckContainer);
             duckContainer.body.setCollideWorldBounds(true);//.setBounce(1,1);
             duckContainer.add(legsOverlay);
@@ -869,7 +890,7 @@ class MyGame extends Phaser.Scene {
             duckGameObject.setOrigin(0.5, 0.5);
             duckGameObject.displayWidth = SPRITE_WIDTH;
             duckGameObject.displayHeight = SPRITE_HEIGHT;
-            duckGameObject.setPipeline("Light2D");
+
 
             // duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x * 0.5);
             // duckGameObject.body.overlapY = Math.floor(duckGameObject.body.y * 0.9);
@@ -976,11 +997,11 @@ class MyGame extends Phaser.Scene {
                     break;
                 case DUCK_STATES.START_WALKING: {
                     let body = context.parentContainer;
-                    const destinationX = getRandomDestinationX(
+                    const destinationX = that.getRandomDestinationX(
                         body.x,
                         MAX_TRAVEL_DIST_X
                     );
-                    const destinationY = getRandomDestinationY(
+                    const destinationY = that.getRandomDestinationY(
                         body.y,
                         MAX_TRAVEL_DIST_Y
                     );
@@ -1149,20 +1170,29 @@ class MyGame extends Phaser.Scene {
         }
     }
 
-    /*
-      for (let i = 0; i < this.children.list.length; i++) {
-              let gameObject = this.children.list[i];
-              if (gameObject.name !== "duck") {
-                  continue;
-              }
-              gameObject.setDepth(gameObject.y);
-              gameObject.updateState(gameObject, delta);
-          }
 
-       */
+    getRandomDestinationX(startPos, maxDist) {
+        let dist = getRandomInt(0, 1) === 1 ? -1 * maxDist : maxDist;
+        let destination = getRandomInt(startPos, startPos + dist);
+        // console.log(startPos,destination)
+        // if (destination > this.boundsX)
+        //     destination = this.getRandomDestinationX(startPos, maxDist);
+        return destination;
+    }
+
+    getRandomDestinationY(startPos, maxDist) {
+        let dist = getRandomInt(0, 1) === 1 ? -1 * maxDist : maxDist;
+        let destination = getRandomInt(startPos, startPos + dist);
+        // if (destination > this.boundsY)
+        //     destination = this.getRandomDestinationY(startPos, maxDist);
+        return destination;
+    }
+
 }
 
-class PondManager extends Phaser.Scene {
+class PondManager
+    extends Phaser
+        .Scene {
     constructor() {
         // console.log("pond manager constructor");
         super({key: "pond-manager", active: true});
@@ -1172,6 +1202,11 @@ class PondManager extends Phaser.Scene {
 
     preload() {
         this.load.image("panel", "assets/subaru_uitest_1.png");
+
+        if (innerWidth < 900) {
+            this.cameras.main.pan(newWidth * 0.43, newHeight / 2, 0, "none", true);
+
+        }
     }
 
     create() {
@@ -1195,19 +1230,19 @@ class PondManager extends Phaser.Scene {
 
             let x = gameObject.parentContainer.x;
             let y = gameObject.parentContainer.y;
-            let panel = this.add.container(x - 50, y - 120);
+            let panel = pond.add.container(x - 50, y - 120);
 
-            //let img = this.add.image(0, 0, "panel");
+            //let img = pond.add.image(0, 0, "panel");
 
 
-            let name = this.add.text(0, 0, gameObject.displayName, MSG_TEXT_CONFIG);
+            let name = pond.add.text(0, 0, gameObject.displayName, MSG_TEXT_CONFIG);
             gameObject.namePopup = name;
 
-            let msg = this.add.text(0, 20, gameObject.message, MSG_TEXT_CONFIG);
+            let msg = pond.add.text(0, 20, gameObject.message, MSG_TEXT_CONFIG);
             //console.log("mensaje",msg,img);
             gameObject.msgPopup = msg;
 
-            let img = this.add.nineslice(
+            let img = pond.add.nineslice(
                 -10, -10,   // this is the starting x/y location
                 msg.displayWidth + 20, msg.displayHeight + name.displayHeight + 20,   // the width and height of your object
                 "panel", // a key to an already loaded image
@@ -1220,11 +1255,12 @@ class PondManager extends Phaser.Scene {
             panel.add(msg);
             img.setOrigin(0, 0);
             panel.sendToBack(img);
+            panel.setDepth(9999);
 
             // console.log(name);
             // console.log(img);
 
-            this.time.addEvent({
+            pond.time.addEvent({
                 delay: USERNAME_DISPLAY_DURATION,
                 callback: function () {
                     this.namePopup.destroy();
@@ -1276,8 +1312,8 @@ class PondManager extends Phaser.Scene {
 
 const config = {
     type: Phaser.CANVAS,
-    width: sceneWidth,
-    height: sceneHeight,
+    width: innerWidth,
+    height: innerHeight,
     scale: {
         mode: Phaser.Scale.ENVELOP,
         autoCenter: Phaser.Scale.CENTER_BOTH
@@ -1340,22 +1376,4 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function getRandomDestinationX(startPos, maxDist) {
-    let dist = 0;
-    dist = getRandomInt(0, 1) === 1 ? -1 * maxDist : maxDist;
-    let destination = getRandomInt(startPos, startPos + dist);
-    if (destination < SPRITE_WIDTH || destination > (sceneWidth - SPRITE_WIDTH))
-        destination = getRandomDestinationX(startPos, maxDist);
-    return destination;
-}
-
-function getRandomDestinationY(startPos, maxDist) {
-    let dist = 0;
-    dist = getRandomInt(0, 1) === 1 ? -1 * maxDist : maxDist;
-    let destination = getRandomInt(startPos, startPos + dist);
-    if (destination < SPRITE_HEIGHT || destination > (sceneHeight - SPRITE_HEIGHT))
-        destination = getRandomDestinationY(startPos, maxDist);
-    return destination;
 }
