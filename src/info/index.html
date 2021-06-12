@@ -11,9 +11,9 @@
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">
     <link crossorigin="anonymous" href="index.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
-    <link href="editor.css" rel="stylesheet">
-    <link href="upload.css" rel="stylesheet">
-    <link href="texture.css" rel="stylesheet">
+    <link href="editor.min.css" rel="stylesheet">
+    <link href="upload.min.css" rel="stylesheet">
+    <link href="accessories.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -267,6 +267,7 @@
                 <li text="s-5"></li>
             </ul>
             <a download href="template.png">Click to download</a>
+            <a download href="duck_accessories.zip">Accessories</a>
             <img alt="template" src="template.png"/>
         </div>
     </div>
@@ -1013,27 +1014,6 @@
                                         link.click();
                                     }
                                 </script>
-
-                                <!--                                <div style="position:absolute;left:0;">-->
-                                <div style="position:fixed;left:-10000000px;">
-                                    <img id="bigTexture" onload="loadAccesoriesTexture()" src="texture.png">
-                                    <div id="templateImages">
-                                        <div class="SubaBeret_1"></div>
-                                        <div class="policehat"></div>
-                                        <div class="Little_Ambulance_1"></div>
-                                        <div class="Little_Ambulance_2"></div>
-                                        <div class="Little_Cap_1"></div>
-                                        <div class="Little_Duck1"></div>
-                                        <div class="Little_Megaphone"></div>
-                                        <div class="tophat"></div>
-                                        <div class="eyepatch"></div>
-                                        <div class="glasses"></div>
-                                        <div class="stopwatch"></div>
-                                        <div class="glassestint"></div>
-                                    </div>
-                                </div>
-
-
                                 <script>
 
                                     function createCrop(selector) {
@@ -1043,9 +1023,12 @@
                                         let cropX = $(selector).css("background-position-x");
                                         let cropY = $(selector).css("background-position-y");
 
-                                        cropX = cropX.replace("-", "");
-                                        cropY = cropY.replace("-", "");
-
+                                        try {
+                                            cropX = cropX.replace("-", "");
+                                            cropY = cropY.replace("-", "");
+                                        } catch (e) {
+                                            console.log(selector, e);
+                                        }
                                         console.log(cropWidth, cropHeight, cropX, cropY);
 
                                         $("body").append("<canvas id=\"cropped\" width=" + cropWidth + " height=" + cropHeight + " style=\"border:2px solid black;\"></canvas>");
@@ -1087,6 +1070,55 @@
 
 
                                 </script>
+                                <!--                                <div style="position:absolute;left:0;">-->
+                                <div style="position:fixed;left:-10000000px;">
+                                    <img id="bigTexture" onload="loadAccesoriesTexture()" src="accessories.png">
+                                    <div id="templateImages">
+                                        <div class="SubaBeret_1"></div>
+                                        <div class="Little_Ambulance_1"></div>
+                                        <div class="Little_Ambulance_2"></div>
+                                        <div class="Little_Cap_1"></div>
+                                        <div class="Little_Duck1"></div>
+                                        <div class="Little_Megaphone"></div>
+                                        <div class="Suba_Hairpin"></div>
+                                        <div class="tophat"></div>
+                                        <div class="stopwatch"></div>
+                                        <div class="policehat"></div>
+                                        <div class="KoroHairband"></div>
+                                        <div class="Akiantenna"></div>
+                                        <div class="AquaRibbon"></div>
+                                        <div class="AquaTissue"></div>
+                                        <div class="AyameMaskandHorn"></div>
+                                        <div class="ChocoHorns"></div>
+                                        <div class="MatsuriRibbon"></div>
+                                        <div class="MelChoker"></div>
+                                        <div class="MelHairbat"></div>
+                                        <div class="Akinecktie"></div>
+                                        <div class="MioHairband"></div>
+                                        <div class="OkaChoker"></div>
+                                        <div class="Okaears"></div>
+                                        <div class="ShionHat"></div>
+                                        <div class="ChocoTattoo"></div>
+                                        <div class="SubaHat"></div>
+                                        <div class="FubuEars"></div>
+                                        <div class="Fubukimark1"></div>
+                                        <div class="KoroChoker"></div>
+                                        <div class="MioEars"></div>
+                                        <div class="bow1"></div>
+                                        <div class="bow2"></div>
+                                        <div class="baseballhat"></div>
+                                        <div class="hat2"></div>
+                                        <div class="hat1"></div>
+                                        <div class="hat3"></div>
+                                        <div class="glassestint"></div>
+                                        <div class="eyepatch"></div>
+                                        <div class="glasses"></div>
+
+                                    </div>
+                                </div>
+
+
+
                                 <label id="editor-sub" style="display:none" text="e-22">If you made changes, generate
                                     the spritesheet again
                                     before
@@ -1323,7 +1355,7 @@
     selectableTabList.forEach((selectableTab) => {
         const selTab = new bootstrap.Tab(selectableTab);
         selectableTab.addEventListener("click", function () {
-            var newUrl;
+            let newUrl;
             const hash = selectableTab.getAttribute("href");
             if (hash == "#home-tab") {
                 newUrl = url.split("#")[0];
@@ -1366,7 +1398,7 @@
 <script>
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
+    const firebaseConfig = {
         apiKey: "AIzaSyCM5hq9uppNdL5fdhOHbiKzmWJWuilgjkQ",
         authDomain: "subatomoen-54ddd.firebaseapp.com",
         projectId: "subatomoen-54ddd",

@@ -10,7 +10,7 @@
     transition:       all 0.3s;
     pointer-events:   none;
     opacity:          0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-window:target {
@@ -62,19 +62,33 @@
     height: 100vh;
 }
 
-.modal-window > div {
+.modal-window > div
+{
     border-radius: 1rem;
 }
 
-.modal-window div:not(:last-of-type) {
+.modal-window div:not(:last-of-type)
+{
     margin-bottom: 15px;
 }
 
-small {
+.modal-bg
+{
+    position: fixed;
+    top:      0;
+    right:    0;
+    bottom:   0;
+    left:     0;
+    /*background-color: rgba(0, 0, 0, .2);*/
+}
+
+small
+{
     color: lightgray;
 }
 
-.btn {
-    padding: 2rem 0 0 1rem;
+.btn
+{
+    padding:         2rem 0 0 1rem;
     text-decoration: none;
 }

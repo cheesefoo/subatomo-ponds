@@ -47,7 +47,7 @@ import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
 // require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
 // require("./assets/pond/pond_vibrant_1920x1080.jpg");
 require("./assets/pond/Subapond_vibrantHD-min.jpg");
-// require("./assets/pond/pond_color_invert.png");
+require("./assets/pond/pond_color_invert.png");
 require("./assets/pond/WaterSplashAnimation/splash.png");
 require("./assets/images/ui/subaru_uitest_1.png");
 
