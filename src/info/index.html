@@ -52,7 +52,7 @@
 
                     <button aria-controls="guidelines" aria-selected="false" class="nav-link"
                             data-bs-target="#guidelines"
-                            data-bs-toggle="tab" id="guidelines-tab" role="tab" text="l-4" type="button">
+                            data-bs-toggle="tab" id="guidelines-tab" role="tab" text="l-5" type="button">
                         Guidelines
                     </button>
 
@@ -80,9 +80,13 @@
     <div aria-labelledby="home-tab" class="screen justify-content-center tab-pane fade show active" id="home"
          role="tabpanel">
         <div class="screen-inner">
-            <h1 text="a-0"></h1>
-            <div text="a-1"></div>
-            <div>~NYI~ anyone wanna do it? :^)</div>
+            <h1 text="a-0">Oozora Subaru Celebration Project</h1>
+            <div text="a-1">Subaru's birthday is approaching, as well as her 1 million subscriber milestone! The
+                Subatomo EN Fan Server has created a webpage to show our support for Subaru, and everyone is invited to
+                participate! It's a little winded to explain through text, so here is a small video to demonstrate what
+                we're working on:
+            </div>
+            <div>Video coming soon!</div>
             <div text="a-25"></div>
             <div><h3 text="a-2"></h3><a href="#home-tldr" id="home-tldr-link" text="a-3"></a></div>
             <div><span text="a-4"></span><a href="#specs-tab" text="a-5"></a></div>
@@ -99,7 +103,9 @@
                     <a href="#specs-tab" text="a-15"></a>
                     <span text="a-16"></span>
                 </p>
+                <p><span text="a-28"></span></p>
             </div>
+
             <div>
                 <h3 id="home-tldr" text="a-17"></h3>
 
@@ -109,6 +115,7 @@
                 <a href="#specs-tab" text="a-21"></a>
                 <span text="a-22"></span>
                 <a href="#guidelines-tab" text="a-23"></a>
+                <span text="a-28"></span>
                 <div text="a-24"></div>
 
 
@@ -398,8 +405,8 @@
                         <label for="referer" text="u-33">How did you hear about this project? </label>
 
                         <select aria-label="referer" id="referer" name="referer">
-                            <option text="u-34"
-                                    selected value="subaru-discord"></option>
+                            <option selected
+                                    text="u-34" value="subaru-discord"></option>
                             <option text="u-35"
                                     value="fan-discord">A hololive fan Discord
                             </option>
@@ -435,25 +442,25 @@
                             </option>
                             <option text="u-43" value="upload">Upload my file</option>
                         </select>!-->
-						
-						<div id="radiosUpload">
-							<div>
-								<input type="radio" id="justTemp" name="uploadMethod" value="template" checked  >
-								<label for="justTemp">Just use the template (no
-                                customizations)</label>
-							</div>
-							
-							<div>
-								<input type="radio" id="useEditor" name="uploadMethod" value="editor">
-								<label for="useEditor">Use our editor (limited
-                                functionality)</label>
-							</div>
-							
-							<div>
-								<input type="radio" id="useUpload" name="uploadMethod" value="upload">
-								<label for="useUpload">Upload my file</label>
-							</div>
-						</div>
+
+                        <div id="radiosUpload">
+                            <div>
+                                <input checked id="justTemp" name="uploadMethod" type="radio" value="template">
+                                <label for="justTemp">Just use the template (no
+                                    customizations)</label>
+                            </div>
+
+                            <div>
+                                <input id="useEditor" name="uploadMethod" type="radio" value="editor">
+                                <label for="useEditor">Use our editor (limited
+                                    functionality)</label>
+                            </div>
+
+                            <div>
+                                <input id="useUpload" name="uploadMethod" type="radio" value="upload">
+                                <label for="useUpload">Upload my file</label>
+                            </div>
+                        </div>
 
                         <div class="upload">
                             <input accept="image/png" class="form-control uploadFile" id="uploadFile" name="file"
@@ -1051,9 +1058,9 @@
                                         link.click();
                                     }
                                 </script>
-								
-								
-								<div style="position:fixed;left:-10000000px;">
+
+
+                                <div style="position:fixed;left:-10000000px;">
                                     <img id="bigTexture" onload="loadAccesoriesTexture()" src="accessories.png">
                                     <div id="templateImages">
                                         <div class="SubaBeret_1"></div>
@@ -1100,8 +1107,6 @@
                                 </div>
 
 
-								
-								
                                 <script>
 
                                     function createCrop(selector) {
@@ -1151,7 +1156,7 @@
                                     var images = $("#templateImages div").toArray().reverse();
 
                                     function loadAccesoriesTexture() {
-										console.log("asdas",$(images.pop()).attr("class"));
+                                        console.log("asdas", $(images.pop()).attr("class"));
 
                                         createCrop("." + $(images.pop()).attr("class"));
                                     }
@@ -1159,7 +1164,7 @@
 
                                 </script>
                                 <!--                                <div style="position:absolute;left:0;">-->
-                                
+
 
                                 <label id="editor-sub" style="display:none" text="e-22">If you made changes, generate
                                     the spritesheet again
@@ -1354,7 +1359,7 @@
     });
 
     //$("#uploadMethodChoice").on("change", function () {
-	$('input[type=radio][name=uploadMethod]').change(function() {
+    $("input[type=radio][name=uploadMethod]").change(function () {
         let v = $(this).val();
         let $uploadFile = $("#uploadFile");
         let $editor = $("#editor");

@@ -76,7 +76,9 @@
       "Best hairstyle? (optional)",
       "Short",
       "Long",
-      "Twintails"
+      "Twintails",
+      "Upload successful!",
+      "The image dimensions of your submission must be 400x400 and less than 1000kb. If you have questions please contact us on discord."
     ],
     "TUTORIAL": [
       "Tutorial",
@@ -88,7 +90,7 @@
       "Uploading",
       "FAQ",
       "How do I participate?",
-      "Please read this first:",
+      "Please read this first",
       "How do you create an animation?",
       "Animation is the capturing of sequential, static images\u2014drawings or photos of objects\u2014and playing them in rapid succession to mimic real world motion. If you\u2019ve ever seen a flip book, you know how it works.",
       "What is a sprite sheet?",
@@ -148,7 +150,8 @@
       "Please do not share it on Twitter with Subaru\u2019s art tag.",
       "Every duck is drawn by a Subatomo in the community! We want everyone and anyone to participate!",
       "When you submit your duck, you won't be able to see it until Subaru's milestone. ",
-      "You can provide your email address with your submission if you would like to be informed if there was anything wrong with your submission. However, if there was something wrong and you don't give us contact info, it will be lost to the void."
+      "You can provide your email address with your submission if you would like to be informed if there was anything wrong with your submission. However, if there was something wrong and you don't give us contact info, it will be lost to the void.",
+      "You can also just write a congratulatory message by itself, and we'll attach it to our default duck."
     ],
     "GUIDELINES": [
       "GUIDELINES",
@@ -217,7 +220,9 @@
       "Duck should face to the right ->",
       "Align bottom of duck to bottom of each frame.",
       ".png format with background transparency (it will be reduced to PNG-8)",
-      "Under 100KB file size"
+      "Under 100KB file size",
+      "Download template",
+      "Download accessories"
     ],
     "Editor": [
       "Duck Editor",
@@ -259,9 +264,11 @@
       "twitter.com/NagiRaik",
       "Translation"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
@@ -269,17 +276,15 @@
     "JP] Alphado": [
       "twitter.com/alphadojakizeal"
     ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1"
-    ],
     "ES]Yurian": [
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   },
@@ -360,7 +365,9 @@
       "\u00bfMejor peinado?",
       "Corto",
       "Largo",
-      "Coletas"
+      "Coletas",
+      "Subida exitosa",
+      "Las dimensiones de la imagen a enviar deben ser 400x400 y menor que 1000KB. Si tienes algunas pregunta, porfavor contactanos en discord"
     ],
     "TUTORIAL": [
       "Tutorial",
@@ -432,7 +439,8 @@
       "Por favor no compartir en Twitter con el tag de arte para Subaru.",
       "\u00a1Cada pato ha sido dibujado por un Subatomo en la comunidad! \u00a1Queremos que todo el mundo participe!",
       "Cuando env\u00edes tu pato, no podr\u00e1s verlo hasta el milestone de Subaru.",
-      "Puedes proveer tu direcci\u00f3n email con tu entrega si te gustar\u00eda mantenerte informada de si algo sali\u00f3 mal con la misma. Pero, si algo sali\u00f3 mal y no provees informaci\u00f3n de contacto, se perder\u00e1 en el vac\u00edo."
+      "Puedes proveer tu direcci\u00f3n email con tu entrega si te gustar\u00eda mantenerte informada de si algo sali\u00f3 mal con la misma. Pero, si algo sali\u00f3 mal y no provees informaci\u00f3n de contacto, se perder\u00e1 en el vac\u00edo.",
+      "Tambien puedes escribir un mensaje de felicitaciones por ti mismo y nosotros lo adjuntaremos a nuestro pato predeterminado"
     ],
     "GUIDELINES": [
       "PAUTAS",
@@ -501,7 +509,9 @@
       "El pato debe estar mirando a la derecha ->",
       "Alinea la parte baja del pato a la parte baja de cada frame",
       "Formato .png con fondo transparente (ser\u00e1 reducido a PNG-8)",
-      "El tama\u00f1o del archivo debe ser menor a 100KB"
+      "El tama\u00f1o del archivo debe ser menor a 100KB",
+      "Descargar plantilla",
+      "Descargar accesorios"
     ],
     "Editor": [
       "Editor de Pato",
@@ -543,9 +553,11 @@
       "twitter.com/NagiRaik",
       "Traducci\u00f3n"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
@@ -553,17 +565,15 @@
     "JP] Alphado": [
       "twitter.com/alphadojakizeal"
     ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1"
-    ],
     "ES]Yurian": [
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   },
@@ -644,7 +654,9 @@
       "Potongan rambut yang terbaik?",
       "Pendek",
       "Panjang",
-      "Kuncir dua"
+      "Kuncir dua",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "TUTORIAL": [
       "Tutorial",
@@ -716,7 +728,8 @@
       "Mohon untuk TIDAK membagikan gambar yang dibuat di Twitter dengan tag gambar Subaru",
       "Setiap bebek digambar oleh Subatomo dalam komunitas! Kami ingin semua untuk ikut serta!",
       "Ketika kamu mengumpulkan bebekmu, kamu tidak bisa melihatnya sampai Milestone Subaru tercapai",
-      "Kamu bisa menyediakan email kamu bersama dengan bebek kirimanmu apabila kamu ingin diberitahu apabila ada yang salah dengan bebek yang kamu kumpulkan. Akan tetapi, jika ada masalah dengan bebek yang dikumpulkan dan kamu tidak memberikan email atau kontak apapun, hasil yang kamu kirimkan tidak akan dimuat"
+      "Kamu bisa menyediakan email kamu bersama dengan bebek kirimanmu apabila kamu ingin diberitahu apabila ada yang salah dengan bebek yang kamu kumpulkan. Akan tetapi, jika ada masalah dengan bebek yang dikumpulkan dan kamu tidak memberikan email atau kontak apapun, hasil yang kamu kirimkan tidak akan dimuat",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "Pedoman",
@@ -785,7 +798,9 @@
       "Bebek harus menghadap ke kanan ->",
       "Luruskan bagian bawah bebek dengan bagian bawah frame",
       "Format .png dengan latar belakang transparan",
-      "Ukuran lebih kecil dari 100KB"
+      "Ukuran lebih kecil dari 100KB",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "Editor": [
       "Editor bebek",
@@ -827,9 +842,11 @@
       "twitter.com/NagiRaik",
       "Penerjemah"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
@@ -837,17 +854,15 @@
     "JP] Alphado": [
       "twitter.com/alphadojakizeal"
     ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1"
-    ],
     "ES]Yurian": [
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   },
@@ -928,7 +943,9 @@
       "Penteado favorito? (opcional)",
       "Curto",
       "Longo",
-      "\"Maria-chiquinha\""
+      "\"Maria-chiquinha\"",
+      "Enviado com sucesso!",
+      "As dimens\u00f5es da imagem do seu envio devem ser 400x400 e menor que 1000 kb. Se voc\u00ea tiver d\u00favidas, nos contate no discord."
     ],
     "TUTORIAL": [
       "Tutorial",
@@ -1000,7 +1017,8 @@
       "Por favor n\u00e3o compartilhe no Twitter com a hashtag de arte da Subaru.",
       "Todo pato \u00e9 desenhado por um Subatomo da comunidade! N\u00f3s queremos que toda e qualquer pessoa participe!",
       "Ao enviar seu pato, voc\u00ea n\u00e3o poder\u00e1 v\u00ea-lo at\u00e9 a Subaru chegar aos 1 milh\u00e3o de inscritos.",
-      "Voc\u00ea pode fornecer seu endere\u00e7o de e-mail com seu envio se quiser ser informado se houver algo de errado com ele. Entretanto, se houver algo de errado e voc\u00ea n\u00e3o nos fornecer seu contato, ele ser\u00e1 perdido."
+      "Voc\u00ea pode fornecer seu endere\u00e7o de e-mail com seu envio se quiser ser informado se houver algo de errado com ele. Entretanto, se houver algo de errado e voc\u00ea n\u00e3o nos fornecer seu contato, ele ser\u00e1 perdido.",
+      "Voc\u00ea tamb\u00e9m pode simplesmente escrever uma mensagem de parab\u00e9ns e colocaremos ela ao nosso pato padr\u00e3o."
     ],
     "GUIDELINES": [
       "ORIENTA\u00c7\u00d5ES",
@@ -1069,7 +1087,9 @@
       "Pato deve estar virado para a direita ->",
       "Alinhe a parte inferior do pato com a parte inferior de cada frame.",
       "Formato .png com fundo transparente (ser\u00e1 reduzido para PNG-8)",
-      "Tamanho do arquivo deve ser menor que 100KB"
+      "Tamanho do arquivo deve ser menor que 100KB",
+      "Baixar o template",
+      "Baixar acess\u00f3rios"
     ],
     "Editor": [
       "Editor do Pato",
@@ -1111,26 +1131,26 @@
       "twitter.com/NagiRaik",
       "Tradu\u00e7\u00e3o"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
     ],
     "JP] Alphado": [
-      "twitter.com/alphadojakizeal"
-    ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1",
+      "twitter.com/alphadojakizeal",
       "Yurian",
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   },
@@ -1211,7 +1231,9 @@
       "Beste haarstijl? (Optioneel)",
       "Kort",
       "Lang",
-      "Twintails"
+      "Twintails",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "TUTORIAL": [
       "Totorial",
@@ -1274,9 +1296,8 @@
       "technische specificaties",
       "staan uit.",
       "Samenvatting:",
-      "Ga naar"
-    ],
-    "inzending pagina]": [
+      "Ga naar",
+      "inzending pagina",
       "En dien uw sprite sheet in met",
       "deze specs",
       "van een gepersonaliseerde eend, met uw naam (optioneel). volg de",
@@ -1284,7 +1305,8 @@
       "Deel het alstublieft niet op twitter met Subaru's kunst tag",
       "Elke eend is getekend door een Subamoto in de comunity! we willen idereen vragen om deel te nemen!",
       "Waarneer u uw eend inzent, zult u het niet meer kunnen zien tot Subaru's mijlpaal.",
-      "U kan uw e-mail achterlaten met uw submissie als je graag op de hoogte wil blijven als we iets verkeerds vinden in de submissie. Maar, als we wel iets verkeerds vinden en u laat geen contact info achter, zal het verloren gaan in de leegte."
+      "U kan uw e-mail achterlaten met uw submissie als je graag op de hoogte wil blijven als we iets verkeerds vinden in de submissie. Maar, als we wel iets verkeerds vinden en u laat geen contact info achter, zal het verloren gaan in de leegte.",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "RICHTLIJNEN",
@@ -1353,7 +1375,9 @@
       "Eend's gezicht moet hier zijn -> ",
       "Uitlijn de onderkant van de eend met de onderkant van elke frame",
       ".png formaat met achtergront transparantie (het zal worden veminderd naar PNG-8)",
-      "Onder 100KB bestandsgrootte"
+      "Onder 100KB bestandsgrootte",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "Editor": [
       "Eend editor",
@@ -1395,9 +1419,11 @@
       "twitter.com/NagiRaik",
       "Translaties"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
@@ -1405,17 +1431,15 @@
     "JP] Alphado": [
       "twitter.com/alphadojakizeal"
     ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1"
-    ],
     "ES]Yurian": [
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   },
@@ -1496,7 +1520,9 @@
       "\u597d\u307f\u306e\u9aea\u578b\uff08\u4efb\u610f\u3067\u3059\uff09",
       "\u30b7\u30e7\u30fc\u30c8",
       "\u30ed\u30f3\u30b0",
-      "\u30c4\u30a4\u30f3\u30c6\u30fc\u30eb"
+      "\u30c4\u30a4\u30f3\u30c6\u30fc\u30eb",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "TUTORIAL": [
       "\u30c1\u30e5\u30fc\u30c8\u30ea\u30a2\u30eb",
@@ -1508,7 +1534,7 @@
       "\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u4e2d",
       "\u3088\u304f\u3042\u308b\u8cea\u554f",
       "\u53c2\u52a0\u65b9\u6cd5\u306f\uff1f",
-      "\u6700\u521d\u306b\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\uff1a",
+      "\u6700\u521d\u306b\u8aad\u3093\u3067\u304f\u3060\u3055\u3044",
       "\u30a2\u30cb\u30e1\u30fc\u30b7\u30e7\u30f3\u306f\u3069\u3046\u3084\u3063\u3066\u4f5c\u308a\u307e\u3059\u304b\uff1f",
       "\u30a2\u30cb\u30e1\u30fc\u30b7\u30e7\u30f3\u3068\u306f\u9759\u6b62\u306a\u753b\u50cf\u307e\u305f\u306f\u5199\u771f\u3092\u9806\u5e8f\u306b\u64ae\u308a\u3001\u30ea\u30a2\u30eb\u306a\u52d5\u304d\u3092\u4f5c\u308b\u305f\u3081\u306b\u9ad8\u901f\u3067\u9023\u7d9a\u306b\u6620\u308b\u3053\u3068\u3067\u3059\u3002\u30d1\u30e9\u30d1\u30e9\u6f2b\u753b\u307f\u305f\u3044\u306a\u3082\u306e\u3067\u3059\u3002",
       "\u30b9\u30d7\u30e9\u30a4\u30c8\u30b7\u30fc\u30c8\u3068\u306f\uff1f",
@@ -1568,7 +1594,8 @@
       "\u306b\u5f93\u3063\u3066\u304f\u3060\u3055\u3044\u3002\u30b9\u30d0\u30eb\u306e\u30d5\u30a1\u30f3\u30a2\u30fc\u30c8\u30bf\u30b0\u3067Twitter\u306b\u5171\u6709\u3057\u306a\u3044\u3088\u3046\u306b\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
       "\u30a2\u30d2\u30eb\u306f\u307f\u3093\u306a\u30b3\u30df\u30e5\u30cb\u30c6\u30a3\u306e\u30b9\u30d0\u53cb\u304c\u63cf\u3044\u305f\u3082\u306e\u3067\u3059\uff01\u3069\u306a\u305f\u306e\u53c2\u52a0\u3082\u6b53\u8fce\u3057\u307e\u3059\uff01",
       "\u4e00\u5ea6\u6295\u7a3f\u3059\u308b\u3068\u3001\u30b9\u30d0\u30eb\u306e100\u4e07\u4eba\u8a18\u5ff5\u307e\u3067\u3042\u306a\u305f\u306e\u30a2\u30d2\u30eb\u3092\u898b\u308b\u3053\u3068\u306f\u3067\u304d\u307e\u305b\u3093\u3002",
-      "\u81ea\u5206\u306e\u6295\u7a3f\u306b\u554f\u984c\u304c\u3042\u3063\u305f\u5834\u5408\u306b\u306f\u3001\u9023\u7d61\u3057\u3066\u3082\u826f\u3051\u308c\u3070\u3001\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3092\u540c\u6642\u306b\u63d0\u51fa\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u3057\u304b\u3057\u3001\u554f\u984c\u304c\u3042\u3063\u305f\u6642\u306b\u9023\u7d61\u5148\u304c\u306a\u3051\u308c\u3070\u3001\u3042\u306a\u305f\u306e\u6295\u7a3f\u306f\u7121\u52b9\u306b\u306a\u308a\u307e\u3059\u3002"
+      "\u81ea\u5206\u306e\u6295\u7a3f\u306b\u554f\u984c\u304c\u3042\u3063\u305f\u5834\u5408\u306b\u306f\u3001\u9023\u7d61\u3057\u3066\u3082\u826f\u3051\u308c\u3070\u3001\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3092\u540c\u6642\u306b\u63d0\u51fa\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u3057\u304b\u3057\u3001\u554f\u984c\u304c\u3042\u3063\u305f\u6642\u306b\u9023\u7d61\u5148\u304c\u306a\u3051\u308c\u3070\u3001\u3042\u306a\u305f\u306e\u6295\u7a3f\u306f\u7121\u52b9\u306b\u306a\u308a\u307e\u3059\u3002",
+      "\u521d\u671f\u8a2d\u5b9a\u306e\u30a2\u30d2\u30eb\u306e\u307e\u307e\u3067\u3088\u3051\u308c\u3070\u3001\u304a\u795d\u3044\u30e1\u30c3\u30bb\u30fc\u30b8\u3060\u3051\u6295\u7a3f\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u307e\u3059\u3002"
     ],
     "GUIDELINES": [
       "\u30ac\u30a4\u30c9\u30e9\u30a4\u30f3",
@@ -1637,7 +1664,9 @@
       "\u30a2\u30d2\u30eb\u306f\u53f3\u5411\u304d\u3067\u306a\u3051\u308c\u3070\u306a\u308a\u307e\u305b\u3093\u3002\u2192",
       "\u5168\u3066\u306e\u30d5\u30ec\u30fc\u30e0\u3092\u30a2\u30d2\u30eb\u306f\u4e0b\u5bc4\u305b\u306b\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
       "PNG\u3067\u80cc\u666f\u900f\u904e\u3057\u3066\u304f\u3060\u3055\u3044\u3002\uff08PNG-8\u5f62\u5f0f\u306b\u5727\u7e2e\u3055\u308c\u307e\u3059\u3002\uff09",
-      "\u30d5\u30a1\u30a4\u30eb\u30b5\u30a4\u30ba\u306f100KB\u4ee5\u4e0b\u306b\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+      "\u30d5\u30a1\u30a4\u30eb\u30b5\u30a4\u30ba\u306f100KB\u4ee5\u4e0b\u306b\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9",
+      "\u30a2\u30af\u30bb\u30b5\u30ea\u30fc\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9"
     ],
     "Editor": [
       "\u30a2\u30d2\u30eb\u30a8\u30c7\u30a3\u30bf\u30fc",
@@ -1679,9 +1708,11 @@
       "twitter.com/NagiRaik",
       "\u7ffb\u8a33"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
@@ -1689,17 +1720,15 @@
     "JP] Alphado": [
       "twitter.com/alphadojakizeal"
     ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1"
-    ],
     "ES]Yurian": [
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   },
@@ -1780,7 +1809,9 @@
       "\uac00\uc7a5 \ub9e4\ub825\uc801\uc778 \ud5e4\uc5b4\uc2a4\ud0c0\uc77c\uc740? (\uc120\ud0dd\uc0ac\ud56d)",
       "\ub2e8\ubc1c",
       "\uc7a5\ubc1c",
-      "\ud2b8\uc708\ud14c\uc77c"
+      "\ud2b8\uc708\ud14c\uc77c",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "TUTORIAL": [
       "\ud29c\ud1a0\ub9ac\uc5bc",
@@ -1852,7 +1883,8 @@
       "\uc774 \ud504\ub85c\uc81d\ud2b8\ub294 \uc11c\ud504\ub77c\uc774\uc988\uc778 \ub9cc\ud07c \uc2a4\ubc14\ub8e8\uc758 \uc77c\ub7ec\uc2a4\ud2b8 \uacf5\uc720\uc6a9 \ud574\uc2dc\ud0dc\uadf8\ub85c \ud2b8\uc704\ud130\uc5d0 \uc62c\ub9ac\uc9c0 \ub9d0\uc544\uc8fc\uc2dc\uae38 \ubc14\ub78d\ub2c8\ub2e4.",
       "\uc800\ud76c \ud648\ud398\uc774\uc9c0\uc758 \uc624\ub9ac\ub4e4\uc740 \ud55c \ub9c8\ub9ac \ud55c \ub9c8\ub9ac\uac00 \uc804\ubd80 \uc5b4\ub290 \ud55c \uc2a4\ubc14\ud1a0\ubaa8\uac00 \uc9c1\uc811 \uc81c\uc791\ud55c \uc624\ub9ac\ub4e4\uc785\ub2c8\ub2e4! \uc2a4\ubc14\ud1a0\ubaa8 \ubaa8\ub450\uac00 \ucc38\uc5ec\ud560 \uc218 \uc788\uae30\ub97c \uae30\uc6d0\ud569\ub2c8\ub2e4!",
       "\uc81c\ucd9c\ub41c \uc624\ub9ac\ub294 \ud504\ub85c\uc81d\ud2b8 \uacf5\uac1c\uc77c\uae4c\uc9c0 \ubcf4\uc9c0\ub3c4, \uc218\uc815\ud558\uc9c0\ub3c4 \ubabb \ud569\ub2c8\ub2e4. \ud504\ub85c\uc81d\ud2b8 \uacf5\uac1c\uc77c\uc740 \uc2a4\ubc14\ub8e8 100\ub9cc \uad6c\ub3c5\uc790 \ub2ec\uc131\uc77c\uc785\ub2c8\ub2e4.",
-      "\ub2f9\uc2e0\uc758 \uc624\ub9ac\uc640 \uad00\ub828\ub418\uc5b4 \ubb38\uc81c\uac00 \ubc1c\uc0dd\ud560 \uacbd\uc6b0 \uc5f0\ub77d\ub4dc\ub9b4 \uc218 \uc788\ub3c4\ub85d \uc774\uba54\uc77c\uc744 \uc801\uc5b4\uc8fc\uc154\ub3c4 \uc88b\uc2b5\ub2c8\ub2e4. \ubb38\uc81c\uac00 \ubc1c\uc0dd\ud588\ub294\ub370 \uc774\uba54\uc77c\uc744 \uc801\uc5b4\ub450\uc9c0 \uc54a\uc558\uc744 \uacbd\uc6b0 \ubb38\uc81c\ub418\ub294 \uc624\ub9ac\ub294 \uc601\uc6d0\ud788 \uc0ad\uc81c\ub429\ub2c8\ub2e4."
+      "\ub2f9\uc2e0\uc758 \uc624\ub9ac\uc640 \uad00\ub828\ub418\uc5b4 \ubb38\uc81c\uac00 \ubc1c\uc0dd\ud560 \uacbd\uc6b0 \uc5f0\ub77d\ub4dc\ub9b4 \uc218 \uc788\ub3c4\ub85d \uc774\uba54\uc77c\uc744 \uc801\uc5b4\uc8fc\uc154\ub3c4 \uc88b\uc2b5\ub2c8\ub2e4. \ubb38\uc81c\uac00 \ubc1c\uc0dd\ud588\ub294\ub370 \uc774\uba54\uc77c\uc744 \uc801\uc5b4\ub450\uc9c0 \uc54a\uc558\uc744 \uacbd\uc6b0 \ubb38\uc81c\ub418\ub294 \uc624\ub9ac\ub294 \uc601\uc6d0\ud788 \uc0ad\uc81c\ub429\ub2c8\ub2e4.",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "\uac00\uc774\ub4dc\ub77c\uc778",
@@ -1921,7 +1953,9 @@
       "\uc624\ub9ac\ub294 \uc624\ub978\ucabd\uc744 \ud5a5\ud574\uc57c \ud569\ub2c8\ub2e4. ->",
       "\uc624\ub9ac\uc758 \ub9e8 \uc544\ub798\ucabd\uc740 \uac01 \ud504\ub808\uc784\uc758 \ub9e8 \uc544\ub7ab\ubd80\ubd84\uc5d0 \ub2ff\uc544\uc57c \ud569\ub2c8\ub2e4.",
       "\ud30c\uc77c \ud615\uc2dd\uc740 \ubc30\uacbd\uc774 \ud22c\uba85\ud55c .png\ud30c\uc77c\ub85c \uc124\uc815\ud574\uc8fc\uc138\uc694. (PNG-8\ub85c \ucd95\uc18c\ub420 \uc608\uc815\uc785\ub2c8\ub2e4.)",
-      "\ud30c\uc77c \uc0ac\uc774\uc988\ub294 100KB\uc774\ud558\uc5ec\uc57c \ud569\ub2c8\ub2e4."
+      "\ud30c\uc77c \uc0ac\uc774\uc988\ub294 100KB\uc774\ud558\uc5ec\uc57c \ud569\ub2c8\ub2e4.",
+      "~NOT YET TRANSLATED~",
+      "~NOT YET TRANSLATED~"
     ],
     "Editor": [
       "\uc624\ub9ac \uc5d0\ub514\ud130",
@@ -1963,9 +1997,11 @@
       "twitter.com/NagiRaik",
       "\ubc88\uc5ed"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
@@ -1973,17 +2009,15 @@
     "JP] Alphado": [
       "twitter.com/alphadojakizeal"
     ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1"
-    ],
     "ES]Yurian": [
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   },
@@ -2064,7 +2098,9 @@
       "Beste Frisur? (optional)",
       "Kurz",
       "Lang",
-      "Doppelz\u00f6pfe"
+      "Doppelz\u00f6pfe",
+      "Upload war erfolgreich!",
+      "Deine Einreichung muss die Bildgr\u00f6\u00dfe von 400x400 und eine Dateigr\u00f6\u00dfe von 100KB haben. Falls du fragen hast, kontaktiere uns bitte auf Discord. "
     ],
     "TUTORIAL": [
       "Tutorial",
@@ -2136,7 +2172,8 @@
       "Bitte teile es nicht auf Twitter mit Subarus Art-Tag.",
       "Jede Ente wurde von einem Subatomo aus der Community gezeichnet! Wir wollen das alle und jeder mitmacht!",
       "Wenn du die Ente einreichst, wirst du sie bis zu Subarus Meilenstein nicht mehr sehen k\u00f6nnen. ",
-      "Du kannst deiner Einreichung aber deine E-Mail-Adresse hinzuf\u00fcgen, falls du informiert werden willst, wenn es Probleme mit deiner Einreichung gab. Wenn es jedoch zu Problemen kam und wir keine Kontaktinformationen von dir haben, wird dein Beitrag im Nirgendwo verschwinden."
+      "Du kannst deiner Einreichung aber deine E-Mail-Adresse hinzuf\u00fcgen, falls du informiert werden willst, wenn es Probleme mit deiner Einreichung gab. Wenn es jedoch zu Problemen kam und wir keine Kontaktinformationen von dir haben, wird dein Beitrag im Nirgendwo verschwinden.",
+      "~NOT YET TRANSLATED~"
     ],
     "GUIDELINES": [
       "Richtlinien",
@@ -2205,7 +2242,9 @@
       "Die Ente soll nach rechts schauen ->",
       "Richte die Unterseite der Ente im Frame nach unten aus.",
       ".png Format mit Hintergrundtransparenz (Es wird zu PNG-8 reduziert)",
-      "Dateigr\u00f6\u00dfe unter 100KB"
+      "Dateigr\u00f6\u00dfe unter 100KB",
+      "Downloade Template",
+      "Downloade Accessoires"
     ],
     "Editor": [
       "Enten Editor",
@@ -2247,9 +2286,11 @@
       "twitter.com/NagiRaik",
       "\u00dcbersetzerInnen"
     ],
-    "DE] Joshiv Puni": [],
-    "PT] Ryushindai": [
-      "twitter.com/Ryushindai"
+    "JP] Vee": [
+      "https://twitter.com/DoctorEevee"
+    ],
+    "JP] Chimatta": [
+      "https://twitter.com/Chimattaa"
     ],
     "JP] Kurotora": [
       "https://twitter.com/23Kurotora"
@@ -2257,17 +2298,15 @@
     "JP] Alphado": [
       "twitter.com/alphadojakizeal"
     ],
-    "KR] hidingfrompublic": [
-      "twitter.com/hidingfrompubl1"
-    ],
     "ES]Yurian": [
       "https://twitter.com/ace_highwind"
     ],
-    "JP] Vee": [
-      "https://twitter.com/DoctorEevee"
+    "DE] Joshiv Puni": [],
+    "PT] Ryushindai": [
+      "twitter.com/Ryushindai"
     ],
-    "JP] Chimatta": [
-      "https://twitter.com/Chimattaa",
+    "KR] hidingfrompublic": [
+      "twitter.com/hidingfrompubl1",
       "!END"
     ]
   }
