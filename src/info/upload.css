@@ -128,3 +128,23 @@ input[type=submit]:hover {
     width: 150px;
     height: 150px;
 }
+
+#radiosUpload{
+	    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#radiosUpload > div{
+	display:flex;
+}
+
+#radiosUpload > div > input{
+	   width: auto;
+    margin: 0;
+    position: relative;
+    top: 0.7rem;
+    margin-right: 1rem;
+}
+
+#cropped{display:none;}

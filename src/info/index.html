@@ -12,7 +12,7 @@
     <link crossorigin="anonymous" href="index.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
     <link href="editor.min.css" rel="stylesheet">
-    <link href="upload.min.css" rel="stylesheet">
+    <link href="upload.css" rel="stylesheet">
     <link href="accessories.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -425,7 +425,7 @@
                         <label text="u-42">Choose how you will upload your duck:</label>
                         <p></p>
 
-                        <select aria-label="uploadMethod" id="uploadMethodChoice" name="uploadMethod">
+                        <!--<select aria-label="uploadMethod" id="uploadMethodChoice" name="uploadMethod">
                             <option text="u-45" value="template">Just use the template (no
                                 customizations)
                             </option>
@@ -433,7 +433,26 @@
                                 functionality)
                             </option>
                             <option text="u-43" value="upload">Upload my file</option>
-                        </select>
+                        </select>!-->
+						
+						<div id="radiosUpload">
+							<div>
+								<input type="radio" id="justTemp" name="uploadMethod" value="template" checked  >
+								<label for="justTemp">Just use the template (no
+                                customizations)</label>
+							</div>
+							
+							<div>
+								<input type="radio" id="useEditor" name="uploadMethod" value="editor">
+								<label for="useEditor">Use our editor (limited
+                                functionality)</label>
+							</div>
+							
+							<div>
+								<input type="radio" id="useUpload" name="uploadMethod" value="upload">
+								<label for="useUpload">Upload my file</label>
+							</div>
+						</div>
 
                         <div class="upload">
                             <input accept="image/png" class="form-control uploadFile" id="uploadFile" name="file"
@@ -1014,64 +1033,9 @@
                                         link.click();
                                     }
                                 </script>
-                                <script>
-
-                                    function createCrop(selector) {
-                                        console.log("selector", selector);
-                                        let cropWidth = $(selector).css("width");
-                                        let cropHeight = $(selector).css("height");
-                                        let cropX = $(selector).css("background-position-x");
-                                        let cropY = $(selector).css("background-position-y");
-
-                                        try {
-                                            cropX = cropX.replace("-", "");
-                                            cropY = cropY.replace("-", "");
-                                        } catch (e) {
-                                            console.log(selector, e);
-                                        }
-                                        console.log(cropWidth, cropHeight, cropX, cropY);
-
-                                        $("body").append("<canvas id=\"cropped\" width=" + cropWidth + " height=" + cropHeight + " style=\"border:2px solid black;\"></canvas>");
-
-                                        const cropCanvas = document.getElementById("cropped");
-                                        const cropCtx = cropCanvas.getContext("2d");
-                                        const imageCrop = document.getElementById("bigTexture");
-
-                                        cropWidth = parseInt(cropWidth.replace("px", ""));
-                                        cropHeight = parseInt(cropHeight.replace("px", ""));
-                                        cropX = parseInt(cropX.replace("px", ""));
-                                        cropY = parseInt(cropY.replace("px", ""));
-
-//	imageCrop.addEventListener('load', e => {
-                                        cropCtx.drawImage(imageCrop, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
-                                        const image = new Image();
-                                        image.src = cropCanvas.toDataURL();
-
-                                        $("#images").append(image);
-
-
-                                        $(cropCanvas).remove();
-                                        if (images.length > 0) {
-                                            createCrop("." + $(images.pop()).attr("class"));
-                                        } else {
-                                            $("#templateImages").remove();
-                                        }
-                                        //});
-
-                                    }
-
-                                    var images = $("#templateImages div").toArray().reverse();
-
-                                    function loadAccesoriesTexture() {
-
-
-                                        createCrop("." + $(images.pop()).attr("class"));
-                                    }
-
-
-                                </script>
-                                <!--                                <div style="position:absolute;left:0;">-->
-                                <div style="position:fixed;left:-10000000px;">
+								
+								
+								<div style="position:fixed;left:-10000000px;">
                                     <img id="bigTexture" onload="loadAccesoriesTexture()" src="accessories.png">
                                     <div id="templateImages">
                                         <div class="SubaBeret_1"></div>
@@ -1118,6 +1082,66 @@
                                 </div>
 
 
+								
+								
+                                <script>
+
+                                    function createCrop(selector) {
+                                        console.log("selector", selector);
+                                        let cropWidth = $(selector).css("width");
+                                        let cropHeight = $(selector).css("height");
+                                        let cropX = $(selector).css("background-position-x");
+                                        let cropY = $(selector).css("background-position-y");
+
+                                        try {
+                                            cropX = cropX.replace("-", "");
+                                            cropY = cropY.replace("-", "");
+                                        } catch (e) {
+                                            console.log(selector, e);
+                                        }
+                                        console.log(cropWidth, cropHeight, cropX, cropY);
+
+                                        $("body").append("<canvas id=\"cropped\" width=" + cropWidth + " height=" + cropHeight + " style=\"border:2px solid black;\"></canvas>");
+
+                                        const cropCanvas = document.getElementById("cropped");
+                                        const cropCtx = cropCanvas.getContext("2d");
+                                        const imageCrop = document.getElementById("bigTexture");
+
+                                        cropWidth = parseInt(cropWidth.replace("px", ""));
+                                        cropHeight = parseInt(cropHeight.replace("px", ""));
+                                        cropX = parseInt(cropX.replace("px", ""));
+                                        cropY = parseInt(cropY.replace("px", ""));
+
+//	imageCrop.addEventListener('load', e => {
+                                        cropCtx.drawImage(imageCrop, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+                                        const image = new Image();
+                                        image.src = cropCanvas.toDataURL();
+
+                                        $("#images").append(image);
+
+
+                                        $(cropCanvas).remove();
+                                        if (images.length > 0) {
+                                            createCrop("." + $(images.pop()).attr("class"));
+                                        } else {
+                                            //$("#templateImages").remove();
+                                        }
+                                        //});
+
+                                    }
+
+                                    var images = $("#templateImages div").toArray().reverse();
+
+                                    function loadAccesoriesTexture() {
+										console.log("asdas",$(images.pop()).attr("class"));
+
+                                        createCrop("." + $(images.pop()).attr("class"));
+                                    }
+
+
+                                </script>
+                                <!--                                <div style="position:absolute;left:0;">-->
+                                
 
                                 <label id="editor-sub" style="display:none" text="e-22">If you made changes, generate
                                     the spritesheet again
@@ -1151,6 +1175,10 @@
         <div id="submitting" style="display: none" text="u-28">Uploading duck...</div>
     </div>
 </div>
+
+<script crossorigin="anonymous"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
@@ -1317,7 +1345,8 @@
         }
     });
 
-    $("#uploadMethodChoice").on("change", function () {
+    //$("#uploadMethodChoice").on("change", function () {
+	$('input[type=radio][name=uploadMethod]').change(function() {
         let v = $(this).val();
         let $uploadFile = $("#uploadFile");
         let $editor = $("#editor");
@@ -1385,9 +1414,7 @@
         root: document.querySelector("#home > div > div:nth-child(11)")
     });
 </script>
-<script crossorigin="anonymous"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
 
