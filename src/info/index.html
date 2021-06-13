@@ -11,7 +11,7 @@
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">
     <link crossorigin="anonymous" href="index.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
-    <link href="editor.min.css" rel="stylesheet">
+    <link href="editor.css" rel="stylesheet">
     <link href="upload.css" rel="stylesheet">
     <link href="accessories.css" rel="stylesheet">
 
@@ -24,6 +24,7 @@
 <nav class="sticky-top bg-warning">
     <div class="container-fluid">
         <a class="navbar-brand links" href="#">Subaru Milestone Celebration</a>
+		<div id="hamburguer"><span></span><span></span><span></span></div>
         <div class="mx-auto mb-2 mb-lg-0">
             <div class="nav-item dropdown">
                 <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
@@ -575,6 +576,21 @@
                                     </div>
 
                                 </div>
+								
+						<div class="container" id="previewSection">
+							<h3 class="justify-content-center" id="previewText" text="u-29">Preview</h3>
+							<div class="justify-content-end">
+								<canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
+								<canvas height="200" id="animPreview2" style="visibility: hidden" width="200"></canvas>
+								<canvas height="200" id="animPreview1-flipped" style="visibility: hidden; transform:scale(-1,1)"
+										width="200"></canvas>
+								<canvas height="200" id="animPreview2-flipped" style="visibility: hidden; transform:scale(-1,1)"
+										width="200"></canvas>
+								<div id="prevButtons">
+										<div id="prePrev"><</div><div id="nextPrev"><</div>
+								</div>
+							</div>
+						</div>
 
 
                                 <script>
@@ -974,6 +990,8 @@
                                         $("#downloadLink").show();
                                         $("#submit").show();
                                         $("#editor-sub").show();
+										
+										$("#previewSection").fadeIn();
                                     }
 
                                     function drawSpriteSheet(x = 0, y = 0, dindex = 0) {
@@ -1166,17 +1184,7 @@
                 <div text="u-30">Your browser does not support the audio element.</div>
             </audio>
         </div>
-        <div class="container" id="previewSection">
-            <h3 class="justify-content-center" id="previewText" text="u-29">Preview</h3>
-            <div class="justify-content-end">
-                <canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
-                <canvas height="200" id="animPreview2" style="visibility: hidden" width="200"></canvas>
-                <canvas height="200" id="animPreview1-flipped" style="visibility: hidden; transform:scale(-1,1)"
-                        width="200"></canvas>
-                <canvas height="200" id="animPreview2-flipped" style="visibility: hidden; transform:scale(-1,1)"
-                        width="200"></canvas>
-            </div>
-        </div>
+        
         <div id="submitting" style="display: none" text="u-28">Uploading duck...</div>
     </div>
 </div>
@@ -1418,6 +1426,35 @@
     }, {
         root: document.querySelector("#home > div > div:nth-child(11)")
     });
+	
+	$(document).ready(function(){
+		$("#hamburguer").click(function(){
+			$("nav .mx-auto").toggleClass("active");
+		});
+		
+		$("nav button").click(function(){
+			$("nav .mx-auto").removeClass("active");
+			window.scrollTo(0,0);
+		});
+		
+		var currentPrev=0;
+		$('#prevButtons div').click(function(){
+			$('#previewSection .justify-content-end canvas').hide();
+			if($(this).attr("id")=="prevPrev"){
+				currentPrev-=1;
+			}else{
+				currentPrev+=1;
+			}
+			if(currentPrev>3){
+				currentPrev=0;
+			}
+			if(currentPrev < 0){
+				currentPrev=3;
+			}
+			$($('#previewSection .justify-content-end canvas')[currentPrev]).show();
+			$(this).blur();
+		});
+	});
 </script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
