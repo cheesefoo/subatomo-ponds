@@ -80,11 +80,11 @@ const COLLISION_CHECK_RATE = 10;
 let last_collision_check = 0;
 
 const FRAME_RATE = 10;
-const USERNAME_DISPLAY_DURATION = 3000;
+const USERNAME_DISPLAY_DURATION = 10000;
 const SPRITE_WIDTH = 100;
 const SPRITE_HEIGHT = 100;
 const maxPond = submissions.submissions[submissions.submissions.length - 1].pond;
-const QUACK_DURATION = 1600;
+const QUACK_DURATION = 9000;
 
 let sceneWidth = innerWidth;
 let sceneHeight = innerHeight;
@@ -557,6 +557,8 @@ class MyGame extends Phaser.Scene {
         this.makeTileMap();
         this.addGhostTexture();
         this.panCameraForMobile();
+
+        this.addPondClick();
         //apply collision callbacks and populate ducks moved into pancamera
 
         // this.populateDucks(currentPond);
@@ -566,15 +568,6 @@ class MyGame extends Phaser.Scene {
         // this.applyCollisions();
         this.input.on("gameobjectup", this.onObjectClicked);
 
-        // let f =  this.add.rectangle(500, 500, 500, 500, '#ff8000', 1);
-        // f.setInteractive();
-        // f.on('pointerdown', function(){alert("asdfihjadfuih")});
-        //  this.input.enableDebug(f, 0x04F404);
-        //
-        // this.input.setTopOnly(false);
-        // this.input.on("gameobjectmove", function(){alert("asdfihjadfuih")});
-        // this.input.on("gameobjectdown", function(){alert("asdfihjadfuih")});
-        // this.input.on('pointerdown', function(){alert("asdfihjadfuih")});
 
     }
 
@@ -1087,6 +1080,10 @@ class MyGame extends Phaser.Scene {
     }
 
     onObjectClicked(pointer, gameObject) {
+        // if (gameObject.name == "bg") {
+        this.scene.events.emit("clearmessages");
+        // return;
+        // }
         const duck = gameObject.duck;
         // if the text is already being displayed, do nothing
         if (duck.namePopup != null || duck.msgPopup != null)
@@ -1096,35 +1093,6 @@ class MyGame extends Phaser.Scene {
         duck.animState = DUCK_STATES.START_QUACK;
         this.scene.sound.play("suba_" + duck.sound);
         this.scene.events.emit("duckclick", duck);
-        //
-        // gameObject.namePopup = gameObject.scene.make.text({
-        //     x: gameObject.x,
-        //     y: gameObject.y - 50,
-        //
-        //     text: gameObject.displayName,
-        //     style: {font: "20px 'Nodo Sans JP'", fill: "#fff", align: "center"},
-        // });
-        // gameObject.namePopup.setOrigin(0.5, 0.5);
-        // gameObject.msgPopup = gameObject.scene.make.text({
-        //     x: gameObject.x,
-        //     y: gameObject.y - 10,
-        //     text: gameObject.message,
-        //     style: {font: "20px 'Nodo Sans JP'", fill: "#fff", align: "center"},
-        // });
-        // gameObject.msgPopup.setOrigin(0.5, 0.5);
-        //
-        // console.log(gameObject.msgPopup);
-        //
-        // gameObject.scene.time.addEvent({
-        //     delay: USERNAME_DISPLAY_DURATION,
-        //     callback: function () {
-        //         this.namePopup.destroy();
-        //         this.namePopup = null;
-        //         this.msgPopup.destroy();
-        //         this.msgPopup = null;
-        //     },
-        //     callbackScope: gameObject,
-        // });
     }
 
     generatePondUI() {
@@ -1210,6 +1178,18 @@ class MyGame extends Phaser.Scene {
         return destination;
     }
 
+    addPondClick() {
+        let clickContainer = this.add.rectangle(newWidth / 2, newHeight / 2, newWidth, newHeight, 0x6666ff, 0);
+        clickContainer.name = "bg";
+        clickContainer.setZ(-1);
+        //Set event for click/press
+        clickContainer.setInteractive();
+
+
+        if (DEBUGGING) {
+            this.input.enableDebug(clickContainer, new Phaser.Display.Color(102, 102, 55, 125));
+        }
+    }
 }
 
 class PondManager
@@ -1219,7 +1199,9 @@ class PondManager
         // console.log("pond manager constructor");
         super({key: "pond-manager", active: true});
         this.pondNum = 1;
-
+        this.activeMessagesEvents = [];
+        this.activeMessagesDuck = [];
+        this.activeMessagesPanel = [];
     }
 
     preload() {
@@ -1248,6 +1230,48 @@ class PondManager
 
         // this.scene.add.text();
         // uiscene.add.text();
+        pond.events.on("clearmessages", function () {
+            console.log("bg clickd");
+            console.log(this);
+            if (that.activeMessagesEvents.length == 0 ||
+                that.activeMessagesPanel.length == 0 ||
+                that.activeMessagesDuck.length == 0)
+                return;
+            that.activeMessagesEvents.forEach(function (event) {
+                event.remove(false);
+
+            });
+            that.activeMessagesEvents = [];
+            that.activeMessagesPanel.forEach(function (panel) {
+                that.tweens.add({
+                    targets: panel,
+                    alpha: 0,
+                    duration: 1000,
+                    ease: "linear"
+                }, that);
+                that.time.addEvent({
+                    delay: 1000,
+                    callback: function () {
+                        panel.destroy();
+                    }
+                });
+            });
+            that.activeMessagesPanel = [];
+            that.activeMessagesDuck.forEach(function (duck) {
+                pond.time.addEvent({
+                    delay: 1000,
+                    callback: function () {
+                        this.namePopup = null;
+                        this.msgPopup = null;
+                    },
+                    callbackScope: duck,
+                });
+            });
+            that.activeMessagesDuck = [];
+
+
+        });
+
         pond.events.on("duckclick", function (gameObject) {
 
             let x = gameObject.parentContainer.x;
@@ -1286,21 +1310,51 @@ class PondManager
             img.setOrigin(0, 0);
             panel.sendToBack(img);
             panel.setDepth(9999);
+            panel.setAlpha(0);
+
+            this.tweens.add({
+                targets: panel,
+                alpha: 1,
+                duration: 1000,
+                ease: "linear"
+            }, this);
 
             // console.log(name);
             // console.log(img);
+            let fadeout = pond.time.addEvent({
+                delay: USERNAME_DISPLAY_DURATION - 1000,
+                callback: function () {
+                    this.tweens.add({
+                        targets: panel,
+                        alpha: 0,
+                        duration: 1000,
+                        ease: "linear"
+                    }, this);
+                    that.activeMessagesEvents = arrayRemove(that.activeMessagesEvents, fadeout);
+                },
+                callbackScope: pond,
+            });
 
-            pond.time.addEvent({
+            let destroy = pond.time.addEvent({
                 delay: USERNAME_DISPLAY_DURATION,
                 callback: function () {
-                    this.namePopup.destroy();
+                    panel.destroy();
+                    // this.namePopup.destroy();
                     this.namePopup = null;
-                    this.msgPopup.destroy();
+                    // this.msgPopup.destroy();
                     this.msgPopup = null;
-                    img.destroy();
+                    // img.destroy();
+                    that.activeMessagesDuck = arrayRemove(that.activeMessagesDuck, this);
+                    that.activeMessagesPanel = arrayRemove(that.activeMessagesPanel, panel);
+                    that.activeMessagesEvents = arrayRemove(that.activeMessagesEvents, destroy);
                 },
                 callbackScope: gameObject,
             });
+
+            this.activeMessagesEvents.push(fadeout);
+            this.activeMessagesEvents.push(destroy);
+            this.activeMessagesDuck.push(gameObject);
+            this.activeMessagesPanel.push(panel);
 
         }, this);
         this.scene.bringToTop();
@@ -1406,4 +1460,11 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function arrayRemove(arr, value) {
+
+    return arr.filter(function (ele) {
+        return ele != value;
+    });
 }
