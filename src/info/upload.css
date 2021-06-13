@@ -16,6 +16,11 @@
     #518db9 7px 7px 0,
     #518db9 8px 8px 0;
 }
+
+#previewSection{
+	display:none;
+}
+
 #soundButtons{
     display:         flex;
     align-items:     self-start;
@@ -128,23 +133,3 @@ input[type=submit]:hover {
     width: 150px;
     height: 150px;
 }
-
-#radiosUpload{
-	    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#radiosUpload > div{
-	display:flex;
-}
-
-#radiosUpload > div > input{
-	   width: auto;
-    margin: 0;
-    position: relative;
-    top: 0.7rem;
-    margin-right: 1rem;
-}
-
-#cropped{display:none;}

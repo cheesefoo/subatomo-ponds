@@ -168,12 +168,60 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     display: none;
 }
 
-@media (max-width: 900px) {
-    #right-tools {
-        position: fixed;
+#radiosUpload{
+	    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
-        z-index: 1000;
-    }
+#radiosUpload > div{
+	display:flex;
+}
+
+#radiosUpload > div > input{
+	   width: auto;
+    margin: 0;
+    position: relative;
+    top: 0.7rem;
+    margin-right: 1rem;
+}
+
+#cropped{display:none;}
+
+#prevButtons{
+	display:none;
+}
+
+#prevButtons div{
+	cursor:pointer;
+	padding:20px;
+	font-size:20px;
+	color:white;
+	background-color:blue;
+}
+
+#prevButtons div:focus{
+	background-color:yellow;
+}
+
+@media (max-width: 900px) {
+	
+	#previewSection .justify-content-end canvas{
+		display: none;
+		text-align: center;
+		margin: auto;
+		margin-bottom: 20px;
+		
+	}
+	
+	#previewSection .justify-content-end{
+		text-align:center;
+	}
+	
+	#previewSection .justify-content-end canvas:nth-child(1){
+		display:block;
+	}
+    
 
 
     #imagesToolbar {
@@ -182,7 +230,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
         bottom: 0;
         left: 0;
         right: 0;
-        height: 20vh;
+        height: 15vh;
         z-index: 1000;
         -webkit-box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
         box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
@@ -208,20 +256,51 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     }
 
     #right-tools {
-        top: 0;
-        right: -100vw;
-        transition: 0.5s;
-        -webkit-box-shadow: 0px -5px 8px 2px rgba(0, 0, 0, 0.58);
-        box-shadow: 0px -5px 8px 2px rgba(0, 0, 0, 0.58);
+		top: 0;
+		right: -100vw;
+		transition: .5s;
+		-webkit-box-shadow: 0 -5px 8px 2px rgba(0,0,0,.58);
+		box-shadow: 0 -5px 8px 2px rgba(0,0,0,.58);
+		width: 90% !important;
+		margin: auto;
+		z-index: initial;
+		position:initial !important;
     }
+	#drawingStuff+div{
+		text-align: center;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
 
     #right-tools.active {
         right: 0;
     }
+	
+	#radiosUpload{
+		justify-content:initial;
+	}
 
     #center-interface, #result {
-        width: 100%;
+		width: 100%;
+		text-align: center !important;
+		margin: auto;
     }
+	
+	#canvas-container{
+		position: initial;
+		width: 200px;
+		height: 200px;
+		box-shadow: 0 0 5px 1px #000;
+		margin: 10px auto;
+		border: 5px solid #000;
+		display: inline-block;
+		box-sizing: content-box;
+		background-color: #fff;
+		text-align: center;
+		margin: auto;
+		text-align: center;
+	}
 
     #menuMobile {
         position: fixed;
@@ -233,8 +312,54 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
         height: 30px;
         cursor: pointer;
     }
+	
+	#prevButtons{
+		display:block;
+	}
+
 
     body {
         padding-bottom: 26vh;
     }
+	
+	#drawing-mode-options{
+		    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: yellow;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+	}
+	
+	#drawing-color ~ *{
+		display:none !important;
+	}
+	
+	#drawing-mode-options label,#drawing-mode-options input,#drawing-mode-options textarea{
+		display: inline-block;
+		width: 20%;
+		line-height: 24pt;
+		font-size: 12pt;
+		font-family: 'Noto Sans JP', sans-serif;
+		flex:1 1 50px;
+	}
+	
+	#drawing-mode-selector{
+		flex:1 1 80%;
+		margin-bottom:20px;
+	}
+	
+	#drawing-color{
+		flex: 0 1 40px !important;
+		width: 20px;
+		margin-top: 5px;
+	}
+	
+	#drawing-line-width{
+		    flex: 0 1 80px;
+    margin-right: 20px;
+	}
 }

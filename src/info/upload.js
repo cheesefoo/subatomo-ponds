@@ -16,6 +16,7 @@ function chooseFile(file) {
             canvas1Flipped.style.visibility = "visible";
             canvas2Flipped.style.visibility = "visible";
             startAnimating(10);
+			$("#previewSection").fadeIn();
 
             //todo: check image dimensions?
         }, false);
