@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Oozora Subaru Milestone Project</title>
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
+    <!--    <link href="https://fonts.gstatic.com" rel="preconnect">-->
+    <!--    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="localization/language.js"></script>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -24,7 +24,7 @@
 <nav class="sticky-top bg-warning">
     <div class="container-fluid">
         <a class="navbar-brand links" href="#">Subaru Milestone Celebration</a>
-		<div id="hamburguer"><span></span><span></span><span></span></div>
+        <div id="hamburguer"><span></span><span></span><span></span></div>
         <div class="mx-auto mb-2 mb-lg-0">
             <div class="nav-item dropdown">
                 <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
@@ -44,32 +44,18 @@
             </div>
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
                     <button aria-controls="home" aria-selected="false" class="nav-link active"
                             data-bs-target="#home"
                             data-bs-toggle="tab" id="home-tab" role="tab" text="l-8" type="button">Home
-                    </button>
-
-                    <button aria-controls="guidelines" aria-selected="false" class="nav-link"
-                            data-bs-target="#guidelines"
-                            data-bs-toggle="tab" id="guidelines-tab" role="tab" text="l-5" type="button">
-                        Guidelines
-                    </button>
-
-                    <button aria-controls="tutorial" aria-selected="false" class="nav-link"
-                            data-bs-target="#tutorial"
-                            data-bs-toggle="tab" id="tutorial-tab" role="tab" text="l-3" type="button">Tutorial
-                    </button>
-                    <button aria-controls="specs" aria-selected="false" class="nav-link"
-                            data-bs-target="#specs"
-                            data-bs-toggle="tab" id="specs-tab" role="tab" text="l-4" type="button">Technical
-                        Specifications
                     </button>
                     <button aria-controls="upload" aria-selected="false" class="nav-link"
                             data-bs-target="#upload-container"
                             data-bs-toggle="tab" id="upload-tab" role="tab" text="l-7" type="button">Upload
                     </button>
-
+                    <button aria-controls="faq" aria-selected="false" class="nav-link"
+                            data-bs-target="#faq-container"
+                            data-bs-toggle="tab" id="faq-tab" role="tab" text="l-10" type="button">FAQ
+                    </button>
                 </div>
             </nav>
         </div>
@@ -80,210 +66,40 @@
     <div aria-labelledby="home-tab" class="screen justify-content-center tab-pane fade show active" id="home"
          role="tabpanel">
         <div class="screen-inner">
-            <h1 text="a-0">Oozora Subaru Celebration Project</h1>
-            <div text="a-1">Subaru's birthday is approaching, as well as her 1 million subscriber milestone! The
-                Subatomo EN Fan Server has created a webpage to show our support for Subaru, and everyone is invited to
-                participate! It's a little winded to explain through text, so here is a small video to demonstrate what
-                we're working on:
+            <h1 text="m-0">Subaru 1 Million Subscribers and Birthday Celebration!</h1>
+            <div text="m-1">The Subatomo EN Fan Server has created a website to show our support for Subaru, and
+                everyone is invited to participate!
             </div>
-            <div>Video coming soon!</div>
-            <div text="a-25"></div>
-            <div><h3 text="a-2"></h3><a href="#home-tldr" id="home-tldr-link" text="a-3"></a></div>
-            <div><span text="a-4"></span><a href="#specs-tab" text="a-5"></a></div>
-            <div><span text="a-6"></span><a href="template.png" target="_blank" text="a-7"></a></div>
-            <div><span text="a-8"></span><a href="#tutorial-tab" text="a-9"></a></div>
-            <div><span text="a-10"></span>
-                <a href="#upload-tab" text="a-11"></a>
+            <div text="m-2">Here is a small video to demonstrate how it will work! :</div>
+            <embed>
+            <div class="participate-list">
+                <h3 class="participate-by" text="m-3">Participate by:</h3>
+                <ul>
+                    <li>
+                        <span text="m-4">-Sending a congratulatory message to her!</span>
+
+                    </li>
+                    <li><span text="m-5">-Customize your own duck!</span></li>
+                    <li><span text="m-6">-Submit fanart for her!</span></li>
+                    <li><span text="m-7">-You can also send or suggest other projects you have been working on, if it fits in
+                        the main site, we can try to add it!</span>
+                    </li>
+                </ul>
             </div>
-            <div>
-                <p>
-                    <span text="a-12"></span>
-                    <a href="#upload-tab" text="a-13"></a>
-                    <span text="a-14"></span>
-                    <a href="#specs-tab" text="a-15"></a>
-                    <span text="a-16"></span>
-                </p>
-                <p><span text="a-28"></span></p>
-            </div>
-
-            <div>
-                <h3 id="home-tldr" text="a-17"></h3>
-
-                <span text="a-18"></span>
-                <a href="#upload-tab" text="a-19"></a>
-                <span text="a-20"></span>
-                <a href="#specs-tab" text="a-21"></a>
-                <span text="a-22"></span>
-                <a href="#guidelines-tab" text="a-23"></a>
-                <span text="a-28"></span>
-                <div text="a-24"></div>
-
-
-            </div>
-        </div>
-    </div>
-    <div aria-labelledby="guidelines-tab" class="screen tab-pane fade" id="guidelines" role="tabpanel">
-        <div class="screen-inner">
-
-            <h1 text="g-0"></h1>
-            <h2 text="g-1"></h2>
-            <span text="g-2"></span><a href="#home-tab" text="g-3"></a>
-            <p text="g-4"></p>
-            <h3 text="g-5"></h3>
-            <ul text="g-6"></ul>
-            <ul text="g-7"></ul>
-            <ul text="g-8"></ul>
-            <h3 text="g-9"></h3>
-            <ul text="g-10"></ul>
-            <h3 text="g-11"></h3>
-            <ul text="g-12"></ul>
-            <ul text="g-13"></ul>
-            <ul text="g-14"></ul>
-            <ul text="g-15"></ul>
-            <ul text="g-16"></ul>
-            <ul text="g-17"></ul>
-            <h2 text="g-18"></h2>
-            <ul>
-                <li>
-                    <span text="g-19"></span>
-                    <ul text="g-20"></ul>
-                </li>
-                <li>
-                    <span text="g-21"></span>
-                    <ul text="g-22"></ul>
-                </li>
-                <li>
-                    <span text="g-23"></span>
-                    <ul text="g-24"></ul>
-                </li>
-                <li>
-                    <span text="g-25"></span>
-                    <ul text="g-26"></ul>
-                </li>
-                <li>
-                    <span text="g-27"></span>
-                    <ul>
-                        <span text="g-28"></span>
-                        <a text="g-46"></a>
-                    </ul>
-                </li>
-                <li>
-                    <span text="g-29"></span>
-                    <ul><span text="g-30"></span>
-                        <a href="#tutorial-tab" text="g-31"></a>
-                        <span text="g-32"></span>
-                        <a class="editor-link" href="#upload-tab" text="g-33"></a>
-                    </ul>
-                </li>
-                <li>
-                    <span text="g-34"></span>
-                    <ul>
-                        <span text="g-35"></span>
-                        <a href="#specs-tab" text="g-36"></a>
-                        <span text="g-37"></span>
-                    </ul>
-                </li>
-                <li>
-                    <span text="g-38"></span></li>
-                <ul text="g-39"></ul>
-                <li>
-                    <span text="g-40"></span></li>
-                <ul text="g-41"></ul>
-                <li>
-                    <span text="g-42"></span>
-                    <ul text="g-43">
-                    </ul>
-                </li>
-                <li>
-                    <span text="g-44"></span>
-                    <ul text="g-45">
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div aria-labelledby="tutorial-tab" class="screen tab-pane fade" id="tutorial" role="tabpanel">
-        <div class="screen-inner">
-
-            <h1 text="t-0"></h1>
-            <h6 text="t-1"></h6>
-            <div text="t-2">How do I participate?</div>
-            <ul>
-                <li><a href="#how-do-i-participate" text="t-3"></a></li>
-                <li><a href="#how-do-you-create-an-animation" text="t-4"></a></li>
-                <li><a href="#what-is-a-spritesheet" text="t-5"></a></li>
-                <li><a href="#upload-section" text="t-6">Uploading</a></li>
-                <li><a href="#faq-t" text="t-7"></a></li>
-            </ul>
-            <h2 id="how-do-i-participate" text="t-8"></h2>
-            <a href="#home-tab" text="t-9"></a>
-            <h2 id="how-do-you-create-an-animation" text="t-10"></h2>
-            <p text="t-11"></p>
-            <h2 id="what-is-a-spritesheet" text="t-12"></h2>
-            <p text="t-13"></p>
-            <img src="tutorial-template.png">
-            <p></p>
-            <p text="t-14"></p>
-            <img src="tutorial-gif.gif">
-            <p></p>
-            <h2 id="what-do-i-do" text="t-15"></h2>
-            <div>
-                <span text="t-16"></span>
-                <a href="#guidelines-tab" text="t-17"></a>
-                <span id="jp-ex-1" text="t-18"></span>
-                <a href="#specs-tab" id="jp-ex-2" text="t-19"></a>
-            </div>
-            <p></p>
-            <p text="t-20"></p>
-            <a href="https://prominentdetail.github.io/Pixel.Tools/" target="_blank">https://prominentdetail.github.io/Pixel.Tools</a>
-            <p text="t-22"></p>
-            <p text="t-23"></p>
-            <small text="t-24"></small>
-            <p><small text="t-25"></small></p>
-            <h1 id="upload-section" text="t-26"></h1>
-            <span text="t-27">Upload </span>
-            <a href="../upload/upload.html" text="t-28"></a>
-            <h2 id="faq-t" text="t-29"></h2>
-            <ul>
-                <li><span text="t-30"></span>
-                    <ol text="t-31">
-                    </ol>
-                </li>
-                <li><span text="t-32"></span>
-                    <ol text="t-33">
-                    </ol>
-                </li>
-                <li><span text="t-34"></span>
-                    <ol text="t-35">
-                    </ol>
-                </li>
-            </ul>
-            <small text="t-36"></small>
-            <a href="https://99designs.com/blog/video-animation/what-is-animation/">1</a>
-            <a href="https://www.codeandweb.com/texturepacker/tutorials/how-to-create-a-sprite-sheet">2</a>
-
-        </div>
-    </div>
-    <div aria-labelledby="specs-tab" class="screen tab-pane fade" id="specs" role="tabpanel">
-        <div class="screen-inner">
-            <h1 text="s-0">"Technical Specifications:",</h1>
-            <ul>
-                <li text="s-1"></li>
-                <li text="s-2"></li>
-                <li text="s-3"></li>
-                <li text="s-4"></li>
-                <li text="s-5"></li>
-            </ul>
-            <a download href="template.png">Click to download</a>
-            <a download href="duck_accessories.zip">Accessories</a>
-            <img alt="template" src="template.png"/>
+            <a href="#upload-tab" text="m-8">Go to the submission page for more details! </a>
         </div>
     </div>
     <div aria-labelledby="upload-tab" class="screen tab-pane fade" id="upload-container" role="tabpanel">
         <div class="screen-inner">
-
-
-            <!--                    action="https://script.google.com/macros/s/AKfycbxCWy0-NP1gjCIVw3JqbZMX7YD96j34coeSaXc91hAnGJbVuDmiRYrGR3UgCPzpfDg1-A/exec"-->
+            <div text="u-0">Basic common sense rules apply - no references to religion or politics, no swear words,
+                slurs,
+                etc. or any combination of letters, numbers, characters, symbols, etc. that can be interpreted as such.
+                If
+                your name or message would get covered by an ambulance in Sausage Legends it will be rejected.
+            </div>
+            <div text="u-1">Please only use a language that we are supporting (EN, JP, ID, ES, PT, NL). If you submit in
+                another language it may be rejected.
+            </div>
             <form
                     action="https://script.google.com/macros/s/AKfycbzC8S3tsvC-x32WyUrHfJc5bZBNSDcWo9KA7OOtyTOZuC-6XJpC3NAL267nVDNK5JDJYw/exec"
                     class="needs-validation"
@@ -293,13 +109,13 @@
             >
                 <div class="form-group row" id="data">
                     <div class="displayName">
-                        <label for="name" text="u-1">Your display name. If left blank, your name will be (TBD)</label>
+                        <label for="name" text="u-2">Display name</label>
                         <input class="input-sm col-xs-1" id="name" maxlength="16" name="displayName"/>
-                        <label for="message" text="u-2">Your congratulatory message for Subaru</label>
+                        <label for="message" text="u-4">Your congratulatory message for Subaru</label>
                         <textarea class="textarea-sm col-xs-1" id="message" maxlength="128" name="message"></textarea>
                     </div>
                     <div class="contact">
-                        <label text="u-3">
+                        <label text="u-6">
                             Can we contact you if there are issues with your submission? This
                             is optional.</label>
 
@@ -308,639 +124,609 @@
                                    data-bs-toggle="collapse"
                                    id="inlineRadio1" name="canContact" type="radio"
                                    value="no">
-                            <label class="form-check-label" for="inlineRadio1" text="u-5">No</label>
+                            <label class="form-check-label" for="inlineRadio1" text="u-7">No</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" data-bs-target=".collapseOne:not(.show)"
                                    data-bs-toggle="collapse"
                                    id="inlineRadio2"
                                    name="canContact" type="radio" value="yes">
-                            <label class="form-check-label" for="inlineRadio2" text="u-6">Yes</label>
+                            <label class="form-check-label" for="inlineRadio2" text="u-8">Yes</label>
                         </div>
-                        <small text="u-4"> We will only contact you if there's a problem! </small>
                     </div>
-
                     <div class="collapseOne panel-collapse collapse">
-                        <div class="emailInput" id="emailInput">
-                            <label for="email" text="u-7">Your email:</label>
-                            <input id="email" name="email" type="email"/>
-                        </div>
-                        <div class="discordInput" id="discordInput">
-                            <label for="discord" text="u-8">Your discord name and id:</label>
-                            <span class="tooltip-item" text="u-9">Make sure your                        </span>
-                            <a href="https://support.discord.com/hc/en-us/articles/217916488-Blocking-Privacy-Settings-"
-                               text="u-10"> privacy settings</a>
-                            <span text="u-11"> allow us to DM you.</span>
-
-                        </div>
-                        <input id="discord" name="discord" type="text"/>
+                        <label for="contactInfoInput" text="u-9">email / discord</label>
+                        <input id="contactInfoInput" name="contactInfo" placeholder="email / discord" type="text"/>
                     </div>
-
-
                     <div id="soundSection">
-                        <label for="soundSelection" text="u-12">Sound to play when pressed:</label>
+                        <label for="soundSelection" text="u-10">Sound to play when pressed:</label>
                         <select form="form" id="soundSelection" name="soundSelection">
-                            <option text="u-13" value="-1">Picked Randomly</option>
-                            <option class="soundOption" text="u-14" value="0">Ajimaru Kazoo</option>
-                            <option class="soundOption" text="u-15" value="1">Chuba Chuba Chuba</option>
-                            <option class="soundOption" text="u-16" value="2">Chubaaaaaaa</option>
-                            <option class="soundOption" text="u-17" value="3">here we go</option>
-                            <option class="soundOption" text="u-18" value="4">Jakajakajanjan</option>
-                            <option class="soundOption" text="u-19" value="5">morning shuba</option>
-                            <option class="soundOption" text="u-20" value="6">Oyasumi (ASMR)</option>
-                            <option class="soundOption" text="u-21" value="7">Quack Quack</option>
-                            <option class="soundOption" text="u-22" value="8">secret</option>
-                            <option class="soundOption" text="u-23" value="9">Shuba (x4)</option>
-                            <option class="soundOption" text="u-24" value="10">Shuba!</option>
-                            <option class="soundOption" text="u-25" value="11">Shushushushu</option>
-                            <option class="soundOption" text="u-26" value="12">UN</option>
+                            <option text="s-1" value="-1">Picked Randomly</option>
+                            <option class="soundOption" text="s-2" value="0">Ajimaru Kazoo</option>
+                            <option class="soundOption" text="s-3" value="1">Chuba Chuba Chuba</option>
+                            <option class="soundOption" text="s-4" value="2">Chubaaaaaaa</option>
+                            <option class="soundOption" text="s-5" value="3">here we go</option>
+                            <option class="soundOption" text="s-6" value="4">Jakajakajanjan</option>
+                            <option class="soundOption" text="s-7" value="5">morning shuba</option>
+                            <option class="soundOption" text="s-8" value="6">Oyasumi (ASMR)</option>
+                            <option class="soundOption" text="s-9" value="7">Quack Quack</option>
+                            <option class="soundOption" text="s-10" value="8">secret</option>
+                            <option class="soundOption" text="s-11" value="9">Shuba (x4)</option>
+                            <option class="soundOption" text="s-12" value="10">Shuba!</option>
+                            <option class="soundOption" text="s-13" value="11">Shushushushu</option>
+                            <option class="soundOption" text="s-14" value="12">UN</option>
                         </select>
+                        <div id="soundButtons">
+                            <button class="soundButton" text="s-2" type="button" value="0">Ajimaru Kazoo</button>
+                            <button class="soundButton" text="s-3" type="button" value="1">Chuba Chuba Chuba</button>
+                            <button class="soundButton" text="s-4" type="button" value="2">mesu shuba</button>
+                            <button class="soundButton" text="s-5" type="button" value="3">here we go</button>
+                            <button class="soundButton" text="s-6" type="button" value="4">Jakajakajanjan</button>
+                            <button class="soundButton" text="s-7" type="button" value="5">morning shuba</button>
+                            <button class="soundButton" text="s-8" type="button" value="6">Oyasumi (ASMR)</button>
+                            <button class="soundButton" text="s-9" type="button" value="7">Quack Quack</button>
+                            <button class="soundButton" text="s-10" type="button" value="8">secret</button>
+                            <button class="soundButton" text="s-11" type="button" value="9">Shuba (x4)</button>
+                            <button class="soundButton" text="s-12" type="button" value="10">Shuba</button>
+                            <button class="soundButton" text="s-13" type="button" value="11">Shushushushu</button>
+                            <button class="soundButton" text="s-14" type="button" value="12">UN</button>
+                        </div>
                     </div>
 
-                    <div id="soundButtons">
-                        <button class="soundButton" text="u-14" type="button" value="0">Ajimaru Kazoo</button>
-                        <button class="soundButton" text="u-15" type="button" value="1">Chuba Chuba Chuba</button>
-                        <button class="soundButton" text="u-16" type="button" value="2">mesu shuba</button>
-                        <button class="soundButton" text="u-17" type="button" value="3">here we go</button>
-                        <button class="soundButton" text="u-18" type="button" value="4">Jakajakajanjan</button>
-                        <button class="soundButton" text="u-19" type="button" value="5">morning shuba</button>
-                        <button class="soundButton" text="u-20" type="button" value="6">Oyasumi (ASMR)</button>
-                        <button class="soundButton" text="u-21" type="button" value="7">Quack Quack</button>
-                        <button class="soundButton" text="u-22" type="button" value="8">secret</button>
-                        <button class="soundButton" text="u-23" type="button" value="9">Shuba (x4)</button>
-                        <button class="soundButton" text="u-24" type="button" value="10">Shuba</button>
-                        <button class="soundButton" text="u-25" type="button" value="11">Shushushushu</button>
-                        <button class="soundButton" text="u-26" type="button" value="12">UN</button>
-                    </div>
                     <p></p>
                     <div id="hair">
-                        <label text="u-46">Best hairstyle? (optional)</label>
+                        <label text="u-12">Best hairstyle? (optional)</label>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" id="shorthair" name="hairstyle" type="radio"
                                    value="short">
-                            <label class="form-check-label" for="shorthair" text="u-47">Short</label>
+                            <label class="form-check-label" for="shorthair" text="u-13">Short</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" id="longhair" name="hairstyle" type="radio"
                                    value="long">
-                            <label class="form-check-label" for="longhair" text="u-48">Long</label>
+                            <label class="form-check-label" for="longhair" text="u-14">Long</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" id="twintails" name="hairstyle" type="radio"
                                    value="twintails">
-                            <label class="form-check-label" for="twintails" text="u-49">Twintails</label>
+                            <label class="form-check-label" for="twintails" text="u-15">Twintails</label>
                         </div>
 
                     </div>
-                    <div id="countrySection">
-                        <label for="country" text="u-31">Where are you from? (Optional)</label>
-                        <input id="country" maxlength="2" name="country" placeholder="Country Abbreviation"/>
-                        <!--                <select class="selectpicker countrypicker" data-default="ZZ" data-flag="true" data-live-search="true"-->
-                        <!--                        id="country">-->
-                        <!--                    <option value="abstain">I prefer not to answer</option>-->
-                        <!--                </select>-->
 
+
+                </div>
+                <div id="refererSection">
+                    <label text="u-16">How did you hear about this project? (optional)</label>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="ref-subaru-discord" name="referer" type="radio"
+                               value="subaru-discord">
+                        <label for="ref-subaru-discord" text="u-17">Subatomo EN Discord</label>
                     </div>
-                    <div id="refererSection">
-                        <label for="referer" text="u-33">How did you hear about this project? </label>
-
-                        <select aria-label="referer" id="referer" name="referer">
-                            <option selected
-                                    text="u-34" value="subaru-discord"></option>
-                            <option text="u-35"
-                                    value="fan-discord">A hololive fan Discord
-                            </option>
-                            <option text="u-36"
-                                    value="reddit">Reddit
-                            </option>
-                            <option text="u-37"
-                                    value="twitter">Twitter
-                            </option>
-                            <option text="u-38"
-                                    value="other">Other
-                            </option>
-                        </select>
-                        <div class="refererInput panel-collapse collapse">
-                            <input maxlength="32" name="refererOther">
-                            <div class="invalid-feedback">
-                                How did you hear about this project?
-                            </div>
-                        </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="ref-fan-discord" name="referer" type="radio"
+                               value="fan-discord">
+                        <label for="ref-fan-discord" text="u-18">Another hololive fan Discord</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="ref-reddit" name="referer" type="radio" value="reddit">
+                        <label for="ref-reddit" text="u-19">Reddit</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="ref-twitter" name="referer" type="radio" value="twitter">
+                        <label for="ref-twitter" text="u-20">Twitter</label>
+                    </div>
+                    <div class="form-check form-check-inline  panel-collapse collapse">
+                        <input class="form-check-input" id="ref-other" name="referer" type="radio" value="other">
+                        <label for="ref-other" text="u-21">Other</label>
                     </div>
 
-                    <div id="upload">
-                        <!--                        <label text="u-27">Upload your duck bellow</label>-->
-                        <label text="u-42">Choose how you will upload your duck:</label>
-                        <p></p>
-
-                        <!--<select aria-label="uploadMethod" id="uploadMethodChoice" name="uploadMethod">
-                            <option text="u-45" value="template">Just use the template (no
-                                customizations)
-                            </option>
-                            <option text="u-44" value="editor">Use our editor (limited
-                                functionality)
-                            </option>
-                            <option text="u-43" value="upload">Upload my file</option>
-                        </select>!-->
-
-                        <div id="radiosUpload">
-                            <div>
-                                <input checked id="justTemp" name="uploadMethod" type="radio" value="template">
-                                <label for="justTemp">Just use the template (no
-                                    customizations)</label>
-                            </div>
-
-                            <div>
-                                <input id="useEditor" name="uploadMethod" type="radio" value="editor">
-                                <label for="useEditor">Use our editor (limited
-                                    functionality)</label>
-                            </div>
-
-                            <div>
-                                <input id="useUpload" name="uploadMethod" type="radio" value="upload">
-                                <label for="useUpload">Upload my file</label>
-                            </div>
+                </div>
+                <div id="countrySection">
+                    <label for="country" text="u-22">Where are you from? (Optional)</label>
+                    <input id="country" maxlength="2" name="country" placeholder="Country Abbreviation"/>
+                </div>
+                <div id="upload">
+                    <!--                        <label text="u-27">Upload your duck bellow</label>-->
+                    <label text="u-25">Choose how you will upload your duck:</label>
+                    <p></p>
+                    <div id="radiosUpload">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="fanart" name="uploadMethod" required type="radio"
+                                   value="fanart">
+                            <label for="fanart" text="u-26">Upload fanart</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="justTemp" name="uploadMethod" required type="radio"
+                                   value="template">
+                            <label for="justTemp" text="u-29">No customization</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="useEditor" name="uploadMethod" required type="radio"
+                                   value="editor">
+                            <label for="useEditor" text="u-30">Use our editor</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="useUpload" name="uploadMethod" required type="radio"
+                                   value="upload">
+                            <label for="useUpload" text="u-31">Make your own</label>
+                        </div>
+                    </div>
+                    <div class="fanart panel-collapse collapse">
+                        <label for="fanartUsername" text="u-27">Username</label>
+                        <input id="fanartUsername" name="fanartUsername" placeholder="Twitter handle, etc"
+                               type="text"/>
+                    </div>
+                    <div class="make panel-collapse collapse" id="make">
+                        <h1 text="c-0">What do I actually do?</h1>
+                        <div text="c-1">We have provided a template for you to draw over and personalize.</div>
+                        <div text="c-2">You are not required to use our provided template. You can preview how your
+                            duck
+                            will look in the upload page.
+                        </div>
+                        <div text="c-3">Avoid drawing near the legs, the ducks will be swimming. When they move to
+                            land,
+                            we add legs via code.
+                        </div>
+                        <div class="tech-specs" id="specs">
+                            <img alt="template" src="template.png"/>
+                            <h2 text="t-0">Technical Specifications:</h2>
+                            <ul>
+                                <li text="t-1"></li>
+                                <li text="t-2"></li>
+                                <li text="t-3"></li>
+                                <li text="t-4"></li>
+                                <li text="t-5"></li>
+                            </ul>
+                            <a download href="template.png" text="t-6">Download template</a>
+                            <a download href="duck_accessories.zip" text="t-7">Download acessories</a>
                         </div>
 
-                        <div class="upload">
-                            <input accept="image/png" class="form-control uploadFile" id="uploadFile" name="file"
-                                   style="display:none" type="file"/>
+                    </div>
+                    <input accept="image/png" class="form-control uploadFile" id="uploadFile" name="file"
+                           required style="display:none" type="file"/>
+                    <div class="upload">
 
-                            <div class="editor" id="editor" style="display: none">
+                        <div class="editor" id="editor" style="display: none">
 
-                                <img id="menuMobile" onclick="$('#right-tools').addClass('active');"
-                                     src="bars-solid.svg">
-                                <!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
-                                <h1 style="text-align:center;" text="e-0">Duck editor</h1>
-                                <div id="newImg"></div>
-                                <img crossOrigin="Anonymous" id="duck1" src="1.png"
-                                     style=" position:fixed; top:-10000px; left:-10000px;"/>
-                                <img crossOrigin="Anonymous" id="duck2" src="2.png"
-                                     style=" position:fixed; top:-10000px; left:-10000px;"/>
-                                <img crossOrigin="Anonymous" id="duck3" src="3.png"
-                                     style=" position:fixed; top:-10000px; left:-10000px;"/>
-                                <img crossOrigin="Anonymous" id="duck4" src="4.png"
-                                     style=" position:fixed; top:-10000px; left:-10000px;"/>
-                                <div class="editor-container">
-                                    <div id="imagesToolbar">
-                                        <div id="images">
-                                            <h3 text="e-1">Accessories</h3>
-                                            <h3 text="e-2">Click to add to canvas</h3>
-
-                                        </div>
-                                    </div>
-
-                                    <!-- NOTE: Fabric.js sets both the <canvas> element and the wrapper element which it
-                                    creates to be user-unselectable using CSS properties (e.g. for Webkit, this is
-                                    -webkit-user-select: none;). We could remove that property during the dragging, but
-                                    I'm just going to wrap the canvas in a container and bind events to that, which is
-                                    less intrusive.
-                                     -->
-
-                                    <div id="center-interface" onclick="$('#right-tools').removeClass('active');">
-                                        <div id="canvas-container">
-                                            <canvas height="200" id="canvas" width="200"></canvas>
-                                        </div>
-
-                                        <div id="result">
-                                            <hr>
-                                            <h1 text="e-3">Result</h1>
-                                            <canvas height="200" id="source" width="200"></canvas>
-                                            <canvas height="200" id="copy" width="200"></canvas>
-                                            <div id="resultCanvas">
-                                                <canvas height="400" id="spritesheet" width="400"></canvas>
-                                            </div>
-                                        </div>
+                            <img id="menuMobile" onclick="$('#right-tools').addClass('active');"
+                                 src="bars-solid.svg">
+                            <!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
+                            <h1 style="text-align:center;" text="e-0">Duck editor</h1>
+                            <div id="newImg"></div>
+                            <img crossOrigin="Anonymous" id="duck1" src="1.png"
+                                 style=" position:fixed; top:-10000px; left:-10000px;"/>
+                            <img crossOrigin="Anonymous" id="duck2" src="2.png"
+                                 style=" position:fixed; top:-10000px; left:-10000px;"/>
+                            <img crossOrigin="Anonymous" id="duck3" src="3.png"
+                                 style=" position:fixed; top:-10000px; left:-10000px;"/>
+                            <img crossOrigin="Anonymous" id="duck4" src="4.png"
+                                 style=" position:fixed; top:-10000px; left:-10000px;"/>
+                            <div class="editor-container">
+                                <div id="imagesToolbar">
+                                    <div id="images">
+                                        <h3 text="e-1">Accessories</h3>
+                                        <h3 text="e-2">Click to add to canvas</h3>
 
                                     </div>
+                                </div>
 
+                                <!-- NOTE: Fabric.js sets both the <canvas> element and the wrapper element which it
+                                creates to be user-unselectable using CSS properties (e.g. for Webkit, this is
+                                -webkit-user-select: none;). We could remove that property during the dragging, but
+                                I'm just going to wrap the canvas in a container and bind events to that, which is
+                                less intrusive.
+                                 -->
 
-                                    <div id="right-tools">
-                                        <div id="drawingStuff">
-                                            <h3 text="e-4">Drawing</h3>
-                                            <button class="btn btn-info" id="drawing-mode" text="e-5" type="button">
-                                                Enter
-                                                drawing
-                                                mode
-                                            </button>
-                                            <br>
-                                            <button class="btn btn-info" id="clear-canvas" text="e-6" type="button">
-                                                Reset
-                                                Duck
-                                            </button>
-                                            <br>
+                                <div id="center-interface" onclick="$('#right-tools').removeClass('active');">
+                                    <div id="canvas-container">
+                                        <canvas height="200" id="canvas" width="200"></canvas>
+                                    </div>
 
-                                            <div id="drawing-mode-options" style="display:none;">
-                                                <label for="drawing-mode-selector" text="e-7">Mode:</label>
-                                                <select id="drawing-mode-selector">
-                                                    <option text="e-8">Pencil</option>
-                                                    <option text="e-9">Circle</option>
-                                                    <option text="e-10">Spray</option>
-                                                    <option text="e-11">Pattern</option>
-                                                </select><br>
-
-                                                <label for="drawing-line-width" text="e-12">Line width:</label>
-                                                <span class="info">8</span><input id="drawing-line-width" max="150"
-                                                                                  min="0"
-                                                                                  type="range" value="8"><br>
-
-                                                <label for="drawing-color" text="e-13">Line color:</label>
-                                                <input id="drawing-color" type="color" value="#005E7A"><br>
-
-                                                <label for="drawing-shadow-color" text="e-14">Shadow color:</label>
-                                                <input id="drawing-shadow-color" type="color" value="#005E7A"><br>
-
-                                                <label for="drawing-shadow-width" text="e-15">Shadow width:</label>
-                                                <span class="info">16</span><input id="drawing-shadow-width" max="50"
-                                                                                   min="0" type="range" value="0"><br>
-
-                                                <label for="drawing-shadow-offset" text="e-16">Shadow offset:</label>
-                                                <span class="info">0</span><input id="drawing-shadow-offset" max="50"
-                                                                                  min="0" type="range" value="0"><br>
-                                            </div>
+                                    <div id="result">
+                                        <hr>
+                                        <h1 text="e-3">Result</h1>
+                                        <canvas height="200" id="source" width="200"></canvas>
+                                        <canvas height="200" id="copy" width="200"></canvas>
+                                        <div id="resultCanvas">
+                                            <canvas height="400" id="spritesheet" width="400"></canvas>
                                         </div>
-
-                                        <div style="text-align:center;">
-                                            <button id="generateDuck"
-                                                    onclick="generateSpriteSheet()"
-                                                    text="e-17" type="button">
-                                                Generate Duck Spritesheet
-                                            </button>
-
-                                            <button id="downloadLink" onclick="download();"
-                                                    text="e-18" type="button">
-                                                Download
-                                            </button>
-                                        </div>
-                                        <a id="link"></a>
                                     </div>
 
                                 </div>
-								
-						<div class="container" id="previewSection">
-							<h3 class="justify-content-center" id="previewText" text="u-29">Preview</h3>
-							<div class="justify-content-end">
-								<canvas height="200" id="animPreview1" style="visibility: hidden" width="200"></canvas>
-								<canvas height="200" id="animPreview2" style="visibility: hidden" width="200"></canvas>
-								<canvas height="200" id="animPreview1-flipped" style="visibility: hidden; transform:scale(-1,1)"
-										width="200"></canvas>
-								<canvas height="200" id="animPreview2-flipped" style="visibility: hidden; transform:scale(-1,1)"
-										width="200"></canvas>
-								<div id="prevButtons">
-										<div id="prePrev"><</div><div id="nextPrev"><</div>
-								</div>
-							</div>
-						</div>
 
 
-                                <script>
+                                <div id="right-tools">
+                                    <div id="drawingStuff">
+                                        <h3 text="e-4">Drawing</h3>
+                                        <button class="btn btn-info" id="drawing-mode" text="e-5" type="button">
+                                            Enter
+                                            drawing
+                                            mode
+                                        </button>
+                                        <br>
+                                        <button class="btn btn-info" id="clear-canvas" text="e-6" type="button">
+                                            Reset
+                                            Duck
+                                        </button>
+                                        <br>
 
-                                    let canvas;
+                                        <div id="drawing-mode-options" style="display:none;">
+                                            <label for="drawing-mode-selector" text="e-7">Mode:</label>
+                                            <select id="drawing-mode-selector">
+                                                <option text="e-8">Pencil</option>
+                                                <option text="e-9">Circle</option>
+                                                <option text="e-10">Spray</option>
+                                                <option text="e-11">Pattern</option>
+                                            </select><br>
 
-                                    let ducks = [];
+                                            <label for="drawing-line-width" text="e-12">Line width:</label>
+                                            <span class="info">8</span><input id="drawing-line-width" max="150"
+                                                                              min="0"
+                                                                              type="range" value="8"><br>
 
-                                    function addDucks() {
-                                        ducks = [];
-                                        for (let i = 1; i < 5; i++) {
-                                            let duckImage = document.querySelector("#duck" + i);
+                                            <label for="drawing-color" text="e-13">Line color:</label>
+                                            <input id="drawing-color" type="color" value="#005E7A"><br>
 
-                                            let duck = new fabric.Image(duckImage, {
-                                                width: duckImage.width,
-                                                height: duckImage.height,
-                                                left: 0,
-                                                top: 0,
-                                                evented: false,
-                                                selectable: false
-                                            });
-                                            duck.opacity = 0;
-                                            canvas.add(duck);
-                                            ducks.push(duck);
-                                        }
-                                        ducks[0].opacity = 1;
-                                        canvas.renderAll();
+                                            <label for="drawing-shadow-color" text="e-14">Shadow color:</label>
+                                            <input id="drawing-shadow-color" type="color" value="#005E7A"><br>
+
+                                            <label for="drawing-shadow-width" text="e-15">Shadow width:</label>
+                                            <span class="info">16</span><input id="drawing-shadow-width" max="50"
+                                                                               min="0" type="range" value="0"><br>
+
+                                            <label for="drawing-shadow-offset" text="e-16">Shadow offset:</label>
+                                            <span class="info">0</span><input id="drawing-shadow-offset" max="50"
+                                                                              min="0" type="range" value="0"><br>
+                                        </div>
+                                    </div>
+
+                                    <div style="text-align:center;">
+                                        <button id="generateDuck"
+                                                onclick="generateSpriteSheet()"
+                                                text="e-17" type="button">
+                                            Generate Duck Spritesheet
+                                        </button>
+
+                                        <button id="downloadLink" onclick="download();"
+                                                text="e-18" type="button">
+                                            Download
+                                        </button>
+                                    </div>
+                                    <a id="link"></a>
+                                </div>
+
+                            </div>
+
+                            <div class="container" id="previewSection">
+                                <h3 class="justify-content-center" id="previewText" text="u-29">Preview</h3>
+                                <div class="justify-content-end">
+                                    <canvas height="200" id="animPreview1" style="visibility: hidden"
+                                            width="200"></canvas>
+                                    <canvas height="200" id="animPreview2" style="visibility: hidden"
+                                            width="200"></canvas>
+                                    <canvas height="200" id="animPreview1-flipped"
+                                            style="visibility: hidden; transform:scale(-1,1)"
+                                            width="200"></canvas>
+                                    <canvas height="200" id="animPreview2-flipped"
+                                            style="visibility: hidden; transform:scale(-1,1)"
+                                            width="200"></canvas>
+                                    <div id="prevButtons">
+                                        <div id="prePrev"><</div>
+                                        <div id="nextPrev"><</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <script>
+
+                                let canvas;
+
+                                let ducks = [];
+
+                                function addDucks() {
+                                    ducks = [];
+                                    for (let i = 1; i < 5; i++) {
+                                        let duckImage = document.querySelector("#duck" + i);
+
+                                        let duck = new fabric.Image(duckImage, {
+                                            width: duckImage.width,
+                                            height: duckImage.height,
+                                            left: 0,
+                                            top: 0,
+                                            evented: false,
+                                            selectable: false
+                                        });
+                                        duck.opacity = 0;
+                                        canvas.add(duck);
+                                        ducks.push(duck);
+                                    }
+                                    ducks[0].opacity = 1;
+                                    canvas.renderAll();
+                                }
+
+                                function init() {
+                                    const $ = function (id) {
+                                        return document.getElementById(id);
+                                    };
+
+                                    /* Drag and Drop code adapted from http://www.html5rocks.com/en/tutorials/dnd/basics/ */
+
+                                    canvas = new fabric.Canvas("canvas", {
+                                        isDrawingMode: false
+                                    });
+
+
+                                    addDucks();
+
+
+                                    /*
+                                    NOTE: the start and end handlers are events for the <img> elements; the rest are bound to
+                                    the canvas container.
+                                    */
+
+                                    function handleDragStart(e) {
+
+                                        [].forEach.call(images, function (img) {
+                                            img.classList.remove("img_dragging");
+                                        });
+                                        this.classList.add("img_dragging");
                                     }
 
-                                    function init() {
-                                        const $ = function (id) {
-                                            return document.getElementById(id);
-                                        };
+                                    function handleDragOver(e) {
+                                        if (e.preventDefault) {
+                                            e.preventDefault(); // Necessary. Allows us to drop.
+                                        }
 
-                                        /* Drag and Drop code adapted from http://www.html5rocks.com/en/tutorials/dnd/basics/ */
+                                        e.dataTransfer.dropEffect = "copy"; // See the section on the DataTransfer object.
+                                        // NOTE: comment above refers to the article (see top) -natchiketa
 
-                                        canvas = new fabric.Canvas("canvas", {
-                                            isDrawingMode: false
+                                        return false;
+                                    }
+
+                                    function handleDragEnter(e) {
+                                        // this / e.target is the current hover target.
+                                        this.classList.add("over");
+                                    }
+
+                                    function handleDragLeave(e) {
+                                        this.classList.remove("over"); // this / e.target is previous target element.
+                                    }
+
+                                    function handleDrop(e) {
+                                        // this / e.target is current target element.
+
+                                        if (e.stopPropagation) {
+                                            e.stopPropagation(); // stops the browser from redirecting.
+                                        }
+
+                                        const img = document.querySelector("#images img.img_dragging");
+
+
+                                        console.log("event: ", e);
+
+                                        console.log(img);
+
+                                        console.log(img);
+                                        const newImage = new fabric.Image(img, {
+
+                                            width: img.width,
+                                            height: img.height,
+                                            // Set the center of the new object based on the event coordinates relative
+                                            // to the canvas container.
+                                            left: e.layerX,
+                                            top: e.layerY
                                         });
+                                        canvas.add(newImage);
+
+                                        window.$(".img_dragging").removeClass("img_dragging");
 
 
-                                        addDucks();
+                                        return false;
+                                    }
+
+                                    function handleDragEnd(e) {
+
+                                        // this/e.target is the source node.
+                                        [].forEach.call(images, function (img) {
+                                            img.classList.remove("img_dragging");
+                                        });
+                                    }
+
+                                    function spawn(e) {
 
 
-                                        /*
-                                        NOTE: the start and end handlers are events for the <img> elements; the rest are bound to
-                                        the canvas container.
-                                        */
-
-                                        function handleDragStart(e) {
-
-                                            [].forEach.call(images, function (img) {
-                                                img.classList.remove("img_dragging");
-                                            });
-                                            this.classList.add("img_dragging");
-                                        }
-
-                                        function handleDragOver(e) {
-                                            if (e.preventDefault) {
-                                                e.preventDefault(); // Necessary. Allows us to drop.
-                                            }
-
-                                            e.dataTransfer.dropEffect = "copy"; // See the section on the DataTransfer object.
-                                            // NOTE: comment above refers to the article (see top) -natchiketa
-
-                                            return false;
-                                        }
-
-                                        function handleDragEnter(e) {
-                                            // this / e.target is the current hover target.
-                                            this.classList.add("over");
-                                        }
-
-                                        function handleDragLeave(e) {
-                                            this.classList.remove("over"); // this / e.target is previous target element.
-                                        }
-
-                                        function handleDrop(e) {
-                                            // this / e.target is current target element.
-
-                                            if (e.stopPropagation) {
-                                                e.stopPropagation(); // stops the browser from redirecting.
-                                            }
-
-                                            const img = document.querySelector("#images img.img_dragging");
+                                        const img = this;
 
 
-                                            console.log("event: ", e);
-
-                                            console.log(img);
-
-                                            console.log(img);
-                                            const newImage = new fabric.Image(img, {
-
-                                                width: img.width,
-                                                height: img.height,
-                                                // Set the center of the new object based on the event coordinates relative
-                                                // to the canvas container.
-                                                left: e.layerX,
-                                                top: e.layerY
-                                            });
-                                            canvas.add(newImage);
-
-                                            window.$(".img_dragging").removeClass("img_dragging");
+                                        console.log("event: ", e);
 
 
-                                            return false;
-                                        }
+                                        console.log("imagen", img);
+                                        console.log(img.width);
+                                        const newImage = new fabric.Image(img, {
 
-                                        function handleDragEnd(e) {
+                                            width: img.naturalWidth,
+                                            height: img.naturalHeight,
+                                            // Set the center of the new object based on the event coordinates relative
+                                            // to the canvas container.
+                                            left: 0,
+                                            top: 0
+                                        });
+                                        newImage.scaleToWidth(150);
+                                        canvas.add(newImage);
 
-                                            // this/e.target is the source node.
-                                            [].forEach.call(images, function (img) {
-                                                img.classList.remove("img_dragging");
-                                            });
-                                        }
+                                        window.$(".img_dragging").removeClass("img_dragging");
+                                    }
 
-                                        function spawn(e) {
+                                    if (Modernizr.draganddrop) {
+                                        // Browser supports HTML5 DnD.
+
+                                        // Bind the event listeners for the image elements
+                                        const images = document.querySelectorAll("#images img");
+                                        [].forEach.call(images, function (img) {
+                                            //img.addEventListener("dragstart", handleDragStart, false);
+                                            //img.addEventListener("dragend", handleDragEnd, false);
+                                            img.addEventListener("click", spawn, false);
+                                        });
+                                        // Bind the event listeners for the canvas
+                                        /*const canvasContainer = document.getElementById("canvas-container");
+                                        canvasContainer.addEventListener("dragenter", handleDragEnter, false);
+                                        canvasContainer.addEventListener("dragover", handleDragOver, false);
+                                        canvasContainer.addEventListener("dragleave", handleDragLeave, false);
+                                        canvasContainer.addEventListener("drop", handleDrop, false);*/
+
+                                    } else {
+                                        // Replace with a fallback to a library solution.
+                                        //todo: tl string
+                                        // alert("This browser doesn't support the HTML5 Drag and Drop API.");
+                                        alert(strings[lang]["Editor"][19]);
+                                    }
 
 
-                                            const img = this;
+                                    const drawingModeEl = $("drawing-mode"),
+                                        drawingOptionsEl = $("drawing-mode-options"),
+                                        drawingColorEl = $("drawing-color"),
+                                        drawingShadowColorEl = $("drawing-shadow-color"),
+                                        drawingLineWidthEl = $("drawing-line-width"),
+                                        drawingShadowWidth = $("drawing-shadow-width"),
+                                        drawingShadowOffset = $("drawing-shadow-offset"),
+                                        clearEl = $("clear-canvas");
 
-
-                                            console.log("event: ", e);
-
-
-                                            console.log("imagen", img);
-                                            console.log(img.width);
-                                            const newImage = new fabric.Image(img, {
-
-                                                width: img.naturalWidth,
-                                                height: img.naturalHeight,
-                                                // Set the center of the new object based on the event coordinates relative
-                                                // to the canvas container.
-                                                left: 0,
-                                                top: 0
-                                            });
-                                            newImage.scaleToWidth(150);
-                                            canvas.add(newImage);
-
-                                            window.$(".img_dragging").removeClass("img_dragging");
-                                        }
-
-                                        if (Modernizr.draganddrop) {
-                                            // Browser supports HTML5 DnD.
-
-                                            // Bind the event listeners for the image elements
-                                            const images = document.querySelectorAll("#images img");
-                                            [].forEach.call(images, function (img) {
-                                                //img.addEventListener("dragstart", handleDragStart, false);
-                                                //img.addEventListener("dragend", handleDragEnd, false);
-                                                img.addEventListener("click", spawn, false);
-                                            });
-                                            // Bind the event listeners for the canvas
-                                            /*const canvasContainer = document.getElementById("canvas-container");
-                                            canvasContainer.addEventListener("dragenter", handleDragEnter, false);
-                                            canvasContainer.addEventListener("dragover", handleDragOver, false);
-                                            canvasContainer.addEventListener("dragleave", handleDragLeave, false);
-                                            canvasContainer.addEventListener("drop", handleDrop, false);*/
+                                    clearEl.onclick = function () {
+                                        let txt;
+                                        // const r = confirm("Reset Duck? All elements and drawings will be deleted");
+                                        const r = confirm(strings[lang]["Editor"][20]);
+                                        if (r == true) {
 
                                         } else {
-                                            // Replace with a fallback to a library solution.
-                                            //todo: tl string
-                                            // alert("This browser doesn't support the HTML5 Drag and Drop API.");
-                                            alert(strings[lang]["Editor"][19]);
+                                            return;
+                                        }
+                                        canvas.clear();
+                                        addDucks();
+                                    };
+
+                                    drawingModeEl.onclick = function () {
+                                        canvas.isDrawingMode = !canvas.isDrawingMode;
+                                        if (canvas.isDrawingMode) {
+                                            drawingModeEl.innerHTML = strings[lang]["Editor"][21];
+                                            // drawingModeEl.innerHTML = "Cancel drawing mode";
+                                            drawingOptionsEl.style.display = "";
+                                        } else {
+                                            drawingModeEl.innerHTML = strings[lang]["Editor"][5];
+                                            // drawingModeEl.innerHTML = "Enter drawing mode";
+                                            drawingOptionsEl.style.display = "none";
+                                        }
+                                    };
+
+                                    if (fabric.PatternBrush) {
+                                        const vLinePatternBrush = new fabric.PatternBrush(canvas);
+                                        vLinePatternBrush.getPatternSrc = function () {
+
+                                            const patternCanvas = fabric.document.createElement("canvas");
+                                            patternCanvas.width = patternCanvas.height = 10;
+                                            const ctx = patternCanvas.getContext("2d");
+
+                                            ctx.strokeStyle = this.color;
+                                            ctx.lineWidth = 5;
+                                            ctx.beginPath();
+                                            ctx.moveTo(0, 5);
+                                            ctx.lineTo(10, 5);
+                                            ctx.closePath();
+                                            ctx.stroke();
+
+                                            return patternCanvas;
+                                        };
+
+                                        const hLinePatternBrush = new fabric.PatternBrush(canvas);
+                                        hLinePatternBrush.getPatternSrc = function () {
+
+                                            const patternCanvas = fabric.document.createElement("canvas");
+                                            patternCanvas.width = patternCanvas.height = 10;
+                                            const ctx = patternCanvas.getContext("2d");
+
+                                            ctx.strokeStyle = this.color;
+                                            ctx.lineWidth = 5;
+                                            ctx.beginPath();
+                                            ctx.moveTo(5, 0);
+                                            ctx.lineTo(5, 10);
+                                            ctx.closePath();
+                                            ctx.stroke();
+
+                                            return patternCanvas;
+                                        };
+
+                                        const squarePatternBrush = new fabric.PatternBrush(canvas);
+                                        squarePatternBrush.getPatternSrc = function () {
+
+                                            const squareWidth = 10, squareDistance = 2;
+
+                                            const patternCanvas = fabric.document.createElement("canvas");
+                                            patternCanvas.width = patternCanvas.height = squareWidth + squareDistance;
+                                            const ctx = patternCanvas.getContext("2d");
+
+                                            ctx.fillStyle = this.color;
+                                            ctx.fillRect(0, 0, squareWidth, squareWidth);
+
+                                            return patternCanvas;
+                                        };
+
+                                        const diamondPatternBrush = new fabric.PatternBrush(canvas);
+                                        diamondPatternBrush.getPatternSrc = function () {
+
+                                            const squareWidth = 10, squareDistance = 5;
+                                            const patternCanvas = fabric.document.createElement("canvas");
+                                            const rect = new fabric.Rect({
+                                                width: squareWidth,
+                                                height: squareWidth,
+                                                angle: 45,
+                                                fill: this.color
+                                            });
+
+                                            const canvasWidth = rect.getBoundingRect().width;
+
+                                            patternCanvas.width = patternCanvas.height = canvasWidth + squareDistance;
+                                            rect.set({left: canvasWidth / 2, top: canvasWidth / 2});
+
+                                            const ctx = patternCanvas.getContext("2d");
+                                            rect.render(ctx);
+
+                                            return patternCanvas;
+                                        };
+
+                                        let img = new Image();
+                                        img.src = "honey_im_subtle.png";
+
+                                        let texturePatternBrush = new fabric.PatternBrush(canvas);
+                                        texturePatternBrush.source = img;
+                                    }
+
+                                    $("drawing-mode-selector").onchange = function () {
+
+                                        if (this.value === "hline") {
+                                            canvas.freeDrawingBrush = vLinePatternBrush;
+                                        } else if (this.value === "vline") {
+                                            canvas.freeDrawingBrush = hLinePatternBrush;
+                                        } else if (this.value === "square") {
+                                            canvas.freeDrawingBrush = squarePatternBrush;
+                                        } else if (this.value === "diamond") {
+                                            canvas.freeDrawingBrush = diamondPatternBrush;
+                                        } else if (this.value === "texture") {
+                                            canvas.freeDrawingBrush = texturePatternBrush;
+                                        } else {
+                                            canvas.freeDrawingBrush = new fabric[this.value + "Brush"](canvas);
                                         }
 
-
-                                        const drawingModeEl = $("drawing-mode"),
-                                            drawingOptionsEl = $("drawing-mode-options"),
-                                            drawingColorEl = $("drawing-color"),
-                                            drawingShadowColorEl = $("drawing-shadow-color"),
-                                            drawingLineWidthEl = $("drawing-line-width"),
-                                            drawingShadowWidth = $("drawing-shadow-width"),
-                                            drawingShadowOffset = $("drawing-shadow-offset"),
-                                            clearEl = $("clear-canvas");
-
-                                        clearEl.onclick = function () {
-                                            let txt;
-                                            // const r = confirm("Reset Duck? All elements and drawings will be deleted");
-                                            const r = confirm(strings[lang]["Editor"][20]);
-                                            if (r == true) {
-
-                                            } else {
-                                                return;
-                                            }
-                                            canvas.clear();
-                                            addDucks();
-                                        };
-
-                                        drawingModeEl.onclick = function () {
-                                            canvas.isDrawingMode = !canvas.isDrawingMode;
-                                            if (canvas.isDrawingMode) {
-                                                drawingModeEl.innerHTML = strings[lang]["Editor"][21];
-                                                // drawingModeEl.innerHTML = "Cancel drawing mode";
-                                                drawingOptionsEl.style.display = "";
-                                            } else {
-                                                drawingModeEl.innerHTML = strings[lang]["Editor"][5];
-                                                // drawingModeEl.innerHTML = "Enter drawing mode";
-                                                drawingOptionsEl.style.display = "none";
-                                            }
-                                        };
-
-                                        if (fabric.PatternBrush) {
-                                            const vLinePatternBrush = new fabric.PatternBrush(canvas);
-                                            vLinePatternBrush.getPatternSrc = function () {
-
-                                                const patternCanvas = fabric.document.createElement("canvas");
-                                                patternCanvas.width = patternCanvas.height = 10;
-                                                const ctx = patternCanvas.getContext("2d");
-
-                                                ctx.strokeStyle = this.color;
-                                                ctx.lineWidth = 5;
-                                                ctx.beginPath();
-                                                ctx.moveTo(0, 5);
-                                                ctx.lineTo(10, 5);
-                                                ctx.closePath();
-                                                ctx.stroke();
-
-                                                return patternCanvas;
-                                            };
-
-                                            const hLinePatternBrush = new fabric.PatternBrush(canvas);
-                                            hLinePatternBrush.getPatternSrc = function () {
-
-                                                const patternCanvas = fabric.document.createElement("canvas");
-                                                patternCanvas.width = patternCanvas.height = 10;
-                                                const ctx = patternCanvas.getContext("2d");
-
-                                                ctx.strokeStyle = this.color;
-                                                ctx.lineWidth = 5;
-                                                ctx.beginPath();
-                                                ctx.moveTo(5, 0);
-                                                ctx.lineTo(5, 10);
-                                                ctx.closePath();
-                                                ctx.stroke();
-
-                                                return patternCanvas;
-                                            };
-
-                                            const squarePatternBrush = new fabric.PatternBrush(canvas);
-                                            squarePatternBrush.getPatternSrc = function () {
-
-                                                const squareWidth = 10, squareDistance = 2;
-
-                                                const patternCanvas = fabric.document.createElement("canvas");
-                                                patternCanvas.width = patternCanvas.height = squareWidth + squareDistance;
-                                                const ctx = patternCanvas.getContext("2d");
-
-                                                ctx.fillStyle = this.color;
-                                                ctx.fillRect(0, 0, squareWidth, squareWidth);
-
-                                                return patternCanvas;
-                                            };
-
-                                            const diamondPatternBrush = new fabric.PatternBrush(canvas);
-                                            diamondPatternBrush.getPatternSrc = function () {
-
-                                                const squareWidth = 10, squareDistance = 5;
-                                                const patternCanvas = fabric.document.createElement("canvas");
-                                                const rect = new fabric.Rect({
-                                                    width: squareWidth,
-                                                    height: squareWidth,
-                                                    angle: 45,
-                                                    fill: this.color
-                                                });
-
-                                                const canvasWidth = rect.getBoundingRect().width;
-
-                                                patternCanvas.width = patternCanvas.height = canvasWidth + squareDistance;
-                                                rect.set({left: canvasWidth / 2, top: canvasWidth / 2});
-
-                                                const ctx = patternCanvas.getContext("2d");
-                                                rect.render(ctx);
-
-                                                return patternCanvas;
-                                            };
-
-                                            let img = new Image();
-                                            img.src = "honey_im_subtle.png";
-
-                                            let texturePatternBrush = new fabric.PatternBrush(canvas);
-                                            texturePatternBrush.source = img;
-                                        }
-
-                                        $("drawing-mode-selector").onchange = function () {
-
-                                            if (this.value === "hline") {
-                                                canvas.freeDrawingBrush = vLinePatternBrush;
-                                            } else if (this.value === "vline") {
-                                                canvas.freeDrawingBrush = hLinePatternBrush;
-                                            } else if (this.value === "square") {
-                                                canvas.freeDrawingBrush = squarePatternBrush;
-                                            } else if (this.value === "diamond") {
-                                                canvas.freeDrawingBrush = diamondPatternBrush;
-                                            } else if (this.value === "texture") {
-                                                canvas.freeDrawingBrush = texturePatternBrush;
-                                            } else {
-                                                canvas.freeDrawingBrush = new fabric[this.value + "Brush"](canvas);
-                                            }
-
-                                            if (canvas.freeDrawingBrush) {
-                                                const brush = canvas.freeDrawingBrush;
-                                                brush.color = drawingColorEl.value;
-                                                if (brush.getPatternSrc) {
-                                                    brush.source = brush.getPatternSrc.call(brush);
-                                                }
-                                                brush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
-                                                brush.shadow = new fabric.Shadow({
-                                                    blur: parseInt(drawingShadowWidth.value, 10) || 0,
-                                                    offsetX: 0,
-                                                    offsetY: 0,
-                                                    affectStroke: true,
-                                                    color: drawingShadowColorEl.value,
-                                                });
-                                            }
-                                        };
-
-                                        drawingColorEl.onchange = function () {
+                                        if (canvas.freeDrawingBrush) {
                                             const brush = canvas.freeDrawingBrush;
-                                            brush.color = this.value;
+                                            brush.color = drawingColorEl.value;
                                             if (brush.getPatternSrc) {
                                                 brush.source = brush.getPatternSrc.call(brush);
                                             }
-                                        };
-                                        drawingShadowColorEl.onchange = function () {
-                                            canvas.freeDrawingBrush.shadow.color = this.value;
-                                        };
-                                        drawingLineWidthEl.onchange = function () {
-                                            canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
-                                            this.previousSibling.innerHTML = this.value;
-                                        };
-                                        drawingShadowWidth.onchange = function () {
-                                            canvas.freeDrawingBrush.shadow.blur = parseInt(this.value, 10) || 0;
-                                            this.previousSibling.innerHTML = this.value;
-                                        };
-                                        drawingShadowOffset.onchange = function () {
-                                            canvas.freeDrawingBrush.shadow.offsetX = parseInt(this.value, 10) || 0;
-                                            canvas.freeDrawingBrush.shadow.offsetY = parseInt(this.value, 10) || 0;
-                                            this.previousSibling.innerHTML = this.value;
-                                        };
-
-                                        if (canvas.freeDrawingBrush) {
-                                            canvas.freeDrawingBrush.color = drawingColorEl.value;
-                                            console.log(canvas.freeDrawingBrush);
-                                            if (canvas.freeDrawingBrush.getPatternSrc) {
-                                                canvas.freeDrawingBrush.source = canvas.freeDrawingBrush.getPatternSrc.call(this);
-                                            }
-                                            canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
-                                            canvas.freeDrawingBrush.shadow = new fabric.Shadow({
+                                            brush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+                                            brush.shadow = new fabric.Shadow({
                                                 blur: parseInt(drawingShadowWidth.value, 10) || 0,
                                                 offsetX: 0,
                                                 offsetY: 0,
@@ -948,252 +734,344 @@
                                                 color: drawingShadowColorEl.value,
                                             });
                                         }
+                                    };
+
+                                    drawingColorEl.onchange = function () {
+                                        const brush = canvas.freeDrawingBrush;
+                                        brush.color = this.value;
+                                        if (brush.getPatternSrc) {
+                                            brush.source = brush.getPatternSrc.call(brush);
+                                        }
+                                    };
+                                    drawingShadowColorEl.onchange = function () {
+                                        canvas.freeDrawingBrush.shadow.color = this.value;
+                                    };
+                                    drawingLineWidthEl.onchange = function () {
+                                        canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
+                                        this.previousSibling.innerHTML = this.value;
+                                    };
+                                    drawingShadowWidth.onchange = function () {
+                                        canvas.freeDrawingBrush.shadow.blur = parseInt(this.value, 10) || 0;
+                                        this.previousSibling.innerHTML = this.value;
+                                    };
+                                    drawingShadowOffset.onchange = function () {
+                                        canvas.freeDrawingBrush.shadow.offsetX = parseInt(this.value, 10) || 0;
+                                        canvas.freeDrawingBrush.shadow.offsetY = parseInt(this.value, 10) || 0;
+                                        this.previousSibling.innerHTML = this.value;
+                                    };
+
+                                    if (canvas.freeDrawingBrush) {
+                                        canvas.freeDrawingBrush.color = drawingColorEl.value;
+                                        console.log(canvas.freeDrawingBrush);
+                                        if (canvas.freeDrawingBrush.getPatternSrc) {
+                                            canvas.freeDrawingBrush.source = canvas.freeDrawingBrush.getPatternSrc.call(this);
+                                        }
+                                        canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+                                        canvas.freeDrawingBrush.shadow = new fabric.Shadow({
+                                            blur: parseInt(drawingShadowWidth.value, 10) || 0,
+                                            offsetX: 0,
+                                            offsetY: 0,
+                                            affectStroke: true,
+                                            color: drawingShadowColorEl.value,
+                                        });
                                     }
+                                }
 
-                                    function generateSpriteSheet() {
+                                function generateSpriteSheet() {
 
-                                        const sheet = document.getElementById("spritesheet");
+                                    const sheet = document.getElementById("spritesheet");
 
-                                        const sheetCtx = sheet.getContext("2d");
+                                    const sheetCtx = sheet.getContext("2d");
 
-                                        sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
+                                    sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
 
-                                        //$(".canvas-container canvas").attr("width",200);
-                                        //$(".canvas-container canvas").attr("height",200);
+                                    //$(".canvas-container canvas").attr("width",200);
+                                    //$(".canvas-container canvas").attr("height",200);
 
-                                        drawSpriteSheet();
-                                        drawSpriteSheet(200, 0, 1);
-                                        drawSpriteSheet(0, 200, 2);
-                                        drawSpriteSheet(200, 200, 3);
+                                    drawSpriteSheet();
+                                    drawSpriteSheet(200, 0, 1);
+                                    drawSpriteSheet(0, 200, 2);
+                                    drawSpriteSheet(200, 200, 3);
 
 
-                                        let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                                    let e = sheet.toDataURL("image/png").replace("image/png", "image/octet-stream");
 
-                                        console.log(e);
-                                        spritesheet.src = e;
-                                        try {
-                                            document.getElementById("raw-sbm").remove();
-                                            document.getElementById("mime-sbm").remove();
-                                            document.getElementById("filetype-sbm").remove();
-                                        } catch (e) {
-                                        }
-                                        let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.split(",")[1] + "\" >";
-                                        html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + "image/octet-stream" + "\" >";
-                                        html += "<input type=\"hidden\" name=\"filename\" id=\"filename-sbm\" value=\"" + "editor_creation" + "\" >";
-                                        $("#data").append(html);
-
-                                        canvas1.style.visibility = "visible";
-                                        canvas2.style.visibility = "visible";
-                                        canvas1Flipped.style.visibility = "visible";
-                                        canvas2Flipped.style.visibility = "visible";
-                                        startAnimating(10);
-                                        $("#downloadLink").show();
-                                        $("#submit").show();
-                                        $("#editor-sub").show();
-										
-										$("#previewSection").fadeIn();
+                                    console.log(e);
+                                    spritesheet.src = e;
+                                    try {
+                                        document.getElementById("raw-sbm").remove();
+                                        document.getElementById("mime-sbm").remove();
+                                        document.getElementById("filetype-sbm").remove();
+                                    } catch (e) {
                                     }
+                                    let html = "<input type=\"hidden\" name=\"data\" id=\"raw-sbm\" value=\"" + e.split(",")[1] + "\" >";
+                                    html += "<input type=\"hidden\" name=\"mimetype\" id=\"mime-sbm\" value=\"" + "image/octet-stream" + "\" >";
+                                    html += "<input type=\"hidden\" name=\"filename\" id=\"filename-sbm\" value=\"" + "editor_creation" + "\" >";
+                                    $("#data").append(html);
 
-                                    function drawSpriteSheet(x = 0, y = 0, dindex = 0) {
+                                    canvas1.style.visibility = "visible";
+                                    canvas2.style.visibility = "visible";
+                                    canvas1Flipped.style.visibility = "visible";
+                                    canvas2Flipped.style.visibility = "visible";
+                                    startAnimating(10);
+                                    $("#downloadLink").show();
+                                    $("#submit").show();
+                                    $("#editor-sub").show();
 
-                                        for (let a = 0; a < ducks.length; a++) {
-                                            ducks[a].opacity = 0;
-                                        }
-                                        ducks[dindex].opacity = 1;
+                                    $("#previewSection").fadeIn();
+                                }
 
-                                        canvas.renderAll();
+                                function drawSpriteSheet(x = 0, y = 0, dindex = 0) {
 
-                                        //deactivateAll() deprecated in fabric 2
-                                        canvas.discardActiveObject().renderAll();
-                                        // canvas.deactivateAll().renderAll();
+                                    for (let a = 0; a < ducks.length; a++) {
+                                        ducks[a].opacity = 0;
+                                    }
+                                    ducks[dindex].opacity = 1;
 
-                                        const sheet = document.getElementById("spritesheet");
-                                        const duckCan = document.getElementById("canvas");
-                                        const source = document.getElementById("source");
-                                        const copy = document.getElementById("copy");
+                                    canvas.renderAll();
 
-                                        const sourceCtx = source.getContext("2d");
-                                        const copyCtx = copy.getContext("2d");
-                                        const sheetCtx = sheet.getContext("2d");
+                                    //deactivateAll() deprecated in fabric 2
+                                    canvas.discardActiveObject().renderAll();
+                                    // canvas.deactivateAll().renderAll();
+
+                                    const sheet = document.getElementById("spritesheet");
+                                    const duckCan = document.getElementById("canvas");
+                                    const source = document.getElementById("source");
+                                    const copy = document.getElementById("copy");
+
+                                    const sourceCtx = source.getContext("2d");
+                                    const copyCtx = copy.getContext("2d");
+                                    const sheetCtx = sheet.getContext("2d");
 
 
-                                        //call its drawImage() function passing it the source canvas directly
+                                    //call its drawImage() function passing it the source canvas directly
 
-                                        let auxWidth = 200;
-                                        const destination = 200;
-                                        const step = 50;
-                                        console.log("canvas width", canvas.width);
-                                        copyCtx.drawImage(duckCan, 0, 0, $("#canvas").attr("width"), $("#canvas").attr("height"), 0, 0, auxWidth, auxWidth);
+                                    let auxWidth = 200;
+                                    const destination = 200;
+                                    const step = 50;
+                                    console.log("canvas width", canvas.width);
+                                    copyCtx.drawImage(duckCan, 0, 0, $("#canvas").attr("width"), $("#canvas").attr("height"), 0, 0, auxWidth, auxWidth);
 
-                                        for (let a = 0; auxWidth > destination; a++) {
-                                            sourceCtx.clearRect(0, 0, 200, 200);
-                                            sourceCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
-
-                                            copyCtx.clearRect(0, 0, 200, 200);
-
-                                            copyCtx.drawImage(source, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth - step, auxWidth - step);
-
-                                            //copyCtx.drawImage(aux, 0, 0,280,300,0,0,250,250);
-
-                                            auxWidth -= step;
-                                        }
-                                        sheetCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, x, y, 200, 200);
+                                    for (let a = 0; auxWidth > destination; a++) {
                                         sourceCtx.clearRect(0, 0, 200, 200);
+                                        sourceCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth, auxWidth);
+
                                         copyCtx.clearRect(0, 0, 200, 200);
-                                        //destCtx.drawImage(duckCan, 300, 0);
-                                        //destCtx.drawImage(duckCan, 0, 300);
-                                        //destCtx.drawImage(duckCan, 300, 300);
 
+                                        copyCtx.drawImage(source, 0, 0, auxWidth, auxWidth, 0, 0, auxWidth - step, auxWidth - step);
+
+                                        //copyCtx.drawImage(aux, 0, 0,280,300,0,0,250,250);
+
+                                        auxWidth -= step;
                                     }
+                                    sheetCtx.drawImage(copy, 0, 0, auxWidth, auxWidth, x, y, 200, 200);
+                                    sourceCtx.clearRect(0, 0, 200, 200);
+                                    copyCtx.clearRect(0, 0, 200, 200);
+                                    //destCtx.drawImage(duckCan, 300, 0);
+                                    //destCtx.drawImage(duckCan, 0, 300);
+                                    //destCtx.drawImage(duckCan, 300, 300);
 
-                                </script>
+                                }
 
-
-                                <script>
-                                    function download() {
-                                        const sheet = document.getElementById("spritesheet");
-                                        const link = document.getElementById("link");
-                                        link.setAttribute("download", "MyDuck.png");
-                                        link.setAttribute("href", sheet.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-                                        link.click();
-                                    }
-                                </script>
+                            </script>
 
 
-                                <div style="position:fixed;left:-10000000px;">
-                                    <img id="bigTexture" onload="loadAccesoriesTexture()" src="accessories.png">
-                                    <div id="templateImages">
-                                        <div class="SubaBeret_1"></div>
-                                        <div class="Little_Ambulance_1"></div>
-                                        <div class="Little_Ambulance_2"></div>
-                                        <div class="Little_Cap_1"></div>
-                                        <div class="Little_Duck1"></div>
-                                        <div class="Little_Megaphone"></div>
-                                        <div class="Suba_Hairpin"></div>
-                                        <div class="tophat"></div>
-                                        <div class="stopwatch"></div>
-                                        <div class="policehat"></div>
-                                        <div class="KoroHairband"></div>
-                                        <div class="Akiantenna"></div>
-                                        <div class="AquaRibbon"></div>
-                                        <div class="AquaTissue"></div>
-                                        <div class="AyameMaskandHorn"></div>
-                                        <div class="ChocoHorns"></div>
-                                        <div class="MatsuriRibbon"></div>
-                                        <div class="MelChoker"></div>
-                                        <div class="MelHairbat"></div>
-                                        <div class="Akinecktie"></div>
-                                        <div class="MioHairband"></div>
-                                        <div class="OkaChoker"></div>
-                                        <div class="Okaears"></div>
-                                        <div class="ShionHat"></div>
-                                        <div class="ChocoTattoo"></div>
-                                        <div class="SubaHat"></div>
-                                        <div class="FubuEars"></div>
-                                        <div class="Fubukimark1"></div>
-                                        <div class="KoroChoker"></div>
-                                        <div class="MioEars"></div>
-                                        <div class="bow1"></div>
-                                        <div class="bow2"></div>
-                                        <div class="baseballhat"></div>
-                                        <div class="hat2"></div>
-                                        <div class="hat1"></div>
-                                        <div class="hat3"></div>
-                                        <div class="glassestint"></div>
-                                        <div class="eyepatch"></div>
-                                        <div class="glasses"></div>
+                            <script>
+                                function download() {
+                                    const sheet = document.getElementById("spritesheet");
+                                    const link = document.getElementById("link");
+                                    link.setAttribute("download", "MyDuck.png");
+                                    link.setAttribute("href", sheet.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+                                    link.click();
+                                }
+                            </script>
 
-                                    </div>
+
+                            <div style="position:fixed;left:-10000000px;">
+                                <img id="bigTexture" onload="loadAccesoriesTexture()" src="accessories.png">
+                                <div id="templateImages">
+                                    <div class="SubaBeret_1"></div>
+                                    <div class="Little_Ambulance_1"></div>
+                                    <div class="Little_Ambulance_2"></div>
+                                    <div class="Little_Cap_1"></div>
+                                    <div class="Little_Duck1"></div>
+                                    <div class="Little_Megaphone"></div>
+                                    <div class="Suba_Hairpin"></div>
+                                    <div class="tophat"></div>
+                                    <div class="stopwatch"></div>
+                                    <div class="policehat"></div>
+                                    <div class="KoroHairband"></div>
+                                    <div class="Akiantenna"></div>
+                                    <div class="AquaRibbon"></div>
+                                    <div class="AquaTissue"></div>
+                                    <div class="AyameMaskandHorn"></div>
+                                    <div class="ChocoHorns"></div>
+                                    <div class="MatsuriRibbon"></div>
+                                    <div class="MelChoker"></div>
+                                    <div class="MelHairbat"></div>
+                                    <div class="Akinecktie"></div>
+                                    <div class="MioHairband"></div>
+                                    <div class="OkaChoker"></div>
+                                    <div class="Okaears"></div>
+                                    <div class="ShionHat"></div>
+                                    <div class="ChocoTattoo"></div>
+                                    <div class="SubaHat"></div>
+                                    <div class="FubuEars"></div>
+                                    <div class="Fubukimark1"></div>
+                                    <div class="KoroChoker"></div>
+                                    <div class="MioEars"></div>
+                                    <div class="bow1"></div>
+                                    <div class="bow2"></div>
+                                    <div class="baseballhat"></div>
+                                    <div class="hat2"></div>
+                                    <div class="hat1"></div>
+                                    <div class="hat3"></div>
+                                    <div class="glassestint"></div>
+                                    <div class="eyepatch"></div>
+                                    <div class="glasses"></div>
+
                                 </div>
+                            </div>
 
 
-                                <script>
+                            <script>
 
-                                    function createCrop(selector) {
-                                        console.log("selector", selector);
-                                        let cropWidth = $(selector).css("width");
-                                        let cropHeight = $(selector).css("height");
-                                        let cropX = $(selector).css("background-position-x");
-                                        let cropY = $(selector).css("background-position-y");
+                                function createCrop(selector) {
+                                    console.log("selector", selector);
+                                    let cropWidth = $(selector).css("width");
+                                    let cropHeight = $(selector).css("height");
+                                    let cropX = $(selector).css("background-position-x");
+                                    let cropY = $(selector).css("background-position-y");
 
-                                        try {
-                                            cropX = cropX.replace("-", "");
-                                            cropY = cropY.replace("-", "");
-                                        } catch (e) {
-                                            console.log(selector, e);
-                                        }
-                                        console.log(cropWidth, cropHeight, cropX, cropY);
+                                    try {
+                                        cropX = cropX.replace("-", "");
+                                        cropY = cropY.replace("-", "");
+                                    } catch (e) {
+                                        console.log(selector, e);
+                                    }
+                                    console.log(cropWidth, cropHeight, cropX, cropY);
 
-                                        $("body").append("<canvas id=\"cropped\" width=" + cropWidth + " height=" + cropHeight + " style=\"border:2px solid black;\"></canvas>");
+                                    $("body").append("<canvas id=\"cropped\" width=" + cropWidth + " height=" + cropHeight + " style=\"border:2px solid black;\"></canvas>");
 
-                                        const cropCanvas = document.getElementById("cropped");
-                                        const cropCtx = cropCanvas.getContext("2d");
-                                        const imageCrop = document.getElementById("bigTexture");
+                                    const cropCanvas = document.getElementById("cropped");
+                                    const cropCtx = cropCanvas.getContext("2d");
+                                    const imageCrop = document.getElementById("bigTexture");
 
-                                        cropWidth = parseInt(cropWidth.replace("px", ""));
-                                        cropHeight = parseInt(cropHeight.replace("px", ""));
-                                        cropX = parseInt(cropX.replace("px", ""));
-                                        cropY = parseInt(cropY.replace("px", ""));
+                                    cropWidth = parseInt(cropWidth.replace("px", ""));
+                                    cropHeight = parseInt(cropHeight.replace("px", ""));
+                                    cropX = parseInt(cropX.replace("px", ""));
+                                    cropY = parseInt(cropY.replace("px", ""));
 
 //	imageCrop.addEventListener('load', e => {
-                                        cropCtx.drawImage(imageCrop, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
-                                        const image = new Image();
-                                        image.src = cropCanvas.toDataURL();
+                                    cropCtx.drawImage(imageCrop, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+                                    const image = new Image();
+                                    image.src = cropCanvas.toDataURL();
 
-                                        $("#images").append(image);
+                                    $("#images").append(image);
 
 
-                                        $(cropCanvas).remove();
-                                        if (images.length > 0) {
-                                            createCrop("." + $(images.pop()).attr("class"));
-                                        } else {
-                                            //$("#templateImages").remove();
-                                        }
-                                        //});
-
-                                    }
-
-                                    var images = $("#templateImages div").toArray().reverse();
-
-                                    function loadAccesoriesTexture() {
-                                        console.log("asdas", $(images.pop()).attr("class"));
-
+                                    $(cropCanvas).remove();
+                                    if (images.length > 0) {
                                         createCrop("." + $(images.pop()).attr("class"));
+                                    } else {
+                                        //$("#templateImages").remove();
                                     }
+                                    //});
+
+                                }
+
+                                var images = $("#templateImages div").toArray().reverse();
+
+                                function loadAccesoriesTexture() {
+                                    console.log("asdas", $(images.pop()).attr("class"));
+
+                                    createCrop("." + $(images.pop()).attr("class"));
+                                }
 
 
-                                </script>
-                                <!--                                <div style="position:absolute;left:0;">-->
+                            </script>
+                            <!--                                <div style="position:absolute;left:0;">-->
 
 
-                                <label id="editor-sub" style="display:none" text="e-22">If you made changes, generate
-                                    the spritesheet again
-                                    before
-                                    submitting.</label>
-                            </div>
-                            <input class="form-control" id="submit" text="u-41" type="submit"/>
+                            <label id="editor-sub" style="display:none" text="e-22">If you made changes, generate
+                                the spritesheet again
+                                before
+                                submitting.</label>
                         </div>
-
+                        <input class="form-control" id="submit" text="u-33" type="submit"/>
                     </div>
+
                 </div>
-
-
             </form>
             <audio autoplay id="player">
                 <source id="mp3_src" src="" type="audio/mp3"/>
-                <div text="u-30">Your browser does not support the audio element.</div>
+                <div text="u-32">Your browser does not support the audio element.</div>
             </audio>
         </div>
-        
-        <div id="submitting" style="display: none" text="u-28">Uploading duck...</div>
+    </div>
+    <div aria-labelledby="faq-tab" class="screen tab-pane fade" id="faq-container" role="tabpanel">
+        <div class="screen-inner">
+
+            <h1 text="g-0">FAQ</h1>
+
+            <ul>
+                <li>
+                    <span text="g-1">How do I know if my submission is accepted?
+</span>
+                    <ul text="g-2">You can assume it was accepted. However, if there was something wrong, we will
+                        contact you and tell you what was wrong (if you provided your contact info).
+                    </ul>
+                </li>
+                <li>
+                    <span text="g-3">When will we be able to see the finished project?</span>
+                    <ul text="g-4">The web page with all of the submissions will be publicly released on June 30th. Keep
+                        an eye out for posts on Discord and SNS.
+                    </ul>
+                </li>
+                <li>
+                    <span text="g-5">Can I post my submission on Twitter using Subaru's art tag, or Reddit?</span>
+                    <ul text="g-6">Please keep it a secret! Subaru checks her art tag daily, and she has mentioned that
+                        she checks Reddit sometimes. We want it to be a surprise. You may share your designs on Discord!
+                    </ul>
+                </li>
+                <li>
+                    <span text="g-7">Can I just paste something on the duck?</span>
+                    <ul text="g-8">Yes, if the clip art is royalty free. You can use our provided assets as well. Don't
+                        steal anyone's artwork.
+                    </ul>
+                    <span><a href="duck_accessories.zip" text="g-9">Accessories</a></span>
+
+                </li>
+                <li>
+                    <span text="g-10">I don't have drawing software!</span>
+                    <ul text="g-11">If you do not have access to image editing software, you can use this website
+                        for
+                        free and import our template.
+                    </ul>
+                    <ul text="g-13">
+                        You can also use our editor, but it is feature limited.
+                    </ul>
+                    <span><a href="https://prominentdetail.github.io/Pixel.Tools/" text="g-12">https://prominentdetail.github.io/Pixel.Tools/</a></span>
+                </li>
+                <li>
+                    <span text="g-14">Can I draw more animation frames?</span>
+                    <ul text="g-15">We would like the animation to be uniform across the site, so unfortunately no.
+                    </ul>
+                </li>
+                <li>
+                    <span text="g-16">I have another fanmade creation to celebrate, can you add it?</span>
+                    <ul text="g-17">If it can fit in some way to the main project, we can try! At the very least, we
+                        can link to your creation separately!
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <script crossorigin="anonymous"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-maxlength@1.10.1/dist/bootstrap-maxlength.min.js"></script>
@@ -1203,7 +1081,7 @@
     $(function () {
 
         $(".countrypicker").countrypicker();
-        $("#country").prepend("<option text='u-32' value='abstain' data-tokens='' data-countrycode='ZZ'></option>");
+        $("#country").prepend("<option text='u-24' value='abstain' data-tokens='' data-countrycode='ZZ'></option>");
         loadTranslationsJSON().then(loadTexts);
         loadCountryCodesJSON().then(makeValidCodes);
         loadsounds();//.then(makeSoundButtons);
@@ -1218,19 +1096,21 @@
             console.error("lang not set");
         }
         let linksTags = $("#nav-tab [text]");
-        let tutorialTags = $("#tutorial [text]");
         let homeTags = $("#home [text]");
-        let guidelinesTags = $("#guidelines [text]");
-        let specsTags = $("#specs [text]");
         let uploadTags = $("#upload-container [text]");
+        let faqTags = $("#faq-container [text]");
         let editorTags = $("#editor [text]");
+        let soundsTags = $("#soundSection [text]");
+        let makeyourownTags = $("#make [text]");
+        let specsTags = $("#specs [text]");
         let links = strings[lang]["Links"];
-        let tutorial = strings[lang]["TUTORIAL"];
-        let home = strings[lang]["Advertisement"];
-        let guidelines = strings[lang]["GUIDELINES"];
-        let specs = strings[lang]["Technical Specifications"];
-        let upload = strings[lang]["UPLOAD"];
+        let home = strings[lang]["main"];
+        let upload = strings[lang]["Upload"];
         let editor = strings[lang]["Editor"];
+        let sounds = strings[lang]["Sounds"];
+        let make = strings[lang]["makeyourown"];
+        let specs = strings[lang]["Technical Specifications"];
+        let faq = strings[lang]["faq page"];
 
         [...uploadTags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
@@ -1238,26 +1118,17 @@
 
             t.textContent = upload[index];
         });
-        document.getElementById("name").setAttribute("placeholder", upload[39]);
-        document.getElementById("country").setAttribute("placeholder", upload[40]);
+        document.getElementById("name").setAttribute("placeholder", upload[3]);
+        document.getElementById("message").setAttribute("placeholder", upload[5]);
+        document.getElementById("country").setAttribute("placeholder", upload[23]);
+        document.getElementById("fanartUsername").setAttribute("placeholder", upload[28]);
 
-        [...tutorialTags].forEach(function (t) {
-            let textAttr = t.getAttribute("text");
-            let index = textAttr.substr(2);
 
-            t.textContent = tutorial[index];
-        });
         [...homeTags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
             let index = textAttr.substr(2);
 
             t.textContent = home[index];
-        });
-        [...guidelinesTags].forEach(function (t) {
-            let textAttr = t.getAttribute("text");
-            let index = textAttr.substr(2);
-
-            t.textContent = guidelines[index];
         });
         [...linksTags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
@@ -1265,31 +1136,50 @@
 
             t.textContent = links[index];
         });
-        [...specsTags].forEach(function (t) {
+        [...faqTags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
             let index = textAttr.substr(2);
 
-            t.textContent = specs[index];
+            t.textContent = faq[index];
         });
+
         [...editorTags].forEach(function (t) {
             let textAttr = t.getAttribute("text");
             let index = textAttr.substr(2);
 
             t.textContent = editor[index];
         });
+        [...soundsTags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(2);
 
-        //exception for jp, line 105/106 in doc
-        if ($("#jp-ex-3") != null)
-            $("#jp-ex-3").remove();
-        if (lang == "JP") {
-            let ln105 = $("#jp-ex-1")[0];
-            let texts = ln105.textContent.split("技術的仕様");
-            ln105.textContent = texts[0];
-            let ln106 = $("#jp-ex-2");
-            ln106[0].textContent = "技術的仕様";
-            let span = `<span id="jp-ex-3">${texts[1]}</span>`;
-            ln106.parent().append(span);
-        }
+            t.textContent = sounds[index];
+        });
+        [...makeyourownTags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(2);
+
+            t.textContent = make[index];
+        });
+        [...specsTags].forEach(function (t) {
+            let textAttr = t.getAttribute("text");
+            let index = textAttr.substr(2);
+
+            t.textContent = specs[index];
+        });
+
+        // //exception for jp, line 105/106 in doc
+        // if ($("#jp-ex-3") != null)
+        //     $("#jp-ex-3").remove();
+        // if (lang == "JP") {
+        //     let ln105 = $("#jp-ex-1")[0];
+        //     let texts = ln105.textContent.split("技術的仕様");
+        //     ln105.textContent = texts[0];
+        //     let ln106 = $("#jp-ex-2");
+        //     ln106[0].textContent = "技術的仕様";
+        //     let span = `<span id="jp-ex-3">${texts[1]}</span>`;
+        //     ln106.parent().append(span);
+        // }
     }
 
     function makeValidCodes() {
@@ -1318,26 +1208,26 @@
         $(`${anchor}`).scrollTop();
     });
 
-    function changeDropdown() {
-
-        let dropdown = $("#dropdown-inner");
-        dropdown.removeClass();
-        dropdown.addClass("flag-icon");
-        let cls = "flag-icon-";
-        switch (lang) {
-        case "EN":
-            cls += "us";
-            break;
-
-        case "PT":
-            cls += "br";
-            break;
-        default:
-            cls += lang.toLowerCase();
-            break;
-        }
-        dropdown.addClass(cls);
-    }
+    // function changeDropdown() {
+    //
+    //     let dropdown = $("#dropdown-inner");
+    //     dropdown.removeClass();
+    //     dropdown.addClass("flag-icon");
+    //     let cls = "flag-icon-";
+    //     switch (lang) {
+    //     case "EN":
+    //         cls += "us";
+    //         break;
+    //
+    //     case "PT":
+    //         cls += "br";
+    //         break;
+    //     default:
+    //         cls += lang.toLowerCase();
+    //         break;
+    //     }
+    //     dropdown.addClass(cls);
+    // }
 
     $("input[maxlength], textarea").maxlength({
         alwaysShow: true,
@@ -1361,21 +1251,35 @@
     //$("#uploadMethodChoice").on("change", function () {
     $("input[type=radio][name=uploadMethod]").change(function () {
         let v = $(this).val();
+        let $fanart = $(".fanart");
+        let $make = $("#make");
         let $uploadFile = $("#uploadFile");
         let $editor = $("#editor");
         switch (v) {
-        case "upload":
+        case "fanart":
+            $fanart.show();
             $uploadFile.show();
+            $editor.hide();
+            $make.hide();
+            break;
+        case "upload":
+            $make.show();
+            $uploadFile.show();
+            $fanart.hide();
             $editor.hide();
             break;
         case "editor":
             $uploadFile.hide();
             $editor.show();
             $("#submit").hide();
+            $make.hide();
             break;
         default:
+            $fanart.hide();
             $uploadFile.hide();
             $editor.hide();
+            $make.hide();
+
             break;
         }
     });
@@ -1395,7 +1299,7 @@
     // change url based on selected tab
     const selectableTabList = [].slice.call(document.querySelectorAll("a[data-toggle=\"tab\"]"));
     selectableTabList.forEach((selectableTab) => {
-        const selTab = new bootstrap.Tab(selectableTab);
+        // const selTab = new bootstrap.Tab(selectableTab);
         selectableTab.addEventListener("click", function () {
             let newUrl;
             const hash = selectableTab.getAttribute("href");
@@ -1412,73 +1316,73 @@
         $("#uploadMethodChoice").val("editor");
     });
 
-    function inViewport(elem, callback, options = {}) {
-        return new IntersectionObserver(entries => {
-            entries.forEach(entry => callback(entry));
-        }, options).observe(document.querySelector(elem));
-    }
+    // function inViewport(elem, callback, options = {}) {
+    //     return new IntersectionObserver(entries => {
+    //         entries.forEach(entry => callback(entry));
+    //     }, options).observe(document.querySelector(elem));
+    // }
+    //
+    // inViewport("#home-tldr", element => {
+    //     if (element.isIntersecting)
+    //         $("#home-tldr-link").hide();
+    //     else
+    //         $("#home-tldr-link").show();
+    // }, {
+    //     root: document.querySelector("#home > div > div:nth-child(11)")
+    // });
 
-    inViewport("#home-tldr", element => {
-        if (element.isIntersecting)
-            $("#home-tldr-link").hide();
-        else
-            $("#home-tldr-link").show();
-    }, {
-        root: document.querySelector("#home > div > div:nth-child(11)")
+    $(document).ready(function () {
+        $("#hamburguer").click(function () {
+            $("nav .mx-auto").toggleClass("active");
+        });
+
+        $("nav button").click(function () {
+            $("nav .mx-auto").removeClass("active");
+            window.scrollTo(0, 0);
+        });
+
+        var currentPrev = 0;
+        $("#prevButtons div").click(function () {
+            $("#previewSection .justify-content-end canvas").hide();
+            if ($(this).attr("id") == "prevPrev") {
+                currentPrev -= 1;
+            } else {
+                currentPrev += 1;
+            }
+            if (currentPrev > 3) {
+                currentPrev = 0;
+            }
+            if (currentPrev < 0) {
+                currentPrev = 3;
+            }
+            $($("#previewSection .justify-content-end canvas")[currentPrev]).show();
+            $(this).blur();
+        });
     });
-	
-	$(document).ready(function(){
-		$("#hamburguer").click(function(){
-			$("nav .mx-auto").toggleClass("active");
-		});
-		
-		$("nav button").click(function(){
-			$("nav .mx-auto").removeClass("active");
-			window.scrollTo(0,0);
-		});
-		
-		var currentPrev=0;
-		$('#prevButtons div').click(function(){
-			$('#previewSection .justify-content-end canvas').hide();
-			if($(this).attr("id")=="prevPrev"){
-				currentPrev-=1;
-			}else{
-				currentPrev+=1;
-			}
-			if(currentPrev>3){
-				currentPrev=0;
-			}
-			if(currentPrev < 0){
-				currentPrev=3;
-			}
-			$($('#previewSection .justify-content-end canvas')[currentPrev]).show();
-			$(this).blur();
-		});
-	});
 </script>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<!--&lt;!&ndash; The core Firebase JS SDK is always required and must be listed first &ndash;&gt;-->
+<!--<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>-->
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+<!--&lt;!&ndash; TODO: Add SDKs for Firebase products that you want to use-->
+<!--     https://firebase.google.com/docs/web/setup#available-libraries &ndash;&gt;-->
+<!--<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>-->
 
-<script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyCM5hq9uppNdL5fdhOHbiKzmWJWuilgjkQ",
-        authDomain: "subatomoen-54ddd.firebaseapp.com",
-        projectId: "subatomoen-54ddd",
-        storageBucket: "subatomoen-54ddd.appspot.com",
-        messagingSenderId: "190222241919",
-        appId: "1:190222241919:web:daf4280dc4f539a186ef4a",
-        measurementId: "G-FH6LCWP46P"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-</script>
+<!--<script>-->
+<!--    // Your web app's Firebase configuration-->
+<!--    // For Firebase JS SDK v7.20.0 and later, measurementId is optional-->
+<!--    const firebaseConfig = {-->
+<!--        apiKey: "AIzaSyCM5hq9uppNdL5fdhOHbiKzmWJWuilgjkQ",-->
+<!--        authDomain: "subatomoen-54ddd.firebaseapp.com",-->
+<!--        projectId: "subatomoen-54ddd",-->
+<!--        storageBucket: "subatomoen-54ddd.appspot.com",-->
+<!--        messagingSenderId: "190222241919",-->
+<!--        appId: "1:190222241919:web:daf4280dc4f539a186ef4a",-->
+<!--        measurementId: "G-FH6LCWP46P"-->
+<!--    };-->
+<!--    // Initialize Firebase-->
+<!--    firebase.initializeApp(firebaseConfig);-->
+<!--    firebase.analytics();-->
+<!--</script>-->
 </body>
 </html>

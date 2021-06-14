@@ -16,7 +16,7 @@ function chooseFile(file) {
             canvas1Flipped.style.visibility = "visible";
             canvas2Flipped.style.visibility = "visible";
             startAnimating(10);
-			$("#previewSection").fadeIn();
+            $("#previewSection").fadeIn();
 
             //todo: check image dimensions?
         }, false);
@@ -89,8 +89,7 @@ function animate() {
         sx2 = currentFrame2 === 0 ? 0 : w;
         sy2 = currentFrame2 === 0 ? 0 : h;
         // console.log(currentFrame + ":" + sx + "x" + sy);
-		
-		
+
 
         canvasContext1.drawImage(spritesheet, sx1, sy1, w, h, 0, 0, w * scale, h * scale);
         canvasContext2.drawImage(spritesheet, sx2, sy2, w, h, 0, 0, w * scale, h * scale);
@@ -155,6 +154,7 @@ function makeSoundButtons() {
     }
 
 }
+
 $("#soundSelection").on("change", function () {
     let f = $(this).val();
     console.log(f);

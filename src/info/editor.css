@@ -167,7 +167,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 #menuMobile {
     display: none;
 }
-
+/*
 #radiosUpload{
 	    display: flex;
     flex-wrap: wrap;
@@ -184,7 +184,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     position: relative;
     top: 0.7rem;
     margin-right: 1rem;
-}
+}*/
 
 #cropped{display:none;}
 

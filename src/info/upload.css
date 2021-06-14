@@ -61,16 +61,24 @@
 /*}*/
 
 
-#upload-container label, input, textarea {
-    display: block;
-    width: 100%;
+#upload-container label, input, textarea
+{
+    display:     block;
+    width:       100%;
 
     line-height: 24pt;
-    font-size: 12pt;
+    font-size:   12pt;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-#upload-container input {
+#country
+{
+    font-size: smaller;
+    width:     10%;
+}
+
+#upload-container input
+{
     margin-bottom: 24pt;
 }
 
