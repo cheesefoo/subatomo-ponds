@@ -13,10 +13,10 @@ module.exports = merge(common, {
                 },
             }),
         ],
-        splitChunks: {
-            // include all types of chunks
-            chunks: "all",
-        },
+        // splitChunks: {
+        //     // include all types of chunks
+        //     chunks: "all",
+        // },
     },
     mode: "production",
 });

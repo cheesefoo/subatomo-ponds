@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 
 module.exports = {
 
@@ -51,7 +51,7 @@ module.exports = {
         ],
     },
     plugins: [
-        /*    new HtmlWebpackPlugin(),*/
+
         new CopyWebpackPlugin({
             patterns: [
                 {
@@ -70,10 +70,6 @@ module.exports = {
                 {from: "manifest.webmanifest", to: "manifest.webmanifest"},
                 {from: "sw.js", to: "sw.js"},
                 {from: "favicon.ico", to: "favicon.ico"},
-                {from: "src/editor", to: "editor"},
-                {from: "src/assets/duck_accessories", to: "editor"},
-                {from: "src/upload", to: "upload"},
-
                 {from: "src/assets/sound", to: "docs"},
             ],
         }),
