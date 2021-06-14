@@ -1,58 +1,61 @@
-
-
-.main, #previewSection, .soundButton {
-        vertical-align: middle;
-    border-radius: 5px;
-    margin: 12px 0 0 16px;
-    border: 2px solid #518db9;
-    background: white;
-    display: block;
-    box-shadow: #518db9 1px 1px 0,
-    #518db9 2px 2px 0,
-    #518db9 3px 3px 0,
-    #518db9 4px 4px 0,
-    #518db9 5px 5px 0,
-    #518db9 6px 6px 0,
-    #518db9 7px 7px 0,
-    #518db9 8px 8px 0;
+.main, #previewSection, .soundButton
+{
+    display:        block;
+    margin:         12px 0 0 16px;
+    vertical-align: middle;
+    border:         2px solid #518DB9;
+    border-radius:  5px;
+    background:     white;
+    box-shadow:     #518DB9 1px 1px 0,
+                    #518DB9 2px 2px 0,
+                    #518DB9 3px 3px 0,
+                    #518DB9 4px 4px 0,
+                    #518DB9 5px 5px 0,
+                    #518DB9 6px 6px 0,
+                    #518DB9 7px 7px 0,
+                    #518DB9 8px 8px 0;
 }
 
-#previewSection{
-	display:none;
+#previewSection
+{
+    display: none;
 }
 
-#soundButtons{
+#soundButtons
+{
     display:         flex;
     align-items:     self-start;
     flex-wrap:       wrap;
     justify-content: start;
     justify-items:   start;
 }
-.soundButton{
-    font-size: small;
-    color: #518db9;
-    min-width: 150px;
-    max-width: 150px;
+
+.soundButton
+{
+    font-size:  small;
+    min-width:  150px;
+    max-width:  150px;
     max-height: 50px;
+    transition: 0.25s all;
+    color:      #518DB9;
 }
 
-.soundButton:hover{
-       margin: 12px 0 0 16px;
-    box-shadow: #000 0 0 0,
-    #000 0 0 0,
-    #000 0 0 0,
-    #000 0 0 0,
-    #000 0 0 0,
-    #000 0 0 0,
-    #000 0 0 0,
-    #000 0 0 0;
-    min-width: 150px;
-    max-width: 150px;
+.soundButton:hover
+{
+    position:   relative;
+    top:        8px;
+    left:       8px;
+    min-width:  150px;
+    max-width:  150px;
     max-height: 50px;
-    position: relative;
-    top: 8px;
-    left: 8px;
+    margin:     12px 0 0 16px;
+    box-shadow: none;
 
+}
+
+.form-check-input:checked
+{
+    background-color: #F45702;
 }
 /*.contact-us {*/
 /*    background: #f8f4e5;*/
@@ -65,16 +68,13 @@
 {
     display:     block;
     width:       100%;
-
     line-height: 24pt;
-    font-size:   12pt;
-    font-family: 'Noto Sans JP', sans-serif;
 }
 
 #country
 {
     font-size: smaller;
-    width:     10%;
+    width:     20%;
 }
 
 #upload-container input
@@ -82,21 +82,24 @@
     margin-bottom: 24pt;
 }
 
-#upload-container h3 {
+#upload-container h3
+{
+    font-size:   10pt;
     font-weight: normal;
-    font-size: 10pt;
+    font-style:  italic;
     line-height: 24pt;
-    font-style: italic;
-    margin: 0 0 0.5em 0;
+    margin:      0 0 0.5em 0;
 }
 
-#upload-container span {
+#upload-container span
+{
     font-size: 8pt;
 }
 
-#upload-container em {
-    color: #f45702;
+#upload-container em
+{
     font-weight: bold;
+    color:       #F45702;
 }
 
 #submit, #uploadFile
@@ -104,40 +107,47 @@
     margin-top: 2em;
 }
 
-input:focus, textarea:focus {
-    border: 1px solid #6bd4b1;
+input:focus, textarea:focus
+{
+    border: 1px solid #6BD4B1;
 }
 
-textarea {
+textarea
+{
     resize: none;
 }
 
 
-button:hover {
-    background: inherit;
-    color: #f45702;
-    border-bottom: 2px solid #f45702;
+button:hover
+{
+    color:         #F45702;
+    border-bottom: 2px solid #F45702;
+    background:    inherit;
 }
 
-::selection {
-    background: #ffc7b8;
+::selection
+{
+    background: #FFC7B8;
 }
 
 
-input[type=submit] {
+input[type=submit]
+{
+    cursor:     pointer;
     transition: 0.5s;
-    cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #6bd4b1;
-    color: white;
+input[type=submit]:hover
+{
+    color:            white;
+    background-color: #6BD4B1;
 }
 
-#animPreview {
-    background: cornflowerblue;
+#animPreview
+{
+    width:      150px;
     /*display: block;*/
     /*margin:0 auto 0 auto;*/
-    width: 150px;
-    height: 150px;
+    height:     150px;
+    background: cornflowerblue;
 }

@@ -156,14 +156,16 @@ function makeSoundButtons() {
 }
 
 $("#soundSelection").on("change", function () {
+    // console.log(f);
     let f = $(this).val();
-    console.log(f);
+    if (f == -1)
+        return;
     play(f);
 });
 
 $(".soundButton").on("click", function () {
     let f = $(this).attr("value");
-    console.log(f);
+    // console.log(f);
     play(f);
 });
 
@@ -178,7 +180,7 @@ function play(val) {
     if (val === -1)
         val = getRandomIntInclusive(0, soundmap.sounds.length - 1);
     let src = soundmap.sounds[val];
-    console.log(src);
+    // console.log(src);
     audio.src = "./" + src;
     audio.load();
     audio.play();
