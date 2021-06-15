@@ -153,6 +153,7 @@
                     method="post"
                     novalidate
             >
+                <div id="form-lang" name="language" style="display: none"></div>
                 <div class="form-group row" id="data">
                     <div class="displayName">
                         <label for="name" text="u-2">Display name</label>
@@ -1119,7 +1120,7 @@
 
         $(".countrypicker").countrypicker();
         $("#country").prepend("<option text='u-24' value='abstain' data-tokens='' data-countrycode='ZZ'></option>");
-        loadTranslationsJSON().then(loadTexts).then(changeDropdown);
+        loadTranslationsJSON().then(loadTexts).then(changeDropdown).then(addLangToForm);
         loadCountryCodesJSON().then(makeValidCodes);
         loadsounds();//.then(makeSoundButtons);
     });
@@ -1217,6 +1218,10 @@
         //     let span = `<span id="jp-ex-3">${texts[1]}</span>`;
         //     ln106.parent().append(span);
         // }
+    }
+
+    function addLangToForm() {
+        $("#form-lang").text(lang);
     }
 
     function makeValidCodes() {
