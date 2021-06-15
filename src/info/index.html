@@ -148,12 +148,10 @@
             </div>
             <form
                     action="https://script.google.com/macros/s/AKfycbzC8S3tsvC-x32WyUrHfJc5bZBNSDcWo9KA7OOtyTOZuC-6XJpC3NAL267nVDNK5JDJYw/exec"
-                    class="needs-validation"
                     id="form"
                     method="post"
-                    novalidate
             >
-                <div id="form-lang" name="language" style="display: none"></div>
+                <input id="form-lang" name="language" style="display: none">
                 <div class="form-group row" id="data">
                     <div class="displayName">
                         <label for="name" text="u-2">Display name</label>
@@ -332,7 +330,7 @@
 
                     </div>
                     <input accept="image/png" class="form-control uploadFile" id="uploadFile" name="file"
-                           required style="display:none" type="file"/>
+                           style="display:none" type="file"/>
                     <div class="upload">
 
                         <div class="editor" id="editor" style="display: none">
@@ -1077,7 +1075,7 @@
                     <ul text="g-8">Yes, if the clip art is royalty free. You can use our provided assets as well. Don't
                         steal anyone's artwork.
                     </ul>
-                    <span><a href="duck_accessories.zip" text="g-9">Accessories</a></span>
+                    <ul><a href="duck_accessories.zip" text="g-9">Accessories</a></ul>
 
                 </li>
                 <li>
@@ -1089,7 +1087,8 @@
                     <ul text="g-13">
                         You can also use our editor, but it is feature limited.
                     </ul>
-                    <span><a href="https://prominentdetail.github.io/Pixel.Tools/" text="g-12">https://prominentdetail.github.io/Pixel.Tools/</a></span>
+                    <ul><a href="https://prominentdetail.github.io/Pixel.Tools/" text="g-12">https://prominentdetail.github.io/Pixel.Tools/</a>
+                    </ul>
                 </li>
                 <li>
                     <span text="g-14">Can I draw more animation frames?</span>
@@ -1101,6 +1100,15 @@
                     <ul text="g-17">If it can fit in some way to the main project, we can try! At the very least, we
                         can link to your creation separately!
                     </ul>
+                </li>
+                <li>
+                    <span text="g-18">Can I help in some other way?</span>
+                    <ul text="g-19">Contact us in discord!</ul>
+                </li>
+                <li>
+                    <span text="g-20">I don't use Discord, is there another way to contact you?</span>
+                    <ul><a href="mailto:info@subatomos.com" text="g-21">info@subatomos.com</a></ul>
+                    <ul><a href="https://twitter.com/subatomos">@subatomos</a></ul>
                 </li>
             </ul>
         </div>
@@ -1221,7 +1229,7 @@
     }
 
     function addLangToForm() {
-        $("#form-lang").text(lang);
+        $("#form-lang").val(lang);
     }
 
     function makeValidCodes() {
@@ -1296,36 +1304,52 @@
         let v = $(this).val();
         let $fanart = $(".fanart");
         let $make = $("#make");
-        let $uploadFile = $("#uploadFile");
         let $editor = $("#editor");
+        let $fanartUsername = $("#fanartUsername");
+
+        $fanartUsername.prop("required", false);
         switch (v) {
         case "fanart":
             $fanart.show();
-            $uploadFile.show();
+            toggleUploadInput(true);
+            $fanartUsername.prop("required", true);
             $editor.hide();
             $make.hide();
             break;
         case "upload":
             $make.show();
-            $uploadFile.show();
+            toggleUploadInput(true);
             $fanart.hide();
             $editor.hide();
             break;
         case "editor":
-            $uploadFile.hide();
+            toggleUploadInput(false);
             $editor.show();
-            $("#submit").hide();
             $make.hide();
             break;
         default:
             $fanart.hide();
-            $uploadFile.hide();
+            toggleUploadInput(false);
             $editor.hide();
             $make.hide();
-
             break;
         }
     });
+
+    function toggleUploadInput(shouldShow) {
+        let $uploadFile = $("#uploadFile");
+        $uploadFile.prop("required", shouldShow);
+        let $submit = $("#submit");
+
+        if (shouldShow) {
+            $uploadFile.show();
+            $submit.show();
+        } else {
+            $uploadFile.hide();
+            $submit.hide();
+        }
+    }
+
     // deep linking - load tab on refresh
     let url = location.href.replace(/\/$/, "");
     if (location.hash) {

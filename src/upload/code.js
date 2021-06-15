@@ -36,16 +36,9 @@ function findfolder() {
 function doPost(e) {
     const params = e.parameters;
     if (DEBUG) {
-
         Logger.log("name: " + params.displayName);
         Logger.log("msg: " + params.message);
-        // Logger.log(params.file);
-        Logger.log("email: " + params.email);
-        Logger.log("discord: " + params.discord);
-        Logger.log("sound: " + params.soundSelection);
         Logger.log("uploadMethod: " + params.uploadMethod);
-        Logger.log("country: " + params.country);
-        Logger.log("referer: " + params.referer);
     }
     const uploadMethod = params.uploadMethod;
     let data, blob;
@@ -56,7 +49,7 @@ function doPost(e) {
     let output = "";//HtmlService.createHtmlOutput("Something happened");
     if (uploadMethod == "upload") {
         if (!isImageValid(blob)) {
-            output = failureText();
+            output = failureText(params.language.toString());
             output.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
             return output;
         }
@@ -71,18 +64,18 @@ function doPost(e) {
         message = DEFAULT_MESSAGE;
 
     let canContact = params.canContact.toString();
-    let email, discord, country, referer, hairstyle;
+    let contactInfo, fanartUsername, country, referer, hairstyle;
     if (canContact == "no") {
-        email = "Do not contact";
-        discord = "Do not contact";
+        contactInfo = "Do not contact";
+
     } else {
-        email = getParam(params.email);
-        discord = getParam(params.discord);
+
+        contactInfo = getParam(params.contactInfo);
     }
 
     country = getParam(params.country);
     hairstyle = getParam(params.hairstyle);
-
+    fanartUsername = getParam(params.fanartUsername);
     referer = getParam(params.referer);
     if (referer == "other") {
         if (params.refererOther == null) {
@@ -108,12 +101,12 @@ function doPost(e) {
             filename = MakeFileName("EDITOR_" + displayName, timestamp);
         }
         let file = DriveApp.createFile(blob);
+        filename = MakeFileName(displayName, timestamp);
         file = file.setName(filename);
         const folder = DriveApp.getFolderById(FOLDER_ID);
         file.moveTo(folder);
         file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
         fileId = file.getId();
-        filename = MakeFileName(displayName, timestamp);
     }
     let fileUrl = "https://drive.google.com/uc?export=view&id=" + fileId;
 
@@ -121,14 +114,14 @@ function doPost(e) {
     const ss = SpreadsheetApp.getActiveSpreadsheet();
     const s = ss.getActiveSheet();
     // let row = [timestamp, displayName, email, url, filename];
-    let row = ["", displayName, email, discord, fileUrl, filename, message, sound, "", "", "", hairstyle, country, referer];
+    let row = ["", displayName, message, contactInfo, uploadMethod, fanartUsername, filename, fileUrl, "", sound, hairstyle, country, referer];
     s.appendRow(row);
     let rowNum = s.getLastRow();
 
     // s.insertImage(blob,5,rowNum);
     let cell = s.getRange(rowNum, 1);
     cell.setValue(new Date()).setNumberFormat("yyyy/mm/dd-HH:mm:ss");
-    output = successText();
+    output = successText(params.language.toString());
     if (DEBUG) {
         Logger.log("was valid");
         Logger.log(row);
@@ -150,20 +143,77 @@ function getParam(param) {
 }
 
 //create html output for success. currently simple.
-function successText() {
-    const txt = "Upload successful!";
+function successText(language) {
+    let text;
+    switch (language) {
+    case "EN":
+        text = "Upload successful!";
+        break;
+    case "ES":
+        text = "Subida exitosa";
+        break;
+    case "ID":
+        text = "Pengunggahan berhasil!";
+        break;
+    case "PT":
+        text = "Enviado com sucesso!";
+        break;
+    case "NL":
+        text = "Upload succesvol!";
+        break;
+    case "JP":
+        text = "アップロード成功";
+        break;
+    case "KR":
+        text = "제출 성공!";
+        break;
+    case "DE":
+        text = "Upload war erfolgreich!";
+        break;
+    default:
+        text = "Upload successful!";
+        break;
+    }
     let successHtml = HtmlService.createTemplateFromFile("successful");
-    let ret = successHtml.getRawContent().replace("{{message}}", txt);
+    let ret = successHtml.getRawContent().replace("{{message}}", text);
     let template = HtmlService.createTemplate(ret);
     return template.evaluate();
 }
 
 //create html output for failure. currently simple.
-function failureText() {
-    const errText = "The image dimensions of your submission must be " + VALID_WIDTH + "x" + VALID_HEIGHT + " and less than " + VALID_FILESIZE_KB + "kb." +
-        "\nIf you have questions please contact us on discord.";
+function failureText(language) {
+    let text;
+    switch (language) {
+    case "EN":
+        text = "The image dimensions of your submission must be 400x400 and less than 1000kb. If you have questions please contact us on discord.";
+        break;
+    case "ES":
+        text = "Las dimensiones de la imagen a enviar deben ser 400x400 y menor que 1000KB. Si tienes algunas pregunta, porfavor contactanos en discord";
+        break;
+    case "ID":
+        text = "Dimensi gambar yang kamu kirim harus berukuran 400x400 dan kurang dari 1000kb. Jika memiliki pertanyaan silahkan menghubungi kami di Discord.";
+        break;
+    case "PT":
+        text = "As dimensões da imagem do seu envio devem ser 400x400 e menor que 1000 kb. Se você tiver dúvidas, nos contate no discord.";
+        break;
+    case "NL":
+        text = "De dimensie van uw inzending moet 400x400 zijn, en minder dan 1000kb. Als uw vragen heeft, neem dan contact op via discord.";
+        break;
+    case "JP":
+        text = "画像のサイズが400x400で1000kb未満であるよう確認してください。もし質問があればDiscordで訪ねてください。";
+        break;
+    case "KR":
+        text = "제출할 이미지 파일의 화상은 400x400px이어야 하며 그 용량은 1000kb를 넘겨선 안됩니다. 질문사항이 있으시다면 디스코드를 통해 문의해주시길 바랍니다.";
+        break;
+    case "DE":
+        text = "Deine Einreichung muss die Bildgröße von 400x400 und eine Dateigröße von 100KB haben. Falls du fragen hast, kontaktiere uns bitte auf Discord. ";
+        break;
+    default:
+        text = "The image dimensions of your submission must be 400x400 and less than 1000kb. If you have questions please contact us on discord.";
+        break;
+    }
     let errHtml = HtmlService.createTemplateFromFile("successful");
-    let ret = errHtml.getRawContent().replace("{{message}}", errText);
+    let ret = errHtml.getRawContent().replace("{{message}}", text);
     let template = HtmlService.createTemplate(ret);
     return template.evaluate();
 }
@@ -235,6 +285,9 @@ function generateUID() {
     return rtn;
 }
 
+/////////
+//Sheet macros
+/////////
 //Resize all cells to fit the spritesheet
 function autoresizeCells() {
     const ss = SpreadsheetApp.getActiveSpreadsheet();

@@ -143,7 +143,6 @@
       "Cancel drawing mode",
       "If you made changes, generate the spritesheet again before submitting."
     ],
-    "google side": [],
     "CREDITS": [
       "Credits",
       "A collaboration from the Subatomo EN FanServer discord, with a large range of diverse members across different ages, experience levels, and timezones.",
@@ -336,7 +335,6 @@
       "Cancelar modo dibujo",
       "Si hizo cambios, genere el spritesheet de nuevo antes de enviarla."
     ],
-    "google side": [],
     "CREDITS": [
       "Credits",
       "Una colaboraci\u00f3n de el servidor de discord Subatomo EN, con un gran rango de diversos miembros de diferentes edades, niveles de experiencia y zonas horarias.",
@@ -529,7 +527,6 @@
       "batalkan mode menggambar",
       "Jika kamu membuat perubahan, pastikan untuk membuat spritesheet sekali lagi sebelum mengumpulkan hasilnya."
     ],
-    "google side": [],
     "CREDITS": [
       "Credits",
       "Kolaborasi dari fan server Discord Subatomo EN, dengan member yang memiliki beragam umur, pengalaman, dan zona waktu",
@@ -722,7 +719,6 @@
       "Cancelar modo de desenho",
       "Se voc\u00ea fez mudan\u00e7as. gere o Sprite Sheet novamente antes de enviar."
     ],
-    "google side": [],
     "CREDITS": [
       "Cr\u00e9ditos",
       "Uma colabora\u00e7\u00e3o do Subatomo EN FanServer Discord, com diversos membros de diferentes idade, n\u00edvel de experi\u00eancia e fuso hor\u00e1rio.",
@@ -914,7 +910,6 @@
       "Annuleer Tekenmodus.",
       "Als je veranderingen hebt gemaakt, genereer de Spritesheet opnieuw voordat uw het inzend."
     ],
-    "google side": [],
     "CREDITS": [
       "Credits",
       "Een collaboratie van de Subamoto EN FanServer discord, met een grote reeks van diverse leden over vele leeftijden, ervaringsniveaus, en tijdzones.",
@@ -965,15 +960,15 @@
   },
   "JP": {
     "main": [
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~"
+      "\u30b9\u30d0\u30eb\u306e100\u4e07\u4eba\u767b\u9332\u8005\u7a81\u7834\u3068\u304a\u8a95\u751f\u65e5\uff01",
+      "\u30b9\u30d0\u30eb\u306e\u5fdc\u63f4\u306b\u306a\u308b\u305f\u3081\u306bSubatomo EN \u30d5\u30a1\u30f3\u30b5\u30fc\u30d0\u30fc\u304c\u30a6\u30a8\u30d6\u30b5\u30a4\u30c8\u3092\u4f5c\u308a\u307e\u3057\u305f\uff01\u5168\u54e1\u306e\u53c2\u52a0\u3092\u6b53\u8fce\u3057\u307e\u3059\uff01",
+      "*\u3053\u308c\u306f\u3069\u3093\u306a\u3082\u306e\u306a\u306e\u304b\u306f\u3053\u3061\u3089\u306e\u30b7\u30e7\u30fc\u30c8\u30d3\u30c7\u30aa\u3092\u3054\u89a7\u304f\u3060\u3055\u3044:",
+      "\u53c2\u52a0\u65b9\u6cd5:",
+      "\u304a\u795d\u3044\u306e\u8a00\u8449\u3092\u9001\u308b\uff01",
+      "\u81ea\u5206\u306e\u30a2\u30d2\u30eb\u3092\u30ab\u30b9\u30bf\u30de\u30a4\u30ba\u3059\u308b\uff01",
+      "\u30d5\u30a1\u30f3\u30a2\u30fc\u30c8\u3092\u6295\u7a3f\u3059\u308b\uff01",
+      "\u4ed6\u306e\u81ea\u4f5c\u306f\u304a\u52e7\u3081\u306e\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306e\u7d39\u4ecb\u3092\u3069\u3046\u305e\uff01\u30a6\u30a8\u30d6\u30b5\u30a4\u30c8\u306b\u8f09\u305b\u308c\u3070",
+      "\u8a73\u3057\u304f\u306f\u6295\u7a3f\u306e\u30da\u30fc\u30b8\u307e\u3067\u304a\u9858\u3044\u3057\u307e\u3059\uff01"
     ],
     "Upload": [
       "\u5e38\u8b58\u7684\u306a\u30eb\u30fc\u30eb\u304c\u57fa\u672c\u3067\u3059\uff1a\n\u5b97\u6559\u30fb\u653f\u6cbb\u30fb\u5dee\u5225\u30fb\u4e2d\u50b7\u306a\u3069\u3001\u307e\u305f\u306f\u305f\u3061\u60aa\u3044\u8a00\u8449\u30fb\u6587\u5b57\u30fb\u6570\u5b57\u30fb\u8a18\u53f7\u3084\u305d\u306e\u7d44\u307f\u5408\u308f\u305b\u3001\u554f\u984c\u767a\u8a00\u306a\u3069\u306b\u3001\u89e6\u308c\u3066\u306f\u3044\u3051\u307e\u305b\u3093\u3002\u4f8b\u3048\u3070\u3001\u3042\u306a\u305f\u306e\u540d\u524d\u3084\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u3001\u30bd\u30fc\u30bb\u30fc\u30b8\u30ec\u30b8\u30a7\u30f3\u30c9\u914d\u4fe1\u3067\u6551\u6025\u8eca\u3084\u30db\u30bd\u30a4\u30cc\u306b\u96a0\u3055\u308c\u308b\u3088\u3046\u306a\u3082\u306e\u306a\u3089\u3001\u53d7\u7406\u3055\u308c\u307e\u305b\u3093\u3002",
@@ -1004,10 +999,10 @@
       "\u30a2\u30d2\u30eb\u306e\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u65b9\u6cd5\u3092\u9078\u3093\u3067\u304f\u3060\u3055\u3044\uff1a",
       "\u30d5\u30a1\u30f3\u30a2\u30fc\u30c8\u3092\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3059\u308b",
       "\u30e6\u30fc\u30b6\u30fc\u540d",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
-      "~NOT YET TRANSLATED~",
+      "\u30c4\u30a4\u30c3\u30bf\u30fc\u306e\u30cf\u30f3\u30c9\u30eb\u540d\u306a\u3069",
+      "\u30ab\u30b9\u30bf\u30de\u30a4\u30ba\u306a\u3057",
+      "\u30a8\u30c7\u30a3\u30bf\u30fc\u3092\u4f7f\u3046",
+      "\u81ea\u5206\u3067\u4f5c\u308b",
       "\u30d7\u30ec\u30d3\u30e5\u30fc",
       "\u3042\u306a\u305f\u306e\u30d6\u30e9\u30a6\u30b6\u30fc\u306f\u3053\u306e\u97f3\u58f0\u5f62\u5f0f\u3092\u30b5\u30dd\u30fc\u30c8\u3057\u3066\u3044\u307e\u305b\u3093\u3002",
       "\u6295\u7a3f"
@@ -1107,7 +1102,6 @@
       "\u63cf\u753b\u30e2\u30fc\u30c9\u3092\u30ad\u30e3\u30f3\u30bb\u30eb",
       "\u5909\u66f4\u3092\u52a0\u3048\u305f\u5834\u5408\u3001\u63d0\u51fa\u3059\u308b\u524d\u306b\u30b9\u30d7\u30e9\u30a4\u30c8\u30b7\u30fc\u30c8\u3092\u751f\u6210\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
     ],
-    "google side": [],
     "CREDITS": [
       "\u30af\u30ec\u30b8\u30c3\u30c8",
       "Discord\u306eSubatomo EN FanServer\u3088\u308a\u3001\u69d8\u3005\u306a\u5e74\u4ee3\u3001\u7d4c\u9a13\u3001\u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u304b\u3089\u96c6\u307e\u3063\u305f\u3001\u591a\u69d8\u306a\u30e1\u30f3\u30d0\u30fc\u306e\u5354\u529b\u306b\u3088\u308b\u5408\u4f5c\u3067\u3059\u3002",
@@ -1299,10 +1293,6 @@
       "\uc624\ub9ac\ub97c \ub9ac\uc14b\ud558\uc2e4\uac74\uac00\uc694? \uadf8\ub9ac\uc2e0 \uadf8\ub9bc\uc774\ub098 \uc545\uc138\uc11c\ub9ac \ub4f1 \ubaa8\ub4e0 \uc694\uc18c\uac00 \uc0ad\uc81c\ub429\ub2c8\ub2e4.",
       "\uadf8\ub9bc \uadf8\ub9ac\uae30 \ubaa8\ub4dc \ucde8\uc18c",
       "\uc218\uc815\uc0ac\ud56d\uc774 \uc788\uc5c8\ub2e4\uba74 \ucd5c\uc885 \uc81c\ucd9c\ud558\uae30 \uc804\uc5d0 \uc2a4\ud504\ub77c\uc774\ud2b8 \uc2dc\ud2b8\ub97c \uc7ac\uc0dd\uc131\ud574\uc8fc\uc2dc\uae38 \ubc14\ub78d\ub2c8\ub2e4."
-    ],
-    "google side": [
-      "\uc81c\ucd9c \uc131\uacf5!",
-      "\uc81c\ucd9c\ud560 \uc774\ubbf8\uc9c0 \ud30c\uc77c\uc758 \ud654\uc0c1\uc740 400x400px\uc774\uc5b4\uc57c \ud558\uba70 \uadf8 \uc6a9\ub7c9\uc740 1000kb\ub97c \ub118\uaca8\uc120 \uc548\ub429\ub2c8\ub2e4. \uc9c8\ubb38\uc0ac\ud56d\uc774 \uc788\uc73c\uc2dc\ub2e4\uba74 \ub514\uc2a4\ucf54\ub4dc\ub97c \ud1b5\ud574 \ubb38\uc758\ud574\uc8fc\uc2dc\uae38 \ubc14\ub78d\ub2c8\ub2e4."
     ],
     "CREDITS": [
       "\ud06c\ub808\ub527",
@@ -1496,7 +1486,6 @@
       "Zeichenmodus abbrechen",
       "Falls du \u00c4nderungen gemacht hast, generiere den Spritesheet nochmal bevor du es einreichst."
     ],
-    "google side": [],
     "CREDITS": [
       "Credits",
       "Eine Kollaboration des Subatomo EN FanServer Discord, mit einer Gruppe verschiedenster Mitglieder unterschiedlichen Alters, unterschiedlicher Hintergr\u00fcnde und aus allen m\u00f6glichen Zeitzonen.",
