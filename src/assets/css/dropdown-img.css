@@ -1,0 +1,156 @@
+.lang-container
+{
+    position:   absolute;
+    top:        0
+    left:       0;
+    width:      100%;
+    min-height: 900px;
+}
+
+.select
+{
+    font-size:        1.5rem;
+    position:         relative;
+    display:          block;
+    overflow:         hidden;
+    width:            100%;
+    height:           100%;
+    margin:           auto;
+    border-bottom:    0;
+    border-radius:    3px;
+    background-color: #5DCDE3
+    box-shadow:       0 1em 2em -1.5em rgba(0, 0, 0, .5);
+}
+
+.select > i.toggle
+{
+    position: absolute;
+    z-index:  4;
+    top:      1.6em;
+    right:    1.5em;
+    color:    #CCC
+}
+
+.select .placeholder, .select .title, .select > input
+{
+    display: block;
+    width:   100%;
+    height:  100%;
+    cursor:  pointer
+}
+
+.select .placeholder, .select .title
+{
+    position:   relative;
+    padding:    1.5em 2em;
+    background: #5DCDE3
+}
+
+.select > input
+{
+    position: absolute;
+    z-index:  1;
+    top:      0;
+    left:     0;
+    opacity:  0
+}
+
+.select > input:checked div.options label.option .title
+{
+    display: none !important
+}
+
+.select > input:not(:checked)
+{
+    z-index: 4
+}
+
+.select > input:not(:checked) ~ i.toggle.icon-arrow-up, .select > input:not(:checked) ~ label.option > span.title
+{
+    display: none
+}
+
+.select > input:not(:checked) ~ i.toggle.icon-arrow-down
+{
+    display: block
+}
+
+.select > input:disabled
+{
+    cursor: no-drop
+}
+
+.select > span.placeholder
+{
+    position:   relative;
+    z-index:    0;
+    display:    inline-block;
+    width:      100%;
+    color:      #000;
+    border-top: 0
+}
+
+.select label.option
+{
+    z-index:    1;
+    display:    block;
+    overflow:   hidden;
+    width:      100%;
+    transition: all 1s ease-out
+}
+
+.select label.option span.title
+{
+    position:   relative;
+    z-index:    2;
+    transition: background .3s ease-out
+}
+
+.select label.option span.title i.icon
+{
+    padding-right: 8px;
+    color:         #92A8D1
+}
+
+.select label.option span.title:hover
+{
+    color:      #FFF;
+    background: #E4EC7C;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .1)
+}
+
+.select label.option input
+{
+    display: none
+}
+
+.select label.option input:checked ~ span.title
+{
+    font-size:  1.5rem;
+    position:   absolute;
+    z-index:    3;
+    top:        0;
+    width:      100%
+    color:      inherit;
+    border-top: 0;
+    background: #5DCDE3;
+    box-shadow: none;
+}
+
+input[type=radio i]
+{
+    background: #5DCDE3
+}
+
+.select label.option input:disabled ~ span.title
+{
+    color:      #AAA
+    background: #F9F9F9 !important;
+}
+
+.select label.option input:disabled ~ span.title:hover
+{
+    cursor:     no-drop
+    color:      #AAA;
+    background: #92A8D1;
+}

@@ -6,10 +6,11 @@ require("./assets/css/dropdown-img.min.css");
 require("./assets/css/style.css");
 require("./assets/images/intro/loading.gif");
 require("./assets/images/subahug3.png");
-require("./assets/images/SubaBlush_Transparent1.png");
+require("./assets/images/thewholesky.jpg");
 require("./assets/images/subatomo army.png");
 require("./assets/images/ui/volume.png");
 require("./assets/images/ui/volume_mute.png");
+
 
 function importAll(r) {
     return r.keys().map(r);
@@ -39,7 +40,6 @@ const soundsj = require("./assets/sound/soundfilemap.json");
 window.logSwim = true;
 
 require("phaser");
-
 // const NineSlicePlugin = require("phaser3-nineslice");
 import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
 

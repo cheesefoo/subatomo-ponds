@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-
 module.exports = {
 
     entry: {
@@ -68,7 +67,8 @@ module.exports = {
                 {from: "src/assets/fonts", to: "fonts"},
                 {from: "manifest.webmanifest", to: "manifest.webmanifest"},
                 {from: "sw.js", to: "sw.js"},
-                {from: "favicon.ico", to: "favicon.ico"},
+                // {from: "src/assets/favicon", to: ""},
+                // {from: "src/assets/favicon", to: "docs"},
             ],
         }),
 
