@@ -1,4 +1,4 @@
-.main, #previewSection, .soundButton
+.main, .soundButton
 {
     display:        block;
     margin:         12px 0 0 16px;
@@ -16,10 +16,6 @@
                     #518DB9 8px 8px 0;
 }
 
-#previewSection
-{
-    display: none;
-}
 
 #soundButtons
 {

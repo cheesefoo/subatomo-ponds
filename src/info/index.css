@@ -1,7 +1,17 @@
+html
+{
+    --lightblue:   #AED9FF;
+    --chromeblue:  #518DB9;
+    --lightsalmon: #FFAB86;
+    --salmon:      #FF6F62;
+    --orange:      #F45702;
+    --ivory:       #FFFEF0;
+}
+
 body
 {
     /*background:  url("bg1-gr-white.png");*/
-    font-family: kei, serif;
+    font-family: kei, paybooc, Roboto, serif;
     font-size:   12px;
     color:       #518DB9;
     background:  repeating-linear-gradient(
@@ -35,6 +45,31 @@ a:hover
     border-radius:   18px;
     background:      linear-gradient(to top, #FFAB86, 40%, #FF6F62) no-repeat;
     background-size: 100%;
+}
+
+#header-discord
+{
+    padding-top: 10%;
+    color:       #518DB9;
+    fill:        #518DB9;
+}
+
+#lang-dropdown
+{
+    padding-top: 40%;
+}
+
+#header-discord-btn:hover #header-discord g path
+{
+
+    color: var(--ivory);
+    fill:  var(--ivory);
+}
+
+#header-discord g path:hover
+{
+    color: var(--ivory);
+    fill:  var(--ivory);
 }
 
 .language-icon-alt

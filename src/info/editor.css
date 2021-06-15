@@ -65,7 +65,19 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     height:                     100%;
     border-top-right-radius:    20px;
     border-bottom-right-radius: 20px;
-    background-color:           #FFC107;
+    background:                 linear-gradient(to left, #FFAB86, 40%, #FF6F62) no-repeat;
+
+}
+
+#editor h3
+{
+    text-align: center;
+}
+
+#editor h3:first-child
+{
+    font-weight: bolder !important;
+    text-align:  center !important;
 }
 
 #images
@@ -133,8 +145,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     padding:                   20px;
     border-top-left-radius:    20px;
     border-bottom-left-radius: 20px;
-    background-color:          olive;
-    background-color:          #FFC107;
+    background:                linear-gradient(to right, #FFAB86, 40%, #FF6F62) no-repeat;
 }
 
 #source, #copy
@@ -159,8 +170,10 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     margin-top:    40px;
     padding:       10px;
     color:         white;
+    border:        2px solid white;
     border-radius: 10px;
-    background:    gray;
+    background:    #FF6F62;
+    /*background:    gray;*/
 }
 
 .btn.btn-info
@@ -172,7 +185,8 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     color:            white;
     border:           2px solid white;
     border-radius:    10px;
-    background-color: rgb(3, 188, 252);
+    background-color: #FF6F62;
+    /*background-color: rgb(3, 188, 252);*/
 }
 
 #downloadLink
@@ -182,8 +196,10 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     margin-top:       40px;
     padding:          10px;
     color:            white;
+    border:           2px solid white;
     border-radius:    10px;
-    background-color: green;
+    background-color: #FF6F62;
+    /*background-color: green;*/
 }
 
 #menuMobile
@@ -234,6 +250,15 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     background-color: yellow;
 }
 
+#previewSection
+{
+    display:        none;
+    margin:         auto;
+    vertical-align: middle;
+    border:         2px solid #518DB9;
+    border-radius:  5px;
+    background:     #FFFEF0;
+}
 
 @media (max-width: 900px)
 {
@@ -391,7 +416,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
     #drawing-mode-options label, #drawing-mode-options input, #drawing-mode-options textarea
     {
-        font-family: 'Noto Sans JP', sans-serif;
+        font-family: "Noto Sans JP", sans-serif;
         font-size:   12pt;
         line-height: 24pt;
         display:     inline-block;
