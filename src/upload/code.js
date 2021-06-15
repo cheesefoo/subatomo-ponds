@@ -40,7 +40,7 @@ function doPost(e) {
         Logger.log("msg: " + params.message);
         Logger.log("uploadMethod: " + params.uploadMethod);
     }
-    const uploadMethod = params.uploadMethod;
+    const uploadMethod = getParam(params.uploadMethod);
     let data, blob;
     if (uploadMethod != "template") {
         data = Utilities.base64Decode(params.data);
