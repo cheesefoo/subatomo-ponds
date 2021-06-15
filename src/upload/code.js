@@ -100,8 +100,13 @@ function doPost(e) {
         if (uploadMethod == "editor") {
             filename = MakeFileName("EDITOR_" + displayName, timestamp);
         }
+        if (uploadMethod == "fanart") {
+            filename = MakeFileName("FANART_" + displayName, timestamp);
+        } else {
+
+            filename = MakeFileName(displayName, timestamp);
+        }
         let file = DriveApp.createFile(blob);
-        filename = MakeFileName(displayName, timestamp);
         file = file.setName(filename);
         const folder = DriveApp.getFolderById(FOLDER_ID);
         file.moveTo(folder);
