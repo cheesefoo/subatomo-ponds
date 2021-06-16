@@ -153,6 +153,11 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     border-bottom-left-radius: 20px;
     background:                linear-gradient(to right, #FFAB86, 40%, #FF6F62) no-repeat;
 	overflow:auto;
+	background:transparent;
+}
+
+#soundSelection{
+	color:#757575;
 }
 
 #source, #copy

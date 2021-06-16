@@ -946,9 +946,15 @@
                                 }
 								
 								
-                                var images = $("#templateImages div").toArray().reverse();
-
+									var images;
+								$(document).ready(function(){
+									images = $("#templateImages div").toArray().reverse();
+									$("#bigTexture").on("load",function(){
+										loadAccesoriesTexture();
+									});
+								});
                                
+							   
 								 function loadAccesoriesTexture() {
                                     // console.log("asdas", $(images.pop()).attr("class"));
                                     createCrop("." + $(images.pop()).attr("class"));
@@ -957,7 +963,7 @@
 
 
                             <div style="position:fixed;left:-10000000px;">
-                                <img id="bigTexture" onload="loadAccesoriesTexture()" src="accessories.png">
+                                <img id="bigTexture" src="accessories.png">
                                 <div id="templateImages">
                                     <div class="SubaBeret_1"></div>
                                     <div class="Little_Ambulance_1"></div>
