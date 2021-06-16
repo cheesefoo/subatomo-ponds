@@ -54,6 +54,15 @@ a:hover
 	zoom:0.5;
 }
 
+#lang-container{
+	    order: 4;
+    padding: 10px;
+}
+
+#header-discord-btn{
+	order:3;
+}
+
 #navs-flex{
 	padding:0 10px;
 }
