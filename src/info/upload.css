@@ -85,6 +85,7 @@
     font-style:  italic;
     line-height: 24pt;
     margin:      0 0 0.5em 0;
+	display:inline-block;
 }
 
 #upload-container span
@@ -146,4 +147,21 @@ input[type=submit]:hover
     /*margin:0 auto 0 auto;*/
     height:     150px;
     background: cornflowerblue;
+}
+
+#specs img{
+	max-width:100%;
+	margin-bottom:20px;
+}
+
+
+@media (max-width: 900px)
+{
+	#country {
+		font-size: smaller;
+		width: 50%;
+	}
+	.form-check{
+		padding-left:2rem;
+	}
 }

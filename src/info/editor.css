@@ -6,7 +6,7 @@
     width:            200px;
     height:           200px;
     margin:           10px auto;
-    border:           5px solid black;
+    border:           5px solid #a9a9a9;
     background-color: white;
     box-shadow:       0 0 5px 1px black;
 }
@@ -19,6 +19,10 @@
 #images img.img_dragging
 {
     opacity: 0.4;
+}
+
+#imagesToolbar #images{
+	display:flex;
 }
 
 select
@@ -52,10 +56,9 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 {
     display:        flex;
     align-content:  space-between;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap:      wrap;
     width:          100%;
-    height:         100vh;
 }
 
 #imagesToolbar
@@ -66,8 +69,9 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     border-top-right-radius:    20px;
     border-bottom-right-radius: 20px;
     background:                 linear-gradient(to left, #FFAB86, 40%, #FF6F62) no-repeat;
-
+	order:3;
 }
+
 
 #editor h3
 {
@@ -84,7 +88,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 {
     overflow: auto;
     width:    100%;
-    height:   100%;
+    height:   20vh;
     padding:  20px;
 
 }
@@ -131,21 +135,24 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
 #center-interface
 {
-    flex:       1 0 100%;
+    flex:       1 0 50%;
     width:      500px;
     text-align: center;
+	display:flex;
+	align-items:center;
 }
 
 #right-tools
 {
     display:                   inline-block;
     width:                     200px;
-    height:                    100%;
+    height:                    50vh;
     margin-left:               10px;
     padding:                   20px;
     border-top-left-radius:    20px;
     border-bottom-left-radius: 20px;
     background:                linear-gradient(to right, #FFAB86, 40%, #FF6F62) no-repeat;
+	overflow:auto;
 }
 
 #source, #copy
@@ -162,6 +169,10 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     margin-bottom:    5px;
     border:           3px solid black;
     background-color: white;
+}
+
+#result{
+display:none;	
 }
 
 #generateDuck
@@ -260,6 +271,21 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     background:     #FFFEF0;
 }
 
+#imagesToolbar
+    {
+        position:           initial;
+        z-index:            1000;
+        right:              0;
+        bottom:             0;
+        left:               0;
+        width:              100%;
+        height:             24vh;
+        -webkit-box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
+        box-shadow:         -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
+		margin-top:20px;
+    }
+
+
 @media (max-width: 900px)
 {
 
@@ -283,18 +309,22 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     }
 
 
-    #imagesToolbar
-    {
-        position:           fixed;
-        z-index:            1000;
-        right:              0;
-        bottom:             0;
-        left:               0;
-        width:              100%;
-        height:             15vh;
-        -webkit-box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
-        box-shadow:         -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
-    }
+    #imagesToolbar {
+		position: initial;
+		z-index: 1000;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100px;
+		height: 20vh;
+		-webkit-box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
+		box-shadow: -5px 0px 8px 2px rgba(0, 0, 0, 0.58);
+		flex: 1 1 100%;
+		order: 3;
+		margin-bottom: 30px;
+		border-radius: 20px;
+		box-shadow: none;
+	}
 
     #imagesToolbar img
     {
@@ -306,7 +336,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
     #imagesToolbar h3
     {
-        display: none;
+        display: none !important;
     }
 
     #imagesToolbar #images
@@ -322,20 +352,36 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
     #right-tools
     {
         position:           initial !important;
-        z-index:            initial;
         top:                0;
-        right:              -100vw;
         width:              90% !important;
         margin:             auto;
         transition:         .5s;
-        -webkit-box-shadow: 0 -5px 8px 2px rgba(0, 0, 0, .58);
-        box-shadow:         0 -5px 8px 2px rgba(0, 0, 0, .58);
+		background:transparent;
+		order:-1;
+		height:auto;
+		border:none !important;
+		padding:10px !important;
     }
+	
+	#generateDuck{
+		margin-top:10px;
+	}
+	
+	#drawingStuff{
+		display:flex;
+		flex-wrap:wrap;
+	}
+	#drawingStuff button{
+		flex:1 1 50%;
+	}
+	#drawingStuff h3{
+		display:none !important;
+	}
 
     #drawingStuff + div
     {
         display:         flex;
-        justify-content: space-between;
+        justify-content: center;
         width:           100%;
         text-align:      center;
     }
@@ -368,7 +414,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
         margin:           auto;
         text-align:       center;
         text-align:       center;
-        border:           5px solid #000;
+        border:           5px solid #a9a9a9;
         background-color: #FFF;
         box-shadow:       0 0 5px 1px #000;
     }
@@ -398,7 +444,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
     #drawing-mode-options
     {
-        position:         fixed;
+        position:         initial;
         z-index:          1000;
         bottom:           0;
         left:             0;
@@ -406,7 +452,6 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
         flex-wrap:        wrap;
         width:            100%;
         padding:          10px;
-        background-color: yellow;
     }
 
     #drawing-color ~ *
@@ -422,6 +467,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
         display:     inline-block;
         flex:        1 1 50px;
         width:       20%;
+		flex:1 1 50%;
     }
 
     #drawing-mode-selector
@@ -442,5 +488,5 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
         flex:         0 1 80px;
         margin-right: 20px;
     }
-
+	
 }

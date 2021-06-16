@@ -49,27 +49,49 @@ a:hover
 
 #header-discord
 {
-    padding-top: 10%;
     color:       #518DB9;
     fill:        #518DB9;
+	zoom:0.5;
+}
+
+#navs-flex{
+	padding:0 10px;
 }
 
 #lang-dropdown
 {
-    padding-top: 40%;
+       padding: 0;
+    /* height: 0; */
+    margin: auto;
+    display: inline-block;
+    height: auto;
+    align-self: center;
+}
+
+#header-discord-btn, #header-discord g path
+{
+
+    color: var(--ivory);
+    fill:  var(--ivory);
+}
+
+#header-discord g path
+{
+    color: var(--ivory);
+    fill:  var(--ivory);
 }
 
 #header-discord-btn:hover #header-discord g path
 {
 
-    color: var(--ivory);
-    fill:  var(--ivory);
+    color: #518DB9;
+    fill:  #518DB9;
 }
 
 #header-discord g path:hover
 {
-    color: var(--ivory);
-    fill:  var(--ivory);
+    color:#518DB9;
+    fill:  #518DB9;
 }
 
 .language-icon-alt
@@ -83,13 +105,14 @@ a:hover
     height: 100%;
 }
 
-.logo-top
-{
-    width:             100%;
-    height:            100%;
-    background-image:  url(LogoAdjustedSize.png);
+.logo-top {
+    width: 100%;
+    height: 100%;
+    background-image: url(LogoAdjustedSize.png);
     background-repeat: no-repeat;
-    background-size:   contain;
+    background-size: contain;
+    background-size: auto 80%;
+    background-position: 20px center;
 }
 
 .no-svg .language-icon-alt
@@ -156,35 +179,45 @@ a:hover
     position: relative;
 }
 
-#hamburguer
-{
-    position:         fixed;
-    z-index:          100;
-    top:              10px;
-    right:            10px;
-    display:          none;
-    padding:          5px;
-    padding-top:      10px;
-    border-radius:    5px;
-    background-color: rgba(0, 0, 0, 0.5);
+#hamburguer {
+    z-index: 100;
+    top: 10px;
+    left: 15px;
+    display: none;
+    padding: 5px;
+    padding-top: 10px;
+    border-radius: 5px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    flex: 0 1 30px;
+    height: 40px;
+    align-self: center;
+    margin-right: 20px;
+    position: fixed;
+    background: #518db9;
+    background: transparent;
 }
 
-#hamburguer span
-{
-    position:         relative;
-    z-index:          1;
-    display:          block;
-    width:            28px;
-    height:           4px;
-    margin-bottom:    5px;
-    transition:       transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+#hamburguer span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin-bottom: 5px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
                       background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
                       opacity 0.55s ease;
     transform-origin: 4px 0px;
-    border-radius:    3px;
-    background:       #CDCDCD;
+    border-radius: 3px;
+    background: #FFFEF0;
+    border-radius: 0;
+	transition:0.5s;
 }
 
+#hamburguer.active span {
+	background: #518db9;
+
+}
 
 .docs-logo > a
 {
@@ -232,11 +265,22 @@ a:hover
     padding-top: 40%;
 }
 
+.nav{
+	align-items:center;
+}
+
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
 {
     color:        #FFFEF0;
     border-style: none !Important;
     border-color: transparent;
+}
+.nav-tabs .nav-link{
+	color:#FFFEF0;
+	text-transform:uppercase;
+}
+.nav-tabs .nav-link.active{
+	color: #518DB9;
 }
 
 .nav-link, .nav-link:focus, .nav-link:hover
@@ -248,6 +292,27 @@ a:hover
 {
     background-color: #FF6F62 !important;
     box-shadow:       inset 0px -10px 5px 0px #FFFFF0;
+}
+
+#home #header-discord-btn{
+	display:none;
+}
+
+#lang-container .dropdown-menu{
+    padding: 0 20px 10px;
+	min-width:130px;
+	-webkit-box-shadow: 0px 5px 6px 2px rgba(0,0,0,0.32); 
+box-shadow: 0px 5px 6px 2px rgba(0,0,0,0.32);
+}
+
+.flag-icon{
+	margin-right:15px;
+	border:1px solid #ccc9c9;
+}
+
+.form-check-input[type=radio]{
+	position:relative;
+	top:6px;
 }
 
 
@@ -264,6 +329,7 @@ a:hover
     {
         max-width:   95%;
         margin-left: -10px;
+		margin-top:30px;
     }
 
     #previewSection
@@ -321,4 +387,123 @@ a:hover
     {
         max-height: 100vh;
     }
+	#container-topbar{
+		padding:0;
+	}
+	.top-bar{
+	    max-height: 10vh;
+		border-radius: 18px;
+		background: linear-gradient(to top, #FFAB86, 40%, #FF6F62) no-repeat;
+		background-size: 100%;
+		flex-wrap: wrap;
+		align-items: ;
+		transition: 0.5s;
+		overflow: hidden;
+		height:auto;
+		    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+	}
+	.top-bar.active{
+		max-height:100vh;
+	}
+	
+	.logo-link {
+		width: 30vh;
+		height: 100%;
+		height: 10vh;
+		flex: 0 1 50%;
+		text-align: center;
+		margin: auto;
+	}
+	.nav {
+		display: flex;
+		flex-wrap: wrap;
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+		flex-direction: row;
+		align-items: center;
+	}
+	#nav-tab button {
+		font-size: larger;
+		background: none;
+		box-shadow: none;
+		background-color: transparent !important;
+		padding-bottom: 10px;
+		padding-top: 0;
+		text-transform: uppercase;
+	}
+	#nav-tab button::before {
+		width: 90%;
+		display: block;
+		content: " ";
+		background: white;
+		height: 3px;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	
+	.nav-tabs .nav-link {
+		margin-bottom: -1px;
+		background: 0 0;
+		border: 1px solid transparent;
+		border-top-left-radius: .25rem;
+		border-top-right-radius: .25rem;
+		flex: 1 1 100%;
+		height: auto;
+		padding: 15px;
+		order: 2;
+	}
+	button#header-discord-btn {
+		flex: 1 1 50%;
+		display:none;
+	}
+	.dropdown, .dropend, .dropstart, .dropup {
+		position: relative;
+		order: 1;
+		flex: 1 1 50%;
+		align-self: ;
+		align-self: center;
+	}
+	#lang-dropdown {
+		padding-top: 0;
+		border: none;
+		box-shadow: none;
+		padding-bottom: 0;
+	}
+	#header-discord {
+		padding-top: 0;
+		color: #518DB9;
+		fill: #518DB9;
+		height: 30px;
+		/* padding-top: 0; */
+	}
+	.logo-top {
+		width: 100%;
+		height: 100%;
+		background-image: url(LogoAdjustedSize.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		background-size: auto 80%;
+	}
+	#lang-container{
+		position: fixed;
+		top: calc(5vh - 10px);
+		right: 0;
+	}
+	#home #header-discord-btn{
+		display:block;
+		border:none;
+		background:transparent;
+		
+	}
+	#navs-flex{
+		margin-top:20px;
+	}
+	
+	div#soundButtons {
+		position: relative;
+		left: -10px;
+	}
 }
