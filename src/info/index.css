@@ -77,6 +77,18 @@ a:hover
     align-self: center;
 }
 
+#lang-dropdown:hover{
+	box-shadow:none !important;
+}
+
+#lang-container .dropdown-item:focus,#lang-container  .dropdown-item:hover{
+	text-decoration:none;
+}
+
+#lang-dropdown .dropdown-item:focus, #lang-dropdown .dropdown-item:hover{
+	color:transparent;
+}
+
 #header-discord-btn, #header-discord g path
 {
 
