@@ -944,6 +944,15 @@
                                     link.setAttribute("href", sheet.toDataURL("image/png").replace("image/png", "image/octet-stream"));
                                     link.click();
                                 }
+								
+								
+                                var images = $("#templateImages div").toArray().reverse();
+
+                               
+								 function loadAccesoriesTexture() {
+                                    // console.log("asdas", $(images.pop()).attr("class"));
+                                    createCrop("." + $(images.pop()).attr("class"));
+                                }
                             </script>
 
 
@@ -1040,12 +1049,6 @@
 
                                 }
 
-                                var images = $("#templateImages div").toArray().reverse();
-
-                                function loadAccesoriesTexture() {
-                                    // console.log("asdas", $(images.pop()).attr("class"));
-                                    createCrop("." + $(images.pop()).attr("class"));
-                                }
 
 
                             </script>
