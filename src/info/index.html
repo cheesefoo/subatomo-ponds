@@ -86,21 +86,21 @@
                             <span id="lang-header-text">EN</span>
                         </a>
                         <ul aria-labelledby="lang-dropdown" class="dropdown-menu">
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-us" href="#" lang="EN"></a>EN
+                            <li><a class="dropdown-item selectLang" href="#" lang="EN"><div class=" flag-icon flag-icon-us"></div>EN</a>
                             </li>
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-jp" href="#" lang="JP"></a>JP
+                            <li><a class="dropdown-item selectLang" href="#" lang="JP"><div class=" flag-icon flag-icon-jp"></div>JP</a>
                             </li>
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-id" href="#" lang="ID"></a>ID
+                            <li><a class="dropdown-item selectLang" href="#" lang="ID"><div class=" flag-icon flag-icon-id"></div>ID</a>
                             </li>
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-es" href="#" lang="ES"></a>ES
+                            <li><a class="dropdown-item selectLang" href="#" lang="ES"><div class=" flag-icon flag-icon-es"></div>ES</a>
                             </li>
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-br" href="#" lang="PT"></a>PT
+                            <li><a class="dropdown-item selectLang" href="#" lang="PT"><div class=" flag-icon flag-icon-br"></div>PT</a>
                             </li>
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-kr" href="#" lang="KR"></a>KR
+                            <li><a class="dropdown-item selectLang" href="#" lang="KR"><div class=" flag-icon flag-icon-kr"></div>KR</a>
                             </li>
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-nl" href="#" lang="NL"></a>NL
+                            <li><a class="dropdown-item selectLang" href="#" lang="NL"><div class=" flag-icon flag-icon-nl"></div>NL</a>
                             </li>
-                            <li><a class="dropdown-item selectLang flag-icon flag-icon-de" href="#" lang="DE"></a>DE
+                            <li><a class="dropdown-item selectLang" href="#" lang="DE"><div class=" flag-icon flag-icon-de"></div>DE</a>
                             </li>
                         </ul>
                     </div>
@@ -135,7 +135,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="#upload-tab" text="m-8">Go to the submission page for more details! </a>
+			<a href="#" text="m-8" onclick="$('#upload-tab').click();">Go to the submission page for more details! </a>
 			<button class="nav-link" id="header-discord-btn" type="button">
                         <a href="https://discord.gg/subatomos" target="_blank">
                             <svg fill="none" height="55" id="header-discord" viewBox="0 0 71 55" width="71"
@@ -1304,13 +1304,6 @@
         dropdown.addClass(cls);
     }
 
-    $("a[href*='tab']").on("click", function () {
-        let tab = $(this).attr("href");
-        let anchor = tab.substr(0, tab.length - 4);
-        $(`${tab}`).trigger("click");
-        $(`${anchor}`).scrollTop();
-    });
-
 
     $("input[maxlength], textarea").maxlength({
         alwaysShow: true,
@@ -1391,34 +1384,7 @@
         }
     }
 
-    // deep linking - load tab on refresh
-    let url = location.href.replace(/\/$/, "");
-    if (location.hash) {
-        const hash = url.split("#");
-        const currentTab = document.querySelector("#nav-tab a[href=\"#" + hash[1] + "\"]");
-        const curTab = new bootstrap.Tab(currentTab);
-        curTab.show();
-        url = location.href.replace(/\/#/, "#");
-        history.replaceState(null, null, url);
-        setTimeout(() => {
-            window.scrollTop = 0;
-        }, 400);
-    }
-    // change url based on selected tab
-    const selectableTabList = [].slice.call(document.querySelectorAll("a[data-toggle=\"tab\"]"));
-    selectableTabList.forEach((selectableTab) => {
-        // const selTab = new bootstrap.Tab(selectableTab);
-        selectableTab.addEventListener("click", function () {
-            let newUrl;
-            const hash = selectableTab.getAttribute("href");
-            if (hash == "#home-tab") {
-                newUrl = url.split("#")[0];
-            } else {
-                newUrl = url.split("#")[0] + hash;
-            }
-            history.replaceState(null, null, newUrl);
-        });
-    });
+   
 
     $(".editor-link").on("click", function () {
         $("#uploadMethodChoice").val("editor");
