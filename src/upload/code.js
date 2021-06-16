@@ -95,7 +95,7 @@ function doPost(e) {
     //Creates the file in the google drive account under which the deployment is executed as.
     if (uploadMethod == "template") {
         fileId = TEMPLATE_FILE_ID;
-        filename = "TEMPLATE";
+        filename = "TEMPLATE - DO NOT DELETE";
     } else {
         if (uploadMethod == "editor") {
             filename = MakeFileName("EDITOR_" + displayName, timestamp);

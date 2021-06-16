@@ -1,4 +1,4 @@
-from json import dumps
+from json import dumps, load, loads
 from os import listdir
 from os.path import isfile, join, dirname, abspath
 from pathlib import PurePath
@@ -29,20 +29,20 @@ def download_json():
     # authenticate and get sheet
     gc = gspread.service_account('client_secrets.json')
     sh = gc.open_by_key(SHEETS_ID)
-    worksheet = sh.sheet1
+    worksheet = sh.get_worksheet(1)
 
-    num_of_entries = worksheet.row_count
+    num_of_entries = worksheet.row_count+1
     entries = []
 
     @retry(retry=retry_if_exception_type(APIError),
            wait=wait_random_exponential(multiplier=1, max=60))
     def try_to_get_row(index):
         row = worksheet.row_values(index)
-        name = row[1]
-        filename = row[5]
-        pond = row[8]
-        msg = row[6]
-        sound = row[7]
+        name = row[0]
+        filename = row[1]
+        pond = row[2]
+        msg = row[3]
+        sound = row[4]
         entry = {"name": name,
                  "image": filename,
                  "pond": pond,
@@ -87,9 +87,28 @@ def split_images():
         if not filename.endswith('png'):
             continue
         args = ['convert', join(RAW_IMAGES_DIR, filename), '-crop', '2x2@', '+repage',
-                join(SPLIT_IMAGES_DIR, filename[:-4]) + '%d.png']
+                join(SPLIT_IMAGES_DIR, filename[:-4]) + '-%d.png']
         run(args, shell=True, check=True)
 
+def pack_spritesheet_free():
+    # free-tex-packer-cli --project /path/to/project.ftpp --output /path/to/output/folder
+    project = 'prod.ftpp'
+    args = ['free-tex-packer-cli', '--project', project, '--output', SPRITESHEET_DIR]
+    run(args, shell=True, check=True)
+    # merge_json()
+
+def merge_json():
+    single = '{"textures": [], "meta": {"app": "http://github.com/odrick/free-tex-packer-cli", "version": "0.3.0"}}'
+    s = loads(single)
+    t = s["textures"]
+    for file in listdir(SPRITESHEET_DIR):
+        if file.startswith("all_ducks_sheet") and file.endswith("json"):
+            with open(join(SPRITESHEET_DIR, file)) as f:
+                j = load(f)
+                t += j["textures"]
+    output = dumps(s)
+    with open(join(JSON_DESTINATION_DIR, "all_ducks_sheet.json"), 'w') as f:
+        f.write(output)
 
 def pack_spritesheet():
     json_filename = join(SPRITESHEET_DIR, 'all_ducks_sheet.json')
@@ -105,7 +124,8 @@ def main():
     download_json()
     download_images()
     split_images()
-    pack_spritesheet()
+    pack_spritesheet_free()
+    # pack_spritesheet()
 
 
 if __name__ == '__main__':

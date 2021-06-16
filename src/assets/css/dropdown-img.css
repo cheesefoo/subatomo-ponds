@@ -1,7 +1,7 @@
 .lang-container
 {
     position:   absolute;
-    top:        0
+    top:        0;
     left:       0;
     width:      100%;
     min-height: 900px;
@@ -18,7 +18,7 @@
     margin:           auto;
     border-bottom:    0;
     border-radius:    3px;
-    background-color: #5DCDE3
+    background-color: #5DCDE3;
     box-shadow:       0 1em 2em -1.5em rgba(0, 0, 0, .5);
 }
 
@@ -130,7 +130,7 @@
     position:   absolute;
     z-index:    3;
     top:        0;
-    width:      100%
+    width:      100%;
     color:      inherit;
     border-top: 0;
     background: #5DCDE3;
@@ -144,13 +144,13 @@ input[type=radio i]
 
 .select label.option input:disabled ~ span.title
 {
-    color:      #AAA
+    color:      #AAA;
     background: #F9F9F9 !important;
 }
 
 .select label.option input:disabled ~ span.title:hover
 {
-    cursor:     no-drop
+    cursor:     no-drop;
     color:      #AAA;
     background: #92A8D1;
 }

@@ -1,943 +1,943 @@
 {
 	"textures": [
 		{
-			"image": "all_ducks_sheet_0.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 501,
-				"h": 474
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "🚑-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 24,
-						"w": 90,
-						"h": 60
-					},
+          "image": "all_ducks_sheet.png",
+          "format": "RGBA8888",
+          "size": {
+            "w": 1063,
+            "h": 1097
+          },
+          "scale": 1,
+          "frames": [
+            {
+              "filename": "EDITOR_polarehare--63620-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 11,
+                "y": 2,
+                "w": 189,
+                "h": 198
+              },
 					"frame": {
-						"x": 0,
-						"y": 0,
-						"w": 90,
-						"h": 60
-					}
+                      "x": 0,
+                      "y": 0,
+                      "w": 189,
+                      "h": 198
+                    }
 				},
-				{
-					"filename": "🚑3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 24,
-						"w": 90,
-						"h": 60
-					},
+            {
+              "filename": "EDITOR_polarehare--63620-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 11,
+                "y": 2,
+                "w": 189,
+                "h": 198
+              },
 					"frame": {
-						"x": 0,
-						"y": 60,
-						"w": 90,
-						"h": 60
-					}
+                      "x": 189,
+                      "y": 0,
+                      "w": 189,
+                      "h": 198
+                    }
 				},
-				{
-					"filename": "rgb3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_polarehare--63620-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 18,
+                "y": 2,
+                "w": 182,
+                "h": 198
+              },
 					"frame": {
-						"x": 90,
-						"y": 0,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 0,
+                      "y": 198,
+                      "w": 182,
+                      "h": 198
+                    }
 				},
-				{
-					"filename": "blue3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_polarehare--63620-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 22,
+                "y": 2,
+                "w": 178,
+                "h": 198
+              },
 					"frame": {
-						"x": 90,
-						"y": 59,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 182,
+                      "y": 198,
+                      "w": 178,
+                      "h": 198
+                    }
 				},
-				{
-					"filename": "rgb-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9971-189907-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 31,
+                "w": 180,
+                "h": 169
+              },
 					"frame": {
-						"x": 90,
-						"y": 118,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 360,
+                      "y": 198,
+                      "w": 180,
+                      "h": 169
+                    }
 				},
-				{
-					"filename": "green-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9971-189907-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 31,
+                "w": 170,
+                "h": 169
+              },
 					"frame": {
-						"x": 0,
-						"y": 120,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 378,
+                      "y": 0,
+                      "w": 170,
+                      "h": 169
+                    }
 				},
-				{
-					"filename": "blue-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Martyr Shuba -143242-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 51,
+                "w": 187,
+                "h": 149
+              },
 					"frame": {
-						"x": 179,
-						"y": 0,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 360,
+                      "y": 367,
+                      "w": 187,
+                      "h": 149
+                    }
 				},
-				{
-					"filename": "red3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Martyr Shuba -143242-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 51,
+                "w": 187,
+                "h": 149
+              },
 					"frame": {
-						"x": 179,
-						"y": 59,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 0,
+                      "y": 396,
+                      "w": 187,
+                      "h": 149
+                    }
 				},
-				{
-					"filename": "red-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9971-189907-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 31,
+                "w": 163,
+                "h": 169
+              },
 					"frame": {
-						"x": 179,
-						"y": 118,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 187,
+                      "y": 396,
+                      "w": 163,
+                      "h": 169
+                    }
 				},
-				{
-					"filename": "yellow-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "Ani.minhtion--21731-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 30,
+                "y": 31,
+                "w": 161,
+                "h": 169
+              },
 					"frame": {
-						"x": 89,
-						"y": 177,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 0,
+                      "y": 545,
+                      "w": 161,
+                      "h": 169
+                    }
 				},
-				{
-					"filename": "green3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 23,
-						"w": 89,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9971-189907-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 31,
+                "w": 159,
+                "h": 169
+              },
 					"frame": {
-						"x": 0,
-						"y": 179,
-						"w": 89,
-						"h": 59
-					}
+                      "x": 350,
+                      "y": 516,
+                      "w": 159,
+                      "h": 169
+                    }
 				},
-				{
-					"filename": "🚑2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 24,
-						"w": 85,
-						"h": 60
-					},
+            {
+              "filename": "EDITOR_Martyr Shuba -143242-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 51,
+                "w": 180,
+                "h": 149
+              },
 					"frame": {
-						"x": 178,
-						"y": 177,
-						"w": 85,
-						"h": 60
-					}
+                      "x": 161,
+                      "y": 565,
+                      "w": 180,
+                      "h": 149
+                    }
 				},
-				{
-					"filename": "🚑-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 24,
-						"w": 85,
-						"h": 60
-					},
+            {
+              "filename": "EDITOR_Martyr Shuba -143242-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 51,
+                "w": 176,
+                "h": 149
+              },
 					"frame": {
-						"x": 89,
-						"y": 236,
-						"w": 85,
-						"h": 60
-					}
+                      "x": 540,
+                      "y": 169,
+                      "w": 176,
+                      "h": 149
+                    }
 				},
-				{
-					"filename": "green2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "SubatomoSupreme-476513-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 55,
+                "w": 180,
+                "h": 145
+              },
 					"frame": {
-						"x": 0,
-						"y": 238,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 548,
+                      "y": 0,
+                      "w": 180,
+                      "h": 145
+                    }
 				},
-				{
-					"filename": "rgb2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Forte--66979-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 62,
+                "w": 180,
+                "h": 138
+              },
 					"frame": {
-						"x": 174,
-						"y": 237,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 509,
+                      "y": 516,
+                      "w": 180,
+                      "h": 138
+                    }
 				},
-				{
-					"filename": "yellow-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#3259-207533-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 63,
+                "w": 180,
+                "h": 137
+              },
 					"frame": {
-						"x": 258,
-						"y": 237,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 547,
+                      "y": 318,
+                      "w": 180,
+                      "h": 137
+                    }
 				},
-				{
-					"filename": "red2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "SubatomoSupreme-476513-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 55,
+                "w": 170,
+                "h": 145
+              },
 					"frame": {
-						"x": 263,
-						"y": 177,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 509,
+                      "y": 654,
+                      "w": 170,
+                      "h": 145
+                    }
 				},
-				{
-					"filename": "blue-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "SubatomoSupreme-476513-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 55,
+                "w": 163,
+                "h": 145
+              },
 					"frame": {
-						"x": 268,
-						"y": 0,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 341,
+                      "y": 685,
+                      "w": 163,
+                      "h": 145
+                    }
 				},
-				{
-					"filename": "green-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Forte--66979-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 62,
+                "w": 170,
+                "h": 138
+              },
 					"frame": {
-						"x": 268,
-						"y": 59,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 0,
+                      "y": 714,
+                      "w": 170,
+                      "h": 138
+                    }
 				},
-				{
-					"filename": "blue2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#3259-207533-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 63,
+                "w": 170,
+                "h": 137
+              },
 					"frame": {
-						"x": 268,
-						"y": 118,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 170,
+                      "y": 714,
+                      "w": 170,
+                      "h": 137
+                    }
 				},
-				{
-					"filename": "red-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "SubatomoSupreme-476513-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 55,
+                "w": 159,
+                "h": 145
+              },
 					"frame": {
-						"x": 84,
-						"y": 296,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 716,
+                      "y": 145,
+                      "w": 159,
+                      "h": 145
+                    }
 				},
-				{
-					"filename": "rgb-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 23,
-						"w": 84,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Forte--66979-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 62,
+                "w": 163,
+                "h": 138
+              },
 					"frame": {
-						"x": 0,
-						"y": 297,
-						"w": 84,
-						"h": 59
-					}
+                      "x": 728,
+                      "y": 0,
+                      "w": 163,
+                      "h": 138
+                    }
 				},
-				{
-					"filename": "🚑0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 24,
-						"w": 82,
-						"h": 60
-					},
+            {
+              "filename": "EDITOR_Subatomo#3259-207533-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 63,
+                "w": 163,
+                "h": 137
+              },
 					"frame": {
-						"x": 168,
-						"y": 296,
-						"w": 82,
-						"h": 60
-					}
+                      "x": 679,
+                      "y": 654,
+                      "w": 163,
+                      "h": 137
+                    }
 				},
-				{
-					"filename": "🚑-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 24,
-						"w": 82,
-						"h": 60
-					},
+            {
+              "filename": "EDITOR_Forte--66979-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 62,
+                "w": 159,
+                "h": 138
+              },
 					"frame": {
-						"x": 250,
-						"y": 296,
-						"w": 82,
-						"h": 60
-					}
+                      "x": 689,
+                      "y": 455,
+                      "w": 159,
+                      "h": 138
+                    }
 				},
-				{
-					"filename": "🚑1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 24,
-						"w": 80,
-						"h": 60
-					},
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 14,
+                "y": 73,
+                "w": 172,
+                "h": 127
+              },
 					"frame": {
-						"x": 332,
-						"y": 296,
-						"w": 80,
-						"h": 60
-					}
+                      "x": 679,
+                      "y": 791,
+                      "w": 172,
+                      "h": 127
+                    }
 				},
-				{
-					"filename": "🚑-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 102,
-						"h": 102
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 24,
-						"w": 80,
-						"h": 60
-					},
+            {
+              "filename": "EDITOR_Subatomo#3259-207533-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 63,
+                "w": 159,
+                "h": 137
+              },
 					"frame": {
-						"x": 342,
-						"y": 236,
-						"w": 80,
-						"h": 60
-					}
+                      "x": 727,
+                      "y": 290,
+                      "w": 159,
+                      "h": 137
+                    }
 				},
-				{
-					"filename": "rgb-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "Omaeeeeeeeeee--13603-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 11,
+                "y": 81,
+                "w": 182,
+                "h": 119
+              },
 					"frame": {
-						"x": 347,
-						"y": 177,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 340,
+                      "y": 830,
+                      "w": 182,
+                      "h": 119
+                    }
 				},
-				{
-					"filename": "blue-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 73,
+                "w": 170,
+                "h": 127
+              },
 					"frame": {
-						"x": 84,
-						"y": 355,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 170,
+                      "y": 851,
+                      "w": 170,
+                      "h": 127
+                    }
 				},
-				{
-					"filename": "red-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 82,
+                "w": 180,
+                "h": 118
+              },
 					"frame": {
-						"x": 0,
-						"y": 356,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 875,
+                      "y": 138,
+                      "w": 180,
+                      "h": 118
+                    }
 				},
-				{
-					"filename": "green0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "Ani.minhtion--21731-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 30,
+                "y": 58,
+                "w": 147,
+                "h": 142
+              },
 					"frame": {
-						"x": 165,
-						"y": 356,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 522,
+                      "y": 799,
+                      "w": 147,
+                      "h": 142
+                    }
 				},
-				{
-					"filename": "red0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 73,
+                "w": 163,
+                "h": 127
+              },
 					"frame": {
-						"x": 246,
-						"y": 356,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 0,
+                      "y": 852,
+                      "w": 163,
+                      "h": 127
+                    }
 				},
-				{
-					"filename": "rgb0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "Omaeeeeeeeeee--13603-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 11,
+                "y": 80,
+                "w": 172,
+                "h": 120
+              },
 					"frame": {
-						"x": 327,
-						"y": 356,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 891,
+                      "y": 0,
+                      "w": 172,
+                      "h": 120
+                    }
 				},
-				{
-					"filename": "green-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "Ani.minhtion--21731-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 33,
+                "y": 58,
+                "w": 144,
+                "h": 142
+              },
 					"frame": {
-						"x": 81,
-						"y": 414,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 842,
+                      "y": 593,
+                      "w": 144,
+                      "h": 142
+                    }
 				},
-				{
-					"filename": "yellow-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 81,
+                "w": 170,
+                "h": 119
+              },
 					"frame": {
-						"x": 0,
-						"y": 415,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 848,
+                      "y": 427,
+                      "w": 170,
+                      "h": 119
+                    }
 				},
-				{
-					"filename": "blue0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 23,
-						"w": 81,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 73,
+                "w": 159,
+                "h": 127
+              },
 					"frame": {
-						"x": 162,
-						"y": 415,
-						"w": 81,
-						"h": 59
-					}
+                      "x": 886,
+                      "y": 256,
+                      "w": 159,
+                      "h": 127
+                    }
 				},
-				{
-					"filename": "blue-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "Ani.minhtion--21731-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 35,
+                "y": 58,
+                "w": 142,
+                "h": 142
+              },
 					"frame": {
-						"x": 243,
-						"y": 415,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 851,
+                      "y": 735,
+                      "w": 142,
+                      "h": 142
+                    }
 				},
-				{
-					"filename": "green-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "Omaeeeeeeeeee--13603-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 18,
+                "y": 80,
+                "w": 165,
+                "h": 120
+              },
 					"frame": {
-						"x": 322,
-						"y": 415,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 851,
+                      "y": 877,
+                      "w": 165,
+                      "h": 120
+                    }
 				},
-				{
-					"filename": "rgb1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 81,
+                "w": 163,
+                "h": 119
+              },
 					"frame": {
-						"x": 352,
-						"y": 0,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 669,
+                      "y": 918,
+                      "w": 163,
+                      "h": 119
+                    }
 				},
-				{
-					"filename": "red-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "Omaeeeeeeeeee--13603-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 22,
+                "y": 80,
+                "w": 161,
+                "h": 120
+              },
 					"frame": {
-						"x": 352,
-						"y": 59,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 340,
+                      "y": 949,
+                      "w": 161,
+                      "h": 120
+                    }
 				},
-				{
-					"filename": "blue1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 81,
+                "w": 159,
+                "h": 119
+              },
 					"frame": {
-						"x": 352,
-						"y": 118,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 163,
+                      "y": 978,
+                      "w": 159,
+                      "h": 119
+                    }
 				},
-				{
-					"filename": "green1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9977-260734-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 63,
+                "w": 159,
+                "h": 137
+              },
 					"frame": {
-						"x": 401,
-						"y": 415,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 727,
+                      "y": 290,
+                      "w": 159,
+                      "h": 137
+                    }
 				},
-				{
-					"filename": "yellow-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9977-260734-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 63,
+                "w": 170,
+                "h": 137
+              },
 					"frame": {
-						"x": 408,
-						"y": 356,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 170,
+                      "y": 714,
+                      "w": 170,
+                      "h": 137
+                    }
 				},
-				{
-					"filename": "red1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9977-260734-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 63,
+                "w": 163,
+                "h": 137
+              },
 					"frame": {
-						"x": 412,
-						"y": 296,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 679,
+                      "y": 654,
+                      "w": 163,
+                      "h": 137
+                    }
 				},
-				{
-					"filename": "rgb-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 100,
-						"h": 100
-					},
-					"spriteSourceSize": {
-						"x": 12,
-						"y": 23,
-						"w": 79,
-						"h": 59
-					},
+            {
+              "filename": "EDITOR_Subatomo#9977-260734-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 63,
+                "w": 180,
+                "h": 137
+              },
 					"frame": {
-						"x": 422,
-						"y": 236,
-						"w": 79,
-						"h": 59
-					}
+                      "x": 547,
+                      "y": 318,
+                      "w": 180,
+                      "h": 137
+                    }
 				}
 			]
 		}
 	],
 	"meta": {
-		"app": "http://free-tex-packer.com",
-		"version": "0.6.6"
-	}
+      "app": "http://github.com/odrick/free-tex-packer-cli",
+      "version": "0.3.0"
+    }
 }

@@ -1,8 +1,8 @@
 let DEBUGGING = false;
-let TEST_DATA = true;
+let TEST_DATA = false;
 
-require("./assets/css/modal.min.css");
-require("./assets/css/dropdown-img.min.css");
+require("./assets/css/modal.css");
+require("./assets/css/dropdown-img.css");
 require("./assets/css/style.css");
 require("./assets/images/intro/loading.gif");
 require("./assets/images/subahug3.png");
@@ -18,16 +18,16 @@ function importAll(r) {
 
 let ducksj, submissions;
 
-if (TEST_DATA) {
-    ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
-    submissions = require("./assets/test_submissions/submissions.json");
-    importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
-} else {
-    ducksj = require("./assets/submissions/all_ducks_sheet.json");
-    submissions = require("./assets/submissions/submissions.json");
-    importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
-
-}
+// if (TEST_DATA) {
+//     ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
+//     submissions = require("./assets/test_submissions/submissions.json");
+//     importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+// } else {
+//
+// }
+ducksj = require("./assets/submissions/all_ducks_sheet.json");
+submissions = require("./assets/submissions/submissions.json");
+importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
 
 
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
@@ -314,18 +314,18 @@ function startHomepageAnimation() {
     // let grassLwidth = 597.86;
     // let grassRwidth = 307.66;
     let grassRwidth = 308.2;
-    gsap.to("#grass-L", {
-        backgroundPosition: (-grassLwidth * grassFrames) + "px 0",
-        ease: "steps(" + grassFrames + ")",
-        duration: 2,
-        repeat: -1
-    }, 0);
-    gsap.to("#grass-R", {
-        backgroundPosition: (-grassRwidth * grassFrames) + "px 0",
-        ease: "steps(" + grassFrames + ")",
-        duration: 2,
-        repeat: -1
-    }, 0);
+    /*    gsap.to("#grass-L", {
+            backgroundPosition: (-grassLwidth * grassFrames) + "px 0",
+            ease: "steps(" + grassFrames + ")",
+            duration: 2,
+            repeat: -1
+        }, 0);
+        gsap.to("#grass-R", {
+            backgroundPosition: (-grassRwidth * grassFrames) + "px 0",
+            ease: "steps(" + grassFrames + ")",
+            duration: 2,
+            repeat: -1
+        }, 0);*/
 
 
     let tl2 = gsap.timeline();
@@ -573,8 +573,8 @@ class MyGame extends Phaser.Scene {
 
     makeSounds() {
         let sounds = soundsj.sounds;
-        let soundsLen = sounds.length;
-        for (let i = 0; i < soundsLen; i++) {
+        this.numberOfSounds = sounds.length;
+        for (let i = 0; i < this.numberOfSounds; i++) {
             this.sound.add("suba_" + i);
         }
     }
@@ -901,6 +901,7 @@ class MyGame extends Phaser.Scene {
             duckGameObject.displayName = ducks[i].name;
             duckGameObject.message = ducks[i].message;
             duckGameObject.sound = ducks[i].sound ? ducks[i].sound : "1";
+            duckGameObject.sound = ducks[i].sound == -1 ? getRandomInt(1, this.numberOfSounds + 1) : ducks[i].sound;
 
             duckGameObject.setOrigin(0.5, 0.5);
             duckGameObject.displayWidth = SPRITE_WIDTH;

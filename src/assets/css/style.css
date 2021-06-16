@@ -260,7 +260,8 @@ canvas
 {
     position:       relative;
     display:        block;
-    width:          230px;
+    /*width:          350px;*/
+    width:          90%;
     height:         40px;
     margin:         8px 0 0 8px;
     transition:     all .25s;
@@ -610,6 +611,11 @@ img
     text-transform: capitalize;
     color:          #E54E17 !important;
 }
+
+/*.nav-button-container > div > div:nth-child(3) > a*/
+/*{*/
+/*    font-size:16px;*/
+/*}*/
 
 .nav-button-container .container .interior
 {

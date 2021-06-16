@@ -1,0 +1,116 @@
+
+body
+{
+    font:             12pt "Noto Sans JP", sans-serif;
+    font-weight:      400;
+    margin:           0;
+    padding:          0;
+    opacity:          1;
+    color:            rgb(205, 201, 195);
+    background-color: #97CAFD;
+
+}
+
+div
+{
+    pointer-events: none;
+}
+
+.bg
+{
+    position:          absolute;
+    display:           block;
+    width:             100%;
+    height:            100%;
+    background-image:  url("Sky.png");
+    background-repeat: no-repeat;
+    background-size:   auto 100%;
+}
+
+.logo-title-container
+{
+    position:   absolute;
+    left:       25vw;
+    width:      50vw;
+    height:     100%;
+    margin:     auto;
+    text-align: center;
+    color:      #000;
+}
+
+.logo
+{
+    position:                absolute;
+    top:                     0%;
+    width:                   100%;
+    height:                  100%;
+    opacity:                 1;
+    background-image:        url(LogoFullSize.png);
+    background-repeat:       no-repeat;
+    -moz-background-size:    contain;
+    -o-background-size:      contain;
+    -webkit-background-size: contain;
+    background-size:         contain;
+}
+
+.content
+{
+    width:       100%
+    padding-top: 40vh;
+}
+
+
+iframe
+{
+    width:         100%;
+    height:        100%;
+    margin-bottom: 5%;
+    border:        30px solid #FFF;
+    border-radius: 15px;
+
+
+}
+
+.btn-container
+{
+    position:   absolute;
+    left:       25vw;
+    width:      50vw;
+    height:     50%;
+    margin:     auto;
+    text-align: center;
+    color:      #000;
+}
+
+.submityourown
+{
+    font-size:               2rem;
+    font-weight:             bold;
+    position:                absolute;
+    bottom:                  20%;
+    display:                 block;
+    width:                   100%;
+    height:                  100%;
+
+    margin:                  auto;
+    opacity:                 1;
+    background-image:        url(enter.png);
+    background-repeat:       no-repeat;
+    -moz-background-size:    contain;
+    -o-background-size:      contain;
+    -webkit-background-size: contain;
+    background-size:         contain;
+    /*border:           5px;*/
+    /*border:           30px solid #FFF;*/
+    /*border-radius:    15px;*/
+    /*background-color: #FE5B25;*/
+
+
+}
+
+a
+{
+    font-family:     meyro;
+    text-decoration: none;
+    color:           rgb(255, 255, 255);
+}
