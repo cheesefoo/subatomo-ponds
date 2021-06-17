@@ -72,6 +72,11 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 	order:3;
 }
 
+#imagesToolbar h3{
+	color:white;
+	margin-right:5px;
+}
+
 
 #editor h3
 {
