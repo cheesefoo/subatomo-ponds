@@ -4,28 +4,12 @@
    http://free-tex-packer.com
    ---------------------------
 */
-.Suba_Hairpin
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    400px;
-    height: 181px;background: url(accessories.png) no-repeat -0px -0px;
-}
-
 .SubaBeret_1
 {
     display:  inline-block;
     overflow: hidden;
     width:    335px;
-    height: 300px;background: url(accessories.png) no-repeat -400px -0px;
-}
-
-.policehat
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    320px;
-    height: 169px;background: url(accessories.png) no-repeat -0px -181px;
+    height: 300 pxbackground: url(accessories.png) no-repeat -0px -0px;
 }
 
 .Little_Ambulance_1
@@ -33,7 +17,7 @@
     display:  inline-block;
     overflow: hidden;
     width:    302px;
-    height: 300px;background: url(accessories.png) no-repeat -735px -0px;
+    height: 300 pxbackground: url(accessories.png) no-repeat -0px -300px;
 }
 
 .Little_Ambulance_2
@@ -41,7 +25,7 @@
     display:  inline-block;
     overflow: hidden;
     width:    302px;
-    height: 300px;background: url(accessories.png) no-repeat -1037px -0px;
+    height: 300 pxbackground: url(accessories.png) no-repeat -302px -300px;
 }
 
 .Little_Cap_1
@@ -49,7 +33,7 @@
     display:  inline-block;
     overflow: hidden;
     width:    302px;
-    height: 300px;background: url(accessories.png) no-repeat -1339px -0px;
+    height: 300 pxbackground: url(accessories.png) no-repeat -335px -0px;
 }
 
 .Little_Duck1
@@ -57,15 +41,7 @@
     display:  inline-block;
     overflow: hidden;
     width:    302px;
-    height: 300px;background: url(accessories.png) no-repeat -1641px -0px;
-}
-
-.glasses
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    105px;
-    height: 86px;background: url(accessories.png) no-repeat -1943px -0px;
+    height: 300 pxbackground: url(accessories.png) no-repeat -0px -600px;
 }
 
 .Little_Megaphone
@@ -73,111 +49,15 @@
     display:  inline-block;
     overflow: hidden;
     width:    302px;
-    height: 300px;background: url(accessories.png) no-repeat -0px -350px;
+    height: 300 pxbackground: url(accessories.png) no-repeat -302px -600px;
 }
 
-.stopwatch
+.Suba_Hairpin
 {
     display:  inline-block;
     overflow: hidden;
-    width:    259px;
-    height: 211px;background: url(accessories.png) no-repeat -0px -650px;
-}
-
-.Akiantenna
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -0px -861px;
-}
-
-.Akinecktie
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -0px -1061px;
-}
-
-.AquaRibbon
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -0px -1261px;
-}
-
-.AquaTissue
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -0px -1461px;
-}
-
-.AyameMaskandHorn
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -0px -1661px;
-}
-
-.bow1
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    200px;
-    height: 154px;background: url(accessories.png) no-repeat -0px -1861px;
-}
-
-.bow2
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    200px;
-    height: 153px;background: url(accessories.png) no-repeat -200px -1861px;
-}
-
-.baseballhat
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    200px;
-    height: 147px;background: url(accessories.png) no-repeat -400px -1861px;
-}
-
-.hat2
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    200px;
-    height: 138px;background: url(accessories.png) no-repeat -600px -1861px;
-}
-
-.hat1
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    200px;
-    height: 100px;background: url(accessories.png) no-repeat -800px -1861px;
-}
-
-.glassestint
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    204px;
-    height: 87px;background: url(accessories.png) no-repeat -800px -1961px;
-}
-
-.eyepatch
-{
-    display:  inline-block;
-    overflow: hidden;
-    width:    191px;
-    height: 64px;background: url(accessories.png) no-repeat -1004px -1961px;
+    width:    400px;
+    height: 181 pxbackground: url(accessories.png) no-repeat -604px -300px;
 }
 
 .tophat
@@ -185,95 +65,127 @@
     display:  inline-block;
     overflow: hidden;
     width:    287px;
-    height: 198px;background: url(accessories.png) no-repeat -1195px -300px;
+    height: 198 pxbackground: url(accessories.png) no-repeat -637px -0px;
 }
 
-.hat3
+.stopwatch
 {
     display:  inline-block;
     overflow: hidden;
-    width:    200px;
-    height: 99px;background: url(accessories.png) no-repeat -1482px -300px;
+    width:    259px;
+    height: 211 pxbackground: url(accessories.png) no-repeat -604px -481px;
 }
 
-.ChocoHorns
+.policehat
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1682px -300px;
+    width:    320px;
+    height: 169 pxbackground: url(accessories.png) no-repeat -604px -692px;
 }
 
-.ChocoTattoo
+.marinehat
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1482px -399px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -604px -861px;
 }
 
-.FubuEars
+.CocoHorn
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1195px -498px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -812px -861px;
 }
 
-.Fubukimark1
+.Lunacrown
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1681px -500px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -0px -900px;
 }
 
-.KoroChoker
+.rushiaskull
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1482px -599px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -208px -900px;
 }
 
-.KoroHairband
+.rushiaribbon
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1195px -698px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -863px -481px;
 }
 
-.MatsuriRibbon
+.Kanatashuriken
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1681px -700px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1020px -681px;
 }
 
-.MelChoker
+.flareknot
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1394px -799px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1020px -881px;
 }
 
-.MelHairbat
+.flareribbon
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1195px -898px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -924px -0px;
 }
 
-.MioEars
+.pekomark
 {
     display:  inline-block;
     overflow: hidden;
-    width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -1000px -1098px;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1004px -200px;
+}
+
+.pekoears
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -416px -1061px;
+}
+
+.noelmace
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -0px -1100px;
+}
+
+.marinetattoo
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -208px -1100px;
+}
+
+.TowaHat
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    208px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -624px -1061px;
 }
 
 .MioHairband
@@ -281,7 +193,7 @@
     display:  inline-block;
     overflow: hidden;
     width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -199px -861px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -832px -1081px;
 }
 
 .OkaChoker
@@ -289,7 +201,7 @@
     display:  inline-block;
     overflow: hidden;
     width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -259px -650px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1031px -1081px;
 }
 
 .Okaears
@@ -297,15 +209,23 @@
     display:  inline-block;
     overflow: hidden;
     width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -398px -850px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1132px -0px;
 }
 
-.ShionHat
+.Akinecktie
 {
     display:  inline-block;
     overflow: hidden;
     width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -302px -350px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1071px -400px;
+}
+
+.Fubukimark1
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1212px -200px;
 }
 
 .SubaHat
@@ -313,5 +233,189 @@
     display:  inline-block;
     overflow: hidden;
     width:    199px;
-    height: 200px;background: url(accessories.png) no-repeat -458px -550px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1228px -600px;
+}
+
+.AquaRibbon
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1228px -800px;
+}
+
+.KoroChoker
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1230px -1000px;
+}
+
+.KoroHairband
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1230px -1200px;
+}
+
+.AquaTissue
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -416px -1261px;
+}
+
+.AyameMaskandHorn
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -615px -1261px;
+}
+
+.ChocoHorns
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -0px -1300px;
+}
+
+.ChocoTattoo
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -199px -1300px;
+}
+
+.Akiantenna
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -814px -1281px;
+}
+
+.FubuEars
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1013px -1281px;
+}
+
+.MatsuriRibbon
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1331px -0px;
+}
+
+.MelChoker
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1270px -400px;
+}
+
+.MelHairbat
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1411px -200px;
+}
+
+.MioEars
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1427px -600px;
+}
+
+.ShionHat
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    199px;
+    height: 200 pxbackground: url(accessories.png) no-repeat -1427px -800px;
+}
+
+.bow1
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    200px;
+    height: 154 pxbackground: url(accessories.png) no-repeat -1429px -1000px;
+}
+
+.bow2
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    200px;
+    height: 153 pxbackground: url(accessories.png) no-repeat -1429px -1154px;
+}
+
+.baseballhat
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    200px;
+    height: 147 pxbackground: url(accessories.png) no-repeat -1429px -1307px;
+}
+
+.hat2
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    200px;
+    height: 138 pxbackground: url(accessories.png) no-repeat -1212px -1400px;
+}
+
+.hat1
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    200px;
+    height: 100 pxbackground: url(accessories.png) no-repeat -637px -198px;
+}
+
+.hat3
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    200px;
+    height: 99 pxbackground: url(accessories.png) no-repeat -1412px -1454px;
+}
+
+.glassestint
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    204px;
+    height: 87 pxbackground: url(accessories.png) no-repeat -398px -1461px;
+}
+
+.eyepatch
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    191px;
+    height: 64 pxbackground: url(accessories.png) no-repeat -602px -1461px;
+}
+
+.glasses
+{
+    display:  inline-block;
+    overflow: hidden;
+    width:    105px;
+    height: 86 pxbackground: url(accessories.png) no-repeat -837px -200px;
 }
