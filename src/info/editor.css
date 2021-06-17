@@ -264,6 +264,7 @@ display:none;
     cursor:           pointer;
     color:            white;
     background-color: #518DB9;
+	flex:1 1 50%;
 }
 
 #prevButtons div:focus
@@ -443,7 +444,10 @@ display:none;
 
     #prevButtons
     {
-        display: block;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		/* flex: 1 1 100%; */
     }
 
 
