@@ -1,39 +1,40 @@
-*{
-	box-sizing:border-box;
+*
+{
+    box-sizing: border-box;
 }
 
 body
 {
-    font:             12pt "Noto Sans JP", sans-serif;
-    font-weight:      400;
-    margin:           0;
-    padding:          0;
-    opacity:          1;
-    color:            rgb(205, 201, 195);
-    background-color: #97CAFD;
-	background-image:  url("Sky.png");
+    font:              12pt "Noto Sans JP", sans-serif;
+    font-weight:       400;
+    display:           flex;
+    min-width:         100vw;
+    min-height:        100vh;
+    margin:            0;
+    padding:           0;
+    opacity:           1;
+    color:             rgb(205, 201, 195);
+    background-color:  #97CAFD;
+    background-image:  url("Sky.png");
     background-repeat: no-repeat;
     background-size:   auto 100%;
-	min-height:100vh;
-	min-width:100vw;
-	display:flex;
 }
 
 .logo-title-container
 {
-   
-    width:100%;
+
+    width:      100%;
+    max-width:  600px;
     height:     100%;
     margin:     auto;
+    padding:    20px;
     text-align: center;
     color:      #000;
-	max-width:600px;
-	padding:20px;
 }
 
 .logo
 {
-   width:100%;
+    width: 100%;
 }
 
 .content
@@ -44,44 +45,45 @@ body
 
 .video-container
 {
-	width:100%;
+    width: 100%;
 }
 
 
 iframe
 {
-    
+
+    width:         100%;
     margin-bottom: 5%;
     border:        20px solid #FFF;
     border-radius: 15px;
-width:100%;
 
 }
 
 
 .submityourown
 {
-  width:100%;
-  
+    width: 100%;
+
 }
 
-.submityourown img{
-	width:100%;
-	animation: animationFrames ease 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 50% 50%;
-  -webkit-animation: animationFrames ease 2.5s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-transform-origin: 50% 50%;
-  -moz-animation: animationFrames ease 2.5s;
-  -moz-animation-iteration-count: infinite;
-  -moz-transform-origin: 50% 50%;
-  -o-animation: animationFrames ease 2.5s;
-  -o-animation-iteration-count: infinite;
-  -o-transform-origin: 50% 50%;
-  -ms-animation: animationFrames ease 2.5s;
-  -ms-animation-iteration-count: infinite;
-  -ms-transform-origin: 50% 50%;
+.submityourown img
+{
+    width:                             100%;
+    -moz-transform-origin:             50% 50%;
+    -ms-transform-origin:              50% 50%;
+    -o-transform-origin:               50% 50%;
+    -webkit-transform-origin:          50% 50%;
+    transform-origin:                  50% 50%;
+    -moz-animation:                    animationFrames ease 2.5s;
+    -ms-animation:                     animationFrames ease 2.5s;
+    -o-animation:                      animationFrames ease 2.5s;
+    -webkit-animation:                 animationFrames ease 2.5s;
+    animation:                         animationFrames ease 2.5s;
+    -moz-animation-iteration-count:    infinite;
+    -ms-animation-iteration-count:     infinite;
+    -o-animation-iteration-count:      infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count:         infinite;
 }
 
 a
@@ -91,70 +93,91 @@ a
     color:           rgb(255, 255, 255);
 }
 
-@keyframes animationFrames{
-  0% {
-    opacity:1;
-  }
-  50% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@keyframes animationFrames
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
 
-@-moz-keyframes animationFrames{
-  0% {
-    opacity:1;
-  }
-  50% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-moz-keyframes animationFrames
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
 
-@-webkit-keyframes animationFrames {
-  0% {
-    opacity:1;
-  }
-  50% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-webkit-keyframes animationFrames
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
 
-@-o-keyframes animationFrames {
-  0% {
-    opacity:1;
-  }
-  50% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-o-keyframes animationFrames
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
 
-@-ms-keyframes animationFrames {
-  0% {
-    opacity:1;
-  }
-  50% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-ms-keyframes animationFrames
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
 
 
 @media (max-width: 900px)
 {
-	.logo-title-container{
-		max-width:100%;
-	}
+    .logo-title-container
+    {
+        max-width: 100%;
+    }
 }

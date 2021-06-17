@@ -4,8 +4,8 @@
           "image": "all_ducks_sheet.png",
           "format": "RGBA8888",
           "size": {
-            "w": 1063,
-            "h": 1097
+            "w": 1402,
+            "h": 1309
           },
           "scale": 1,
           "frames": [
@@ -23,13 +23,13 @@
                 "w": 189,
                 "h": 198
               },
-					"frame": {
-                      "x": 0,
-                      "y": 0,
-                      "w": 189,
-                      "h": 198
-                    }
-				},
+              "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 189,
+                "h": 198
+              }
+            },
             {
               "filename": "EDITOR_polarehare--63620-3.png",
               "rotated": false,
@@ -44,13 +44,13 @@
                 "w": 189,
                 "h": 198
               },
-					"frame": {
-                      "x": 189,
-                      "y": 0,
-                      "w": 189,
-                      "h": 198
-                    }
-				},
+              "frame": {
+                "x": 189,
+                "y": 0,
+                "w": 189,
+                "h": 198
+              }
+            },
             {
               "filename": "EDITOR_polarehare--63620-2.png",
               "rotated": false,
@@ -65,13 +65,13 @@
                 "w": 182,
                 "h": 198
               },
-					"frame": {
-                      "x": 0,
-                      "y": 198,
-                      "w": 182,
-                      "h": 198
-                    }
-				},
+              "frame": {
+                "x": 0,
+                "y": 198,
+                "w": 182,
+                "h": 198
+              }
+            },
             {
               "filename": "EDITOR_polarehare--63620-0.png",
               "rotated": false,
@@ -86,13 +86,97 @@
                 "w": 178,
                 "h": 198
               },
-					"frame": {
-                      "x": 182,
-                      "y": 198,
-                      "w": 178,
-                      "h": 198
-                    }
-				},
+              "frame": {
+                "x": 182,
+                "y": 198,
+                "w": 178,
+                "h": 198
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--61901-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 2,
+                "y": 17,
+                "w": 185,
+                "h": 183
+              },
+              "frame": {
+                "x": 360,
+                "y": 198,
+                "w": 185,
+                "h": 183
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--61901-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 2,
+                "y": 17,
+                "w": 185,
+                "h": 183
+              },
+              "frame": {
+                "x": 378,
+                "y": 0,
+                "w": 185,
+                "h": 183
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--61901-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 2,
+                "y": 17,
+                "w": 185,
+                "h": 183
+              },
+              "frame": {
+                "x": 360,
+                "y": 381,
+                "w": 185,
+                "h": 183
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--61901-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 2,
+                "y": 17,
+                "w": 185,
+                "h": 183
+              },
+              "frame": {
+                "x": 0,
+                "y": 396,
+                "w": 185,
+                "h": 183
+              }
+            },
             {
               "filename": "EDITOR_Subatomo#9971-189907-3.png",
               "rotated": false,
@@ -107,13 +191,13 @@
                 "w": 180,
                 "h": 169
               },
-					"frame": {
-                      "x": 360,
-                      "y": 198,
-                      "w": 180,
-                      "h": 169
-                    }
-				},
+              "frame": {
+                "x": 545,
+                "y": 183,
+                "w": 180,
+                "h": 169
+              }
+            },
             {
               "filename": "EDITOR_Subatomo#9971-189907-1.png",
               "rotated": false,
@@ -128,13 +212,55 @@
                 "w": 170,
                 "h": 169
               },
-					"frame": {
-                      "x": 378,
-                      "y": 0,
-                      "w": 170,
-                      "h": 169
-                    }
-				},
+              "frame": {
+                "x": 185,
+                "y": 396,
+                "w": 170,
+                "h": 169
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--60223-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 38,
+                "w": 175,
+                "h": 162
+              },
+              "frame": {
+                "x": 563,
+                "y": 0,
+                "w": 175,
+                "h": 162
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--60223-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 14,
+                "y": 38,
+                "w": 173,
+                "h": 162
+              },
+              "frame": {
+                "x": 545,
+                "y": 352,
+                "w": 173,
+                "h": 162
+              }
+            },
             {
               "filename": "EDITOR_Martyr Shuba -143242-1.png",
               "rotated": false,
@@ -149,13 +275,13 @@
                 "w": 187,
                 "h": 149
               },
-					"frame": {
-                      "x": 360,
-                      "y": 367,
-                      "w": 187,
-                      "h": 149
-                    }
-				},
+              "frame": {
+                "x": 545,
+                "y": 514,
+                "w": 187,
+                "h": 149
+              }
+            },
             {
               "filename": "EDITOR_Martyr Shuba -143242-3.png",
               "rotated": false,
@@ -170,13 +296,13 @@
                 "w": 187,
                 "h": 149
               },
-					"frame": {
-                      "x": 0,
-                      "y": 396,
-                      "w": 187,
-                      "h": 149
-                    }
-				},
+              "frame": {
+                "x": 355,
+                "y": 564,
+                "w": 187,
+                "h": 149
+              }
+            },
             {
               "filename": "EDITOR_Subatomo#9971-189907-2.png",
               "rotated": false,
@@ -191,13 +317,34 @@
                 "w": 163,
                 "h": 169
               },
-					"frame": {
-                      "x": 187,
-                      "y": 396,
-                      "w": 163,
-                      "h": 169
-                    }
-				},
+              "frame": {
+                "x": 542,
+                "y": 663,
+                "w": 163,
+                "h": 169
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--60223-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 38,
+                "w": 168,
+                "h": 162
+              },
+              "frame": {
+                "x": 185,
+                "y": 565,
+                "w": 168,
+                "h": 162
+              }
+            },
             {
               "filename": "Ani.minhtion--21731-3.png",
               "rotated": false,
@@ -212,13 +359,13 @@
                 "w": 161,
                 "h": 169
               },
-					"frame": {
-                      "x": 0,
-                      "y": 545,
-                      "w": 161,
-                      "h": 169
-                    }
-				},
+              "frame": {
+                "x": 353,
+                "y": 713,
+                "w": 161,
+                "h": 169
+              }
+            },
             {
               "filename": "EDITOR_Subatomo#9971-189907-0.png",
               "rotated": false,
@@ -233,13 +380,13 @@
                 "w": 159,
                 "h": 169
               },
-					"frame": {
-                      "x": 350,
-                      "y": 516,
-                      "w": 159,
-                      "h": 169
-                    }
-				},
+              "frame": {
+                "x": 0,
+                "y": 579,
+                "w": 159,
+                "h": 169
+              }
+            },
             {
               "filename": "EDITOR_Martyr Shuba -143242-2.png",
               "rotated": false,
@@ -254,13 +401,34 @@
                 "w": 180,
                 "h": 149
               },
-					"frame": {
-                      "x": 161,
-                      "y": 565,
-                      "w": 180,
-                      "h": 149
-                    }
-				},
+              "frame": {
+                "x": 159,
+                "y": 727,
+                "w": 180,
+                "h": 149
+              }
+            },
+            {
+              "filename": "Gundamfinal Test--60223-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 38,
+                "w": 164,
+                "h": 162
+              },
+              "frame": {
+                "x": 718,
+                "y": 352,
+                "w": 164,
+                "h": 162
+              }
+            },
             {
               "filename": "EDITOR_Martyr Shuba -143242-0.png",
               "rotated": false,
@@ -275,13 +443,13 @@
                 "w": 176,
                 "h": 149
               },
-					"frame": {
-                      "x": 540,
-                      "y": 169,
-                      "w": 176,
-                      "h": 149
-                    }
-				},
+              "frame": {
+                "x": 725,
+                "y": 162,
+                "w": 176,
+                "h": 149
+              }
+            },
             {
               "filename": "SubatomoSupreme-476513-3.png",
               "rotated": false,
@@ -296,13 +464,13 @@
                 "w": 180,
                 "h": 145
               },
-					"frame": {
-                      "x": 548,
-                      "y": 0,
-                      "w": 180,
-                      "h": 145
-                    }
-				},
+              "frame": {
+                "x": 705,
+                "y": 663,
+                "w": 180,
+                "h": 145
+              }
+            },
             {
               "filename": "EDITOR_Forte--66979-3.png",
               "rotated": false,
@@ -317,13 +485,13 @@
                 "w": 180,
                 "h": 138
               },
-					"frame": {
-                      "x": 509,
-                      "y": 516,
-                      "w": 180,
-                      "h": 138
-                    }
-				},
+              "frame": {
+                "x": 705,
+                "y": 808,
+                "w": 180,
+                "h": 138
+              }
+            },
             {
               "filename": "EDITOR_Subatomo#3259-207533-3.png",
               "rotated": false,
@@ -338,580 +506,13 @@
                 "w": 180,
                 "h": 137
               },
-					"frame": {
-                      "x": 547,
-                      "y": 318,
-                      "w": 180,
-                      "h": 137
-                    }
-				},
-            {
-              "filename": "SubatomoSupreme-476513-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 12,
-                "y": 55,
-                "w": 170,
-                "h": 145
-              },
-					"frame": {
-                      "x": 509,
-                      "y": 654,
-                      "w": 170,
-                      "h": 145
-                    }
-				},
-            {
-              "filename": "SubatomoSupreme-476513-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 19,
-                "y": 55,
-                "w": 163,
-                "h": 145
-              },
-					"frame": {
-                      "x": 341,
-                      "y": 685,
-                      "w": 163,
-                      "h": 145
-                    }
-				},
-            {
-              "filename": "EDITOR_Forte--66979-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 12,
-                "y": 62,
-                "w": 170,
-                "h": 138
-              },
-					"frame": {
-                      "x": 0,
-                      "y": 714,
-                      "w": 170,
-                      "h": 138
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#3259-207533-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 12,
-                "y": 63,
-                "w": 170,
-                "h": 137
-              },
-					"frame": {
-                      "x": 170,
-                      "y": 714,
-                      "w": 170,
-                      "h": 137
-                    }
-				},
-            {
-              "filename": "SubatomoSupreme-476513-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 23,
-                "y": 55,
-                "w": 159,
-                "h": 145
-              },
-					"frame": {
-                      "x": 716,
-                      "y": 145,
-                      "w": 159,
-                      "h": 145
-                    }
-				},
-            {
-              "filename": "EDITOR_Forte--66979-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 19,
-                "y": 62,
-                "w": 163,
-                "h": 138
-              },
-					"frame": {
-                      "x": 728,
-                      "y": 0,
-                      "w": 163,
-                      "h": 138
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#3259-207533-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 19,
-                "y": 63,
-                "w": 163,
-                "h": 137
-              },
-					"frame": {
-                      "x": 679,
-                      "y": 654,
-                      "w": 163,
-                      "h": 137
-                    }
-				},
-            {
-              "filename": "EDITOR_Forte--66979-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 23,
-                "y": 62,
-                "w": 159,
-                "h": 138
-              },
-					"frame": {
-                      "x": 689,
-                      "y": 455,
-                      "w": 159,
-                      "h": 138
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#5184-136507-3.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 14,
-                "y": 73,
-                "w": 172,
-                "h": 127
-              },
-					"frame": {
-                      "x": 679,
-                      "y": 791,
-                      "w": 172,
-                      "h": 127
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#3259-207533-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 23,
-                "y": 63,
-                "w": 159,
-                "h": 137
-              },
-					"frame": {
-                      "x": 727,
-                      "y": 290,
-                      "w": 159,
-                      "h": 137
-                    }
-				},
-            {
-              "filename": "Omaeeeeeeeeee--13603-3.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 11,
-                "y": 81,
-                "w": 182,
-                "h": 119
-              },
-					"frame": {
-                      "x": 340,
-                      "y": 830,
-                      "w": 182,
-                      "h": 119
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#5184-136507-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 12,
-                "y": 73,
-                "w": 170,
-                "h": 127
-              },
-					"frame": {
-                      "x": 170,
-                      "y": 851,
-                      "w": 170,
-                      "h": 127
-                    }
-				},
-            {
-              "filename": "TEMPLATE - DO NOT DELETE-3.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 12,
-                "y": 82,
+              "frame": {
+                "x": 514,
+                "y": 832,
                 "w": 180,
-                "h": 118
-              },
-					"frame": {
-                      "x": 875,
-                      "y": 138,
-                      "w": 180,
-                      "h": 118
-                    }
-				},
-            {
-              "filename": "Ani.minhtion--21731-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 30,
-                "y": 58,
-                "w": 147,
-                "h": 142
-              },
-					"frame": {
-                      "x": 522,
-                      "y": 799,
-                      "w": 147,
-                      "h": 142
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#5184-136507-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 19,
-                "y": 73,
-                "w": 163,
-                "h": 127
-              },
-					"frame": {
-                      "x": 0,
-                      "y": 852,
-                      "w": 163,
-                      "h": 127
-                    }
-				},
-            {
-              "filename": "Omaeeeeeeeeee--13603-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 11,
-                "y": 80,
-                "w": 172,
-                "h": 120
-              },
-					"frame": {
-                      "x": 891,
-                      "y": 0,
-                      "w": 172,
-                      "h": 120
-                    }
-				},
-            {
-              "filename": "Ani.minhtion--21731-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 33,
-                "y": 58,
-                "w": 144,
-                "h": 142
-              },
-					"frame": {
-                      "x": 842,
-                      "y": 593,
-                      "w": 144,
-                      "h": 142
-                    }
-				},
-            {
-              "filename": "TEMPLATE - DO NOT DELETE-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 12,
-                "y": 81,
-                "w": 170,
-                "h": 119
-              },
-					"frame": {
-                      "x": 848,
-                      "y": 427,
-                      "w": 170,
-                      "h": 119
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#5184-136507-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 23,
-                "y": 73,
-                "w": 159,
-                "h": 127
-              },
-					"frame": {
-                      "x": 886,
-                      "y": 256,
-                      "w": 159,
-                      "h": 127
-                    }
-				},
-            {
-              "filename": "Ani.minhtion--21731-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 35,
-                "y": 58,
-                "w": 142,
-                "h": 142
-              },
-					"frame": {
-                      "x": 851,
-                      "y": 735,
-                      "w": 142,
-                      "h": 142
-                    }
-				},
-            {
-              "filename": "Omaeeeeeeeeee--13603-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 18,
-                "y": 80,
-                "w": 165,
-                "h": 120
-              },
-					"frame": {
-                      "x": 851,
-                      "y": 877,
-                      "w": 165,
-                      "h": 120
-                    }
-				},
-            {
-              "filename": "TEMPLATE - DO NOT DELETE-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 19,
-                "y": 81,
-                "w": 163,
-                "h": 119
-              },
-					"frame": {
-                      "x": 669,
-                      "y": 918,
-                      "w": 163,
-                      "h": 119
-                    }
-				},
-            {
-              "filename": "Omaeeeeeeeeee--13603-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 22,
-                "y": 80,
-                "w": 161,
-                "h": 120
-              },
-					"frame": {
-                      "x": 340,
-                      "y": 949,
-                      "w": 161,
-                      "h": 120
-                    }
-				},
-            {
-              "filename": "TEMPLATE - DO NOT DELETE-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 23,
-                "y": 81,
-                "w": 159,
-                "h": 119
-              },
-					"frame": {
-                      "x": 163,
-                      "y": 978,
-                      "w": 159,
-                      "h": 119
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#9977-260734-0.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 23,
-                "y": 63,
-                "w": 159,
                 "h": 137
-              },
-					"frame": {
-                      "x": 727,
-                      "y": 290,
-                      "w": 159,
-                      "h": 137
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#9977-260734-1.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 12,
-                "y": 63,
-                "w": 170,
-                "h": 137
-              },
-					"frame": {
-                      "x": 170,
-                      "y": 714,
-                      "w": 170,
-                      "h": 137
-                    }
-				},
-            {
-              "filename": "EDITOR_Subatomo#9977-260734-2.png",
-              "rotated": false,
-              "trimmed": true,
-              "sourceSize": {
-                "w": 200,
-                "h": 200
-              },
-              "spriteSourceSize": {
-                "x": 19,
-                "y": 63,
-                "w": 163,
-                "h": 137
-              },
-					"frame": {
-                      "x": 679,
-                      "y": 654,
-                      "w": 163,
-                      "h": 137
-                    }
-				},
+              }
+            },
             {
               "filename": "EDITOR_Subatomo#9977-260734-3.png",
               "rotated": false,
@@ -926,14 +527,833 @@
                 "w": 180,
                 "h": 137
               },
-					"frame": {
-                      "x": 547,
-                      "y": 318,
-                      "w": 180,
-                      "h": 137
-                    }
-				}
-			]
+              "frame": {
+                "x": 0,
+                "y": 876,
+                "w": 180,
+                "h": 137
+              }
+            },
+            {
+              "filename": "SubatomoSupreme-476513-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 55,
+                "w": 170,
+                "h": 145
+              },
+              "frame": {
+                "x": 732,
+                "y": 514,
+                "w": 170,
+                "h": 145
+              }
+            },
+            {
+              "filename": "GurenSan-630496-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 14,
+                "y": 57,
+                "w": 172,
+                "h": 143
+              },
+              "frame": {
+                "x": 180,
+                "y": 876,
+                "w": 172,
+                "h": 143
+              }
+            },
+            {
+              "filename": "GurenSan-630496-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 57,
+                "w": 170,
+                "h": 143
+              },
+              "frame": {
+                "x": 882,
+                "y": 311,
+                "w": 170,
+                "h": 143
+              }
+            },
+            {
+              "filename": "KucingLaut-395221-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 14,
+                "y": 60,
+                "w": 172,
+                "h": 140
+              },
+              "frame": {
+                "x": 901,
+                "y": 0,
+                "w": 172,
+                "h": 140
+              }
+            },
+            {
+              "filename": "KucingLaut-395221-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 60,
+                "w": 170,
+                "h": 140
+              },
+              "frame": {
+                "x": 901,
+                "y": 140,
+                "w": 170,
+                "h": 140
+              }
+            },
+            {
+              "filename": "SubatomoSupreme-476513-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 55,
+                "w": 163,
+                "h": 145
+              },
+              "frame": {
+                "x": 738,
+                "y": 0,
+                "w": 163,
+                "h": 145
+              }
+            },
+            {
+              "filename": "EDITOR_Forte--66979-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 62,
+                "w": 170,
+                "h": 138
+              },
+              "frame": {
+                "x": 885,
+                "y": 659,
+                "w": 170,
+                "h": 138
+              }
+            },
+            {
+              "filename": "GurenSan-630496-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 57,
+                "w": 163,
+                "h": 143
+              },
+              "frame": {
+                "x": 902,
+                "y": 454,
+                "w": 163,
+                "h": 143
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#3259-207533-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 63,
+                "w": 170,
+                "h": 137
+              },
+              "frame": {
+                "x": 885,
+                "y": 797,
+                "w": 170,
+                "h": 137
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#9977-260734-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 63,
+                "w": 170,
+                "h": 137
+              },
+              "frame": {
+                "x": 0,
+                "y": 1013,
+                "w": 170,
+                "h": 137
+              }
+            },
+            {
+              "filename": "SubatomoSupreme-476513-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 55,
+                "w": 159,
+                "h": 145
+              },
+              "frame": {
+                "x": 885,
+                "y": 934,
+                "w": 159,
+                "h": 145
+              }
+            },
+            {
+              "filename": "KucingLaut-395221-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 60,
+                "w": 163,
+                "h": 140
+              },
+              "frame": {
+                "x": 694,
+                "y": 946,
+                "w": 163,
+                "h": 140
+              }
+            },
+            {
+              "filename": "GurenSan-630496-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 57,
+                "w": 159,
+                "h": 143
+              },
+              "frame": {
+                "x": 352,
+                "y": 882,
+                "w": 159,
+                "h": 143
+              }
+            },
+            {
+              "filename": "Guren Shuba--22075-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 80,
+                "w": 188,
+                "h": 120
+              },
+              "frame": {
+                "x": 170,
+                "y": 1025,
+                "w": 188,
+                "h": 120
+              }
+            },
+            {
+              "filename": "EDITOR_Forte--66979-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 62,
+                "w": 163,
+                "h": 138
+              },
+              "frame": {
+                "x": 511,
+                "y": 969,
+                "w": 163,
+                "h": 138
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#3259-207533-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 63,
+                "w": 163,
+                "h": 137
+              },
+              "frame": {
+                "x": 1052,
+                "y": 280,
+                "w": 163,
+                "h": 137
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#9977-260734-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 63,
+                "w": 163,
+                "h": 137
+              },
+              "frame": {
+                "x": 1071,
+                "y": 140,
+                "w": 163,
+                "h": 137
+              }
+            },
+            {
+              "filename": "Guren Shuba--22075-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 14,
+                "y": 80,
+                "w": 186,
+                "h": 120
+              },
+              "frame": {
+                "x": 1044,
+                "y": 934,
+                "w": 186,
+                "h": 120
+              }
+            },
+            {
+              "filename": "KucingLaut-395221-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 60,
+                "w": 159,
+                "h": 140
+              },
+              "frame": {
+                "x": 1073,
+                "y": 0,
+                "w": 159,
+                "h": 140
+              }
+            },
+            {
+              "filename": "EDITOR_Forte--66979-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 62,
+                "w": 159,
+                "h": 138
+              },
+              "frame": {
+                "x": 1055,
+                "y": 597,
+                "w": 159,
+                "h": 138
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 14,
+                "y": 73,
+                "w": 172,
+                "h": 127
+              },
+              "frame": {
+                "x": 1065,
+                "y": 417,
+                "w": 172,
+                "h": 127
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#3259-207533-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 63,
+                "w": 159,
+                "h": 137
+              },
+              "frame": {
+                "x": 1055,
+                "y": 735,
+                "w": 159,
+                "h": 137
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#9977-260734-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 63,
+                "w": 159,
+                "h": 137
+              },
+              "frame": {
+                "x": 1044,
+                "y": 1054,
+                "w": 159,
+                "h": 137
+              }
+            },
+            {
+              "filename": "Guren Shuba--22075-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 80,
+                "w": 181,
+                "h": 120
+              },
+              "frame": {
+                "x": 857,
+                "y": 1079,
+                "w": 181,
+                "h": 120
+              }
+            },
+            {
+              "filename": "Guren Shuba--22075-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 80,
+                "w": 181,
+                "h": 120
+              },
+              "frame": {
+                "x": 674,
+                "y": 1086,
+                "w": 181,
+                "h": 120
+              }
+            },
+            {
+              "filename": "Omaeeeeeeeeee--13603-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 11,
+                "y": 81,
+                "w": 182,
+                "h": 119
+              },
+              "frame": {
+                "x": 358,
+                "y": 1107,
+                "w": 182,
+                "h": 119
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 73,
+                "w": 170,
+                "h": 127
+              },
+              "frame": {
+                "x": 170,
+                "y": 1145,
+                "w": 170,
+                "h": 127
+              }
+            },
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-3.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 82,
+                "w": 180,
+                "h": 118
+              },
+              "frame": {
+                "x": 1038,
+                "y": 1191,
+                "w": 180,
+                "h": 118
+              }
+            },
+            {
+              "filename": "Ani.minhtion--21731-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 30,
+                "y": 58,
+                "w": 147,
+                "h": 142
+              },
+              "frame": {
+                "x": 0,
+                "y": 1150,
+                "w": 147,
+                "h": 142
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 73,
+                "w": 163,
+                "h": 127
+              },
+              "frame": {
+                "x": 1232,
+                "y": 0,
+                "w": 163,
+                "h": 127
+              }
+            },
+            {
+              "filename": "Omaeeeeeeeeee--13603-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 11,
+                "y": 80,
+                "w": 172,
+                "h": 120
+              },
+              "frame": {
+                "x": 1215,
+                "y": 277,
+                "w": 172,
+                "h": 120
+              }
+            },
+            {
+              "filename": "Ani.minhtion--21731-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 33,
+                "y": 58,
+                "w": 144,
+                "h": 142
+              },
+              "frame": {
+                "x": 1234,
+                "y": 127,
+                "w": 144,
+                "h": 142
+              }
+            },
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-1.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 12,
+                "y": 81,
+                "w": 170,
+                "h": 119
+              },
+              "frame": {
+                "x": 1203,
+                "y": 1054,
+                "w": 170,
+                "h": 119
+              }
+            },
+            {
+              "filename": "EDITOR_Subatomo#5184-136507-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 73,
+                "w": 159,
+                "h": 127
+              },
+              "frame": {
+                "x": 0,
+                "y": 748,
+                "w": 159,
+                "h": 127
+              }
+            },
+            {
+              "filename": "Ani.minhtion--21731-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 35,
+                "y": 58,
+                "w": 142,
+                "h": 142
+              },
+              "frame": {
+                "x": 1214,
+                "y": 544,
+                "w": 142,
+                "h": 142
+              }
+            },
+            {
+              "filename": "Omaeeeeeeeeee--13603-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 18,
+                "y": 80,
+                "w": 165,
+                "h": 120
+              },
+              "frame": {
+                "x": 1237,
+                "y": 397,
+                "w": 165,
+                "h": 120
+              }
+            },
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-2.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 19,
+                "y": 81,
+                "w": 163,
+                "h": 119
+              },
+              "frame": {
+                "x": 1218,
+                "y": 1173,
+                "w": 163,
+                "h": 119
+              }
+            },
+            {
+              "filename": "Omaeeeeeeeeee--13603-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 22,
+                "y": 80,
+                "w": 161,
+                "h": 120
+              },
+              "frame": {
+                "x": 1214,
+                "y": 686,
+                "w": 161,
+                "h": 120
+              }
+            },
+            {
+              "filename": "TEMPLATE - DO NOT DELETE-0.png",
+              "rotated": false,
+              "trimmed": true,
+              "sourceSize": {
+                "w": 200,
+                "h": 200
+              },
+              "spriteSourceSize": {
+                "x": 23,
+                "y": 81,
+                "w": 159,
+                "h": 119
+              },
+              "frame": {
+                "x": 1214,
+                "y": 806,
+                "w": 159,
+                "h": 119
+              }
+            }
+          ]
 		}
 	],
 	"meta": {

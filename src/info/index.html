@@ -39,7 +39,7 @@
 <div class="sticky-top">
     <div class="container-fluid" id="container-topbar">
 
-       
+
         <!--        <div class="docs-logo"></div>-->
 
         <div class="d-flex top-bar">
@@ -115,12 +115,16 @@
          role="tabpanel">
         <div class="screen-inner">
             <h1 text="m-0">Subaru 1 Million Subscribers and Birthday Celebration!</h1>
-			 <div text="m-1">The Subatomo EN Fan Server has created a website to show our support for Subaru, and
+            <div text="m-1">The Subatomo EN Fan Server has created a website to show our support for Subaru, and
                 everyone is invited to participate!
             </div>
-			        
+
             <div text="m-2">Here is a small video to demonstrate how it will work! :</div>
-            <embed>
+            <div class="video-container" id="yt-embed">
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/7nHiAS9iQBU"
+                        title="YouTube video player" width="560"></iframe>
+            </div>
             <div class="participate-list">
                 <h3 class="participate-by" text="m-3">Participate by:</h3>
                 <ul>
@@ -152,8 +156,8 @@
                             </svg>
                         </a>
                     </button>
-            
-           
+
+
         </div>
     </div>
     <div aria-labelledby="upload-tab" class="screen tab-pane fade" id="upload-container" role="tabpanel">
@@ -374,7 +378,7 @@
 									 <h3 text="e-1">Accessories</h3>
                                         <h3 text="e-2">Click to add to canvas</h3>
                                     <div id="images">
-                                       
+
 
                                     </div>
                                 </div>
@@ -944,9 +948,9 @@
                                     link.setAttribute("href", sheet.toDataURL("image/png").replace("image/png", "image/octet-stream"));
                                     link.click();
                                 }
-								
-								
-									var images;
+
+
+                                var images;
 								$(document).ready(function(){
 									images = $("#templateImages div").toArray().reverse();
 									var auxImg=document.getElementById('bigTexture');
@@ -958,9 +962,9 @@
 									});
 									}
 								});
-                               
-							   
-								 function loadAccesoriesTexture() {
+
+
+                                function loadAccesoriesTexture() {
                                     // console.log("asdas", $(images.pop()).attr("class"));
                                     createCrop("." + $(images.pop()).attr("class"));
                                 }
@@ -1124,7 +1128,7 @@
                     <ul text="g-13">
                         You can also use our editor, but it is feature limited.
                     </ul>
-                    <ul><a href="https://prominentdetail.github.io/Pixel.Tools/" text="g-12">https://prominentdetail.github.io/Pixel.Tools/</a>
+                    <ul><a href="https://prominentdetail.github.io/Pixel.Tools/" target="_blank">Pixel Tools</a>
                     </ul>
                 </li>
                 <li>
@@ -1144,8 +1148,8 @@
                 </li>
                 <li>
                     <span text="g-20">I don't use Discord, is there another way to contact you?</span>
-                    <ul><a href="mailto:info@subatomos.com" text="g-21">info@subatomos.com</a></ul>
-                    <ul><a href="https://twitter.com/subatomos">@subatomos</a></ul>
+                    <ul><a href="mailto:info@subatomos.com" target="_blank" text="g-21">info@subatomos.com</a></ul>
+                    <ul><a href="https://twitter.com/subatomos" target="_blank">@subatomos</a></ul>
                 </li>
             </ul>
         </div>
@@ -1389,7 +1393,6 @@
         }
     }
 
-   
 
     $(".editor-link").on("click", function () {
         $("#uploadMethodChoice").val("editor");

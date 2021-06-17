@@ -47,46 +47,64 @@ a:hover
     background-size: 100%;
 }
 
-#header-discord
+#yt-embed
 {
-    color:       #518DB9;
-    fill:        #518DB9;
-	zoom:0.5;
+    width:     auto;
+    max-width: 100%;
+    margin:    auto;
 }
 
-#lang-container{
-	    order: 4;
+#yt-embed iframe
+{
+    width: 100%;
+}
+
+#header-discord
+{
+    zoom:  0.5;
+    color: #518DB9;
+    fill:  #518DB9;
+}
+
+#lang-container
+{
+    order:   4;
     padding: 10px;
 }
 
-#header-discord-btn{
-	order:3;
+#header-discord-btn
+{
+    order: 3;
 }
 
-#navs-flex{
-	padding:0 10px;
+#navs-flex
+{
+    padding: 0 10px;
 }
 
 #lang-dropdown
 {
-       padding: 0;
+    display:    inline-block;
     /* height: 0; */
-    margin: auto;
-    display: inline-block;
-    height: auto;
     align-self: center;
+    height:     auto;
+    margin:     auto;
+    padding:    0;
 }
 
-#lang-dropdown:hover{
-	box-shadow:none !important;
+#lang-dropdown:hover
+{
+    box-shadow: none !important;
 }
 
-#lang-container .dropdown-item:focus,#lang-container  .dropdown-item:hover{
-	text-decoration:none;
+#lang-container .dropdown-item:focus, #lang-container .dropdown-item:hover
+{
+    text-decoration: none;
 }
 
-#lang-dropdown .dropdown-item:focus, #lang-dropdown .dropdown-item:hover{
-	color:transparent;
+#lang-dropdown .dropdown-item:focus, #lang-dropdown .dropdown-item:hover
+{
+    color: transparent;
 }
 
 #header-discord-btn, #header-discord g path
@@ -111,7 +129,7 @@ a:hover
 
 #header-discord g path:hover
 {
-    color:#518DB9;
+    color: #518DB9;
     fill:  #518DB9;
 }
 
@@ -126,14 +144,15 @@ a:hover
     height: 100%;
 }
 
-.logo-top {
-    width: 100%;
-    height: 100%;
-    background-image: url(LogoAdjustedSize.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-size: auto 80%;
+.logo-top
+{
+    width:               100%;
+    height:              100%;
+    background-image:    url(LogoAdjustedSize.png);
+    background-repeat:   no-repeat;
     background-position: 20px center;
+    background-size:     contain;
+    background-size:     auto 80%;
 }
 
 .no-svg .language-icon-alt
@@ -150,18 +169,19 @@ a:hover
     background-color: #FFFEF0;
 }
 
-.screen-container {
-    display: flex;
-    overflow: hidden;
-    align-items: center;
-    width: 100%;
-    justify-items: center;
-    min-height: calc(100vh - 80px);
-    flex-wrap: wrap;
+.screen-container
+{
+    display:         flex;
+    overflow:        hidden;
+    align-content:   center;
+    align-items:     center;
+    flex-wrap:       wrap;
     justify-content: space-around;
-    align-content: center;
-	padding-top:5vh;
-	padding-bottom:5vh;
+    width:           100%;
+    min-height:      calc(100vh - 80px);
+    padding-top:     5vh;
+    padding-bottom:  5vh;
+    justify-items:   center;
 }
 
 .screen
@@ -174,6 +194,8 @@ a:hover
     display:        block;
     max-width:      50%;
     margin:         8px 0 32px 8px;
+    margin-top:     0;
+    margin-bottom:  0;
     vertical-align: middle;
     border:         2px solid #518DB9;
     border-radius:  5px;
@@ -185,8 +207,6 @@ a:hover
                     #518DB9 6px 6px 0,
                     #518DB9 7px 7px 0,
                     #518DB9 8px 8px 0;
-	margin-top:0;
-	margin-bottom:0;
 }
 
 .screen-inner
@@ -207,43 +227,46 @@ a:hover
     position: relative;
 }
 
-#hamburguer {
-    z-index: 100;
-    top: 10px;
-    left: 15px;
-    display: none;
-    padding: 5px;
-    padding-top: 10px;
-    border-radius: 5px;
+#hamburguer
+{
+    position:      fixed;
+    z-index:       100;
+    top:           10px;
+    left:          15px;
+    display:       none;
+    align-self:    center;
+    flex:          0 1 30px;
     /* background-color: rgba(0, 0, 0, 0.5); */
-    flex: 0 1 30px;
-    height: 40px;
-    align-self: center;
-    margin-right: 20px;
-    position: fixed;
-    background: #518db9;
-    background: transparent;
+    height:        40px;
+    margin-right:  20px;
+    padding:       5px;
+    padding-top:   10px;
+    border-radius: 5px;
+    background:    #518DB9;
+    background:    transparent;
 }
 
-#hamburguer span {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: 28px;
-    height: 4px;
-    margin-bottom: 5px;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+#hamburguer span
+{
+    position:         relative;
+    z-index:          1;
+    display:          block;
+    width:            28px;
+    height:           4px;
+    margin-bottom:    5px;
+    transition:       transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
                       background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
                       opacity 0.55s ease;
+    transition:       0.5s;
     transform-origin: 4px 0px;
-    border-radius: 3px;
-    background: #FFFEF0;
-    border-radius: 0;
-	transition:0.5s;
+    border-radius:    3px;
+    border-radius:    0;
+    background:       #FFFEF0;
 }
 
-#hamburguer.active span {
-	background: #518db9;
+#hamburguer.active span
+{
+    background: #518DB9;
 
 }
 
@@ -292,8 +315,9 @@ a:hover
     padding-top: 40%;
 }
 
-.nav{
-	align-items:center;
+.nav
+{
+    align-items: center;
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
@@ -302,12 +326,16 @@ a:hover
     border-style: none !Important;
     border-color: transparent;
 }
-.nav-tabs .nav-link{
-	color:#FFFEF0;
-	text-transform:uppercase;
+
+.nav-tabs .nav-link
+{
+    text-transform: uppercase;
+    color:          #FFFEF0;
 }
-.nav-tabs .nav-link.active{
-	color: #518DB9;
+
+.nav-tabs .nav-link.active
+{
+    color: #518DB9;
 }
 
 .nav-link, .nav-link:focus, .nav-link:hover
@@ -321,25 +349,29 @@ a:hover
     box-shadow:       inset 0px -10px 5px 0px #FFFFF0;
 }
 
-#home #header-discord-btn{
-	display:none;
+#home #header-discord-btn
+{
+    display: none;
 }
 
-#lang-container .dropdown-menu{
-    padding: 0 20px 10px;
-	min-width:130px;
-	-webkit-box-shadow: 0px 5px 6px 2px rgba(0,0,0,0.32); 
-box-shadow: 0px 5px 6px 2px rgba(0,0,0,0.32);
+#lang-container .dropdown-menu
+{
+    min-width:          130px;
+    padding:            0 20px 10px;
+    -webkit-box-shadow: 0px 5px 6px 2px rgba(0, 0, 0, 0.32);
+    box-shadow:         0px 5px 6px 2px rgba(0, 0, 0, 0.32);
 }
 
-.flag-icon{
-	margin-right:15px;
-	border:1px solid #ccc9c9;
+.flag-icon
+{
+    margin-right: 15px;
+    border:       1px solid #CCC9C9;
 }
 
-.form-check-input[type=radio]{
-	position:relative;
-	top:6px;
+.form-check-input[type=radio]
+{
+    position: relative;
+    top:      6px;
 }
 
 
@@ -355,8 +387,8 @@ box-shadow: 0px 5px 6px 2px rgba(0,0,0,0.32);
     .screen
     {
         max-width:   95%;
+        margin-top:  30px;
         margin-left: -10px;
-		margin-top:30px;
     }
 
     #previewSection
@@ -414,127 +446,158 @@ box-shadow: 0px 5px 6px 2px rgba(0,0,0,0.32);
     {
         max-height: 100vh;
     }
-	#container-topbar{
-		padding:0;
-	}
-	.top-bar{
-	    max-height: 10vh;
-		border-radius: 18px;
-		background: linear-gradient(to top, #FFAB86, 40%, #FF6F62) no-repeat;
-		background-size: 100%;
-		flex-wrap: wrap;
-		align-items: ;
-		transition: 0.5s;
-		overflow: hidden;
-		height:auto;
-		    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-	}
-	.top-bar.active{
-		max-height:100vh;
-	}
-	
-	.logo-link {
-		width: 30vh;
-		height: 100%;
-		height: 10vh;
-		flex: 0 1 50%;
-		text-align: center;
-		margin: auto;
-	}
-	.nav {
-		display: flex;
-		flex-wrap: wrap;
-		padding-left: 0;
-		margin-bottom: 0;
-		list-style: none;
-		flex-direction: row;
-		align-items: center;
-		width:100%;
-	}
-	#nav-tab button {
-		font-size: larger;
-		background: none;
-		box-shadow: none;
-		background-color: transparent !important;
-		padding-bottom: 10px;
-		padding-top: 0;
-		text-transform: uppercase;
-	}
-	#nav-tab button::before {
-		width: 90%;
-		display: block;
-		content: " ";
-		background: white;
-		height: 3px;
-		margin: auto;
-		margin-bottom: 10px;
-	}
-	
-	.nav-tabs .nav-link {
-		margin-bottom: -1px;
-		background: 0 0;
-		border: 1px solid transparent;
-		border-top-left-radius: .25rem;
-		border-top-right-radius: .25rem;
-		flex: 1 1 100%;
-		height: auto;
-		padding: 15px;
-		order: 2;
-	}
-	button#header-discord-btn {
-		flex: 1 1 50%;
-		display:none;
-	}
-	.dropdown, .dropend, .dropstart, .dropup {
-		position: relative;
-		order: 1;
-		flex: 1 1 50%;
-		align-self: center;
-	}
-	#lang-dropdown {
-		padding-top: 0;
-		border: none;
-		box-shadow: none;
-		padding-bottom: 0;
-	}
-	#header-discord {
-		padding-top: 0;
-		color: #518DB9;
-		fill: #518DB9;
-		height: 30px;
-		/* padding-top: 0; */
-	}
-	.logo-top {
-		width: 100%;
-		height: 100%;
-		background-image: url(LogoAdjustedSize.png);
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;
-		background-size: auto 80%;
-	}
-	#lang-container{
-		position: fixed;
-		top: 2vh;
-		right: 0;
-	}
-	#home #header-discord-btn{
-		display:block;
-		border:none;
-		background:transparent;
-		
-	}
-	#navs-flex{
-		margin:auto;
-		margin-top:20px;
-		width:100%;
-		flex:1 1 100%;
-		max-width:initial;
-	}
-	
-	div#soundButtons {
-		position: relative;
-		left: -10px;
-	}
+
+    #container-topbar
+    {
+        padding: 0;
+    }
+
+    .top-bar
+    {
+        overflow:                hidden;
+        align-items: ;
+        flex-wrap:               wrap;
+        height:                  auto;
+        max-height:              10vh;
+        transition:              0.5s;
+        border-radius:           18px;
+        border-top-left-radius:  0;
+        border-top-right-radius: 0;
+        background:              linear-gradient(to top, #FFAB86, 40%, #FF6F62) no-repeat;
+        background-size:         100%;
+    }
+
+    .top-bar.active
+    {
+        max-height: 100vh;
+    }
+
+    .logo-link
+    {
+        flex:       0 1 50%;
+        width:      30vh;
+        height:     100%;
+        height:     10vh;
+        margin:     auto;
+        text-align: center;
+    }
+
+    .nav
+    {
+        display:        flex;
+        align-items:    center;
+        flex-direction: row;
+        flex-wrap:      wrap;
+        width:          100%;
+        margin-bottom:  0;
+        padding-left:   0;
+        list-style:     none;
+    }
+
+    #nav-tab button
+    {
+        font-size:        larger;
+        padding-top:      0;
+        padding-bottom:   10px;
+        text-transform:   uppercase;
+        background:       none;
+        background-color: transparent !important;
+        box-shadow:       none;
+    }
+
+    #nav-tab button::before
+    {
+        display:       block;
+        width:         90%;
+        height:        3px;
+        margin:        auto;
+        margin-bottom: 10px;
+        content:       " ";
+        background:    white;
+    }
+
+    .nav-tabs .nav-link
+    {
+        flex:                    1 1 100%;
+        order:                   2;
+        height:                  auto;
+        margin-bottom:           -1px;
+        padding:                 15px;
+        border:                  1px solid transparent;
+        border-top-left-radius:  .25rem;
+        border-top-right-radius: .25rem;
+        background:              0 0;
+    }
+
+    button#header-discord-btn
+    {
+        display: none;
+        flex:    1 1 50%;
+    }
+
+    .dropdown, .dropend, .dropstart, .dropup
+    {
+        position:   relative;
+        align-self: center;
+        flex:       1 1 50%;
+        order:      1;
+    }
+
+    #lang-dropdown
+    {
+        padding-top:    0;
+        padding-bottom: 0;
+        border:         none;
+        box-shadow:     none;
+    }
+
+    #header-discord
+    {
+        height:      30px;
+        padding-top: 0;
+        color:       #518DB9;
+        fill:        #518DB9;
+        /* padding-top: 0; */
+    }
+
+    .logo-top
+    {
+        width:               100%;
+        height:              100%;
+        background-image:    url(LogoAdjustedSize.png);
+        background-repeat:   no-repeat;
+        background-position: center;
+        background-size:     contain;
+        background-size:     auto 80%;
+    }
+
+    #lang-container
+    {
+        position: fixed;
+        top:      2vh;
+        right:    0;
+    }
+
+    #home #header-discord-btn
+    {
+        display:    block;
+        border:     none;
+        background: transparent;
+
+    }
+
+    #navs-flex
+    {
+        flex:       1 1 100%;
+        width:      100%;
+        max-width:  initial;
+        margin:     auto;
+        margin-top: 20px;
+    }
+
+    div#soundButtons
+    {
+        position: relative;
+        left:     -10px;
+    }
 }

@@ -450,7 +450,7 @@
     "Upload": [
       "Dilarang menyertakan unsur yang berbau SARA, Politik, Kata Kasar/Umpatan, Ejekan, maupun gabungan huruf, angka, simbol, dan karakter lain yang dapat diartikan sebagai hal tersebut. Jika nama atau pesanmu harus disensor oleh ambulans Subaru di Sausage Legends, nama dan pesanmu akan ditolak.",
       "Mohon untuk menggunakan bahasa yang kami sediakan  (EN, JP, ID, ES, PT, NL, KR, DE). Jika dikumpulkan dalam bahasa selain yang disediakan, ada kemungkinan akan ditolak",
-      "UNGGAH",
+      "Nama",
       "Nama dibatasi paling banyak 16 karakter",
       "Pesan selamat untuk Subaru",
       "Panjang pesan kurang dari 128 kata",
@@ -561,7 +561,7 @@
       "Hasil",
       "Gambar",
       "Masuki mode menggambar",
-      "Setel ulang bebek",
+      "Reset bebek",
       "Mode:",
       "Pensil",
       "Lingkaran",
@@ -571,12 +571,12 @@
       "Warna garis",
       "Warna bayangan:",
       "Tebal bayangan:",
-      "offset bayangan:",
+      "Offset bayangan:",
       "Hasilkan spritesheet",
       "Download",
       "Browser ini tidak mendukung API HTML5 Drag and Drop",
-      "Setel ulang bebek? semua perubahan akan dihapus",
-      "batalkan mode menggambar",
+      "Reset ulang bebek? Semua elemen dan gambar akan dihapus",
+      "Batalkan mode menggambar",
       "Jika kamu membuat perubahan, pastikan untuk membuat spritesheet sekali lagi sebelum mengumpulkan hasilnya."
     ],
     "Main page": [

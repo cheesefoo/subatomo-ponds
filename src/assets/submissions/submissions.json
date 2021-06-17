@@ -97,6 +97,41 @@
       "pond": "1",
       "message": "Shubarashii Shuba-chan!",
       "sound": "7"
+    },
+    {
+      "name": "KucingLaut",
+      "image": "KucingLaut-395221",
+      "pond": "1",
+      "message": "Happy birthday and congratulations for 1 million subscriber!",
+      "sound": "1"
+    },
+    {
+      "name": "Gundamfinal Test",
+      "image": "Gundamfinal Test--60223",
+      "pond": "1",
+      "message": "Happy birthday and congrats on 1 mil subs Subaru! I love you!",
+      "sound": "7"
+    },
+    {
+      "name": "GurenSan",
+      "image": "GurenSan-630496",
+      "pond": "1",
+      "message": "Congratulations Subaru! We will always support you!",
+      "sound": "-1"
+    },
+    {
+      "name": "Gundamfinal Test",
+      "image": "Gundamfinal Test--61901",
+      "pond": "1",
+      "message": "Happy birthday and congrats on 1 mil subs Subaru! I love you!",
+      "sound": "7"
+    },
+    {
+      "name": "Guren Shuba",
+      "image": "Guren Shuba--22075",
+      "pond": "1",
+      "message": "Shuba shuba shuba",
+      "sound": "-1"
     }
   ]
 }
