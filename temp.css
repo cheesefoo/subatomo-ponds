@@ -1,3 +1,6 @@
+*{
+	box-sizing:border-box;
+}
 
 body
 {
@@ -8,104 +11,77 @@ body
     opacity:          1;
     color:            rgb(205, 201, 195);
     background-color: #97CAFD;
-
-}
-
-div
-{
-    pointer-events: none;
-}
-
-.bg
-{
-    position:          absolute;
-    display:           block;
-    width:             100%;
-    height:            100%;
-    background-image:  url("Sky.png");
+	background-image:  url("Sky.png");
     background-repeat: no-repeat;
     background-size:   auto 100%;
+	min-height:100vh;
+	min-width:100vw;
+	display:flex;
 }
 
 .logo-title-container
 {
-    position:   absolute;
-    left:       25vw;
-    width:      50vw;
+   
+    width:100%;
     height:     100%;
     margin:     auto;
     text-align: center;
     color:      #000;
+	max-width:600px;
+	padding:20px;
 }
 
 .logo
 {
-    position:                absolute;
-    top:                     0%;
-    width:                   100%;
-    height:                  100%;
-    opacity:                 1;
-    background-image:        url(LogoFullSize.png);
-    background-repeat:       no-repeat;
-    -moz-background-size:    contain;
-    -o-background-size:      contain;
-    -webkit-background-size: contain;
-    background-size:         contain;
+   width:100%;
 }
 
 .content
 {
-    width:       100%
+    width:       100%;
     padding-top: 40vh;
+}
+
+.video-container
+{
+	width:100%;
 }
 
 
 iframe
 {
-    width:         100%;
-    height:        100%;
+    
     margin-bottom: 5%;
-    border:        30px solid #FFF;
+    border:        20px solid #FFF;
     border-radius: 15px;
-
+width:100%;
 
 }
 
-.btn-container
-{
-    position:   absolute;
-    left:       25vw;
-    width:      50vw;
-    height:     50%;
-    margin:     auto;
-    text-align: center;
-    color:      #000;
-}
 
 .submityourown
 {
-    font-size:               2rem;
-    font-weight:             bold;
-    position:                absolute;
-    bottom:                  20%;
-    display:                 block;
-    width:                   100%;
-    height:                  100%;
+  width:100%;
+  
+}
 
-    margin:                  auto;
-    opacity:                 1;
-    background-image:        url(enter.png);
-    background-repeat:       no-repeat;
-    -moz-background-size:    contain;
-    -o-background-size:      contain;
-    -webkit-background-size: contain;
-    background-size:         contain;
-    /*border:           5px;*/
-    /*border:           30px solid #FFF;*/
-    /*border-radius:    15px;*/
-    /*background-color: #FE5B25;*/
-
-
+.submityourown img{
+	width:100%;
+	animation: animationFrames ease 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: animationFrames ease 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: animationFrames ease 2.5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: animationFrames ease 2.5s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: animationFrames ease 2.5s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 50% 50%;
 }
 
 a
@@ -113,4 +89,72 @@ a
     font-family:     meyro;
     text-decoration: none;
     color:           rgb(255, 255, 255);
+}
+
+@keyframes animationFrames{
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes animationFrames{
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes animationFrames {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes animationFrames {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+
+@media (max-width: 900px)
+{
+	.logo-title-container{
+		max-width:100%;
+	}
 }
