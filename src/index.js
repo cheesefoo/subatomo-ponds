@@ -518,8 +518,8 @@ class MyGame extends Phaser.Scene {
 
         let sounds = soundsj.sounds;
         let soundsLen = sounds.length;
-        for (let i = 0; i < soundsLen; i++) {
-            this.load.audio("suba_" + i, "assets/" + sounds[i]);
+        for (let i = 0; i <= soundsLen; i++) {
+            this.load.audio("suba_" + (i + 1), "assets/" + sounds[i]);
         }
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
@@ -574,7 +574,7 @@ class MyGame extends Phaser.Scene {
     makeSounds() {
         let sounds = soundsj.sounds;
         this.numberOfSounds = sounds.length;
-        for (let i = 0; i < this.numberOfSounds; i++) {
+        for (let i = 1; i <= this.numberOfSounds; i++) {
             this.sound.add("suba_" + i);
         }
     }
@@ -610,7 +610,7 @@ class MyGame extends Phaser.Scene {
         pondImg.setOrigin(0.5);
         pondImg.setDisplaySize(newWidth, newHeight);
         // pondImg.setDisplayOrigin();
-        // console.log("img", this.textures.list.col.source[0].source);
+        console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
         $("#ghost img").attr("id", "ghostIMG");
 
@@ -749,10 +749,18 @@ class MyGame extends Phaser.Scene {
                 function (legs) {
                     if (last_collision_check < COLLISION_CHECK_RATE) return;
                     let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
-                    let isInWater = colorAtPosn.r < 100;
-                    // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
-                    legs.setVisible(!isInWater);
-                    legs.duck.splashOverlay.setVisible(isInWater);
+                    try {
+                        let isInWater = colorAtPosn.red < 100;
+                        legs.setVisible(!isInWater);
+                        legs.duck.splashOverlay.setVisible(isInWater);
+                    } catch (e) {
+                        let debugstr = `container:(x:${legs.parentContainer.body.x}, y:${legs.parentContainer.body.y},
+                        legs:(x:${legs.body.x}, y:${legs.y})`;
+                        /*
+                                                errors at container:(x:18, y:533,legs:(x:-32, y:20)*/
+                        // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
+                        console.error(debugstr);
+                    }
                 },
                 null,
                 this
@@ -1086,14 +1094,14 @@ class MyGame extends Phaser.Scene {
         // return;
         // }
         const duck = gameObject.duck;
-        // if the text is already being displayed, do nothing
-        if (duck.namePopup != null || duck.msgPopup != null)
+        if (duck == null)
             return;
-
-
-        duck.animState = DUCK_STATES.START_QUACK;
-        this.scene.sound.play("suba_" + duck.sound);
-        this.scene.events.emit("duckclick", duck);
+        // if the text is already being displayed, do nothing
+        if ((duck.namePopup == null || duck.msgPopup == null)) {
+            duck.animState = DUCK_STATES.START_QUACK;
+            this.scene.sound.play("suba_" + duck.sound);
+            this.scene.events.emit("duckclick", duck);
+        }
     }
 
     generatePondUI() {
@@ -1299,7 +1307,7 @@ class PondManager
 
             let img = pond.add.nineslice(
                 -10, -10,   // this is the starting x/y location
-                msg.displayWidth + 20, msg.displayHeight + name.displayHeight + 20,   // the width and height of your object
+                Math.max(name.displayWidth, msg.displayWidth) + 20, msg.displayHeight + name.displayHeight + 20,   // the width and height of your object
                 "panel", // a key to an already loaded image
                 30,         // the width and height to offset for a corner slice
                 10          // (optional) pixels to offset when computing the safe usage area
