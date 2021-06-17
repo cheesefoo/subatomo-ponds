@@ -4,6 +4,7 @@
   "scripts": {
     "serve": "webpack serve --mode=development --config webpack.dev.js",
     "build": "webpack  --config webpack.production.js",
+    "dev": "webpack  --config webpack.dev.js",
     "start": "webpack serve --mode=development --config webpack.dev.js --open",
     "emulate": "firebase emulators:start"
   },
