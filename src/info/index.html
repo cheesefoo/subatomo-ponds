@@ -949,9 +949,14 @@
 									var images;
 								$(document).ready(function(){
 									images = $("#templateImages div").toArray().reverse();
+									var auxImg=document.getElementById('bigTexture');
+									if(auxImg.complete){
+										loadAccesoriesTexture();
+									}else{
 									$("#bigTexture").on("load",function(){
 										loadAccesoriesTexture();
 									});
+									}
 								});
                                
 							   
