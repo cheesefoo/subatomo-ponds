@@ -49,14 +49,17 @@ a:hover
 
 #yt-embed
 {
-    width:     auto;
-    max-width: 100%;
-    margin:    auto;
+    width:      auto;
+    max-width:  100%;
+    margin:     auto;
+    text-align: center;
 }
 
 #yt-embed iframe
 {
-    width: 100%;
+    width:     100%;
+    max-width: 100%;
+    margin:    auto;
 }
 
 #header-discord
