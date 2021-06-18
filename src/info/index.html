@@ -297,10 +297,12 @@
                         <input class="form-check-input" id="ref-twitter" name="referer" type="radio" value="twitter">
                         <label for="ref-twitter" text="u-20">Twitter</label>
                     </div>
-                    <div class="form-check form-check-inline  panel-collapse collapse">
+                    <div class="form-check form-check-inline">
                         <input class="form-check-input" id="ref-other" name="referer" type="radio" value="other">
                         <label for="ref-other" text="u-21">Other</label>
                     </div>
+                    <!--                    <div class="refererInput" style="display:none;"></div>-->
+                    <input id="ref-other-input" maxlength="32" name="refererOther" style="display:none">
 
                 </div>
                 <div id="countrySection">
@@ -334,7 +336,7 @@
                         </div>
                     </div>
                     <div class="fanart panel-collapse collapse">
-                        <label for="fanartUsername" text="u-27">Username</label>
+                        <!--                        <label for="fanartUsername" text="u-27">Username</label>-->
                         <input id="fanartUsername" name="fanartUsername" placeholder="Twitter handle, etc"
                                type="text"/>
                     </div>
@@ -1231,6 +1233,7 @@
         document.getElementById("message").setAttribute("placeholder", upload[5]);
         document.getElementById("country").setAttribute("placeholder", upload[23]);
         document.getElementById("fanartUsername").setAttribute("placeholder", upload[28]);
+        document.getElementById("ref-other-input").setAttribute("placeholder", upload[16]);
 
 
         [...homeTags].forEach(function (t) {
@@ -1342,16 +1345,15 @@
         limitReachedClass: "form-text text-muted mt-1",
     });
 
-    $("#referer").on("change", function () {
+    $("input[type=radio][name=referer]").on("change", function () {
         let v = $(this).val();
-        let ref = $(".refererInput");
-        let refInput = $(".refererInput input");
+        let refInput = $("#ref-other-input");
         if (v == "other") {
-            ref.show();
-            refInput.attr("required", true);
+            refInput.show();
+            // refInput.attr("required", true);
         } else {
-            ref.hide();
-            refInput.removeAttr("required");
+            refInput.hide();
+            // refInput.removeAttr("required");
         }
     });
 
