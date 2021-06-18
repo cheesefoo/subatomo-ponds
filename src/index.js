@@ -4,6 +4,7 @@ let TEST_DATA = false;
 require("./assets/css/modal.css");
 require("./assets/css/dropdown-img.css");
 require("./assets/css/style.css");
+require("./assets/css/credits.css");
 require("./assets/images/intro/loading.gif");
 require("./assets/images/subahug3.png");
 require("./assets/images/thewholesky.jpg");
