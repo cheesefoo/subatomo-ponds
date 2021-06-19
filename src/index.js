@@ -1,11 +1,11 @@
 let DEBUGGING = false;
-let TEST_DATA = false;
+let TEST_DATA = true;
 
 require("./assets/css/modal.css");
 require("./assets/css/dropdown-img.css");
 require("./assets/css/style.css");
 require("./assets/css/credits.css");
-require("./assets/images/intro/loading.gif");
+let loadingGif = require("./assets/images/intro/loading.gif");
 require("./assets/images/subahug3.png");
 require("./assets/images/thewholesky.jpg");
 require("./assets/images/subatomo army.png");
@@ -19,16 +19,16 @@ function importAll(r) {
 
 let ducksj, submissions;
 
-// if (TEST_DATA) {
-//     ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
-//     submissions = require("./assets/test_submissions/submissions.json");
-//     importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
-// } else {
-//
-// }
-ducksj = require("./assets/submissions/all_ducks_sheet.json");
-submissions = require("./assets/submissions/submissions.json");
-importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+if (TEST_DATA) {
+    ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
+    submissions = require("./assets/test_submissions/submissions.json");
+    importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+} else {
+    ducksj = require("./assets/submissions/all_ducks_sheet.json");
+    submissions = require("./assets/submissions/submissions.json");
+    importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+
+}
 
 
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
@@ -408,37 +408,29 @@ class MyGame extends Phaser.Scene {
 
         function loading() {
             // console.log("loading call");
-            const progressWidth = 320;
+            // const progressWidth = 320;
+            //
+            // const progressBar = this.add.graphics();
+            // const progressBox = this.add.graphics();
+            // progressBox.fillStyle(0x222222, 0.8);
+            // progressBox.fillRect(
+            //     sceneWidth * 0.5 - progressWidth * 0.5 - 10,
+            //     sceneHeight * 0.9,
+            //     progressWidth,
+            //     50
+            // );
 
-            const progressBar = this.add.graphics();
-            const progressBox = this.add.graphics();
-            progressBox.fillStyle(0x222222, 0.8);
-            progressBox.fillRect(
-                sceneWidth * 0.5 - progressWidth * 0.5 - 10,
-                sceneHeight * 0.9,
-                progressWidth,
-                50
-            );
-
+            const loadingGif = this.add.image("loading-gif", loadingGif);
             const width = this.cameras.main.width;
             const height = this.cameras.main.height;
-            const loadingText = this.make.text({
-                x: width / 2,
-                y: sceneHeight * 0.9 - 55,
-                text: "Loading...",
-                style: {
-                    font: "20px 'Nodo Sans JP'",
-                    fill: "#FFF",
-                },
-            });
-            loadingText.setOrigin(0.5, 0.5);
+
 
             const percentText = this.make.text({
                 x: width / 2,
                 y: sceneHeight * 0.9 - 30,
                 text: "0%",
                 style: {
-                    font: "18px 'Nodo Sans JP'",
+                    font: "18px 'meyro'",
                     fill: "#FFF",
                 },
             });
@@ -446,14 +438,15 @@ class MyGame extends Phaser.Scene {
 
             this.load.on("progress", function (value) {
                 percentText.setText(parseInt(value * 100) + "%");
-                progressBar.clear();
-                progressBar.fillStyle(0xffffff, 1);
-                progressBar.fillRect(
-                    sceneWidth * 0.5 - progressWidth * 0.5,
-                    sceneHeight * 0.9 + 10,
-                    (progressWidth - 20) * value,
-                    30
-                );
+                gsap.set("#loadingDuck", {autoAlpha: value});
+                // progressBar.clear();
+                // progressBar.fillStyle(0xffffff, 1);
+                // progressBar.fillRect(
+                //     sceneWidth * 0.5 - progressWidth * 0.5,
+                //     sceneHeight * 0.9 + 10,
+                //     (progressWidth - 20) * value,
+                //     30
+                // );
             });
 
             const that = this;
@@ -482,8 +475,8 @@ class MyGame extends Phaser.Scene {
                 // that.generatePondUI();
 
                 console.log("preload finish");
-                progressBar.destroy();
-                progressBox.destroy();
+                // progressBar.destroy();
+                // progressBox.destroy();
                 loadingText.destroy();
                 percentText.destroy();
                 $("#loadingDuck").hide();
@@ -748,7 +741,7 @@ class MyGame extends Phaser.Scene {
             transitionLayer.setTileIndexCallback(
                 transitionTileIndices,
                 function (legs) {
-					return false;
+                    return false;
                     if (last_collision_check < COLLISION_CHECK_RATE) return;
                     let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
                     let isInWater = colorAtPosn.r < 100;
