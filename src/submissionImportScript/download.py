@@ -1,15 +1,14 @@
 from json import dumps, load, loads
-from os import listdir
+from os import listdir, remove
 from os.path import isfile, join, dirname, abspath
 from pathlib import PurePath
 from subprocess import run
 
 import gspread
-from gspread.exceptions import APIError
 from oauth2client.service_account import ServiceAccountCredentials
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
-from tenacity import retry, retry_if_exception_type, wait_random_exponential
+from tenacity import retry, wait_random_exponential
 
 # run this from 'src/submissionImportScript'
 # Set location of texture packer exe
@@ -31,13 +30,15 @@ def download_json():
     sh = gc.open_by_key(SHEETS_ID)
     worksheet = sh.get_worksheet(1)
 
-    num_of_entries = worksheet.row_count+1
+    num_of_entries = worksheet.row_count
     entries = []
+    r = 'A1:E' + str(num_of_entries)
+    print(f"Getting {num_of_entries} submissions from {r}")
+    all_rows = worksheet.batch_get([r])
+    all_rows = all_rows[0]
 
-    @retry(retry=retry_if_exception_type(APIError),
-           wait=wait_random_exponential(multiplier=1, max=60))
     def try_to_get_row(index):
-        row = worksheet.row_values(index)
+        row = all_rows[index]
         name = row[0]
         filename = row[1]
         pond = row[2]
@@ -51,8 +52,10 @@ def download_json():
         return entry
 
     for i in range(2, num_of_entries):
-        entries.append(try_to_get_row(i))
-
+        try:
+            entries.append(try_to_get_row(i))
+        except IndexError as e:
+            print("out of range: "+str(i))
     submissions = {"submissions": entries}
     output = dumps(submissions)
     with open(join(JSON_DESTINATION_DIR, 'submissions.json'), 'w') as f:
@@ -76,6 +79,8 @@ def download_images():
     file_list = drive.ListFile({'q': query}).GetList()
     for file in file_list:
         filename = file['title']
+        if filename.startswith("FANART"):
+            continue
         dest = join(RAW_IMAGES_DIR, filename + ".png")
         try_download(file, dest)
     print("downloaded {} files".format(len(file_list)))
@@ -90,25 +95,32 @@ def split_images():
                 join(SPLIT_IMAGES_DIR, filename[:-4]) + '-%d.png']
         run(args, shell=True, check=True)
 
+
 def pack_spritesheet_free():
     # free-tex-packer-cli --project /path/to/project.ftpp --output /path/to/output/folder
     project = 'prod.ftpp'
     args = ['free-tex-packer-cli', '--project', project, '--output', SPRITESHEET_DIR]
     run(args, shell=True, check=True)
-    # merge_json()
+    merge_json()
+
 
 def merge_json():
     single = '{"textures": [], "meta": {"app": "http://github.com/odrick/free-tex-packer-cli", "version": "0.3.0"}}'
     s = loads(single)
     t = s["textures"]
+    files= []
     for file in listdir(SPRITESHEET_DIR):
         if file.startswith("all_ducks_sheet") and file.endswith("json"):
-            with open(join(SPRITESHEET_DIR, file)) as f:
+            with open(join(SPRITESHEET_DIR, file), 'rb') as f:
                 j = load(f)
                 t += j["textures"]
+                files.append(f)
     output = dumps(s)
     with open(join(JSON_DESTINATION_DIR, "all_ducks_sheet.json"), 'w') as f:
         f.write(output)
+        for o in files:
+            remove(o.name)
+
 
 def pack_spritesheet():
     json_filename = join(SPRITESHEET_DIR, 'all_ducks_sheet.json')
@@ -121,9 +133,9 @@ def pack_spritesheet():
 
 
 def main():
-    download_json()
-    download_images()
-    split_images()
+    # download_json()
+    # download_images()
+    # split_images()
     pack_spritesheet_free()
     # pack_spritesheet()
 

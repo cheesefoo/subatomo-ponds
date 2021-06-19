@@ -4,6 +4,7 @@ let TEST_DATA = false;
 require("./assets/css/modal.css");
 require("./assets/css/dropdown-img.css");
 require("./assets/css/style.css");
+require("./assets/css/credits.css");
 require("./assets/images/intro/loading.gif");
 require("./assets/images/subahug3.png");
 require("./assets/images/thewholesky.jpg");
@@ -479,7 +480,6 @@ class MyGame extends Phaser.Scene {
                 // that.populateDucks(currentPond);
                 // console.log('on preload complete settimeout')
                 // that.generatePondUI();
-
                 console.log("preload finish");
                 progressBar.destroy();
                 progressBox.destroy();
@@ -748,11 +748,15 @@ class MyGame extends Phaser.Scene {
                 transitionTileIndices,
                 function (legs) {
                     if (last_collision_check < COLLISION_CHECK_RATE) return;
-                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
-                    let isInWater = colorAtPosn.r < 100;
-                    // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
-                    legs.setVisible(!isInWater);
-                    legs.duck.splashOverlay.setVisible(isInWater);
+                    try {
+                        let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
+                        let isInWater = colorAtPosn.r < 100;
+                        // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
+                        legs.setVisible(!isInWater);
+                        legs.duck.splashOverlay.setVisible(isInWater);
+                    } catch (e) {
+                        console.error(e);
+                    }
                 },
                 null,
                 this
@@ -1154,10 +1158,14 @@ class MyGame extends Phaser.Scene {
         //todo: find a way to call update on every duck without looping thru every single object every frame holy crap
         let len = this.listOfDucks.length;
         for (let i = 0; i < len; i++) {
-            let duckGO = this.listOfDucks[i];
-            duckGO.updateState(duckGO, delta);
-            // console.log(duckGO.displayName + duckGO.parentContainer.y);
-            duckGO.parentContainer.setDepth(duckGO.parentContainer.y);
+            try {
+                let duckGO = this.listOfDucks[i];
+                duckGO.updateState(duckGO, delta);
+                // console.log(duckGO.displayName + duckGO.parentContainer.y);
+                duckGO.parentContainer.setDepth(duckGO.parentContainer.y);
+            } catch (e) {
+                console.error(e);
+            }
         }
     }
 
