@@ -519,7 +519,7 @@ class MyGame extends Phaser.Scene {
         let sounds = soundsj.sounds;
         let soundsLen = sounds.length;
         for (let i = 0; i < soundsLen; i++) {
-            this.load.audio("suba_" + i, "assets/" + sounds[i]);
+            this.load.audio("suba_" + (i + 1), "assets/" + sounds[i]);
         }
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
@@ -574,7 +574,7 @@ class MyGame extends Phaser.Scene {
     makeSounds() {
         let sounds = soundsj.sounds;
         this.numberOfSounds = sounds.length;
-        for (let i = 0; i < this.numberOfSounds; i++) {
+        for (let i = 1; i <= this.numberOfSounds; i++) {
             this.sound.add("suba_" + i);
         }
     }
@@ -610,7 +610,7 @@ class MyGame extends Phaser.Scene {
         pondImg.setOrigin(0.5);
         pondImg.setDisplaySize(newWidth, newHeight);
         // pondImg.setDisplayOrigin();
-        // console.log("img", this.textures.list.col.source[0].source);
+        console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
         $("#ghost img").attr("id", "ghostIMG");
 
@@ -640,6 +640,10 @@ class MyGame extends Phaser.Scene {
                     that.boundsRight = wv.right;
                     that.boundsTop = wv.top;
                     that.boundsBot = wv.bottom;
+
+                    that.boundsMidPtX = (that.boundsLeft + that.boundsRight) / 2;
+                    that.boundsMidPtY = (that.boundsTop + that.boundsBot) / 2;
+                    that.halfWidth = that.boundsMidPtX - that.boundsLeft;
                     that.populateDucks(currentPond);
                     that.applyTileCollisionCallbacks();
 
@@ -651,10 +655,15 @@ class MyGame extends Phaser.Scene {
             this.boundsRight = wv.right;
             this.boundsTop = wv.top;
             this.boundsBot = wv.bottom;
+            this.boundsMidPtX = (this.boundsLeft + this.boundsRight) / 2;
+            this.boundsMidPtY = (this.boundsTop + this.boundsBot) / 2;
+            this.halfWidth = this.boundsMidPtX - this.boundsLeft;
             this.populateDucks(currentPond);
             this.applyTileCollisionCallbacks();
 
         }
+
+
     }
 
     makeVolumeButton() {
@@ -747,16 +756,20 @@ class MyGame extends Phaser.Scene {
             transitionLayer.setTileIndexCallback(
                 transitionTileIndices,
                 function (legs) {
-					return false;
                     if (last_collision_check < COLLISION_CHECK_RATE) return;
+                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
                     try {
-                        let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
-                        let isInWater = colorAtPosn.r < 100;
-                        // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
+                        let isInWater = colorAtPosn.red < 100;
                         legs.setVisible(!isInWater);
                         legs.duck.splashOverlay.setVisible(isInWater);
                     } catch (e) {
+                        let debugstr = `container:(x:${legs.parentContainer.body.x}, y:${legs.parentContainer.body.y},
+                        legs:(x:${legs.body.x}, y:${legs.y})`;
+                        /*
+                                                errors at container:(x:18, y:533,legs:(x:-32, y:20)*/
+                        // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
                         console.error(e);
+                        console.log(debugstr);
                     }
                 },
                 null,
@@ -880,8 +893,8 @@ class MyGame extends Phaser.Scene {
             splashOverlay.y = 40;
 
             let duckContainer = this.add.container(
-                getRandomInt(this.boundsLeft, this.boundsRight),
-                getRandomInt(newHeight * 0.3, newHeight * 0.7),
+                getRandomIntInclusive(this.boundsLeft, this.boundsRight),
+                getRandomIntInclusive(newHeight * 0.3, newHeight * 0.7),
             );
 
             duckContainer = this.physics.add.existing(duckContainer);
@@ -905,8 +918,10 @@ class MyGame extends Phaser.Scene {
 
             duckGameObject.displayName = ducks[i].name;
             duckGameObject.message = ducks[i].message;
-            duckGameObject.sound = ducks[i].sound ? ducks[i].sound : "1";
-            duckGameObject.sound = ducks[i].sound == -1 ? getRandomInt(1, this.numberOfSounds + 1) : ducks[i].sound;
+
+            //Assign sound if it was blank, and assign random one for random pickers
+            duckGameObject.sound = ducks[i].sound ? ducks[i].sound : -1;
+            duckGameObject.sound = ducks[i].sound == -1 ? getRandomIntInclusive(1, this.numberOfSounds) : ducks[i].sound;
 
             duckGameObject.setOrigin(0.5, 0.5);
             duckGameObject.displayWidth = SPRITE_WIDTH;
@@ -1006,7 +1021,7 @@ class MyGame extends Phaser.Scene {
                     // if (!context.isSwimming)
                     context.legsOverlay.play("idle");
                     context.splashOverlay.play("splash-idle");
-                    context.idleTime = getRandomInt(MIN_IDLE_TIME, MAX_IDLE_TIME);
+                    context.idleTime = getRandomIntInclusive(MIN_IDLE_TIME, MAX_IDLE_TIME);
                     context.animState = DUCK_STATES.IDLE;
                     break;
                 case DUCK_STATES.IDLE:
@@ -1029,7 +1044,7 @@ class MyGame extends Phaser.Scene {
 
                     context.flipX = destinationX <= body.x;
                     context.legsOverlay.flipX = destinationX <= body.x;
-                    context.travelTime = getRandomInt(MIN_TRAVEL, MAX_TRAVEL_TIME);
+                    context.travelTime = getRandomIntInclusive(MIN_TRAVEL, MAX_TRAVEL_TIME);
 
                     // let target = new Phaser.Math.Vector2(destinationX, destinationY);
                     that.physics.moveTo(body, destinationX, destinationY, WALK_SPEED, context.travelTime);
@@ -1091,14 +1106,14 @@ class MyGame extends Phaser.Scene {
         // return;
         // }
         const duck = gameObject.duck;
-        // if the text is already being displayed, do nothing
-        if (duck.namePopup != null || duck.msgPopup != null)
+        if (duck == null)
             return;
-
-
-        duck.animState = DUCK_STATES.START_QUACK;
-        this.scene.sound.play("suba_" + duck.sound);
-        this.scene.events.emit("duckclick", duck);
+        // if the text is already being displayed, do nothing
+        if ((duck.namePopup == null || duck.msgPopup == null)) {
+            duck.animState = DUCK_STATES.START_QUACK;
+            this.scene.sound.play("suba_" + duck.sound);
+            this.scene.events.emit("duckclick", duck);
+        }
     }
 
     generatePondUI() {
@@ -1172,8 +1187,8 @@ class MyGame extends Phaser.Scene {
 
 
     getRandomDestinationX(startPos, maxDist) {
-        let dist = getRandomInt(0, 1) === 1 ? -1 * maxDist : maxDist;
-        let destination = getRandomInt(startPos, startPos + dist);
+        let dist = getRandomIntInclusive(0, 1) === 1 ? -1 * maxDist : maxDist;
+        let destination = getRandomIntInclusive(startPos, startPos + dist);
         // console.log(startPos,destination)
         if (destination < this.boundsLeft || destination > this.boundsRight)
             destination = startPos - (destination / 2);
@@ -1181,8 +1196,8 @@ class MyGame extends Phaser.Scene {
     }
 
     getRandomDestinationY(startPos, maxDist) {
-        let dist = getRandomInt(0, 1) === 1 ? -1 * maxDist : maxDist;
-        let destination = getRandomInt(startPos, startPos + dist);
+        let dist = getRandomIntInclusive(0, 1) === 1 ? -1 * maxDist : maxDist;
+        let destination = getRandomIntInclusive(startPos, startPos + dist);
         if (destination < this.boundsTop || destination > this.boundsBot)
             destination = startPos - (destination / 2);
         return destination;
@@ -1284,15 +1299,13 @@ class PondManager
 
         pond.events.on("duckclick", function (gameObject) {
 
-            let x = gameObject.parentContainer.x;
-            let y = gameObject.parentContainer.y;
+            let x = gameObject.parentContainer.x - (SPRITE_WIDTH / 2);
+            let y = gameObject.parentContainer.y - (SPRITE_HEIGHT / 2);
             let panel;
 
 
             if (sceneWidth < 900) {
                 panel = pond.add.container();
-                console.log(sceneWidth * .48 + 100, x - 50);
-                panel.setPosition(pond.boundsLeft, pond.boundsBot / 2);
             } else {
                 panel = pond.add.container(x - 50, y - 120);
             }
@@ -1308,7 +1321,7 @@ class PondManager
 
             let img = pond.add.nineslice(
                 -10, -10,   // this is the starting x/y location
-                msg.displayWidth + 20, msg.displayHeight + name.displayHeight + 20,   // the width and height of your object
+                Math.max(name.displayWidth, msg.displayWidth) + 20, msg.displayHeight + name.displayHeight + 20,   // the width and height of your object
                 "panel", // a key to an already loaded image
                 30,         // the width and height to offset for a corner slice
                 10          // (optional) pixels to offset when computing the safe usage area
@@ -1321,6 +1334,17 @@ class PondManager
             panel.sendToBack(img);
             panel.setDepth(9999);
             panel.setAlpha(0);
+            if (sceneWidth < 900) {
+                if (x > pond.boundsMidPtX) {
+                    if (img.displayWidth > pond.halfWidth)
+                        panel.setPosition(Math.max(pond.boundsLeft, pond.boundsRight - img.displayWidth), y - SPRITE_HEIGHT);
+                    else
+                        panel.setPosition(x, y - SPRITE_HEIGHT);
+                } else {
+                    // console.log(sceneWidth * .48 + 100, x - 50);
+                    panel.setPosition(pond.boundsLeft, y - SPRITE_HEIGHT);//pond.boundsBot / 2);
+                }
+            }
 
             this.tweens.add({
                 targets: panel,
@@ -1466,7 +1490,7 @@ $body.on("click", ".navbar a", function () {
 });
 
 //helpers
-function getRandomInt(min, max) {
+function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
