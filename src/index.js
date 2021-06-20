@@ -1,6 +1,12 @@
 let DEBUGGING = false;
 let TEST_DATA = false;
 
+let sceneWidth = innerWidth;
+let sceneHeight = innerHeight;
+
+const MOBILE_MAX_WIDTH = 900;
+const IS_MOBILE = sceneWidth < MOBILE_MAX_WIDTH;
+console.log("is mobile? " + IS_MOBILE);
 require("./assets/css/modal.css");
 require("./assets/css/dropdown-img.css");
 require("./assets/css/style.css");
@@ -19,13 +25,6 @@ function importAll(r) {
 
 let ducksj, submissions;
 
-// if (TEST_DATA) {
-//     ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
-//     submissions = require("./assets/test_submissions/submissions.json");
-//     importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
-// } else {
-//
-// }
 ducksj = require("./assets/submissions/all_ducks_sheet.json");
 submissions = require("./assets/submissions/submissions.json");
 importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
@@ -33,9 +32,8 @@ importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png
 
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
 const splashj = require("./assets/pond/WaterSplashAnimation/splash.json");
-// const pondTileJson = require("./assets/pond/pond_isometric.json");
-// const pondTileJson = require("./assets/pond/pond.json");
 const pondTileJson = require("./assets/pond/pond.json");
+const pond_1024 = require("./assets/pond/pond_1024.json");
 const soundsj = require("./assets/sound/soundfilemap.json");
 
 window.logSwim = true;
@@ -47,34 +45,37 @@ import {Plugin as NineSlicePlugin} from "phaser3-nineslice";
 // require("./assets/Subapond vibrant/water_vibrant_1920x1080.png");
 // require("./assets/Subapond vibrant/grass_vibrant_1920x1080.png");
 // require("./assets/pond/pond_vibrant_1920x1080.jpg");
-require("./assets/pond/Subapond_vibrantHD-min.jpg");
 require("./assets/pond/pond_color_invert.png");
+
 require("./assets/pond/WaterSplashAnimation/splash.png");
 require("./assets/images/ui/subaru_uitest_1.png");
+if (IS_MOBILE)
+    require("./assets/pond/Subapond_vibrant_1024x1024.jpg");
+else
+    require("./assets/pond/Subapond_vibrantHD-min.jpg");
 
 
 importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
 importAll(require.context("./", true, /pond.*\.(json)$/));
 importAll(require.context("./assets/sound/", true, /.*\.(mp3|ogg|wav)$/));
-//Tile indices corresponding to water tiles in Tiled .tmx file
-// const pondTileIndices = [36, 37, 38, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 63, 64, 65, 66, 67, 68, 69,
-//     70, 71, 72, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 94, 95, 96,];
-// const groundTileIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-//     26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 40, 41, 42, 43, 44, 58, 59, 60, 61, 62, 73, 74, 75, 76, 77, 88, 89, 90, 91,
-//     92, 93, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,];
+
 
 //ORTHOGNAL
-let groundTileIndices = [1, 2, 3, 4, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 44, 45, 46, 47, 48, 51, 63, 64, 80, 81, 82, 83, 96, 97, 98, 99, 111, 112, 114, 115, 116, 121, 122, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142];
-let pondTileIndices = [40, 41, 42, 53, 56, 57, 58, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 101, 102, 103, 104, 105, 106, 107, 108];
-let obstacleTileIndices = [5, 6, 7, 8, 11, 16, 24, 25, 26, 32, 60, 61, 62, 67, 109, 110, 113, 129, 130, 143, 144];
-let transitionTileIndices = [39, 43, 49, 50, 52, 54, 55, 65, 66, 79, 95, 100, 117, 118, 119, 120];
-//ISOMETRIC
-// let groundTileIndices = [1, 2, 3, 4, 5, 11, 12, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 44, 45, 46, 47, 48, 54, 55, 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 77, 78, 79, 83, 84, 98, 99, 118, 119, 121, 122, 123, 124, 138, 139, 141, 142, 143, 144, 158, 159, 161, 162, 163, 164, 177, 178, 179, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197];
-// let pondTileIndices = [49, 69, 70, 71, 72, 73, 74, 81, 82, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174];
-// let obstacleTileIndices = [0,6,7,8,9,10,13,19,30,31,39,50,51,52,53,75,76,103,104,175,176,199,200];
+let groundTileIndices, pondTileIndices, obstacleTileIndices, transitionTileIndices;
+
+if (IS_MOBILE) {
+    pondTileIndices = [20, 21, 22, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56];
+    groundTileIndices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 16, 17, 18, 19, 23, 24, 57, 58, 59, 60, 61, 62, 63, 64];
+    obstacleTileIndices = [12, 13, 14];
+} else {
+    groundTileIndices = [1, 2, 3, 4, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 44, 45, 46, 47, 48, 51, 63, 64, 80, 81, 82, 83, 96, 97, 98, 99, 111, 112, 114, 115, 116, 121, 122, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142];
+    pondTileIndices = [40, 41, 42, 53, 56, 57, 58, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 101, 102, 103, 104, 105, 106, 107, 108];
+    obstacleTileIndices = [5, 6, 7, 8, 11, 16, 24, 25, 26, 32, 60, 61, 62, 67, 109, 110, 113, 129, 130, 143, 144];
+    transitionTileIndices = [39, 43, 49, 50, 52, 54, 55, 65, 66, 79, 95, 100, 117, 118, 119, 120];
+}
 
 let pondLayer, groundLayer, obstacleLayer, transitionLayer;
-let grassVibrant, waterVibrant;
+
 
 //number of frames to wait before each collision check
 const COLLISION_CHECK_RATE = 10;
@@ -86,9 +87,6 @@ const SPRITE_WIDTH = 100;
 const SPRITE_HEIGHT = 100;
 const maxPond = submissions.submissions[submissions.submissions.length - 1].pond;
 const QUACK_DURATION = 9000;
-
-let sceneWidth = innerWidth;
-let sceneHeight = innerHeight;
 
 
 const MIN_TRAVEL = 1000;
@@ -143,7 +141,7 @@ function startHomepageAnimation() {
     gsap.set(".modal-window", {visibility: "inherit", delay: 5});
     let tl = gsap.timeline();
 
-    if (innerWidth > 900) {
+    if (innerWidth > MOBILE_MAX_WIDTH) {
         tl.fromTo(".logo-panel", {
             autoAlpha: 0,
             opacity: 0,
@@ -225,7 +223,7 @@ function startHomepageAnimation() {
         delay: 3
     }, 0);
 
-    if (innerWidth > 900) {
+    if (innerWidth > MOBILE_MAX_WIDTH) {
         tl.fromTo("#enterPondButton", {
             autoAlpha: 0,
             opacity: 0,
@@ -259,7 +257,7 @@ function startHomepageAnimation() {
         }, 0);
     }
 
-    if (innerWidth > 900) {
+    if (innerWidth > MOBILE_MAX_WIDTH) {
         tl.fromTo(".interior", {
             autoAlpha: 0,
             x: "-100%"
@@ -385,7 +383,7 @@ function startHomepageAnimation() {
 let newHeight, newWidth;
 if (sceneHeight > sceneWidth) {
     newHeight = sceneHeight;
-    newWidth = sceneHeight * (2003 / 1080);
+    newWidth = sceneHeight;// * (2003 / 1080);
 
 } else {
     newHeight = sceneWidth * (1080 / 2003);
@@ -522,11 +520,18 @@ class MyGame extends Phaser.Scene {
             this.load.audio("suba_" + (i + 1), "assets/" + sounds[i]);
         }
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
-        this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
-        this.load.image("col", "assets/pond_color_invert.png");
 
+        if (IS_MOBILE) {
+            this.load.image("tiles", "assets/Subapond_vibrant_1024x1024.jpg");
+            this.load.tilemapTiledJSON("map", pond_1024);
+
+        } else {
+            this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
+            this.load.image("col", "assets/pond_color_invert.png");
+            this.load.tilemapTiledJSON("map", pondTileJson);
+
+        }
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
-        this.load.tilemapTiledJSON("map", pondTileJson);
         this.listOfDucks = [];
 
         // this.load.image("grassVibrant", "assets/grass_vibrant_1920x1080.png");
@@ -555,8 +560,9 @@ class MyGame extends Phaser.Scene {
         this.makeSounds();
         this.makeVolumeButton();
         this.makeTileMap();
-        this.addGhostTexture();
-        this.panCameraForMobile();
+        if (!IS_MOBILE)
+            this.addGhostTexture();
+        this.setBoundsAndPanCamera();
 
         this.addPondClick();
         //apply collision callbacks and populate ducks moved into pancamera
@@ -568,7 +574,8 @@ class MyGame extends Phaser.Scene {
         // this.applyCollisions();
         this.input.on("gameobjectup", this.onObjectClicked);
 
-
+        let totalNumSubmissions = submissions["submissions"].length;
+        console.log(`Wow, ${totalNumSubmissions} in ${Math.ceil(totalNumSubmissions / 20)} ponds!!!`);
     }
 
     makeSounds() {
@@ -582,7 +589,12 @@ class MyGame extends Phaser.Scene {
     makeTileMap() {
         this.map = this.make.tilemap({key: "map"}); //, tileWidth: 64, tileHeight: 64 });
         window.map = this.map;
-        let tileset = this.map.addTilesetImage("Subapond_vibrantHD-min", "tiles");
+        let tileset;
+        if (IS_MOBILE) {
+            tileset = this.map.addTilesetImage("Subapond_vibrant_1024x1024", "tiles");
+        } else {
+            tileset = this.map.addTilesetImage("Subapond_vibrantHD-min", "tiles");
+        }
         window.tileset = tileset;
         // let tileset = this.map.addTilesetImage("pond_vibrant_1920x1080", "tiles");
         groundLayer = this.map.createLayer("ground", tileset);
@@ -591,24 +603,36 @@ class MyGame extends Phaser.Scene {
         pondLayer.setCollisionByProperty({collides: true});
         obstacleLayer = this.map.createLayer("obstacle", tileset);
         obstacleLayer.setCollisionByProperty({collides: true});
-        transitionLayer = this.map.createLayer("transition", tileset);
-        transitionLayer.setCollisionByProperty({collides: true});
 
-        let layers = [groundLayer, pondLayer, obstacleLayer, transitionLayer];
+        let layers = [groundLayer, pondLayer, obstacleLayer];
 
+        if (!IS_MOBILE) {
+            transitionLayer = this.map.createLayer("transition", tileset);
+            transitionLayer.setCollisionByProperty({collides: true});
+            layers.push(transitionLayer);
+        }
 
         console.log(`pond size (${innerWidth}, ${innerHeight})->(${newWidth}, ${newHeight})`);
+
         layers.forEach(function (l) {
             l.setDisplaySize(newWidth, newHeight);
             l.alpha = 0;
         });
+        if (!IS_MOBILE) {
+        }
+
+        let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
+        pondImg.setDisplaySize(newWidth, newHeight);
+        pondImg.setOrigin(0.5);
+
+        /*     if (IS_MOBILE) {
+                 let pondImg = this.add.image(0, 0, "tiles");
+                 pondImg.setOrigin(0.5,0);
+             } else {  }*/
 
     }
 
     addGhostTexture() {
-        let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
-        pondImg.setOrigin(0.5);
-        pondImg.setDisplaySize(newWidth, newHeight);
         // pondImg.setDisplayOrigin();
         console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
@@ -625,13 +649,13 @@ class MyGame extends Phaser.Scene {
 
     }
 
-    panCameraForMobile() {
+    setBoundsAndPanCamera() {
         let cam = this.cameras.main;
         let wv = cam.worldView;
         let that = this;
-        if (innerWidth < 900) {
+        if (false) {// (IS_MOBILE) {
             console.log("camera panning");
-            this.cameras.main.pan(newWidth * 0.43, newHeight / 2, 0, "none", true);
+            // this.cameras.main.pan(newWidth * 0.43, newHeight / 2, 0, "none", true);
             //timer needed because viewport doesn't update until next render
             this.time.addEvent({
                 delay: 500, callback: function () {
@@ -646,7 +670,6 @@ class MyGame extends Phaser.Scene {
                     that.halfWidth = that.boundsMidPtX - that.boundsLeft;
                     that.populateDucks(currentPond);
                     that.applyTileCollisionCallbacks();
-
                 }
             });
         } else {
@@ -748,34 +771,30 @@ class MyGame extends Phaser.Scene {
                 this
             );
             that.physics.add.overlap(gameObject.legsOverlay, groundLayer);
-            //transition
-            that.physics.add.overlap(gameObject.legsOverlay, transitionLayer);
 
+            if (!IS_MOBILE) {
+                //transition
+                that.physics.add.overlap(gameObject.legsOverlay, transitionLayer);
+                //Check collision on tiles that need more precise checking by comparing a pixel on legs against a 'collision map'
+                transitionLayer.setTileIndexCallback(
+                    transitionTileIndices,
+                    function (legs) {
 
-            //Check collision on tiles that need more precise checking by comparing a pixel on legs against a 'collision map'
-            transitionLayer.setTileIndexCallback(
-                transitionTileIndices,
-                function (legs) {
-                    if (last_collision_check < COLLISION_CHECK_RATE) return;
-                    let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
-                    try {
-                        let isInWater = colorAtPosn.red < 100;
-                        legs.setVisible(!isInWater);
-                        legs.duck.splashOverlay.setVisible(isInWater);
-                    } catch (e) {
-                        let debugstr = `container:(x:${legs.parentContainer.body.x}, y:${legs.parentContainer.body.y},
-                        legs:(x:${legs.body.x}, y:${legs.y})`;
-                        /*
-                                                errors at container:(x:18, y:533,legs:(x:-32, y:20)*/
-                        // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
-                        console.error(e);
-                        console.log(debugstr);
-                    }
-                },
-                null,
-                this
-            );
-
+                        if (last_collision_check < COLLISION_CHECK_RATE) return;
+                        try {
+                            let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
+                            let isInWater = colorAtPosn.r < 100;
+                            // console.log(`${context.displayName} : x${context.legsOverlay.body.x}, y${context.legsOverlay.body.y}, ${colorAtPosn.red}`);
+                            legs.setVisible(!isInWater);
+                            legs.duck.splashOverlay.setVisible(isInWater);
+                        } catch (e) {
+                            console.error(e);
+                        }
+                    },
+                    null,
+                    this
+                );
+            }
 
             //obstacle
             that.physics.add.collider(gameObject.parentContainer, obstacleLayer, function (container) {
@@ -900,7 +919,7 @@ class MyGame extends Phaser.Scene {
             duckContainer = this.physics.add.existing(duckContainer);
             // duckContainer.body.collideWorldBounds = true;
 
-            if (innerWidth > 900) {
+            if (innerWidth > MOBILE_MAX_WIDTH) {
                 duckContainer.body.collideWorldBounds = true;
             }
 
@@ -1106,7 +1125,9 @@ class MyGame extends Phaser.Scene {
         // return;
         // }
         const duck = gameObject.duck;
-        if (duck == null)
+        if (duck == null) return;
+        // if the text is already being displayed, do nothing
+        if (duck.namePopup != null || duck.msgPopup != null)
             return;
         // if the text is already being displayed, do nothing
         if ((duck.namePopup == null || duck.msgPopup == null)) {
@@ -1180,7 +1201,7 @@ class MyGame extends Phaser.Scene {
                 // console.log(duckGO.displayName + duckGO.parentContainer.y);
                 duckGO.parentContainer.setDepth(duckGO.parentContainer.y);
             } catch (e) {
-                console.error(e);
+                // console.error(e);
             }
         }
     }
@@ -1304,7 +1325,7 @@ class PondManager
             let panel;
 
 
-            if (sceneWidth < 900) {
+            if (IS_MOBILE) {
                 panel = pond.add.container();
             } else {
                 panel = pond.add.container(x - 50, y - 120);
@@ -1436,7 +1457,6 @@ const config = {
         mode: Phaser.Scale.ENVELOP,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    // transparent: true,
     physics: {
         default: "arcade",
         arcade: {

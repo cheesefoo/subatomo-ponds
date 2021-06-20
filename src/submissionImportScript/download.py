@@ -110,7 +110,7 @@ def merge_json():
     t = s["textures"]
     files= []
     for file in listdir(SPRITESHEET_DIR):
-        if file.startswith("all_ducks_sheet") and file.endswith("json"):
+        if file.startswith("all_ducks_sheet-") and file.endswith("json"):
             with open(join(SPRITESHEET_DIR, file), 'rb') as f:
                 j = load(f)
                 t += j["textures"]
@@ -137,6 +137,7 @@ def main():
     # download_images()
     # split_images()
     pack_spritesheet_free()
+    # merge_json()
     # pack_spritesheet()
 
 
