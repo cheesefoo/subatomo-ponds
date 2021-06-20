@@ -747,6 +747,7 @@ class MyGame extends Phaser.Scene {
             transitionLayer.setTileIndexCallback(
                 transitionTileIndices,
                 function (legs) {
+					return false;
                     if (last_collision_check < COLLISION_CHECK_RATE) return;
                     try {
                         let colorAtPosn = that.textures.getPixel(legs.body.x, legs.body.y, "ghostCollision");
