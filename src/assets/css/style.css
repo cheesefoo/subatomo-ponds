@@ -550,12 +550,32 @@ canvas
 
 .modal-window h1
 {
-    display:           inline-block;
-    flex:              0 1 auto;
-    padding:           10px 30px;
-    background-image:  url(../images/background-text.png);
+    display: inline-block;
+    flex: 0 1 auto;
+    padding: 10px 30px;
+    background-image:url(../images/background-text.png);
     background-repeat: no-repeat;
-    background-size:   100% 100%;
+    background-size: 100% 100%;
+    font-size: 40px;
+    width: 100%;
+    box-sizing: border-box;
+	color:#43638a;
+	font-family:'kei';
+	font-weight:100;
+}
+
+.modal-content .fab.fa-youtube{
+	color: #FF0000;
+    background: transparent;
+    border: 0;
+    font-size: 50px;
+}
+
+.modal-content .fab.fa-twitter{
+	color: #00acee;
+    background: transparent;
+    border: 0;
+    font-size: 50px;
 }
 
 .modal-window .modal-content
@@ -568,12 +588,19 @@ canvas
     text-align: left;
 }
 
-#about-subaru .about-content
+#about-subaru .about-content,#about-project .about-content
 {
-    display:     inline-block;
-    flex:        1 1 100%;
-    max-width:   50%;
+	display: inline-block;
+    flex: 1 1 100%;
+    max-width: 50%;
     margin-left: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#about-subaru .about-content p,#about-project .about-content p{
+	color:#51b1c4;
+	font-weight:600;
 }
 
 .load-pond.visible
@@ -687,13 +714,23 @@ img
     background-size:   100% 100%;
 }
 
-#about-subaru.modal-window > div
+#about-subaru.modal-window > div,#about-project.modal-window > div
 {
     background-image:    url(../images/subaru_ShigUi_profilev4fix-min.png),
                          url(../images/subamodal-min.png);
     background-repeat:   no-repeat;
     background-position: 70px center, center;
     background-size:     auto 85%, 100% 100%;
+}
+
+#about-project.modal-window > div{
+	background-image:url(../images/about.png),
+                         url(../images/subamodal-min.png);
+	background-size:auto 70%, 100% 100%;
+}
+
+#about-project.modal-window h1{
+	font-size:35px;
 }
 
 .modal-close
@@ -759,6 +796,19 @@ img
     transition: 0.25s;
     opacity:    1;
 
+}
+
+.oozora-socials img{
+	display:none;
+}
+
+#about-disclaimer{
+	position: absolute;
+    top: 60px;
+    left: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #51b1c4;
 }
 
 @media (max-width: 900px)
@@ -899,13 +949,84 @@ img
 
     .modal-window > div
     {
-        width: 80vw;
+        width: 90vw;
+		height:100vh;
+		max-height:initial;
+		padding:20px;
     }
+	
+	.modal-window h1{
+		font-size:24px;
+		margin-bottom:0;
+	}
+	.modal-close{
+		top:50px;
+		right:40px;
+	}
+	
+	#about-subaru.modal-window > div,#about-project.modal-window > div{
+		background-image:    url(../images/subaru_ShigUi_profilev4fix-min.png),
+                         url(../images/star-bg.jpg),url(../images/modal-mobile.png);
+		background-position: center 5vh, 26vw 63vh,center;
+		background-size: 35vh auto, 200px,100% 100%;
+		padding-top: 40vh;
+	}
+	
+	#about-project.modal-window > div{
+		background-image:    url(../images/about.png),
+                         url(../images/star-bg.jpg),url(../images/modal-mobile.png);
+	}
+	
+	#about-subaru .about-content,#about-project .about-content{
+		max-width:100%;
+		margin-left:0;
+		padding:25px;
+	}
+	
+	#about-project .about-content{
+		padding-top:0;
+	}
+	
+	#about-project .project-text{
+		height:42vh;
+		overflow:auto;
+	}
+	
+	.oozora-socials{
+		text-align:center;
+	}
+	
+	.oozora-socials a{
+		position:relative;
+		z-index:20;
+	}
+	
+	.oozora-socials img{
+		object-fit:contain;
+		position:absolute;
+		display:block;
+	}
+	.oozora-socials img:first-child{
+		left:0;
+		width:50vw;
+	}
+	
+	.oozora-socials img:last-child{
+		right:0;
+		width:30vw;
+		bottom:0;
+	}
+	
 
     .modal-window
     {
         background-color: rgba(0, 0, 0, 0.5);
     }
+	
+	#about-disclaimer{
+		top: 40px;
+		left: 35px;
+	}
 
     #loadingDuck
     {
