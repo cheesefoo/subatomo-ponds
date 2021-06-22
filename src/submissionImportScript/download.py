@@ -20,8 +20,12 @@ JSON_DESTINATION_DIR = join(ASSETS_DIR, 'submissions')
 RAW_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_raw')
 SPLIT_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_split')
 SPRITESHEET_DIR = join(ASSETS_DIR, 'submissions')
+TEMP_DIR = join(ASSETS_DIR, 'all_submissions_temp')
+
 SHEETS_ID = '1JhkgvlwjuVTeK9Jwaq9lAgsoCMNhreGbgXQBXZY8eak'
 DRIVE_ID = '1x4ErkPqyRwgPn87wGeclYwk1uRY0yy0x'
+SUBS_PER_POND = 20
+PONDS_PER_ATLAS = 5
 
 
 def download_json():
@@ -101,7 +105,7 @@ def pack_spritesheet_free():
     project = 'prod.ftpp'
     args = ['free-tex-packer-cli', '--project', project, '--output', SPRITESHEET_DIR]
     run(args, shell=True, check=True)
-    merge_json()
+    # merge_json()
 
 
 def merge_json():
@@ -118,8 +122,8 @@ def merge_json():
     output = dumps(s)
     with open(join(JSON_DESTINATION_DIR, "all_ducks_sheet.json"), 'w') as f:
         f.write(output)
-        for o in files:
-            remove(o.name)
+#         for o in files:
+#             remove(o.name)
 
 
 def pack_spritesheet():
@@ -133,9 +137,9 @@ def pack_spritesheet():
 
 
 def main():
-    # download_json()
-    # download_images()
-    # split_images()
+#     download_json()
+#     download_images()
+#     split_images()
     pack_spritesheet_free()
     # merge_json()
     # pack_spritesheet()

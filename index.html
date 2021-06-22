@@ -12,6 +12,7 @@
     <!--		  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet">
     <link href="/manifest.webmanifest" rel="manifest"/>
+
     <title class="main" text="main-1">Subatomo Ponds</title>
     <style>
 
@@ -38,7 +39,7 @@
 <body style="background-color: #97CAFD;">
 <div id="ghost" style="display:none;"></div>
 <div id="loadingDuckContainer"
-     style="position:absolute;top:0;display:flex;justify-content:center;width:100vw;height:100vh">
+     style="display:flex;justify-content:center;width:100vw;height:100vh">
     <svg id="etusofnMH4z1" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision"
          style="display: none;" text-rendering="geometricPrecision" viewBox="0 0 200 200"
          xmlns="http://www.w3.org/2000/svg"
@@ -1518,7 +1519,8 @@
             }
         });]]></script>
     </svg>
-    <svg id="loadingDuck" viewBox="0 0 1050 1050" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg id="loadingDuck" preserveAspectRatio="xMidYMid meet" viewBox="0 0 2100 2100"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
             <mask id="mask">
                 <use class="ic-3" href="#etusofnMH4z2" xlink:href="#etusofnMH4z2"></use>
@@ -1526,8 +1528,8 @@
         </defs>
         <use class="ic-1" href="#etusofnMH4z2" xlink:href="#etusofnMH4z2"></use>
 
-        <rect fill="#fff" height="1050" id="progressFill" mask="url(#mask)" width="1050" x="0" y="1050"/>
-        <text class="loading-text" text-anchor="middle" x="500" y="600"></text>
+        <rect fill="#fff" height="2100" id="progressFill" mask="url(#mask)" width="2100" x="0" y="2100"/>
+        <text class="loading-text" text-anchor="middle" x="1000" y="1200"></text>
     </svg>
 </div>
 <div id="hamburger">
@@ -1574,7 +1576,7 @@
                 <input name="option" type="checkbox">
                 <i class="toggle icon icon-arrow-down"></i>
                 <i class="toggle icon icon-arrow-up"></i>
-                <span class="placeholder main"><img src="/assets/LanguageButton.png" /></span>
+                <span class="placeholder main"><img src="assets/LanguageButton.png"/></span>
                 <label class="option">
                     <input class="lang-radio" lang="EN" name="option" type="radio">
                     <span class="title"><i class="icon flag-icon flag-icon-us selectLang"></i>EN</span>
@@ -1912,6 +1914,6 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 </script>
-<script src="main.bundle.js"></script>
+<!--<script src="main.bundle.js"></script>-->
 </body>
 </html>
