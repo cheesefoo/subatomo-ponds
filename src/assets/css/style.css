@@ -1,6 +1,7 @@
 *
 {
     font-family: meyro;
+
 }
 
 body
@@ -1065,12 +1066,54 @@ img
     }
 	
 	.lang-container{
-		text-align:right;
-		right:10px;
-		top:-10px;
-	}
-	.lang-container .select label.option{
-		text-align:left;
-	}
-	
+        text-align: right;
+        right:      10px;
+        top:        -10px;
+    }
+
+    .lang-container .select label.option
+    {
+        text-align: left;
+    }
+
+}
+
+use.ic-1
+{
+    display: inline;
+    fill:    #000;
+    stroke:  #000;
+}
+
+
+use.ic-3
+{
+    display: inline;
+    stroke:  #FFF;
+    fill:    #FFF;
+}
+
+#etusofnMH4z20, #etusofnMH4z21, #etusofnMH4z39, #etusofnMH4z40, #etusofnMH4z61, #etusofnMH4z62, #etusofnMH4z83, #etusofnMH4z84, #etusofnMH4z104, #etusofnMH4z105, #etusofnMH4z123, #etusofnMH4z124, #etusofnMH4z142, #etusofnMH4z143, #etusofnMH4z161, #etusofnMH4z162
+{
+    fill: none;
+}
+
+#loadingDuck
+{
+    overflow: hidden;
+    width:    100%;
+    height:   100%;
+}
+
+.loading-text
+{
+    font-family: meyro;
+    font-size:   40px;
+    fill:        red;
+}
+
+svg path
+{
+    fill:   inherit;
+    stroke: inherit;
 }

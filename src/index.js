@@ -459,13 +459,17 @@ class MyGame extends Phaser.Scene {
             // gsap.set("#demo", {xPercent:-50, yPercent:-50});
             // tl.to(".masker", {duration: 1.5, scaleX:1});
             // tl.to(".masker", {duration: 1.5, scaleX:0, transformOrigin: "right center"});
+            gsap.set("#progressFill", {attr: {y: innerHeight}});
+
             this.load.on("progress", function (value) {
-                percentText.setText(parseInt(value * 100) + "%");
+                $(".loading-text").text(parseInt(value * 100) + "%");
+                // percentText.setText(parseInt(value * 100) + "%");
                 // shape.y -= (sceneHeight * value);
-                gsap.set("#progressFill", {y: sceneHeight - (sceneHeight * value)});
+                let newY = 1050 - (1050 * value);
+                console.log(newY);
+                gsap.set("#progressFill", {attr: {y: newY}});
 
             });
-
             const that = this;
 
 
@@ -489,6 +493,7 @@ class MyGame extends Phaser.Scene {
                 percentText.destroy();
                 // image.destroy();
                 // shape.destroy();
+                $("#loadingDuckContainer").hide();
                 $("canvas").hide();
                 startHomepageAnimation();
                 window.game.input.enabled = false;
@@ -799,7 +804,7 @@ class MyGame extends Phaser.Scene {
                             legs.setVisible(!isInWater);
                             legs.duck.splashOverlay.setVisible(isInWater);
                         } catch (e) {
-                            console.error(e);
+                            console.log(e);
                         }
                     },
                     null,
