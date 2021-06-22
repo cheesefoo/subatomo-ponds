@@ -878,6 +878,8 @@ img
         max-width:  initial;
         transition: 0.5s;
         opacity:    0;
+		height:100vh;
+		width:calc(100vh * 0.37)
     }
 
     .logo-panel.active
