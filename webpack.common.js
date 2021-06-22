@@ -58,6 +58,7 @@ module.exports = {
                     to: path.resolve(__dirname, "dist"),
                 },
                 {from: path.resolve(__dirname, "temp.html"), to: path.resolve(__dirname, "dist/comingsoon/index.html")},
+                {from: path.resolve(__dirname, "svgtest.html"), to: path.resolve(__dirname, "dist")},
                 {from: path.resolve(__dirname, "temp.css"), to: path.resolve(__dirname, "dist/comingsoon")},
                 {from: "src/assets/images/intro/sky.png", to: "comingsoon/Sky.png"},
                 {from: "src/assets/images/LogoFullSize.png", to: "comingsoon/LogoFullSize.png"},

@@ -11,7 +11,7 @@ require("./assets/css/modal.css");
 require("./assets/css/dropdown-img.css");
 require("./assets/css/style.css");
 require("./assets/css/credits.css");
-require("./assets/images/intro/loading.gif");
+let loadingduck = require("./assets/images/ui/loadingduck.svg");
 require("./assets/images/subahug3.png");
 require("./assets/images/thewholesky.jpg");
 require("./assets/images/subatomo army.png");
@@ -397,70 +397,77 @@ class MyGame extends Phaser.Scene {
         super({
             key: "pond",
             active: true,
+            // pack: {
+            //     files: [
+            //         /* splash screen and progress bar files could go here */
+            //         {
+            //             key: "loadingduck",
+            //             type: "svg",
+            //             // url: "./assets/images/ui/loadingduck.svg"
+            //             url: "assets/loadingduck.svg",
+            //             svgConfig: {
+            //                 width: sceneWidth,
+            //                 height: sceneHeight
+            //             }
+            //         }
+            //     ],
+            // }
 
         });
     }
+
 
     preload() {
         // console.log("mygame preload");
 
         function loading() {
-            // console.log("loading call");
-            const progressWidth = 320;
-
-            const progressBar = this.add.graphics();
-            const progressBox = this.add.graphics();
-            progressBox.fillStyle(0x222222, 0.8);
-            progressBox.fillRect(
-                sceneWidth * 0.5 - progressWidth * 0.5 - 10,
-                sceneHeight * 0.9,
-                progressWidth,
-                50
-            );
-
+            // // console.log("loading call");
+            // // this.load.svg("loadingduck", "assets/loadingduck.svg");
+            // const image = this.add.image(0, 0, "loadingduck");
+            // image.setOrigin(0);
+            //
+            // const shape = this.make.graphics();
+            //
+            //
+            // shape.fillStyle(0xffffff);
+            //
+            // //  You have to begin a path for a Geometry mask to work
+            // shape.beginPath();
+            //
+            // shape.fillRect(0, sceneHeight, sceneWidth, sceneHeight);
+            //
+            // const mask = shape.createGeometryMask();
+            //
+            // // image.setMask(mask);
+            //
             const width = this.cameras.main.width;
-            const height = this.cameras.main.height;
-            const loadingText = this.make.text({
-                x: width / 2,
-                y: sceneHeight * 0.9 - 55,
-                text: "Loading...",
-                style: {
-                    font: "20px 'Nodo Sans JP'",
-                    fill: "#FFF",
-                },
-            });
-            loadingText.setOrigin(0.5, 0.5);
+            // const height = this.cameras.main.height;
+
 
             const percentText = this.make.text({
                 x: width / 2,
-                y: sceneHeight * 0.9 - 30,
+                y: sceneHeight / 2,
                 text: "0%",
                 style: {
-                    font: "18px 'Nodo Sans JP'",
-                    fill: "#FFF",
+                    font: "18px 'meyro'",
+                    fill: "#FD705E",
                 },
             });
             percentText.setOrigin(0.5, 0.5);
-
+            // var tl = gsap.timeline({paused:true});
+            // gsap.set(".masker", {scaleX:0, transformOrgin: "left center"});
+            // gsap.set("#demo", {xPercent:-50, yPercent:-50});
+            // tl.to(".masker", {duration: 1.5, scaleX:1});
+            // tl.to(".masker", {duration: 1.5, scaleX:0, transformOrigin: "right center"});
             this.load.on("progress", function (value) {
                 percentText.setText(parseInt(value * 100) + "%");
-                progressBar.clear();
-                progressBar.fillStyle(0xffffff, 1);
-                progressBar.fillRect(
-                    sceneWidth * 0.5 - progressWidth * 0.5,
-                    sceneHeight * 0.9 + 10,
-                    (progressWidth - 20) * value,
-                    30
-                );
+                // shape.y -= (sceneHeight * value);
+                gsap.set("#progressFill", {y: sceneHeight - (sceneHeight * value)});
+
             });
 
             const that = this;
 
-            // this.load.on("fileprogress", function (file, percentComplete) {
-            //     //assetText.setText('Loading asset: ' + file.key);
-            //     if (percentComplete === 1)
-            //         console.log(file.key);
-            // });
 
             $body.css("opacity", "1");
 
@@ -479,16 +486,55 @@ class MyGame extends Phaser.Scene {
                 // console.log('on preload complete settimeout')
                 // that.generatePondUI();
                 console.log("preload finish");
-                progressBar.destroy();
-                progressBox.destroy();
-                loadingText.destroy();
                 percentText.destroy();
-                $("#loadingDuck").hide();
+                // image.destroy();
+                // shape.destroy();
                 $("canvas").hide();
                 startHomepageAnimation();
                 window.game.input.enabled = false;
                 //}, 1500);
             });
+
+
+            //crap to test laoding
+            for (let x = 0; x < 5000; x++) {
+                this.load.image("loadingduck");
+            }
+
+
+            //load intro files
+            //preload the intro idle duck so it doesn't flicker
+            this.load.image("introduckidle", "assets/idle.png");
+            this.load.image("introduckappear", "assets/appear.png");
+            this.load.image("intromid", "assets/mid.png");
+            this.load.image("introfront", "assets/front.png");
+            this.load.image("introsky", "assets/sky.png");
+
+            this.load.image("introtitle", "assets/LogoAdjustedSize.png");
+
+
+            //Load sprite atlas
+            this.load.multiatlas("allDucks", ducksj, "assets");
+            this.load.multiatlas("legs", legsj, "assets");
+            this.load.multiatlas("splash", splashj, "assets");
+            //Load audio files
+
+            let sounds = soundsj.sounds;
+            let soundsLen = sounds.length;
+            for (let i = 0; i < soundsLen; i++) {
+                this.load.audio("suba_" + (i + 1), "assets/" + sounds[i]);
+            }
+            // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
+
+            if (IS_MOBILE) {
+                this.load.image("tiles", "assets/Subapond_vibrant_1024x1024.jpg");
+                this.load.tilemapTiledJSON("map", pond_1024);
+
+            } else {
+                this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
+                this.load.image("col", "assets/pond_color_invert.png");
+                this.load.tilemapTiledJSON("map", pondTileJson);
+            }
         }
 
         const t0 = performance.now();
@@ -496,41 +542,6 @@ class MyGame extends Phaser.Scene {
         const t1 = performance.now();
         console.log((t1 - t0) + " milliseconds.");
 
-
-        //load intro files
-        //preload the intro idle duck so it doesn't flicker
-        this.load.image("introduckidle", "assets/idle.png");
-        this.load.image("introduckappear", "assets/appear.png");
-        this.load.image("intromid", "assets/mid.png");
-        this.load.image("introfront", "assets/front.png");
-        this.load.image("introsky", "assets/sky.png");
-
-        this.load.image("introtitle", "assets/LogoAdjustedSize.png");
-
-
-        //Load sprite atlas
-        this.load.multiatlas("allDucks", ducksj, "assets");
-        this.load.multiatlas("legs", legsj, "assets");
-        this.load.multiatlas("splash", splashj, "assets");
-        //Load audio files
-
-        let sounds = soundsj.sounds;
-        let soundsLen = sounds.length;
-        for (let i = 0; i < soundsLen; i++) {
-            this.load.audio("suba_" + (i + 1), "assets/" + sounds[i]);
-        }
-        // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
-
-        if (IS_MOBILE) {
-            this.load.image("tiles", "assets/Subapond_vibrant_1024x1024.jpg");
-            this.load.tilemapTiledJSON("map", pond_1024);
-
-        } else {
-            this.load.image("tiles", "assets/Subapond_vibrantHD-min.jpg");
-            this.load.image("col", "assets/pond_color_invert.png");
-            this.load.tilemapTiledJSON("map", pondTileJson);
-
-        }
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
         this.listOfDucks = [];
 
@@ -1466,9 +1477,11 @@ const config = {
             tileBias: 120,
         },
     },
+    backgroundColor: "#97CAFD",
     plugins: {
         global: [NineSlicePlugin.DefaultCfg],
     },
+
     scene: [PondManager, MyGame],
 };
 

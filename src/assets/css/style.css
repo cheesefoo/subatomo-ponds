@@ -52,6 +52,34 @@ canvas
     object-fit: contain;
 }
 
+/*#loadingDuck-wrapper{
+    height:100vh;
+    overflow:hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content: center;
+}
+#loadingDuck-wrapper >:only-child{
+    margin: auto
+}*/
+/*
+
+#loadingDuck
+{
+    position:   fixed;
+    z-index:    10000;
+    top:        0;
+    right:      0;
+    left:       0;
+    max-width:  20vw;
+    height:     100vh;
+    margin:     auto;
+    object-fit: contain;
+}
+*/
+
 #home
 {
     position:      relative;
@@ -530,19 +558,6 @@ canvas
     width:    100%;
 }
 
-#loadingDuck
-{
-    position:   fixed;
-    z-index:    10000;
-    top:        0;
-    right:      0;
-    left:       0;
-    max-width:  20vw;
-    height:     100vh;
-    margin:     auto;
-    object-fit: contain;
-}
-
 .load-pond
 {
     display: none;
@@ -550,18 +565,18 @@ canvas
 
 .modal-window h1
 {
-    display: inline-block;
-    flex: 0 1 auto;
-    padding: 10px 30px;
-    background-image:url(../images/background-text.png);
+    display:           inline-block;
+    flex:              0 1 auto;
+    padding:           10px 30px;
+    background-image:  url(../images/background-text.png);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    font-size: 40px;
-    width: 100%;
-    box-sizing: border-box;
-	color:#43638a;
-	font-family:'kei';
-	font-weight:100;
+    background-size:   100% 100%;
+    font-size:         40px;
+    width:             100%;
+    box-sizing:        border-box;
+	color:             #43638a;
+	font-family:       "kei";
+	font-weight:       100;
 }
 
 .modal-content .fab.fa-youtube{
