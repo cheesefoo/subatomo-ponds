@@ -85,9 +85,9 @@ ul.social-icons
     background-color: #3D5B99;
 }
 
-.fa-twitter
+.fa-twitter,.fa-smile
 {
-    padding:            14px 12px;
+    padding:            3px;
     -moz-transition:    .5s;
     -ms-transition:     .5s;
     -o-transition:      .5s;
@@ -144,7 +144,12 @@ ul.social-icons
 #credits a
 {
     text-decoration: none;
-    color:           black;
+    color:           #51b1c4;
+	margin-right:20px;
+}
+
+#credits .flag-icon{
+	border:1px solid #d4d4d4;
 }
 
 .credits-category a
@@ -153,22 +158,48 @@ ul.social-icons
 
 .credits-tl
 {
-    display:         flex;
-    flex-direction:  column;
-    flex-wrap:       nowrap;
-    justify-content: flex-start
+       display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .credits-lang
 {
-    display:         flex;
-    flex:            auto;
-    flex-direction:  row;
-    justify-content: flex-start
+        display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 1 30%;
+    margin-bottom: 0;
+    margin-top: 10px;
 
 }
 
 .credits-lang li
 {
     flex: auto;
+}
+
+#credits-first-column{
+	flex: 1 1 5%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#credits-first-column .credits-category{
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+	
+}
+
+#credits-title{
+	flex:1 1 100%;
+	height:0;
+	margin:0;
+}
+#credits-title h1{
+	margin:0;
 }
