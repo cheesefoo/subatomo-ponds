@@ -792,7 +792,7 @@ class MyGame extends Phaser.Scene {
                             legs.setVisible(!isInWater);
                             legs.duck.splashOverlay.setVisible(isInWater);
                         } catch (e) {
-                            console.log(e);
+                            // console.log(e);
                         }
                     },
                     null,
@@ -969,7 +969,7 @@ class MyGame extends Phaser.Scene {
             splashOverlay.y = 40;
 
             let duckContainer = this.add.container(
-                getRandomIntInclusive(this.boundsLeft, this.boundsRight),
+                getRandomIntInclusive(this.boundsRight * .25, this.boundsRight * .6),
                 getRandomIntInclusive(newHeight * 0.3, newHeight * 0.7),
             );
 
