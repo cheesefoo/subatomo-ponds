@@ -26,8 +26,8 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
-let templatej = require("./assets/submissions/template.json");
-require("./assets/submissions/template.png");
+// let templatej = require("./assets/submissions/TEMPLATE.json");
+require("./assets/submissions/TEMPLATE.png");
 
 let ducksj, submissions;
 
@@ -37,8 +37,8 @@ function requireAll(r) {
     r.keys().forEach(r);
 }
 
-let allducksjson = importAll(require.context("./assets/submissions", true, /pondbatch.*\.json"$/));
-console.log(allducksjson);
+// let allducksjson = importAll(require.context("./assets/submissions", true, /pondbatch.*\.json"$/));
+
 
 submissions = require("./assets/submissions/submissions.json");
 importAll(require.context("./assets/submissions", true, /pondbatch.*\.(png|jpe?g|svg)$/));
@@ -152,6 +152,11 @@ const DUCK_STATES = {
     START_SWIM_QUACK: 10,
     SWIM_QUACK: 11,
 };
+const animationNames = [
+    ["idle", 0, 0],
+    ["walk", 1, 2],
+    ["quack", 3, 3],
+];
 
 let $body = $("body");
 
@@ -479,8 +484,8 @@ class Preloader extends Phaser.Scene {
         //Load sprite atlas
 
 
-        // this.load.atlas("template",templatej,"assets")
-        this.load.multiatlas("pondbatch-1", "pondbatch-1.json", "assets");
+        this.load.multiatlas("TEMPLATE", "assets/TEMPLATE.json", "assets");
+        this.load.multiatlas("pondbatch-1", "assets/pondbatch-1.json", "assets");
         this.load.multiatlas("legs", legsj, "assets");
         this.load.multiatlas("splash", splashj, "assets");
         //Load audio files
@@ -540,8 +545,7 @@ class MyGame extends Phaser.Scene {
             function () {
                 console.log("Populating ducks for pond #" + currentPond);
                 let key = "pondbatch-" + Math.ceil(currentPond / 5);
-                this.load.multiatlas(key, "./assets/" + key + ".json", "assets");
-                this.loader.start();
+
                 this.populateDucks(currentPond);
                 this.applyTileCollisionCallbacks();
                 last_collision_check = COLLISION_CHECK_RATE - 1;
@@ -563,6 +567,7 @@ class MyGame extends Phaser.Scene {
         // this.populateDucks(currentPond);
         this.makeWalkingAnimationFrames();
         this.makeSplashAnimationFrames();
+        this.makeDuckAnimationFrames("TEMPLATE", "TEMPLATE");
         this.generatePondUI();
         // this.applyCollisions();
         this.input.on("gameobjectup", this.onObjectClicked);
@@ -870,8 +875,38 @@ class MyGame extends Phaser.Scene {
 
     }
 
+    makeDuckAnimationFrames(atlaskey, filename) {
+        animationNames.forEach((animationName) => {
+            let animName = animationName[0];
+            let startFrame = animationName[1];
+            let endFrame = animationName[2];
+            let frameNames = this.anims.generateFrameNames(atlaskey, {
+                start: startFrame,
+                end: endFrame,
+                prefix: filename + "-",
+                suffix: ".png",
+
+            });
+
+            this.anims.create({
+                key: filename + "-" + animName,
+                frames: frameNames,
+                frameRate: FRAME_RATE,
+                repeat: -1,
+            });
+
+            this.anims.once(Phaser.Animations.Events.ADD_ANIMATION, () => {
+                // //insert 1 more frame of idle inbetween the walk frames
+                let walkAnim = this.anims.get(filename + "-" + "walk");
+                walkAnim.addFrameAt(1, this.anims.get(filename + "-" + "idle").getFrames());
+            });
+        });
+    };
+
     //Fill pond number with their ducks
     populateDucks(pond = 1) {
+
+        let that = this;
         console.log(`Populating ducks in pond #${pond}...`);
         //Get submission reference sheet from google sheet and filter by pond #
         const submissionsArray = submissions["submissions"];
@@ -883,10 +918,31 @@ class MyGame extends Phaser.Scene {
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
 
+            let duckGameObject;
+            let atlaskey = (ducks[i].image == "TEMPLATE") ? "TEMPLATE" : "pondbatch-" + Math.ceil(pond / 5);
+            //Generate frame names
 
-            let atlaskey = (ducks[i].image == "TEMPLATE") ? "template" : "pondbatch-" + Math.ceil(pond / 5);
-            const duckGameObject = this.physics.add
-                .sprite(0, 0, atlaskey, ducks[i].image + "-0.png");
+            if (!this.textures.exists(ducks[i].image)) {
+                duckGameObject = this.physics.add
+                    .sprite(0, 0, "TEMPLATE", "TEMPLATE-0.png");
+                duckGameObject.currentDuck = "TEMPLATE";
+                //to load the texture
+                if (!this.textures.exists(atlaskey))
+                    this.load.multiatlas(atlaskey, "assets/" + atlaskey + ".json", "assets");
+
+                this.load.once(Phaser.Loader.Events.COMPLETE, () => {
+                    duckGameObject.setTexture(atlaskey, ducks[i].image + "-0.png");
+                    duckGameObject.currentDuck = ducks[i].image;
+                    that.makeDuckAnimationFrames(atlaskey, ducks[i].image);
+                });
+                this.load.start();
+            } else {
+                duckGameObject = this.physics.add.sprite(0, 0, atlaskey, ducks[i].image + "-0.png");
+                duckGameObject.currentDuck = ducks[i].image;
+                if (ducks[i] != "TEMPLATE")
+                    this.makeDuckAnimationFrames(atlaskey, ducks[i].image);
+            }
+
             // .setCollideWorldBounds(true)
             // .setBounce(1, 1)
             // .setDebugBodyColor(0x00FF)
@@ -954,40 +1010,10 @@ class MyGame extends Phaser.Scene {
 
             //Duck object = {strName,strImageName,numPondNumber}, matches submission json
 
-            const currentDuck = ducks[i].image;
-
             //Create animations
             // const animationNames = [['idle', 0, 0], ['walk', 1, 2], ['quack', 3, 3], ['swim-idle', 4, 4], ['swim', 5, 6], ['swim-quack', 7, 7]];
-            const animationNames = [
-                ["idle", 0, 0],
-                ["walk", 1, 2],
-                ["quack", 3, 3],
-            ]; //, ['swim-idle', 0, 0], ['swim', 1, 2], ['swim-quack', 3, 3]];
+            //, ['swim-idle', 0, 0], ['swim', 1, 2], ['swim-quack', 3, 3]];
 
-
-            //Generate frame names
-            animationNames.forEach((animationName) => {
-                let animName = animationName[0];
-                let startFrame = animationName[1];
-                let endFrame = animationName[2];
-                let frameNames = this.anims.generateFrameNames(atlaskey, {
-                    start: startFrame,
-                    end: endFrame,
-                    prefix: currentDuck + "-",
-                    suffix: ".png",
-                });
-
-                this.anims.create({
-                    key: currentDuck + "-" + animName,
-                    frames: frameNames,
-                    frameRate: FRAME_RATE,
-                    repeat: -1,
-                });
-            });
-
-            // //insert 1 more frame of idle inbetween the walk frames
-            let walkAnim = this.anims.get(currentDuck + "-" + "walk");
-            walkAnim.addFrameAt(1, this.anims.get(currentDuck + "-" + "idle").getFrames());
 
             let clickContainer = this.add.rectangle(0, 0, SPRITE_WIDTH, SPRITE_HEIGHT, 0x6666ff, 0);
             clickContainer.duck = duckGameObject;
@@ -1025,13 +1051,12 @@ class MyGame extends Phaser.Scene {
                 loop: false,
             });
 
-            let that = this;
 
             //Set OnUpdate to use animations
             duckGameObject.updateState = function (context, delta) {
                 switch (context.animState) {
                 case DUCK_STATES.START_IDLE:
-                    context.play(currentDuck + "-idle");
+                    context.play(context.currentDuck + "-idle");
                     // if (!context.isSwimming)
                     context.legsOverlay.play("idle");
                     context.splashOverlay.play("splash-idle");
@@ -1072,7 +1097,7 @@ class MyGame extends Phaser.Scene {
                     //     ease: "Linear",
                     // });
 
-                    context.play(currentDuck + "-walk");
+                    context.play(context.currentDuck + "-walk");
                     context.legsOverlay.play("walk");
                     context.splashOverlay.play("splash-walk");
                     context.animState = DUCK_STATES.WALKING;
@@ -1087,7 +1112,7 @@ class MyGame extends Phaser.Scene {
                     break;
                 case DUCK_STATES.START_QUACK:
                     context.parentContainer.body.stop();
-                    context.play(currentDuck + "-quack");
+                    context.play(context.currentDuck + "-quack");
                     // if (!context.isSwimming)
                     context.legsOverlay.play("quack");
                     context.splashOverlay.play("splash-quack");
@@ -1432,7 +1457,7 @@ class PondManager
         //todo: if performance becomes issue look into pooling
         pond.listOfDucks.forEach(function (duck) {
             duck.parentContainer.destroy();
-            pond.textures.remove(duck.texture.key);
+
         });
         pond.listOfDucks = [];
         // emit event to reload the ducks

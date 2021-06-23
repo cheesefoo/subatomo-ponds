@@ -1,7 +1,7 @@
 {
   "textures": [
     {
-      "image": "pondbatch-1",
+      "image": "pondbatch-1.png",
       "format": "RGBA8888",
       "size": {
         "w": 2048,
@@ -2553,7 +2553,7 @@
       ]
     },
     {
-      "image": "pondbatch-2",
+      "image": "pondbatch-2.png",
       "format": "RGBA8888",
       "size": {
         "w": 2044,
@@ -6029,7 +6029,7 @@
       ]
     },
     {
-      "image": "pondbatch-3",
+      "image": "pondbatch-3.png",
       "format": "RGBA8888",
       "size": {
         "w": 1943,

@@ -114,8 +114,10 @@ def move_images():
             SUBMISSIONS = load(f)
 
     total_num_ponds = math.ceil(len(SUBMISSIONS["submissions"])/SUBS_PER_POND)
+    total_iterations = math.ceil(total_num_ponds/PONDS_PER_ATLAS)
     SUBMISSIONS = SUBMISSIONS["submissions"]
-    for i in range(6, total_num_ponds, PONDS_PER_ATLAS):
+    print("gonna put "+total_num_ponds + " ponds into "+total_iterations + " atlases")
+    for i in range(1, total_num_ponds, PONDS_PER_ATLAS):
         for i2 in range(i, i+PONDS_PER_ATLAS):
             subs_by_pond = [x for x in SUBMISSIONS if x['pond'] == str(i2)]
             move_some(subs_by_pond)
@@ -154,7 +156,7 @@ def rename_atlas(pondnum):
             print( jsonfile)
             with open(jsonfile, 'rb') as f:
                 j = load(f)
-                j["textures"][0]["image"] = newname
+                j["textures"][0]["image"] = newname + ".png"
                 newjson = dumps(j)
             with open(jsonfile, 'w') as f:
                 f.write(newjson)

@@ -49,9 +49,7 @@ module.exports = {
             }
         ],
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: "index.html"
-    }),
+    plugins: [
 
         new CopyWebpackPlugin({
             patterns: [
@@ -61,6 +59,14 @@ module.exports = {
                 // },
                 {from: path.resolve(__dirname, "temp.html"), to: path.resolve(__dirname, "dist/comingsoon/index.html")},
                 {from: path.resolve(__dirname, "temp.css"), to: path.resolve(__dirname, "dist/comingsoon")},
+                // {
+                //     from: path.resolve(__dirname, "src/assets/submissions/*.json"),
+                //     to: path.resolve(__dirname, "dist/assets")
+                // },
+                {
+                    from: "src/assets/submissions/template.json",
+                    to: path.resolve(__dirname, "dist/assets/template.json")
+                },
                 {from: "src/assets/images/intro/sky.png", to: "comingsoon/Sky.png"},
                 {from: "src/assets/images/LogoFullSize.png", to: "comingsoon/LogoFullSize.png"},
                 {from: "src/assets/images/shitty_button.png", to: "comingsoon/enter.png"},
@@ -79,7 +85,9 @@ module.exports = {
                 // {from: "src/assets/favicon", to: "docs"},
             ],
         }),
-
+        new HtmlWebpackPlugin({
+            template: "index.html"
+        }),
         new webpack.DefinePlugin({
             CANVAS_RENDERER: JSON.stringify(true),
             WEBGL_RENDERER: JSON.stringify(true),

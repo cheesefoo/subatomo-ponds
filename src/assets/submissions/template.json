@@ -1,7 +1,7 @@
 {
   "textures": [
     {
-      "image": "template",
+      "image": "TEMPLATE.png",
       "format": "RGBA8888",
       "size": {
         "w": 664,
