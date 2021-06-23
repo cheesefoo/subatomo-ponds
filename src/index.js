@@ -26,18 +26,22 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
-// let templatej = require("./assets/submissions/TEMPLATE.json");
+let templatej = require("./assets/submissions/TEMPLATE.json");
 require("./assets/submissions/TEMPLATE.png");
 
 let ducksj, submissions;
 
 // let allducksjson = require.context("./assets/submissions",true,/pondbatch.*\.json"$/);
 
+
+const cache = {};
+
 function requireAll(r) {
-    r.keys().forEach(r);
+    r.keys().forEach((key) => (cache[key] = r(key)));
 }
 
-// let allducksjson = importAll(require.context("./assets/submissions", true, /pondbatch.*\.json"$/));
+
+requireAll(require.context("./assets/submissions", true, /pondbatch.*\.(json)"$/));
 
 
 submissions = require("./assets/submissions/submissions.json");
@@ -432,7 +436,7 @@ class Preloader extends Phaser.Scene {
         this.load.on("progress", function (value) {
             $(".loading-text").text(parseInt(value * 100) + "%");
 
-            let newY = 2100 - (2100 * value);
+            let newY = 1050 - (1050 * value);
 
             gsap.set("#progressFill", {attr: {y: newY}});
 
@@ -484,7 +488,9 @@ class Preloader extends Phaser.Scene {
         //Load sprite atlas
 
 
-        this.load.multiatlas("TEMPLATE", "assets/TEMPLATE.json", "assets");
+        this.load.multiatlas("TEMPLATE", templatej, "assets");
+
+        // this.load.multiatlas("TEMPLATE", "assets/TEMPLATE.json", "assets");
         this.load.multiatlas("pondbatch-1", "assets/pondbatch-1.json", "assets");
         this.load.multiatlas("legs", legsj, "assets");
         this.load.multiatlas("splash", splashj, "assets");
