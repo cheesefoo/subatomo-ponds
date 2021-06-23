@@ -1,0 +1,103 @@
+{
+  "textures": [
+    {
+      "image": "template",
+      "format": "RGBA8888",
+      "size": {
+        "w": 664,
+        "h": 119
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "TEMPLATE-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 81,
+            "w": 172,
+            "h": 119
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 172,
+            "h": 119
+          }
+        },
+        {
+          "filename": "TEMPLATE-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 81,
+            "w": 170,
+            "h": 119
+          },
+          "frame": {
+            "x": 172,
+            "y": 0,
+            "w": 170,
+            "h": 119
+          }
+        },
+        {
+          "filename": "TEMPLATE-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 81,
+            "w": 163,
+            "h": 119
+          },
+          "frame": {
+            "x": 342,
+            "y": 0,
+            "w": 163,
+            "h": 119
+          }
+        },
+        {
+          "filename": "TEMPLATE-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 81,
+            "w": 159,
+            "h": 119
+          },
+          "frame": {
+            "x": 505,
+            "y": 0,
+            "w": 159,
+            "h": 119
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7"
+  }
+}

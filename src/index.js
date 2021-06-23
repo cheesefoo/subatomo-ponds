@@ -26,16 +26,27 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
+let templatej = require("./assets/submissions/template.json");
+require("./assets/submissions/template.png");
+
 let ducksj, submissions;
-// let allducksjson = importAll(require.context("./assets/submissions",true,/all_ducks_sheet.*\.json"$/));
-// ducksj = require("./assets/submissions/all_ducks_sheet.json");
-// submissions = require("./assets/submissions/submissions.json");
-// importAll(require.context("./assets/submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+
+// let allducksjson = require.context("./assets/submissions",true,/pondbatch.*\.json"$/);
+
+function requireAll(r) {
+    r.keys().forEach(r);
+}
+
+let allducksjson = importAll(require.context("./assets/submissions", true, /pondbatch.*\.json"$/));
+console.log(allducksjson);
+
+submissions = require("./assets/submissions/submissions.json");
+importAll(require.context("./assets/submissions", true, /pondbatch.*\.(png|jpe?g|svg)$/));
 
 //test data
-ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
-submissions = require("./assets/test_submissions/submissions.json");
-importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
+// ducksj = require("./assets/test_submissions/all_ducks_sheet.json");
+// submissions = require("./assets/test_submissions/submissions.json");
+// importAll(require.context("./assets/test_submissions", true, /all_ducks_sheet.*\.(png|jpe?g|svg)$/));
 
 
 const legsj = require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.json");
@@ -466,10 +477,10 @@ class Preloader extends Phaser.Scene {
 
 
         //Load sprite atlas
-        for (let i = 0; i < allducksjson.length; i++) {
-            this.load.atlas("allDucks-" + i, allducksjson[i], "assets");
-        }
-        // this.load.multiatlas("allDucks", ducksj, "assets");
+
+
+        // this.load.atlas("template",templatej,"assets")
+        this.load.multiatlas("pondbatch-1", "pondbatch-1.json", "assets");
         this.load.multiatlas("legs", legsj, "assets");
         this.load.multiatlas("splash", splashj, "assets");
         //Load audio files
@@ -528,6 +539,9 @@ class MyGame extends Phaser.Scene {
             "reloadPond",
             function () {
                 console.log("Populating ducks for pond #" + currentPond);
+                let key = "pondbatch-" + Math.ceil(currentPond / 5);
+                this.load.multiatlas(key, "./assets/" + key + ".json", "assets");
+                this.loader.start();
                 this.populateDucks(currentPond);
                 this.applyTileCollisionCallbacks();
                 last_collision_check = COLLISION_CHECK_RATE - 1;
@@ -869,8 +883,10 @@ class MyGame extends Phaser.Scene {
         //Create sprite for ducks and add their animations
         for (let i = 0; i < ducks.length; i++) {
 
+
+            let atlaskey = (ducks[i].image == "TEMPLATE") ? "template" : "pondbatch-" + Math.ceil(pond / 5);
             const duckGameObject = this.physics.add
-                .sprite(0, 0, "allDucks", ducks[i].image + "-0.png");
+                .sprite(0, 0, atlaskey, ducks[i].image + "-0.png");
             // .setCollideWorldBounds(true)
             // .setBounce(1, 1)
             // .setDebugBodyColor(0x00FF)
@@ -954,7 +970,7 @@ class MyGame extends Phaser.Scene {
                 let animName = animationName[0];
                 let startFrame = animationName[1];
                 let endFrame = animationName[2];
-                let frameNames = this.anims.generateFrameNames("allDucks", {
+                let frameNames = this.anims.generateFrameNames(atlaskey, {
                     start: startFrame,
                     end: endFrame,
                     prefix: currentDuck + "-",

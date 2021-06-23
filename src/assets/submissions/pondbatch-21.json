@@ -1,0 +1,7181 @@
+{
+  "textures": [
+    {
+      "image": "pondbatch-21",
+      "format": "RGBA8888",
+      "size": {
+        "w": 2048,
+        "h": 2046
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "MonsolEnsagia--37423-0.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 200,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 200,
+            "h": 200
+          }
+        },
+        {
+          "filename": "MonsolEnsagia--37423-1.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 200,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 200,
+            "w": 200,
+            "h": 200
+          }
+        },
+        {
+          "filename": "MonsolEnsagia--37423-2.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 200,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 400,
+            "w": 200,
+            "h": 200
+          }
+        },
+        {
+          "filename": "MonsolEnsagia--37423-3.png",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 200,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 600,
+            "w": 200,
+            "h": 200
+          }
+        },
+        {
+          "filename": "ArvinX--50070-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 0,
+            "w": 193,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 800,
+            "w": 193,
+            "h": 200
+          }
+        },
+        {
+          "filename": "ArvinX--50070-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 0,
+            "w": 193,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 1000,
+            "w": 193,
+            "h": 200
+          }
+        },
+        {
+          "filename": "ArvinX--50070-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 0,
+            "w": 193,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 1200,
+            "w": 193,
+            "h": 200
+          }
+        },
+        {
+          "filename": "ArvinX--50070-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 0,
+            "w": 193,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 1400,
+            "w": 193,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Razzah-529199-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 0,
+            "w": 188,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 1600,
+            "w": 188,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Dejab0--31548-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 186,
+            "h": 200
+          },
+          "frame": {
+            "x": 0,
+            "y": 1800,
+            "w": 186,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Dejab0--31548-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 186,
+            "h": 200
+          },
+          "frame": {
+            "x": 186,
+            "y": 1800,
+            "w": 186,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Dejab0--31548-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 186,
+            "h": 200
+          },
+          "frame": {
+            "x": 188,
+            "y": 1600,
+            "w": 186,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Dejab0--31548-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 186,
+            "h": 200
+          },
+          "frame": {
+            "x": 374,
+            "y": 1600,
+            "w": 186,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Razzah-529199-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 0,
+            "w": 186,
+            "h": 200
+          },
+          "frame": {
+            "x": 372,
+            "y": 1800,
+            "w": 186,
+            "h": 200
+          }
+        },
+        {
+          "filename": "sadboi-177350-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 0,
+            "w": 186,
+            "h": 200
+          },
+          "frame": {
+            "x": 558,
+            "y": 1800,
+            "w": 186,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Razzah-529199-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 16,
+            "y": 0,
+            "w": 184,
+            "h": 200
+          },
+          "frame": {
+            "x": 193,
+            "y": 800,
+            "w": 184,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Razzah-529199-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 16,
+            "y": 0,
+            "w": 184,
+            "h": 200
+          },
+          "frame": {
+            "x": 193,
+            "y": 1000,
+            "w": 184,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Shubarashi desu~-152785-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 0,
+            "w": 183,
+            "h": 200
+          },
+          "frame": {
+            "x": 193,
+            "y": 1200,
+            "w": 183,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Mororogan--51782-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 182,
+            "h": 200
+          },
+          "frame": {
+            "x": 193,
+            "y": 1400,
+            "w": 182,
+            "h": 200
+          }
+        },
+        {
+          "filename": "sadboi-177350-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 0,
+            "w": 182,
+            "h": 200
+          },
+          "frame": {
+            "x": 375,
+            "y": 1400,
+            "w": 182,
+            "h": 200
+          }
+        },
+        {
+          "filename": "sadboi-177350-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 0,
+            "w": 182,
+            "h": 200
+          },
+          "frame": {
+            "x": 557,
+            "y": 1400,
+            "w": 182,
+            "h": 200
+          }
+        },
+        {
+          "filename": "sadboi-177350-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 0,
+            "w": 182,
+            "h": 200
+          },
+          "frame": {
+            "x": 739,
+            "y": 1400,
+            "w": 182,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Shubarashi desu~-152785-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 0,
+            "w": 181,
+            "h": 200
+          },
+          "frame": {
+            "x": 921,
+            "y": 1400,
+            "w": 181,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Hydrogen\u3000-367373-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 0,
+            "w": 179,
+            "h": 200
+          },
+          "frame": {
+            "x": 560,
+            "y": 1600,
+            "w": 179,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Mororogan--51782-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 178,
+            "h": 200
+          },
+          "frame": {
+            "x": 739,
+            "y": 1600,
+            "w": 178,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Mororogan--51782-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 178,
+            "h": 200
+          },
+          "frame": {
+            "x": 376,
+            "y": 1200,
+            "w": 178,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Mororogan--51782-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 0,
+            "w": 178,
+            "h": 200
+          },
+          "frame": {
+            "x": 744,
+            "y": 1800,
+            "w": 178,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Hydrogen\u3000-367373-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 0,
+            "w": 177,
+            "h": 200
+          },
+          "frame": {
+            "x": 917,
+            "y": 1600,
+            "w": 177,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Shubarashi desu~-152785-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 0,
+            "w": 176,
+            "h": 200
+          },
+          "frame": {
+            "x": 922,
+            "y": 1800,
+            "w": 176,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Hydrogen\u3000-367373-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 0,
+            "w": 172,
+            "h": 200
+          },
+          "frame": {
+            "x": 1094,
+            "y": 1600,
+            "w": 172,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Shubarashi desu~-152785-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 0,
+            "w": 172,
+            "h": 200
+          },
+          "frame": {
+            "x": 1098,
+            "y": 1800,
+            "w": 172,
+            "h": 200
+          }
+        },
+        {
+          "filename": "Hydrogen\u3000-367373-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 0,
+            "w": 168,
+            "h": 200
+          },
+          "frame": {
+            "x": 1270,
+            "y": 1600,
+            "w": 168,
+            "h": 200
+          }
+        },
+        {
+          "filename": "GanjuCh--22114-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 3,
+            "w": 193,
+            "h": 197
+          },
+          "frame": {
+            "x": 1270,
+            "y": 1800,
+            "w": 193,
+            "h": 197
+          }
+        },
+        {
+          "filename": "GanjuCh--22114-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 3,
+            "w": 193,
+            "h": 197
+          },
+          "frame": {
+            "x": 1463,
+            "y": 1800,
+            "w": 193,
+            "h": 197
+          }
+        },
+        {
+          "filename": "NotShane--56950-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 8,
+            "w": 200,
+            "h": 192
+          },
+          "frame": {
+            "x": 1656,
+            "y": 0,
+            "w": 200,
+            "h": 192
+          }
+        },
+        {
+          "filename": "\u307f\u3066\u3046\u304d-107022-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 5,
+            "w": 192,
+            "h": 195
+          },
+          "frame": {
+            "x": 1856,
+            "y": 0,
+            "w": 192,
+            "h": 195
+          }
+        },
+        {
+          "filename": "NotShane--56950-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 8,
+            "w": 200,
+            "h": 192
+          },
+          "frame": {
+            "x": 1656,
+            "y": 192,
+            "w": 200,
+            "h": 192
+          }
+        },
+        {
+          "filename": "NotShane--56950-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 8,
+            "w": 200,
+            "h": 192
+          },
+          "frame": {
+            "x": 1656,
+            "y": 384,
+            "w": 200,
+            "h": 192
+          }
+        },
+        {
+          "filename": "\u307f\u3066\u3046\u304d-107022-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 5,
+            "w": 192,
+            "h": 195
+          },
+          "frame": {
+            "x": 1856,
+            "y": 195,
+            "w": 192,
+            "h": 195
+          }
+        },
+        {
+          "filename": "\u307f\u3066\u3046\u304d-107022-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 5,
+            "w": 192,
+            "h": 195
+          },
+          "frame": {
+            "x": 1856,
+            "y": 390,
+            "w": 192,
+            "h": 195
+          }
+        },
+        {
+          "filename": "NotShane--56950-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 8,
+            "w": 200,
+            "h": 192
+          },
+          "frame": {
+            "x": 1656,
+            "y": 576,
+            "w": 200,
+            "h": 192
+          }
+        },
+        {
+          "filename": "\u307f\u3066\u3046\u304d-107022-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 5,
+            "w": 192,
+            "h": 195
+          },
+          "frame": {
+            "x": 1856,
+            "y": 585,
+            "w": 192,
+            "h": 195
+          }
+        },
+        {
+          "filename": "Odinson-592453-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 13,
+            "w": 197,
+            "h": 187
+          },
+          "frame": {
+            "x": 1656,
+            "y": 768,
+            "w": 197,
+            "h": 187
+          }
+        },
+        {
+          "filename": "engineering_weeb-637217-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 34,
+            "w": 194,
+            "h": 133
+          },
+          "frame": {
+            "x": 1853,
+            "y": 780,
+            "w": 194,
+            "h": 133
+          }
+        },
+        {
+          "filename": "engineering_weeb-637217-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 34,
+            "w": 194,
+            "h": 133
+          },
+          "frame": {
+            "x": 1853,
+            "y": 913,
+            "w": 194,
+            "h": 133
+          }
+        },
+        {
+          "filename": "Odinson-592453-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 13,
+            "w": 197,
+            "h": 187
+          },
+          "frame": {
+            "x": 1656,
+            "y": 955,
+            "w": 197,
+            "h": 187
+          }
+        },
+        {
+          "filename": "Odinson-592453-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 13,
+            "w": 197,
+            "h": 187
+          },
+          "frame": {
+            "x": 1656,
+            "y": 1142,
+            "w": 197,
+            "h": 187
+          }
+        },
+        {
+          "filename": "engineering_weeb-637217-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 34,
+            "w": 194,
+            "h": 133
+          },
+          "frame": {
+            "x": 1853,
+            "y": 1046,
+            "w": 194,
+            "h": 133
+          }
+        },
+        {
+          "filename": "engineering_weeb-637217-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 34,
+            "w": 194,
+            "h": 133
+          },
+          "frame": {
+            "x": 1853,
+            "y": 1179,
+            "w": 194,
+            "h": 133
+          }
+        },
+        {
+          "filename": "GanjuCh--22114-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 3,
+            "w": 193,
+            "h": 197
+          },
+          "frame": {
+            "x": 1853,
+            "y": 1312,
+            "w": 193,
+            "h": 197
+          }
+        },
+        {
+          "filename": "Odinson-592453-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 13,
+            "w": 197,
+            "h": 187
+          },
+          "frame": {
+            "x": 1656,
+            "y": 1329,
+            "w": 197,
+            "h": 187
+          }
+        },
+        {
+          "filename": "GanjuCh--22114-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 3,
+            "w": 193,
+            "h": 197
+          },
+          "frame": {
+            "x": 1853,
+            "y": 1509,
+            "w": 193,
+            "h": 197
+          }
+        },
+        {
+          "filename": "nonnn-210179-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 31,
+            "w": 191,
+            "h": 169
+          },
+          "frame": {
+            "x": 1656,
+            "y": 1516,
+            "w": 191,
+            "h": 169
+          }
+        },
+        {
+          "filename": "nonnn-210179-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 31,
+            "w": 191,
+            "h": 169
+          },
+          "frame": {
+            "x": 1656,
+            "y": 1685,
+            "w": 191,
+            "h": 169
+          }
+        },
+        {
+          "filename": "\u307e\u3048\u3060\u3084\u3093--23446-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 8,
+            "w": 179,
+            "h": 192
+          },
+          "frame": {
+            "x": 1656,
+            "y": 1854,
+            "w": 179,
+            "h": 192
+          }
+        },
+        {
+          "filename": "\u307e\u3048\u3060\u3084\u3093--23446-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 8,
+            "w": 175,
+            "h": 192
+          },
+          "frame": {
+            "x": 1835,
+            "y": 1854,
+            "w": 175,
+            "h": 192
+          }
+        },
+        {
+          "filename": "Baaaagasuu-586165-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 53,
+            "w": 174,
+            "h": 147
+          },
+          "frame": {
+            "x": 1847,
+            "y": 1706,
+            "w": 174,
+            "h": 147
+          }
+        },
+        {
+          "filename": "\u306a\u304c\u307d\u3093--28483-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 81,
+            "w": 189,
+            "h": 119
+          },
+          "frame": {
+            "x": 1438,
+            "y": 0,
+            "w": 189,
+            "h": 119
+          }
+        },
+        {
+          "filename": "\u30c9\u30dc\u30eb\u30fc\u30aa\u30fc\u305b\u30f4\u30a7\u30f3-491021-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 18,
+            "w": 188,
+            "h": 182
+          },
+          "frame": {
+            "x": 1438,
+            "y": 119,
+            "w": 188,
+            "h": 182
+          }
+        },
+        {
+          "filename": "\u30c9\u30dc\u30eb\u30fc\u30aa\u30fc\u305b\u30f4\u30a7\u30f3-491021-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 18,
+            "w": 188,
+            "h": 182
+          },
+          "frame": {
+            "x": 1438,
+            "y": 301,
+            "w": 188,
+            "h": 182
+          }
+        },
+        {
+          "filename": "\u30c9\u30dc\u30eb\u30fc\u30aa\u30fc\u305b\u30f4\u30a7\u30f3-491021-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 18,
+            "w": 188,
+            "h": 182
+          },
+          "frame": {
+            "x": 1438,
+            "y": 483,
+            "w": 188,
+            "h": 182
+          }
+        },
+        {
+          "filename": "Oceonax--10467-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 67,
+            "w": 172,
+            "h": 133
+          },
+          "frame": {
+            "x": 200,
+            "y": 665,
+            "w": 172,
+            "h": 133
+          }
+        },
+        {
+          "filename": "Oceonax--10467-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 67,
+            "w": 170,
+            "h": 133
+          },
+          "frame": {
+            "x": 372,
+            "y": 665,
+            "w": 170,
+            "h": 133
+          }
+        },
+        {
+          "filename": "\u30c9\u30dc\u30eb\u30fc\u30aa\u30fc\u305b\u30f4\u30a7\u30f3-491021-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 18,
+            "w": 188,
+            "h": 182
+          },
+          "frame": {
+            "x": 1438,
+            "y": 665,
+            "w": 188,
+            "h": 182
+          }
+        },
+        {
+          "filename": "\u30bf\u30ac--38891-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 24,
+            "w": 188,
+            "h": 176
+          },
+          "frame": {
+            "x": 1438,
+            "y": 847,
+            "w": 188,
+            "h": 176
+          }
+        },
+        {
+          "filename": "\u30bf\u30ac--38891-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 24,
+            "w": 186,
+            "h": 176
+          },
+          "frame": {
+            "x": 377,
+            "y": 1023,
+            "w": 186,
+            "h": 176
+          }
+        },
+        {
+          "filename": "Awfi--48841-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 4,
+            "w": 176,
+            "h": 196
+          },
+          "frame": {
+            "x": 554,
+            "y": 1199,
+            "w": 176,
+            "h": 196
+          }
+        },
+        {
+          "filename": "\u30bf\u30ac--38891-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 24,
+            "w": 181,
+            "h": 176
+          },
+          "frame": {
+            "x": 563,
+            "y": 1023,
+            "w": 181,
+            "h": 176
+          }
+        },
+        {
+          "filename": "Awfi--48841-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 4,
+            "w": 175,
+            "h": 196
+          },
+          "frame": {
+            "x": 730,
+            "y": 1199,
+            "w": 175,
+            "h": 196
+          }
+        },
+        {
+          "filename": "\u30bf\u30ac--38891-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 24,
+            "w": 177,
+            "h": 176
+          },
+          "frame": {
+            "x": 744,
+            "y": 1023,
+            "w": 177,
+            "h": 176
+          }
+        },
+        {
+          "filename": "Awfi--48841-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 4,
+            "w": 170,
+            "h": 196
+          },
+          "frame": {
+            "x": 905,
+            "y": 1199,
+            "w": 170,
+            "h": 196
+          }
+        },
+        {
+          "filename": "Ramdam-147112-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 24,
+            "w": 172,
+            "h": 176
+          },
+          "frame": {
+            "x": 921,
+            "y": 1023,
+            "w": 172,
+            "h": 176
+          }
+        },
+        {
+          "filename": "Awfi--48841-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 4,
+            "w": 166,
+            "h": 196
+          },
+          "frame": {
+            "x": 1075,
+            "y": 1199,
+            "w": 166,
+            "h": 196
+          }
+        },
+        {
+          "filename": "Ramdam-147112-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 24,
+            "w": 170,
+            "h": 176
+          },
+          "frame": {
+            "x": 1093,
+            "y": 1023,
+            "w": 170,
+            "h": 176
+          }
+        },
+        {
+          "filename": "\u307e\u3048\u3060\u3084\u3093--23446-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 8,
+            "w": 175,
+            "h": 192
+          },
+          "frame": {
+            "x": 1263,
+            "y": 0,
+            "w": 175,
+            "h": 192
+          }
+        },
+        {
+          "filename": "\u307e\u3048\u3060\u3084\u3093--23446-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 7,
+            "y": 8,
+            "w": 175,
+            "h": 192
+          },
+          "frame": {
+            "x": 1263,
+            "y": 192,
+            "w": 175,
+            "h": 192
+          }
+        },
+        {
+          "filename": "Kasino Kaiser--47514-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 15,
+            "w": 175,
+            "h": 185
+          },
+          "frame": {
+            "x": 1263,
+            "y": 384,
+            "w": 175,
+            "h": 185
+          }
+        },
+        {
+          "filename": "Kasino Kaiser--47514-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 15,
+            "w": 175,
+            "h": 185
+          },
+          "frame": {
+            "x": 1263,
+            "y": 569,
+            "w": 175,
+            "h": 185
+          }
+        },
+        {
+          "filename": "Kasino Kaiser--47514-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 15,
+            "w": 175,
+            "h": 185
+          },
+          "frame": {
+            "x": 1263,
+            "y": 754,
+            "w": 175,
+            "h": 185
+          }
+        },
+        {
+          "filename": "Jul1000--20594-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 8,
+            "w": 174,
+            "h": 192
+          },
+          "frame": {
+            "x": 1263,
+            "y": 939,
+            "w": 174,
+            "h": 192
+          }
+        },
+        {
+          "filename": "Jul1000--20594-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 8,
+            "w": 171,
+            "h": 192
+          },
+          "frame": {
+            "x": 1102,
+            "y": 1395,
+            "w": 171,
+            "h": 192
+          }
+        },
+        {
+          "filename": "Jul1000--20594-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 8,
+            "w": 164,
+            "h": 192
+          },
+          "frame": {
+            "x": 1241,
+            "y": 1199,
+            "w": 164,
+            "h": 192
+          }
+        },
+        {
+          "filename": "Jul1000--20594-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 8,
+            "w": 160,
+            "h": 192
+          },
+          "frame": {
+            "x": 1273,
+            "y": 1391,
+            "w": 160,
+            "h": 192
+          }
+        },
+        {
+          "filename": "Kaiju King--43857-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 44,
+            "w": 188,
+            "h": 156
+          },
+          "frame": {
+            "x": 1438,
+            "y": 1023,
+            "w": 188,
+            "h": 156
+          }
+        },
+        {
+          "filename": "Riw-509075-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 12,
+            "w": 179,
+            "h": 188
+          },
+          "frame": {
+            "x": 1405,
+            "y": 1179,
+            "w": 179,
+            "h": 188
+          }
+        },
+        {
+          "filename": "Kaiju King--43857-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 44,
+            "w": 188,
+            "h": 156
+          },
+          "frame": {
+            "x": 1438,
+            "y": 1367,
+            "w": 188,
+            "h": 156
+          }
+        },
+        {
+          "filename": "Kaiju King--43857-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 44,
+            "w": 188,
+            "h": 156
+          },
+          "frame": {
+            "x": 1438,
+            "y": 1523,
+            "w": 188,
+            "h": 156
+          }
+        },
+        {
+          "filename": "\u306a\u304c\u307d\u3093--28483-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 80,
+            "w": 187,
+            "h": 120
+          },
+          "frame": {
+            "x": 1438,
+            "y": 1679,
+            "w": 187,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Riw-509075-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 12,
+            "w": 174,
+            "h": 188
+          },
+          "frame": {
+            "x": 377,
+            "y": 798,
+            "w": 174,
+            "h": 188
+          }
+        },
+        {
+          "filename": "Riw-509075-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 12,
+            "w": 174,
+            "h": 188
+          },
+          "frame": {
+            "x": 551,
+            "y": 798,
+            "w": 174,
+            "h": 188
+          }
+        },
+        {
+          "filename": "Pyotr--87635-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 60,
+            "w": 187,
+            "h": 140
+          },
+          "frame": {
+            "x": 725,
+            "y": 0,
+            "w": 187,
+            "h": 140
+          }
+        },
+        {
+          "filename": "Frankazador-532332-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 35,
+            "w": 183,
+            "h": 165
+          },
+          "frame": {
+            "x": 542,
+            "y": 0,
+            "w": 183,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Pyotr--87635-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 60,
+            "w": 185,
+            "h": 140
+          },
+          "frame": {
+            "x": 200,
+            "y": 0,
+            "w": 185,
+            "h": 140
+          }
+        },
+        {
+          "filename": "Subaru Twintail-415066-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 15,
+            "w": 184,
+            "h": 185
+          },
+          "frame": {
+            "x": 200,
+            "y": 140,
+            "w": 184,
+            "h": 185
+          }
+        },
+        {
+          "filename": "Riw-509075-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 12,
+            "w": 174,
+            "h": 188
+          },
+          "frame": {
+            "x": 200,
+            "y": 325,
+            "w": 174,
+            "h": 188
+          }
+        },
+        {
+          "filename": "#DonaBau -483395-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 50,
+            "w": 174,
+            "h": 150
+          },
+          "frame": {
+            "x": 200,
+            "y": 513,
+            "w": 174,
+            "h": 150
+          }
+        },
+        {
+          "filename": "Subaru Twintail-415066-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 15,
+            "w": 182,
+            "h": 185
+          },
+          "frame": {
+            "x": 374,
+            "y": 325,
+            "w": 182,
+            "h": 185
+          }
+        },
+        {
+          "filename": "Brian.S--45642-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 45,
+            "w": 174,
+            "h": 155
+          },
+          "frame": {
+            "x": 384,
+            "y": 510,
+            "w": 174,
+            "h": 155
+          }
+        },
+        {
+          "filename": "Oceonax--10467-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 67,
+            "w": 163,
+            "h": 133
+          },
+          "frame": {
+            "x": 556,
+            "y": 665,
+            "w": 163,
+            "h": 133
+          }
+        },
+        {
+          "filename": "Oceonax--10467-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 67,
+            "w": 159,
+            "h": 133
+          },
+          "frame": {
+            "x": 719,
+            "y": 665,
+            "w": 159,
+            "h": 133
+          }
+        },
+        {
+          "filename": "Lorenzo('\u25bd')-149704-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 42,
+            "w": 174,
+            "h": 158
+          },
+          "frame": {
+            "x": 384,
+            "y": 165,
+            "w": 174,
+            "h": 158
+          }
+        },
+        {
+          "filename": "Subaru Twintail-415066-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 15,
+            "y": 15,
+            "w": 180,
+            "h": 185
+          },
+          "frame": {
+            "x": 556,
+            "y": 323,
+            "w": 180,
+            "h": 185
+          }
+        },
+        {
+          "filename": "Minibug--22155-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 43,
+            "w": 174,
+            "h": 157
+          },
+          "frame": {
+            "x": 558,
+            "y": 508,
+            "w": 174,
+            "h": 157
+          }
+        },
+        {
+          "filename": "Minibug--22155-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 43,
+            "w": 172,
+            "h": 157
+          },
+          "frame": {
+            "x": 732,
+            "y": 508,
+            "w": 172,
+            "h": 157
+          }
+        },
+        {
+          "filename": "Minibug--22155-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 43,
+            "w": 165,
+            "h": 157
+          },
+          "frame": {
+            "x": 904,
+            "y": 508,
+            "w": 165,
+            "h": 157
+          }
+        },
+        {
+          "filename": "Minibug--22155-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 43,
+            "w": 161,
+            "h": 157
+          },
+          "frame": {
+            "x": 1069,
+            "y": 508,
+            "w": 161,
+            "h": 157
+          }
+        },
+        {
+          "filename": "Lorenzo('\u25bd')-149704-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 42,
+            "w": 172,
+            "h": 158
+          },
+          "frame": {
+            "x": 558,
+            "y": 165,
+            "w": 172,
+            "h": 158
+          }
+        },
+        {
+          "filename": "shuba--78779-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 19,
+            "w": 172,
+            "h": 181
+          },
+          "frame": {
+            "x": 730,
+            "y": 140,
+            "w": 172,
+            "h": 181
+          }
+        },
+        {
+          "filename": "Subaru Twintail-415066-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 15,
+            "y": 15,
+            "w": 180,
+            "h": 185
+          },
+          "frame": {
+            "x": 736,
+            "y": 321,
+            "w": 180,
+            "h": 185
+          }
+        },
+        {
+          "filename": "shuba--78779-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 19,
+            "w": 170,
+            "h": 181
+          },
+          "frame": {
+            "x": 902,
+            "y": 140,
+            "w": 170,
+            "h": 181
+          }
+        },
+        {
+          "filename": "Pyotr--87635-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 60,
+            "w": 180,
+            "h": 140
+          },
+          "frame": {
+            "x": 912,
+            "y": 0,
+            "w": 180,
+            "h": 140
+          }
+        },
+        {
+          "filename": "SoulXCalibur-144476-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 22,
+            "w": 171,
+            "h": 178
+          },
+          "frame": {
+            "x": 1092,
+            "y": 0,
+            "w": 171,
+            "h": 178
+          }
+        },
+        {
+          "filename": "Kasino Kaiser--47514-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 15,
+            "w": 179,
+            "h": 185
+          },
+          "frame": {
+            "x": 916,
+            "y": 321,
+            "w": 179,
+            "h": 185
+          }
+        },
+        {
+          "filename": "DroneOhTwo--40703-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 64,
+            "w": 168,
+            "h": 136
+          },
+          "frame": {
+            "x": 1095,
+            "y": 178,
+            "w": 168,
+            "h": 136
+          }
+        },
+        {
+          "filename": "Angel Salazar --34809-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 75,
+            "w": 168,
+            "h": 125
+          },
+          "frame": {
+            "x": 1095,
+            "y": 314,
+            "w": 168,
+            "h": 125
+          }
+        },
+        {
+          "filename": "SubaduckBestDuck-603722-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 16,
+            "w": 174,
+            "h": 184
+          },
+          "frame": {
+            "x": 725,
+            "y": 798,
+            "w": 174,
+            "h": 184
+          }
+        },
+        {
+          "filename": "Flowey-111350-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 68,
+            "w": 159,
+            "h": 132
+          },
+          "frame": {
+            "x": 878,
+            "y": 665,
+            "w": 159,
+            "h": 132
+          }
+        },
+        {
+          "filename": "SubaduckBestDuck-603722-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 16,
+            "w": 172,
+            "h": 184
+          },
+          "frame": {
+            "x": 899,
+            "y": 797,
+            "w": 172,
+            "h": 184
+          }
+        },
+        {
+          "filename": "Shuba99--27394-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 69,
+            "w": 174,
+            "h": 131
+          },
+          "frame": {
+            "x": 1037,
+            "y": 665,
+            "w": 174,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Greentea-204856-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 70,
+            "w": 184,
+            "h": 130
+          },
+          "frame": {
+            "x": 1071,
+            "y": 796,
+            "w": 184,
+            "h": 130
+          }
+        },
+        {
+          "filename": "Kaiju King--43857-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 44,
+            "w": 188,
+            "h": 156
+          },
+          "frame": {
+            "x": 1438,
+            "y": 1023,
+            "w": 188,
+            "h": 156
+          }
+        },
+        {
+          "filename": "nonnn-210179-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 31,
+            "w": 191,
+            "h": 169
+          },
+          "frame": {
+            "x": 1656,
+            "y": 1516,
+            "w": 191,
+            "h": 169
+          }
+        },
+        {
+          "filename": "nonnn-210179-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 31,
+            "w": 191,
+            "h": 169
+          },
+          "frame": {
+            "x": 1656,
+            "y": 1516,
+            "w": 191,
+            "h": 169
+          }
+        }
+      ]
+    },
+    {
+      "image": "pondbatch-22",
+      "format": "RGBA8888",
+      "size": {
+        "w": 2048,
+        "h": 2046
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "SubaduckBestDuck-603722-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 16,
+            "y": 16,
+            "w": 167,
+            "h": 184
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 167,
+            "h": 184
+          }
+        },
+        {
+          "filename": "SubaduckBestDuck-603722-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 16,
+            "y": 16,
+            "w": 167,
+            "h": 184
+          },
+          "frame": {
+            "x": 0,
+            "y": 184,
+            "w": 167,
+            "h": 184
+          }
+        },
+        {
+          "filename": "shuba--78779-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 17,
+            "y": 19,
+            "w": 165,
+            "h": 181
+          },
+          "frame": {
+            "x": 0,
+            "y": 368,
+            "w": 165,
+            "h": 181
+          }
+        },
+        {
+          "filename": "shuba--78779-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 17,
+            "y": 19,
+            "w": 165,
+            "h": 181
+          },
+          "frame": {
+            "x": 0,
+            "y": 549,
+            "w": 165,
+            "h": 181
+          }
+        },
+        {
+          "filename": "SoulXCalibur-144476-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 22,
+            "w": 174,
+            "h": 178
+          },
+          "frame": {
+            "x": 0,
+            "y": 730,
+            "w": 174,
+            "h": 178
+          }
+        },
+        {
+          "filename": "igloo igloo--17965-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 22,
+            "w": 174,
+            "h": 178
+          },
+          "frame": {
+            "x": 165,
+            "y": 368,
+            "w": 174,
+            "h": 178
+          }
+        },
+        {
+          "filename": "igloo igloo--17965-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 22,
+            "w": 172,
+            "h": 178
+          },
+          "frame": {
+            "x": 165,
+            "y": 546,
+            "w": 172,
+            "h": 178
+          }
+        },
+        {
+          "filename": "igloo igloo--17965-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 22,
+            "w": 165,
+            "h": 178
+          },
+          "frame": {
+            "x": 167,
+            "y": 0,
+            "w": 165,
+            "h": 178
+          }
+        },
+        {
+          "filename": "SoulXCalibur-144476-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 22,
+            "w": 164,
+            "h": 178
+          },
+          "frame": {
+            "x": 167,
+            "y": 178,
+            "w": 164,
+            "h": 178
+          }
+        },
+        {
+          "filename": "igloo igloo--17965-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 22,
+            "w": 161,
+            "h": 178
+          },
+          "frame": {
+            "x": 331,
+            "y": 178,
+            "w": 161,
+            "h": 178
+          }
+        },
+        {
+          "filename": "SoulXCalibur-144476-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 22,
+            "w": 160,
+            "h": 178
+          },
+          "frame": {
+            "x": 332,
+            "y": 0,
+            "w": 160,
+            "h": 178
+          }
+        },
+        {
+          "filename": "Ramdam-147112-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 24,
+            "w": 163,
+            "h": 176
+          },
+          "frame": {
+            "x": 492,
+            "y": 0,
+            "w": 163,
+            "h": 176
+          }
+        },
+        {
+          "filename": "Ramdam-147112-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 24,
+            "w": 159,
+            "h": 176
+          },
+          "frame": {
+            "x": 0,
+            "y": 908,
+            "w": 159,
+            "h": 176
+          }
+        },
+        {
+          "filename": "BiasedAlias-504470-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 26,
+            "w": 174,
+            "h": 174
+          },
+          "frame": {
+            "x": 0,
+            "y": 1084,
+            "w": 174,
+            "h": 174
+          }
+        },
+        {
+          "filename": "BiasedAlias-504470-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 26,
+            "w": 172,
+            "h": 174
+          },
+          "frame": {
+            "x": 159,
+            "y": 908,
+            "w": 172,
+            "h": 174
+          }
+        },
+        {
+          "filename": "BiasedAlias-504470-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 26,
+            "w": 165,
+            "h": 174
+          },
+          "frame": {
+            "x": 174,
+            "y": 724,
+            "w": 165,
+            "h": 174
+          }
+        },
+        {
+          "filename": "BiasedAlias-504470-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 26,
+            "w": 161,
+            "h": 174
+          },
+          "frame": {
+            "x": 337,
+            "y": 546,
+            "w": 161,
+            "h": 174
+          }
+        },
+        {
+          "filename": "Dandi-181468-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 32,
+            "w": 174,
+            "h": 168
+          },
+          "frame": {
+            "x": 339,
+            "y": 356,
+            "w": 174,
+            "h": 168
+          }
+        },
+        {
+          "filename": "Dandi-181468-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 32,
+            "w": 171,
+            "h": 168
+          },
+          "frame": {
+            "x": 498,
+            "y": 176,
+            "w": 171,
+            "h": 168
+          }
+        },
+        {
+          "filename": "Dandi-181468-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 32,
+            "w": 164,
+            "h": 168
+          },
+          "frame": {
+            "x": 655,
+            "y": 0,
+            "w": 164,
+            "h": 168
+          }
+        },
+        {
+          "filename": "Dandi-181468-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 32,
+            "w": 160,
+            "h": 168
+          },
+          "frame": {
+            "x": 0,
+            "y": 1258,
+            "w": 160,
+            "h": 168
+          }
+        },
+        {
+          "filename": "Tsui-551619-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 35,
+            "w": 182,
+            "h": 165
+          },
+          "frame": {
+            "x": 0,
+            "y": 1426,
+            "w": 182,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Frankazador-532332-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 35,
+            "w": 179,
+            "h": 165
+          },
+          "frame": {
+            "x": 160,
+            "y": 1258,
+            "w": 179,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Frankazador-532332-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 35,
+            "w": 179,
+            "h": 165
+          },
+          "frame": {
+            "x": 182,
+            "y": 1082,
+            "w": 179,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Frankazador-532332-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 35,
+            "w": 179,
+            "h": 165
+          },
+          "frame": {
+            "x": 331,
+            "y": 898,
+            "w": 179,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Tsui-551619-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 35,
+            "w": 178,
+            "h": 165
+          },
+          "frame": {
+            "x": 339,
+            "y": 720,
+            "w": 178,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Tsui-551619-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 35,
+            "w": 178,
+            "h": 165
+          },
+          "frame": {
+            "x": 498,
+            "y": 524,
+            "w": 178,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Tsui-551619-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 35,
+            "w": 178,
+            "h": 165
+          },
+          "frame": {
+            "x": 513,
+            "y": 344,
+            "w": 178,
+            "h": 165
+          }
+        },
+        {
+          "filename": "Milky16-627582-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 38,
+            "w": 182,
+            "h": 162
+          },
+          "frame": {
+            "x": 676,
+            "y": 168,
+            "w": 182,
+            "h": 162
+          }
+        },
+        {
+          "filename": "Milky16-627582-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 38,
+            "w": 178,
+            "h": 162
+          },
+          "frame": {
+            "x": 819,
+            "y": 0,
+            "w": 178,
+            "h": 162
+          }
+        },
+        {
+          "filename": "Milky16-627582-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 38,
+            "w": 178,
+            "h": 162
+          },
+          "frame": {
+            "x": 0,
+            "y": 1591,
+            "w": 178,
+            "h": 162
+          }
+        },
+        {
+          "filename": "Milky16-627582-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 38,
+            "w": 178,
+            "h": 162
+          },
+          "frame": {
+            "x": 0,
+            "y": 1753,
+            "w": 178,
+            "h": 162
+          }
+        },
+        {
+          "filename": "lost_kaineruver4--42508-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 69,
+            "w": 173,
+            "h": 131
+          },
+          "frame": {
+            "x": 0,
+            "y": 1915,
+            "w": 173,
+            "h": 131
+          }
+        },
+        {
+          "filename": "lost_kaineruver4--42508-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 69,
+            "w": 172,
+            "h": 131
+          },
+          "frame": {
+            "x": 173,
+            "y": 1915,
+            "w": 172,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Shuba99--27394-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 69,
+            "w": 171,
+            "h": 131
+          },
+          "frame": {
+            "x": 345,
+            "y": 1915,
+            "w": 171,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Flowey-111350-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 69,
+            "w": 170,
+            "h": 131
+          },
+          "frame": {
+            "x": 516,
+            "y": 1915,
+            "w": 170,
+            "h": 131
+          }
+        },
+        {
+          "filename": "lost_kaineruver4--42508-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 69,
+            "w": 166,
+            "h": 131
+          },
+          "frame": {
+            "x": 686,
+            "y": 1915,
+            "w": 166,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Shuba99--27394-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 69,
+            "w": 164,
+            "h": 131
+          },
+          "frame": {
+            "x": 852,
+            "y": 1915,
+            "w": 164,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Flowey-111350-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 69,
+            "w": 163,
+            "h": 131
+          },
+          "frame": {
+            "x": 1016,
+            "y": 1915,
+            "w": 163,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Ismael R-403086-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 39,
+            "w": 174,
+            "h": 161
+          },
+          "frame": {
+            "x": 178,
+            "y": 1591,
+            "w": 174,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Bamborinose-152477-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 39,
+            "w": 172,
+            "h": 161
+          },
+          "frame": {
+            "x": 178,
+            "y": 1752,
+            "w": 172,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Ismael R-403086-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 39,
+            "w": 172,
+            "h": 161
+          },
+          "frame": {
+            "x": 350,
+            "y": 1752,
+            "w": 172,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Bamborinose-152477-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 39,
+            "w": 170,
+            "h": 161
+          },
+          "frame": {
+            "x": 522,
+            "y": 1752,
+            "w": 170,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Ismael R-403086-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 39,
+            "w": 165,
+            "h": 161
+          },
+          "frame": {
+            "x": 692,
+            "y": 1752,
+            "w": 165,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Bamborinose-152477-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 39,
+            "w": 163,
+            "h": 161
+          },
+          "frame": {
+            "x": 182,
+            "y": 1423,
+            "w": 163,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Ismael R-403086-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 39,
+            "w": 161,
+            "h": 161
+          },
+          "frame": {
+            "x": 339,
+            "y": 1247,
+            "w": 161,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Bamborinose-152477-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 39,
+            "w": 159,
+            "h": 161
+          },
+          "frame": {
+            "x": 345,
+            "y": 1408,
+            "w": 159,
+            "h": 161
+          }
+        },
+        {
+          "filename": "Lorenzo('\u25bd')-149704-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 42,
+            "w": 165,
+            "h": 158
+          },
+          "frame": {
+            "x": 504,
+            "y": 1408,
+            "w": 165,
+            "h": 158
+          }
+        },
+        {
+          "filename": "Lorenzo('\u25bd')-149704-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 42,
+            "w": 161,
+            "h": 158
+          },
+          "frame": {
+            "x": 352,
+            "y": 1569,
+            "w": 161,
+            "h": 158
+          }
+        },
+        {
+          "filename": "Requiem-509196-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 44,
+            "w": 174,
+            "h": 156
+          },
+          "frame": {
+            "x": 361,
+            "y": 1063,
+            "w": 174,
+            "h": 156
+          }
+        },
+        {
+          "filename": "Requiem-509196-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 44,
+            "w": 172,
+            "h": 156
+          },
+          "frame": {
+            "x": 510,
+            "y": 885,
+            "w": 172,
+            "h": 156
+          }
+        },
+        {
+          "filename": "Requiem-509196-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 44,
+            "w": 165,
+            "h": 156
+          },
+          "frame": {
+            "x": 513,
+            "y": 1566,
+            "w": 165,
+            "h": 156
+          }
+        },
+        {
+          "filename": "Requiem-509196-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 44,
+            "w": 161,
+            "h": 156
+          },
+          "frame": {
+            "x": 500,
+            "y": 1219,
+            "w": 161,
+            "h": 156
+          }
+        },
+        {
+          "filename": "Brian.S--45642-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 45,
+            "w": 172,
+            "h": 155
+          },
+          "frame": {
+            "x": 535,
+            "y": 1041,
+            "w": 172,
+            "h": 155
+          }
+        },
+        {
+          "filename": "Brian.S--45642-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 45,
+            "w": 165,
+            "h": 155
+          },
+          "frame": {
+            "x": 517,
+            "y": 689,
+            "w": 165,
+            "h": 155
+          }
+        },
+        {
+          "filename": "Brian.S--45642-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 45,
+            "w": 161,
+            "h": 155
+          },
+          "frame": {
+            "x": 676,
+            "y": 509,
+            "w": 161,
+            "h": 155
+          }
+        },
+        {
+          "filename": "Elchikendude-475469-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 47,
+            "w": 174,
+            "h": 153
+          },
+          "frame": {
+            "x": 707,
+            "y": 330,
+            "w": 174,
+            "h": 153
+          }
+        },
+        {
+          "filename": "MAT-450446-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 47,
+            "w": 174,
+            "h": 153
+          },
+          "frame": {
+            "x": 858,
+            "y": 162,
+            "w": 174,
+            "h": 153
+          }
+        },
+        {
+          "filename": "OrionLuna-598583-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 47,
+            "w": 174,
+            "h": 153
+          },
+          "frame": {
+            "x": 997,
+            "y": 0,
+            "w": 174,
+            "h": 153
+          }
+        },
+        {
+          "filename": "Elchikendude-475469-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 47,
+            "w": 172,
+            "h": 153
+          },
+          "frame": {
+            "x": 661,
+            "y": 1196,
+            "w": 172,
+            "h": 153
+          }
+        },
+        {
+          "filename": "MAT-450446-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 47,
+            "w": 172,
+            "h": 153
+          },
+          "frame": {
+            "x": 669,
+            "y": 1349,
+            "w": 172,
+            "h": 153
+          }
+        },
+        {
+          "filename": "OrionLuna-598583-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 47,
+            "w": 170,
+            "h": 153
+          },
+          "frame": {
+            "x": 707,
+            "y": 1502,
+            "w": 170,
+            "h": 153
+          }
+        },
+        {
+          "filename": "Elchikendude-475469-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 47,
+            "w": 165,
+            "h": 153
+          },
+          "frame": {
+            "x": 857,
+            "y": 1655,
+            "w": 165,
+            "h": 153
+          }
+        },
+        {
+          "filename": "MAT-450446-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 47,
+            "w": 165,
+            "h": 153
+          },
+          "frame": {
+            "x": 682,
+            "y": 664,
+            "w": 165,
+            "h": 153
+          }
+        },
+        {
+          "filename": "OrionLuna-598583-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 47,
+            "w": 164,
+            "h": 153
+          },
+          "frame": {
+            "x": 841,
+            "y": 483,
+            "w": 164,
+            "h": 153
+          }
+        },
+        {
+          "filename": "Elchikendude-475469-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 47,
+            "w": 161,
+            "h": 153
+          },
+          "frame": {
+            "x": 881,
+            "y": 315,
+            "w": 161,
+            "h": 153
+          }
+        },
+        {
+          "filename": "MAT-450446-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 47,
+            "w": 161,
+            "h": 153
+          },
+          "frame": {
+            "x": 1032,
+            "y": 153,
+            "w": 161,
+            "h": 153
+          }
+        },
+        {
+          "filename": "OrionLuna-598583-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 47,
+            "w": 160,
+            "h": 153
+          },
+          "frame": {
+            "x": 1171,
+            "y": 0,
+            "w": 160,
+            "h": 153
+          }
+        },
+        {
+          "filename": "#DonaBau -483395-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 50,
+            "w": 172,
+            "h": 150
+          },
+          "frame": {
+            "x": 682,
+            "y": 817,
+            "w": 172,
+            "h": 150
+          }
+        },
+        {
+          "filename": "Xander-122384-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 50,
+            "w": 172,
+            "h": 150
+          },
+          "frame": {
+            "x": 847,
+            "y": 636,
+            "w": 172,
+            "h": 150
+          }
+        },
+        {
+          "filename": "Xander-122384-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 50,
+            "w": 170,
+            "h": 150
+          },
+          "frame": {
+            "x": 1005,
+            "y": 468,
+            "w": 170,
+            "h": 150
+          }
+        },
+        {
+          "filename": "#DonaBau -483395-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 50,
+            "w": 165,
+            "h": 150
+          },
+          "frame": {
+            "x": 1042,
+            "y": 306,
+            "w": 165,
+            "h": 150
+          }
+        },
+        {
+          "filename": "Xander-122384-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 50,
+            "w": 163,
+            "h": 150
+          },
+          "frame": {
+            "x": 1193,
+            "y": 153,
+            "w": 163,
+            "h": 150
+          }
+        },
+        {
+          "filename": "#DonaBau -483395-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 50,
+            "w": 161,
+            "h": 150
+          },
+          "frame": {
+            "x": 1331,
+            "y": 0,
+            "w": 161,
+            "h": 150
+          }
+        },
+        {
+          "filename": "Xander-122384-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 50,
+            "w": 159,
+            "h": 150
+          },
+          "frame": {
+            "x": 707,
+            "y": 967,
+            "w": 159,
+            "h": 150
+          }
+        },
+        {
+          "filename": "Kurotora--77136-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 51,
+            "w": 174,
+            "h": 149
+          },
+          "frame": {
+            "x": 854,
+            "y": 786,
+            "w": 174,
+            "h": 149
+          }
+        },
+        {
+          "filename": "Kurotora--77136-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 51,
+            "w": 172,
+            "h": 149
+          },
+          "frame": {
+            "x": 1019,
+            "y": 618,
+            "w": 172,
+            "h": 149
+          }
+        },
+        {
+          "filename": "Kurotora--77136-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 51,
+            "w": 165,
+            "h": 149
+          },
+          "frame": {
+            "x": 1179,
+            "y": 456,
+            "w": 165,
+            "h": 149
+          }
+        },
+        {
+          "filename": "Kurotora--77136-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 51,
+            "w": 161,
+            "h": 149
+          },
+          "frame": {
+            "x": 1207,
+            "y": 303,
+            "w": 161,
+            "h": 149
+          }
+        },
+        {
+          "filename": "VestraMors-525499-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 53,
+            "w": 174,
+            "h": 147
+          },
+          "frame": {
+            "x": 1356,
+            "y": 150,
+            "w": 174,
+            "h": 147
+          }
+        },
+        {
+          "filename": "Baaaagasuu-586165-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 53,
+            "w": 172,
+            "h": 147
+          },
+          "frame": {
+            "x": 1492,
+            "y": 0,
+            "w": 172,
+            "h": 147
+          }
+        },
+        {
+          "filename": "Niko-559447-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 53,
+            "w": 172,
+            "h": 147
+          },
+          "frame": {
+            "x": 833,
+            "y": 1117,
+            "w": 172,
+            "h": 147
+          }
+        },
+        {
+          "filename": "VestraMors-525499-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 53,
+            "w": 172,
+            "h": 147
+          },
+          "frame": {
+            "x": 877,
+            "y": 935,
+            "w": 172,
+            "h": 147
+          }
+        },
+        {
+          "filename": "Niko-559447-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 53,
+            "w": 170,
+            "h": 147
+          },
+          "frame": {
+            "x": 1028,
+            "y": 767,
+            "w": 170,
+            "h": 147
+          }
+        },
+        {
+          "filename": "Baaaagasuu-586165-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 53,
+            "w": 165,
+            "h": 147
+          },
+          "frame": {
+            "x": 1191,
+            "y": 605,
+            "w": 165,
+            "h": 147
+          }
+        },
+        {
+          "filename": "VestraMors-525499-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 53,
+            "w": 165,
+            "h": 147
+          },
+          "frame": {
+            "x": 1344,
+            "y": 452,
+            "w": 165,
+            "h": 147
+          }
+        },
+        {
+          "filename": "Niko-559447-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 53,
+            "w": 163,
+            "h": 147
+          },
+          "frame": {
+            "x": 1368,
+            "y": 297,
+            "w": 163,
+            "h": 147
+          }
+        },
+        {
+          "filename": "Baaaagasuu-586165-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 53,
+            "w": 161,
+            "h": 147
+          },
+          "frame": {
+            "x": 1530,
+            "y": 147,
+            "w": 161,
+            "h": 147
+          }
+        },
+        {
+          "filename": "VestraMors-525499-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 53,
+            "w": 161,
+            "h": 147
+          },
+          "frame": {
+            "x": 1664,
+            "y": 0,
+            "w": 161,
+            "h": 147
+          }
+        },
+        {
+          "filename": "Niko-559447-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 53,
+            "w": 159,
+            "h": 147
+          },
+          "frame": {
+            "x": 1825,
+            "y": 0,
+            "w": 159,
+            "h": 147
+          }
+        },
+        {
+          "filename": "DuckyTako--51047-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 55,
+            "w": 174,
+            "h": 145
+          },
+          "frame": {
+            "x": 841,
+            "y": 1264,
+            "w": 174,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Mynameitchyyy--46040-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 55,
+            "w": 172,
+            "h": 145
+          },
+          "frame": {
+            "x": 1005,
+            "y": 1082,
+            "w": 172,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Yoloism-365247-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 55,
+            "w": 172,
+            "h": 145
+          },
+          "frame": {
+            "x": 1049,
+            "y": 914,
+            "w": 172,
+            "h": 145
+          }
+        },
+        {
+          "filename": "DuckyTako--51047-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 55,
+            "w": 171,
+            "h": 145
+          },
+          "frame": {
+            "x": 1198,
+            "y": 752,
+            "w": 171,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Mynameitchyyy--46040-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 55,
+            "w": 171,
+            "h": 145
+          },
+          "frame": {
+            "x": 1356,
+            "y": 599,
+            "w": 171,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Yoloism-365247-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 55,
+            "w": 170,
+            "h": 145
+          },
+          "frame": {
+            "x": 1509,
+            "y": 444,
+            "w": 170,
+            "h": 145
+          }
+        },
+        {
+          "filename": "DuckyTako--51047-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 55,
+            "w": 164,
+            "h": 145
+          },
+          "frame": {
+            "x": 1531,
+            "y": 294,
+            "w": 164,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Mynameitchyyy--46040-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 55,
+            "w": 164,
+            "h": 145
+          },
+          "frame": {
+            "x": 1691,
+            "y": 147,
+            "w": 164,
+            "h": 145
+          }
+        },
+        {
+          "filename": "SolidKin-942856-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 73,
+            "w": 182,
+            "h": 127
+          },
+          "frame": {
+            "x": 1855,
+            "y": 147,
+            "w": 182,
+            "h": 127
+          }
+        },
+        {
+          "filename": "\u306a\u304c\u307d\u3093--28483-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 81,
+            "w": 182,
+            "h": 119
+          },
+          "frame": {
+            "x": 1855,
+            "y": 274,
+            "w": 182,
+            "h": 119
+          }
+        },
+        {
+          "filename": "DuckyTako--51047-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 55,
+            "w": 160,
+            "h": 145
+          },
+          "frame": {
+            "x": 1695,
+            "y": 292,
+            "w": 160,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Pyotr--87635-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 60,
+            "w": 180,
+            "h": 140
+          },
+          "frame": {
+            "x": 1855,
+            "y": 393,
+            "w": 180,
+            "h": 140
+          }
+        },
+        {
+          "filename": "Mynameitchyyy--46040-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 55,
+            "w": 160,
+            "h": 145
+          },
+          "frame": {
+            "x": 1695,
+            "y": 437,
+            "w": 160,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Greentea-204856-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 70,
+            "w": 180,
+            "h": 130
+          },
+          "frame": {
+            "x": 1855,
+            "y": 533,
+            "w": 180,
+            "h": 130
+          }
+        },
+        {
+          "filename": "potetoLT--63464-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 56,
+            "w": 174,
+            "h": 144
+          },
+          "frame": {
+            "x": 1679,
+            "y": 582,
+            "w": 174,
+            "h": 144
+          }
+        },
+        {
+          "filename": "Greentea-204856-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 70,
+            "w": 180,
+            "h": 130
+          },
+          "frame": {
+            "x": 1853,
+            "y": 663,
+            "w": 180,
+            "h": 130
+          }
+        },
+        {
+          "filename": "Greentea-204856-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 70,
+            "w": 180,
+            "h": 130
+          },
+          "frame": {
+            "x": 1853,
+            "y": 793,
+            "w": 180,
+            "h": 130
+          }
+        },
+        {
+          "filename": "DroneOhTwo--40703-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 64,
+            "w": 179,
+            "h": 136
+          },
+          "frame": {
+            "x": 1853,
+            "y": 923,
+            "w": 179,
+            "h": 136
+          }
+        },
+        {
+          "filename": "Yoloism-365247-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 55,
+            "w": 163,
+            "h": 145
+          },
+          "frame": {
+            "x": 877,
+            "y": 1409,
+            "w": 163,
+            "h": 145
+          }
+        },
+        {
+          "filename": "Yoloism-365247-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 55,
+            "w": 159,
+            "h": 145
+          },
+          "frame": {
+            "x": 1022,
+            "y": 1227,
+            "w": 159,
+            "h": 145
+          }
+        },
+        {
+          "filename": "potetoLT--63464-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 56,
+            "w": 171,
+            "h": 144
+          },
+          "frame": {
+            "x": 1179,
+            "y": 1059,
+            "w": 171,
+            "h": 144
+          }
+        },
+        {
+          "filename": "potetoLT--63464-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 56,
+            "w": 164,
+            "h": 144
+          },
+          "frame": {
+            "x": 1221,
+            "y": 897,
+            "w": 164,
+            "h": 144
+          }
+        },
+        {
+          "filename": "potetoLT--63464-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 56,
+            "w": 160,
+            "h": 144
+          },
+          "frame": {
+            "x": 1369,
+            "y": 744,
+            "w": 160,
+            "h": 144
+          }
+        },
+        {
+          "filename": "Angel Salazar --34809-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 75,
+            "w": 179,
+            "h": 125
+          },
+          "frame": {
+            "x": 1529,
+            "y": 744,
+            "w": 179,
+            "h": 125
+          }
+        },
+        {
+          "filename": "SolidKin-942856-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 73,
+            "w": 178,
+            "h": 127
+          },
+          "frame": {
+            "x": 1529,
+            "y": 869,
+            "w": 178,
+            "h": 127
+          }
+        },
+        {
+          "filename": "SolidKin-942856-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 73,
+            "w": 178,
+            "h": 127
+          },
+          "frame": {
+            "x": 1529,
+            "y": 996,
+            "w": 178,
+            "h": 127
+          }
+        },
+        {
+          "filename": "SolidKin-942856-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 73,
+            "w": 178,
+            "h": 127
+          },
+          "frame": {
+            "x": 1350,
+            "y": 1041,
+            "w": 178,
+            "h": 127
+          }
+        },
+        {
+          "filename": "\u306a\u304c\u307d\u3093--28483-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 81,
+            "w": 178,
+            "h": 119
+          },
+          "frame": {
+            "x": 1707,
+            "y": 1059,
+            "w": 178,
+            "h": 119
+          }
+        },
+        {
+          "filename": "Fanatia--26216-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 58,
+            "w": 163,
+            "h": 142
+          },
+          "frame": {
+            "x": 1885,
+            "y": 1059,
+            "w": 163,
+            "h": 142
+          }
+        },
+        {
+          "filename": "Shubaman--44683-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 59,
+            "w": 163,
+            "h": 141
+          },
+          "frame": {
+            "x": 1885,
+            "y": 1201,
+            "w": 163,
+            "h": 141
+          }
+        },
+        {
+          "filename": "Zuhdan FDL--29918-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 62,
+            "w": 163,
+            "h": 138
+          },
+          "frame": {
+            "x": 1885,
+            "y": 1342,
+            "w": 163,
+            "h": 138
+          }
+        },
+        {
+          "filename": "HikaruNeeee--84117-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 63,
+            "w": 163,
+            "h": 137
+          },
+          "frame": {
+            "x": 1885,
+            "y": 1480,
+            "w": 163,
+            "h": 137
+          }
+        },
+        {
+          "filename": "DroneOhTwo--40703-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 64,
+            "w": 177,
+            "h": 136
+          },
+          "frame": {
+            "x": 1528,
+            "y": 1123,
+            "w": 177,
+            "h": 136
+          }
+        },
+        {
+          "filename": "Angel Salazar --34809-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 75,
+            "w": 177,
+            "h": 125
+          },
+          "frame": {
+            "x": 1350,
+            "y": 1168,
+            "w": 177,
+            "h": 125
+          }
+        },
+        {
+          "filename": "GodLouie--49908-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 61,
+            "w": 165,
+            "h": 139
+          },
+          "frame": {
+            "x": 1181,
+            "y": 1203,
+            "w": 165,
+            "h": 139
+          }
+        },
+        {
+          "filename": "GodLouie--49908-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 61,
+            "w": 174,
+            "h": 139
+          },
+          "frame": {
+            "x": 1705,
+            "y": 1178,
+            "w": 174,
+            "h": 139
+          }
+        },
+        {
+          "filename": "Shadow--41559-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 61,
+            "w": 174,
+            "h": 139
+          },
+          "frame": {
+            "x": 1527,
+            "y": 1259,
+            "w": 174,
+            "h": 139
+          }
+        },
+        {
+          "filename": "B Boy-506644-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 62,
+            "w": 174,
+            "h": 138
+          },
+          "frame": {
+            "x": 1346,
+            "y": 1293,
+            "w": 174,
+            "h": 138
+          }
+        },
+        {
+          "filename": "Shadow--41559-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 61,
+            "w": 165,
+            "h": 139
+          },
+          "frame": {
+            "x": 1181,
+            "y": 1342,
+            "w": 165,
+            "h": 139
+          }
+        },
+        {
+          "filename": "Yoshi Punch-475236-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 62,
+            "w": 174,
+            "h": 138
+          },
+          "frame": {
+            "x": 1346,
+            "y": 1431,
+            "w": 174,
+            "h": 138
+          }
+        },
+        {
+          "filename": "B Boy-506644-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 62,
+            "w": 165,
+            "h": 138
+          },
+          "frame": {
+            "x": 1179,
+            "y": 1481,
+            "w": 165,
+            "h": 138
+          }
+        },
+        {
+          "filename": "Percival-199383-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 72,
+            "w": 174,
+            "h": 128
+          },
+          "frame": {
+            "x": 1701,
+            "y": 1317,
+            "w": 174,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Azureyn--11813-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 73,
+            "w": 174,
+            "h": 127
+          },
+          "frame": {
+            "x": 1520,
+            "y": 1398,
+            "w": 174,
+            "h": 127
+          }
+        },
+        {
+          "filename": "kino nii--68848-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 76,
+            "w": 174,
+            "h": 124
+          },
+          "frame": {
+            "x": 1520,
+            "y": 1525,
+            "w": 174,
+            "h": 124
+          }
+        },
+        {
+          "filename": "CheekyKneeKnee-332999-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 80,
+            "w": 174,
+            "h": 120
+          },
+          "frame": {
+            "x": 1344,
+            "y": 1569,
+            "w": 174,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Yoshi Punch-475236-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 62,
+            "w": 165,
+            "h": 138
+          },
+          "frame": {
+            "x": 1179,
+            "y": 1619,
+            "w": 165,
+            "h": 138
+          }
+        },
+        {
+          "filename": "Fanatia--26216-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 58,
+            "w": 172,
+            "h": 142
+          },
+          "frame": {
+            "x": 1022,
+            "y": 1757,
+            "w": 172,
+            "h": 142
+          }
+        },
+        {
+          "filename": "Fanatia--26216-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 58,
+            "w": 170,
+            "h": 142
+          },
+          "frame": {
+            "x": 1179,
+            "y": 1899,
+            "w": 170,
+            "h": 142
+          }
+        },
+        {
+          "filename": "Fanatia--26216-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 58,
+            "w": 159,
+            "h": 142
+          },
+          "frame": {
+            "x": 1194,
+            "y": 1757,
+            "w": 159,
+            "h": 142
+          }
+        },
+        {
+          "filename": "Shubaman--44683-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 59,
+            "w": 173,
+            "h": 141
+          },
+          "frame": {
+            "x": 1349,
+            "y": 1899,
+            "w": 173,
+            "h": 141
+          }
+        },
+        {
+          "filename": "Shubaman--44683-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 59,
+            "w": 170,
+            "h": 141
+          },
+          "frame": {
+            "x": 1522,
+            "y": 1899,
+            "w": 170,
+            "h": 141
+          }
+        },
+        {
+          "filename": "Dino bagus-143612-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 80,
+            "w": 174,
+            "h": 120
+          },
+          "frame": {
+            "x": 1694,
+            "y": 1445,
+            "w": 174,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Subatomo#4331-128518-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 13,
+            "y": 80,
+            "w": 174,
+            "h": 120
+          },
+          "frame": {
+            "x": 1694,
+            "y": 1565,
+            "w": 174,
+            "h": 120
+          }
+        },
+        {
+          "filename": "GodLouie--49908-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 61,
+            "w": 172,
+            "h": 139
+          },
+          "frame": {
+            "x": 1518,
+            "y": 1649,
+            "w": 172,
+            "h": 139
+          }
+        },
+        {
+          "filename": "Percival-199383-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 72,
+            "w": 165,
+            "h": 128
+          },
+          "frame": {
+            "x": 1353,
+            "y": 1689,
+            "w": 165,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Shadow--41559-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 61,
+            "w": 172,
+            "h": 139
+          },
+          "frame": {
+            "x": 1868,
+            "y": 1617,
+            "w": 172,
+            "h": 139
+          }
+        },
+        {
+          "filename": "Shubaman--44683-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 59,
+            "w": 159,
+            "h": 141
+          },
+          "frame": {
+            "x": 1690,
+            "y": 1756,
+            "w": 159,
+            "h": 141
+          }
+        },
+        {
+          "filename": "B Boy-506644-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 62,
+            "w": 172,
+            "h": 138
+          },
+          "frame": {
+            "x": 1692,
+            "y": 1897,
+            "w": 172,
+            "h": 138
+          }
+        },
+        {
+          "filename": "GodLouie--49908-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 61,
+            "w": 161,
+            "h": 139
+          },
+          "frame": {
+            "x": 1849,
+            "y": 1756,
+            "w": 161,
+            "h": 139
+          }
+        },
+        {
+          "filename": "Yoshi Punch-475236-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 62,
+            "w": 172,
+            "h": 138
+          },
+          "frame": {
+            "x": 1864,
+            "y": 1895,
+            "w": 172,
+            "h": 138
+          }
+        }
+      ]
+    },
+    {
+      "image": "pondbatch-23",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1892,
+        "h": 1154
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "Zuhdan FDL--29918-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 62,
+            "w": 172,
+            "h": 138
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 172,
+            "h": 138
+          }
+        },
+        {
+          "filename": "HikaruNeeee--84117-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 63,
+            "w": 172,
+            "h": 137
+          },
+          "frame": {
+            "x": 172,
+            "y": 0,
+            "w": 172,
+            "h": 137
+          }
+        },
+        {
+          "filename": "shiro--57173-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 63,
+            "w": 172,
+            "h": 137
+          },
+          "frame": {
+            "x": 344,
+            "y": 0,
+            "w": 172,
+            "h": 137
+          }
+        },
+        {
+          "filename": "DroneOhTwo--40703-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 64,
+            "w": 172,
+            "h": 136
+          },
+          "frame": {
+            "x": 516,
+            "y": 0,
+            "w": 172,
+            "h": 136
+          }
+        },
+        {
+          "filename": "EastMystic--76468-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 70,
+            "w": 172,
+            "h": 130
+          },
+          "frame": {
+            "x": 688,
+            "y": 0,
+            "w": 172,
+            "h": 130
+          }
+        },
+        {
+          "filename": "Farel-sama-217213-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 72,
+            "w": 172,
+            "h": 128
+          },
+          "frame": {
+            "x": 860,
+            "y": 0,
+            "w": 172,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Flowey-111350-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 72,
+            "w": 172,
+            "h": 128
+          },
+          "frame": {
+            "x": 1032,
+            "y": 0,
+            "w": 172,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Percival-199383-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 72,
+            "w": 172,
+            "h": 128
+          },
+          "frame": {
+            "x": 1204,
+            "y": 0,
+            "w": 172,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Subatomo#5409-166995-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 72,
+            "w": 172,
+            "h": 128
+          },
+          "frame": {
+            "x": 1376,
+            "y": 0,
+            "w": 172,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Azureyn--11813-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 73,
+            "w": 172,
+            "h": 127
+          },
+          "frame": {
+            "x": 1548,
+            "y": 0,
+            "w": 172,
+            "h": 127
+          }
+        },
+        {
+          "filename": "Angel Salazar --34809-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 75,
+            "w": 172,
+            "h": 125
+          },
+          "frame": {
+            "x": 1720,
+            "y": 0,
+            "w": 172,
+            "h": 125
+          }
+        },
+        {
+          "filename": "GoodTimed-635420-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 76,
+            "w": 172,
+            "h": 124
+          },
+          "frame": {
+            "x": 1720,
+            "y": 125,
+            "w": 172,
+            "h": 124
+          }
+        },
+        {
+          "filename": "kino nii--68848-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 76,
+            "w": 172,
+            "h": 124
+          },
+          "frame": {
+            "x": 1548,
+            "y": 127,
+            "w": 172,
+            "h": 124
+          }
+        },
+        {
+          "filename": "mallenshi-631064-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 78,
+            "w": 172,
+            "h": 122
+          },
+          "frame": {
+            "x": 1720,
+            "y": 249,
+            "w": 172,
+            "h": 122
+          }
+        },
+        {
+          "filename": "CheekyKneeKnee-332999-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 80,
+            "w": 172,
+            "h": 120
+          },
+          "frame": {
+            "x": 860,
+            "y": 128,
+            "w": 172,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Dino bagus-143612-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 80,
+            "w": 172,
+            "h": 120
+          },
+          "frame": {
+            "x": 688,
+            "y": 130,
+            "w": 172,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Jaspy-582891-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 81,
+            "w": 172,
+            "h": 119
+          },
+          "frame": {
+            "x": 516,
+            "y": 136,
+            "w": 172,
+            "h": 119
+          }
+        },
+        {
+          "filename": "Subatomo#5977-277330-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 81,
+            "w": 172,
+            "h": 119
+          },
+          "frame": {
+            "x": 172,
+            "y": 137,
+            "w": 172,
+            "h": 119
+          }
+        },
+        {
+          "filename": "\u30a2\u30eb\u30bf\u30a4\u30eb--14197-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 14,
+            "y": 81,
+            "w": 172,
+            "h": 119
+          },
+          "frame": {
+            "x": 0,
+            "y": 138,
+            "w": 172,
+            "h": 119
+          }
+        },
+        {
+          "filename": "Subatomo#4331-128518-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 11,
+            "y": 80,
+            "w": 171,
+            "h": 120
+          },
+          "frame": {
+            "x": 344,
+            "y": 137,
+            "w": 171,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Zuhdan FDL--29918-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 62,
+            "w": 170,
+            "h": 138
+          },
+          "frame": {
+            "x": 172,
+            "y": 256,
+            "w": 170,
+            "h": 138
+          }
+        },
+        {
+          "filename": "HikaruNeeee--84117-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 63,
+            "w": 170,
+            "h": 137
+          },
+          "frame": {
+            "x": 0,
+            "y": 257,
+            "w": 170,
+            "h": 137
+          }
+        },
+        {
+          "filename": "shiro--57173-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 63,
+            "w": 170,
+            "h": 137
+          },
+          "frame": {
+            "x": 1032,
+            "y": 128,
+            "w": 170,
+            "h": 137
+          }
+        },
+        {
+          "filename": "EastMystic--76468-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 70,
+            "w": 170,
+            "h": 130
+          },
+          "frame": {
+            "x": 860,
+            "y": 248,
+            "w": 170,
+            "h": 130
+          }
+        },
+        {
+          "filename": "Farel-sama-217213-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 72,
+            "w": 170,
+            "h": 128
+          },
+          "frame": {
+            "x": 688,
+            "y": 250,
+            "w": 170,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Subatomo#5409-166995-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 72,
+            "w": 170,
+            "h": 128
+          },
+          "frame": {
+            "x": 515,
+            "y": 255,
+            "w": 170,
+            "h": 128
+          }
+        },
+        {
+          "filename": "GoodTimed-635420-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 76,
+            "w": 170,
+            "h": 124
+          },
+          "frame": {
+            "x": 342,
+            "y": 257,
+            "w": 170,
+            "h": 124
+          }
+        },
+        {
+          "filename": "mallenshi-631064-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 78,
+            "w": 170,
+            "h": 122
+          },
+          "frame": {
+            "x": 342,
+            "y": 381,
+            "w": 170,
+            "h": 122
+          }
+        },
+        {
+          "filename": "Jaspy-582891-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 81,
+            "w": 170,
+            "h": 119
+          },
+          "frame": {
+            "x": 0,
+            "y": 394,
+            "w": 170,
+            "h": 119
+          }
+        },
+        {
+          "filename": "Subatomo#5977-277330-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 81,
+            "w": 170,
+            "h": 119
+          },
+          "frame": {
+            "x": 170,
+            "y": 394,
+            "w": 170,
+            "h": 119
+          }
+        },
+        {
+          "filename": "\u30a2\u30eb\u30bf\u30a4\u30eb--14197-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 12,
+            "y": 81,
+            "w": 170,
+            "h": 119
+          },
+          "frame": {
+            "x": 1202,
+            "y": 128,
+            "w": 170,
+            "h": 119
+          }
+        },
+        {
+          "filename": "Azureyn--11813-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 73,
+            "w": 165,
+            "h": 127
+          },
+          "frame": {
+            "x": 1372,
+            "y": 128,
+            "w": 165,
+            "h": 127
+          }
+        },
+        {
+          "filename": "kino nii--68848-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 76,
+            "w": 165,
+            "h": 124
+          },
+          "frame": {
+            "x": 1202,
+            "y": 247,
+            "w": 165,
+            "h": 124
+          }
+        },
+        {
+          "filename": "CheekyKneeKnee-332999-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 80,
+            "w": 165,
+            "h": 120
+          },
+          "frame": {
+            "x": 1030,
+            "y": 265,
+            "w": 165,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Dino bagus-143612-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 80,
+            "w": 165,
+            "h": 120
+          },
+          "frame": {
+            "x": 1537,
+            "y": 251,
+            "w": 165,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Subatomo#4331-128518-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 80,
+            "w": 164,
+            "h": 120
+          },
+          "frame": {
+            "x": 1367,
+            "y": 255,
+            "w": 164,
+            "h": 120
+          }
+        },
+        {
+          "filename": "shiro--57173-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 63,
+            "w": 163,
+            "h": 137
+          },
+          "frame": {
+            "x": 1195,
+            "y": 371,
+            "w": 163,
+            "h": 137
+          }
+        },
+        {
+          "filename": "EastMystic--76468-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 70,
+            "w": 163,
+            "h": 130
+          },
+          "frame": {
+            "x": 685,
+            "y": 378,
+            "w": 163,
+            "h": 130
+          }
+        },
+        {
+          "filename": "Farel-sama-217213-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 72,
+            "w": 163,
+            "h": 128
+          },
+          "frame": {
+            "x": 512,
+            "y": 383,
+            "w": 163,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Subatomo#5409-166995-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 72,
+            "w": 163,
+            "h": 128
+          },
+          "frame": {
+            "x": 340,
+            "y": 503,
+            "w": 163,
+            "h": 128
+          }
+        },
+        {
+          "filename": "GoodTimed-635420-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 76,
+            "w": 163,
+            "h": 124
+          },
+          "frame": {
+            "x": 848,
+            "y": 378,
+            "w": 163,
+            "h": 124
+          }
+        },
+        {
+          "filename": "mallenshi-631064-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 78,
+            "w": 163,
+            "h": 122
+          },
+          "frame": {
+            "x": 848,
+            "y": 502,
+            "w": 163,
+            "h": 122
+          }
+        },
+        {
+          "filename": "Jaspy-582891-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 81,
+            "w": 163,
+            "h": 119
+          },
+          "frame": {
+            "x": 675,
+            "y": 508,
+            "w": 163,
+            "h": 119
+          }
+        },
+        {
+          "filename": "Subatomo#5977-277330-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 81,
+            "w": 163,
+            "h": 119
+          },
+          "frame": {
+            "x": 503,
+            "y": 511,
+            "w": 163,
+            "h": 119
+          }
+        },
+        {
+          "filename": "\u30a2\u30eb\u30bf\u30a4\u30eb--14197-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 81,
+            "w": 163,
+            "h": 119
+          },
+          "frame": {
+            "x": 503,
+            "y": 630,
+            "w": 163,
+            "h": 119
+          }
+        },
+        {
+          "filename": "lost_kaineruver4--42508-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 69,
+            "w": 162,
+            "h": 131
+          },
+          "frame": {
+            "x": 503,
+            "y": 749,
+            "w": 162,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Shadow--41559-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 61,
+            "w": 161,
+            "h": 139
+          },
+          "frame": {
+            "x": 1011,
+            "y": 385,
+            "w": 161,
+            "h": 139
+          }
+        },
+        {
+          "filename": "B Boy-506644-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 62,
+            "w": 161,
+            "h": 138
+          },
+          "frame": {
+            "x": 1011,
+            "y": 524,
+            "w": 161,
+            "h": 138
+          }
+        },
+        {
+          "filename": "Yoshi Punch-475236-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 62,
+            "w": 161,
+            "h": 138
+          },
+          "frame": {
+            "x": 838,
+            "y": 624,
+            "w": 161,
+            "h": 138
+          }
+        },
+        {
+          "filename": "Percival-199383-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 72,
+            "w": 161,
+            "h": 128
+          },
+          "frame": {
+            "x": 666,
+            "y": 627,
+            "w": 161,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Azureyn--11813-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 73,
+            "w": 161,
+            "h": 127
+          },
+          "frame": {
+            "x": 666,
+            "y": 755,
+            "w": 161,
+            "h": 127
+          }
+        },
+        {
+          "filename": "kino nii--68848-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 76,
+            "w": 161,
+            "h": 124
+          },
+          "frame": {
+            "x": 666,
+            "y": 882,
+            "w": 161,
+            "h": 124
+          }
+        },
+        {
+          "filename": "CheekyKneeKnee-332999-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 80,
+            "w": 161,
+            "h": 120
+          },
+          "frame": {
+            "x": 0,
+            "y": 513,
+            "w": 161,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Dino bagus-143612-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 80,
+            "w": 161,
+            "h": 120
+          },
+          "frame": {
+            "x": 161,
+            "y": 513,
+            "w": 161,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Shuba99--27394-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 69,
+            "w": 160,
+            "h": 131
+          },
+          "frame": {
+            "x": 322,
+            "y": 631,
+            "w": 160,
+            "h": 131
+          }
+        },
+        {
+          "filename": "Subatomo#4331-128518-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 80,
+            "w": 160,
+            "h": 120
+          },
+          "frame": {
+            "x": 322,
+            "y": 762,
+            "w": 160,
+            "h": 120
+          }
+        },
+        {
+          "filename": "Zuhdan FDL--29918-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 62,
+            "w": 159,
+            "h": 138
+          },
+          "frame": {
+            "x": 322,
+            "y": 882,
+            "w": 159,
+            "h": 138
+          }
+        },
+        {
+          "filename": "HikaruNeeee--84117-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 63,
+            "w": 159,
+            "h": 137
+          },
+          "frame": {
+            "x": 482,
+            "y": 880,
+            "w": 159,
+            "h": 137
+          }
+        },
+        {
+          "filename": "shiro--57173-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 63,
+            "w": 159,
+            "h": 137
+          },
+          "frame": {
+            "x": 482,
+            "y": 1017,
+            "w": 159,
+            "h": 137
+          }
+        },
+        {
+          "filename": "EastMystic--76468-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 70,
+            "w": 159,
+            "h": 130
+          },
+          "frame": {
+            "x": 0,
+            "y": 633,
+            "w": 159,
+            "h": 130
+          }
+        },
+        {
+          "filename": "Farel-sama-217213-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 72,
+            "w": 159,
+            "h": 128
+          },
+          "frame": {
+            "x": 159,
+            "y": 633,
+            "w": 159,
+            "h": 128
+          }
+        },
+        {
+          "filename": "Subatomo#5409-166995-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 72,
+            "w": 159,
+            "h": 128
+          },
+          "frame": {
+            "x": 159,
+            "y": 761,
+            "w": 159,
+            "h": 128
+          }
+        },
+        {
+          "filename": "GoodTimed-635420-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 76,
+            "w": 159,
+            "h": 124
+          },
+          "frame": {
+            "x": 0,
+            "y": 763,
+            "w": 159,
+            "h": 124
+          }
+        },
+        {
+          "filename": "mallenshi-631064-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 78,
+            "w": 159,
+            "h": 122
+          },
+          "frame": {
+            "x": 0,
+            "y": 887,
+            "w": 159,
+            "h": 122
+          }
+        },
+        {
+          "filename": "Jaspy-582891-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 81,
+            "w": 159,
+            "h": 119
+          },
+          "frame": {
+            "x": 159,
+            "y": 889,
+            "w": 159,
+            "h": 119
+          }
+        },
+        {
+          "filename": "Subatomo#5977-277330-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 81,
+            "w": 159,
+            "h": 119
+          },
+          "frame": {
+            "x": 159,
+            "y": 1008,
+            "w": 159,
+            "h": 119
+          }
+        },
+        {
+          "filename": "\u30a2\u30eb\u30bf\u30a4\u30eb--14197-0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 200,
+            "h": 200
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 81,
+            "w": 159,
+            "h": 119
+          },
+          "frame": {
+            "x": 0,
+            "y": 1009,
+            "w": 159,
+            "h": 119
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "http://github.com/odrick/free-tex-packer-cli",
+    "version": "0.3.0"
+  }
+}
