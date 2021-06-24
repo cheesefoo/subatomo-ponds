@@ -891,7 +891,7 @@ img
         display:    block;
         visibility: initial !important;
         width:      100vw;
-        width:      calc(100vh * 0.37)
+        width:      calc(100vh * 0.37);
         max-width:  initial;
         height:     100vh;
         transition: 0.5s;
@@ -1150,23 +1150,36 @@ svg path
     stroke: inherit;
 }
 
-#fanart-splash
+#fanart-splash-container
+{
+    position:        fixed;
+    z-index:         10;
+    top:             0;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    width:           100vw;
+    height:          100vh;
+}
+
+.fanart-splash
 {
     position:                fixed;
-    top:                     0;
-    width:                   30vw;
-    height:                  30vh;
-    margin:                  auto;
+    top:                     30%;
+    left:                    33%;
+    width:                   50vw;
+    height:                  50vh;
+
     background-image:        url("../images/ui/artduck.png");
     background-repeat:       no-repeat;
-    -moz-background-size:    cover;
-    -o-background-size:      cover;
-    -webkit-background-size: cover;
-    background-size:         cover;
+    -moz-background-size:    contain;
+    -o-background-size:      contain;
+    -webkit-background-size: contain;
+    background-size:         contain;
 
 }
 
-#ponds-to-fanart :hover
+#ponds-to-fanart:hover, #ponds-to-ducks:hover
 {
     opacity:            1;
     -moz-box-shadow:    5px 0px 10px -3px rgba(0, 0, 0, 0.75);
@@ -1174,7 +1187,7 @@ svg path
     box-shadow:         5px 0px 10px -3px rgba(0, 0, 0, 0.75);
 }
 
-#ponds-to-fanart
+.scene-switch-btn
 {
     position:                fixed;
     z-index:                 10;
@@ -1183,10 +1196,77 @@ svg path
     right:                   8px;
     width:                   15vw;
     height:                  10vh;
-    background-image:        url("../images/ui/fanart-logo.png");
+    background-image:        inherit;
     background-repeat:       no-repeat;
     -moz-background-size:    contain;
     -o-background-size:      contain;
     -webkit-background-size: contain;
     background-size:         contain;
+}
+
+#ponds-to-fanart
+{
+    background-image: url("../images/ui/fanart-logo.png");
+
+}
+
+#ponds-to-ducks
+{
+    background-image: url("../images/intro/LogoAdjustedSize.png");
+}
+
+
+#fanart-window.modal-window > div
+{
+    z-index:           100000;
+    display:           flex;
+    overflow:          hidden;
+    align-content:     center;
+    flex-direction:    row;
+    flex-wrap:         wrap;
+    box-sizing:        border-box;
+    width:             80vw;
+    height:            calc(80vw * 0.55);
+
+    max-height:        80vh;
+
+    padding:           70px;
+    background-color:  transparent;
+    background-image:  url(../images/subamodal-min.png);
+    background-repeat: no-repeat;
+
+    background-size:   100% 100%;
+}
+
+#fanart-window-display
+{
+    width:      70%;
+    max-width:  70%;
+    max-height: 100%;
+}
+
+#fanart-window-inner
+{
+    display:        flex;
+    flex-direction: row;
+}
+
+#fanart-image
+{
+    object-fit: contain;
+}
+
+#fanart-info
+{
+    max-width: 30%;
+}
+
+#fanart-name
+{
+    color: black;
+}
+
+#fanart-message
+{
+    text-wrap: normal;
 }

@@ -1538,9 +1538,11 @@
     <span></span>
 </div>
 <div id="ponds-logo-home" style="visibility:hidden;"></div>
-<div id="ponds-to-fanart" style="visibility:hidden;"></div>
-<div id="ponds-to-ducks" style="visibility:hidden;"></div>
-<div id="fanart-splash" style="visibility:hidden;"></div>
+<div class="scene-switch-btn" id="ponds-to-fanart" style="visibility:hidden;"></div>
+<div class="scene-switch-btn" id="ponds-to-ducks" style="visibility:hidden;"></div>
+<!--<div class="fanart-splash" id="fanart-splash-container" style="visibility:hidden">-->
+<div class="fanart-splash" style="visibility:hidden;"></div>
+<!--</div>-->
 <div id="ponds-volume" style="visibility:hidden;"></div>
 <div id="ponds-collapse" style="visibility:hidden;">PONDS</div>
 <div id="home" style="display:none;">
@@ -1658,7 +1660,7 @@
                 </div>
             </div>
         </div>
-
+        <a class="modal-bg" href="#"></a>
     </div>
     <div class="modal-window" id="about-subaru" style="visibility: hidden;">
 
@@ -1824,19 +1826,26 @@
 
 <h2 id='loadPond' style="position:fixed;bottom:10px;left:10px;z-index:100000;display:none;">Loading pond...</h2>
 
-<div class="fanart modal-window" id="fanart-window" style="display: none;">
-    <div class="fanart moda-content" id="fanart-window-inner">
-        <div class="fanart modal-content" id="fanart-window-display">
-            <!--
-            <a id="fanart-image-link" href="#" target="_blank">
-            </a>
-            -->
-            <img id="fanart-image" src=""/>
+<div class="fanart modal-window" id="fanart-window" style="visibility: hidden;">
+    <div>
+        <a class="modal-close" href="#" title="Close">X</a>
+        <div class="fanart modal-content" id="fanart-window-inner">
+            <div class="fanart" id="fanart-window-display">
+                <!--
+                <a id="fanart-image-link" href="#" target="_blank">
+                </a>
+                -->
+                <img id="fanart-image" src=""/>
+            </div>
+            <div class="fanart" id="fanart-info">
+                <a class="social-icon" href="#" id="fanart-link">
+                    <i class="fab" id="fanart-social-icon"></i><i class="fanart" id="fanart-name"></i>
+                </a>
+                <p class="fanart" id="fanart-message"></p>
+            </div>
         </div>
-        <a class="social-icon" href="#" id="fanart-link">
-            <i class="fab" id="fanart-social-icon"></i><i class="fanart" id="fanart-name>"></i>
-        </a>
     </div>
+    <a class="modal-bg" href="#" id="fanart-modal-bg"></a>
 </div>
 <script defer>
     let isMuted = false;

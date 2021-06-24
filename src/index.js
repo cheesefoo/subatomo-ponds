@@ -87,7 +87,7 @@ let fanartSubmissions = require("./assets/fanart/fanartSubmissions.json");
 let boatj = require("./assets/fanart/boat/boat.json");
 let explodej = require("./assets/fanart/boat/explode.json");
 importAll(require.context("./assets/fanart/boat", true, /.*\.(png|jpe?g|svg)$/));
-importAll(require.context("./assets/fanart/", false, /.*\.(png|jpe?g|svg)$/));
+importAll(require.context("./assets/fanart", true, /FANART.*\.(png|jpe?g|svg)$/));
 
 //ORTHOGNAL
 let groundTileIndices, pondTileIndices, obstacleTileIndices, transitionTileIndices;
@@ -1326,12 +1326,19 @@ class PondManager extends Phaser.Scene {
     }
 
     switchScene(from, to) {
-        this.scene.manager.switch(from, to);
+        let fromScene = this.scene.get(from);
+        fromScene.scene.transition({target: to, duration: 1000, sleep: true, moveAbove: true});
+        // this.scene.manager.switch(from, to);
     }
 
-    startFanartPondTransitionAnimation() {
+    toFanartTransitionAnimation() {
         let tl = gsap.timeline();
-        tl.from("#fanart-splash-logo", {autoAlpha: 1, yoyo: true, duration: 3});
+        tl.to(".fanart-splash", {autoAlpha: 1, duration: 2}, 0).then(() => tl.reverse());
+    }
+
+    toDucksTransitionAnimation() {
+        let tl = gsap.timeline();
+        tl.to("#loadingDuckContainer", {autoAlpha: 1, duration: 2}, 0).then(() => tl.reverse());
     }
 
     create() {
@@ -1347,16 +1354,63 @@ class PondManager extends Phaser.Scene {
             // console.log($(this).attr("pond"));
             that.loadPond(parseInt($(this).attr("pond")));
         });
+
         let pond = this.scene.get("pond");
         let fanart = this.scene.get("fanart");
 
-        $("#ponds-to-fanart").on("click", function () {
+        let toDucks = $("#ponds-to-ducks");
+        let toFanart = $("#ponds-to-fanart");
+
+        toFanart.on("click", function () {
             console.log("#ponds-to-fanart click");
-            if (fanart.initialized == false) {
-                fanart.createSubmissions();
-            }
-            that.startFanartPondTransitionAnimation();
-            that.switchScene(pond, fanart);
+            if ($(this).attr("locked") == "true")
+                return;
+
+            toDucks.attr("locked", "true");
+            $(this).attr("locked", "true");
+
+            that.toFanartTransitionAnimation();
+            that.switchScene("pond", "fanart");
+            $(this).fadeOut({
+                duration: 1000,
+                complete: function () {
+                    console.log("to fanart fadeout done.");
+                    toDucks.fadeIn({
+                        duration: 1000,
+                        complete: function () {
+                            console.log("to ducks fade in done.");
+                            toDucks.attr("locked", "false");
+                        }
+                    });
+                }
+            });
+        });
+        toDucks.on("click", function () {
+            console.log("#ponds-to-ducks click");
+
+            if ($(this).attr("locked"))
+                return;
+
+            toFanart.attr("locked", "true");
+            $(this).attr("locked", "true");
+
+            that.toDucksTransitionAnimation();
+            that.switchScene("fanart", "pond");
+            $(this).fadeOut({
+                duration: 1000,
+                complete: function () {
+                    console.log("to ducks fadeout done.");
+
+                    toFanart.fadeIn({
+                        duration: 1000,
+                        complete: function () {
+                            console.log("to fanart fade in done.");
+
+                            toFanart.attr("locked", "false");
+                        }
+                    });
+                }
+            });
         });
 
 
@@ -1539,16 +1593,18 @@ class FanartPond extends Phaser.Scene {
     constructor() {
         super({
             key: "fanart",
-            active: true,
+            active: false,
 
         });
         this.initialized = false;
         this.fanartWindow = $("#fanart-window");
         this.fanartDisplay = $("#fanart-window-display");
         this.fanartSocial = $("#fanart-social-icon");
-        this.fanartName = $("#fanart-name");
+        this.fanartName = document.getElementById("fanart-name");
+        this.fanartMessage = document.getElementById("fanart-message");
         this.fanartLink = $("#fanart-link");
         this.fanartImage = $("#fanart-image");
+        this.listOfBoats = [];
     }
 
     preload() {
@@ -1558,9 +1614,14 @@ class FanartPond extends Phaser.Scene {
     }
 
     create() {
-        console.log("fanart scene preload");
+        console.log("fanart scene create");
 
         this.makeBoatAnimations();
+        let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
+        pondImg.setDisplaySize(newWidth, newHeight);
+        pondImg.setOrigin(0.5);
+        this.createSubmissions();
+        this.input.on("gameobjectup", this.onObjectClicked);
     }
 
     makeBoatAnimations() {
@@ -1570,7 +1631,6 @@ class FanartPond extends Phaser.Scene {
             prefix: "Boat_",
             suffix: ".png",
         });
-
         this.anims.create({
             key: "boat-idle",
             frames: idleFrameNames,
@@ -1593,8 +1653,6 @@ class FanartPond extends Phaser.Scene {
     }
 
     createSubmissions() {
-        let that = this;
-        this.initialized = true;
         //Get submission reference sheet from google sheet and filter by pond #
         const fanartSubsArray = fanartSubmissions["submissions"];
 
@@ -1611,13 +1669,13 @@ class FanartPond extends Phaser.Scene {
         // for (let i = 0; i < fanarts.length; i++) {
         //     this.makeBoat(fanarts[0]);
         // }
-        this.makeBoat(fanarts[0], newWidth / 2, newHeight / 2);
-
+        let newBoat = this.makeBoat(fanarts[0], newWidth / 2, newHeight / 2);
+        this.listOfBoats.push(newBoat);
     }
 
     makeBoat(fanart, x, y) {
-        let fanartBoat = this.add.sprite(x, y, "boat", "boat-0.jpg");
-        fanartBoat.gameObjectType = "fanart";
+        let fanartBoat = this.add.sprite(x, y, "boat", "Boat_0.png");
+        fanartBoat.gameObjectType = "boat";
         fanartBoat.displayName = fanart.name;
         fanartBoat.filename = fanart.filename;
         fanartBoat.message = fanart.message;
@@ -1626,44 +1684,77 @@ class FanartPond extends Phaser.Scene {
 
         fanartBoat.setInteractive();
         fanartBoat.input.cursor = "pointer";
-        fanartBoat.input.hitArea.y += 25;
-        fanartBoat.animState = BOAT_STATES.IDLE;
+        // fanartBoat.input.hitArea.y += 25;
+        fanartBoat.animState = BOAT_STATES.START_IDLE;
 
-        fanartBoat.on(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + "explode", () => {
-            this.fanartWindow.fadeIn();
+        fanartBoat.on(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + "boat-explode", (animation, frame, gameObject, framekey) => {
+            console.log("boat-explode anim finish");
+            this.onExplodeFinished(gameObject);
         });
-
+        if (DEBUGGING) {
+            this.input.enableDebug(fanartBoat, 0x04F404);
+        }
         fanartBoat.updateState = function (context, delta) {
             switch (context.animState) {
             case BOAT_STATES.START_IDLE:
                 context.play("boat-idle");
+                context.animState = BOAT_STATES.IDLE;
                 break;
-            case BOAT_STATES.EXPLODING:
-                context.play("boat-exploding");
+            case BOAT_STATES.START_EXPLODE:
+                context.play("boat-explode");
+                context.animState = BOAT_STATES.EXPLODING;
+                break;
+            default:
                 break;
             }
         };
         return fanartBoat;
     }
 
-    onObjectClicked(pointer, gameObject) {
-        if (gameObject.gameObjectType == "fanart") {
-            let boat = gameObject;
-            this.fanartImage.prop("src", "assets/" + boat.filename + ".png");
-            if (boat.fanartUsername.startsWith("@"))
-                this.fanartSocial.addClass("fa-twitter");
-            if (boat.link != "") {
-                this.fanartLink.prop("href", boat.fanartLink);
-            }
-            this.fanartName = boat.username;
-        }
+    onExplodeFinished(boat) {
+        gsap.to(this.fanartWindow, {autoAlpha: 1, duration: 1});
 
+        this.fanartImage.prop("src", "assets/" + boat.filename + ".png");
+
+        this.fanartSocial.removeClass("fa-twitter");
+        if (boat.fanartUsername.startsWith("@"))
+            this.fanartSocial.addClass("fa-twitter");
+        if (boat.link != "") {
+            this.fanartLink.prop("href", boat.fanartLink);
+        }
+        this.fanartName.textContent = boat.fanartUsername;
+        this.fanartMessage.textContent = boat.message;
+
+        boat.animState = BOAT_STATES.START_IDLE;
     }
 
+    onObjectClicked(pointer, gameObject) {
+        console.log("fanart pond onclick");
+        if (gameObject.gameObjectType == "boat") {
+            console.log("boat onclick");
+
+            gameObject.animState = BOAT_STATES.START_EXPLODE;
+            game.input.enabled = false;
+        }
+    }
+
+    update(time, delta) {
+        let len = this.listOfBoats.length;
+        for (let i = 0; i < len; i++) {
+            try {
+                let boatGO = this.listOfBoats[i];
+
+                boatGO.updateState(boatGO, delta);
+
+            } catch (e) {
+                // console.error(e);
+            }
+        }
+    }
 }
 
 const BOAT_STATES = {
-    IDLE: 0, EXPLODING: 1
+    START_IDLE: 0, IDLE: 1, START_EXPLODE: 2, EXPLODING: 3
 };
 
 const config = {
@@ -1744,3 +1835,8 @@ function arrayRemove(arr, value) {
         return ele != value;
     });
 }
+
+$("#fanart-modal-bg").on("click", () => {
+    if (window.game.input.enabled == false)
+        game.input.enabled = true;
+});
