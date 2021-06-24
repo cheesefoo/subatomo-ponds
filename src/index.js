@@ -384,6 +384,8 @@ function startHomepageAnimation() {
             tl2.fromTo("#ponds-to-fanart", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("#ponds-logo-home", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("canvas", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
+
+
             tl2.fromTo("#pond-ui", {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, 0).then(function () {
                 //$("#pond-ui").show();
                 window.game.input.enabled = true;
@@ -392,10 +394,12 @@ function startHomepageAnimation() {
             });
             tl2.play();
 
-            game.scene.add("pond-manager", new PondManager());
-            game.scene.add("pond", new SubatomoPond());
-            game.scene.add("fanart", new FanartPond());
+			if(!game.scene.keys.hasOwnProperty("pond-manager")){
+                game.scene.add("pond-manager", new PondManager());
+                game.scene.add("pond", new SubatomoPond());
+                game.scene.add("fanart", new FanartPond());
 
+			}
         });
     });
 
@@ -404,6 +408,8 @@ function startHomepageAnimation() {
             return;
         isEnteringPond = true;
         window.game.input.enabled = false;
+
+		$("#pond-ui").fadeOut();
 
         tl2.timeScale(2).reverse(0, true).then(function () {
             $("canvas").hide();
@@ -1212,7 +1218,7 @@ class SubatomoPond extends Phaser.Scene {
 
     generatePondUI() {
         // console.log("generate pond ui");
-        $body.append("<div style='display:none;' class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
+        $("#pondUIContainer").append("<div style='display:none;' class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
         let pond = $("#pond-ui .inner-ui");
         // pond.append("<img src='assets/subaru_uitest_1.png'></img>")
         pond.append("<h3 text='main-15'>Select pond</h3>");
