@@ -197,9 +197,48 @@ ul.social-icons
 
 #credits-title{
 	flex:1 1 100%;
-	height:0;
 	margin:0;
+	text-align:center;
 }
 #credits-title h1{
 	margin:0;
+	width:auto;
+	
+}
+
+@media (max-width: 900px)
+{
+	#credits-content{
+		padding:20px;
+	}
+	#credits-title{
+		margin-top:10vh;
+	}
+	#credits-title h5{
+		margin-bottom:0;
+	}
+	#credits-first-column{
+		flex: 1 1 100%;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		margin-bottom:0;
+		margin-top:-30px;
+	}
+	
+	#credits-first-column .credits-category{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		flex: 1 1 50%;
+		margin-bottom:0;
+	}
+	#credits-content > .credits-category{
+		margin-top:-30px;
+	}
+	#credits.modal-window > div{
+	    background-image:                          url(http://localhost:8080/assets/star-bg.jpg),url(http://localhost:8080/assets/modal-mobile.png);
+		background-size: 200px,100% 100%;
+		background-position: 26vw 63vh,center;
+	}
 }

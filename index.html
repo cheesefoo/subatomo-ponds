@@ -1537,9 +1537,11 @@
     <span></span>
     <span></span>
 </div>
+<div id="pondUIContainer">
 <div id="ponds-logo-home" style="visibility:hidden;"></div>
 <div id="ponds-volume" style="visibility:hidden;"></div>
 <div id="ponds-collapse" style="visibility:hidden;">PONDS</div>
+</div>
 <div id="home" style="display:none;">
 
     <div class="logo logo-bg logo-sky"></div>
@@ -1695,7 +1697,7 @@
             <div id="credits-content">
                 <div id="credits-title">
                     <h1 class="credits" text="c-0">Credits</h1>
-                    <h1 class="credits" text="c-1">Text</h1>
+                    <h5 class="credits" text="c-1">Text</h5>
                 </div>
                 
                 <div id="credits-first-column">
@@ -1824,7 +1826,14 @@
         $("#hamburger").click(function () {
             $(".logo-panel").toggleClass("active");
         });
-
+		const uiRoot = document.getElementById('pondUIContainer');
+		for (const eventName of ['mouseup','mousedown', 'touchstart', 'touchmove', 'touchend', 'touchcancel']){
+			uiRoot.addEventListener(eventName, e => e.stopPropagation());
+		}
+		
+		$(".logo-title-container").on("click",function(){
+			$(".logo-panel").removeClass("active");
+		});
     });
 
 
