@@ -15,8 +15,10 @@ let loadingduck = require("./assets/images/ui/loadingduck.svg");
 require("./assets/images/subahug3.png");
 require("./assets/images/thewholesky.jpg");
 require("./assets/images/subatomo army.png");
-require("./assets/images/ui/volume.png");
-require("./assets/images/ui/volume_mute.png");
+require("./assets/images/ui/Little_Megaphone_volume.png");
+require("./assets/images/ui/Little_Megaphone_no_volume_v2.png");
+require("./assets/images/ui/artduck.png");
+require("./assets/images/ui/fanart-logo.png");
 require("./assets/images/LanguageButton.png");
 require("./assets/images/star-alone.png");
 require("./assets/images/megaphone-alone.png");
@@ -212,7 +214,6 @@ function startHomepageAnimation() {
         duration: 1,
         delay: 1
     }, 0);
-
     tl.fromTo(".logo-mid", {
 
         bottom: "-200%",
@@ -243,7 +244,6 @@ function startHomepageAnimation() {
         duration: 3,
         delay: 3
     }, 0);
-
     tl.fromTo(".logo-text", {
         autoAlpha: 0,
         opacity: 0,
@@ -340,11 +340,13 @@ function startHomepageAnimation() {
         delay: 7
     });
 
+    /*
     let grassFrames = 29;
     let grassLwidth = 598;
     // let grassLwidth = 597.86;
     // let grassRwidth = 307.66;
     let grassRwidth = 308.2;
+    */
     /*    gsap.to("#grass-L", {
             backgroundPosition: (-grassLwidth * grassFrames) + "px 0",
             ease: "steps(" + grassFrames + ")",
@@ -379,6 +381,7 @@ function startHomepageAnimation() {
             $("#home").hide();
             tl2.fromTo("#ponds-collapse", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("#ponds-volume", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
+            tl2.fromTo("#ponds-to-fanart", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("#ponds-logo-home", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("canvas", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("#pond-ui", {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, 0).then(function () {
@@ -391,6 +394,8 @@ function startHomepageAnimation() {
 
             game.scene.add("pond-manager", new PondManager());
             game.scene.add("pond", new SubatomoPond());
+            game.scene.add("fanart", new FanartPond());
+
         });
     });
 
@@ -412,7 +417,6 @@ function startHomepageAnimation() {
     $("#ponds-collapse").on("click", function () {
         $("#pond-ui").fadeToggle();
     });
-
 }
 
 let newHeight, newWidth;
@@ -548,6 +552,17 @@ class SubatomoPond extends Phaser.Scene {
     }
 
     create() {
+        let that = this;
+        /*     let fanart = this.scene.get("fanart");
+
+             $("#ponds-to-fanart").on("click", function () {
+                 console.log("#ponds-to-fanart click");
+                 // if (fanart.initialized == false) {
+                 //     fanart.createSubmissions();
+                 // }
+                 // that.startFanartPondTransitionAnimation();
+                 that.scene.switch(that.scene.get("fanart"));
+             });*/
 
         let pondManager = this.scene.get("pond-manager");
         pondManager.events.on(
@@ -703,9 +718,9 @@ class SubatomoPond extends Phaser.Scene {
         $("#ponds-volume").on("click", function () {
             isMuted = !isMuted;
             if (isMuted) {
-                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/volume_mute.png)";
+                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/Little_Megaphone_no_volume_v2.png)";
             } else {
-                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/volume.png)";
+                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/Little_Megaphone_volume.png)";
             }
             scene.sound.setMute(isMuted);
         });
@@ -960,8 +975,6 @@ class SubatomoPond extends Phaser.Scene {
                     duckGameObject.currentDuck = ducks[i].image;
                     that.makeDuckAnimationFrames(atlaskey, ducks[i].image);
                     $("#loadPond").fadeOut();
-                    console.log("load pond fade out");
-
                     $(".load-pond").prop("disabled", false);
                 });
                 this.load.start();
@@ -1170,10 +1183,10 @@ class SubatomoPond extends Phaser.Scene {
     }
 
     onObjectClicked(pointer, gameObject) {
-        // if (gameObject.name == "bg") {
-        this.scene.events.emit("clearmessages");
-        // return;
-        // }
+        if (gameObject.name == "bg") {
+            this.scene.events.emit("clearmessages");
+            return;
+        }
         const duck = gameObject.duck;
         if (duck == null) return;
         // if the text is already being displayed, do nothing
@@ -1289,9 +1302,7 @@ class SubatomoPond extends Phaser.Scene {
 
     pauseMenu() {
         $(".load-pond").prop("disabled", true);
-        // $("#loadPond").show();
         $("#loadPond").fadeIn();
-        console.log("load pond fade in");
     }
 }
 
@@ -1314,6 +1325,15 @@ class PondManager extends Phaser.Scene {
         // }
     }
 
+    switchScene(from, to) {
+        this.scene.manager.switch(from, to);
+    }
+
+    startFanartPondTransitionAnimation() {
+        let tl = gsap.timeline();
+        tl.from("#fanart-splash-logo", {autoAlpha: 1, yoyo: true, duration: 3});
+    }
+
     create() {
         /*        this.infoText = this.add.text(10, 10, `Pond ${this.pondNum}`, {font: '48px Arial', fill: '#000000'});
                     this.infoText.setInteractive();
@@ -1328,6 +1348,17 @@ class PondManager extends Phaser.Scene {
             that.loadPond(parseInt($(this).attr("pond")));
         });
         let pond = this.scene.get("pond");
+        let fanart = this.scene.get("fanart");
+
+        $("#ponds-to-fanart").on("click", function () {
+            console.log("#ponds-to-fanart click");
+            if (fanart.initialized == false) {
+                fanart.createSubmissions();
+            }
+            that.startFanartPondTransitionAnimation();
+            that.switchScene(pond, fanart);
+        });
+
 
         // this.scene.add.text();
         // uiscene.add.text();
@@ -1508,30 +1539,35 @@ class FanartPond extends Phaser.Scene {
     constructor() {
         super({
             key: "fanart",
-            active: false,
+            active: true,
 
         });
-    }
-
-    preload() {
-        this.load.atlas("boat", "./assets/boat.png", boatj);
-        this.load.atlas("explode", "./assets/explode.png", explodej);
+        this.initialized = false;
         this.fanartWindow = $("#fanart-window");
         this.fanartDisplay = $("#fanart-window-display");
         this.fanartSocial = $("#fanart-social-icon");
         this.fanartName = $("#fanart-name");
         this.fanartLink = $("#fanart-link");
+        this.fanartImage = $("#fanart-image");
+    }
+
+    preload() {
+        console.log("fanart scene preload");
+        this.load.multiatlas("boat", boatj, "assets",);
+        this.load.multiatlas("explode", explodej, "assets",);
     }
 
     create() {
+        console.log("fanart scene preload");
+
+        this.makeBoatAnimations();
     }
 
     makeBoatAnimations() {
-
-
         let idleFrameNames = this.anims.generateFrameNames("boat", {
             start: 0,
-            end: 40,
+            end: 39,
+            prefix: "Boat_",
             suffix: ".png",
         });
 
@@ -1544,7 +1580,8 @@ class FanartPond extends Phaser.Scene {
 
         let explodeFrameNames = this.anims.generateFrameNames("explode", {
             start: 0,
-            end: 14,
+            end: 13,
+            prefix: "BoatExplode_",
             suffix: ".png",
         });
         this.anims.create({
@@ -1555,8 +1592,9 @@ class FanartPond extends Phaser.Scene {
         });
     }
 
-    loadSubmissions() {
+    createSubmissions() {
         let that = this;
+        this.initialized = true;
         //Get submission reference sheet from google sheet and filter by pond #
         const fanartSubsArray = fanartSubmissions["submissions"];
 
@@ -1578,18 +1616,23 @@ class FanartPond extends Phaser.Scene {
     }
 
     makeBoat(fanart, x, y) {
-        let fanartBoat = this.scene.add.sprite(x, y, "boat", "boat-0.jpg");
+        let fanartBoat = this.add.sprite(x, y, "boat", "boat-0.jpg");
         fanartBoat.gameObjectType = "fanart";
-        fanartBoat.displayName = fanart.Username;
-        fanartBoat.filename = fanart.Filename;
-        fanartBoat.message = fanart.Message;
-        fanartBoat.fanartUsername = fanart.fanartUsername;
+        fanartBoat.displayName = fanart.name;
+        fanartBoat.filename = fanart.filename;
+        fanartBoat.message = fanart.message;
+        fanartBoat.fanartUsername = fanart.social;
+        fanartBoat.fanartLink = fanart.link;
 
+        fanartBoat.setInteractive();
         fanartBoat.input.cursor = "pointer";
         fanartBoat.input.hitArea.y += 25;
-        fanartBoat.setInteractive();
-
         fanartBoat.animState = BOAT_STATES.IDLE;
+
+        fanartBoat.on(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + "explode", () => {
+            this.fanartWindow.fadeIn();
+        });
+
         fanartBoat.updateState = function (context, delta) {
             switch (context.animState) {
             case BOAT_STATES.START_IDLE:
@@ -1605,8 +1648,16 @@ class FanartPond extends Phaser.Scene {
 
     onObjectClicked(pointer, gameObject) {
         if (gameObject.gameObjectType == "fanart") {
-            this.fanartWindow.fadeIn();
+            let boat = gameObject;
+            this.fanartImage.prop("src", "assets/" + boat.filename + ".png");
+            if (boat.fanartUsername.startsWith("@"))
+                this.fanartSocial.addClass("fa-twitter");
+            if (boat.link != "") {
+                this.fanartLink.prop("href", boat.fanartLink);
+            }
+            this.fanartName = boat.username;
         }
+
     }
 
 }
