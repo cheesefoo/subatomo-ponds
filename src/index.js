@@ -956,30 +956,39 @@ class SubatomoPond extends Phaser.Scene {
                 if (!this.textures.exists(atlaskey))
                     this.load.multiatlas(atlaskey, "assets/" + atlaskey + ".json", "assets");
 
-                duckGameObject.tween = this.tweens.addCounter({
-                    from: 255,
-                    to: 0,
-                    duration: 1000,
-                    repeat: -1,
-                    onUpdate: function (tween) {
-                        const value = Math.floor(tween.getValue());
-
-                        duckGameObject.setTint(Phaser.Display.Color.GetColor(value, value, value));
-                    }
-                });
                 this.load.once(Phaser.Loader.Events.COMPLETE, () => {
-                    duckGameObject.tween.stop();
-                    if (duckGameObject.isTinted)
-                        duckGameObject.clearTint();
-                    duckGameObject.setTexture(atlaskey, ducks[i].image + "-0.png");
-                    duckGameObject.currentDuck = ducks[i].image;
-                    that.makeDuckAnimationFrames(atlaskey, ducks[i].image);
-                    $("#loadPond").fadeOut();
-                    $(".load-pond").prop("disabled", false);
+
+					console.log("duck",duckGameObject);
+					//var keyAnim=duckGameObject.anims.currentAnim.key.split("-");
+					//console.log("currentAnime",duckGameObject.anims.currentAnim.key);
+
+					duckGameObject.setTexture(atlaskey, ducks[i].image + "-0.png");
+
+							duckGameObject.currentDuck = ducks[i].image;
+							that.makeDuckAnimationFrames(atlaskey, ducks[i].image);
+
+					setTimeout(function(){
+						duckGameObject.animState= DUCK_STATES.START_IDLE;
+					that.tweens.add({
+								targets: duckGameObject.parentContainer,
+								alpha: 1,
+								duration: 1500,
+								ease: 'Power2'});
+					},100);
+
                 });
                 this.load.start();
             } else {
                 duckGameObject = this.physics.add.sprite(0, 0, atlaskey, ducks[i].image + "-0.png");
+
+				setTimeout(function(){
+				duckGameObject.animState= DUCK_STATES.START_IDLE;
+				that.tweens.add({
+							targets: duckGameObject.parentContainer,
+							alpha: 1,
+							duration: 1500,
+							ease: 'Power2'});
+				},100);
                 duckGameObject.currentDuck = ducks[i].image;
                 if (ducks[i] != "TEMPLATE")
                     this.makeDuckAnimationFrames(atlaskey, ducks[i].image);
@@ -1039,6 +1048,7 @@ class SubatomoPond extends Phaser.Scene {
             duckGameObject.displayWidth = SPRITE_WIDTH;
             duckGameObject.displayHeight = SPRITE_HEIGHT;
 
+			duckGameObject.parentContainer.alpha=0;
 
             // duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x * 0.5);
             // duckGameObject.body.overlapY = Math.floor(duckGameObject.body.y * 0.9);
