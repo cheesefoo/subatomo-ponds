@@ -29,7 +29,6 @@ function importAll(r) {
 let templatej = require("./assets/submissions/TEMPLATE.json");
 require("./assets/submissions/TEMPLATE.png");
 
-let ducksj, submissions;
 
 // let allducksjson = require.context("./assets/submissions",true,/pondbatch.*\.json"$/);
 
@@ -44,7 +43,7 @@ function requireAll(r) {
 requireAll(require.context("./assets/submissions", true, /pondbatch.*\.(json)"$/));
 
 
-submissions = require("./assets/submissions/submissions.json");
+let submissions = require("./assets/submissions/submissions.json");
 importAll(require.context("./assets/submissions", true, /pondbatch.*\.(png|jpe?g|svg)$/));
 
 //test data
@@ -82,6 +81,11 @@ importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", 
 importAll(require.context("./", true, /pond.*\.(json)$/));
 importAll(require.context("./assets/sound/", true, /.*\.(mp3|ogg|wav)$/));
 
+let fanartSubmissions = require("./assets/fanart/fanartSubmissions.json");
+let boatj = require("./assets/fanart/boat/boat.json");
+let explodej = require("./assets/fanart/boat/explode.json");
+importAll(require.context("./assets/fanart/boat", true, /.*\.(png|jpe?g|svg)$/));
+importAll(require.context("./assets/fanart/", false, /.*\.(png|jpe?g|svg)$/));
 
 //ORTHOGNAL
 let groundTileIndices, pondTileIndices, obstacleTileIndices, transitionTileIndices;
@@ -386,7 +390,7 @@ function startHomepageAnimation() {
             tl2.play();
 
             game.scene.add("pond-manager", new PondManager());
-            game.scene.add("pond", new MyGame());
+            game.scene.add("pond", new SubatomoPond());
         });
     });
 
@@ -516,7 +520,7 @@ class Preloader extends Phaser.Scene {
 
 }
 
-class MyGame extends Phaser.Scene {
+class SubatomoPond extends Phaser.Scene {
     // jshint ignore:line
     constructor() {
         // console.log("mygame constructor called");
@@ -929,6 +933,7 @@ class MyGame extends Phaser.Scene {
             //Generate frame names
 
             if (!this.textures.exists(ducks[i].image)) {
+                this.pauseMenu();
                 duckGameObject = this.physics.add
                     .sprite(0, 0, "TEMPLATE", "TEMPLATE-0.png");
                 duckGameObject.currentDuck = "TEMPLATE";
@@ -936,10 +941,28 @@ class MyGame extends Phaser.Scene {
                 if (!this.textures.exists(atlaskey))
                     this.load.multiatlas(atlaskey, "assets/" + atlaskey + ".json", "assets");
 
+                duckGameObject.tween = this.tweens.addCounter({
+                    from: 255,
+                    to: 0,
+                    duration: 1000,
+                    repeat: -1,
+                    onUpdate: function (tween) {
+                        const value = Math.floor(tween.getValue());
+
+                        duckGameObject.setTint(Phaser.Display.Color.GetColor(value, value, value));
+                    }
+                });
                 this.load.once(Phaser.Loader.Events.COMPLETE, () => {
+                    duckGameObject.tween.stop();
+                    if (duckGameObject.isTinted)
+                        duckGameObject.clearTint();
                     duckGameObject.setTexture(atlaskey, ducks[i].image + "-0.png");
                     duckGameObject.currentDuck = ducks[i].image;
                     that.makeDuckAnimationFrames(atlaskey, ducks[i].image);
+                    $("#loadPond").fadeOut();
+                    console.log("load pond fade out");
+
+                    $(".load-pond").prop("disabled", false);
                 });
                 this.load.start();
             } else {
@@ -1024,6 +1047,7 @@ class MyGame extends Phaser.Scene {
             let clickContainer = this.add.rectangle(0, 0, SPRITE_WIDTH, SPRITE_HEIGHT, 0x6666ff, 0);
             clickContainer.duck = duckGameObject;
             duckContainer.add(clickContainer);
+            clickContainer.gameObjectType = "duck";
             //Set event for click/press
             clickContainer.setInteractive();
             clickContainer.input.cursor = "pointer";
@@ -1262,11 +1286,16 @@ class MyGame extends Phaser.Scene {
             this.input.enableDebug(clickContainer, new Phaser.Display.Color(102, 102, 55, 125));
         }
     }
+
+    pauseMenu() {
+        $(".load-pond").prop("disabled", true);
+        // $("#loadPond").show();
+        $("#loadPond").fadeIn();
+        console.log("load pond fade in");
+    }
 }
 
-class PondManager
-    extends Phaser
-        .Scene {
+class PondManager extends Phaser.Scene {
     constructor() {
         // console.log("pond manager constructor");
         super({key: "pond-manager", active: true});
@@ -1475,6 +1504,116 @@ class PondManager
     }
 }
 
+class FanartPond extends Phaser.Scene {
+    constructor() {
+        super({
+            key: "fanart",
+            active: false,
+
+        });
+    }
+
+    preload() {
+        this.load.atlas("boat", "./assets/boat.png", boatj);
+        this.load.atlas("explode", "./assets/explode.png", explodej);
+        this.fanartWindow = $("#fanart-window");
+        this.fanartDisplay = $("#fanart-window-display");
+        this.fanartSocial = $("#fanart-social-icon");
+        this.fanartName = $("#fanart-name");
+        this.fanartLink = $("#fanart-link");
+    }
+
+    create() {
+    }
+
+    makeBoatAnimations() {
+
+
+        let idleFrameNames = this.anims.generateFrameNames("boat", {
+            start: 0,
+            end: 40,
+            suffix: ".png",
+        });
+
+        this.anims.create({
+            key: "boat-idle",
+            frames: idleFrameNames,
+            frameRate: FRAME_RATE,
+            repeat: -1,
+        });
+
+        let explodeFrameNames = this.anims.generateFrameNames("explode", {
+            start: 0,
+            end: 14,
+            suffix: ".png",
+        });
+        this.anims.create({
+            key: "boat-explode",
+            frames: explodeFrameNames,
+            frameRate: FRAME_RATE,
+            repeat: 0,
+        });
+    }
+
+    loadSubmissions() {
+        let that = this;
+        //Get submission reference sheet from google sheet and filter by pond #
+        const fanartSubsArray = fanartSubmissions["submissions"];
+
+        console.log(`Loading fanart submissions...`);
+        const fanarts = fanartSubsArray;
+
+        /*
+        fanartSubsArray.filter(function (obj) {
+            return parseInt(obj.pond) === pond;
+        });
+        */
+
+        //Create sprite for ducks and add their animations
+        // for (let i = 0; i < fanarts.length; i++) {
+        //     this.makeBoat(fanarts[0]);
+        // }
+        this.makeBoat(fanarts[0], newWidth / 2, newHeight / 2);
+
+    }
+
+    makeBoat(fanart, x, y) {
+        let fanartBoat = this.scene.add.sprite(x, y, "boat", "boat-0.jpg");
+        fanartBoat.gameObjectType = "fanart";
+        fanartBoat.displayName = fanart.Username;
+        fanartBoat.filename = fanart.Filename;
+        fanartBoat.message = fanart.Message;
+        fanartBoat.fanartUsername = fanart.fanartUsername;
+
+        fanartBoat.input.cursor = "pointer";
+        fanartBoat.input.hitArea.y += 25;
+        fanartBoat.setInteractive();
+
+        fanartBoat.animState = BOAT_STATES.IDLE;
+        fanartBoat.updateState = function (context, delta) {
+            switch (context.animState) {
+            case BOAT_STATES.START_IDLE:
+                context.play("boat-idle");
+                break;
+            case BOAT_STATES.EXPLODING:
+                context.play("boat-exploding");
+                break;
+            }
+        };
+        return fanartBoat;
+    }
+
+    onObjectClicked(pointer, gameObject) {
+        if (gameObject.gameObjectType == "fanart") {
+            this.fanartWindow.fadeIn();
+        }
+    }
+
+}
+
+const BOAT_STATES = {
+    IDLE: 0, EXPLODING: 1
+};
 
 const config = {
     type: Phaser.CANVAS,
