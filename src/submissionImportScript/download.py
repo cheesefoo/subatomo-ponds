@@ -85,7 +85,7 @@ def get_fanart_subs():
 
     num_of_entries = worksheet.row_count
     entries = []
-    r = 'A1:E' + str(num_of_entries)
+    r = 'A1:F' + str(num_of_entries)
     print(f"Getting {num_of_entries} submissions from {r}")
     all_rows = worksheet.batch_get([r])
     all_rows = all_rows[0]
@@ -97,11 +97,13 @@ def get_fanart_subs():
         msg = row[2]
         social = row[3]
         link = row[4]
+        pond = row[5]
         entry = {"name": name,
                  "filename": filename,
                  "message": msg,
                  "social": social,
-                 "link": link}
+                 "link": link,
+                 "pond": pond}
         return entry
 
     for i in range(2, num_of_entries):
@@ -167,7 +169,7 @@ def pack_spritesheets_per_atlas():
     total_iterations = math.ceil(total_num_ponds / PONDS_PER_ATLAS)
     SUBMISSIONS = SUBMISSIONS["submissions"]
     print("gonna put " + str(total_num_ponds) + " ponds into " + str(total_iterations) + " atlases")
-    let atlas_num = 1
+    atlas_num = 1
     for i in range(1, total_num_ponds, PONDS_PER_ATLAS):
         for i2 in range(i, i + PONDS_PER_ATLAS):
             subs_by_pond = [x for x in SUBMISSIONS if x['pond'] == str(i2)]
@@ -271,10 +273,10 @@ def pack_spritesheet():
 
 def main():
     # get_duck_subs()
-    # get_fanart_subs()
-    download_images()
-    split_images()
-    pack_spritesheets_per_atlas()
+    get_fanart_subs()
+#     download_images()
+#     split_images()
+#     pack_spritesheets_per_atlas()
 
 
 #     pack_spritesheet_free()
