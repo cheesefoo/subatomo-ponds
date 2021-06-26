@@ -1309,13 +1309,17 @@ svg path
 
 #fanart-window-inner
 {
-    display:        flex;
+	display: flex;
     flex-direction: row;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
 #fanart-image
 {
     object-fit: contain;
+	height:100%;
 }
 
 #fanart-info
