@@ -480,6 +480,7 @@ canvas
     flex-wrap: wrap;
     align-items: center;
 	justify-content:space-between;
+	padding:0 20px;
 }
 
 /*.carousel-cell {
@@ -935,6 +936,182 @@ img
 }
 
 
+
+
+use.ic-1
+{
+    display: inline;
+    fill:    #000;
+    stroke:  #000;
+}
+
+
+use.ic-3
+{
+    display: inline;
+    stroke:  #FFF;
+    fill:    #FFF;
+}
+
+#etusofnMH4z20, #etusofnMH4z21, #etusofnMH4z39, #etusofnMH4z40, #etusofnMH4z61, #etusofnMH4z62, #etusofnMH4z83, #etusofnMH4z84, #etusofnMH4z104, #etusofnMH4z105, #etusofnMH4z123, #etusofnMH4z124, #etusofnMH4z142, #etusofnMH4z143, #etusofnMH4z161, #etusofnMH4z162
+{
+    fill: none;
+}
+
+#loadingDuck
+{
+    overflow: hidden;
+    width:    100%;
+    height:   100%;
+}
+
+.loading-text
+{
+    font-family: meyro;
+    font-size:   40px;
+    fill:        red;
+}
+
+svg path
+{
+    fill:   inherit;
+    stroke: inherit;
+}
+
+#fanart-splash-container
+{
+    position:        fixed;
+    z-index:         10;
+    top:             0;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    width:           100vw;
+    height:          100vh;
+}
+
+.fanart-splash
+{
+    position:                fixed;
+    top:                     30%;
+    left:                    33%;
+    width:                   50vw;
+    height:                  50vh;
+
+    background-image:        url("../images/ui/artduck.png");
+    background-repeat:       no-repeat;
+    -moz-background-size:    contain;
+    -o-background-size:      contain;
+    -webkit-background-size: contain;
+    background-size:         contain;
+
+}
+
+#ponds-to-fanart:hover, #ponds-to-ducks:hover
+{
+    opacity:            1;
+    -moz-box-shadow:    5px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    box-shadow:         5px 0px 10px -3px rgba(0, 0, 0, 0.75);
+}
+
+#ponds-to-fanart::before{
+	position:absolute;
+	content:" ";
+	width:100%;
+	height:100%;
+	background: rgb(0,255,255);
+	background: radial-gradient(circle, rgba(0,255,255,1) 5%, rgba(148,187,233,0) 59%);
+}
+
+.scene-switch-btn
+{
+    position:                fixed;
+    z-index:                 10;
+
+    top:                     8px;
+    right:                   8px;
+    width:                   15vw;
+    height:                  10vh;
+    background-image:        inherit;
+    background-repeat:       no-repeat;
+    -moz-background-size:    contain;
+    -o-background-size:      contain;
+    -webkit-background-size: contain;
+    background-size:         contain;
+}
+
+#ponds-to-fanart
+{
+    background-image: url("../images/ui/fanart-logo.png");
+}
+
+#ponds-to-ducks
+{
+    background-image: url("../images/intro/LogoAdjustedSize.png");
+}
+
+
+#fanart.modal-window > div
+{
+    z-index:           100000;
+    display:           flex;
+    overflow:          hidden;
+    align-content:     center;
+    flex-direction:    row;
+    flex-wrap:         wrap;
+    box-sizing:        border-box;
+    width:             80vw;
+    height:            calc(80vw * 0.55);
+
+   
+
+    padding:           70px;
+    background-color:  transparent;
+    background-image:  url(../images/subamodal-min.png);
+    background-repeat: no-repeat;
+
+    background-size:   100% 100%;
+}
+
+#fanart-window-display
+{
+    width:      70%;
+    max-width:  70%;
+    max-height: 100%;
+}
+
+#fanart-window-inner
+{
+	display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+#fanart-image
+{
+    object-fit: contain;
+	height:100%;
+}
+
+#fanart-info
+{
+    max-width: 30%;
+}
+
+#fanart-name
+{
+    color: black;
+}
+
+#fanart-message
+{
+    text-wrap: normal;
+}
+
+
 @media (max-width: 900px)
 {
     .logo-title-container
@@ -1093,7 +1270,7 @@ img
         right: 40px;
     }
 
-    #about-subaru.modal-window > div, #about-project.modal-window > div
+    #about-subaru.modal-window > div, #about-project.modal-window > div,#fanart.modal-window > div
     {
         padding-top:         40vh;
         background-image:    url(../images/subaru_ShigUi_profilev4fix-min.png),
@@ -1126,6 +1303,56 @@ img
         overflow: auto;
         height:   42vh;
     }
+	
+	#fanart.modal-window > div{
+		
+		padding-top: 0;
+		  background-image:  url(/src/assets/images/ui/megaphone_resized.png),
+							url(/src/assets/images/ui/AboutSubaruWindowmobile.png),
+                             url(../images/star-bg.jpg), url(../images/modal-mobile.png);
+		background-position: bottom+5% right+10%,bottom+5% right+40%,26vw 63vh, center;
+		background-size: 100px,150px,200px, 100% 100%;
+		width: 100vw;
+		height: calc(100vw * 1.802);
+	}
+	
+	#fanart-window-inner{
+		    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: center;
+    padding-top: 5vh;
+    justify-content: flex-end;
+    align-content: baseline;
+	padding-top:20vh;
+	
+	}
+	
+	#fanart-window-display{
+		flex:1 1 100%;
+		max-height:initial;
+		max-width:initial;
+		width:100%;
+		margin-bottom:5vh;
+	}
+	
+	#fanart-image{
+				object-fit: contain;
+		flex: 1 1 100%;
+		width: 100%;
+		height: auto;
+		
+		border-radius: 5px;
+	}
+	
+	#fanart-info{
+		flex:1 1 100%;
+		max-height:initial;
+		max-width:initial;
+		width:100%;
+	}
 
     .oozora-socials
     {
@@ -1192,169 +1419,4 @@ img
         text-align: left;
     }
 
-}
-
-use.ic-1
-{
-    display: inline;
-    fill:    #000;
-    stroke:  #000;
-}
-
-
-use.ic-3
-{
-    display: inline;
-    stroke:  #FFF;
-    fill:    #FFF;
-}
-
-#etusofnMH4z20, #etusofnMH4z21, #etusofnMH4z39, #etusofnMH4z40, #etusofnMH4z61, #etusofnMH4z62, #etusofnMH4z83, #etusofnMH4z84, #etusofnMH4z104, #etusofnMH4z105, #etusofnMH4z123, #etusofnMH4z124, #etusofnMH4z142, #etusofnMH4z143, #etusofnMH4z161, #etusofnMH4z162
-{
-    fill: none;
-}
-
-#loadingDuck
-{
-    overflow: hidden;
-    width:    100%;
-    height:   100%;
-}
-
-.loading-text
-{
-    font-family: meyro;
-    font-size:   40px;
-    fill:        red;
-}
-
-svg path
-{
-    fill:   inherit;
-    stroke: inherit;
-}
-
-#fanart-splash-container
-{
-    position:        fixed;
-    z-index:         10;
-    top:             0;
-    display:         flex;
-    align-items:     center;
-    justify-content: center;
-    width:           100vw;
-    height:          100vh;
-}
-
-.fanart-splash
-{
-    position:                fixed;
-    top:                     30%;
-    left:                    33%;
-    width:                   50vw;
-    height:                  50vh;
-
-    background-image:        url("../images/ui/artduck.png");
-    background-repeat:       no-repeat;
-    -moz-background-size:    contain;
-    -o-background-size:      contain;
-    -webkit-background-size: contain;
-    background-size:         contain;
-
-}
-
-#ponds-to-fanart:hover, #ponds-to-ducks:hover
-{
-    opacity:            1;
-    -moz-box-shadow:    5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    box-shadow:         5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-}
-
-.scene-switch-btn
-{
-    position:                fixed;
-    z-index:                 10;
-
-    top:                     8px;
-    right:                   8px;
-    width:                   15vw;
-    height:                  10vh;
-    background-image:        inherit;
-    background-repeat:       no-repeat;
-    -moz-background-size:    contain;
-    -o-background-size:      contain;
-    -webkit-background-size: contain;
-    background-size:         contain;
-}
-
-#ponds-to-fanart
-{
-    background-image: url("../images/ui/fanart-logo.png");
-
-}
-
-#ponds-to-ducks
-{
-    background-image: url("../images/intro/LogoAdjustedSize.png");
-}
-
-
-#fanart.modal-window > div
-{
-    z-index:           100000;
-    display:           flex;
-    overflow:          hidden;
-    align-content:     center;
-    flex-direction:    row;
-    flex-wrap:         wrap;
-    box-sizing:        border-box;
-    width:             80vw;
-    height:            calc(80vw * 0.55);
-
-   
-
-    padding:           70px;
-    background-color:  transparent;
-    background-image:  url(../images/subamodal-min.png);
-    background-repeat: no-repeat;
-
-    background-size:   100% 100%;
-}
-
-#fanart-window-display
-{
-    width:      70%;
-    max-width:  70%;
-    max-height: 100%;
-}
-
-#fanart-window-inner
-{
-	display: flex;
-    flex-direction: row;
-    height: 100%;
-    flex-wrap: wrap;
-    overflow: hidden;
-}
-
-#fanart-image
-{
-    object-fit: contain;
-	height:100%;
-}
-
-#fanart-info
-{
-    max-width: 30%;
-}
-
-#fanart-name
-{
-    color: black;
-}
-
-#fanart-message
-{
-    text-wrap: normal;
 }
