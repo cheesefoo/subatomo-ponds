@@ -608,6 +608,8 @@ class SubatomoPond extends Phaser.Scene {
 
         let totalNumSubmissions = submissions["submissions"].length;
         console.log(`Wow, ${totalNumSubmissions} in ${Math.ceil(totalNumSubmissions / 20)} ponds!!!`);
+		
+		game.scale.setGameSize(sceneWidth,sceneHeight);
     }
 
     makeSounds() {
@@ -1666,6 +1668,11 @@ class FanartPond extends Phaser.Scene {
                 x: 1290,
                 y: 710
             },];
+			
+		$("#fanart .modal-close,#fanart .modal-bg").on("click",function(){
+			game.input.enabled=true;
+			$("body > canvas").css("cursor","initial");
+		});
     }
 
     preload() {
@@ -1772,7 +1779,8 @@ class FanartPond extends Phaser.Scene {
     }
 
     onExplodeFinished(boat) {
-        gsap.to(this.fanartWindow, {autoAlpha: 1, duration: 1});
+        //gsap.to(this.fanartWindow, {autoAlpha: 1, duration: 1});
+		
 
         this.fanartImage.prop("src", "assets/" + boat.filename + ".png");
 
@@ -1784,12 +1792,18 @@ class FanartPond extends Phaser.Scene {
         }
         this.fanartName.textContent = boat.fanartUsername;
         this.fanartMessage.textContent = boat.message;
-
-        boat.animState = BOAT_STATES.START_IDLE;
+		
+		setTimeout(function(){
+		location.hash="fanart";
+		boat.animState = BOAT_STATES.START_IDLE;
+		},100);
+		
+        
     }
 
     onObjectClicked(pointer, gameObject) {
         console.log("fanart pond onclick");
+		
         if (gameObject.gameObjectType == "boat") {
             console.log("boat onclick");
 
