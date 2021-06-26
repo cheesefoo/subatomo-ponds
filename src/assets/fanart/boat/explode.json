@@ -1,0 +1,313 @@
+{
+  "textures": [
+    {
+      "image": "explode.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1024,
+        "h": 512
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "BoatExplode_11.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 2,
+            "w": 218,
+            "h": 213
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 218,
+            "h": 213
+          }
+        },
+        {
+          "filename": "BoatExplode_10.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 9,
+            "w": 222,
+            "h": 207
+          },
+          "frame": {
+            "x": 0,
+            "y": 213,
+            "w": 222,
+            "h": 207
+          }
+        },
+        {
+          "filename": "BoatExplode_12.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 3,
+            "w": 205,
+            "h": 204
+          },
+          "frame": {
+            "x": 218,
+            "y": 0,
+            "w": 205,
+            "h": 204
+          }
+        },
+        {
+          "filename": "BoatExplode_5.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 61,
+            "y": 91,
+            "w": 110,
+            "h": 82
+          },
+          "frame": {
+            "x": 0,
+            "y": 420,
+            "w": 110,
+            "h": 82
+          }
+        },
+        {
+          "filename": "BoatExplode_4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 74,
+            "y": 103,
+            "w": 89,
+            "h": 64
+          },
+          "frame": {
+            "x": 110,
+            "y": 420,
+            "w": 89,
+            "h": 64
+          }
+        },
+        {
+          "filename": "BoatExplode_0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 64,
+            "y": 110,
+            "w": 102,
+            "h": 61
+          },
+          "frame": {
+            "x": 199,
+            "y": 420,
+            "w": 102,
+            "h": 61
+          }
+        },
+        {
+          "filename": "BoatExplode_9.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 8,
+            "y": 22,
+            "w": 216,
+            "h": 187
+          },
+          "frame": {
+            "x": 222,
+            "y": 204,
+            "w": 216,
+            "h": 187
+          }
+        },
+        {
+          "filename": "BoatExplode_6.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 45,
+            "y": 75,
+            "w": 142,
+            "h": 106
+          },
+          "frame": {
+            "x": 301,
+            "y": 391,
+            "w": 142,
+            "h": 106
+          }
+        },
+        {
+          "filename": "BoatExplode_13.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 16,
+            "y": 11,
+            "w": 186,
+            "h": 185
+          },
+          "frame": {
+            "x": 438,
+            "y": 204,
+            "w": 186,
+            "h": 185
+          }
+        },
+        {
+          "filename": "BoatExplode_8.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 38,
+            "w": 198,
+            "h": 162
+          },
+          "frame": {
+            "x": 423,
+            "y": 0,
+            "w": 198,
+            "h": 162
+          }
+        },
+        {
+          "filename": "BoatExplode_3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 71,
+            "y": 112,
+            "w": 95,
+            "h": 56
+          },
+          "frame": {
+            "x": 443,
+            "y": 389,
+            "w": 95,
+            "h": 56
+          }
+        },
+        {
+          "filename": "BoatExplode_2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 56,
+            "y": 115,
+            "w": 119,
+            "h": 54
+          },
+          "frame": {
+            "x": 443,
+            "y": 445,
+            "w": 119,
+            "h": 54
+          }
+        },
+        {
+          "filename": "BoatExplode_1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 68,
+            "y": 117,
+            "w": 94,
+            "h": 53
+          },
+          "frame": {
+            "x": 538,
+            "y": 389,
+            "w": 94,
+            "h": 53
+          }
+        },
+        {
+          "filename": "BoatExplode_7.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 224,
+            "h": 216
+          },
+          "spriteSourceSize": {
+            "x": 31,
+            "y": 56,
+            "w": 172,
+            "h": 135
+          },
+          "frame": {
+            "x": 621,
+            "y": 0,
+            "w": 172,
+            "h": 135
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7"
+  }
+}

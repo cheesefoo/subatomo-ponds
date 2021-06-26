@@ -415,38 +415,23 @@ canvas
 
 #pond-ui
 {
-    position:             fixed;
-    z-index:              2;
+    position:       fixed;
+    z-index:        2;
     /*background: url("/src/assets/images/ui/subaru_uitest_1.png") no-repeat;*/
-    top:                  56px;
-    left:                 0;
-    display:              none;
-    width:                220px;
-    max-width:            100%;
-    height:               200px;
-    margin:               1em 1em 1em;
+    bottom:         5vh;
+    left:           30%;
+    display:        flex;
+    flex-direction: row;
+    width:          70%;
+    max-width:      1262px;
+    height:         20%;
+    max-height:     207px;
 
-    /*padding: 1em 2em 2em;*/
-    border:               30px solid transparent;
 
-    -moz-border-image:    url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat; /* Old firefox */
-    -o-border-image:      url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat; /* Opera */
-    -webkit-border-image: url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat; /* Safari */
-    border-image:         url("/src/assets/images/ui/subaru_uitest_1.png") 30 30 repeat;
-    background-color:     transparent;
-    background-size:      100% 100%;
 }
 
-#pond-ui .inner-ui
-{
-    position:         relative;
-    top:              -1px;
-    left:             -1px;
-    width:            102%;
-    height:           102%;
-    background-color: #FFFFEF;
-}
 
+/*
 .inner-ui
 {
     display:        flex;
@@ -454,19 +439,110 @@ canvas
     flex-direction: column;
 }
 
-.button-list
+*/
+
+.inner-ui
 {
-    display:        flex;
-    flex:           auto;
-    flex-direction: row;
-    /*box-sizing: border-box*/
+
+    width:            60%;
+    max-width:        908px;
+    height:           100%;
+    max-height:       207px;
+    background:       url("/src/assets/images/ui/PondNumBoxcropped_horizontal.png") no-repeat;
+    background-color: #AFF5E0;
+    background-size:  100% 100%;
 }
 
-.inner-ui h3
+.carousel
 {
-    font-size:     2rem;
-    margin-top:    0;
-    margin-bottom: 0.5rem;
+    z-index:       2;
+    width:         100%;
+    padding-right: 20px;
+    padding-left:  20px;
+}
+
+.carousel-cell
+{
+    display:           flex;
+    flex-direction:    row;
+    width:             100%;
+    height:            136px;
+    margin:            30px 30px;
+    counter-increment: carousel-cell;
+    background:        transparent;
+}
+
+/*.carousel-cell {
+    width: 66%;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+}*/
+/*cell number*/
+/*.carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}*/
+
+
+.button--next, .button--previous
+{
+    overflow:        hidden;
+    width:           177px;
+    height:          177px;
+    border:          none;
+    background:      transparent;
+    background-size: 100% 100%;
+
+}
+
+.button--next
+{
+    background-image: url(../images/ui/PondArrowButtonNext.png);
+}
+
+.button--previous
+{
+    background-image: url(../images/ui/PondArrowButtonPrev.png);
+}
+
+.load-pond:disabled
+{
+    background-color: #BBB;
+
+}
+
+.load-pond
+{
+    /*width:             104px;*/
+    /*height:            104px;*/
+    /*background-image:  url(../images/ui/PondSelectCircle.png);*/
+    /*background-repeat: no-repeat;*/
+    display:          inline-block;
+    width:            104px;
+    height:           104px;
+    margin:           25px;
+    border-radius:    50%;
+    background-color: #FF706F;
+
+}
+
+.load-pond:hover
+{
+    border-color: #FCD73F;
+}
+
+.load-pond.selectedPond
+{
+    background-color: #FCD73F;
+
+
 }
 
 /*#pond-ui*/
@@ -506,11 +582,6 @@ canvas
     z-index:  3;
     top:      0;
     width:    100%;
-}
-
-.load-pond
-{
-    display: none;
 }
 
 .modal-window h1
@@ -569,16 +640,6 @@ canvas
 {
     font-weight: 600;
     color:       #51B1C4;
-}
-
-.load-pond.visible
-{
-    display: block;
-}
-
-.load-pond.selectedPond
-{
-    background-color: red;
 }
 
 img
@@ -775,11 +836,6 @@ img
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#pond-ui
-{
-    top:     150px;
-    display: none;
-}
 
 #ponds-volume
 {
@@ -1222,7 +1278,7 @@ svg path
 }
 
 
-#fanart-window.modal-window > div
+#fanart.modal-window > div
 {
     z-index:           100000;
     display:           flex;

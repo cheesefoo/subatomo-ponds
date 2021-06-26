@@ -18,6 +18,11 @@ require("./assets/images/subatomo army.png");
 require("./assets/images/ui/Little_Megaphone_volume.png");
 require("./assets/images/ui/Little_Megaphone_no_volume_v2.png");
 require("./assets/images/ui/artduck.png");
+require("./assets/images/ui/Stars_resized.png");
+require("./assets/images/ui/Star_bg_reszied.png");
+require("./assets/images/ui/megaphone_resized.png");
+require("./assets/images/ui/NameHeader_resized.png");
+require("./assets/images/ui/Window_resized.png");
 require("./assets/images/ui/fanart-logo.png");
 require("./assets/images/LanguageButton.png");
 require("./assets/images/star-alone.png");
@@ -128,14 +133,14 @@ const MAX_IDLE_TIME = 5000;
 
 
 //the width of the panel
-const TEXT_PADDING_CONFIG = {left: 5, right: 20, top: 5, bottom: 10};
-const WORD_WRAP_CONFIG = {width: 370, useAdvancedWrap: true};
+const TEXT_PADDING_CONFIG = {x: 20, y: 10};
+const WORD_WRAP_CONFIG = {width: 200, useAdvancedWrap: true};
 const MSG_TEXT_CONFIG = {
-    fontFamily: "Nodo Sans JP",
+    fontFamily: "meyro",
     fontSize: "14px",
     color: "#000",
-    stroke: "#FCD73F",
-    strokeThickness: 2,
+    stroke: "#000",
+    strokeThickness: 1,
     padding: TEXT_PADDING_CONFIG,
     wordWrap: WORD_WRAP_CONFIG
 };
@@ -143,8 +148,6 @@ const MSG_TEXT_CONFIG = {
 let currentPond = 1;
 
 let currentPondPagination = 0;
-let pondsPerPage = 6;
-let maxPages;
 
 let isEnteringPond = false;
 
@@ -387,19 +390,19 @@ function startHomepageAnimation() {
 
 
             tl2.fromTo("#pond-ui", {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, 0).then(function () {
-                //$("#pond-ui").show();
+                $("#pond-ui").show();
                 window.game.input.enabled = true;
-                window.game.scene.getScene("pond").updatePagination();
+                // window.game.scene.getScene("pond").updatePagination();
                 isEnteringPond = false;
             });
             tl2.play();
 
-			if(!game.scene.keys.hasOwnProperty("pond-manager")){
+            if (!game.scene.keys.hasOwnProperty("pond-manager")) {
                 game.scene.add("pond-manager", new PondManager());
                 game.scene.add("pond", new SubatomoPond());
                 game.scene.add("fanart", new FanartPond());
 
-			}
+            }
         });
     });
 
@@ -409,7 +412,7 @@ function startHomepageAnimation() {
         isEnteringPond = true;
         window.game.input.enabled = false;
 
-		$("#pond-ui").fadeOut();
+        $("#pond-ui").fadeOut();
 
         tl2.timeScale(2).reverse(0, true).then(function () {
             $("canvas").hide();
@@ -513,7 +516,7 @@ class Preloader extends Phaser.Scene {
         let sounds = soundsj.sounds;
         let soundsLen = sounds.length;
         for (let i = 0; i < soundsLen; i++) {
-            this.load.audio("suba_" + (i + 1), "assets/" + sounds[i]);
+            this.load.audio("suba_" + i, "assets/" + sounds[i]);
         }
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
 
@@ -610,7 +613,7 @@ class SubatomoPond extends Phaser.Scene {
     makeSounds() {
         let sounds = soundsj.sounds;
         this.numberOfSounds = sounds.length;
-        for (let i = 1; i <= this.numberOfSounds; i++) {
+        for (let i = 0; i < this.numberOfSounds; i++) {
             this.sound.add("suba_" + i);
         }
     }
@@ -964,37 +967,39 @@ class SubatomoPond extends Phaser.Scene {
 
                 this.load.once(Phaser.Loader.Events.COMPLETE, () => {
 
-					console.log("duck",duckGameObject);
-					//var keyAnim=duckGameObject.anims.currentAnim.key.split("-");
-					//console.log("currentAnime",duckGameObject.anims.currentAnim.key);
+                    // console.log("duck", duckGameObject);
+                    //var keyAnim=duckGameObject.anims.currentAnim.key.split("-");
+                    //console.log("currentAnime",duckGameObject.anims.currentAnim.key);
 
-					duckGameObject.setTexture(atlaskey, ducks[i].image + "-0.png");
+                    duckGameObject.setTexture(atlaskey, ducks[i].image + "-0.png");
 
-							duckGameObject.currentDuck = ducks[i].image;
-							that.makeDuckAnimationFrames(atlaskey, ducks[i].image);
+                    duckGameObject.currentDuck = ducks[i].image;
+                    that.makeDuckAnimationFrames(atlaskey, ducks[i].image);
 
-					setTimeout(function(){
-						duckGameObject.animState= DUCK_STATES.START_IDLE;
-					that.tweens.add({
-								targets: duckGameObject.parentContainer,
-								alpha: 1,
-								duration: 1500,
-								ease: 'Power2'});
-					},100);
-
+                    setTimeout(function () {
+                        duckGameObject.animState = DUCK_STATES.START_IDLE;
+                        that.tweens.add({
+                            targets: duckGameObject.parentContainer,
+                            alpha: 1,
+                            duration: 1500,
+                            ease: "Power2"
+                        });
+                    }, 100);
+                    $(".load-pond").prop("disabled", false);
                 });
                 this.load.start();
             } else {
                 duckGameObject = this.physics.add.sprite(0, 0, atlaskey, ducks[i].image + "-0.png");
 
-				setTimeout(function(){
-				duckGameObject.animState= DUCK_STATES.START_IDLE;
-				that.tweens.add({
-							targets: duckGameObject.parentContainer,
-							alpha: 1,
-							duration: 1500,
-							ease: 'Power2'});
-				},100);
+                setTimeout(function () {
+                    duckGameObject.animState = DUCK_STATES.START_IDLE;
+                    that.tweens.add({
+                        targets: duckGameObject.parentContainer,
+                        alpha: 1,
+                        duration: 1500,
+                        ease: "Power2"
+                    });
+                }, 100);
                 duckGameObject.currentDuck = ducks[i].image;
                 if (ducks[i] != "TEMPLATE")
                     this.makeDuckAnimationFrames(atlaskey, ducks[i].image);
@@ -1048,13 +1053,13 @@ class SubatomoPond extends Phaser.Scene {
 
             //Assign sound if it was blank, and assign random one for random pickers
             duckGameObject.sound = ducks[i].sound ? ducks[i].sound : -1;
-            duckGameObject.sound = ducks[i].sound == -1 ? getRandomIntInclusive(1, this.numberOfSounds) : ducks[i].sound;
+            duckGameObject.sound = ducks[i].sound == -1 ? getRandomInt(0, this.numberOfSounds) : ducks[i].sound;
 
             duckGameObject.setOrigin(0.5, 0.5);
             duckGameObject.displayWidth = SPRITE_WIDTH;
             duckGameObject.displayHeight = SPRITE_HEIGHT;
 
-			duckGameObject.parentContainer.alpha=0;
+            duckGameObject.parentContainer.alpha = 0;
 
             // duckGameObject.body.overlapX = Math.floor(duckGameObject.body.x * 0.5);
             // duckGameObject.body.overlapY = Math.floor(duckGameObject.body.y * 0.9);
@@ -1219,44 +1224,46 @@ class SubatomoPond extends Phaser.Scene {
     generatePondUI() {
         // console.log("generate pond ui");
         $("#pondUIContainer").append("<div style='display:none;' class='ui-img' id='pond-ui'><div class='inner-ui'></div></div>");
-        let pond = $("#pond-ui .inner-ui");
-        // pond.append("<img src='assets/subaru_uitest_1.png'></img>")
-        pond.append("<h3 text='main-15'>Select pond</h3>");
-        pond.append("<div class='button-list'></div>");
-        for (let a = 0; a < maxPond; a++) {
-            $(".button-list").append(
-                "<button class='load-pond'  pond='" +
-                (a + 1) +
-                "'>" +
-                (a + 1) +
-                "</button>"
-            );
+        let carousel = $("#pond-carousel");
+
+        let pondsPerPage = 5;
+        let totalPages = Math.ceil(maxPond / pondsPerPage);
+        let pondNumber = 0;
+
+        for (let i = 0; i < totalPages; i++) {
+            let id = `carousel-${i}`;
+            carousel.append(`<div class="carousel-cell button-list" id="${id}"></div>`);
+            for (let j = 0; j < pondsPerPage; j++) {
+                pondNumber += 1;
+                $(`#${id}`).append(`<button class="load-pond" pond="${pondNumber}">${pondNumber}</button>`);
+            }
         }
-        maxPages = Math.ceil(maxPond / pondsPerPage);
-        pond.append("<button class='button-list' id='prevPage' text='main-16'>Prev</button>");
-        pond.append("<button class='button-list' id='nextPage' text='main-17'>Next</button>");
-
-
         $(".load-pond[pond=1]").addClass("selectedPond");
-        let that = this;
-        $("#prevPage").on("click", function () {
-            if (currentPondPagination != 0) {
-                currentPondPagination--;
-            } else {
-                currentPondPagination = maxPages - 1;
-            }
-            that.updatePagination();
-        });
-        $("#nextPage").on("click", function () {
-            if (currentPondPagination < maxPages - 1) {
-                currentPondPagination++;
-            } else {
-                currentPondPagination = 0;
-            }
-            that.updatePagination();
-        });
-        this.updatePagination();
+        // pond.append("<button class='button-list' id='prevPage' text='main-16'>Prev</button>");
+        // pond.append("<button class='button-list' id='nextPage' text='main-17'>Next</button>");
 
+
+        /*        $(".load-pond[pond=1]").addClass("selectedPond");
+                let that = this;
+
+                $("#prevPage").on("click", function () {
+                    if (currentPondPagination != 0) {
+                        currentPondPagination--;
+                    } else {
+                        currentPondPagination = totalPages - 1;
+                    }
+                    that.updatePagination();
+                });
+                $("#nextPage").on("click", function () {
+                    if (currentPondPagination < totalPages - 1) {
+                        currentPondPagination++;
+                    } else {
+                        currentPondPagination = 0;
+                    }
+                    that.updatePagination();
+                });
+                this.updatePagination();*/
+        setTimeout(setupFlickity, 1000);
     }
 
     updatePagination() {
@@ -1318,7 +1325,7 @@ class SubatomoPond extends Phaser.Scene {
 
     pauseMenu() {
         $(".load-pond").prop("disabled", true);
-        $("#loadPond").fadeIn();
+        $("#pond-ui").fadeIn();
     }
 }
 
@@ -1330,10 +1337,16 @@ class PondManager extends Phaser.Scene {
         this.activeMessagesEvents = [];
         this.activeMessagesDuck = [];
         this.activeMessagesPanel = [];
+        this.sceneSwitchBtn = $(".scene-switch-btn");
+        this.pond = null;
     }
 
     preload() {
-        this.load.image("panel", "assets/subaru_uitest_1.png");
+        this.load.image("messagePanel", "assets/Window_resized.png");
+        this.load.image("namePanel", "assets/NameHeader_resized.png");
+        this.load.image("starsGroup", "assets/Stars_resized.png");
+        this.load.image("starBG", "assets/Star_bg_reszied.png");
+        this.load.image("megaphone", "assets/megaphone_resized.png");
 
         // if (innerWidth < 900) {
         //     this.cameras.main.pan(newWidth * 0.43, newHeight / 2, 0, "none", true);
@@ -1349,13 +1362,26 @@ class PondManager extends Phaser.Scene {
 
     toFanartTransitionAnimation() {
         let tl = gsap.timeline();
-        tl.to(".fanart-splash", {autoAlpha: 1, duration: 2}, 0).then(() => tl.reverse());
+        tl.to(".fanart-splash", {autoAlpha: 1, duration: 2}, 0);
+        tl.to("#ponds-to-fanart", {autoAlpha: 0, duration: 2}, 0);
+        tl.to("#pond-ui", {autoAlpha: 0, duration: 2}, 0);
+        tl.to(".fanart-splash", {autoAlpha: 0, duration: 2}, 2);
+        tl.to("#ponds-to-ducks", {autoAlpha: 1, duration: 2}, 2);
+        $(".scene-switch-btn").attr("locked", "false");
+
     }
 
     toDucksTransitionAnimation() {
         let tl = gsap.timeline();
         tl.to("#loadingDuckContainer", {autoAlpha: 1, duration: 2}, 0).then(() => tl.reverse());
+        tl.to(".fanart-splash", {autoAlpha: 1, duration: 2}, 0);
+        tl.to("#ponds-to-ducks", {autoAlpha: 0, duration: 2}, 0);
+        tl.to("#pond-ui", {autoAlpha: 1, duration: 2}, 0);
+        tl.to(".fanart-splash", {autoAlpha: 0, duration: 2}, 2);
+        tl.to("#ponds-to-fanart", {autoAlpha: 1, duration: 2}, 2);
+        $(".scene-switch-btn").attr("locked", "false");
     }
+
 
     create() {
         /*        this.infoText = this.add.text(10, 10, `Pond ${this.pondNum}`, {font: '48px Arial', fill: '#000000'});
@@ -1371,69 +1397,30 @@ class PondManager extends Phaser.Scene {
             that.loadPond(parseInt($(this).attr("pond")));
         });
 
-        let pond = this.scene.get("pond");
+        this.pond = this.scene.get("pond");
         let fanart = this.scene.get("fanart");
 
-        let toDucks = $("#ponds-to-ducks");
-        let toFanart = $("#ponds-to-fanart");
 
-        toFanart.on("click", function () {
-            console.log("#ponds-to-fanart click");
+        this.sceneSwitchBtn.on("click", function () {
+            console.log("scene switch button clicked");
             if ($(this).attr("locked") == "true")
                 return;
-
-            toDucks.attr("locked", "true");
             $(this).attr("locked", "true");
+            if (that.scene.manager.isActive("pond") && !(that.scene.manager.isActive("fanart"))) {
+                that.toFanartTransitionAnimation();
+                that.switchScene("pond", "fanart");
+            } else {
+                that.toDucksTransitionAnimation();
+                that.switchScene("fanart", "pond");
+            }
 
-            that.toFanartTransitionAnimation();
-            that.switchScene("pond", "fanart");
-            $(this).fadeOut({
-                duration: 1000,
-                complete: function () {
-                    console.log("to fanart fadeout done.");
-                    toDucks.fadeIn({
-                        duration: 1000,
-                        complete: function () {
-                            console.log("to ducks fade in done.");
-                            toDucks.attr("locked", "false");
-                        }
-                    });
-                }
-            });
-        });
-        toDucks.on("click", function () {
-            console.log("#ponds-to-ducks click");
-
-            if ($(this).attr("locked"))
-                return;
-
-            toFanart.attr("locked", "true");
-            $(this).attr("locked", "true");
-
-            that.toDucksTransitionAnimation();
-            that.switchScene("fanart", "pond");
-            $(this).fadeOut({
-                duration: 1000,
-                complete: function () {
-                    console.log("to ducks fadeout done.");
-
-                    toFanart.fadeIn({
-                        duration: 1000,
-                        complete: function () {
-                            console.log("to fanart fade in done.");
-
-                            toFanart.attr("locked", "false");
-                        }
-                    });
-                }
-            });
         });
 
 
         // this.scene.add.text();
         // uiscene.add.text();
-        pond.events.on("clearmessages", function () {
-            console.log("bg clickd");
+        this.pond.events.on("clearmessages", function () {
+
             console.log(this);
             if (that.activeMessagesEvents.length == 0 ||
                 that.activeMessagesPanel.length == 0 ||
@@ -1460,7 +1447,7 @@ class PondManager extends Phaser.Scene {
             });
             that.activeMessagesPanel = [];
             that.activeMessagesDuck.forEach(function (duck) {
-                pond.time.addEvent({
+                that.pond.time.addEvent({
                     delay: 1000,
                     callback: function () {
                         this.namePopup = null;
@@ -1474,101 +1461,146 @@ class PondManager extends Phaser.Scene {
 
         });
 
-        pond.events.on("duckclick", function (gameObject) {
-
-            let x = gameObject.parentContainer.x - (SPRITE_WIDTH / 2);
-            let y = gameObject.parentContainer.y - (SPRITE_HEIGHT / 2);
-            let panel;
+        this.pond.events.on("duckclick", this.makeMessage, this);
 
 
-            if (IS_MOBILE) {
-                panel = pond.add.container();
-            } else {
-                panel = pond.add.container(x - 50, y - 120);
-            }
-            //let img = pond.add.image(0, 0, "panel");
-
-
-            let name = pond.add.text(0, 0, gameObject.displayName, MSG_TEXT_CONFIG);
-            gameObject.namePopup = name;
-
-            let msg = pond.add.text(0, 20, gameObject.message, MSG_TEXT_CONFIG);
-            //console.log("mensaje",msg,img);
-            gameObject.msgPopup = msg;
-
-            let img = pond.add.nineslice(
-                -10, -10,   // this is the starting x/y location
-                Math.max(name.displayWidth, msg.displayWidth) + 20, msg.displayHeight + name.displayHeight + 20,   // the width and height of your object
-                "panel", // a key to an already loaded image
-                30,         // the width and height to offset for a corner slice
-                10          // (optional) pixels to offset when computing the safe usage area
-            );
-
-            panel.add(img);
-            panel.add(name);
-            panel.add(msg);
-            img.setOrigin(0, 0);
-            panel.sendToBack(img);
-            panel.setDepth(9999);
-            panel.setAlpha(0);
-            if (sceneWidth < 900) {
-                if (x > pond.boundsMidPtX) {
-                    if (img.displayWidth > pond.halfWidth)
-                        panel.setPosition(Math.max(pond.boundsLeft, pond.boundsRight - img.displayWidth), y - SPRITE_HEIGHT);
-                    else
-                        panel.setPosition(x, y - SPRITE_HEIGHT);
-                } else {
-                    // console.log(sceneWidth * .48 + 100, x - 50);
-                    panel.setPosition(pond.boundsLeft, y - SPRITE_HEIGHT);//pond.boundsBot / 2);
-                }
-            }
-
-            this.tweens.add({
-                targets: panel,
-                alpha: 1,
-                duration: 1000,
-                ease: "linear"
-            }, this);
-
-            // console.log(name);
-            // console.log(img);
-            let fadeout = pond.time.addEvent({
-                delay: USERNAME_DISPLAY_DURATION - 1000,
-                callback: function () {
-                    this.tweens.add({
-                        targets: panel,
-                        alpha: 0,
-                        duration: 1000,
-                        ease: "linear"
-                    }, this);
-                    that.activeMessagesEvents = arrayRemove(that.activeMessagesEvents, fadeout);
-                },
-                callbackScope: pond,
-            });
-
-            let destroy = pond.time.addEvent({
-                delay: USERNAME_DISPLAY_DURATION,
-                callback: function () {
-                    panel.destroy();
-                    // this.namePopup.destroy();
-                    this.namePopup = null;
-                    // this.msgPopup.destroy();
-                    this.msgPopup = null;
-                    // img.destroy();
-                    that.activeMessagesDuck = arrayRemove(that.activeMessagesDuck, this);
-                    that.activeMessagesPanel = arrayRemove(that.activeMessagesPanel, panel);
-                    that.activeMessagesEvents = arrayRemove(that.activeMessagesEvents, destroy);
-                },
-                callbackScope: gameObject,
-            });
-
-            this.activeMessagesEvents.push(fadeout);
-            this.activeMessagesEvents.push(destroy);
-            this.activeMessagesDuck.push(gameObject);
-            this.activeMessagesPanel.push(panel);
-
-        }, this);
         this.scene.bringToTop();
+    }
+
+    makeMessage(gameObject) {
+
+        let x = gameObject.parentContainer.x - (SPRITE_WIDTH / 2);
+        let y = gameObject.parentContainer.y - (SPRITE_HEIGHT / 2);
+        let messagePanel, namePanel;
+
+
+        if (IS_MOBILE) {
+            messagePanel = this.pond.add.container();
+        } else {
+            messagePanel = this.pond.add.container(x - 50, y - 120);
+            namePanel = this.pond.add.container(0, 0);
+        }
+        //let img = pond.add.image(0, 0, "panel");
+
+
+        let name = this.pond.add.text(8, 6, gameObject.displayName, {
+            fontFamily: "meyro",
+            fontSize: "14px",
+            color: "#000",
+            stroke: "#000",
+            strokeThickness: 1, padding: {x: 2, y: 2}
+        });
+        gameObject.namePopup = name;
+
+        let msg = this.pond.add.text(0, name.displayHeight + 12, gameObject.message, MSG_TEXT_CONFIG);
+        //console.log("mensaje",msg,img);
+        gameObject.msgPopup = msg;
+        this.pond.time.addEvent({
+            delay: 1000,
+            callback: function () {
+                console.log("delayed " + msg.displayHeight);
+            }
+        });
+
+        let panelImg = this.pond.add.nineslice(
+            -10, -10,   // this is the starting x/y location
+            Math.max(name.displayWidth, msg.displayWidth, 286), Math.max(msg.displayHeight + name.displayHeight + 30, 156),   // the width and height of your object
+            "messagePanel", // a key to an already loaded image
+            16,         // the width and height to offset for a corner slice
+            10          // (optional) pixels to offset when computing the safe usage area
+        );
+
+        let nameImg = this.pond.add.nineslice(
+            6, 6,
+            Math.max(name.displayWidth + 10, 108), Math.max(name.displayHeight + 4, 27),
+            "namePanel",
+            8,
+            2
+        );
+        let starBG = this.add.image(panelImg.displayWidth - 10, 0, "starBG");
+        starBG.setOrigin(1, 0);
+        let starsGroup = this.add.image(panelImg.displayWidth, -10, "starsGroup");
+        starsGroup.setOrigin(1, 0);
+        let megaphone = this.add.image(panelImg.displayWidth, panelImg.displayHeight + 10, "megaphone");
+        megaphone.setOrigin(1, 1);
+        console.log("panelimg displayheight", panelImg.displayHeight);
+
+
+        namePanel.add(nameImg);
+        namePanel.sendToBack(nameImg);
+        namePanel.add(name);
+        name.setOrigin(0);
+
+        messagePanel.add(panelImg);
+        messagePanel.add(starBG);
+        messagePanel.add(starsGroup);
+        messagePanel.add(megaphone);
+        messagePanel.add(msg);
+        messagePanel.add(namePanel);
+
+        panelImg.setOrigin(0, 0);
+        messagePanel.sendToBack(panelImg);
+        messagePanel.setDepth(9999);
+        messagePanel.setAlpha(0);
+
+        if (sceneWidth < 900) {
+            if (x > this.pond.boundsMidPtX) {
+                if (panelImg.displayWidth > this.pond.halfWidth)
+                    messagePanel.setPosition(Math.max(this.pond.boundsLeft, this.pond.boundsRight - panelImg.displayWidth), y - SPRITE_HEIGHT);
+                else
+                    messagePanel.setPosition(x, y - SPRITE_HEIGHT);
+            } else {
+                // console.log(sceneWidth * .48 + 100, x - 50);
+                messagePanel.setPosition(this.pond.boundsLeft, y - SPRITE_HEIGHT);//pond.boundsBot / 2);
+            }
+        }
+
+        this.tweens.add({
+            targets: messagePanel,
+            alpha: 1,
+            duration: 1000,
+            ease: "linear"
+        }, this);
+
+        // console.log(name);
+        // console.log(img);
+        let fadeout = this.pond.time.addEvent({
+            delay: USERNAME_DISPLAY_DURATION - 1000,
+            callback: function () {
+                this.tweens.add({
+                    targets: messagePanel,
+                    alpha: 0,
+                    duration: 1000,
+                    ease: "linear"
+                }, this);
+                that.activeMessagesEvents = arrayRemove(that.activeMessagesEvents, fadeout);
+            },
+            callbackScope: this.pond,
+        });
+
+        let that = this;
+
+        let destroy = this.pond.time.addEvent({
+            delay: USERNAME_DISPLAY_DURATION,
+            callback: function () {
+                messagePanel.destroy();
+                // this.namePopup.destroy();
+                this.namePopup = null;
+                // this.msgPopup.destroy();
+                this.msgPopup = null;
+                // img.destroy();
+                that.activeMessagesDuck = arrayRemove(that.activeMessagesDuck, this);
+                that.activeMessagesPanel = arrayRemove(that.activeMessagesPanel, messagePanel);
+                that.activeMessagesEvents = arrayRemove(that.activeMessagesEvents, destroy);
+            },
+            callbackScope: gameObject,
+        });
+
+        this.activeMessagesEvents.push(fadeout);
+        this.activeMessagesEvents.push(destroy);
+        this.activeMessagesDuck.push(gameObject);
+        this.activeMessagesPanel.push(messagePanel);
+
     }
 
     // clickHandler(pointer, obj) {
@@ -1613,7 +1645,7 @@ class FanartPond extends Phaser.Scene {
 
         });
         this.initialized = false;
-        this.fanartWindow = $("#fanart-window");
+        this.fanartWindow = $("#fanart");
         this.fanartDisplay = $("#fanart-window-display");
         this.fanartSocial = $("#fanart-social-icon");
         this.fanartName = document.getElementById("fanart-name");
@@ -1621,6 +1653,19 @@ class FanartPond extends Phaser.Scene {
         this.fanartLink = $("#fanart-link");
         this.fanartImage = $("#fanart-image");
         this.listOfBoats = [];
+        this.boatLocationsDesktop = [{x: 550, y: 390}, {x: 890, y: 360}, {x: 1050, y: 340},
+            {x: 450, y: 500}, {x: 600, y: 510}, {x: 750, y: 515}, {x: 910, y: 500}, {x: 1090, y: 510}, {
+                x: 1210,
+                y: 485
+            }, {x: 1400, y: 500}, {x: 1550, y: 515},
+            {x: 440, y: 650}, {x: 615, y: 610}, {x: 735, y: 645}, {x: 890, y: 650}, {x: 1010, y: 660}, {
+                x: 1200,
+                y: 650
+            }, {x: 1380, y: 645}, {x: 1535, y: 660},
+            {x: 485, y: 750}, {x: 635, y: 725}, {x: 790, y: 725}, {x: 920, y: 770}, {x: 1100, y: 780}, {
+                x: 1290,
+                y: 710
+            },];
     }
 
     preload() {
@@ -1636,7 +1681,7 @@ class FanartPond extends Phaser.Scene {
         let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
         pondImg.setDisplaySize(newWidth, newHeight);
         pondImg.setOrigin(0.5);
-        this.createSubmissions();
+        this.createSubmissions(true);
         this.input.on("gameobjectup", this.onObjectClicked);
     }
 
@@ -1668,25 +1713,24 @@ class FanartPond extends Phaser.Scene {
         });
     }
 
-    createSubmissions() {
+    createSubmissions(shuffle = false) {
         //Get submission reference sheet from google sheet and filter by pond #
         const fanartSubsArray = fanartSubmissions["submissions"];
 
         console.log(`Loading fanart submissions...`);
         const fanarts = fanartSubsArray;
-
-        /*
-        fanartSubsArray.filter(function (obj) {
-            return parseInt(obj.pond) === pond;
-        });
-        */
-
-        //Create sprite for ducks and add their animations
-        // for (let i = 0; i < fanarts.length; i++) {
-        //     this.makeBoat(fanarts[0]);
-        // }
-        let newBoat = this.makeBoat(fanarts[0], newWidth / 2, newHeight / 2);
-        this.listOfBoats.push(newBoat);
+        if (shuffle)
+            shuffleArray(this.boatLocationsDesktop);
+        console.log("#of fanarts:", fanarts.length);
+        for (let i = 0; i < fanarts.length; i++) {
+            let posn = this.boatLocationsDesktop.pop();
+            try {
+                let newBoat = this.makeBoat(fanarts[i], posn.x, posn.y);
+                this.listOfBoats.push(newBoat);
+            } catch (e) {
+                console.log("ran out of spots to put a boat, make more spots");
+            }
+        }
     }
 
     makeBoat(fanart, x, y) {
@@ -1845,6 +1889,12 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 function arrayRemove(arr, value) {
 
     return arr.filter(function (ele) {
@@ -1852,7 +1902,36 @@ function arrayRemove(arr, value) {
     });
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 $("#fanart-modal-bg").on("click", () => {
     if (window.game.input.enabled == false)
         game.input.enabled = true;
 });
+
+function setupFlickity() {
+
+    var $carousel = $(".carousel").flickity({
+        prevNextButtons: false,
+        pageDots: false,
+        freeScroll: true,
+        wrapAround: true
+    });
+// Flickity instance
+    var flkty = $carousel.data("flickity");
+
+
+// previous
+    $(".button--previous").on("click", function () {
+        $carousel.flickity("previous");
+    });
+// next
+    $(".button--next").on("click", function () {
+        $carousel.flickity("next");
+    });
+}

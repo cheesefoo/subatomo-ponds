@@ -582,13 +582,6 @@
       "sound": "4"
     },
     {
-      "name": "Duckcifer",
-      "image": "FANART_Duckcifer-332289",
-      "pond": "5",
-      "message": "quack quack Babyrage quack quack Babyrage quack quack Babyrage quack quack Babyrage quack quack Babyrage quack quack Babyrage",
-      "sound": "7"
-    },
-    {
       "name": "Hoppou",
       "image": "TEMPLATE",
       "pond": "5",
@@ -652,13 +645,6 @@
       "sound": "6"
     },
     {
-      "name": "Zupan",
-      "image": "FANART_Zupan-194483",
-      "pond": "5",
-      "message": "Happy birthday Subaru and congratulations on 1000000 Subscribers!\r\nReally appreciate your great work and I will keep watching you",
-      "sound": "10"
-    },
-    {
       "name": "NoBreadEatLead",
       "image": "NoBreadEatLead-334411",
       "pond": "5",
@@ -696,14 +682,14 @@
     {
       "name": "IHaveBadInternet",
       "image": "IHaveBadInternet--26339",
-      "pond": "6",
+      "pond": "5",
       "message": "Congratulations for reaching 1 million subs! and also happy birthday!",
       "sound": "4"
     },
     {
       "name": "Soda/CH",
       "image": "SodaCH-503934",
-      "pond": "6",
+      "pond": "5",
       "message": "Happy BiRTHDAY!\r\nSHUBAA",
       "sound": "9"
     },
@@ -734,13 +720,6 @@
       "pond": "6",
       "message": "Congratulation to my favorite Vtuber Duck ! ",
       "sound": "10"
-    },
-    {
-      "name": "A Crazy Rossolis",
-      "image": "FANART_A Crazy Rossolis--34729",
-      "pond": "6",
-      "message": "OMEDETO ! \r\nCongratulations from far away. Wish you all the best now and forever ! Thanks for being you.",
-      "sound": "2"
     },
     {
       "name": "Subatomo#3857",
@@ -836,14 +815,14 @@
     {
       "name": "Starnova",
       "image": "Starnova-160732",
-      "pond": "7",
+      "pond": "6",
       "message": "Congratulations on coming so far. Hopefully you shine further on and arrest more guilty along the way.",
       "sound": "3"
     },
     {
       "name": "DJSharp",
       "image": "DJSharp--10542",
-      "pond": "7",
+      "pond": "6",
       "message": "Thank you for making the world a more fun place. Your hard work at dance, singing and English are amazing!",
       "sound": "-1"
     },
@@ -976,14 +955,14 @@
     {
       "name": "NeoB.",
       "image": "NeoB.--62878",
-      "pond": "8",
+      "pond": "7",
       "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u3001\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01\u305d\u3057\u3066\uff11\uff10\uff10\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\u3046\u3046\u3046\uff01\uff01\uff01\u3044\u3064\u3082\u79c1\u305f\u3061\u306e\u6d77\u5916\u30cb\u30ad\u3092\u5e78\u305b\u306b\u3057\u3066\u304f\u308c\u3066\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3045\u3045\uff01\uff01\uff01\u6b8b\u308a\u306e\u4e00\u65e5\u3092\u697d\u3057\u3093\u3067\u306d\uff5e",
       "sound": "3"
     },
     {
       "name": "ascapade",
       "image": "ascapade-126184",
-      "pond": "8",
+      "pond": "7",
       "message": "conquackulations :V",
       "sound": "-1"
     },
@@ -1116,14 +1095,14 @@
     {
       "name": "RivalEssy",
       "image": "RivalEssy--53060",
-      "pond": "9",
+      "pond": "8",
       "message": "Congratulations on 1 Million subscribers Subaru-san. You always make me smile. Hope you have a quack-tastic day.SHUBASHUBASHUBA",
       "sound": "9"
     },
     {
       "name": "OvoidOrca",
       "image": "OvoidOrca--35802",
-      "pond": "9",
+      "pond": "8",
       "message": "Congratulations and keep up the good work! Watching you always brings a smile to my day!",
       "sound": "10"
     },
@@ -1256,15 +1235,8 @@
     {
       "name": "\u9ed2\u3054\u307e",
       "image": "\u9ed2\u3054\u307e--21964",
-      "pond": "10",
+      "pond": "9",
       "message": "\u898b\u59cb\u3081\u305f\u306e\u306f\u521d\u671f\u304b\u3089\u3067\u306f\u306a\u3044\u3067\u3059\u304c\u81ea\u5206\u304c\u5acc\u306b\u306a\u3063\u305f\u6642\u306b\u3082\u9762\u767d\u3044\u914d\u4fe1\u306a\u3069\u3067\u5143\u6c17\u3065\u3051\u3066\u304f\u308c\u3066\u672c\u5f53\u306b\u5927\u597d\u304d\u3067\u3059\u3053\u308c\u304b\u3089\u3082\u30a2\u30d2\u30fc\u30b8\u30e7\u3067\u3044\u307e\u3059",
-      "sound": "-1"
-    },
-    {
-      "name": "\u3067\u3085\u307a\u3093",
-      "image": "FANART_\u3067\u3085\u307a\u3093-510256",
-      "pond": "10",
-      "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\u30b9\u30d0\u30eb\u306e\u914d\u4fe1\u3067\u6bce\u65e5\u306e\u6d3b\u529b\u3092\u88dc\u7d66\u3055\u305b\u3066\u9802\u3044\u3066\u307e\u3059\uff01\u3053\u308c\u304b\u3089\u3082\u672b\u6c38\u304f\u5143\u6c17\u306b\u6d3b\u52d5\u3057\u3066\u3082\u3089\u3048\u308b\u3068\u5b09\u3057\u3044\u3067\u3059\uff01",
       "sound": "-1"
     },
     {
@@ -1352,13 +1324,6 @@
       "sound": "7"
     },
     {
-      "name": "\u30b2\u30eb\u30b2\u30c3\u30c6\u30a3\u7af9\u4e2d",
-      "image": "FANART_\u30b2\u30eb\u30b2\u30c3\u30c6\u30a3\u7af9\u4e2d-393631",
-      "pond": "10",
-      "message": "100\u4e07\u4eba\u7a81\u7834\u3068\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3061\u3085\u3070\u306a\u30fc\uff01\uff01\u3044\u3064\u3082\u3042\u308a\u304c\u3068\u3061\u3085\u3070\u30fc\uff01\uff01",
-      "sound": "1"
-    },
-    {
       "name": "Ru1",
       "image": "Ru1--17229",
       "pond": "10",
@@ -1396,14 +1361,14 @@
     {
       "name": "Subatomo#5975",
       "image": "Subatomo#5975-380309",
-      "pond": "11",
+      "pond": "10",
       "message": "Shubaaaaaa! \u305f\u3093\u3058\u3087\u3046\u3073\u304a\u3081\u3067\u3068\u3046 !!!! - \u30b3\u30b9\u30bf\u30a2\u30eb\u30b8",
       "sound": "9"
     },
     {
       "name": "Daniel Berger",
       "image": "Daniel Berger-305180",
-      "pond": "11",
+      "pond": "10",
       "message": "Happy Birthday Subaru! Happy 1 million subscribers as well! I've liked you and your content since I started watching Hololive!",
       "sound": "-1"
     },
@@ -1514,14 +1479,14 @@
     },
     {
       "name": "bonbon",
-      "image": "bonbon-514417",
+      "image": "TEMPLATE",
       "pond": "11",
       "message": "Congratulations Subaru! Thank you for all of your hard work so far, your streams mean a lot to me and always make me happy.",
       "sound": "12"
     },
     {
       "name": "Mikhail ",
-      "image": "Mikhail -374850",
+      "image": "TEMPLATE",
       "pond": "11",
       "message": "Happy Birthday Oozora Subaru and congratulations on reaching 1M subs!! I hope you soar thru higher skies from now on!",
       "sound": "-1"
@@ -1536,14 +1501,14 @@
     {
       "name": "Cardboy777",
       "image": "TEMPLATE",
-      "pond": "12",
+      "pond": "11",
       "message": "\ud83e\udda2",
       "sound": "9"
     },
     {
       "name": "JOKOTAK",
       "image": "JOKOTAK--39661",
-      "pond": "12",
+      "pond": "11",
       "message": "Selamat Ulang Tahun dan 1M Subscribers, Bebek Kami Semua!!\r\n\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3068100\u4e07\u4eba\u306e\u52a0\u5165\u8005, \u79c1\u305f\u3061\u306e\u30a2\u30d2\u30eb!!\r\n- ID Bros ",
       "sound": "9"
     },
@@ -1668,7 +1633,7 @@
     },
     {
       "name": "Gorbion",
-      "image": "Gorbion-633173",
+      "image": "TEMPLATE",
       "pond": "12",
       "message": "Congratulation for achieving 1 million subscription! it feels like a long road but you finally made it!",
       "sound": "9"
@@ -1676,14 +1641,14 @@
     {
       "name": "Chizile",
       "image": "Chizile-570934",
-      "pond": "13",
+      "pond": "12",
       "message": "Congrats on 1mil and a happy birthday!",
       "sound": "-1"
     },
     {
       "name": "DuckPower",
       "image": "DuckPower--32091",
-      "pond": "13",
+      "pond": "12",
       "message": "Congratulations from Canada! Thank you for being such a great idol!",
       "sound": "-1"
     },
@@ -1816,14 +1781,14 @@
     {
       "name": "Johalandya",
       "image": "Johalandya--63547",
-      "pond": "14",
+      "pond": "13",
       "message": "Oozora Subaru CONGRATULATIONS!!! I am not good with words but thank you for the laughs and gigles that you gave me!!!",
       "sound": "0"
     },
     {
       "name": "Mifumin",
       "image": "Mifumin-414950",
-      "pond": "14",
+      "pond": "13",
       "message": "1M subs lets go! SHUBA SHUBA SHUBA",
       "sound": "2"
     },
@@ -1941,7 +1906,7 @@
     },
     {
       "name": "amelia",
-      "image": "amelia--23917",
+      "image": "TEMPLATE",
       "pond": "14",
       "message": "subaru omedetou!! ",
       "sound": "-1"
@@ -1956,14 +1921,14 @@
     {
       "name": "DSWD Personnel",
       "image": "DSWD Personnel--47721",
-      "pond": "15",
+      "pond": "14",
       "message": "Omedetou Shuba~ \r\nTo more Subaru hips in Kagainiki clips for the years to come\r\nKanpai!",
       "sound": "2"
     },
     {
       "name": "ShubaruKawaii",
       "image": "ShubaruKawaii--41385",
-      "pond": "15",
+      "pond": "14",
       "message": "Omedeto Shubaru!!! I love you!! I hope you can reach 10 million for the diamond button :3",
       "sound": "-1"
     },
@@ -2004,7 +1969,7 @@
     },
     {
       "name": "pokoi",
-      "image": "pokoi--18880",
+      "image": "TEMPLATE",
       "pond": "15",
       "message": "CONGRATS ON THE 1 MILLLLLLLLLLLL HOPE TO SEE SOME MORE GREAT CONTENT, KEEP IN GOOD HEALTH TOO",
       "sound": "-1"
@@ -2032,7 +1997,7 @@
     },
     {
       "name": "Knightslayer",
-      "image": "Knightslayer-487873",
+      "image": "TEMPLATE",
       "pond": "15",
       "message": "Hello, ozoa chubau. Cingratulation for 1M. Thank you for your hardwork  that always makes my days better.",
       "sound": "-1"
@@ -2046,7 +2011,7 @@
     },
     {
       "name": "DRX324",
-      "image": "DRX324-117040",
+      "image": "TEMPLATE",
       "pond": "15",
       "message": "Hello Subaru! Congrats on reaching 1M subs! I hope for the best of you! We will keep supporting you as subatomos! We love you!",
       "sound": "-1"
@@ -2096,14 +2061,14 @@
     {
       "name": "Andrew",
       "image": "Andrew-274296",
-      "pond": "16",
+      "pond": "15",
       "message": "Omedetou Shuba! Thank You for all the great streams you do and for being Best Duck! Shuba Forever!",
       "sound": "7"
     },
     {
       "name": "Mr. Nogard",
       "image": "Mr. Nogard--38977",
-      "pond": "16",
+      "pond": "15",
       "message": "Happy Birthday and Congrats on 1 million subscribers! I hope you have a wonderful birthday and your channel grows even bigger.",
       "sound": "12"
     },
@@ -2151,7 +2116,7 @@
     },
     {
       "name": "Eli",
-      "image": "Eli--36147",
+      "image": "TEMPLATE",
       "pond": "16",
       "message": "Congrats on 1 mill ",
       "sound": "10"
@@ -2172,7 +2137,7 @@
     },
     {
       "name": "May net",
-      "image": "May net--16821",
+      "image": "TEMPLATE",
       "pond": "16",
       "message": "Congrats suba",
       "sound": "-1"
@@ -2236,27 +2201,20 @@
     {
       "name": "KatzeMitStil",
       "image": "KatzeMitStil--27576",
-      "pond": "17",
+      "pond": "16",
       "message": "I love you Shubaru! You are the kyootest ducky. A true inspiration to Holobirb fans everywhere.",
       "sound": "9"
     },
     {
       "name": "mohacas",
       "image": "mohacas--20981",
-      "pond": "17",
+      "pond": "16",
       "message": "CONGRATULATIONS BEST DUCK!!!!! ",
       "sound": "6"
     },
     {
-      "name": "Kei Morisue",
-      "image": "FANART_Kei Morisue-112637",
-      "pond": "17",
-      "message": "Subau the best duck YEAHHHHH!",
-      "sound": "-1"
-    },
-    {
       "name": "Se\u00f1or Ortiz ",
-      "image": "Se\u00f1or Ortiz --51239",
+      "image": "TEMPLATE",
       "pond": "17",
       "message": "Congrats on 1M and Happy Birthday!",
       "sound": "-1"
@@ -2312,7 +2270,7 @@
     },
     {
       "name": "Sorazly",
-      "image": "Sorazly-105748",
+      "image": "TEMPLATE",
       "pond": "17",
       "message": "I love you Subaru uwu",
       "sound": "-1"
@@ -2376,23 +2334,16 @@
     {
       "name": "Taonra",
       "image": "Taonra--11482",
-      "pond": "18",
+      "pond": "17",
       "message": "Hey Subaru, Congratulations!\r\nI wish you the best for your Future!\r\nStay the way you are, your the best!\r\nTaonra",
       "sound": "8"
     },
     {
       "name": "Vee Vye",
       "image": "Vee Vye-607490",
-      "pond": "18",
+      "pond": "17",
       "message": "Congratulations Subaru! Thank you for all the happiness you gave us and for the joys you bring. We love you our favorite duck.",
       "sound": "5"
-    },
-    {
-      "name": "Alzbern",
-      "image": "FANART_Alzbern--13688",
-      "pond": "18",
-      "message": "Congratulations Subaru! More happy days to come.\r\n\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u30b9\u30d0\u30eb\u3061\u3083\u3093\uff01\u4eca\u65e5\u306f\u3068\u3066\u3082\u5e78\u305b\u306a\u4e00\u65e5\u306b\u306a\u308a\u307e\u3059\u3088\u3046\u306b\u3002deepl\u3000\u30c8\u30e9\u30f3\u30b9\u30ec\u30fc\u30b7\u30e7\u30f3\u3002",
-      "sound": "-1"
     },
     {
       "name": "Bebek goreng",
@@ -2516,14 +2467,14 @@
     {
       "name": "Cameron Sharp",
       "image": "Cameron Sharp-562244",
-      "pond": "19",
+      "pond": "18",
       "message": "Congratulations to everyone's favourite duck.\r\nShiba Shuba Shuba",
       "sound": "7"
     },
     {
       "name": "Juno\u2606",
       "image": "TEMPLATE",
-      "pond": "19",
+      "pond": "18",
       "message": "\u3053\u3093\u306b\u3061\u306f\u30b9\u30d0\u30eb!!! 100\u4e07\u4eba\u306e\u767b\u9332\u8005\u306e\u7686\u3055\u3093\u3001\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059!!!!!\u79c1\u305f\u3061subatomos\u306f\u5e38\u306b\u6700\u5f8c\u307e\u3067\u3042\u306a\u305f\u3092\u30b5\u30dd\u30fc\u30c8\u3057\u307e\u3059\u3002\u899a\u3048\u3066\u304a\u3044\u3066\u304f\u3060\u3055\u3044\uff1ashuba\r\n",
       "sound": "10"
     },
@@ -2543,7 +2494,7 @@
     },
     {
       "name": "\u305d\u3089\u306e\u3042\u304a",
-      "image": "\u305d\u3089\u306e\u3042\u304a-278239",
+      "image": "TEMPLATE",
       "pond": "19",
       "message": "100\u5104\u4e07\u4eba\u767b\u9332\u304a\u3081\u3067\u3068\u3046\u30fc\uff01\uff01",
       "sound": "-1"
@@ -2656,14 +2607,14 @@
     {
       "name": "Kevin Napod",
       "image": "TEMPLATE",
-      "pond": "20",
+      "pond": "19",
       "message": "Congratulations shuba!  I will continue to support you and I am proud to say you are my favorite duck and idol!",
       "sound": "9"
     },
     {
       "name": "Suhy",
       "image": "TEMPLATE",
-      "pond": "20",
+      "pond": "19",
       "message": "Shuba! Happy birthday and 1 million subs subachan! Long live twin tail subaru!www",
       "sound": "-1"
     },
@@ -2718,14 +2669,14 @@
     },
     {
       "name": "NickRut",
-      "image": "NickRut-221550",
+      "image": "TEMPLATE",
       "pond": "20",
       "message": "Ometetou gozaimasu from Russia, Shubaru!!!!\r\nWe're all love you!!! <3",
       "sound": "9"
     },
     {
       "name": "KrispyL",
-      "image": "KrispyL--53267",
+      "image": "KrispyL-438329",
       "pond": "20",
       "message": "Congratulations for your 1 million subs Subaru! I hope to see your content in the future",
       "sound": "5"
@@ -2736,13 +2687,6 @@
       "pond": "20",
       "message": "OMEDETOU",
       "sound": "5"
-    },
-    {
-      "name": "RoperSo",
-      "image": "FANART_RoperSo-574878",
-      "pond": "20",
-      "message": "Selamat untuk 1 JUTA Subscriber Subaru mantulll, chuba chuba!!",
-      "sound": "-1"
     },
     {
       "name": "Kazuki-san",
@@ -2795,15 +2739,15 @@
     },
     {
       "name": "CheekyKneeKnee",
-      "image": "CheekyKneeKnee-332999",
-      "pond": "21",
+      "image": "TEMPLATE",
+      "pond": "20",
       "message": "Congrats for 1 MILLION Subs. Please continue your work of being our #1 idol/duck. (\u2022\u04e9\u2022)\u2661",
       "sound": "-1"
     },
     {
       "name": "Yoshi Punch",
       "image": "Yoshi Punch-475236",
-      "pond": "21",
+      "pond": "20",
       "message": "Congrats, Subaru! We love you! You are our best duck friend!",
       "sound": "2"
     },
@@ -2936,14 +2880,14 @@
     {
       "name": "#DonaBau ",
       "image": "#DonaBau -483395",
-      "pond": "22",
+      "pond": "21",
       "message": "Happy B-Day from a Vietnamese fan brought to this Vtuber rabbit hole by our ShubaDuck's 3D \"sit down\" video <3 VN Bros, we exist",
       "sound": "3"
     },
     {
       "name": "Requiem",
       "image": "Requiem-509196",
-      "pond": "22",
+      "pond": "21",
       "message": "Happy birthday and may you have many more! ShubaShuba",
       "sound": "4"
     },
@@ -2970,7 +2914,7 @@
     },
     {
       "name": "ExtraCols",
-      "image": "FANART_ExtraCols--59536",
+      "image": "ExtraCols--59536",
       "pond": "22",
       "message": "Thank You For Always Making Us Laugh. ",
       "sound": "0"
@@ -2998,7 +2942,7 @@
     },
     {
       "name": "\u30a2\u30eb\u30bf\u30a4\u30eb",
-      "image": "\u30a2\u30eb\u30bf\u30a4\u30eb--14197",
+      "image": "TEMPLATE",
       "pond": "22",
       "message": "CONGRATSS SUBARUUUU!!!!!!",
       "sound": "6"
@@ -3075,15 +3019,15 @@
     },
     {
       "name": "Dino bagus",
-      "image": "Dino bagus-143612",
-      "pond": "23",
+      "image": "TEMPLATE",
+      "pond": "22",
       "message": "Selamat! Congratulations! Your laughter makes the world more beautiful! Terimakasih! ",
       "sound": "1"
     },
     {
       "name": "Billy",
       "image": "TEMPLATE",
-      "pond": "23",
+      "pond": "22",
       "message": "Shuba Shuba~~ Congratulations on 1M and \u304a\u305f\u3093\u3058\u3087\u3046\u3073\u304a\u3081\u3067\u3068\u3046",
       "sound": "7"
     },
@@ -3173,7 +3117,7 @@
     },
     {
       "name": "Jaspy",
-      "image": "Jaspy-582891",
+      "image": "TEMPLATE",
       "pond": "23",
       "message": "Happy birthday and congratulations. Your videos cheers me up whenever I am feeling down ^-^",
       "sound": "10"
@@ -3216,14 +3160,14 @@
     {
       "name": "Subatomo#5977",
       "image": "Subatomo#5977-277330",
-      "pond": "24",
+      "pond": "23",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
     },
     {
       "name": "Ismael R",
       "image": "Ismael R-403086",
-      "pond": "24",
+      "pond": "23",
       "message": "Congratulations subaru chan!! You deserve everything. Thank you for all you're hard work, hope you are as happy as you make us",
       "sound": "-1"
     },
@@ -3320,7 +3264,7 @@
     },
     {
       "name": "Subatomo#4331",
-      "image": "Subatomo#4331-128518",
+      "image": "TEMPLATE",
       "pond": "24",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "10"
@@ -3356,14 +3300,14 @@
     {
       "name": "lost_kaineruver4",
       "image": "lost_kaineruver4--42508",
-      "pond": "25",
+      "pond": "24",
       "message": "Congratulations Subaru! It took a while but you finally made it!",
       "sound": "0"
     },
     {
       "name": "Farel-sama",
       "image": "Farel-sama-217213",
-      "pond": "25",
+      "pond": "24",
       "message": "Subaru, my favorite girl. omedetou. Right now im learning japanese so that i can understand everything you said. Fighting!",
       "sound": "0"
     },
@@ -3496,14 +3440,14 @@
     {
       "name": "Shuba Detective",
       "image": "Shuba Detective-158333",
-      "pond": "26",
+      "pond": "25",
       "message": "\u304a\u3081\u3067\u3068\u3046!! Thank you for doing your best to make every subatomos happy and caring for us. I will continue to support you SHUBA!",
       "sound": "-1"
     },
     {
       "name": "SangreTarasco ",
       "image": "SangreTarasco --34983",
-      "pond": "26",
+      "pond": "25",
       "message": "Happy birthday and congratulations on reaching 1 million subscribers! May your wishes come true and never give up on your goals.",
       "sound": "-1"
     },
@@ -3544,7 +3488,7 @@
     },
     {
       "name": "Fauzan",
-      "image": "Fauzan--36601",
+      "image": "TEMPLATE",
       "pond": "26",
       "message": "HBD Subaru, semoga semakin berbakti kepada mama reine dan papa moona",
       "sound": "9"
@@ -3636,14 +3580,14 @@
     {
       "name": "00(\u7363\u533b\u306e\u5375)",
       "image": "00(\u7363\u533b\u306e\u5375)-531411",
-      "pond": "27",
+      "pond": "26",
       "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u8a95\u751f\u65e5\u3001\u305d\u3057\u3066\uff11\uff10\uff10\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046!!!\n\u81ea\u5206\u306f\u30b0\u30e9\u30d6\u30eb\u914d\u4fe1\u59cb\u3081\u305f\u3053\u308d\u304b\u3089\u898b\u59cb\u3081\u305f\u304b\u3089\u3042\u307e\u308a\u524d\u306e\u3053\u3068\u306f\u77e5\u3089\u306a\u3044\u3051\u3069\u3001\u305d\u308c\u3067\u3082\u3053\u3053\u6700\u8fd1\u306e\u30b9\u30d0\u30eb\u3061\u3083\u3093\u306f\u7279\u306b\u30a2\u30a4\u30c9\u30eb\u3068\u3057\u3066\u8f1d\u3044\u3066\u3044\u308b\u3068\u601d\u3046\uff01\n\u3044\u3064\u307e\u3067\u3082\u5fdc\u63f4\u3057\u307e\u3059\u3001\u7121\u7406\u3060\u3051\u306f\u3057\u306a\u3044\u3067\u306d\u3002",
       "sound": "1"
     },
     {
       "name": "Lyra",
       "image": "Lyra-138503",
-      "pond": "27",
+      "pond": "26",
       "message": "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059",
       "sound": "-1"
     },
@@ -3754,7 +3698,7 @@
     },
     {
       "name": "LanceLance",
-      "image": "LanceLance-279773",
+      "image": "TEMPLATE",
       "pond": "27",
       "message": "Congrats on 1M Shubaaa~~ ",
       "sound": "-1"
@@ -3776,14 +3720,14 @@
     {
       "name": "subasubaru",
       "image": "subasubaru-686361",
-      "pond": "28",
+      "pond": "27",
       "message": "OTANJOUBIRTH-OMEDERATURAION!",
       "sound": "-1"
     },
     {
       "name": "Joel",
-      "image": "Joel--48007",
-      "pond": "28",
+      "image": "TEMPLATE",
+      "pond": "27",
       "message": "Muchas felicidades subaru ",
       "sound": "-1"
     },
@@ -3916,14 +3860,14 @@
     {
       "name": "ac",
       "image": "ac--35181",
-      "pond": "29",
+      "pond": "28",
       "message": "happy birthday subaru!!! thank you for being you and bringing entertainment to us!!!",
       "sound": "-1"
     },
     {
       "name": "GooeyLagoon",
       "image": "GooeyLagoon--52695",
-      "pond": "29",
+      "pond": "28",
       "message": "Congratulations on One Million Subscribers, Subaru!! Thank you for all your hard work! We love you!!",
       "sound": "10"
     },
@@ -3946,13 +3890,6 @@
       "image": "Ghost Onigiri--35596",
       "pond": "29",
       "message": "Happy Birthday and Congratulations on 1 Million Subscribers Subaru!!!",
-      "sound": "-1"
-    },
-    {
-      "name": "Tsuki",
-      "image": "Tsuki-158689",
-      "pond": "29",
-      "message": "Congratulations, Subaru! Stay strong and healthy! Regards, an average fan. ",
       "sound": "-1"
     },
     {
@@ -4055,22 +3992,22 @@
     },
     {
       "name": "Jasugun",
-      "image": "Jasugun--16591",
-      "pond": "30",
+      "image": "TEMPLATE",
+      "pond": "29",
       "message": "\u00a1Enhorabuena por llegar al mill\u00f3n de suscriptores!\r\n\u00a1No eres un pato,  eres un cisne! ",
       "sound": "-1"
     },
     {
       "name": "Dehydrated Water",
       "image": "Dehydrated Water-106647",
-      "pond": "30",
+      "pond": "29",
       "message": "Congrats best girl for 1m shubascribers!! ",
       "sound": "10"
     },
     {
       "name": "Ray_D",
-      "image": "Ray_D-628343",
-      "pond": "30",
+      "image": "TEMPLATE",
+      "pond": "29",
       "message": "CONGRATS ON 1M! ",
       "sound": "0"
     },
@@ -4111,7 +4048,7 @@
     },
     {
       "name": "\u30e1\u30ac\u30cd\u304f\u3093",
-      "image": "\u30e1\u30ac\u30cd\u304f\u3093--27179",
+      "image": "TEMPLATE",
       "pond": "30",
       "message": "Best duck-chan congrats for the 1 mil subs, may the chuba be with you",
       "sound": "-1"
@@ -4196,21 +4133,21 @@
     {
       "name": "\ub3d9\uc7ac",
       "image": "\ub3d9\uc7ac-143631",
-      "pond": "31",
+      "pond": "30",
       "message": "\uc0dd\uc77c \ucd95\ud558\ud574!",
       "sound": "-1"
     },
     {
       "name": "Mdman272",
       "image": "Mdman272--19277",
-      "pond": "31",
+      "pond": "30",
       "message": "Thank you for all the great streams and fun times. We love you. Best duck. SHUBA!!! ",
       "sound": "-1"
     },
     {
       "name": "KaiserLos24 ",
       "image": "KaiserLos24 --34361",
-      "pond": "31",
+      "pond": "30",
       "message": "OMEDETOU! Seeing your streams and clips always make my day. Congratulations!!! You totally deserve it!!! #shuba4ever",
       "sound": "1"
     },
@@ -4237,7 +4174,7 @@
     },
     {
       "name": "Pablo_RPM",
-      "image": "Pablo_RPM-100021",
+      "image": "TEMPLATE",
       "pond": "31",
       "message": "Obrigado por ser essa pessoa incr\u00edvel que alegra meus dias e sempre consegue por um sorriso no meu rosto :D",
       "sound": "7"
@@ -4336,21 +4273,21 @@
     {
       "name": "Subatomo#5347",
       "image": "Subatomo#5347-580165",
-      "pond": "32",
+      "pond": "31",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "9"
     },
     {
       "name": "LittleWhiteHerz",
       "image": "LittleWhiteHerz--41483",
-      "pond": "32",
+      "pond": "31",
       "message": "I love how supportive she always is of overseas bros, and how hard she works to communicate with us, she is so sweet! \u2661",
       "sound": "-1"
     },
     {
       "name": "Drumple",
       "image": "Drumple-319526",
-      "pond": "32",
+      "pond": "31",
       "message": "Congrats on another milestone Shuba-chan! I haven't been around long but you have my full support from now into the future!",
       "sound": "1"
     },
@@ -4369,13 +4306,6 @@
       "sound": "10"
     },
     {
-      "name": "Maro",
-      "image": "FANART_Maro-303211",
-      "pond": "32",
-      "message": "Congratulations on 1 million subscribers Subaru! your streams always make my day better! Thank you for everything.",
-      "sound": "7"
-    },
-    {
       "name": "JohnLins12",
       "image": "JohnLins12-610071",
       "pond": "32",
@@ -4384,7 +4314,7 @@
     },
     {
       "name": "Shiromarte",
-      "image": "Shiromarte-286973",
+      "image": "TEMPLATE",
       "pond": "32",
       "message": "Happy birthday and congratulations on 1 million subscribers Subaru! I'm proud to be a Subatomo! Sending you lots of shuba love! ",
       "sound": "-1"
@@ -4419,7 +4349,7 @@
     },
     {
       "name": "Subatomo#4665",
-      "image": "Subatomo#4665-180359",
+      "image": "TEMPLATE",
       "pond": "32",
       "message": "Shuba!!\u3000\u304a\u3081\u3067\u3068\u3046!!!!",
       "sound": "-1"
@@ -4476,21 +4406,21 @@
     {
       "name": "BecauseOfReasons",
       "image": "BecauseOfReasons--59773",
-      "pond": "33",
+      "pond": "32",
       "message": "Happy birthday, Subaru!",
       "sound": "0"
     },
     {
       "name": "lolikeller",
       "image": "lolikeller-603135",
-      "pond": "33",
+      "pond": "32",
       "message": "\u30c1\u30e3\u30f3\u30cd\u30eb\u767b\u9332\u8005\u6570100\u4e07\u4eba\u7a81\u7834\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059! Thank you for your amazing streams and hard work! Never give up (\u0e51\u02c3\u1d17\u02c2)\ufeed\r\nYou're the best idol-duck!!",
       "sound": "10"
     },
     {
       "name": "Hollow-san",
       "image": "Hollow-san--45187",
-      "pond": "33",
+      "pond": "32",
       "message": "Congratulations on 1 million subscribers Subaru! Thank you for all the fond memories you've given me!",
       "sound": "-1"
     },
@@ -4616,21 +4546,21 @@
     {
       "name": "Iwan",
       "image": "Iwan--30192",
-      "pond": "34",
+      "pond": "33",
       "message": "Saya tidak pandai membuat kata kata, jadi selamat kepada subaru!! ",
       "sound": "-1"
     },
     {
       "name": "CozyBonez",
-      "image": "CozyBonez--33971",
-      "pond": "34",
+      "image": "TEMPLATE",
+      "pond": "33",
       "message": "LETS GO",
       "sound": "3"
     },
     {
       "name": "Arkiro",
       "image": "Arkiro-598596",
-      "pond": "34",
+      "pond": "33",
       "message": "Happy birthday!! And congratulations on 1 million subs! Keep on doing what you love, we'll be here to support you <3",
       "sound": "1"
     },
@@ -4671,7 +4601,7 @@
     },
     {
       "name": "ID gaki",
-      "image": "ID gaki-746563",
+      "image": "TEMPLATE",
       "pond": "34",
       "message": "Congrats shubaaaaaaaaa",
       "sound": "6"
@@ -4756,21 +4686,21 @@
     {
       "name": "CommandThrow",
       "image": "CommandThrow-262006",
-      "pond": "35",
+      "pond": "34",
       "message": "Melon Soda! \u304a\u3081\u3067\u3068\u3046\uff01\uff01",
       "sound": "6"
     },
     {
       "name": "KronDy",
       "image": "TEMPLATE",
-      "pond": "35",
+      "pond": "34",
       "message": "\u041f\u043e\u0437\u0434\u0440\u0430\u0432\u043b\u044f\u044e \u0441 \u0434\u043d\u0435\u043c \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f \u0438 \u0434\u043e\u0441\u0442\u0438\u0436\u0435\u043d\u0438\u0435\u043c \u044d\u0442\u043e\u0439 \u0432\u0435\u043b\u0438\u043a\u043e\u0439 \u0446\u0438\u0444\u0440\u043e\u0439. \u0421 \u043d\u0430\u0438\u043b\u0443\u0447\u0448\u0438\u043c\u0438 \u043f\u043e\u0436\u0435\u043b\u0430\u043d\u0438\u044f\u043c\u0438 \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438",
       "sound": "4"
     },
     {
       "name": "KittenViti",
       "image": "TEMPLATE",
-      "pond": "35",
+      "pond": "34",
       "message": "CONGRATULATIONS SUBARU! I hope you are doing well and continuing doing your best! Can't wait to see what the future holds! ",
       "sound": "-1"
     },
@@ -4874,7 +4804,7 @@
     },
     {
       "name": "NikitosFedos",
-      "image": "NikitosFedos--55628",
+      "image": "TEMPLATE",
       "pond": "35",
       "message": "Happy birthday, best hololive duck! (\u1d54\u1d25\u1d54)",
       "sound": "-1"
@@ -4896,21 +4826,21 @@
     {
       "name": "ProgRock Enjoyer",
       "image": "ProgRock Enjoyer-473666",
-      "pond": "36",
+      "pond": "35",
       "message": "You are one of the first vtubers that I have become a fan. Always a joy to watch you! You are awesome!!!",
       "sound": "2"
     },
     {
       "name": "Andi !",
       "image": "Andi !-425890",
-      "pond": "36",
+      "pond": "35",
       "message": "congrats on achieving 1M !!! (*\uff89\u30fb\u03c9\u30fb)\uff89\u266b",
       "sound": "7"
     },
     {
       "name": "\uc815\uaddc\ubbfc",
       "image": "TEMPLATE",
-      "pond": "36",
+      "pond": "35",
       "message": "\ud55c\uad6d\uc5d0\uc11c \uc2a4\ubc14\ub8e8\ub97c \uc751\uc6d0\ud558\uace0 \uc788\ub294 \ud32c\uc785\ub2c8\ub2e4! \ud640\ub85c\uba64 \uc911\uc5d0\uc11c \ub2e8\uc5f0\ucf54 \uac00\uc7a5 \uc0ac\ub791\uc2a4\ub7fd\uace0 \uc644\ubcbd\ud55c \uc2a4\ubc14\ub8e8\uc758 100\ub9cc\uba85 \ub2ec\uc131\uacfc \uc0dd\uc77c\uc744 \ucd95\ud558\ud569\ub2c8\ub2e4~~!  \uc2a4\ubc14\ub8e8\uac00 \uacc4\uc18d \ud589\ubcf5\ud558\uac8c \ubc29\uc1a1\ud560 \uc218 \uc788\uae30\ub97c \ubc14\ub77c\uc694\ud83d\ude4f",
       "sound": "-1"
     },
@@ -5014,7 +4944,7 @@
     },
     {
       "name": "Flip",
-      "image": "Flip-607494",
+      "image": "TEMPLATE",
       "pond": "36",
       "message": "i like when funny duck go chubaaa",
       "sound": "5"
@@ -5036,21 +4966,21 @@
     {
       "name": "Subatomo#2922",
       "image": "Subatomo#2922--66926",
-      "pond": "37",
+      "pond": "36",
       "message": "congraaaaaaaaaaats!",
       "sound": "-1"
     },
     {
       "name": "Volt",
       "image": "Volt-240431",
-      "pond": "37",
+      "pond": "36",
       "message": "Congrats!",
       "sound": "12"
     },
     {
       "name": "subaru's husband",
       "image": "subaru's husband-475764",
-      "pond": "37",
+      "pond": "36",
       "message": "congratulations on 1m. Im so happy i decided to marry you thanks. ",
       "sound": "-1"
     },
@@ -5091,7 +5021,7 @@
     },
     {
       "name": "Mr Dripp",
-      "image": "FANART_Mr Dripp--55640",
+      "image": "Mr Dripp--55640",
       "pond": "37",
       "message": "You're awesome, that is all.",
       "sound": "-1"
@@ -5176,21 +5106,21 @@
     {
       "name": "Bedframe",
       "image": "Bedframe-108221",
-      "pond": "38",
+      "pond": "37",
       "message": "Here we go! Congratulations Subaru! I hope you know how much your fans love you! You're an amazing idol in my eyes!",
       "sound": "12"
     },
     {
       "name": "UninvitedTurtle",
       "image": "UninvitedTurtle--14706",
-      "pond": "38",
+      "pond": "37",
       "message": "Nice",
       "sound": "-1"
     },
     {
       "name": "\u5149\u6bc5\u30ed\u30d3\u30f3",
       "image": "\u5149\u6bc5\u30ed\u30d3\u30f3--61373",
-      "pond": "38",
+      "pond": "37",
       "message": "\u30b7\u30e5\u30d0\u30b7\u30e5\u30d0\u30b7\u30e5\u30d0\uff01\u30b9\u30d0\u30eb\u3055\u3093\uff11\uff10\uff10\u4e07\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01",
       "sound": "9"
     },
@@ -5272,13 +5202,6 @@
       "sound": "7"
     },
     {
-      "name": "Boheej",
-      "image": "FANART_Boheej--38375",
-      "pond": "38",
-      "message": "Congrats on 1million!!! You always make me laugh and your english is great. I hope you can cover Subarudo Duck song (Hey Ya!)",
-      "sound": "3"
-    },
-    {
       "name": "Ti\u1ebfn Vinh",
       "image": "Ti\u1ebfn Vinh--29329",
       "pond": "38",
@@ -5316,21 +5239,21 @@
     {
       "name": "\u041c\u0430\u043a\u0441\u0438\u043c \u0421\u0430\u0432\u0435\u043b\u044c\u0435\u0432",
       "image": "TEMPLATE",
-      "pond": "39",
+      "pond": "38",
       "message": "\u0421\u0443\u0431\u0430\u0440\u0443 \u0441 \u0414\u043d\u0451\u043c \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f!!!!!!!!!!!!",
       "sound": "9"
     },
     {
       "name": "Cyril Jerome",
       "image": "Cyril Jerome--22714",
-      "pond": "39",
+      "pond": "38",
       "message": "Congratulations for getting 1 million subscribers! I am eternally grateful for meeting you. You are the best! ",
       "sound": "10"
     },
     {
       "name": "Some Indonesian",
-      "image": "Some Indonesian--40444",
-      "pond": "39",
+      "image": "TEMPLATE",
+      "pond": "38",
       "message": "100\u4e07\u4eba\u306e\u52a0\u5165\u8005\u3068\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3001\u30b9\u30d0\u30eb, is that how you say it? You're and will always be our precious duck. Selamat ulang tahun shuba ~\\(\u2267\u25bd\u2266)/",
       "sound": "1"
     },
@@ -5392,7 +5315,7 @@
     },
     {
       "name": "Subatomo#4732",
-      "image": "Subatomo#4732--36525",
+      "image": "TEMPLATE",
       "pond": "39",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
@@ -5426,13 +5349,6 @@
       "sound": "10"
     },
     {
-      "name": "SpeedWheelDeluxe",
-      "image": "FANART_SpeedWheelDeluxe--30040",
-      "pond": "39",
-      "message": "Really nice going with a goal like you've reached! Heard about this from a friend and couldn't pass up congratulating you.",
-      "sound": "10"
-    },
-    {
       "name": "Subatomo#1683",
       "image": "Subatomo#1683-597108",
       "pond": "39",
@@ -5454,30 +5370,23 @@
       "sound": "-1"
     },
     {
-      "name": "Shredder23 ",
-      "image": "Shredder23 --15969",
-      "pond": "40",
-      "message": "Congratulations Duck Princess we love you very very much I look forward to more streams. Keep up the great work!",
-      "sound": "2"
-    },
-    {
       "name": "Josias",
       "image": "Josias-455790",
-      "pond": "40",
+      "pond": "39",
       "message": "Felicidades Subaru, la patito mas linda",
       "sound": "-1"
     },
     {
       "name": "Ellie",
       "image": "Ellie-360128",
-      "pond": "40",
+      "pond": "39",
       "message": "Congrashulations",
       "sound": "6"
     },
     {
       "name": "Mr Bun Bun",
       "image": "Mr Bun Bun--14926",
-      "pond": "40",
+      "pond": "39",
       "message": "Congratulations on your 1M Subs Shuba!!!!\ud83c\udf89\ud83c\udf89\r\nAlso Happy Birthday Shuba!!!\ud83c\udf82\ud83c\udf89\ud83d\udc93\r\nLove from the Philippines\ud83d\udc93\ud83c\uddf5\ud83c\udded",
       "sound": "-1"
     },
@@ -5566,20 +5475,6 @@
       "sound": "12"
     },
     {
-      "name": "Shredder23 ",
-      "image": "Shredder23 -391668",
-      "pond": "40",
-      "message": "Congratulations Duck Princess we love you very very much I look forward to more streams. Keep up the great work!",
-      "sound": "2"
-    },
-    {
-      "name": "MinBlox",
-      "image": "FANART_MinBlox-165617",
-      "pond": "40",
-      "message": "Subaru you are best duck. Trust me.",
-      "sound": "1"
-    },
-    {
       "name": "tybantarnusa",
       "image": "TEMPLATE",
       "pond": "40",
@@ -5596,42 +5491,42 @@
     {
       "name": "Deyn",
       "image": "Deyn--50502",
-      "pond": "41",
+      "pond": "40",
       "message": "I love you Subaru, please continue to QUACK QUACK our life and make it more SHUBA SHUBA",
       "sound": "-1"
     },
     {
       "name": "J. C. Exivix",
       "image": "J. C. Exivix-619442",
-      "pond": "41",
+      "pond": "40",
       "message": "Best wishes for BEST DUCK! ",
       "sound": "11"
     },
     {
       "name": "flyingmonkeys14",
       "image": "flyingmonkeys14-282155",
-      "pond": "41",
+      "pond": "40",
       "message": "Thanks for being the cutest tomboy idol I've ever seen. You're enthusiasm keeps me going through long hours at work <3",
       "sound": "-1"
     },
     {
       "name": "frshwatermalone",
       "image": "frshwatermalone-507313",
-      "pond": "41",
+      "pond": "40",
       "message": "congrats and happy birthday subaru! hopr you have a wonderful birthday and 1 mil subs celebration! thank you for being with us!",
       "sound": "0"
     },
     {
       "name": "Arthurle",
       "image": "Arthurle-132336",
-      "pond": "41",
+      "pond": "40",
       "message": "OMedegratulation SHUBA!!!!!",
       "sound": "4"
     },
     {
       "name": "MrMrannoying",
       "image": "MrMrannoying--32508",
-      "pond": "41",
+      "pond": "40",
       "message": "You are COOL COMEDIAN!!! Congrats!! ",
       "sound": "3"
     },
@@ -5692,13 +5587,6 @@
       "sound": "4"
     },
     {
-      "name": "Shredder23 ",
-      "image": "Shredder23 --28420",
-      "pond": "41",
-      "message": "Congratulations Duck Princess we love you very very much I look forward to more streams. Keep up the great work!",
-      "sound": "2"
-    },
-    {
       "name": "tsugihagiusagi",
       "image": "tsugihagiusagi--12858",
       "pond": "41",
@@ -5736,49 +5624,49 @@
     {
       "name": "EvoStrife",
       "image": "TEMPLATE",
-      "pond": "42",
+      "pond": "41",
       "message": "Congratulations!!!!!",
       "sound": "-1"
     },
     {
       "name": "Gavin",
       "image": "Gavin--58087",
-      "pond": "42",
+      "pond": "41",
       "message": "Congratulations to the funniest and most adorable virtual waterfowl( Fancier title for a duck or similar bird) that I know! \ud83e\udd86",
       "sound": "9"
     },
     {
       "name": "boog",
       "image": "boog--56344",
-      "pond": "42",
+      "pond": "41",
       "message": "Congrats on 1M! Thanks for making my day brighter, although I may not understand Japanese, you never fail to make me laugh.",
       "sound": "7"
     },
     {
       "name": "Practive",
       "image": "Practive--36884",
-      "pond": "42",
+      "pond": "41",
       "message": "SHUBA! Congratulations on getting to 1 Million Su",
       "sound": "-1"
     },
     {
       "name": "Levidant",
       "image": "TEMPLATE",
-      "pond": "42",
+      "pond": "41",
       "message": "Congraducklations",
       "sound": "-1"
     },
     {
       "name": "Alec Bluu",
       "image": "Alec Bluu--29776",
-      "pond": "42",
+      "pond": "41",
       "message": "Hurray Subaru! 1M Subs! World's cutest Duck idol I cannot wait to see you play more horror games. ",
       "sound": "-1"
     },
     {
       "name": "Ruggero",
       "image": "Ruggero--46307",
-      "pond": "42",
+      "pond": "41",
       "message": "Congratulations!!! Long live Oozora Police!",
       "sound": "11"
     },
@@ -5876,51 +5764,44 @@
     {
       "name": "Kai",
       "image": "Kai-291866",
-      "pond": "43",
+      "pond": "42",
       "message": "Bless Our Goddess Duck",
       "sound": "1"
     },
     {
       "name": "Kharg",
       "image": "Kharg-156917",
-      "pond": "43",
+      "pond": "42",
       "message": "Congratulations and much love to the tomboyish duck I'm really glad I was recomended your channel.",
       "sound": "-1"
     },
     {
       "name": "Derptatonation ",
       "image": "Derptatonation -522588",
-      "pond": "43",
+      "pond": "42",
       "message": "Congratulations on 1 million shubaaa",
       "sound": "-1"
     },
     {
       "name": "Valk",
       "image": "Valk--62948",
-      "pond": "43",
+      "pond": "42",
       "message": "Congratulations Subaru! Thank you as always for your quality content and contagious happiness!",
       "sound": "2"
     },
     {
       "name": "Big daddy",
       "image": "TEMPLATE",
-      "pond": "43",
+      "pond": "42",
       "message": "Happy birthday subaru!",
       "sound": "9"
     },
     {
       "name": "oscar meep",
       "image": "oscar meep--22689",
-      "pond": "43",
+      "pond": "42",
       "message": "congratulation to 1M subs and happy birthday <3 \r\nI'm not a person that's good with words X3",
       "sound": "2"
-    },
-    {
-      "name": "CrayonEater",
-      "image": "FANART_CrayonEater-192989",
-      "pond": "43",
-      "message": "suba duck best duck",
-      "sound": "1"
     },
     {
       "name": "Duckniki",
@@ -5928,13 +5809,6 @@
       "pond": "43",
       "message": "Congratulations Subaru-kun~ really glad to be a part of this marvelous journey, hope you will have fun as much as we do as well.",
       "sound": "6"
-    },
-    {
-      "name": "Mr Pochico",
-      "image": "FANART_Mr Pochico--36265",
-      "pond": "43",
-      "message": "Happy birthday I know you\u2019re a kind person and a good friend to those around stay cool and live long and happy \r\nMuch love,\r\nM.P",
-      "sound": "11"
     },
     {
       "name": "Moi Anz",
@@ -5963,13 +5837,6 @@
       "pond": "43",
       "message": "Happy birthday Subaru <3 ",
       "sound": "-1"
-    },
-    {
-      "name": "pong",
-      "image": "FANART_pong-497422",
-      "pond": "43",
-      "message": "happy birthday!Love your passion and personality.you are best idol! ",
-      "sound": "12"
     },
     {
       "name": "\ud504\ub9ac\ud788\ub4dc",
@@ -6016,56 +5883,56 @@
     {
       "name": "Neftaly",
       "image": "Neftaly--24460",
-      "pond": "44",
+      "pond": "43",
       "message": "Congratulations Subaru!!!! You make it happen!!!!\r\nYou always make My days happier, really thanks!!!",
       "sound": "-1"
     },
     {
       "name": "Codeflare",
       "image": "Codeflare-131684",
-      "pond": "44",
+      "pond": "43",
       "message": "Congratulations, Subaru! You are one of my favorites, and I smile every time I hear you talk.",
       "sound": "-1"
     },
     {
       "name": "Zeno",
       "image": "Zeno--41068",
-      "pond": "44",
+      "pond": "43",
       "message": "CONGRATULATIONS SUBARU!!!! SHUBA SHUBA SHUBA",
       "sound": "2"
     },
     {
       "name": "MellamoSteve",
       "image": "MellamoSteve-349402",
-      "pond": "44",
+      "pond": "43",
       "message": "Tatsuya \"Its all thanks to your hard work! But this is only the beginning. Do your best and never give up!\" -Avalon",
       "sound": "9"
     },
     {
       "name": "Nanashii",
       "image": "Nanashii--44684",
-      "pond": "44",
+      "pond": "43",
       "message": "Happy Birthday to my favorite duck(but sometimes transforms into a swan when singing)",
       "sound": "10"
     },
     {
       "name": "\u30aa\u30af\u30c8\u30d1\u30b9\u30d7\u30e9\u30a4\u30e0",
       "image": "\u30aa\u30af\u30c8\u30d1\u30b9\u30d7\u30e9\u30a4\u30e0-324948",
-      "pond": "44",
+      "pond": "43",
       "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01\uff01\uff01\uff01\uff01\uff01",
       "sound": "-1"
     },
     {
       "name": "Madganser",
       "image": "Madganser--61510",
-      "pond": "44",
+      "pond": "43",
       "message": "Congratulations on reaching 1 million to our favorite Shuba!",
       "sound": "-1"
     },
     {
       "name": "Alyssa",
       "image": "Alyssa-584697",
-      "pond": "44",
+      "pond": "43",
       "message": "Congrats and Happy Birthday! I feel proud watching you grow up. You will always be my fave duck daughter \u2661",
       "sound": "-1"
     },
@@ -6156,56 +6023,56 @@
     {
       "name": "Shiki",
       "image": "Shiki-552428",
-      "pond": "45",
+      "pond": "44",
       "message": "Happy birthday for our tomboy duck !",
       "sound": "-1"
     },
     {
       "name": "Ani.minhtion",
       "image": "Ani.minhtion-354349",
-      "pond": "45",
+      "pond": "44",
       "message": "Sailor Duck HoloCure!! Happy birthday Shuba-chan!!",
       "sound": "0"
     },
     {
       "name": "Chimkin",
       "image": "Chimkin-221123",
-      "pond": "45",
+      "pond": "44",
       "message": "Congratulations for 1 mil!!!\ud83e\udd86\ud83e\udd86\ud83e\udd86",
       "sound": "10"
     },
     {
       "name": "Ani.minhtion",
       "image": "Ani.minhtion-407984",
-      "pond": "45",
+      "pond": "44",
       "message": "\"It's hot recently, so I'll  warm you up with summer suit\" to CONGRATULATION ON 1M SHUBCRIBERS",
       "sound": "-1"
     },
     {
       "name": "Ani.minhtion",
       "image": "Ani.minhtion--29678",
-      "pond": "45",
+      "pond": "44",
       "message": "Happy New Year - Birthday - 1M SUB Shuba-chan!!",
       "sound": "-1"
     },
     {
       "name": "ALibaster",
       "image": "ALibaster-253436",
-      "pond": "45",
+      "pond": "44",
       "message": "Thanks a lot for the great content!",
       "sound": "4"
     },
     {
       "name": "Mr.sundrops",
       "image": "Mr.sundrops-399481",
-      "pond": "45",
+      "pond": "44",
       "message": "Congratulations, Subaru!",
       "sound": "1"
     },
     {
       "name": "achoobaru",
       "image": "achoobaru-606081",
-      "pond": "45",
+      "pond": "44",
       "message": "happy birthday subaru! congrats to your 1 mil subs! i can't superchat, but i hope you can appreciate this. take care always! ",
       "sound": "10"
     },
@@ -6296,56 +6163,56 @@
     {
       "name": "Abang Nasgor",
       "image": "Abang Nasgor-373603",
-      "pond": "46",
+      "pond": "45",
       "message": "Selamat atas 1 Juta Subscriber-nya Subaru-san. Kami Subatomo dari Indonesia akan terus mendukungm",
       "sound": "9"
     },
     {
       "name": "Angup!",
       "image": "Angup!--62856",
-      "pond": "46",
+      "pond": "45",
       "message": "Congratulations Subaru! Espero que te la pases muy bien, gracias por las sonrisas que nos sacas con cada directo! We Love You!",
       "sound": "-1"
     },
     {
       "name": "iSoDawn",
       "image": "iSoDawn--20176",
-      "pond": "46",
+      "pond": "45",
       "message": "Happy birthday SHUBA!",
       "sound": "-1"
     },
     {
       "name": "Kayayday",
       "image": "Kayayday--34136",
-      "pond": "46",
+      "pond": "45",
       "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u3001100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046! You've worked hard to get here, congratulations!",
       "sound": "-1"
     },
     {
       "name": "Ricebadger ",
       "image": "Ricebadger -554031",
-      "pond": "46",
+      "pond": "45",
       "message": "Congratulations! Been sub to you since 400k! What a ride it has been. I wish you the best quak!",
       "sound": "4"
     },
     {
       "name": "Quid",
       "image": "Quid--36293",
-      "pond": "46",
+      "pond": "45",
       "message": "Congrats on reaching this milestone! I look forward to future content!  \u4eca\u5f8c\u3068\u3082\u3088\u308d\u3057\u304f\u304a\u9858\u3044\u3057\u307e\u3059\uff01",
       "sound": "3"
     },
     {
       "name": "dungkaka911",
       "image": "dungkaka911-285486",
-      "pond": "46",
+      "pond": "45",
       "message": "Cute Duck",
       "sound": "-1"
     },
     {
       "name": "Coolartist1110",
       "image": "Coolartist1110--45109",
-      "pond": "46",
+      "pond": "45",
       "message": "I don\u2019t speak Japanese, but your clips always make me smile! Congratulations to everyone\u2019s favorite Hololive Duck, Subaru!",
       "sound": "-1"
     },
@@ -6436,56 +6303,56 @@
     {
       "name": "NTM",
       "image": "NTM-351032",
-      "pond": "47",
+      "pond": "46",
       "message": "100\u4e07\u306b\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059!!! \u305d\u3057\u3066\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3045\u3045!! Congratulations for reaching 1M!! Dan selamat ulang tahun!! \u3053\u3051\u304b\u3089\u3082\u304a\u6d3b\u52d5\u96e3\u306a\u304f\u51fa\u6765\u308b\u3088\u3046\u9858\u3044\u307e\u3059\u3001\u79c1\u3082\u4eba\u751f\u3092\u9811\u5f35\u308b\u304b\u3089!",
       "sound": "4"
     },
     {
       "name": "Tegze",
       "image": "TEMPLATE",
-      "pond": "47",
+      "pond": "46",
       "message": "\ud83d\udc24 Congrats!! \ud83d\udc24",
       "sound": "9"
     },
     {
       "name": "Ian Yap",
       "image": "Ian Yap--20526",
-      "pond": "47",
+      "pond": "46",
       "message": "Hey yo~ I have been following you for 2 month only lol , but i like ur duck voice",
       "sound": "9"
     },
     {
       "name": "iamduckshuba 18",
       "image": "iamduckshuba 18--13380",
-      "pond": "47",
+      "pond": "46",
       "message": "hello Subaru congratulation on 1 mil subscribers looking forward to more shubamazing streams and adventures . \r\nfrom: duckies ",
       "sound": "-1"
     },
     {
       "name": "Bard",
       "image": "Bard--12241",
-      "pond": "47",
+      "pond": "46",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
     },
     {
       "name": "Thesaqueador",
       "image": "Thesaqueador-988798",
-      "pond": "47",
+      "pond": "46",
       "message": "I really enjoy the streamings, congratulations and keep going :D",
       "sound": "1"
     },
     {
       "name": "\u306f\u3055\u3066",
       "image": "\u306f\u3055\u3066-249734",
-      "pond": "47",
+      "pond": "46",
       "message": "\u304a\u3081\u3067\u3068\u3046\uff01",
       "sound": "4"
     },
     {
       "name": "\u30bb\u30c4\u30b1\u6731",
       "image": "\u30bb\u30c4\u30b1\u6731-367156",
-      "pond": "47",
+      "pond": "46",
       "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\u3057\u3085\u3070\uff01\uff01\uff01",
       "sound": "-1"
     },
@@ -6576,56 +6443,49 @@
     {
       "name": "ShinDemon",
       "image": "TEMPLATE",
-      "pond": "48",
+      "pond": "47",
       "message": "the reason i became subatomo because you are tomboy and feminine at the same time, perfect balance. congrats of your 1M sub",
       "sound": "0"
     },
     {
       "name": "Kaito ",
       "image": "Kaito -264161",
-      "pond": "48",
+      "pond": "47",
       "message": "Congrats on 1 million subscribers Subaru!!!!",
       "sound": "1"
     },
     {
       "name": "Maru Shishio",
       "image": "Maru Shishio-399673",
-      "pond": "48",
+      "pond": "47",
       "message": "100\u4e07\u4eba\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u767b\u9332\u8005\u3092\u7372\u5f97\u3057\u307e\u3057\u305f\u3002\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3061\u306a\u307f\u306b\u3001shubaaaaa\uff01",
       "sound": "10"
     },
     {
       "name": "Chiang Kai Shrek",
       "image": "Chiang Kai Shrek--61650",
-      "pond": "48",
+      "pond": "47",
       "message": "Congratulations on 1M! Thank you for always being so energetic, always being yourself, and always doing your best!",
       "sound": "1"
     },
     {
-      "name": "Wooden_P",
-      "image": "FANART_Wooden_P-210178",
-      "pond": "48",
-      "message": "Congratulation to Subaru! \r\nThank you Subaru! \r\nGo for it, Subaru!\r\nOnward to the realm of legend!",
-      "sound": "12"
-    },
-    {
       "name": "YvelNavi",
       "image": "YvelNavi--45269",
-      "pond": "48",
+      "pond": "47",
       "message": "Thank you for streaming! Congrats 1M subs! \r\n-tsundere overseas viewer",
       "sound": "3"
     },
     {
       "name": "Asbasxadas",
       "image": "Asbasxadas--31416",
-      "pond": "48",
+      "pond": "47",
       "message": "Shuba Shuba! \u00a1Felicidades por tu cumplea\u00f1os y por llegar al mill\u00f3n de subscriptores en youtube!  ",
       "sound": "-1"
     },
     {
       "name": "Rafaeru-san",
       "image": "Rafaeru-san--12993",
-      "pond": "48",
+      "pond": "47",
       "message": "Subaru-Mama! Thank you for always trying your best! I love your streams. It always makes me smile. We will support you always. \u2665",
       "sound": "0"
     },
@@ -6716,56 +6576,49 @@
     {
       "name": "Randomius",
       "image": "Randomius-177011",
-      "pond": "49",
+      "pond": "48",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "1"
     },
     {
-      "name": "Moai Man",
-      "image": "FANART_Moai Man-252214",
-      "pond": "49",
-      "message": "Congratulations... Subaru-chan... May you find the way to happiness...",
-      "sound": "8"
-    },
-    {
       "name": "Hexianford",
       "image": "Hexianford-536542",
-      "pond": "49",
+      "pond": "48",
       "message": "Congratulation subaru, i lurk around you streams and clips, as they bring me much joy and happiness, keep been awesome!!!",
       "sound": "3"
     },
     {
       "name": "Randomius",
       "image": "Randomius-556716",
-      "pond": "49",
+      "pond": "48",
       "message": "Congratulations on 1 Million Subscribers and happy birthday Subaru-Chan!",
       "sound": "1"
     },
     {
       "name": "Vyrax",
       "image": "Vyrax--42239",
-      "pond": "49",
+      "pond": "48",
       "message": "subaru congratulations!",
       "sound": "-1"
     },
     {
       "name": "Moai Boy",
       "image": "Moai Boy--97479",
-      "pond": "49",
+      "pond": "48",
       "message": "CONGRATS!!!!! SUBARU!!!!",
       "sound": "10"
     },
     {
       "name": "Potato Salad",
       "image": "TEMPLATE",
-      "pond": "49",
+      "pond": "48",
       "message": "Congratulations on 1 million subscriber!\r\nKeep being bright and cheerful like the sun in our lives. \u6700\u5f37\u30a2\u30d2\u30eb Sunshine, SHUBA! ",
       "sound": "4"
     },
     {
       "name": "ImBadAtChoices",
       "image": "ImBadAtChoices--39313",
-      "pond": "49",
+      "pond": "48",
       "message": "So proud of you! You always bring a smile to my face, keep up the good work!",
       "sound": "3"
     },
@@ -6856,56 +6709,56 @@
     {
       "name": "Overseas Duck",
       "image": "Overseas Duck--44357",
-      "pond": "50",
+      "pond": "49",
       "message": "OMEDETOU SUBARU!!! 1,000,000 LETS GOOOOOO!!!",
       "sound": "3"
     },
     {
       "name": "Subatomo#5624",
       "image": "Subatomo#5624-347669",
-      "pond": "50",
+      "pond": "49",
       "message": "Congratulations Subaru!  ( \u00b0 < \u00b0)b ",
       "sound": "-1"
     },
     {
       "name": "Shubaru",
       "image": "Shubaru--16626",
-      "pond": "50",
+      "pond": "49",
       "message": "Ore wa emilia ga suki da.",
       "sound": "10"
     },
     {
       "name": "Erodeas",
       "image": "Erodeas--36279",
-      "pond": "50",
+      "pond": "49",
       "message": "Congratulations on reaching 1 million subscribers Subaru-chan!!!\r\nNever forget, you are best duck in hololive!!!\r\nOmedetou!!!!!!",
       "sound": "10"
     },
     {
       "name": "Ayakko-sen",
       "image": "Ayakko-sen-395305",
-      "pond": "50",
+      "pond": "49",
       "message": "Congratulations on the 1million subs shuba shuba",
       "sound": "12"
     },
     {
       "name": "FlowerDolphin ",
       "image": "FlowerDolphin --55423",
-      "pond": "50",
+      "pond": "49",
       "message": "Happy birthday Subaru! \u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\uff01\u30b7\u30e5\u30d0\u30b7\u30e5\u30d0 ^w^ and congrats on 1million! Thank you for being such an amazing idol! ",
       "sound": "1"
     },
     {
       "name": "\u30e1\u30b9\u30d0\u30eb\u5927\u597d\u304d",
       "image": "\u30e1\u30b9\u30d0\u30eb\u5927\u597d\u304d-306642",
-      "pond": "50",
+      "pond": "49",
       "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\u30a2\u30a4\u30c9\u30eb\u3092\u76ee\u6307\u3059\u306a\u3089\u30e1\u30b9\u30d0\u30eb\u306b\u306a\u308b\u306e\u306f\u4e0d\u53ef\u907f\u3067\u3059\u3002\u3053\u308c\u304b\u3089\u3082\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\uff01",
       "sound": "-1"
     },
     {
       "name": "Tim",
       "image": "Tim--81018",
-      "pond": "50",
+      "pond": "49",
       "message": "Congratulations Subaru chan on 1 million subscribers!!!",
       "sound": "-1"
     },
@@ -6922,13 +6775,6 @@
       "pond": "50",
       "message": "I love you~",
       "sound": "-1"
-    },
-    {
-      "name": "El chico cool",
-      "image": "FANART_El chico cool--55803",
-      "pond": "50",
-      "message": "thanks for everything, you deserve the million subscribers and much more",
-      "sound": "12"
     },
     {
       "name": "Ubiquitous Cake",
@@ -6996,65 +6842,58 @@
     {
       "name": "Danny",
       "image": "Danny--53872",
-      "pond": "51",
+      "pond": "50",
       "message": "Congratulations and Happy birthday Subaru chan",
       "sound": "1"
     },
     {
       "name": "Levu",
       "image": "Levu--33430",
-      "pond": "51",
+      "pond": "50",
       "message": "Shuba! Congratulations Subaru!\r\nThank you for all the stories and moments you shared with us!\r\nI treasure all the good memories ",
       "sound": "-1"
     },
     {
       "name": "bijlaire",
       "image": "bijlaire-466061",
-      "pond": "51",
+      "pond": "50",
       "message": "\u304a\u3084\uff01\uff1f\r\n\u30b7\u30e5\u30d0\u306e\u3000\u3000\u3088\u3046\u3059\u304c\u3002\u3002\uff01",
       "sound": "6"
     },
     {
       "name": "\u30c7\u30d3\u30c3",
       "image": "TEMPLATE",
-      "pond": "51",
+      "pond": "50",
       "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093ch\u767b\u9332\u8005100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\u50d5\u306f\u4f1d\u8aac\u306e\u30b9\u30d0\u30eb\u30c9\u30c0\u30c3\u30af\u304b\u3089\u30b9\u30d0\u30eb\u3061\u3083\u3093\u3068\u51fa\u4f1a\u3044\u307e\u3057\u305f\u304c\u3001\u305d\u306e\u5f8c\u3059\u3050\u521d\u3081\u3066\u306e\u6b4c\u67a0\u306b\u5411\u3051\u3066\u30dc\u30a4\u30c8\u30ec\u3092\u59cb\u3081\u305f\u308a\u3001\u30a2\u30a4\u30c9\u30eb\u306b\u306a\u308a\u305f\u3044\u3068\u8a9e\u3063\u305f\u6642\u304b\u3089\u305a\u3063\u3068\u30b9\u30d0\u30eb\u3061\u3083\u3093\u306e\u7729\u3057\u3055\u306b\u5922\u4e2d\u3067\u3059\uff01\u3053\u308c\u304b\u3089\u3082\u9670\u306a\u304c\u3089\u5fdc\u63f4\u3057\u3066\u307e\u3059\uff01",
       "sound": "-1"
     },
     {
       "name": "Easyman121",
       "image": "Easyman121-322620",
-      "pond": "51",
+      "pond": "50",
       "message": "Congratulations! Hope you will continue to entairtain people around the world. ",
       "sound": "7"
     },
     {
       "name": "Dragonz",
       "image": "Dragonz-369995",
-      "pond": "51",
+      "pond": "50",
       "message": "CONGRATZ",
       "sound": "-1"
     },
     {
       "name": "Shoebar",
       "image": "TEMPLATE",
-      "pond": "51",
+      "pond": "50",
       "message": "Congratulatiomedetou",
       "sound": "2"
     },
     {
       "name": "neph",
       "image": "neph-742580",
-      "pond": "51",
+      "pond": "50",
       "message": "tanjobirthday omedetoyou!! \u3057\u3085\u3070",
       "sound": "-1"
-    },
-    {
-      "name": "kokoro",
-      "image": "FANART_kokoro-244837",
-      "pond": "51",
-      "message": "happy 1m subs shuba shuba!!",
-      "sound": "7"
     },
     {
       "name": "krump",
@@ -7136,56 +6975,56 @@
     {
       "name": "MDViper",
       "image": "MDViper-615910",
-      "pond": "52",
+      "pond": "51",
       "message": "Congratulations Shubaru, thank you for existing!!!",
       "sound": "9"
     },
     {
       "name": "Znarp",
       "image": "Znarp-152363",
-      "pond": "52",
+      "pond": "51",
       "message": "Chuba! Chuba Chubaaaaaaaaaa!!!!!!!! Omeeeeeeeeeeeee~ to our ever bright sunny days duck who never fails to make me laugh!!!!!!! ",
       "sound": "-1"
     },
     {
       "name": "Xephon",
       "image": "Xephon-457219",
-      "pond": "52",
+      "pond": "51",
       "message": "Congratulations on 1M! ",
       "sound": "-1"
     },
     {
       "name": "Spaghetti-san",
       "image": "Spaghetti-san--48926",
-      "pond": "52",
+      "pond": "51",
       "message": "Hi Subaru, congratulations and happy birthday! I like Mesubaru, but I also like normalSubaru too! Subaru is our beautifulduck!",
       "sound": "0"
     },
     {
       "name": "Cheeees",
       "image": "Cheeees-560516",
-      "pond": "52",
+      "pond": "51",
       "message": "SHUBAAAAAAAAAU!!!! Subaru chan congratulations on 1Million subscribers!!!!!!!!!!!!!!!!!!!!!!!!!!! YAAAAAAAAY! I <3 SUBARU",
       "sound": "3"
     },
     {
       "name": "JPJun",
       "image": "JPJun--43606",
-      "pond": "52",
+      "pond": "51",
       "message": "Congratulations Subaru!  Happy 1 million subscribers and birthday!! ",
       "sound": "10"
     },
     {
       "name": "Jibs",
       "image": "Jibs--52155",
-      "pond": "52",
+      "pond": "51",
       "message": "Congratulations on getting one million (and happy birthday) to the best duck idol, Subaru! <3",
       "sound": "7"
     },
     {
       "name": "AlexCz",
       "image": "AlexCz-286697",
-      "pond": "52",
+      "pond": "51",
       "message": "Subaru! Congratulations!\r\nI hope you have the best birthday ever!\r\nThank you for making us happy! We love you!! <3",
       "sound": "4"
     },
@@ -7260,13 +7099,6 @@
       "sound": "-1"
     },
     {
-      "name": "Mike D",
-      "image": "Mike D--77778",
-      "pond": "52",
-      "message": "Omedetou! Yoku ganbatta!",
-      "sound": "-1"
-    },
-    {
       "name": "Akiya",
       "image": "Akiya-446223",
       "pond": "52",
@@ -7276,63 +7108,63 @@
     {
       "name": "Bryan Alexis",
       "image": "Bryan Alexis-188494",
-      "pond": "53",
+      "pond": "52",
       "message": "Congratulations for the ShubaMillion!!! Keep creating more beautiful moments!!!\r\nShuba Shuba ",
       "sound": "-1"
     },
     {
       "name": "Byakko",
       "image": "Byakko-978003",
-      "pond": "53",
+      "pond": "52",
       "message": "OUR FAVORITE DUCK!!\r\nSHUBA SHUBA!!!!1!1!!11",
       "sound": "4"
     },
     {
       "name": "NEPNEP",
       "image": "NEPNEP-629554",
-      "pond": "53",
+      "pond": "52",
       "message": "QUACK QUACK QUACK QUACK!",
       "sound": "1"
     },
     {
       "name": "PUR3VERDIGO ",
       "image": "PUR3VERDIGO --15403",
-      "pond": "53",
+      "pond": "52",
       "message": "Happy Birthday and congratulations Officer Subaru have a lovely day ",
       "sound": "9"
     },
     {
       "name": "Bravo",
       "image": "Bravo--15385",
-      "pond": "53",
+      "pond": "52",
       "message": "Congrats on 1M!!! Thank you for all your hard work, we all love you! :)",
       "sound": "3"
     },
     {
       "name": "itsjdawg14",
       "image": "TEMPLATE",
-      "pond": "53",
+      "pond": "52",
       "message": "Congratulation Subaru on getting 1 million subs and Happy Birthday I love watching your stream and makes my day.",
       "sound": "5"
     },
     {
       "name": "EdgarNickman",
       "image": "EdgarNickman--13940",
-      "pond": "53",
+      "pond": "52",
       "message": "Felicidades subaruuuu!\r\nEres realmente alguien increible,sigue esforzandote al maximo <3",
       "sound": "4"
     },
     {
       "name": "Takedaraion",
       "image": "Takedaraion-580315",
-      "pond": "53",
+      "pond": "52",
       "message": "1 Million Omedetou!! Hope the best for you shuba",
       "sound": "9"
     },
     {
       "name": "Hikaru",
       "image": "Hikaru-811386",
-      "pond": "53",
+      "pond": "52",
       "message": "Congratulations on 1 million subscribers, Subaru!",
       "sound": "10"
     },
@@ -7416,72 +7248,58 @@
     {
       "name": "Fleur",
       "image": "Fleur--40884",
-      "pond": "54",
+      "pond": "53",
       "message": "Congratulations and Happy Birthday Subaru",
       "sound": "-1"
     },
     {
       "name": "Sam",
       "image": "Sam-624402",
-      "pond": "54",
+      "pond": "53",
       "message": "Congrats our beatifull duck. We love you.",
       "sound": "9"
     },
     {
       "name": "pop rocks",
       "image": "pop rocks-507009",
-      "pond": "54",
+      "pond": "53",
       "message": "congratulations for 1million\ud83c\udf89\ud83c\udf89  we are grateful to you for being our favorite duck but for today ALL HAIL THE SWAN QUEEN!!!",
       "sound": "-1"
     },
     {
       "name": "2cat2curious",
       "image": "2cat2curious--96949",
-      "pond": "54",
+      "pond": "53",
       "message": "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\uff01 \u30cf\u30c3\u30d4\u30fc\u30d0\u30fc\u30b9\u30c7\u30fc\uff01",
       "sound": "2"
     },
     {
       "name": "Kureiji Shuba",
       "image": "Kureiji Shuba-429434",
-      "pond": "54",
+      "pond": "53",
       "message": "Congratulations on your 1 million subscribers milestone and happy advance birthday to you on July 2nd",
       "sound": "-1"
     },
     {
       "name": "A251t_",
       "image": "A251t_--12202",
-      "pond": "54",
+      "pond": "53",
       "message": "HPB!!&Conguratulations to \uff11M subscribers!!!!\r\nI will always support You!!!\u5e78\u3042\u308c!!",
       "sound": "12"
     },
     {
       "name": "Kaazu",
       "image": "Kaazu--20633",
-      "pond": "54",
+      "pond": "53",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
     },
     {
-      "name": "Mitsuki Harumi",
-      "image": "FANART_Mitsuki Harumi--23989",
-      "pond": "54",
-      "message": "Omedetou Shubaru sann \ud83d\udc9c\ud83d\udc9c",
-      "sound": "10"
-    },
-    {
       "name": "Darwin",
       "image": "Darwin-508558",
-      "pond": "54",
+      "pond": "53",
       "message": "Happy birthday Subaru congratulations and keep up the good work happy 1M subs\r\n",
       "sound": "1"
-    },
-    {
-      "name": "Mollymawk",
-      "image": "Mollymawk-636708",
-      "pond": "54",
-      "message": "Congratulations Subaru!!! We love you always!!!",
-      "sound": "12"
     },
     {
       "name": "Dazzert",
@@ -7556,70 +7374,70 @@
     {
       "name": "Evan",
       "image": "Evan-624337",
-      "pond": "55",
+      "pond": "54",
       "message": "Congratulations Subaru!! Thank you for everything that you do!!",
       "sound": "0"
     },
     {
       "name": "Kenosis",
       "image": "Kenosis-448097",
-      "pond": "55",
+      "pond": "54",
       "message": "Muchas felicidades Subaru, sigue siendo un gran comediante",
       "sound": "-1"
     },
     {
       "name": "rabbit",
       "image": "rabbit--55241",
-      "pond": "55",
+      "pond": "54",
       "message": "congrats for reaching 1 million subs! i wish you a long healthy life and here's to another million in the future! HBD! \ud83e\udd42\ud83e\udd42",
       "sound": "-1"
     },
     {
       "name": "Hazel",
       "image": "Hazel-601073",
-      "pond": "55",
+      "pond": "54",
       "message": "Happy birthday and congratulations Subaru!!\r\n\u304a\u305f\u3093\u3058\u3087\u3046\u3073\u304a\u3081\u3067\u3068\u3046!! We love you Subaru!",
       "sound": "9"
     },
     {
       "name": "Kenta 03",
       "image": "TEMPLATE",
-      "pond": "55",
+      "pond": "54",
       "message": "CONGRATULATIONS SUBARU!!!! Thanks for making my daily quarantine life better and hope you can be more beautiful swan one day!!",
       "sound": "10"
     },
     {
       "name": "TMFoxz",
       "image": "TMFoxz-629684",
-      "pond": "55",
+      "pond": "54",
       "message": "I'm still new to Hololive and only got into it because of Marine and especially Subaru!! Congrats with the subs shuba shuba!!!",
       "sound": "5"
     },
     {
       "name": "Hitoikkun",
       "image": "Hitoikkun--37975",
-      "pond": "55",
+      "pond": "54",
       "message": "Hyakuman omedetou! Ai kanotto yuuzu a japanizu kiiboodo, so havu fan toraiingu tu andasutando mai messeji. Yoroshiku ne!",
       "sound": "3"
     },
     {
       "name": "ElusiveDreams",
       "image": "ElusiveDreams-323640",
-      "pond": "55",
+      "pond": "54",
       "message": "I love you Subaru and congratulations!!!",
       "sound": "4"
     },
     {
       "name": "breadpan",
       "image": "breadpan--36434",
-      "pond": "55",
+      "pond": "54",
       "message": "Hi Subaru!!!! Thank you for all the hard work you put on your streams!\r\nCONGRATS ON 1 MIL SUBS!! You really deserve it.",
       "sound": "9"
     },
     {
       "name": "ET",
       "image": "ET--12778",
-      "pond": "55",
+      "pond": "54",
       "message": "Congratulations Subaru! always cheering for you!!! ",
       "sound": "-1"
     },
@@ -7696,70 +7514,70 @@
     {
       "name": "Smol_Onion",
       "image": "Smol_Onion-337647",
-      "pond": "56",
+      "pond": "55",
       "message": "Congratulation SHUBAA!!! Now subaru can march with 1 MILLION Shuba Duck Army to conquer the world!!!",
       "sound": "1"
     },
     {
       "name": "Mikazuchi Luke",
       "image": "TEMPLATE",
-      "pond": "56",
+      "pond": "55",
       "message": "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059.\u5e78\u305b\u304c\u3042\u306a\u305f\u3068\u5171\u306b\u3042\u308a\u307e\u3059\u3088\u3046\u306b",
       "sound": "-1"
     },
     {
       "name": "zlovessubaru",
       "image": "zlovessubaru--42593",
-      "pond": "56",
+      "pond": "55",
       "message": "SHUBAAAAAA!!!! \u30b9\u30d0\u30eb\u3061\u3083\u3093100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\u3046\u3046\u3046\u3046\u3046\u3046\u3046\uff01\uff01\uff01\uff01\uff01\ud83c\udf89\ud83c\udf89\ud83c\udf89\ud83c\udf8a\ud83c\udf8a\ud83d\udc4f\ud83d\udc4f\ud83e\udd70\ud83e\udd70\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d\udc69\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d\udc69",
       "sound": "-1"
     },
     {
       "name": "itsadrianyo",
       "image": "itsadrianyo-615433",
-      "pond": "56",
+      "pond": "55",
       "message": "happy birthday Subaru hope its a good one, just wanna say all the overseas fans love you and are grateful for your duck noise <3",
       "sound": "7"
     },
     {
       "name": "Ben",
       "image": "Ben-328033",
-      "pond": "56",
+      "pond": "55",
       "message": "1 MILLION!! SHUBA SHUBA SHUBA",
       "sound": "6"
     },
     {
       "name": "Syaza",
       "image": "Syaza--47975",
-      "pond": "56",
+      "pond": "55",
       "message": "Congratulations on 1 milestone! Happy birthday to cute Subaru. Thanl you for making our days better with your stream.",
       "sound": "1"
     },
     {
       "name": "Uncle",
       "image": "Uncle-320978",
-      "pond": "56",
+      "pond": "55",
       "message": "Congrats Subaru for making it this far and giving us all a reason to smile.",
       "sound": "-1"
     },
     {
       "name": "RiyuuRa",
       "image": "RiyuuRa-374093",
-      "pond": "56",
+      "pond": "55",
       "message": "Congrats for 1 mil subscriber and happy birthday subaru",
       "sound": "2"
     },
     {
       "name": "Zharf",
       "image": "Zharf--10420",
-      "pond": "56",
+      "pond": "55",
       "message": "Congratulation Subaru,you're one of my favorite vtuber, you always make me laugh & happy. Congratulation Shuba",
       "sound": "12"
     },
     {
       "name": "Sayo Specter",
       "image": "Sayo Specter--37367",
-      "pond": "56",
+      "pond": "55",
       "message": "Congratulations on the 1m and happy anniversary to the best duck and sunshine of hololive!",
       "sound": "0"
     },
@@ -7783,13 +7601,6 @@
       "pond": "56",
       "message": "Congrats for the 1M subs!!!\r\nHope you\u2019ll Shuba more in the future!!\r\n\r\nLove from Malaysia\r\n\r\n",
       "sound": "10"
-    },
-    {
-      "name": "seal0",
-      "image": "seal0-407768",
-      "pond": "56",
-      "message": "CONGRATULATIONS!!! SHUBA :D",
-      "sound": "6"
     },
     {
       "name": ":)",
@@ -7836,84 +7647,77 @@
     {
       "name": "kler.yy",
       "image": "kler.yy--33516",
-      "pond": "57",
+      "pond": "56",
       "message": "Shubaru! Happiest Birthday to you! Congrats on reaching 1mil subs! I wish you the very best! We'll be there for you, always! <3",
       "sound": "0"
     },
     {
       "name": "___",
       "image": "___--23230",
-      "pond": "57",
+      "pond": "56",
       "message": "Congratulations Subaru! We love you!",
       "sound": "-1"
     },
     {
       "name": "Gubasa Kumonako",
       "image": "Gubasa Kumonako-637278",
-      "pond": "57",
+      "pond": "56",
       "message": "SHUBA SHUBA SHUBA! CONGRATULATIONS ON REACHING 1M SHUBAAAAA! ",
       "sound": "-1"
     },
     {
       "name": "Melih Olcay",
       "image": "Melih Olcay--32011",
-      "pond": "57",
+      "pond": "56",
       "message": "Congrats on your milestone and i hope you enjoy it!",
       "sound": "-1"
     },
     {
       "name": "bananamilk",
       "image": "bananamilk--31704",
-      "pond": "57",
+      "pond": "56",
       "message": "happy birthday shuba",
       "sound": "-1"
     },
     {
       "name": "seal0",
       "image": "seal0--54755",
-      "pond": "57",
+      "pond": "56",
       "message": "CONGRATULATIONS!!! SHUBA :D",
       "sound": "6"
     },
     {
       "name": "KaidoMatioN",
       "image": "KaidoMatioN-198129",
-      "pond": "57",
+      "pond": "56",
       "message": "SHUBAAAAA! Congrats and happy birthday to you Subaru! You came the long way to get here, you deserve this milestone! ",
       "sound": "-1"
     },
     {
       "name": "Minh Jino",
       "image": "Minh Jino--27185",
-      "pond": "57",
+      "pond": "56",
       "message": "As a Vietnamese listener, I wish you have a joyful birthday for you with everyone in Hololive. Ch\u00fac m\u1eebng sinh nh\u1eadt Subaru",
       "sound": "9"
     },
     {
       "name": "Roberto",
       "image": "Roberto-399609",
-      "pond": "57",
+      "pond": "56",
       "message": "congratulation to this amazing duck. I wish you all the best, and a happy birthday",
       "sound": "2"
     },
     {
-      "name": "Mike D",
-      "image": "Mike D--38857",
-      "pond": "57",
-      "message": "Omedetou! Yoku ganbatta!",
-      "sound": "-1"
-    },
-    {
       "name": "Wakeeh",
       "image": "Wakeeh-323130",
-      "pond": "57",
+      "pond": "56",
       "message": "\u304a\u305e\u3089\u3061\u3083\u3093100\u4e07\u4eba\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u767b\u9332\u8005\u304a\u3081\u3067\u3068\u3046",
       "sound": "10"
     },
     {
       "name": "Mollymawk",
       "image": "Mollymawk--41078",
-      "pond": "57",
+      "pond": "56",
       "message": "Congratulations Subaru!!! We love you always!!!",
       "sound": "12"
     },
@@ -7976,84 +7780,84 @@
     {
       "name": "QuackerJack",
       "image": "QuackerJack-258570",
-      "pond": "58",
+      "pond": "57",
       "message": "Congratulations on 1 million subs, poopie baby!! You\u2019ve come so far! Hope you have a great birthday!",
       "sound": "-1"
     },
     {
       "name": "meme_metzli",
       "image": "meme_metzli--40054",
-      "pond": "58",
+      "pond": "57",
       "message": "\u00a1Sigue as\u00ed! eres incre\u00edble ",
       "sound": "-1"
     },
     {
       "name": "Andre Souza",
       "image": "Andre Souza--33395",
-      "pond": "58",
+      "pond": "57",
       "message": "You are the reason I fell into the rabbit hole. I dont understand JP but  your voice calms my heart. Lots of hugs from Brazil",
       "sound": "0"
     },
     {
       "name": "Zentii",
       "image": "Zentii-280999",
-      "pond": "58",
+      "pond": "57",
       "message": "Congrats for 1M!!! I hope you also get to 2M. And also Happy Birthday!",
       "sound": "-1"
     },
     {
       "name": "Jese2712",
       "image": "Jese2712--28210",
-      "pond": "58",
+      "pond": "57",
       "message": "Thanks for all your hard work, we you appreciate a lot keep doing ypur best ",
       "sound": "3"
     },
     {
       "name": "Akira",
       "image": "Akira--20113",
-      "pond": "58",
+      "pond": "57",
       "message": "Happy birthday bro love u #nohomo",
       "sound": "-1"
     },
     {
       "name": "Raphta.",
       "image": "Raphta.--16625",
-      "pond": "58",
+      "pond": "57",
       "message": "Congratulations 1M Subscriber :D, as always thanks for always make my day everyday with your live, clip, song, etc..",
       "sound": "-1"
     },
     {
       "name": "its7aith",
       "image": "its7aith-589105",
-      "pond": "58",
+      "pond": "57",
       "message": "Congratulations Subaru!!! Here\u2019s to another million. I do have one question. Which is better Apples or Oranges?",
       "sound": "-1"
     },
     {
       "name": "Dank",
       "image": "Dank--55423",
-      "pond": "58",
+      "pond": "57",
       "message": "Congrats Subaru, even though I just subscribed a couple weeks ago I\u2019ve been enjoying the streams ",
       "sound": "-1"
     },
     {
       "name": "Rudye ardhyean",
       "image": "Rudye ardhyean-879937",
-      "pond": "58",
+      "pond": "57",
       "message": "Congratulations for 1 million subs and thanks for cheering me through hard times",
       "sound": "-1"
     },
     {
       "name": "Brichary",
       "image": "Brichary-274747",
-      "pond": "58",
+      "pond": "57",
       "message": "Congratulations on 1 million and happy birthday! ",
       "sound": "5"
     },
     {
       "name": "Alonevpk",
       "image": "Alonevpk--48613",
-      "pond": "58",
+      "pond": "57",
       "message": "I love you, Subaru",
       "sound": "5"
     },
@@ -8070,13 +7874,6 @@
       "pond": "58",
       "message": "\u3059\u3070\u308b\u3055\u3093\u3001\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\r\n\u3044\u3064\u3082\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3042\u306a\u305f\u306e\u30dd\u30b8\u30c6\u30a3\u30d6\u3055\u306f\u3068\u3066\u3082\u7d20\u6674\u3089\u3057\u304f\u3001\u79c1\u3082\u3042\u306a\u305f\u306e\u3088\u3046\u306a\u7d20\u6674\u3089\u3057\u3044\u4eba\u306b\u306a\u308a\u305f\u3044\u3067\u3059\u3002\u30e1\u30ad\u30b7\u30b3\u304b\u3089\u306e\u3054\u6328\u62f6",
       "sound": "12"
-    },
-    {
-      "name": "jiyuu",
-      "image": "FANART_jiyuu-383061",
-      "pond": "58",
-      "message": "\u304a\u3081\u3067\u3068\u3054\u3056\u3044\u307e\u3059\uff01\uff01\uff01 \u79c1\u3068100\u4e07\u4eba\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u767b\u9332\u8005\u306f\u3001\u5e38\u306b\u3042\u306a\u305f\u3092\u30b5\u30dd\u30fc\u30c8\u3057\u7d9a\u3051\u307e\u3059!",
-      "sound": "7"
     },
     {
       "name": "Dreamu",
@@ -8116,84 +7913,84 @@
     {
       "name": "ubiquitous",
       "image": "ubiquitous--19798",
-      "pond": "59",
+      "pond": "58",
       "message": "OMEDATO! You are one of the main reasons that I plan to become a VTuber and I am so happy that I got to see you come this far!",
       "sound": "9"
     },
     {
       "name": "DivineSparta",
       "image": "DivineSparta--42854",
-      "pond": "59",
+      "pond": "58",
       "message": "Congratulations on 1 million subs Subaru! Thank you for your streams and positive attitude! Here's to your future success!!",
       "sound": "12"
     },
     {
       "name": "Ajeje Brazorf ",
       "image": "Ajeje Brazorf --37177",
-      "pond": "59",
+      "pond": "58",
       "message": "HAPPY BIRTHDAY SUBARU,-.-- --- ..- / .- .-. . / - .... . / -... . ... - / ... .... ..- -... .- -.-.-- -.-.--from an Italian guy.",
       "sound": "-1"
     },
     {
       "name": "Giulia Ginik",
       "image": "Giulia Ginik-603598",
-      "pond": "59",
+      "pond": "58",
       "message": "Subaru for Smash",
       "sound": "-1"
     },
     {
       "name": "CrossedWolf",
       "image": "CrossedWolf--62116",
-      "pond": "59",
+      "pond": "58",
       "message": "You are amazing duck Happy birthday and congrats on 1Million :) Shubaaaaaa! ",
       "sound": "-1"
     },
     {
       "name": "Neko-san",
       "image": "Neko-san--45591",
-      "pond": "59",
+      "pond": "58",
       "message": "Congratulations, Subaru!\r\nI wanted to make this sooner but suddenly needed surgery\r\nI wish you the best! Best duck girl waifu! ",
       "sound": "6"
     },
     {
       "name": "Michelangelo",
       "image": "Michelangelo-314945",
-      "pond": "59",
+      "pond": "58",
       "message": "\u91cf\u5b50\u30c1\u30ad\u30f3\u30b9\u30fc\u30d7\u30b0\u30e9 \u30b9 \u30c1\u30e5\u30f3\u30b0\u30b9\uff01\u304a\u3081\u3067\u3068\u3046 1 million subs SUBARU <3",
       "sound": "-1"
     },
     {
       "name": "Quackshot",
       "image": "Quackshot--46384",
-      "pond": "59",
+      "pond": "58",
       "message": "Congrats on 1 mil!!! BEST DUCK!!!",
       "sound": "-1"
     },
     {
       "name": "\u30cf\u30a4\u3060",
       "image": "\u30cf\u30a4\u3060-132213",
-      "pond": "59",
+      "pond": "58",
       "message": "\u304a\u795d\u3044\u304a\u3081\u3067\u3068\u3046\u3001\u3088\u308a\u983b\u7e41\u306b\u50cd\u304d\u3001\u6c7a\u3057\u3066\u3042\u304d\u3089\u3081\u306a\u3044",
       "sound": "10"
     },
     {
       "name": "Alex",
       "image": "Alex--37518",
-      "pond": "59",
+      "pond": "58",
       "message": "Happy birthday and congrats on hitting 1 million!",
       "sound": "1"
     },
     {
       "name": "Meda",
       "image": "Meda-328865",
-      "pond": "59",
+      "pond": "58",
       "message": "OMAE! The wings of this duck reaches far and here's to soaring even higher!",
       "sound": "6"
     },
     {
       "name": "\u30d7\u30fc\u30d5\u30a3\u30fc\u30d1\u30f3\u30c0",
       "image": "\u30d7\u30fc\u30d5\u30a3\u30fc\u30d1\u30f3\u30c0-250104",
-      "pond": "59",
+      "pond": "58",
       "message": "\u3059\u3070\u308b\u305f\u3093\u3001\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046!\u3002\u6bce\u65e5\u3001\u79c1\u305f\u3061\u306b\u7b11\u9854\u3068\u7b11\u3044\u3092\u4e0e\u3048\u3066\u304f\u308c\u3066\u3042\u308a\u304c\u3068\u3046\u3002\u3053\u308c\u304b\u3089\u306e\u4e00\u5e74\u306e\u4e00\u65e5\u4e00\u65e5\u304c\u3001\u5c11\u306a\u304f\u3068\u3082\u3042\u306a\u305f\u3068\u3044\u3046\u4eba\u9593\u3068\u540c\u3058\u304f\u3089\u3044\u7d20\u6674\u3089\u3057\u3044\u3082\u306e\u3067\u3042\u308a\u3001\u3042\u306a\u305f\u306e\u5fc3\u3068\u5468\u308a\u306e\u4eba\u305f\u3061\u306b\u540c\u3058\u3088\u3046\u306a\u559c\u3073\u3092\u3082\u305f\u3089\u3057\u307e\u3059\u3088\u3046\u306b\u3002",
       "sound": "-1"
     },
@@ -8256,84 +8053,84 @@
     {
       "name": "Faris_Barak",
       "image": "Faris_Barak-453618",
-      "pond": "60",
+      "pond": "59",
       "message": "Omedetou Subaru for 1 mil subs and happy birthday!! You are my favourite VTuber and will continue to support you!! SHUBA SHUBA!!",
       "sound": "12"
     },
     {
       "name": "BearofSteel",
       "image": "BearofSteel--19249",
-      "pond": "60",
+      "pond": "59",
       "message": "Thank you for being able to stream for us and here's to 1mil more subs, and happy bday! P.S. We share the same bday!",
       "sound": "5"
     },
     {
       "name": "Vahn",
       "image": "Vahn-498274",
-      "pond": "60",
+      "pond": "59",
       "message": "Congratulations shuba~\r\nYou are very beautiful and energetic!",
       "sound": "10"
     },
     {
       "name": "Ofa",
       "image": "TEMPLATE",
-      "pond": "60",
+      "pond": "59",
       "message": "Thank you for your hard work!",
       "sound": "10"
     },
     {
       "name": "Your #1 Aib\u014d",
       "image": "Your #1 Aib\u014d-526124",
-      "pond": "60",
+      "pond": "59",
       "message": "CONGRATULATIONS ON GETTING 1 MIL SUBS. We will continue to watch and support you until the end! SHUBA SHUBA SHUBA SHUBA",
       "sound": "9"
     },
     {
       "name": "Janus",
       "image": "Janus--30554",
-      "pond": "60",
+      "pond": "59",
       "message": "Long live the Duck!",
       "sound": "-1"
     },
     {
       "name": "\u30bc\u30ed",
       "image": "\u30bc\u30ed-170626",
-      "pond": "60",
+      "pond": "59",
       "message": "\u305f\u3093\u3058\u3087\u3073\u304a\u3081\u3067\u3068\u3046\u30b9\u30d0\u30eb\uff01\u304a\u3052\u3093\u304d\u3067\u3059\u304b\uff1f I hope you are having a wonderful day full of joy and laughters! We love you! - Zero",
       "sound": "7"
     },
     {
       "name": "Ali",
       "image": "Ali-345026",
-      "pond": "60",
+      "pond": "59",
       "message": "Congrats!",
       "sound": "-1"
     },
     {
       "name": "Raiden527",
       "image": "Raiden527-451394",
-      "pond": "60",
+      "pond": "59",
       "message": "Congratulations! You are an amazing duck and I wish you the best! Here's to the fun to come!",
       "sound": "9"
     },
     {
       "name": "Kuma",
       "image": "Kuma--42796",
-      "pond": "60",
+      "pond": "59",
       "message": "Congrats on 1million subscribers",
       "sound": "7"
     },
     {
       "name": "Yatsumura",
       "image": "Yatsumura-224771",
-      "pond": "60",
+      "pond": "59",
       "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01",
       "sound": "-1"
     },
     {
       "name": "iLnotserP",
       "image": "iLnotserP-518596",
-      "pond": "60",
+      "pond": "59",
       "message": "Subaru-san, you are very swag",
       "sound": "-1"
     },
@@ -8396,84 +8193,84 @@
     {
       "name": "Nekokanji momoru",
       "image": "Nekokanji momoru--14287",
-      "pond": "61",
+      "pond": "60",
       "message": "\u304a\u3081\u3067\u3068\u3046\u30b9\u30d0\u30eb 100\u4e07\u8cfc\u8aad\u8005\u304a\u308c\u3082\u5b09\u3057\u3044\u3067\u3059\u307e\u305f\u6700\u5f8c\u307e\u3067\u3044\u3064\u3082\u5fdc\u63f4\u3059\u308b\u3088\u4ffa\u305f\u3061\u306f\u307e\u3060\u541b\u306e\u305f\u3081\u306b\u3053\u3053\u306b\u3044\u308b\u304b\u3089\u8b72\u308b\u306a \u2764 shuba\u301c",
       "sound": "-1"
     },
     {
       "name": "Ivan G",
       "image": "TEMPLATE",
-      "pond": "61",
+      "pond": "60",
       "message": "Congrats on 1 million subscribers!!!",
       "sound": "0"
     },
     {
       "name": "Pools",
       "image": "Pools--32143",
-      "pond": "61",
+      "pond": "60",
       "message": "\u304a\u3081\u3067\u3068\u3046\uff01\uff01 we love subaru!",
       "sound": "7"
     },
     {
       "name": "ChickenPogs",
       "image": "ChickenPogs--31071",
-      "pond": "61",
+      "pond": "60",
       "message": "Happy Birthday Subaru!! Congrats on 1 million. Holobirds forever",
       "sound": "7"
     },
     {
       "name": "Zaqa BirdWatcher",
       "image": "Zaqa BirdWatcher-313298",
-      "pond": "61",
+      "pond": "60",
       "message": "Hi from ID You come far way from where you started, but the journey hasn't ended! Keep going Subaru, we are all rooting for you!",
       "sound": "7"
     },
     {
       "name": "TheHughox",
       "image": "TEMPLATE",
-      "pond": "61",
+      "pond": "60",
       "message": "Happy 1M shuba! Have a nice day and a nice stream! ",
       "sound": "0"
     },
     {
       "name": "PunkHazard",
       "image": "PunkHazard-951134",
-      "pond": "61",
+      "pond": "60",
       "message": "Subaru-san tanjyoubi omedetou!",
       "sound": "-1"
     },
     {
       "name": "Rav",
       "image": "Rav-137010",
-      "pond": "61",
+      "pond": "60",
       "message": "Congrats",
       "sound": "-1"
     },
     {
       "name": "BigJohn",
       "image": "BigJohn--24211",
-      "pond": "61",
+      "pond": "60",
       "message": "\u52a0\u5165\u8005\u6570\u306f100\u4e07\u4eba\u306b\u9054\u3057\u307e\u3057\u305f\u3002\u304a\u3081\u3067\u3068\u3046\u3002\u8349\u3092\u4e16\u754c\u4e2d\u306b\u5e83\u3052\u307e\u3059\u3002\r\n:v)",
       "sound": "-1"
     },
     {
       "name": "Craftarc",
       "image": "Craftarc--29252",
-      "pond": "61",
+      "pond": "60",
       "message": "Subaru best duck!!!",
       "sound": "-1"
     },
     {
       "name": "TrustedOats",
       "image": "TrustedOats-203182",
-      "pond": "61",
+      "pond": "60",
       "message": "Happy Birthday and congratulations Subaru! ",
       "sound": "0"
     },
     {
       "name": "Ryo",
       "image": "Ryo--20780",
-      "pond": "61",
+      "pond": "60",
       "message": "Congratulations on 1M and Happy Birthday! Thanks for bringing joy to so many people",
       "sound": "2"
     },
@@ -8536,84 +8333,84 @@
     {
       "name": "Katori",
       "image": "TEMPLATE",
-      "pond": "62",
+      "pond": "61",
       "message": "congratulations 1 million sud Subaru",
       "sound": "-1"
     },
     {
       "name": "Kruztique",
       "image": "Kruztique--60642",
-      "pond": "62",
+      "pond": "61",
       "message": "Your personality and voice is bright, and cheers everyone up! It's always fun with you around! Congratulations!",
       "sound": "8"
     },
     {
       "name": "Raven_404",
       "image": "Raven_404--47341",
-      "pond": "62",
+      "pond": "61",
       "message": "HAPPY BIRTHDAY TO OUR BELOVED BEBEK!!!! WISH YOU ALL THE BEST!",
       "sound": "5"
     },
     {
       "name": "Keito",
       "image": "Keito--51731",
-      "pond": "62",
+      "pond": "61",
       "message": "Congratulations on reaching 1M Subscribers Shubaaaa!!",
       "sound": "1"
     },
     {
       "name": "Subatomo#8965",
       "image": "Subatomo#8965-294626",
-      "pond": "62",
+      "pond": "61",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
     },
     {
       "name": "\u307f\u3084\u3073\u306d\u3053",
       "image": "\u307f\u3084\u3073\u306d\u3053-106807",
-      "pond": "62",
+      "pond": "61",
       "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\r\n\u30de\u30a4\u30af\u30e9\u306e\u30af\u30ea\u30a8\u30a4\u30c6\u30a3\u30d6\u3067\u3067\u3072\u305f\u3059\u3089\u5730\u4e0b\u6398\u3063\u3066\u305f\u9803\u304b\u3089\u3001\u6b4c\u3082\u30c8\u30fc\u30af\u3082\u30c4\u30c3\u30b3\u30df\u3082\u3059\u3054\u3044\u6210\u9577\u3057\u3066\u3066\u3044\u3064\u3082\u305d\u308c\u3092\u611f\u3058\u308b\u3068\u611f\u52d5\u3057\u3066\u81ea\u5206\u3082\u9811\u5f35\u308d\u3046\u3063\u3066\u601d\u3063\u3066\u307e\u3059\uff01\r\n\u3053\u308c\u304b\u3089\u306e\u6210\u9577\u3092\u898b\u308b\u306e\u3082\u697d\u3057\u307f\u306b\u3057\u3066\u307e\u3059\uff01",
       "sound": "6"
     },
     {
       "name": "Rose Knight",
       "image": "Rose Knight--41045",
-      "pond": "62",
+      "pond": "61",
       "message": "Congratulations! May more success follow!",
       "sound": "-1"
     },
     {
       "name": "Ryuukaito",
       "image": "Ryuukaito--52561",
-      "pond": "62",
+      "pond": "61",
       "message": "Hello Subaru Chan, im a subatomo from Indonesia. Congratulation on 1M subscriber Shuba~ we love you Subaru Chan. ",
       "sound": "-1"
     },
     {
       "name": "Nicii",
       "image": "Nicii--60780",
-      "pond": "62",
+      "pond": "61",
       "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u304a\u304a\u304a\u304a\u301c",
       "sound": "1"
     },
     {
       "name": "VodkaCola",
       "image": "VodkaCola-282657",
-      "pond": "62",
+      "pond": "61",
       "message": "Congratulations shuba with 1m and  Happy shuba birthday SHUBA SHUBA SHUBA",
       "sound": "-1"
     },
     {
       "name": "Ragin' Canadian",
       "image": "Ragin' Canadian-565967",
-      "pond": "62",
+      "pond": "61",
       "message": "You are a fantastic idol with an amazing voice! Congratulations on your well-deserved success!",
       "sound": "7"
     },
     {
       "name": "Achi",
       "image": "Achi-543331",
-      "pond": "62",
+      "pond": "61",
       "message": "Happy birthday SHUBA!!!\r\nIt\u2019s your stream cheer me up when I lost,I\u2019m truly appreciate that<3 \r\nHave a nice day!!",
       "sound": "0"
     },
@@ -8676,84 +8473,84 @@
     {
       "name": "NotAiken",
       "image": "NotAiken-599113",
-      "pond": "63",
+      "pond": "62",
       "message": "Your streams are something I enjoy watching in my free time!",
       "sound": "-1"
     },
     {
       "name": "IshigamiKyouma",
       "image": "IshigamiKyouma-791808",
-      "pond": "63",
+      "pond": "62",
       "message": "Congratulations from France to our favourite duck :) \r\nTu est la meilleure (you're the best)",
       "sound": "1"
     },
     {
       "name": "Hamood",
       "image": "Hamood-162493",
-      "pond": "63",
+      "pond": "62",
       "message": "Happy birthday Subaru! I hope you can have a happy year that you can look back on and smile :D Thank you for all the hard work!",
       "sound": "10"
     },
     {
       "name": "HoloEnjoyer",
       "image": "HoloEnjoyer--47474",
-      "pond": "63",
+      "pond": "62",
       "message": "Meeting Subaru is an amazing thing for me, because subaru are there, my days are happier. Thx you for everything, Happy birthday",
       "sound": "10"
     },
     {
       "name": "Almiraph",
       "image": "Almiraph--17331",
-      "pond": "63",
+      "pond": "62",
       "message": "omedetou shuba! Keep doing your best shuba! We EN bros will always support you because you are the best idol! SHUBAAAA",
       "sound": "10"
     },
     {
       "name": "Wolfe",
       "image": "Wolfe-432159",
-      "pond": "63",
+      "pond": "62",
       "message": "Congrats and thank you for all the entertainment you\u2019ve given us!",
       "sound": "-1"
     },
     {
       "name": "IDShubamaatomoyo",
       "image": "IDShubamaatomoyo--47784",
-      "pond": "63",
+      "pond": "62",
       "message": "Congratulation, happy birthday cute swan/duck. I love watching you stream even if i dont understand japanese. Ganbaree shubaa! ",
       "sound": "-1"
     },
     {
       "name": "topace103",
       "image": "topace103--39240",
-      "pond": "63",
+      "pond": "62",
       "message": "Congratulations and good day to my favorite duck idol. Keep up what you are doing and you will go very far. We all love you.",
       "sound": "9"
     },
     {
       "name": "proudcat",
       "image": "proudcat-518195",
-      "pond": "63",
+      "pond": "62",
       "message": "Congrats Subaru!!! Been a fan since Febuary 2020 especially when you defeated Sans. We're all proud of you!!!!",
       "sound": "11"
     },
     {
       "name": "CookieDough",
       "image": "CookieDough--34766",
-      "pond": "63",
+      "pond": "62",
       "message": "AAAAAAA VERY VERY HAPPY FOR YOU, SUBARU! MY FAVORITE AND CUTEST IDOL! GWAAAAAA",
       "sound": "7"
     },
     {
       "name": "Danilo Moreira",
       "image": "Danilo Moreira--48233",
-      "pond": "63",
+      "pond": "62",
       "message": "Thank you for the happiness you bring to our worlds",
       "sound": "10"
     },
     {
       "name": "\u30dd\u30fc\u30eb",
       "image": "TEMPLATE",
-      "pond": "63",
+      "pond": "62",
       "message": "\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046",
       "sound": "-1"
     },
@@ -8816,84 +8613,84 @@
     {
       "name": "Rifky Fabian",
       "image": "Rifky Fabian-185109",
-      "pond": "64",
+      "pond": "63",
       "message": "OMEDESHUBA ",
       "sound": "-1"
     },
     {
       "name": "Quicke Chicky",
       "image": "Quicke Chicky--30907",
-      "pond": "64",
+      "pond": "63",
       "message": "Congrats!!!!! That's all I have to say, shuba shuba.",
       "sound": "-1"
     },
     {
       "name": "\u30d1\u30f3\u30c0",
       "image": "\u30d1\u30f3\u30c0-522161",
-      "pond": "64",
+      "pond": "63",
       "message": "\u304a\u3081\u3067\u3068\u3046\uff01 From an overseas subatomo ",
       "sound": "-1"
     },
     {
       "name": "Malaysia \u30b9\u30d0\u53cb",
       "image": "Malaysia \u30b9\u30d0\u53cb-176515",
-      "pond": "64",
+      "pond": "63",
       "message": "TO:The best idol \r\nHappy birthday and congrats on your 1 mil subs !!! keep up the good work suba , \u3042\u306a\u305f\u304c\u4e00\u756a\u597d\u304d ^w^",
       "sound": "1"
     },
     {
       "name": "Rattus",
       "image": "Rattus-298797",
-      "pond": "64",
+      "pond": "63",
       "message": "Congratulations Subaru!!!",
       "sound": "12"
     },
     {
       "name": "raxhal",
       "image": "raxhal--49225",
-      "pond": "64",
+      "pond": "63",
       "message": "1 million today, mundial domination tomorrow",
       "sound": "8"
     },
     {
       "name": "Yoo Kenta",
       "image": "Yoo Kenta--27480",
-      "pond": "64",
+      "pond": "63",
       "message": "Congratulations for 1 Million Subatomos!!!! Happy birthday as well! Please take care of yourself. \u3088\u308d\u3057\u304f\u304a\u9858\u3044\u3057\u307e\u3059!!",
       "sound": "2"
     },
     {
       "name": "\u30ab\u30c3\u30d7\u3055\u3093",
       "image": "\u30ab\u30c3\u30d7\u3055\u3093--20485",
-      "pond": "64",
+      "pond": "63",
       "message": "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01To more years of quacks and shuba to come! \u611b\u3057\u3066\u308b\uff01",
       "sound": "-1"
     },
     {
       "name": "Malaysia \u30b9\u30d0\u53cb",
       "image": "Malaysia \u30b9\u30d0\u53cb--18997",
-      "pond": "64",
+      "pond": "63",
       "message": "TO:The best idol\r\nHappy birthday and Congrats on 1mil subs !!!!! keep up the good work suba , \u3042\u306a\u305f\u304c\u4e00\u756a\u597d\u304d  ^w^",
       "sound": "1"
     },
     {
       "name": "AbsoluteLink",
       "image": "AbsoluteLink--50951",
-      "pond": "64",
+      "pond": "63",
       "message": "Congratulations on 1 million subatomos! Your vibrant energy always makes me smile!",
       "sound": "9"
     },
     {
       "name": "Secret Dan",
       "image": "Secret Dan--31599",
-      "pond": "64",
+      "pond": "63",
       "message": "\uff11\uff10\uff10\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01",
       "sound": "8"
     },
     {
       "name": "FelixH",
       "image": "FelixH-278395",
-      "pond": "64",
+      "pond": "63",
       "message": "Happy birthday and congratulations for 1M subscribers!",
       "sound": "3"
     },
@@ -8910,13 +8707,6 @@
       "pond": "64",
       "message": "Thanks for so many funny moments and always make us smile I hope you continue like this shubaaaa ",
       "sound": "1"
-    },
-    {
-      "name": "Shuba-gaki",
-      "image": "FANART_Shuba-gaki--61653",
-      "pond": "64",
-      "message": "shuba shuba sabau shuba. Omedetou subaru for 1 million subs.",
-      "sound": "0"
     },
     {
       "name": "Macha Coffieee",
@@ -8956,91 +8746,91 @@
     {
       "name": "Ferdian Naufal",
       "image": "Ferdian Naufal-311899",
-      "pond": "65",
+      "pond": "64",
       "message": "Selamat untuk 1 juta subscriber nya subaru!!\r\ntetap lah ceria dan jaga kesehatan \u2665\ufe0f\r\ndari Subatomo Indonesia \u2665\ufe0f",
       "sound": "12"
     },
     {
       "name": "DUCKDUCKDUCK",
       "image": "DUCKDUCKDUCK-560469",
-      "pond": "65",
+      "pond": "64",
       "message": "OMEDETOU ON 1 MILLION DUCK FRIENDS",
       "sound": "4"
     },
     {
       "name": "Jeff Wright",
       "image": "Jeff Wright-274964",
-      "pond": "65",
+      "pond": "64",
       "message": "Congrats on 1 million subs!!",
       "sound": "-1"
     },
     {
       "name": "MarodraSama",
       "image": "MarodraSama--83773",
-      "pond": "65",
+      "pond": "64",
       "message": "\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046 Subaru!!!",
       "sound": "10"
     },
     {
       "name": "JackyLaw",
       "image": "JackyLaw-620892",
-      "pond": "65",
+      "pond": "64",
       "message": "Subaru Chan best tomboy ever <3 <3 <3 \r\nCongrats on 1 mill our Subaru Chan!!!! much love from malaysia!!!!",
       "sound": "5"
     },
     {
       "name": "Helblu Say",
       "image": "Helblu Say-403321",
-      "pond": "65",
+      "pond": "64",
       "message": "Happy 1 MILLION!!! To Hololive's best duck/swan. I wish you much luck for your future endeavors. \u2570(*\u00b0\u25bd\u00b0*)\u256f\\(@^0^@)/ \u30b7\u30e5\u30d0 \u30b7\u30e5\u30d0\u30b7\u30e5\u30d0 ",
       "sound": "5"
     },
     {
       "name": "UnbarredStream",
       "image": "UnbarredStream-620553",
-      "pond": "65",
+      "pond": "64",
       "message": "Omedetto",
       "sound": "-1"
     },
     {
       "name": "Luigi",
       "image": "Luigi--26785",
-      "pond": "65",
+      "pond": "64",
       "message": "Congratulations to our hardworking, girly, tomboy, duck, idol!!! Felicidades Subaru!!!!! ",
       "sound": "10"
     },
     {
       "name": "Mateo",
       "image": "Mateo--71319",
-      "pond": "65",
+      "pond": "64",
       "message": "Happy birthday to you\r\nHappy birthday to you\r\nYou quack like a duck\r\nBut I guess you are one too",
       "sound": "11"
     },
     {
       "name": "Zero Netsukamei",
       "image": "Zero Netsukamei--38101",
-      "pond": "65",
+      "pond": "64",
       "message": "\u79c1\u306e\u65e5\u672c\u8a9e\u304c\u8ca7\u3057\u3044\u5834\u5408\u306f\u3001\u3042\u306a\u305f\u306e100\u4e07\u4eba\u306e\u52a0\u5165\u8005\u306b\u5e78\u305b\u306a\u8a95\u751f\u65e5\u3068\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u304c\u3001\u79c1\u306f\u3042\u306a\u305f\u306e\u30e9\u30a4\u30d6\u30b9\u30c8\u30ea\u30fc\u30e0\u3092\u518d\u3073\u898b\u308b\u3053\u3068\u304c\u3067\u304d\u308b\u3088\u3046\u306b\u79c1\u306f\u4e00\u751f\u61f8\u547d\u50cd\u304f\u3053\u3068\u3092\u8a93\u3044\u307e\u3059 \u304a\u795d\u3044\u3068\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046",
       "sound": "-1"
     },
     {
       "name": "Yamato",
       "image": "Yamato--44959",
-      "pond": "65",
+      "pond": "64",
       "message": "Happy birthday shuba!!! Congratulations on the 1 million subs. Thanks for your precious streams, they always give me a smile!!! ",
       "sound": "11"
     },
     {
       "name": "Ducky Lop",
       "image": "Ducky Lop-516700",
-      "pond": "65",
+      "pond": "64",
       "message": "Cheers to you on your birthday and congrats on 1M, Shuba! Hope we make your day happy.",
       "sound": "5"
     },
     {
       "name": "Subatomo#9818",
       "image": "Subatomo#9818-557486",
-      "pond": "65",
+      "pond": "64",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
     },
@@ -9096,100 +8886,79 @@
     {
       "name": "Tripp",
       "image": "TEMPLATE",
-      "pond": "66",
+      "pond": "65",
       "message": "Congrats Subaru! ",
-      "sound": "-1"
-    },
-    {
-      "name": "Farisu",
-      "image": "FANART_Farisu--46644",
-      "pond": "66",
-      "message": "Omedetou Shubaaaa!!!!!!",
       "sound": "-1"
     },
     {
       "name": "DragonDz",
       "image": "DragonDz--11578",
-      "pond": "66",
+      "pond": "65",
       "message": "Congrats on 1mil/Happy birthday! I began learning Japanese 2 months ago to help understand your streams but I enjoy them anyway!",
       "sound": "12"
     },
     {
       "name": "Terox3",
       "image": "Terox3-617034",
-      "pond": "66",
+      "pond": "65",
       "message": "congrats. @@",
-      "sound": "-1"
-    },
-    {
-      "name": "Haku_Jin",
-      "image": "FANART_Haku_Jin-330567",
-      "pond": "66",
-      "message": "Congratulations on 1 million!! You've been a very fun and entertaining person to watch. Happy Birthday!! ",
       "sound": "-1"
     },
     {
       "name": "duriyudha",
       "image": "TEMPLATE",
-      "pond": "66",
+      "pond": "65",
       "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01 #HoloUnggas",
       "sound": "5"
     },
     {
       "name": "Era",
       "image": "Era-527719",
-      "pond": "66",
+      "pond": "65",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
     },
     {
       "name": "Ahirukozo",
       "image": "Ahirukozo--39035",
-      "pond": "66",
+      "pond": "65",
       "message": "Congratulations!",
       "sound": "-1"
     },
     {
       "name": "koala",
       "image": "TEMPLATE",
-      "pond": "66",
+      "pond": "65",
       "message": "Hello Subaru! Happy birthday and congratulations on reaching 1 million subscribers! Here's to another year of fun :)",
       "sound": "-1"
     },
     {
       "name": "She's Here!",
       "image": "She's Here!-605074",
-      "pond": "66",
+      "pond": "65",
       "message": "\u611b\u3057\u3066\u308b\uff01\uff01\uff01\uff01",
       "sound": "-1"
     },
     {
       "name": "Shibashiggy",
       "image": "TEMPLATE",
-      "pond": "66",
+      "pond": "65",
       "message": "Congratulations Shuba! You always make me happy when I watch your streams and I adore your energy! Lots of Love!",
       "sound": "10"
     },
     {
       "name": "Pelajarganjil",
       "image": "Pelajarganjil--23803",
-      "pond": "66",
+      "pond": "65",
       "message": "Selamat ulang tahun dan 1 juta subs nya, makasih banget buat subaru yg selalu imut di setiap stream",
       "sound": "12"
     },
     {
       "name": "Litty",
       "image": "Litty-325070",
-      "pond": "66",
+      "pond": "65",
       "message": "Congrats! \u79c1\u306f\u3053\u308c\u304c\u3042\u306a\u305f\u306e\u305f\u3081\u306b\u6765\u308b\u591a\u304f\u306e\u30de\u30a4\u30eb\u30b9\u30c8\u30fc\u30f3\u306e\u4e00\u3064\u306b\u904e\u304e\u306a\u3044\u3053\u3068\u3092\u9858\u3063\u3066\u3044\u307e\u3059\uff01\r\n",
       "sound": "9"
-    },
-    {
-      "name": "ShubaAngelAges",
-      "image": "FANART_ShubaAngelAges-249899",
-      "pond": "66",
-      "message": "Felicidades a mi idol favorita de Hololive JP! / Congratulations to my favorite idol from Hololive JP! I Love You Shuba!",
-      "sound": "-1"
     },
     {
       "name": "Rudye ardhyean",
@@ -9236,91 +9005,91 @@
     {
       "name": "Ketchup",
       "image": "Ketchup-139544",
-      "pond": "67",
+      "pond": "66",
       "message": "Congrats on the 1 Million!",
       "sound": "12"
     },
     {
       "name": "gura's bestfrien",
       "image": "TEMPLATE",
-      "pond": "67",
+      "pond": "66",
       "message": "HEY , HAPPY 1MIL SUBARU. WE LOVE YOU SOO MUCH. WATASHITACHI DAISUKII. DOUMO ARIGATOU",
       "sound": "9"
     },
     {
       "name": "TheAmblingOwl",
       "image": "TheAmblingOwl--26771",
-      "pond": "67",
+      "pond": "66",
       "message": "Congratulations on 1 million subscribers! ",
       "sound": "-1"
     },
     {
       "name": "Pebshau",
       "image": "Pebshau--86931",
-      "pond": "67",
+      "pond": "66",
       "message": "Congratulations on 1 million subscribers, Subaru!",
       "sound": "-1"
     },
     {
       "name": "Zero No Hikari",
       "image": "Zero No Hikari--27852",
-      "pond": "67",
+      "pond": "66",
       "message": "Happy Birthday!\r\nYou are my favorite Idol, best Idol Subaru",
       "sound": "1"
     },
     {
       "name": "Student of God",
       "image": "Student of God-212533",
-      "pond": "67",
+      "pond": "66",
       "message": "\uff11\uff10\uff10\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01 Subaru!!! I'm so happy for you!  I'll always be here cheering for you!",
       "sound": "-1"
     },
     {
       "name": "Yataka",
       "image": "Yataka-194827",
-      "pond": "67",
+      "pond": "66",
       "message": "Hello Miss Subaru, congratulations for reaching a a million subscribers!",
       "sound": "10"
     },
     {
       "name": "Lalam",
       "image": "Lalam--35566",
-      "pond": "67",
+      "pond": "66",
       "message": "Happy birthday Subaaaaru!!!!\r\nThank you for making my days shiny like the rising sun!!\r\nyour fans from KSA :)",
       "sound": "0"
     },
     {
       "name": "Panda",
       "image": "Panda--13526",
-      "pond": "67",
+      "pond": "66",
       "message": "Shuba shuba",
       "sound": "6"
     },
     {
       "name": "PonPon",
       "image": "PonPon-492030",
-      "pond": "67",
+      "pond": "66",
       "message": "suwubaruwu",
       "sound": "5"
     },
     {
       "name": "Subatomo#7626",
       "image": "TEMPLATE",
-      "pond": "67",
+      "pond": "66",
       "message": "zbik",
       "sound": "12"
     },
     {
       "name": "Vermilion",
       "image": "Vermilion--32098",
-      "pond": "67",
+      "pond": "66",
       "message": "Congratulations Subaru! Onwards to bigger milestones!",
       "sound": "10"
     },
     {
       "name": "MrMonkey122",
       "image": "MrMonkey122--59326",
-      "pond": "67",
+      "pond": "66",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "-1"
     },
@@ -9376,91 +9145,84 @@
     {
       "name": "Mark",
       "image": "Mark-179076",
-      "pond": "68",
+      "pond": "67",
       "message": "Congratulations on 1 million subscribers, Subaru!",
       "sound": "-1"
     },
     {
       "name": "SirRogerinzz",
       "image": "SirRogerinzz-416537",
-      "pond": "68",
+      "pond": "67",
       "message": "Congratulations!!!",
       "sound": "0"
     },
     {
       "name": "Garlyle",
       "image": "Garlyle-334196",
-      "pond": "68",
+      "pond": "67",
       "message": "1 million congratulations, happy for your success! Shuba shuba shuba... DuckTales! Woo-oo!",
       "sound": "9"
     },
     {
-      "name": "Alif Hakimi",
-      "image": "FANART_Alif Hakimi-206922",
-      "pond": "68",
-      "message": "Congratulations on reaching 1 million subs Subaru!! Just like the sun, you make my day brighter with your streams.",
-      "sound": "12"
-    },
-    {
       "name": "Niyrv",
       "image": "Niyrv-228203",
-      "pond": "68",
+      "pond": "67",
       "message": "Later I'll be Ducktective !",
       "sound": "-1"
     },
     {
       "name": "Sanguis",
       "image": "Sanguis--11713",
-      "pond": "68",
+      "pond": "67",
       "message": "SHUBAAAAAAAAAAAAAAAAAAAAAAAAAAA! \u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\u3053\u308c\u304b\u3089\u3082MAX\u5143\u6c17\u3067\u884c\u304f\u305e\uff01",
       "sound": "-1"
     },
     {
       "name": "Rusty Ricotta",
       "image": "Rusty Ricotta-104834",
-      "pond": "68",
+      "pond": "67",
       "message": "\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01",
       "sound": "-1"
     },
     {
       "name": "Vaunci",
       "image": "Vaunci--53653",
-      "pond": "68",
+      "pond": "67",
       "message": "Thank you for every moment and every laugh you gave to everyone, you deserve this and much much more! Love from a subatomo :) ",
       "sound": "10"
     },
     {
       "name": "Count Snarky",
       "image": "Count Snarky--28396",
-      "pond": "68",
+      "pond": "67",
       "message": "Shuba! Thank you for all the streams and good times best girl!",
       "sound": "2"
     },
     {
       "name": "\u30f4\u3047\u306e\u3080 (Venom)",
       "image": "\u30f4\u3047\u306e\u3080 (Venom)--25085",
-      "pond": "68",
+      "pond": "67",
       "message": "Congratulations on one million Subatomo! You are the best duck in the whole universe, and I love you very much! ",
       "sound": "1"
     },
     {
       "name": "Mapler90210",
       "image": "Mapler90210--33340",
-      "pond": "68",
+      "pond": "67",
       "message": "Congratulations on 1 Million! Your streams are so much fun! Thank you for making your chatting streams accessible to EN bros! <",
       "sound": "3"
     },
     {
       "name": "Kckella",
       "image": "Kckella--53789",
-      "pond": "68",
+      "pond": "67",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "7"
     },
     {
       "name": "Phos",
       "image": "Phos-526545",
-      "pond": "68",
+      "pond": "67",
       "message": "Congrats to the bestest duck in Hololive!",
       "sound": "10"
     },
@@ -9507,107 +9269,100 @@
       "sound": "-1"
     },
     {
-      "name": "Ferzous\u266a",
-      "image": "Ferzous\u266a--12054",
-      "pond": "68",
-      "message": "Happy birthday and congratulations on 1 million subscribers!",
-      "sound": "-1"
-    },
-    {
       "name": "HMontalvo",
       "image": "HMontalvo--26951",
-      "pond": "69",
+      "pond": "68",
       "message": "Feliz cumplea\u00f1os Subaru! saludos desde Mexico!",
       "sound": "4"
     },
     {
       "name": "Jaeeson",
       "image": "Jaeeson-706676",
-      "pond": "69",
+      "pond": "68",
       "message": "As expected shuba. Congratulations on 1 mil! You are the sunshine to my day.",
       "sound": "-1"
     },
     {
       "name": "Kobz",
       "image": "Kobz--39127",
-      "pond": "69",
+      "pond": "68",
       "message": "Subaru, congratulation on hitting 1M subscribers, you will always be my favorite vtuber and duck!! keep up the good work!!!",
       "sound": "1"
     },
     {
       "name": "Coman",
       "image": "TEMPLATE",
-      "pond": "69",
+      "pond": "68",
       "message": "Congrats for 1mil! Wish the best for you and will keep supporting you whenever i can",
       "sound": "-1"
     },
     {
       "name": "Min-chan",
       "image": "Min-chan--15653",
-      "pond": "69",
+      "pond": "68",
       "message": "\u3059\u3070\u308b\u3055\u3093\u3001\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059!!! \u305d\u3057\u3066\u3001\u30b5\u30d6\u30b9\u30af100\u4e07\u4eba\u7a81\u7834\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3053\u308c\u304b\u3089\u3082\u4e00\u7dd2\u306b\u697d\u3057\u3044\u601d\u3044\u51fa\u3092\u305f\u304f\u3055\u3093\u4f5c\u3063\u3066\u3044\u304d\u307e\u3057\u3087\u3046\u306d\uff01\uff08\u30d9\u30c8\u30ca\u30e0\u306e\u30b9\u30d0\u30ea\u30b9\u30c8\u3088\u308a",
       "sound": "10"
     },
     {
       "name": "Ryu Tamasaki",
       "image": "Ryu Tamasaki-233321",
-      "pond": "69",
+      "pond": "68",
       "message": "Congratulations to 1 million! Thank you for always having such positive vibes and fun streams! Best greetings from germany! <3",
       "sound": "12"
     },
     {
       "name": "Krook",
       "image": "Krook--32895",
-      "pond": "69",
+      "pond": "68",
       "message": "We love you Subaru:)",
       "sound": "0"
     },
     {
       "name": "David",
       "image": "David-201824",
-      "pond": "69",
+      "pond": "68",
       "message": "Congrats on your birthday and Congrats on hitting 1M subs \r\nShuba Shuba Shuba",
       "sound": "1"
     },
     {
       "name": "No Luck",
       "image": "No Luck-134872",
-      "pond": "69",
+      "pond": "68",
       "message": "Congrats on 1 mil subscribers! It brings a tear to my eye seeing how far everyone has gotten since 2019! Also, Happy Birthday!",
       "sound": "4"
     },
     {
       "name": "Fang",
       "image": "Fang--35435",
-      "pond": "69",
+      "pond": "68",
       "message": "Congrats.",
       "sound": "6"
     },
     {
       "name": "Exousiazo",
       "image": "Exousiazo-264023",
-      "pond": "69",
+      "pond": "68",
       "message": "1M! Congratulations Subaru! Watching your content always put s a smile on my face and brightens up my day. Best wishes for you! ",
       "sound": "10"
     },
     {
       "name": "Seanpasu",
       "image": "Seanpasu--61429",
-      "pond": "69",
+      "pond": "68",
       "message": "Congratulations, Subaru! You work so hard and deserve every bit of your success! \u304a\u3081\u3075\u3047\u3068\u3046!\u3059\u3070\u3068\u3082\u306f\u30b9\u30d0\u30eb\u3061\u3083\u3093\u306e\u304c\u3093\u3070\u3063\u3066\u3044\u308b\u3053\u3068\u3092\u898b\u3089\u308c\u307e\u3059\u3088\u3002\u30b9\u30d0\u30eb\u3061\u3083\u3093\u304c\u5927\u597d\u304d!",
       "sound": "-1"
     },
     {
       "name": "Raijuri",
       "image": "Raijuri-142527",
-      "pond": "69",
+      "pond": "68",
       "message": "Congrats, Subaru! You are the best duck!",
       "sound": "-1"
     },
     {
       "name": "PluckyDucky",
-      "image": "PluckyDucky--51476",
-      "pond": "69",
+      "image": "TEMPLATE",
+      "pond": "68",
       "message": "You brought so much joy over the years. Hope you have a wonderful birthday. Congratulations on the big 1 mil subs. ",
       "sound": "-1"
     },
@@ -9656,98 +9411,98 @@
     {
       "name": "Bebek Khilaf",
       "image": "Bebek Khilaf-189576",
-      "pond": "70",
+      "pond": "69",
       "message": "Congratulation Subaru-chan~\r\nThank you for being one of my special person in my life~",
       "sound": "7"
     },
     {
       "name": "Saros",
       "image": "Saros--43864",
-      "pond": "70",
+      "pond": "69",
       "message": "Happy birthday and congratulations on 1 million subs! I love you Subaru! ",
       "sound": "-1"
     },
     {
       "name": "Matt71",
       "image": "Matt71--57802",
-      "pond": "70",
+      "pond": "69",
       "message": "F\u00e9licitations shuba!",
       "sound": "10"
     },
     {
       "name": "Defender1511 ",
       "image": "Defender1511 --35813",
-      "pond": "70",
+      "pond": "69",
       "message": "Congratulations from Austria!!!!",
       "sound": "-1"
     },
     {
       "name": "Pi",
       "image": "Pi--52262",
-      "pond": "70",
+      "pond": "69",
       "message": "Thank you for all the amazing times which made me laugh and smile hope you have a wonderful birthday ",
       "sound": "6"
     },
     {
       "name": "EliR",
       "image": "EliR--46619",
-      "pond": "70",
+      "pond": "69",
       "message": "Well deserved Subaru! Keep it going",
       "sound": "0"
     },
     {
       "name": "DeDeDe",
       "image": "DeDeDe--82448",
-      "pond": "70",
+      "pond": "69",
       "message": "Congratulations on 1 million subs, Subaru! You helped me find my happiness, now it's my turn to help you find yours!",
       "sound": "0"
     },
     {
       "name": "Lapis",
       "image": "Lapis-118742",
-      "pond": "70",
+      "pond": "69",
       "message": "Congrats to one of my favorite members on reaching 1 million subs! I love your energy and always have fun with your streams.",
       "sound": "5"
     },
     {
       "name": "Subatomo#5206",
       "image": "Subatomo#5206--57723",
-      "pond": "70",
+      "pond": "69",
       "message": "Happy birthday and congratulations on 1 million subscribers!",
       "sound": "7"
     },
     {
       "name": "KaioKesh",
       "image": "TEMPLATE",
-      "pond": "70",
+      "pond": "69",
       "message": "Congratulations Subaru, I've only been watching hololive for 3-4 months, but I love the energy and happiness you always bring.",
       "sound": "-1"
     },
     {
       "name": "shoes",
       "image": "shoes--55461",
-      "pond": "70",
+      "pond": "69",
       "message": "happy 1 million subaru!! i've been a big fan of you for a long time and to see how much your growing makes me happy",
       "sound": "10"
     },
     {
       "name": "Hercules",
-      "image": "Hercules-264939",
-      "pond": "70",
+      "image": "TEMPLATE",
+      "pond": "69",
       "message": "Happy birthday Suba-chan, you deserve all love of the world remember kaigai subatomo will always be with you\u2665 Kiss from brazil",
       "sound": "4"
     },
     {
       "name": "Holy Bard",
       "image": "Holy Bard--44138",
-      "pond": "70",
+      "pond": "69",
       "message": "Congrats shubaaaa!!!  Thank you for all your hard work. Much love from your EN Subatomos",
       "sound": "1"
     },
     {
       "name": "Jonathan Bustos",
       "image": "Jonathan Bustos-392243",
-      "pond": "70",
+      "pond": "69",
       "message": "congratulations Subaru! You deserve 1 million subscribers! You've worked so hard for it! I'm so happy for you! Keep going!",
       "sound": "-1"
     },
@@ -9796,16 +9551,1388 @@
     {
       "name": "Cryovol",
       "image": "Cryovol-440763",
-      "pond": "71",
+      "pond": "70",
       "message": "You and the community have given me happiness I haven't had in a long time. Thank you and congratulations!",
       "sound": "10"
     },
     {
       "name": "Vinci",
-      "image": "Vinci--50062",
-      "pond": "71",
+      "image": "Vinci-524315",
+      "pond": "70",
       "message": "Congratulations Subaru! Thank you for all the hard work. Your subatomos will always be with you to love and support you! \r\n",
       "sound": "10"
+    },
+    {
+      "name": "Dhiazzz",
+      "image": "Dhiazzz-564079",
+      "pond": "70",
+      "message": "Congrats on reaching 1 million subs and happy birthday \ud83c\udf89\ud83c\udf89 thank you for your fun and entertaining streams! Shuba shuba shuba!!",
+      "sound": "7"
+    },
+    {
+      "name": "Zack Quack",
+      "image": "Zack Quack--32243",
+      "pond": "70",
+      "message": "Congratulations to our favourite Holobird on 1M we want to thank you for all the joy you bring us",
+      "sound": "-1"
+    },
+    {
+      "name": "Mixcoatl",
+      "image": "Mixcoatl--46211",
+      "pond": "70",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "-1"
+    },
+    {
+      "name": "Fegon",
+      "image": "Fegon--29816",
+      "pond": "70",
+      "message": "Congramedeto Subaru \r\nHope you will continue forever!!!!",
+      "sound": "-1"
+    },
+    {
+      "name": "JellyRingNuggets",
+      "image": "JellyRingNuggets--52991",
+      "pond": "70",
+      "message": "SHUBA SUGOI",
+      "sound": "2"
+    },
+    {
+      "name": "Kyutika",
+      "image": "Kyutika--60729",
+      "pond": "70",
+      "message": "100\u4e07\u5165\u304a\u3081\u3067\u3068\u3046\uff01\uff01\r\nBecause of all of your hard work, you deserve it! Keep it up!\r\nLove from a big fan!",
+      "sound": "10"
+    },
+    {
+      "name": "KgKg",
+      "image": "KgKg--91238",
+      "pond": "70",
+      "message": "Selamat ya subaru atas 1 juta subsnya, semoga anda sejahtera dan sehat selalu!",
+      "sound": "9"
+    },
+    {
+      "name": "RabbieDobbie",
+      "image": "RabbieDobbie--29577",
+      "pond": "70",
+      "message": "Happy Birthday to the cutest duck!! You are cute with short hair, long hair, or no hair! SHUBA!",
+      "sound": "-1"
+    },
+    {
+      "name": "Asobi",
+      "image": "Asobi-256247",
+      "pond": "70",
+      "message": "Congratulation subaru for 1million subs\r\n i really like your streams it gives me energy and hoping for more singing stream :)",
+      "sound": "3"
+    },
+    {
+      "name": "BG_Cypo",
+      "image": "BG_Cypo-496252",
+      "pond": "70",
+      "message": "I congratulate you Subaru for reaching 1 Million subscribers!!!\r\n",
+      "sound": "4"
+    },
+    {
+      "name": "wanx10",
+      "image": "wanx10-638870",
+      "pond": "70",
+      "message": "Thank You For all the memories and Congratulation!!",
+      "sound": "7"
+    },
+    {
+      "name": "kai",
+      "image": "kai--58146",
+      "pond": "70",
+      "message": "Subaaaruuuuuuuuuuu congratulations for 1m!!! You will always be the ray of shining sunlight in hololive!! Go go subaru!!!!",
+      "sound": "4"
+    },
+    {
+      "name": "Alpan",
+      "image": "Alpan-355705",
+      "pond": "71",
+      "message": "Congratulations subaru for 1M subscribers aku harap kamu selalu sehat",
+      "sound": "7"
+    },
+    {
+      "name": "Jenos",
+      "image": "Jenos-543324",
+      "pond": "71",
+      "message": "Happy birthday, many great wishes and congratulations for reaching many of your goals. You are truly shubaramazing. We love you.",
+      "sound": "1"
+    },
+    {
+      "name": "Oscar Reyes",
+      "image": "Oscar Reyes-346315",
+      "pond": "71",
+      "message": "Happy Birthday Subaru-San! You are my first Hololive I started following! Congratulations on this special day! XD",
+      "sound": "4"
+    },
+    {
+      "name": "Yu-Ann Tsai",
+      "image": "Yu-Ann Tsai-490973",
+      "pond": "71",
+      "message": "\u30b9\u30d0\u30eb\u306f\u304b\u308f\u3044\u3044\uff01\u30b9\u30d0\u30eb\u69d8\u304c\u5927\u597d\u304d\uff01Best duck \u304a\u3081\u3067\u3069\uff01I love you! Hololive best girl = Subaru!\r\n\uff08\u6d77\u5916\u306b\u304d)",
+      "sound": "1"
+    },
+    {
+      "name": "Traxios",
+      "image": "Traxios-388299",
+      "pond": "71",
+      "message": "Congratulation chuba chuba for your amazing achievement until this year, Happy chuba chubaaaa!!!",
+      "sound": "1"
+    },
+    {
+      "name": "Dylan Y-B",
+      "image": "Dylan Y-B--13784",
+      "pond": "71",
+      "message": "Congrats Shuba Duck!",
+      "sound": "-1"
+    },
+    {
+      "name": "Rodis77",
+      "image": "Rodis77-227922",
+      "pond": "71",
+      "message": "Thank you very much for always thinking of us Subaru, it makes me very happy how much you care about us, your overseas fans.",
+      "sound": "-1"
+    },
+    {
+      "name": "Leeen",
+      "image": "TEMPLATE",
+      "pond": "71",
+      "message": "Congrats for the 1MILLION shuba!",
+      "sound": "-1"
+    },
+    {
+      "name": "Ooga booga ",
+      "image": "Ooga booga -480498",
+      "pond": "71",
+      "message": "Congratulations on 1M subscribers Subaru  you deserve it",
+      "sound": "5"
+    },
+    {
+      "name": "Brendon",
+      "image": "Brendon--48831",
+      "pond": "71",
+      "message": "SUBARU-CHAN OMEDETOU! It has been almost a whole year since I started watching you, and you've grown up so much! Daisuki!",
+      "sound": "2"
+    },
+    {
+      "name": "Dodoliy",
+      "image": "Dodoliy-315469",
+      "pond": "71",
+      "message": "Shuba Shuba Shuba, we love you Shuba. Congratulations on being the best duck",
+      "sound": "-1"
+    },
+    {
+      "name": "Malcrow",
+      "image": "Malcrow-335832",
+      "pond": "71",
+      "message": "CONGRATS SUBARU!!!!!",
+      "sound": "0"
+    },
+    {
+      "name": "Newo",
+      "image": "Newo-247703",
+      "pond": "71",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "10"
+    },
+    {
+      "name": "AnonymousSubaFre",
+      "image": "AnonymousSubaFre--50756",
+      "pond": "71",
+      "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\u3061\u3085\u3070\uff01\u3053\u308c\u304b\u3089\u3082\u5fdc\u63f4\u3057\u3066\u308b\u3061\u3085\u3070\u306d\uff01",
+      "sound": "9"
+    },
+    {
+      "name": "\u3058\u3085\u3093",
+      "image": "\u3058\u3085\u3093-156948",
+      "pond": "71",
+      "message": "\u304a\u3081\u3067\u3068\u3057\u3085\u3070\uff01\uff01\uff01\uff01\uff01\uff01\r\n\u53ef\u611b\u3044\u3059\u3070\u308b\u304c\u5927\u597d\u304d\uff01\uff01\uff01\uff01\uff01\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "\u305f\u3093\u3070\u308a\u3093",
+      "image": "\u305f\u3093\u3070\u308a\u3093--58623",
+      "pond": "71",
+      "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093100\u4e07\u4eba\u7a81\u7834\u3068\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\ud83c\udf89\ud83c\udf89\ud83c\udf89\u3053\u308c\u304b\u3089\u3082\u914d\u4fe1\u697d\u3057\u304f\u898b\u3055\u305b\u3066\u3082\u3089\u3044\u307e\u3059\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "SandwichSenpai",
+      "image": "SandwichSenpai-782122",
+      "pond": "71",
+      "message": "Happy birthday and congratulations! Thank you for all the fun!",
+      "sound": "-1"
+    },
+    {
+      "name": "Cannon",
+      "image": "Cannon--63055",
+      "pond": "71",
+      "message": "Congrats",
+      "sound": "-1"
+    },
+    {
+      "name": "\u304a\u3046\u3069\u3093",
+      "image": "\u304a\u3046\u3069\u3093-422369",
+      "pond": "72",
+      "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u8a95\u751f\u65e5\u3068\u3082\u3046\u3059\u3050100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\r\n\u30b9\u30d0\u30eb\u3061\u3083\u3093\u306e\u5143\u6c17\u3067\u53ef\u611b\u3044\u59ff\u306b\u3044\u3064\u3082\u5143\u6c17\u3092\u3082\u3089\u3063\u3066\u307e\u3059\uff01\r\n\u3053\u308c\u304b\u3089\u3082\u7121\u7406\u305b\u305a\u4f53\u306b\u6c17\u3092\u3064\u3051\u3066\u914d\u4fe1\u9811\u5f35\u3063\u3066\u306d\uff01\u5fdc\u63f4\u3057\u3066\u307e\u3059\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "Temuujin",
+      "image": "Temuujin--81080",
+      "pond": "72",
+      "message": "Thank you for the fun videos you made for us. It's really fun to watch your streams and clips especially subaru sits down girly.",
+      "sound": "-1"
+    },
+    {
+      "name": "Martin lugo",
+      "image": "TEMPLATE",
+      "pond": "72",
+      "message": "\"congrats on 1 million\" - from the oversea bros",
+      "sound": "-1"
+    },
+    {
+      "name": "Monoki",
+      "image": "Monoki--41179",
+      "pond": "72",
+      "message": "Subaru, congratulations for one million subscribers !you are always make fun with us of your special and cute sound!",
+      "sound": "9"
+    },
+    {
+      "name": "Ate",
+      "image": "Ate--62290",
+      "pond": "72",
+      "message": ":)",
+      "sound": "-1"
+    },
+    {
+      "name": "pala",
+      "image": "pala-945559",
+      "pond": "72",
+      "message": "Enjoy your day Compadre,  we hope to celebrate many more.",
+      "sound": "-1"
+    },
+    {
+      "name": "Josh son ofZeus",
+      "image": "Josh son ofZeus-268024",
+      "pond": "72",
+      "message": "I'm not here to congratulate. I'm here to send you a duck.",
+      "sound": "1"
+    },
+    {
+      "name": "Boofer Dan",
+      "image": "Boofer Dan-517588",
+      "pond": "72",
+      "message": "Subaru stream is always very fun! Congratulations on 1M Subaru",
+      "sound": "-1"
+    },
+    {
+      "name": "Alpan",
+      "image": "Alpan-269614",
+      "pond": "72",
+      "message": "Congratulations Subaru for 1M subscribers semoga kamu selalu sehat",
+      "sound": "7"
+    },
+    {
+      "name": "Danish",
+      "image": "Danish--29622",
+      "pond": "72",
+      "message": "Congratulations for 1 million subscribers!!! I appreciate of your hard work to speak English with overseas bro. Quack",
+      "sound": "7"
+    },
+    {
+      "name": "Cii",
+      "image": "TEMPLATE",
+      "pond": "72",
+      "message": "Congratulations Subaru!",
+      "sound": "12"
+    },
+    {
+      "name": "Starduck",
+      "image": "Starduck-164432",
+      "pond": "72",
+      "message": "Thank you Subaru-san for always brings love and laugh. Hope you will always happy shuba!",
+      "sound": "-1"
+    },
+    {
+      "name": "Bestgirl",
+      "image": "Bestgirl--35823",
+      "pond": "72",
+      "message": "Congratulations Subaru! One step closer to your cuteness taking over the world.",
+      "sound": "-1"
+    },
+    {
+      "name": "Alex",
+      "image": "Alex-541233",
+      "pond": "72",
+      "message": "Congratulations!!!, Thanks for making our days more happy and enjoyable",
+      "sound": "1"
+    },
+    {
+      "name": "SaltyJustice",
+      "image": "SaltyJustice--10841",
+      "pond": "72",
+      "message": "Shuba shuba shuba shuba!",
+      "sound": "9"
+    },
+    {
+      "name": "Dan-Dan",
+      "image": "Dan-Dan--63197",
+      "pond": "72",
+      "message": "Huge Congrats for the 1 M achievement and Happy HatchDay!\r\nHIDUP IDOL BEBEK!!!",
+      "sound": "10"
+    },
+    {
+      "name": "Zhaun",
+      "image": "Zhaun-335452",
+      "pond": "72",
+      "message": "Congrats Subaru on 1M I was one of the 2% Kaigai-niki viewers back then and I am so proud on the increase of Kaiga-nikis HBD!",
+      "sound": "-1"
+    },
+    {
+      "name": "\u7b67\u6f54",
+      "image": "\u7b67\u6f54-211861",
+      "pond": "72",
+      "message": "\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01\uff01\uff01\uff01\uff01\uff01\uff01\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "BananaV3",
+      "image": "BananaV3--23789",
+      "pond": "72",
+      "message": "\u304a\u3081\u3067\u3068\u3046\u30b9\u30d0\u30eb\u3061\u3083\u3093\uff01\u2661\u2661",
+      "sound": "-1"
+    },
+    {
+      "name": "DaFeel",
+      "image": "DaFeel-595670",
+      "pond": "72",
+      "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01",
+      "sound": "3"
+    },
+    {
+      "name": "DeZone",
+      "image": "TEMPLATE",
+      "pond": "73",
+      "message": "Congratulations for 1M, selamat2.. Terima kasih telah mengisi waktu gabutku mulai dari asmrmu hingga musikmu. ",
+      "sound": "-1"
+    },
+    {
+      "name": "Shadaroo",
+      "image": "Shadaroo-601222",
+      "pond": "73",
+      "message": "Congrats on 1M subscribers, Subaru! You deserve it!!! Here's to even more fun in the future!\r\nSHUBA!",
+      "sound": "7"
+    },
+    {
+      "name": "Cickarn",
+      "image": "Cickarn--40186",
+      "pond": "73",
+      "message": "HAPPY BIRTHDAY SHUBA SHUBA SHUBA",
+      "sound": "-1"
+    },
+    {
+      "name": "\u6708\u30f6\u702c\u307f\u306e\u308a",
+      "image": "\u6708\u30f6\u702c\u307f\u306e\u308a--21466",
+      "pond": "73",
+      "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u3001\u304a\u8a95\u751f\u65e5&100\u4e07\u4eba\u672c\u5f53\u306b\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\ud83c\udf89\r\n\u98a8\u30bf\u30af\u914d\u4fe1\u304b\u3089\u306a\u306e\u3067\u307e\u3060\u30b9\u30d0\u53cb\u6b741\u5e74\u306b\u3082\u6e80\u305f\u306a\u3044\u82e5\u8f29\u3067\u3059\u304c\u3001\u3053\u308c\u304b\u3089\u3082\u305a\u3063\u3068\u5fdc\u63f4\u3057\u3066\u3044\u307e\u3059\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "Hana <3",
+      "image": "Hana 3--72756",
+      "pond": "73",
+      "message": "Hello subaru, i just wanted to congratulate you on one million subs. Ive been a fan of you for a while and im happy for you!! ",
+      "sound": "6"
+    },
+    {
+      "name": "AxolotlArts",
+      "image": "AxolotlArts--13023",
+      "pond": "73",
+      "message": "Thank you for being you! Congratulations on 1 Million!",
+      "sound": "-1"
+    },
+    {
+      "name": "SanMarino",
+      "image": "SanMarino-252237",
+      "pond": "73",
+      "message": "Quackquack shubashuba quackquackquack!",
+      "sound": "7"
+    },
+    {
+      "name": "Mucci",
+      "image": "Mucci--36303",
+      "pond": "73",
+      "message": "Congratulation Subaru!!! You deserve every bit of success u gained through being yourself! I love youuuu \u2661\u2661",
+      "sound": "1"
+    },
+    {
+      "name": "Solitary",
+      "image": "Solitary-157694",
+      "pond": "73",
+      "message": "Feliz cumplea\u00f1os y felicidades por el 1M de subs",
+      "sound": "9"
+    },
+    {
+      "name": "frigid",
+      "image": "TEMPLATE",
+      "pond": "73",
+      "message": "Happy Birthday faqing cute duck",
+      "sound": "10"
+    },
+    {
+      "name": "Placek",
+      "image": "Placek-540755",
+      "pond": "73",
+      "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\u4e16\u754c\u4e2d\u306e\u30b9\u30d0\u30c8\u30e2\u306f\u3053\u308c\u304b\u3089\u4f55\u5e74\u3082\u30b9\u30d0\u30eb\u3092\u5fdc\u63f4\u3057\u307e\u3059\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "8lackz",
+      "image": "8lackz-444988",
+      "pond": "73",
+      "message": "Happy birthday and happy 1 Mil. When is that \"Step\" Cover",
+      "sound": "6"
+    },
+    {
+      "name": "Nkang",
+      "image": "Nkang--74974",
+      "pond": "73",
+      "message": "Congratz for 1M Subs! We will always support you!",
+      "sound": "-1"
+    },
+    {
+      "name": "Country Fields",
+      "image": "Country Fields-122130",
+      "pond": "73",
+      "message": "\u30b9\u30d0\u30eb\uff0c\u304a\u8a95\u751f\u65e5\u3068\u767b\u9332\u8005100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\u30b7\u30e5\u30d0 \u30b7\u30e5\u30d0 \u30b7\u30e5\u30d0 \uff01Subaru is always genki and cute and that's why we love you",
+      "sound": "-1"
+    },
+    {
+      "name": "Laggy",
+      "image": "Laggy--26606",
+      "pond": "73",
+      "message": "Happy-Birthday!!!",
+      "sound": "-1"
+    },
+    {
+      "name": "Tentacult IT guy",
+      "image": "Tentacult IT guy-514504",
+      "pond": "73",
+      "message": "WELL DONE SUBARU, YOU ARE BEST TOMBOY DUCK \r\nNEXT STOP 2 MILLION SHUBA SHUBA ",
+      "sound": "-1"
+    },
+    {
+      "name": "BryceyBoy",
+      "image": "BryceyBoy--29654",
+      "pond": "73",
+      "message": "CHUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!!!!!",
+      "sound": "2"
+    },
+    {
+      "name": "LIN YU AN",
+      "image": "LIN YU AN--49321",
+      "pond": "73",
+      "message": "Congratulations on this happy day. All fans love you.",
+      "sound": "-1"
+    },
+    {
+      "name": "Subarashii ",
+      "image": "TEMPLATE",
+      "pond": "73",
+      "message": "Congratz for the one million milestone our beloved duck deserved it #bestduck",
+      "sound": "1"
+    },
+    {
+      "name": "Goyo",
+      "image": "Goyo-123941",
+      "pond": "73",
+      "message": "Happy birthday Subaru ",
+      "sound": "-1"
+    },
+    {
+      "name": "Shuba_X",
+      "image": "Shuba_X-386187",
+      "pond": "74",
+      "message": "Selamat atas 1M subscriber",
+      "sound": "4"
+    },
+    {
+      "name": "OhWzky",
+      "image": "OhWzky-268355",
+      "pond": "74",
+      "message": "Happy Birthday to the number one, most interesting, cute, and entertaining duck! Thanks for all the fun! Shuba Shuba Shuba~!",
+      "sound": "5"
+    },
+    {
+      "name": "HansYu",
+      "image": "HansYu-389541",
+      "pond": "74",
+      "message": "Congratulations on reaching on a new milestone ! May more happiness and blessings come your way !",
+      "sound": "9"
+    },
+    {
+      "name": "Subatomo#5078",
+      "image": "Subatomo#5078--59042",
+      "pond": "74",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "-1"
+    },
+    {
+      "name": "Bacon Canpakes",
+      "image": "Bacon Canpakes-522143",
+      "pond": "74",
+      "message": "Happy birthday shuba! Happy 1 million! you have very nice english nanodesu. Watch \"The Great Pretender\" on Netflix",
+      "sound": "1"
+    },
+    {
+      "name": "Datadraino",
+      "image": "Datadraino--51308",
+      "pond": "74",
+      "message": "Congrats on 1 mil shuba! Love your content and your cheerfulness! I always look forward to watching you so, thank you shuba!",
+      "sound": "-1"
+    },
+    {
+      "name": "Potatodayoooon",
+      "image": "Potatodayoooon--54673",
+      "pond": "74",
+      "message": "1 million, shubaaaaa!!",
+      "sound": "-1"
+    },
+    {
+      "name": "Duckknight",
+      "image": "Duckknight--12165",
+      "pond": "74",
+      "message": "Congrats Subaru! I can't speak Japanese so I usually have to stick to translated clips, but I still adore you!",
+      "sound": "5"
+    },
+    {
+      "name": "Naafa",
+      "image": "Naafa--96257",
+      "pond": "74",
+      "message": "\u3057\u3085~\u3070\u3057\u3085\u3070\u3057\u3085\u3070\r\n100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "KhoaPhan96",
+      "image": "KhoaPhan96--61976",
+      "pond": "74",
+      "message": "Happy birthday Subaru! You are the most loveable duck I have ever met. Keep finding more mamas, friends and enjoyments in life!",
+      "sound": "12"
+    },
+    {
+      "name": "Len Quasimodo",
+      "image": "Len Quasimodo--55971",
+      "pond": "74",
+      "message": "Hello, Shuba! Congrats on the one million subs! Thank you so much for all of the laughs. Here, have a duck! (\\o^o/) give bread",
+      "sound": "-1"
+    },
+    {
+      "name": "KhoaPhan96",
+      "image": "KhoaPhan96--25937",
+      "pond": "74",
+      "message": "Happy birthday Subaru! From: not-your mama",
+      "sound": "6"
+    },
+    {
+      "name": "erni",
+      "image": "erni--39011",
+      "pond": "74",
+      "message": "\u2606*:.\uff61. o(\u2267\u25bd\u2266)o .\uff61.:*\u2606 \u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\uff01\uff01\r\nThank you for being the sunshine for so many of us! \u3057\u3085\u3070\u3042\u3042\u301c\uff01\uff01\r\n\u3044\u3064\u3082\u3042\u308a\u304c\u3068\u3046",
+      "sound": "2"
+    },
+    {
+      "name": "Shubarashi~",
+      "image": "Shubarashi~--33072",
+      "pond": "74",
+      "message": "I love you Subaru, you're the best girl indeed.",
+      "sound": "-1"
+    },
+    {
+      "name": "Unknown subatomo",
+      "image": "TEMPLATE",
+      "pond": "74",
+      "message": "Congratulations!!! For all the hard work you put in, 1 million subscribers is well deserved. ",
+      "sound": "-1"
+    },
+    {
+      "name": "Ra\u00fal Meza",
+      "image": "Ra\u00fal Meza-519511",
+      "pond": "74",
+      "message": "Congratulations Subaru, all the way from Mexico. Let's all keep flying and reaching higher and higher!!!\r\nFelicidades \u2665",
+      "sound": "10"
+    },
+    {
+      "name": "KuroTheDog",
+      "image": "KuroTheDog-426011",
+      "pond": "74",
+      "message": "\u304a\u3081\u3067\u3068\u3046lations! Subaru-san you are by far my favorite duck. Wish you the best, and long live the SHUBAAAA!!!!",
+      "sound": "1"
+    },
+    {
+      "name": "Renewed Salt",
+      "image": "Renewed Salt--43113",
+      "pond": "74",
+      "message": "Thank you for being so energetic! Your voice makes me happy. Congratulations on 1 million!",
+      "sound": "2"
+    },
+    {
+      "name": "Anwarbro",
+      "image": "Anwarbro-326827",
+      "pond": "74",
+      "message": "Happy Birthday and Congratulations for 1 million subs, Subaru!!  Wish you all the best and keep on being the cutest duck!",
+      "sound": "5"
+    },
+    {
+      "name": "ChoobGoob",
+      "image": "ChoobGoob--35954",
+      "pond": "74",
+      "message": "Congratulations on the milestone and I hope you have a happy birthday, thank you for all of the fun memories ",
+      "sound": "5"
+    },
+    {
+      "name": "kuro",
+      "image": "kuro--36088",
+      "pond": "75",
+      "message": "omedeta",
+      "sound": "-1"
+    },
+    {
+      "name": "\u30c9\u30c9\u30c9\u30c9\u30a4\u30eb",
+      "image": "\u30c9\u30c9\u30c9\u30c9\u30a4\u30eb--19604",
+      "pond": "75",
+      "message": "today......you are a birthday duck now......so\uff0chappy birthday!",
+      "sound": "5"
+    },
+    {
+      "name": "setsune",
+      "image": "setsune--24316",
+      "pond": "75",
+      "message": "Congrats! 1mil!",
+      "sound": "9"
+    },
+    {
+      "name": "\u306a\u3061\u3087",
+      "image": "\u306a\u3061\u3087-484384",
+      "pond": "75",
+      "message": "Congratulations!! we love you!!!\r\n",
+      "sound": "-1"
+    },
+    {
+      "name": "totang",
+      "image": "totang--33867",
+      "pond": "75",
+      "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\uff01\u8a95\u751f\u65e5\uff06100\u4e07\u4eba\u767b\u9332\u8005\u304a\u3081\u3067\u3068\u3046\uff01\r\n\u30b9\u30d0\u30eb\u3061\u3083\u3093\u304c\u3081\u3061\u3083\u304f\u3061\u3083\u697d\u3057\u305d\u3046\u306b\u30b2\u30fc\u30e0\u3057\u3066\u3044\u308b\u3068\u3053\u308d\u3084\u6b4c\u3063\u3066\u8e0a\u308b\u59ff\u304c\u5927\u597d\u304d\u3067\u3059\uff01",
+      "sound": "11"
+    },
+    {
+      "name": "Komekko",
+      "image": "Komekko-623030",
+      "pond": "75",
+      "message": "Congratulation on 1 million milestone and happy birthday!",
+      "sound": "5"
+    },
+    {
+      "name": "Bobbeh",
+      "image": "Bobbeh-288191",
+      "pond": "75",
+      "message": "Congratulations and happy birthday, you are my favorite swan!",
+      "sound": "-1"
+    },
+    {
+      "name": "@_AeMV",
+      "image": "@_AeMV-179315",
+      "pond": "75",
+      "message": "Congratulations and a happy birthday Subaru! Greetings from the Candy Kingdom! (\u3059\u3070\u308b\u3055\u3093\u3001\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059! \u304a\u83d3\u5b50\u306e\u56fd\u304b\u3089\u306e\u30e1\u30c3\u30bb\u30fc\u30b8!)",
+      "sound": "3"
+    },
+    {
+      "name": "BeanZone",
+      "image": "TEMPLATE",
+      "pond": "75",
+      "message": "Happy happy birthday Subaru. Best Vtuber\r\nFrom the BeanZone",
+      "sound": "9"
+    },
+    {
+      "name": "Ni-R",
+      "image": "Ni-R-566622",
+      "pond": "75",
+      "message": "Dear Subaru, Happy birthday & Congratulations on another huge milestone!!! As always, thank you for the joy you always bring.",
+      "sound": "4"
+    },
+    {
+      "name": "Dudung",
+      "image": "Dudung-259381",
+      "pond": "75",
+      "message": "Congrats SHUBA! Kore Kara Mo Yoroshiku Onegai ta shimasu -From Indonesia Fan \r\nSelamat SUBARU!",
+      "sound": "10"
+    },
+    {
+      "name": "Subatomo#9859",
+      "image": "Subatomo#9859-519229",
+      "pond": "75",
+      "message": "congrations",
+      "sound": "-1"
+    },
+    {
+      "name": "Shuba shuba",
+      "image": "Shuba shuba--49617",
+      "pond": "75",
+      "message": "Congratulations Subaru! So happy that our favourite duck was able to meet such a big milestone, we love you Subaru! :DD",
+      "sound": "-1"
+    },
+    {
+      "name": "\u5927\u5922\u30aa\u30ea\u30aa\u30f3",
+      "image": "\u5927\u5922\u30aa\u30ea\u30aa\u30f3--16049",
+      "pond": "75",
+      "message": "100\u4e07 \u30b5\u30d6\u30b9\u30af\u30e9\u30a4\u30d0\u30fc \u304a\u3081\u3067\u3068\u3046 \uff01 \u3053\u308c \u304b\u3089 \u3082 \u3088\u308d\u3057\u304f \u304a\u9858\u3044\u3057\u307e\u3059 \uff01Stay healthy and stay happy \uff01",
+      "sound": "10"
+    },
+    {
+      "name": "ArGame",
+      "image": "ArGame--57407",
+      "pond": "75",
+      "message": "Happy birthday & 1M subs Subaru! Shuba shuba shuba!!!",
+      "sound": "12"
+    },
+    {
+      "name": "\u3072\u3050\u307e\u306e\u6d0b",
+      "image": "\u3072\u3050\u307e\u306e\u6d0b--25161",
+      "pond": "75",
+      "message": "100\u4e07\u4eba\u9054\u6210\uff06\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01\uff01\r\n\u3044\u3064\u3082\u7b49\u8eab\u5927\u3067\u30b9\u30d0\u53cb\u3068\u63a5\u3057\u3066\u304f\u308c\u308b\u30b9\u30d0\u30eb\u3061\u3083\u3093\u304c\u5927\u597d\u304d\u3060\u3088\uff01\uff01\uff01\u3053\u308c\u304b\u3089\u3082\u5fdc\u63f4\u3057\u3066\u308b\u3088\u30fc\u30fc\u30fc\uff01\uff01\uff01\uff01",
+      "sound": "10"
+    },
+    {
+      "name": "stovetopism",
+      "image": "stovetopism-849549",
+      "pond": "75",
+      "message": "Congratulations Subaru! You're the best!",
+      "sound": "1"
+    },
+    {
+      "name": "FuYo",
+      "image": "FuYo-432890",
+      "pond": "75",
+      "message": "Congratulations Subaru-chan on mil 1 subs!!!!",
+      "sound": "7"
+    },
+    {
+      "name": "Crimson",
+      "image": "Crimson--15991",
+      "pond": "75",
+      "message": "Omedetou Subaru-chan on 1 million subscriber!!!\r\nContinue to make great & cute content for us subatomo <3",
+      "sound": "1"
+    },
+    {
+      "name": "Candel34",
+      "image": "Candel34--41194",
+      "pond": "75",
+      "message": "I like it when you sneeze",
+      "sound": "-1"
+    },
+    {
+      "name": "StuG_Lyfe",
+      "image": "TEMPLATE",
+      "pond": "76",
+      "message": "Happy birthday and congratulations on 1M subs! Keep being true to your name and moniker as The Sun of Hololive and shine on!",
+      "sound": "10"
+    },
+    {
+      "name": "KeenyPeeny",
+      "image": "KeenyPeeny-317213",
+      "pond": "76",
+      "message": "you are best duck!!! shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba shuba",
+      "sound": "4"
+    },
+    {
+      "name": "Glitched",
+      "image": "Glitched-646531",
+      "pond": "76",
+      "message": "Happy Birthday! more asmr please!",
+      "sound": "4"
+    },
+    {
+      "name": "NarwhalHorns",
+      "image": "NarwhalHorns--39837",
+      "pond": "76",
+      "message": "SUBARUUU! I love your high energy and excited streams. Please keep being yourself and being amazing.",
+      "sound": "10"
+    },
+    {
+      "name": "ExoticMilkshake",
+      "image": "ExoticMilkshake-384174",
+      "pond": "76",
+      "message": "\u30c1\u30e3\u30f3\u30cd\u30eb\u767b\u9332\u8005\u6570100\u4e07\u4eba\u9054\u6210\u3001\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059 ! \u79c1\u306f\u30b9\u30d0\u30eb\u3092\u898b\u308b\u3068\u3044\u3064\u3082\u7b11\u9854\u306b\u306a\u308a\u307e\u3059\u3057\u3001\u304d\u3063\u3068\u7686\u3055\u3093\u3082\u540c\u3058\u3060\u3068\u601d\u3044\u307e\u3059\u3002\u5b58\u5728\u3057\u3066\u304f\u308c\u3066\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "sound": "2"
+    },
+    {
+      "name": "Merri",
+      "image": "TEMPLATE",
+      "pond": "76",
+      "message": "Happy 1 Million!!!!!!!!!!!!!! ",
+      "sound": "-1"
+    },
+    {
+      "name": "yincka ",
+      "image": "yincka -357372",
+      "pond": "76",
+      "message": "Congratulations subaru, you're the greatest. ",
+      "sound": "7"
+    },
+    {
+      "name": "habsfan616",
+      "image": "habsfan616--39023",
+      "pond": "76",
+      "message": "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059100\u4e07! I don't speak Japanese, but all the subbed clips of Subaru are the best!\r\n \u30b9\u30d0\u30eb\u306f1\u756a\u306e\u30a2\u30a4\u30c9\u30eb! \u30ab\u30ca\u30c0\u306f\u30b9\u30d0\u30eb\u304c\u5927\u597d\u304d! \u5f7c\u5973\u306f\u3068\u3066\u3082\u52e4\u52c9\u3067\u3059!",
+      "sound": "2"
+    },
+    {
+      "name": "\u4eca\u65e5\u30fb\u30b3\u30f3\u30de\u30fb\u3089\u3076\u3061\u3085\u3063\u3061\u3086",
+      "image": "\u4eca\u65e5\u30fb\u30b3\u30f3\u30de\u30fb\u3089\u3076\u3061\u3085\u3063\u3061\u3086--35888",
+      "pond": "76",
+      "message": "\u767b\u9332\u8005100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\uff01\uff01\uff01\r\n\u3053\u308c\u3082\u30b9\u30d0\u30eb\u3061\u3083\u3093\u306e\u9b45\u529b\u304c\u3042\u3063\u3066\u3053\u305d\uff01\r\n\u3053\u308c\u304b\u3089\u3082\u5fdc\u63f4\u3057\u3066\u3044\u304f\u304b\u3089\u3088\u308d\u3057\u304f\uff01\uff01\uff01",
+      "sound": "-1"
+    },
+    {
+      "name": "Erwin_Delfin",
+      "image": "Erwin_Delfin-134011",
+      "pond": "76",
+      "message": "Congratulations on 1m subatomo Subaru!Despite not speaking Japanese I always tune in to your chatting streams.Love from Poland!",
+      "sound": "-1"
+    },
+    {
+      "name": "ShubaMing",
+      "image": "TEMPLATE",
+      "pond": "76",
+      "message": "Omedetou Shuba Chuba!!!",
+      "sound": "1"
+    },
+    {
+      "name": "\u3072\u307e\u3058\u3093",
+      "image": "\u3072\u307e\u3058\u3093-494762",
+      "pond": "76",
+      "message": "\u30b9\u30d0\u30eb\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\uff5e!\ud83c\udf89\u30b9\u30d0\u30eb\u306e\u304a\u8a95\u751f\u65e5\u3092\u304a\u795d\u3044\u3059\u308b\u4e8b\u304c\u3067\u304d\u3066\u3068\u3066\u3082\u5b09\u3057\u3044\u3067\u3059\uff61\u30b9\u30d0\u30eb\u306e\u914d\u4fe1\u304b\u3089\u6bce\u9031\u9811\u5f35\u308b\u5143\u6c17\u3092\u3082\u3089\u3063\u3066\u3053\u308c\u307e\u3057\u305f!\u3053\u308c\u304b\u3089\u3082\u5065\u5eb7\u306b\u6c17\u3092\u3064\u3051\u3066\u697d\u3057\u304f\u914d\u4fe1\u3057\u3066\u3044\u3063\u3066\u306d!\u6539\u3081\u3066\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046!",
+      "sound": "-1"
+    },
+    {
+      "name": "Eldritch Candy",
+      "image": "Eldritch Candy--18130",
+      "pond": "76",
+      "message": "Shuba Shuba <3\r\nThank you for all the fun times \r\n& best of luck for everything you are going to do!\r\nWe love you very much~",
+      "sound": "2"
+    },
+    {
+      "name": "Kobayashi",
+      "image": "Kobayashi-191438",
+      "pond": "76",
+      "message": "Ducks makes me happy, Subaru dancing with a duck makes me happy, Subaru makes me happy :)",
+      "sound": "7"
+    },
+    {
+      "name": "Schiz0",
+      "image": "Schiz0--40626",
+      "pond": "76",
+      "message": "Happy birthday and congrats on all your achievements throughout this journey wish you the best luck and that you keep having fun",
+      "sound": "1"
+    },
+    {
+      "name": "Carson7645",
+      "image": "Carson7645--22675",
+      "pond": "76",
+      "message": "100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\uff01\uff01\r\nCongratulations Subaru, keep doing your best!",
+      "sound": "-1"
+    },
+    {
+      "name": "MultiCore",
+      "image": "MultiCore-413560",
+      "pond": "76",
+      "message": "Happy birthday Subaru!/Gefeliciteerd Subaru!",
+      "sound": "4"
+    },
+    {
+      "name": "Linkling",
+      "image": "Linkling--81354",
+      "pond": "76",
+      "message": "Subaru happy birthday!!!! I love your streams and I will continue to support you best duck idol, I love u subaru shuba shuba!!!!",
+      "sound": "7"
+    },
+    {
+      "name": "Kizuko",
+      "image": "Kizuko-764652",
+      "pond": "76",
+      "message": "Congratulations and happy celebrations to our favourite duck and police officer for reaching 1 million subscribers!!",
+      "sound": "4"
+    },
+    {
+      "name": "\u5915\u541b",
+      "image": "TEMPLATE",
+      "pond": "76",
+      "message": "\uff11\uff10\uff10\u4e07\u304a\u3081\u3067\u3068\u3046\uff5e\uff01\u30a4\u30f3\u30c9\u30cd\u30b7\u30a2\u304b\u3089\u306e\u30d5\u30a1\u30f3\u3067\u3059\u3002Google\u7ffb\u8a33\u4f7f\u308f\u305a\u306b\u9811\u5f35\u3063\u3066\u66f8\u304d\u307e\u3059\uff01\u3053\u308c\u304b\u3089\u3082\u3044\u3064\u3082\u306e\u30b9\u30d0\u30eb\u3067\u3044\u3066\u304f\u308c\u306d\uff01\uff12\uff10\uff10\u4e07\u306b\u306a\u3063\u305f\u3089\u307e\u305f\u304a\u795d\u3044\u306b\u6765\u308b\u3093\u3067\u305c\u3072\u304a\u697d\u3057\u307f\u306b\uff01\u3057\u3085\u3070\u3057\u3085\u3070\u3057\u3085\u3070\u3063\uff01",
+      "sound": "4"
+    },
+    {
+      "name": "Caden Friesen",
+      "image": "Caden Friesen--61654",
+      "pond": "77",
+      "message": "Congrats and happy birthday to our favorite tomboy duck! Thanks for all the laughs and shubas along the way. Good luck on 2Mil!",
+      "sound": "1"
+    },
+    {
+      "name": "Nehi",
+      "image": "Nehi--31025",
+      "pond": "77",
+      "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u3001\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\u305d\u3057\u3066\u3001\u767b\u9332\u8005\u6570100\u4e07\u4eba\u9054\u6210\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3044\u3064\u3082\u7b11\u9854\u3092\u5c4a\u3051\u3066\u304f\u308c\u3066\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3059\u3070\u308b\u3055\u3093\u306e\u5922\u3084\u76ee\u6a19\u304c\u53f6\u3046\u3053\u3068\u3092\u9858\u3063\u3066\u3044\u307e\u3059\u3002(DeepL)",
+      "sound": "10"
+    },
+    {
+      "name": "Abdullah Ihsan",
+      "image": "Abdullah Ihsan--13951",
+      "pond": "77",
+      "message": "Hello Subaru! I wish you congratulations on your 1M subscribers and happy birthday to you. Keep up the good work for us.From 35P",
+      "sound": "9"
+    },
+    {
+      "name": "_(: \u300d\u2220)_",
+      "image": "_( \u300d\u2220)_-488724",
+      "pond": "77",
+      "message": "Happy Birthday and congratulations on 1 million subscribers!",
+      "sound": "6"
+    },
+    {
+      "name": "Amon",
+      "image": "Amon--61334",
+      "pond": "77",
+      "message": "Happy birthday Subaru! You are my favourite idol, your streams always make me smile! I hope you continue to do your best!",
+      "sound": "3"
+    },
+    {
+      "name": "Quack",
+      "image": "Quack-351262",
+      "pond": "77",
+      "message": "Quack quack",
+      "sound": "7"
+    },
+    {
+      "name": "Jamy",
+      "image": "Jamy--28945",
+      "pond": "77",
+      "message": "Congratulatiooons!!!\r\nAnd i wish you more spectacular birthdays!\r\n~Shuba~shuba",
+      "sound": "-1"
+    },
+    {
+      "name": "Shane O'Driscoll",
+      "image": "Shane O'Driscoll-696238",
+      "pond": "77",
+      "message": "Congrats on 1M Subs. I love your Videos & you are my fav Hololive Member. Keep Up the Fantastic Work As Always. ShubaShubaQUACK!",
+      "sound": "6"
+    },
+    {
+      "name": "OakenSoup6",
+      "image": "OakenSoup6-129818",
+      "pond": "77",
+      "message": "Feliz cumplea\u00f1os y felicidades por 1 mill\u00f3n de suscriptores!Happy birthday and congratulations for 1 million subscribers! \u304a\u3081\u3067\u3068\u3046!",
+      "sound": "4"
+    },
+    {
+      "name": "Shadow Dragon",
+      "image": "Shadow Dragon-135638",
+      "pond": "77",
+      "message": "Happy birthday and congratulations on 1 M subscribers!!! I really like content that you give to all of us. Love you!",
+      "sound": "-1"
+    },
+    {
+      "name": "Harsoning Tyas M",
+      "image": "Harsoning Tyas M--16627",
+      "pond": "77",
+      "message": "Congratilation on hitting 1M subs!!! Keep The Hard work!!!\r\n\"Holobird together strong\"",
+      "sound": "10"
+    },
+    {
+      "name": "My oh my",
+      "image": "My oh my--21757",
+      "pond": "77",
+      "message": "Happy birthday SHUBAAAAAAA!! ",
+      "sound": "-1"
+    },
+    {
+      "name": "\u30a4\u30e9\u30ce\u30f3",
+      "image": "TEMPLATE",
+      "pond": "77",
+      "message": "I love you.",
+      "sound": "-1"
+    },
+    {
+      "name": "Subarusaurio fan",
+      "image": "Subarusaurio fan-182519",
+      "pond": "77",
+      "message": "Congratulations for your success Subaru, all of us (subatomos) are very very proud of you and we love you",
+      "sound": "2"
+    },
+    {
+      "name": "jajofjiofajo",
+      "image": "jajofjiofajo--43001",
+      "pond": "77",
+      "message": "Happy birthday and congrats on 1 million subs Subaru!!!",
+      "sound": "9"
+    },
+    {
+      "name": "Jes\u00fas Alberto",
+      "image": "Jes\u00fas Alberto-883285",
+      "pond": "77",
+      "message": "Hello Miss Duck! Felicidades por 1M de subscriptores. Espero que sigas creciendo y divirti\u00e9ndote. SUBARU IS BEST GIRL!",
+      "sound": "10"
+    },
+    {
+      "name": "TwilitShadow",
+      "image": "TwilitShadow--25266",
+      "pond": "77",
+      "message": "Congratulations Subaru! \u304a\u3081\u3067\u3068\u3046\uff01\r\nThanks for all the wonderful streams\uff01\u3044\u3064\u3082\u7d20\u6575\u306a\u30b9\u30c8\u30ea\u30fc\u30e0\u3092\u3042\u308a\u304c\u3068\u3046!",
+      "sound": "7"
+    },
+    {
+      "name": "N.S",
+      "image": "N.S--38057",
+      "pond": "78",
+      "message": "Never Yametekudastop what you're doing!",
+      "sound": "-1"
+    },
+    {
+      "name": "Untitled Duck",
+      "image": "Untitled Duck--48602",
+      "pond": "78",
+      "message": "Congratulations on reaching 1 million subs!!!",
+      "sound": "4"
+    },
+    {
+      "name": "Tungzaja",
+      "image": "Tungzaja--17796",
+      "pond": "78",
+      "message": "Shuba!\r\nCongratulation  supa duck",
+      "sound": "4"
+    },
+    {
+      "name": "NODDY",
+      "image": "NODDY-364648",
+      "pond": "78",
+      "message": "love your energy, keep it up. Here's to the best duck!!!",
+      "sound": "-1"
+    },
+    {
+      "name": "Kyureon",
+      "image": "Kyureon-507642",
+      "pond": "78",
+      "message": "Subaru congratulations for the 1m Subscriber milestones!",
+      "sound": "9"
+    },
+    {
+      "name": "hopping",
+      "image": "hopping--33672",
+      "pond": "78",
+      "message": "Congrats for 1 million subs and happy birthday!! You have us kaigai nikis' support too so it's okay to aim even higher shuba!!",
+      "sound": "7"
+    },
+    {
+      "name": "Docchi Docchi!",
+      "image": "Docchi Docchi!--55320",
+      "pond": "78",
+      "message": "Congratulations On 1 Million subscribers!!! I am a big fam of you! You make me happy when i\u2019m sad! I love your streams! Shuba!!!",
+      "sound": "-1"
+    },
+    {
+      "name": "Rizal",
+      "image": "Rizal--22364",
+      "pond": "78",
+      "message": "Congratulations for reaching 1M subscribers my best idol duck. ",
+      "sound": "-1"
+    },
+    {
+      "name": "Fistinlek100",
+      "image": "Fistinlek100-359158",
+      "pond": "78",
+      "message": "Congratulations On 1 million. Hope to see you grow so much more",
+      "sound": "-1"
+    },
+    {
+      "name": "Go Mako",
+      "image": "Go Mako--47327",
+      "pond": "78",
+      "message": "wyatb yo",
+      "sound": "-1"
+    },
+    {
+      "name": "REIXIAN",
+      "image": "REIXIAN--29961",
+      "pond": "78",
+      "message": "Shubaaa! Subaru congratulations in your 1 million subcribers you're the best idol duck in the world!!",
+      "sound": "-1"
+    },
+    {
+      "name": "FlaskSnap",
+      "image": "FlaskSnap-475550",
+      "pond": "78",
+      "message": "A cute duck that always makes my day? It can only be Subaru! Let's continue and celebrate the many milestones to come!",
+      "sound": "2"
+    },
+    {
+      "name": "GoldenSign",
+      "image": "GoldenSign-446034",
+      "pond": "78",
+      "message": "C o n g r a t u l a t i o n s  O n  O n e  M i l l i o n ! ! ! ! ! ! ! !",
+      "sound": "6"
+    },
+    {
+      "name": "\u3082\u30fc\u3068\u3053",
+      "image": "TEMPLATE",
+      "pond": "78",
+      "message": "\u3061\u3085\u3070\u3061\u3085\u3070\uff01\uff01\u3057\u3085\u3070\u3057\u3085\u3070\u3070\u3070\u3070\uff01\uff08\u304a\u8a95\u751f\u65e5\uff01\uff01\u304a\u3081\u3067\u3068\u3046\u3046\u3046\uff01\uff09",
+      "sound": "9"
+    },
+    {
+      "name": "Yokai",
+      "image": "Yokai-350576",
+      "pond": "78",
+      "message": "CONGRATULATIONS SUBARU SHUBA SHUBA SHUBA",
+      "sound": "-1"
+    },
+    {
+      "name": "sheep Lec",
+      "image": "sheep Lec-115207",
+      "pond": "78",
+      "message": "\u30b9\u30d0\u30eb\u3061\u3083\u3093\u304a\u8a95\u751f\u65e5\u3068\u767b\u9332\u8005100\u4e07\u304a\u3081\u3067\u3068\u3046\uff01\u304d\u3063\u3068\u3053\u308c\u304b\u3089\u3082\u81ea\u8eab\u306e\u4e88\u60f3\u5916\u306e\u3068\u3053\u308d\u3067\u30d0\u30ba\u308a\u7d9a\u3051\u308b\u306e\u3060\u308d\u3046\u3051\u3069\u3001\u305d\u3093\u306a\u30b9\u30d0\u30eb\u3061\u3083\u3093\u306e\u7b11\u3044\u3068\u30d1\u30c3\u30b7\u30e7\u30f3\u306b\u3042\u3075\u308c\u305f\u914d\u4fe1\u3068\u96a0\u308c\u305f\u52aa\u529b\u3092\u30b9\u30d0\u53cb\u4e00\u540c\u898b\u5b88\u308a\u3092\u7d9a\u3051\u3089\u308c\u308b\u3088\u3046\u9858\u3063\u3066\u3044\u307e\u3059\u3002Do our  best!!",
+      "sound": "12"
+    },
+    {
+      "name": "LEE",
+      "image": "LEE-592234",
+      "pond": "78",
+      "message": "Chubaaaaaaaaaa! Congratulation on 1 million subscriber!! Subaru is my first JP hololive member that i sub to! Love from Malaysia",
+      "sound": "9"
+    },
+    {
+      "name": "Sleepyhead",
+      "image": "Sleepyhead--34572",
+      "pond": "78",
+      "message": "Happy birthday Subaru! Don't forget to cherish your friends! ",
+      "sound": "9"
+    },
+    {
+      "name": "\u30ef\u30a4\u30e4\u30fc\u30c9",
+      "image": "\u30ef\u30a4\u30e4\u30fc\u30c9-436569",
+      "pond": "79",
+      "message": "Sending you my warmest wishes on this very special day! \u304a\u8a95\u751f\u65e5\u3068100\u4e07\u4eba\u304a\u3081\u3067\u3068\u3046!",
+      "sound": "12"
+    },
+    {
+      "name": "reamer",
+      "image": "reamer--40818",
+      "pond": "79",
+      "message": "Good job on 1m keep giving us good clip worthy content and happy birthday ",
+      "sound": "-1"
+    },
+    {
+      "name": "Subatomo#1845",
+      "image": "Subatomo#1845--47883",
+      "pond": "79",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "9"
+    },
+    {
+      "name": "Oppen_heimer",
+      "image": "Oppen_heimer-362255",
+      "pond": "79",
+      "message": ":)",
+      "sound": "6"
+    },
+    {
+      "name": "Subarusaurio fan",
+      "image": "Subarusaurio fan-371961",
+      "pond": "79",
+      "message": "congratulations from Chile, we hope your channel grow more and more and more people see how cute you are :P",
+      "sound": "11"
+    },
+    {
+      "name": "Kuack",
+      "image": "Kuack-209342",
+      "pond": "79",
+      "message": "Jajajaj",
+      "sound": "-1"
+    },
+    {
+      "name": "Felis2007",
+      "image": "Felis2007-148060",
+      "pond": "79",
+      "message": "SHUBA! CONGRATULATIONS!! DUCK GOING BIGGER AND BIGGER!! OMEDETOUUUU!!",
+      "sound": "-1"
+    },
+    {
+      "name": "Alsur",
+      "image": "Alsur-427673",
+      "pond": "79",
+      "message": "Shubaaa thanks !",
+      "sound": "1"
+    },
+    {
+      "name": "\u30df\u30a4\u30c8",
+      "image": "\u30df\u30a4\u30c8-354782",
+      "pond": "79",
+      "message": "Congratulations Subaru!!!!!!",
+      "sound": "0"
+    },
+    {
+      "name": "Alduis",
+      "image": "Alduis-542809",
+      "pond": "79",
+      "message": "LETS GOOOOOOOO",
+      "sound": "-1"
+    },
+    {
+      "name": "R.O.B. SQUAD",
+      "image": "R.O.B. SQUAD--30733",
+      "pond": "79",
+      "message": "Congrats on 1 million ducks Subaru! Here's to another million ducks and shubas!",
+      "sound": "10"
+    },
+    {
+      "name": "Stephen Carr",
+      "image": "Stephen Carr--29990",
+      "pond": "79",
+      "message": "Congrats on 1 million Subaru! Your streams always make me smile and can brighten up even the worst days. Love you!",
+      "sound": "-1"
+    },
+    {
+      "name": "Isa",
+      "image": "Isa--22607",
+      "pond": "79",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "3"
+    },
+    {
+      "name": "Japannon3e",
+      "image": "Japannon3e-177254",
+      "pond": "79",
+      "message": "Love love love ",
+      "sound": "-1"
+    },
+    {
+      "name": "Franklin Orbe",
+      "image": "Franklin Orbe-320403",
+      "pond": "79",
+      "message": "Subaru, I've been watching cartoon ducks since I was a kid, but you're by far the best there's ever been. Thank you and \u304a\u3081\u3067\u3068\u3046\uff01\uff01",
+      "sound": "5"
+    },
+    {
+      "name": "FarhanLtif",
+      "image": "FarhanLtif--61239",
+      "pond": "79",
+      "message": "\u3053\u3093\u306b\u3061\u306f \u3059\u3070\u308b\u3061\u3083\u3093\u3002I'm from Malaysia and I love shuba shuba duck. Thanks for always brighten our days subaru chan.",
+      "sound": "-1"
+    },
+    {
+      "name": "Wilf G",
+      "image": "Wilf G-371721",
+      "pond": "79",
+      "message": "Congratulations \ud83d\udc4f I have watched you for a long time now and I am so happy for this big milestone.",
+      "sound": "-1"
+    },
+    {
+      "name": "gabritarta",
+      "image": "gabritarta--41903",
+      "pond": "79",
+      "message": "congratulation from oversea",
+      "sound": "1"
+    },
+    {
+      "name": "Adymunrox",
+      "image": "Adymunrox--20859",
+      "pond": "79",
+      "message": "Thank you for all the fun times Shuba!\r\nLove you, always! We will continue to support our favorite tomboy duck Idol.",
+      "sound": "7"
+    },
+    {
+      "name": "Lu\u00eds ",
+      "image": "Lu\u00eds -526789",
+      "pond": "79",
+      "message": "Congratulations Subaru, you deserve it for all the effort you put into being an idol.\r\nLove from Brazil\r\n",
+      "sound": "1"
+    },
+    {
+      "name": "Subatomo#2751",
+      "image": "Subatomo#2751--34867",
+      "pond": "80",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "-1"
+    },
+    {
+      "name": "Wyncko",
+      "image": "Wyncko--63420",
+      "pond": "80",
+      "message": "Congratulations, shuba shuba!",
+      "sound": "-1"
+    },
+    {
+      "name": "Subatomo#6508",
+      "image": "Subatomo#6508-472252",
+      "pond": "80",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "9"
+    },
+    {
+      "name": "Zero0123",
+      "image": "Zero0123--22196",
+      "pond": "80",
+      "message": "Congratulations",
+      "sound": "9"
+    },
+    {
+      "name": "Leviatonn",
+      "image": "Leviatonn--57961",
+      "pond": "80",
+      "message": "The duck has become a swan!",
+      "sound": "-1"
+    },
+    {
+      "name": "Yugimumoto1",
+      "image": "Yugimumoto1-431727",
+      "pond": "80",
+      "message": "Congratulations subaru! You are such an amazing idol and your streams make me very happy",
+      "sound": "0"
+    },
+    {
+      "name": "boiledbagel",
+      "image": "boiledbagel--35247",
+      "pond": "80",
+      "message": "congratulations and happy birthday!",
+      "sound": "-1"
+    },
+    {
+      "name": "JJ",
+      "image": "TEMPLATE",
+      "pond": "80",
+      "message": "Congratulations Subaru on hitting 1 million subs! I'm sorry I don't know Japanese but I still enjoy  your streams very much! ",
+      "sound": "-1"
+    },
+    {
+      "name": "Ghallbk",
+      "image": "Ghallbk--11883",
+      "pond": "80",
+      "message": "Happy birthday and congratulations on 1 million subscribers!",
+      "sound": "-1"
+    },
+    {
+      "name": "Francis from PH",
+      "image": "Francis from PH--42632",
+      "pond": "80",
+      "message": "\u304a\u305f\u3093\u3058\u3087\u3046\u3073\u304a\u3081\u3067\u3068\u3046. Wishing you a happy life and good health ahead. We are always at your back so keep smiling our tomboy duck. Love U",
+      "sound": "-1"
+    },
+    {
+      "name": "duckywakiwaki",
+      "image": "duckywakiwaki-394600",
+      "pond": "80",
+      "message": "happiest birthday shubachan!  Hearts for you  \ud83d\udc95 \ud83d\udc95 \ud83d\udc95 \ud83d\udc95",
+      "sound": "0"
     }
   ]
 }

@@ -1,0 +1,859 @@
+{
+  "textures": [
+    {
+      "image": "boat.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1024,
+        "h": 512
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "Boat_1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 1,
+            "w": 104,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 104,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 1,
+            "w": 104,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 64,
+            "w": 104,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_5.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 1,
+            "w": 104,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 128,
+            "w": 104,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_0.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 192,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 256,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 320,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_6.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 384,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_36.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 0,
+            "y": 448,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_37.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 103,
+            "y": 192,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_38.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 104,
+            "y": 0,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_39.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 1,
+            "w": 103,
+            "h": 64
+          },
+          "frame": {
+            "x": 104,
+            "y": 64,
+            "w": 103,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_7.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 1,
+            "w": 102,
+            "h": 64
+          },
+          "frame": {
+            "x": 104,
+            "y": 128,
+            "w": 102,
+            "h": 64
+          }
+        },
+        {
+          "filename": "Boat_8.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 2,
+            "w": 103,
+            "h": 63
+          },
+          "frame": {
+            "x": 103,
+            "y": 256,
+            "w": 103,
+            "h": 63
+          }
+        },
+        {
+          "filename": "Boat_35.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 2,
+            "w": 103,
+            "h": 63
+          },
+          "frame": {
+            "x": 103,
+            "y": 319,
+            "w": 103,
+            "h": 63
+          }
+        },
+        {
+          "filename": "Boat_9.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 2,
+            "w": 102,
+            "h": 63
+          },
+          "frame": {
+            "x": 103,
+            "y": 382,
+            "w": 102,
+            "h": 63
+          }
+        },
+        {
+          "filename": "Boat_34.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 2,
+            "w": 102,
+            "h": 63
+          },
+          "frame": {
+            "x": 103,
+            "y": 445,
+            "w": 102,
+            "h": 63
+          }
+        },
+        {
+          "filename": "Boat_10.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 3,
+            "w": 103,
+            "h": 62
+          },
+          "frame": {
+            "x": 205,
+            "y": 382,
+            "w": 103,
+            "h": 62
+          }
+        },
+        {
+          "filename": "Boat_33.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 1,
+            "y": 2,
+            "w": 102,
+            "h": 62
+          },
+          "frame": {
+            "x": 205,
+            "y": 444,
+            "w": 102,
+            "h": 62
+          }
+        },
+        {
+          "filename": "Boat_12.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 3,
+            "w": 103,
+            "h": 61
+          },
+          "frame": {
+            "x": 307,
+            "y": 444,
+            "w": 103,
+            "h": 61
+          }
+        },
+        {
+          "filename": "Boat_30.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 3,
+            "w": 103,
+            "h": 61
+          },
+          "frame": {
+            "x": 410,
+            "y": 444,
+            "w": 103,
+            "h": 61
+          }
+        },
+        {
+          "filename": "Boat_11.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 3,
+            "w": 102,
+            "h": 61
+          },
+          "frame": {
+            "x": 513,
+            "y": 444,
+            "w": 102,
+            "h": 61
+          }
+        },
+        {
+          "filename": "Boat_31.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 3,
+            "w": 102,
+            "h": 61
+          },
+          "frame": {
+            "x": 206,
+            "y": 128,
+            "w": 102,
+            "h": 61
+          }
+        },
+        {
+          "filename": "Boat_32.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 2,
+            "y": 3,
+            "w": 102,
+            "h": 61
+          },
+          "frame": {
+            "x": 207,
+            "y": 0,
+            "w": 102,
+            "h": 61
+          }
+        },
+        {
+          "filename": "Boat_14.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 4,
+            "w": 104,
+            "h": 60
+          },
+          "frame": {
+            "x": 207,
+            "y": 61,
+            "w": 104,
+            "h": 60
+          }
+        },
+        {
+          "filename": "Boat_15.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 4,
+            "w": 104,
+            "h": 60
+          },
+          "frame": {
+            "x": 309,
+            "y": 0,
+            "w": 104,
+            "h": 60
+          }
+        },
+        {
+          "filename": "Boat_13.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 4,
+            "w": 103,
+            "h": 60
+          },
+          "frame": {
+            "x": 206,
+            "y": 189,
+            "w": 103,
+            "h": 60
+          }
+        },
+        {
+          "filename": "Boat_28.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 4,
+            "w": 103,
+            "h": 60
+          },
+          "frame": {
+            "x": 308,
+            "y": 121,
+            "w": 103,
+            "h": 60
+          }
+        },
+        {
+          "filename": "Boat_29.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 3,
+            "y": 4,
+            "w": 102,
+            "h": 60
+          },
+          "frame": {
+            "x": 311,
+            "y": 60,
+            "w": 102,
+            "h": 60
+          }
+        },
+        {
+          "filename": "Boat_16.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 5,
+            "w": 104,
+            "h": 59
+          },
+          "frame": {
+            "x": 206,
+            "y": 249,
+            "w": 104,
+            "h": 59
+          }
+        },
+        {
+          "filename": "Boat_17.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 5,
+            "w": 104,
+            "h": 59
+          },
+          "frame": {
+            "x": 309,
+            "y": 181,
+            "w": 104,
+            "h": 59
+          }
+        },
+        {
+          "filename": "Boat_18.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 5,
+            "w": 104,
+            "h": 59
+          },
+          "frame": {
+            "x": 411,
+            "y": 120,
+            "w": 104,
+            "h": 59
+          }
+        },
+        {
+          "filename": "Boat_26.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 5,
+            "w": 103,
+            "h": 59
+          },
+          "frame": {
+            "x": 206,
+            "y": 308,
+            "w": 103,
+            "h": 59
+          }
+        },
+        {
+          "filename": "Boat_27.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 4,
+            "y": 5,
+            "w": 102,
+            "h": 59
+          },
+          "frame": {
+            "x": 308,
+            "y": 367,
+            "w": 102,
+            "h": 59
+          }
+        },
+        {
+          "filename": "Boat_19.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 5,
+            "w": 103,
+            "h": 58
+          },
+          "frame": {
+            "x": 309,
+            "y": 308,
+            "w": 103,
+            "h": 58
+          }
+        },
+        {
+          "filename": "Boat_20.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 5,
+            "w": 103,
+            "h": 58
+          },
+          "frame": {
+            "x": 310,
+            "y": 240,
+            "w": 103,
+            "h": 58
+          }
+        },
+        {
+          "filename": "Boat_21.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 6,
+            "y": 5,
+            "w": 103,
+            "h": 58
+          },
+          "frame": {
+            "x": 410,
+            "y": 366,
+            "w": 103,
+            "h": 58
+          }
+        },
+        {
+          "filename": "Boat_23.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 5,
+            "w": 103,
+            "h": 58
+          },
+          "frame": {
+            "x": 412,
+            "y": 298,
+            "w": 103,
+            "h": 58
+          }
+        },
+        {
+          "filename": "Boat_24.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 5,
+            "w": 103,
+            "h": 58
+          },
+          "frame": {
+            "x": 513,
+            "y": 356,
+            "w": 103,
+            "h": 58
+          }
+        },
+        {
+          "filename": "Boat_25.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 5,
+            "w": 102,
+            "h": 58
+          },
+          "frame": {
+            "x": 615,
+            "y": 414,
+            "w": 102,
+            "h": 58
+          }
+        },
+        {
+          "filename": "Boat_22.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 111,
+            "h": 66
+          },
+          "spriteSourceSize": {
+            "x": 5,
+            "y": 6,
+            "w": 104,
+            "h": 57
+          },
+          "frame": {
+            "x": 413,
+            "y": 179,
+            "w": 104,
+            "h": 57
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7"
+  }
+}

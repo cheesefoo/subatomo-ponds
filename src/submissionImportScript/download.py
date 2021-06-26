@@ -1,18 +1,19 @@
+import math
 import os
+import shutil
+import subprocess
+import time
 from json import dumps, load, loads
-from os import listdir, remove
+from os import listdir
 from os.path import isfile, join, dirname, abspath
 from pathlib import PurePath
-import subprocess
-import math
-import shutil
+
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 from tenacity import retry, wait_random_exponential
-import time
-import asyncio
+
 # run this from 'src/submissionImportScript'
 # Set location of texture packer exe
 # client_secrets.json is not committed for security
@@ -22,9 +23,10 @@ ASSETS_DIR = PurePath(dirname(dirname(abspath(__file__))), 'assets')
 JSON_DESTINATION_DIR = join(ASSETS_DIR, 'submissions')
 RAW_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_raw')
 SPLIT_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_split')
+FANART_DIR = join(ASSETS_DIR, 'fanart')
 SPRITESHEET_DIR = join(ASSETS_DIR, 'submissions')
 TEMP_IMAGE_DIR = join(ASSETS_DIR, 'all_submissions_temp')
-TEMP_ATLAS_DIR= join(ASSETS_DIR, 'all_submissions_atlas_temp')
+TEMP_ATLAS_DIR = join(ASSETS_DIR, 'all_submissions_atlas_temp')
 SHEETS_ID = '1JhkgvlwjuVTeK9Jwaq9lAgsoCMNhreGbgXQBXZY8eak'
 DRIVE_ID = '1x4ErkPqyRwgPn87wGeclYwk1uRY0yy0x'
 SUBS_PER_POND = 20
@@ -32,7 +34,7 @@ PONDS_PER_ATLAS = 5
 SUBMISSIONS = None
 
 
-def download_json():
+def get_duck_subs():
     # authenticate and get sheet
     global SUBMISSIONS
     gc = gspread.service_account('client_secrets.json')
@@ -74,6 +76,47 @@ def download_json():
     print('json written to {}'.format(JSON_DESTINATION_DIR))
 
 
+def get_fanart_subs():
+    # authenticate and get sheet
+    global SUBMISSIONS
+    gc = gspread.service_account('client_secrets.json')
+    sh = gc.open_by_key(SHEETS_ID)
+    worksheet = sh.get_worksheet(2)
+
+    num_of_entries = worksheet.row_count
+    entries = []
+    r = 'A1:E' + str(num_of_entries)
+    print(f"Getting {num_of_entries} submissions from {r}")
+    all_rows = worksheet.batch_get([r])
+    all_rows = all_rows[0]
+
+    def try_to_get_row(index):
+        row = all_rows[index]
+        name = row[0]
+        filename = row[1]
+        msg = row[2]
+        social = row[3]
+        link = row[4]
+        entry = {"name": name,
+                 "filename": filename,
+                 "message": msg,
+                 "social": social,
+                 "link": link}
+        return entry
+
+    for i in range(2, num_of_entries):
+        try:
+            entries.append(try_to_get_row(i))
+        except IndexError as e:
+            pass
+            # print("out of range: "+str(i))
+    submissions = {"submissions": entries}
+    output = dumps(submissions)
+    with open(join(FANART_DIR, 'fanartSubmissions.json'), 'w') as f:
+        f.write(output)
+    print('json written to {}'.format(FANART_DIR))
+
+
 def download_images():
     # auth with service account
     gauth = GoogleAuth()
@@ -88,16 +131,23 @@ def download_images():
 
     query = "'{}' in parents and trashed=false".format(DRIVE_ID)
     file_list = drive.ListFile({'q': query}).GetList()
+    progress = 0
+    total = len(file_list)
+    print("going to download " + str(total) + " files")
     for file in file_list:
+        progress = progress + 1
         filename = file['title']
         if filename.startswith("FANART"):
-            continue
-        dest = join(RAW_IMAGES_DIR, filename + ".png")
+            dest = join(FANART_DIR, filename + ".png")
+        else:
+            dest = join(RAW_IMAGES_DIR, filename + ".png")
         try_download(file, dest)
-    print("downloaded {} files".format(len(file_list)))
+        print(str(progress) + "out of" + str(total))
+    print("downloaded {} files".format(total))
 
 
 def split_images():
+    print("starting to split images...")
     files = [f for f in listdir(RAW_IMAGES_DIR) if isfile(join(RAW_IMAGES_DIR, f))]
     for filename in files:
         if not filename.endswith('png'):
@@ -105,33 +155,38 @@ def split_images():
         args = ['convert', join(RAW_IMAGES_DIR, filename), '-crop', '2x2@', '+repage',
                 join(SPLIT_IMAGES_DIR, filename[:-4]) + '-%d.png']
         subprocess.run(args, shell=True, check=True)
+    print("images have been split")
 
 
-def move_images():
+def pack_spritesheets_per_atlas():
     global SUBMISSIONS
-    if SUBMISSIONS is None:
-        with open(join(JSON_DESTINATION_DIR, 'submissions.json'), 'r') as f:
-            SUBMISSIONS = load(f)
+    with open(join(JSON_DESTINATION_DIR, 'submissions.json'), 'r') as f:
+        SUBMISSIONS = load(f)
 
-    total_num_ponds = math.ceil(len(SUBMISSIONS["submissions"])/SUBS_PER_POND)
-    total_iterations = math.ceil(total_num_ponds/PONDS_PER_ATLAS)
+    total_num_ponds = math.ceil(len(SUBMISSIONS["submissions"]) / SUBS_PER_POND)
+    total_iterations = math.ceil(total_num_ponds / PONDS_PER_ATLAS)
     SUBMISSIONS = SUBMISSIONS["submissions"]
-    print("gonna put "+total_num_ponds + " ponds into "+total_iterations + " atlases")
+    print("gonna put " + str(total_num_ponds) + " ponds into " + str(total_iterations) + " atlases")
+    let atlas_num = 1
     for i in range(1, total_num_ponds, PONDS_PER_ATLAS):
-        for i2 in range(i, i+PONDS_PER_ATLAS):
+        for i2 in range(i, i + PONDS_PER_ATLAS):
             subs_by_pond = [x for x in SUBMISSIONS if x['pond'] == str(i2)]
             move_some(subs_by_pond)
         time.sleep(0.5)
         pack_spritesheet_free_batches(TEMP_ATLAS_DIR)
-        rename_atlas(i)
+        rename_atlas(atlas_num)
         remove_files(TEMP_IMAGE_DIR)
         remove_files(TEMP_ATLAS_DIR)
+        atlas_num = atlas_num + 1
 
-suffixes = ["-0.png","-1.png","-2.png","-3.png"]
+
+suffixes = ["-0.png", "-1.png", "-2.png", "-3.png"]
+
 
 def remove_files(dir):
     for files in os.listdir(dir):
-        os.remove(join(dir,files))
+        os.remove(join(dir, files))
+
 
 def move_some(subs_by_pond):
     global suffixes
@@ -147,13 +202,13 @@ def move_some(subs_by_pond):
 
 
 def rename_atlas(pondnum):
-    pondnumstart=pondnum
+    pondnumstart = pondnum
     for file in os.listdir(TEMP_ATLAS_DIR):
         if file.endswith(".png"):
             newname = "pondbatch-" + str(pondnum)
             # os.rename(join(TEMP_ATLAS_DIR, file), join(SPRITESHEET_DIR, newname + ".png"))
-            jsonfile = join(TEMP_ATLAS_DIR, file[:-4]+".json")
-            print( jsonfile)
+            jsonfile = join(TEMP_ATLAS_DIR, file[:-4] + ".json")
+            print(jsonfile)
             with open(jsonfile, 'rb') as f:
                 j = load(f)
                 j["textures"][0]["image"] = newname + ".png"
@@ -163,8 +218,10 @@ def rename_atlas(pondnum):
 
             shutil.move(join(TEMP_ATLAS_DIR, file), join(SPRITESHEET_DIR, newname + ".png"))
             pondnum = pondnum + 1
-    merge_json(TEMP_ATLAS_DIR,SPRITESHEET_DIR)
-    os.rename(join(SPRITESHEET_DIR,"all_ducks_sheet.json"), join(SPRITESHEET_DIR, "pondbatch-"+ str(pondnumstart)+ ".json"))
+    merge_json(TEMP_ATLAS_DIR, SPRITESHEET_DIR)
+    os.rename(join(SPRITESHEET_DIR, "all_ducks_sheet.json"),
+              join(SPRITESHEET_DIR, "pondbatch-" + str(pondnumstart) + ".json"))
+
 
 def pack_spritesheet_free():
     # free-tex-packer-cli --project /path/to/project.ftpp --output /path/to/output/folder
@@ -174,6 +231,7 @@ def pack_spritesheet_free():
     # merge_json()
     #
 
+
 def pack_spritesheet_free_batches(destdir):
     # free-tex-packer-cli --project /path/to/project.ftpp --output /path/to/output/folder
     project = 'batches.ftpp'
@@ -181,13 +239,11 @@ def pack_spritesheet_free_batches(destdir):
     subprocess.call(args, shell=True)
 
 
-
-
 def merge_json(srcdir, destdir):
     single = '{"textures": [], "meta": {"app": "http://github.com/odrick/free-tex-packer-cli", "version": "0.3.0"}}'
     s = loads(single)
     t = s["textures"]
-    files= []
+    files = []
     for file in listdir(srcdir):
         if file.endswith("json"):
             with open(join(srcdir, file), 'rb') as f:
@@ -197,6 +253,8 @@ def merge_json(srcdir, destdir):
     output = dumps(s)
     with open(join(destdir, "all_ducks_sheet.json"), 'w') as f:
         f.write(output)
+
+
 #         for o in files:
 #             remove(o.name)
 
@@ -212,19 +270,16 @@ def pack_spritesheet():
 
 
 def main():
-    # pack_spritesheet_free_batches()
-    # rename_atlas(1)
+    # get_duck_subs()
+    # get_fanart_subs()
+    download_images()
+    split_images()
+    pack_spritesheets_per_atlas()
 
-    # download_json()
-    # download_images()
-    # split_images()
-    # merge_json(TEMP_ATLAS_DIR,SPRITESHEET_DIR)
-
-    move_images()
 
 #     pack_spritesheet_free()
-    # merge_json()
-    # pack_spritesheet()
+# merge_json()
+# pack_spritesheet()
 
 
 if __name__ == '__main__':
