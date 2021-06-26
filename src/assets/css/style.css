@@ -415,18 +415,22 @@ canvas
 
 #pond-ui
 {
-    position:       fixed;
-    z-index:        2;
-    /*background: url("/src/assets/images/ui/subaru_uitest_1.png") no-repeat;*/
-    bottom:         5vh;
-    left:           30%;
-    display:        flex;
+	    position: fixed;
+    z-index: 2;
+    bottom: 2vh;
+    /* left: 50%; */
+    display: flex;
     flex-direction: row;
-    width:          70%;
-    max-width:      1262px;
-    height:         20%;
-    max-height:     207px;
-
+    width: 100vw;
+    max-width: initial;
+    height: 100px;
+    max-height: 20vh;
+    /* right: 50%; */
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: center;
 
 }
 
@@ -441,16 +445,18 @@ canvas
 
 */
 
-.inner-ui
+#pond-ui .inner-ui
 {
-
-    width:            60%;
-    max-width:        908px;
-    height:           100%;
-    max-height:       207px;
-    background:       url("/src/assets/images/ui/PondNumBoxcropped_horizontal.png") no-repeat;
-    background-color: #AFF5E0;
-    background-size:  100% 100%;
+	height: 9vh;
+    width: calc(10vh * 4.38);
+    background: url("/src/assets/images/ui/PondNumBoxcropped_horizontal.png") no-repeat;
+    background-color: black;
+    background-size: 100% 100%;
+ box-shadow: 0px 0px 22px 12px rgba(0,0,0,0.4);
+-webkit-box-shadow: 0px 0px 22px 12px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 0px 22px 12px rgba(0,0,0,0.4);
+    overflow: hidden;
+    border-radius: 3px;
 }
 
 .carousel
@@ -459,17 +465,21 @@ canvas
     width:         100%;
     padding-right: 20px;
     padding-left:  20px;
+	box-sizing:border-box;
 }
 
 .carousel-cell
 {
-    display:           flex;
-    flex-direction:    row;
-    width:             100%;
-    height:            136px;
-    margin:            30px 30px;
+	display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 9vh;
+    margin: 0;
     counter-increment: carousel-cell;
-    background:        transparent;
+    background: transparent;
+    flex-wrap: wrap;
+    align-items: center;
+	justify-content:space-between;
 }
 
 /*.carousel-cell {
@@ -493,23 +503,33 @@ canvas
 
 .button--next, .button--previous
 {
-    overflow:        hidden;
-    width:           177px;
-    height:          177px;
-    border:          none;
-    background:      transparent;
+       overflow: hidden;
+    width: 13vh;
+    height: 13vh;
+    border: none;
+    background: transparent;
     background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+    /* zoom: 1.4; */
+    position: relative;
+    top: -2vh;
+	transition:0.5s;
+}
 
+.button--next:hover, .button--previous:hover{
+	background-size:80%;
 }
 
 .button--next
 {
-    background-image: url(../images/ui/PondArrowButtonNext.png);
+    background-image: url(../images/ui/PondArrowButtonshadow.png);
 }
 
 .button--previous
 {
-    background-image: url(../images/ui/PondArrowButtonPrev.png);
+    background-image: url(../images/ui/PondArrowButtonshadow.png);
+	transform:rotateY(180deg);
 }
 
 .load-pond:disabled
@@ -520,28 +540,30 @@ canvas
 
 .load-pond
 {
-    /*width:             104px;*/
-    /*height:            104px;*/
-    /*background-image:  url(../images/ui/PondSelectCircle.png);*/
-    /*background-repeat: no-repeat;*/
-    display:          inline-block;
-    width:            104px;
-    height:           104px;
-    margin:           25px;
-    border-radius:    50%;
-    background-color: #FF706F;
-
+	display: inline-block;
+    border-radius: 50%;
+    /*background-color: #FF706F;*/
+	border:none;
+	background:transparent;
+    box-sizing: border-box;
+    flex: 0 1 50px;
+    width: 50px;
+    height: 50px;
+	transition:0.5s;
+	cursor:pointer;
+	color:#FF706F;
+	text-shadow: 0px 0px 9px rgba(150, 150, 150, 1);
 }
 
 .load-pond:hover
 {
-    border-color: #FCD73F;
+	color:#ffbc94;
 }
 
 .load-pond.selectedPond
 {
-    background-color: #FCD73F;
-
+    background-color: #FF706F;
+	color:#ffbc94;
 
 }
 
@@ -1290,7 +1312,7 @@ svg path
     width:             80vw;
     height:            calc(80vw * 0.55);
 
-    max-height:        80vh;
+   
 
     padding:           70px;
     background-color:  transparent;
