@@ -3,9 +3,9 @@
 <head>
     <meta content="width=device-width, user-scalable=no" name="viewport"/>
     <meta charset="utf-8"/>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
     </style>
@@ -1600,7 +1600,9 @@
             million subscribers, Subaru!!!
         </div>
 
-        <a class="nav-link logo " href="#" id="enterPondButton" ><div class="main-text main" text="main-11"></div></a>
+        <a class="nav-link logo " href="#" id="enterPondButton">
+            <div class="main-text main" text="main-11"></div>
+        </a>
     </div>
 
     <div class="lang-container">
@@ -1781,13 +1783,16 @@
                         <a class="social-icon" href="https://www.youtube.com/user/Gundamfinal">
                             <i class="fas fa-ambulance"></i><i class="fab fa-youtube"></i>Gundamfinal
                         </a>
+                        <a class="social-icon" href="https://twitter.com/H21Garry">
+                            <i class="fas fa-ambulance"></i><i class="fab fa-twitter"></i>Danboru
+                        </a>
                     </div>
                     <div></div>
                 </div>
 
                 <!--<div class="credits-category"><h2>Programming</h2></div>!-->
 
-                <div id="credits-second-column" class="credits-category">
+                <div class="credits-category" id="credits-second-column">
                     <h4>Translation</h4>
                     <div class="credits-tl">
                         <ul class="credits-lang">
@@ -1862,13 +1867,13 @@
                                     <i class="flag-icon flag-icon-es"></i><i class="fab fa-twitter"></i>Yurian
                                 </a>
                             </li>
-                       
+
                             <li>
                                 <a class="social-icon" href="https://twitter.com/SuperSimpxX">
                                     <i class="flag-icon flag-icon-es"></i><i class="fab fa-twitter"></i>LauHerondale
                                 </a>
                             </li>
-                        
+
                             <li>
                                 <a class="social-icon" href="https://twitter.com/Lauvani_05">
                                     <i class="flag-icon flag-icon-es"></i><i class="fab fa-twitter"></i>Asbasxadas
@@ -1881,7 +1886,7 @@
                                     <i class="flag-icon flag-icon-de"></i><i class="fas fa-ambulance"></i>Joshiv Puni
                                 </a>
                             </li>
-                        
+
                             <li>
                                 <a class="social-icon" href="https://twitter.com/sunrisevalley_">
                                     <i class="flag-icon flag-icon-de"></i><i class="fas fa-ambulance"></i>SunriseValley
@@ -1890,6 +1895,24 @@
                         </ul>
                     </div>
                 </div>
+                <!--
+                                <div class="credits-category" id="credits-special-thanks">
+                                    <a class="social-icon" href="https://www.youtube.com/c/SushiHololiveandVtubers">
+                                        <i class="fas fa-ambulance"></i><i class="fab fa-youtube"></i>Sushi
+                                    </a>
+                                    <a class="social-icon" href="https://twitter.com/officialstrepto?s=09">
+                                        <i class="fas fa-ambulance"></i><i class="fab fa-twitter"></i>Strepto
+                                    </a>
+
+                                    <a class="social-icon" href="https://twitter.com/ChloeKurosu">
+                                        <i class="fas fa-ambulance"></i><i class="fab fa-twitter"></i>5chloe
+                                    </a>
+
+                                    <a class="social-icon" href="#">
+                                        <i class="fas fa-ambulance"></i><i class="fab fa-twitter"></i>LightMask(if they actually come thru)
+                                    </a>
+                                </div>
+                                -->
             </div>
         </div>
 
@@ -1948,14 +1971,14 @@
         if (lang == null) {
             console.error("lang not set");
         }
-		
+
         let tags = $(".main-text");
         let creditsTags = $(".credits");
-		var langHTML=$('input[lang="'+lang+'"]').parent().html();
-		$(".placeholder.main").html(" ");
-		$("body").attr("lang",lang);
-		$(".placeholder.main").append(langHTML);
-		$(".placeholder.main input").remove();
+        var langHTML = $("input[lang=\"" + lang + "\"]").parent().html();
+        $(".placeholder.main").html(" ");
+        $("body").attr("lang", lang);
+        $(".placeholder.main").append(langHTML);
+        $(".placeholder.main input").remove();
         let mainTexts = strings[lang]["Main page"];
         let creditsTexts = strings[lang]["CREDITS"];
         // console.log(texts);
