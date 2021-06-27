@@ -1400,7 +1400,7 @@ svg path
     {
         background-image: url(../images/about.png),
                           url(../images/star-bg.jpg), url(../images/modal-mobile.png);
-        background-size:  41vh auto, 200px, 100% 100%;
+        background-size:  80% auto, 200px, 100% 100%;
     }
 
     #about-subaru .about-content, #about-project .about-content
