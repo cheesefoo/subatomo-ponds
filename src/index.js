@@ -13,8 +13,8 @@ require("./assets/css/style.css");
 require("./assets/css/credits.css");
 let loadingduck = require("./assets/images/ui/loadingduck.svg");
 require("./assets/images/subahug3.png");
-require("./assets/images/thewholesky.jpg");
-require("./assets/images/subatomo army.png");
+require("./assets/images/404.png");
+
 require("./assets/images/ui/Little_Megaphone_volume.png");
 require("./assets/images/ui/Little_Megaphone_no_volume_v2.png");
 require("./assets/images/ui/artduck.png");
