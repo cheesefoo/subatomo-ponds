@@ -1902,6 +1902,7 @@
         loadTranslationsJSON().then(loadTexts);
         $("#hamburger").click(function () {
             $(".logo-panel").toggleClass("active");
+            $("#hamburger").toggleClass("active");
         });
         const uiRoot = document.getElementById("pondUIContainer");
         for (const eventName of ["mouseup", "mousedown", "touchstart", "touchmove", "touchend", "touchcancel"]) {
@@ -1910,6 +1911,7 @@
 
         $(".logo-title-container").on("click", function () {
             $(".logo-panel").removeClass("active");
+            $("#hamburger").removeClass("active");
         });
     });
 

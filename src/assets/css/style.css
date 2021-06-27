@@ -83,12 +83,16 @@ canvas
 
 #home
 {
-    position:      relative;
-    display:       block;
-    overflow:      hidden;
-    align-content: center;
-    align-items:   center;
-    height:        100%;
+	position: relative;
+    display: block;
+    overflow: hidden;
+    align-content: stretch;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 
@@ -258,22 +262,22 @@ canvas
 
 .logo-panel
 {
-    position:            absolute;
-    z-index:             9;
-    visibility:          hidden;
-    width:               20%;
-    max-width:           20%;
-    height:              100%;
-    opacity:             1 !important;
-
-    background-color:    #5DCDE3;
-    background-image:    url(../images/intro/HHeader.jpg);
-    background-repeat:   no-repeat;
+	order: -1;
+    position: initial;
+    z-index: 9;
+    visibility: hidden;
+    width: 20%;
+    max-width: 20%;
+    height: 100%;
+    opacity: 1 !important;
+    background-color: #5DCDE3;
+    background-image: url(http://localhost:8080/assets/HHeader.jpg);
+    background-repeat: no-repeat;
     background-position: center bottom;
-    background-size:     100% 100%;
-    -moz-box-shadow:     5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow:  5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    box-shadow:          5px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    background-size: 100% 100%;
+    -moz-box-shadow: 5px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 0px 10px -3px rgba(0, 0, 0, 0.75);
 }
 
 
@@ -326,16 +330,23 @@ canvas
 
 .logo-title-container
 {
-    position:    absolute;
-    left:        25vw;
-    width:       50vw;
-    height:      100%;
-    margin-left: 20vh;
-    text-align:  center;
-    color:       #000;
-    /*display:flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
+	position: relative;
+	z-index:10;
+    /* left: 25vw; */
+    width: 50vw;
+    height: 100%;
+    /* margin-left: 20vh; */
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex: 1 1 50vw;
+    padding: 0 10vw;
+    box-sizing: border-box;
+	justify-content:center;
 }
 
 
@@ -343,10 +354,10 @@ canvas
 {
     font-family:    'Hachi Maru Pop', cursive;
     font-size:      1.3rem;
-    position:       absolute;
-    top:            50%;
+    position:       relative;
+    top:            initial;
     width:          100%;
-    height:         100%;
+    height:         auto;
     text-transform: capitalize;
     color:          #E54E17;
 	text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
@@ -357,7 +368,7 @@ canvas
 .logo-title, #ponds-logo-home
 {
 
-    position:                absolute;
+    position:                initial;
     z-index:                 8;
     top:                     18%;
     width:                   100%;
@@ -373,6 +384,11 @@ canvas
     -o-background-size:      contain;
     -webkit-background-size: contain;
     background-size:         contain;
+	background-position:center bottom;
+}
+
+.logo-title{
+	height:calc(70vw * 0.3);
 }
 
 #ponds-logo-home
@@ -415,7 +431,7 @@ canvas
     z-index:          9;
     width:            auto;
     max-width:        initial;
-    margin:           auto;
+    margin:           0 auto;
     padding:          4px;
     /* width: 20%; */
     text-align:       center;
@@ -431,6 +447,8 @@ background-position: top left,top center,top right,center right, bottom right,bo
 background-repeat: no-repeat;
 display:inline-block;
 transition:0.5s;
+margin-top:100px;
+margin-bottom:100px;
 }
 
 #enterPondButton:hover{
@@ -1236,6 +1254,7 @@ svg path
         left:        0;
         width:       100%;
         margin-left: initial;
+		padding:0;
     }
 
     .logo-title
@@ -1348,7 +1367,8 @@ svg path
         padding:          5px;
         padding-top:      10px;
         border-radius:    5px;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: transparent;
+		
     }
 
     #hamburger span
@@ -1364,8 +1384,28 @@ svg path
                           opacity 0.55s ease;
         transform-origin: 4px 0px;
         border-radius:    3px;
-        background:       #CDCDCD;
+        background:       #E54E17;
     }
+	
+	#hamburger.active span{
+		/*background:#e4ec7c;*/
+	}
+	
+	#hamburger.active span:nth-child(1){
+		transform: rotate(45deg);
+		transform-origin: 50%;
+		margin:0;
+		position:inherit;
+	}
+	#hamburger.active span:nth-child(2){
+		transform: rotate(-45deg);
+		transform-origin: 50%;
+		margin:0;
+		position:initial;
+	}
+	#hamburger.active span:nth-child(3){
+		opacity:0;
+	}
 
     .modal-window > div
     {
@@ -1446,7 +1486,7 @@ svg path
         height:          100%;
         padding-top:     5vh;
         padding-top:     20vh;
-
+		padding-bottom:10vh;
     }
 
     #fanart-window-display{
@@ -1593,4 +1633,11 @@ svg path
 	#fanart.modal-window > div{
 		background-position:bottom+5% right+10%,bottom+5% right+40%,26vw 58vh, center;
 	}
+}
+
+@media (max-width: 670px){
+	#enterPondButton{
+		font-size:1.5rem;
+	}
+
 }
