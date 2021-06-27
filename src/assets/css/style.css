@@ -276,6 +276,7 @@ canvas
     box-shadow:          5px 0px 10px -3px rgba(0, 0, 0, 0.75);
 }
 
+
 /*.nav-button-container {*/
 /*    top: 10%;*/
 /*    height: 100%;*/
@@ -533,38 +534,38 @@ canvas
 	transform:rotateY(180deg);
 }
 
-.load-pond:disabled
+.pond-btn:disabled
 {
     background-color: #BBB;
 
 }
 
-.load-pond
+.pond-btn
 {
-	display: inline-block;
-    border-radius: 50%;
+    display:       inline-block;
+    flex:          0 1 50px;
     /*background-color: #FF706F;*/
-	border:none;
-	background:transparent;
-    box-sizing: border-box;
-    flex: 0 1 50px;
-    width: 50px;
-    height: 50px;
-	transition:0.5s;
-	cursor:pointer;
-	color:#FF706F;
-	text-shadow: 0px 0px 9px rgba(150, 150, 150, 1);
+    box-sizing:    border-box;
+    width:         50px;
+    height:        50px;
+    cursor:        pointer;
+    transition:    0.5s;
+    color:         #FF706F;
+    border:        none;
+    border-radius: 50%;
+    background:    transparent;
+    text-shadow:   0px 0px 9px rgba(150, 150, 150, 1);
 }
 
-.load-pond:hover
+.pond-btn:hover
 {
 	color:#ffbc94;
 }
 
-.load-pond.selectedPond
+.pond-btn.selectedPond
 {
+    color:            #FFBC94;
     background-color: #FF706F;
-	color:#ffbc94;
 
 }
 
@@ -956,6 +957,12 @@ use.ic-3
 #etusofnMH4z20, #etusofnMH4z21, #etusofnMH4z39, #etusofnMH4z40, #etusofnMH4z61, #etusofnMH4z62, #etusofnMH4z83, #etusofnMH4z84, #etusofnMH4z104, #etusofnMH4z105, #etusofnMH4z123, #etusofnMH4z124, #etusofnMH4z142, #etusofnMH4z143, #etusofnMH4z161, #etusofnMH4z162
 {
     fill: none;
+}
+
+#loadingDuckContainer
+{
+    position: fixed;
+    top:      0;
 }
 
 #loadingDuck

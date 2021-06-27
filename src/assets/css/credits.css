@@ -85,7 +85,7 @@ ul.social-icons
     background-color: #3D5B99;
 }
 
-.fa-twitter,.fa-smile
+.fa-twitter, .fa-smile
 {
     padding:            3px;
     -moz-transition:    .5s;
@@ -105,18 +105,24 @@ ul.social-icons
 
 .fa-youtube
 {
-    padding:            10px 14px;
+    padding:            3px;
     -moz-transition:    .5s;
     -ms-transition:     .5s;
     -o-transition:      .5s;
     -webkit-transition: .5s;
     transition:         .5s;
-    background-color:   #322F30;
+    color:              #F00;
+
 }
 
 .fa-youtube:hover
 {
     background-color: #E64A41;
+}
+
+.fa-ambulance
+{
+    color: black;
 }
 
 .fa-linkedin
@@ -143,13 +149,14 @@ ul.social-icons
 
 #credits a
 {
+    margin-right:    20px;
     text-decoration: none;
-    color:           #51b1c4;
-	margin-right:20px;
+    color:           #51B1C4;
 }
 
-#credits .flag-icon{
-	border:1px solid #d4d4d4;
+#credits .flag-icon
+{
+    border: 1px solid #D4D4D4;
 }
 
 .credits-category a
@@ -158,21 +165,21 @@ ul.social-icons
 
 .credits-tl
 {
-       display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display:         flex;
+    flex-direction:  row;
+    flex-wrap:       wrap;
     justify-content: flex-start;
 }
 
 .credits-lang
 {
-        display: flex;
-    flex: auto;
-    flex-direction: column;
+    display:         flex;
+    flex:            auto;
+    flex:            1 1 30%;
+    flex-direction:  column;
     justify-content: flex-start;
-    flex: 1 1 30%;
-    margin-bottom: 0;
-    margin-top: 10px;
+    margin-top:      10px;
+    margin-bottom:   0;
 
 }
 
@@ -181,64 +188,81 @@ ul.social-icons
     flex: auto;
 }
 
-#credits-first-column{
-	flex: 1 1 5%;
-    display: flex;
-    flex-wrap: wrap;
+#credits-first-column
+{
+    display:        flex;
+    flex:           1 1 5%;
     flex-direction: column;
+    flex-wrap:      wrap;
 }
 
-#credits-first-column .credits-category{
-	display: flex;
-    flex-wrap: wrap;
+#credits-first-column .credits-category
+{
+    display:        flex;
     flex-direction: column;
-	
+    flex-wrap:      wrap;
+
 }
 
-#credits-title{
-	flex:1 1 100%;
-	margin:0;
-	text-align:center;
+#credits-title
+{
+    flex:       1 1 100%;
+    margin:     0;
+    text-align: center;
 }
-#credits-title h1{
-	margin:0;
-	width:auto;
-	
+
+#credits-title h1
+{
+    width:  auto;
+    margin: 0;
+
 }
 
 @media (max-width: 900px)
 {
-	#credits-content{
-		padding:20px;
-	}
-	#credits-title{
-		margin-top:10vh;
-	}
-	#credits-title h5{
-		margin-bottom:0;
-	}
-	#credits-first-column{
-		flex: 1 1 100%;
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		margin-bottom:0;
-		margin-top:-30px;
-	}
-	
-	#credits-first-column .credits-category{
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-		flex: 1 1 50%;
-		margin-bottom:0;
-	}
-	#credits-content > .credits-category{
-		margin-top:-30px;
-	}
-	#credits.modal-window > div{
-	    background-image:                          url(http://localhost:8080/assets/star-bg.jpg),url(http://localhost:8080/assets/modal-mobile.png);
-		background-size: 200px,100% 100%;
-		background-position: 26vw 63vh,center;
-	}
+    #credits-content
+    {
+        padding: 20px;
+    }
+
+    #credits-title
+    {
+        margin-top: 10vh;
+    }
+
+    #credits-title h5
+    {
+        margin-bottom: 0;
+    }
+
+    #credits-first-column
+    {
+        display:        flex;
+        flex:           1 1 100%;
+        flex-direction: row;
+        flex-wrap:      wrap;
+        margin-top:     -30px;
+        margin-bottom:  0;
+    }
+
+    #credits-first-column .credits-category
+    {
+        display:        flex;
+        flex:           1 1 50%;
+        flex-direction: column;
+        flex-wrap:      wrap;
+        margin-bottom:  0;
+    }
+
+    #credits-content > .credits-category
+    {
+        margin-top: -30px;
+    }
+
+    #credits.modal-window > div
+    {
+        background-image:    url(http://localhost:8080/assets/star-bg.jpg), url(http://localhost:8080/assets/modal-mobile.png);
+        background-position: 26vw 63vh, center;
+        background-size:     200px, 100% 100%;
+    }
 }

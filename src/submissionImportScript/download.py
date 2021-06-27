@@ -62,7 +62,7 @@ def get_duck_subs():
                  "sound": sound}
         return entry
 
-    for i in range(2, num_of_entries):
+    for i in range(1, num_of_entries):
         try:
             entries.append(try_to_get_row(i))
         except IndexError as e:
@@ -106,7 +106,7 @@ def get_fanart_subs():
                  "pond": pond}
         return entry
 
-    for i in range(2, num_of_entries):
+    for i in range(1, num_of_entries):
         try:
             entries.append(try_to_get_row(i))
         except IndexError as e:
@@ -170,13 +170,13 @@ def pack_spritesheets_per_atlas():
     SUBMISSIONS = SUBMISSIONS["submissions"]
     print("gonna put " + str(total_num_ponds) + " ponds into " + str(total_iterations) + " atlases")
     atlas_num = 1
-    for i in range(1, total_num_ponds, PONDS_PER_ATLAS):
+    for i in range(1, total_iterations+1):
         for i2 in range(i, i + PONDS_PER_ATLAS):
             subs_by_pond = [x for x in SUBMISSIONS if x['pond'] == str(i2)]
             move_some(subs_by_pond)
         time.sleep(0.5)
         pack_spritesheet_free_batches(TEMP_ATLAS_DIR)
-        rename_atlas(atlas_num)
+        rename_atlas(i)
         remove_files(TEMP_IMAGE_DIR)
         remove_files(TEMP_ATLAS_DIR)
         atlas_num = atlas_num + 1
@@ -272,11 +272,11 @@ def pack_spritesheet():
 
 
 def main():
-    # get_duck_subs()
+    get_duck_subs()
     get_fanart_subs()
 #     download_images()
-#     split_images()
-#     pack_spritesheets_per_atlas()
+    split_images()
+    pack_spritesheets_per_atlas()
 
 
 #     pack_spritesheet_free()
