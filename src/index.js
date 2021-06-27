@@ -582,8 +582,8 @@ class SubatomoPond extends Phaser.Scene {
         let totalNumSubmissions = submissions["submissions"].length;
         console.log(`Wow, ${totalNumSubmissions} in ${Math.ceil(totalNumSubmissions / 20)} ponds!!!`);
 
-        // game.scale.setGameSize(sceneWidth, sceneHeight);
-        game.scale.setGameSize(newWidth, newHeight);
+         game.scale.setGameSize(sceneWidth, sceneHeight);
+        //game.scale.setGameSize(newWidth, newHeight);
     }
 
     makeSounds() {

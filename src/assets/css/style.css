@@ -378,17 +378,16 @@ canvas
     position: fixed;
     top:      8px;
     left:     8px;
-    width:    10vh;
-    height:   4vh;
+    width:    15vw;
+    height:   10vh;
     opacity:  .7;
+	cursor:pointer;
 }
 
 #ponds-logo-home:hover
 {
     opacity:            1;
-    -moz-box-shadow:    5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    box-shadow:         5px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    
 }
 
 #enterPondButton
@@ -704,14 +703,15 @@ img
 
 .lang-container
 {
-    position:   fixed;
-    z-index:    10;
-    top:        0;
-    right:      0;
-    left:       initial;
-    width:      30vh;
-    max-width:  150px;
+        position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: initial;
+    width: 120px;
+    max-width: 150px;
     min-height: initial;
+    margin-right: 10px;
 }
 
 .lang-container .select, .lang-container .select > span.placeholder
@@ -719,25 +719,50 @@ img
     padding:          0;
     background-color: transparent;
     box-shadow:       none;
+	font-size:1rem;
+	font-weight:bold;
 }
 
 .lang-container .select > span.placeholder
 {
     top:            10px;
-    left:           -10px;
+    left:           -20px;
     padding:        10px;
     padding-bottom: 0;
+}
+
+.lang-container .select > span.placeholder .flag-icon{
+	margin-right:20px;
+}
+.lang-container .select > span.placeholder:after{
+	    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+	float:right;
+	margin-top:20px;
 }
 
 .lang-container .select .placeholder, .lang-container .select .title
 {
     padding: 10px;
+	display:inline-block;
+	width:auto;
+}
+
+.select .placeholder, .select .title{
+	background:transparent;
 }
 
 .lang-container .select label.option span.title
 {
-    color:      white;
-    background: rgba(0, 0, 0, 0.5);
+    color:      #5DCDE3 !important;
+    background: #fefefe;
+	width:100%;
 }
 
 .nav-button-container .container
@@ -785,7 +810,8 @@ img
 .select label.option input:checked ~ span.title
 {
     position:         relative;
-    background-color: #FFDA3E;
+    background-color: #e4ec7c;
+	font-size:1rem;
 }
 
 .modal-window > div
@@ -1014,21 +1040,21 @@ svg path
 
 }
 
-#ponds-to-fanart:hover, #ponds-to-ducks:hover
-{
-    opacity:            1;
-    -moz-box-shadow:    5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-    box-shadow:         5px 0px 10px -3px rgba(0, 0, 0, 0.75);
-}
 
 #ponds-to-fanart::before{
 	position:absolute;
 	content:" ";
 	width:100%;
 	height:100%;
-	background: rgb(0,255,255);
-	background: radial-gradient(circle, rgba(0,255,255,1) 5%, rgba(148,187,233,0) 59%);
+	background-image: url("../images/fanartlogoglowup.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	opacity:0.1;
+	transition:0.6s;
+}
+#ponds-to-fanart:hover::before{
+	opacity:1;
 }
 
 .scene-switch-btn
@@ -1050,7 +1076,10 @@ svg path
 
 #ponds-to-fanart
 {
-    background-image: url("../images/ui/fanart-logo.png");
+    background-image: url("../images/fanartlogocleanedup.png");
+	background-size:contain;
+	background-position:center;
+	background-repeat:no-repeat;
 }
 
 #ponds-to-ducks
@@ -1425,5 +1454,46 @@ svg path
     {
         text-align: left;
     }
-
+	
+	.pond-btn{
+		display: inline-block;
+		flex: 0 1 50px;
+		/* background-color: #FF706F; */
+		box-sizing: border-box;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+		transition: 0.5s;
+		color: #FF706F;
+		border: none;
+		border-radius: 50%;
+		background: transparent;
+		text-shadow: 0px 0px 9px rgba(150, 150, 150, 1);
+		width: 35px;
+		height: 35px;
+		flex: 0 1 35px;
+	}
+	#pond-ui, #fanart-ui{
+		align-items:flex-end;
+	}
+	
+	.button--next, .button--previous{
+		top:2vh;
+	}
+	
+	#ponds-logo-home{
+		width:30vw;
+	}
+	
+	#ponds-to-fanart{
+		width:30vw;
+		background-position:top center;
+	}
+	
+	#ponds-volume{
+		height:8vh;
+		width:8vh;
+		left:10px;
+		top:10vh;
+	}
 }

@@ -1606,7 +1606,7 @@
             <input name="option" type="checkbox">
             <i class="toggle icon icon-arrow-down"></i>
             <i class="toggle icon icon-arrow-up"></i>
-            <span class="placeholder main"><img src="assets/LanguageButton.png"/></span>
+            <span class="placeholder main"></span>
             <label class="option">
                 <input class="lang-radio" lang="EN" name="option" type="radio">
                 <span class="title"><i class="icon flag-icon flag-icon-us selectLang"></i>EN</span>
@@ -1921,9 +1921,13 @@
         if (lang == null) {
             console.error("lang not set");
         }
+		
         let tags = $(".main-text");
         let creditsTags = $(".credits");
-
+		var langHTML=$('input[lang="'+lang+'"]').parent().html();
+		$(".placeholder.main").html(" ");
+		$(".placeholder.main").append(langHTML);
+		$(".placeholder.main input").remove();
         let mainTexts = strings[lang]["Main page"];
         let creditsTexts = strings[lang]["CREDITS"];
         // console.log(texts);
