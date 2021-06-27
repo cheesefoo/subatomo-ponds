@@ -387,7 +387,7 @@ canvas
 #ponds-logo-home:hover
 {
     opacity:            1;
-    
+
 }
 
 #enterPondButton
@@ -470,17 +470,32 @@ canvas
 
 .carousel-cell
 {
-	display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 9vh;
-    margin: 0;
+    display:           flex;
+    align-items:       center;
+    flex-direction:    row;
+    flex-wrap:         wrap;
+    justify-content:   space-between;
+    width:             100%;
+    height:            9vh;
+    margin:            0;
+    padding:           0 20px;
     counter-increment: carousel-cell;
-    background: transparent;
-    flex-wrap: wrap;
-    align-items: center;
-	justify-content:space-between;
-	padding:0 20px;
+    background:        transparent;
+}
+
+.carousel-cell:last-child
+{
+    display:           flex;
+    align-items:       center;
+    flex-direction:    row;
+    flex-wrap:         wrap;
+    justify-content:   flex-start;
+    width:             100%;
+    height:            9vh;
+    margin:            0;
+    padding:           0 20px;
+    counter-increment: carousel-cell;
+    background:        transparent;
 }
 
 /*.carousel-cell {
@@ -1100,7 +1115,7 @@ svg path
     width:             80vw;
     height:            calc(80vw * 0.55);
 
-   
+
 
     padding:           70px;
     background-color:  transparent;
@@ -1339,51 +1354,54 @@ svg path
         overflow: auto;
         height:   42vh;
     }
-	
-	#fanart.modal-window > div{
-		
-		padding-top: 0;
-		  background-image:  url(/src/assets/images/ui/megaphone_resized.png),
-							url(/src/assets/images/ui/AboutSubaruWindowmobile.png),
+
+	#fanart.modal-window > div
+    {
+
+        width:               100vw;
+        height:              calc(100vw * 1.802);
+        padding-top:         0;
+        background-image:    url(/src/assets/images/ui/megaphone_resized.png),
+                             url(/src/assets/images/ui/AboutSubaruWindowmobile.png),
                              url(../images/star-bg.jpg), url(../images/modal-mobile.png);
-		background-position: bottom+5% right+10%,bottom+5% right+40%,26vw 63vh, center;
-		background-size: 100px,150px,200px, 100% 100%;
-		width: 100vw;
-		height: calc(100vw * 1.802);
-	}
-	
-	#fanart-window-inner{
-		    display: flex;
-    flex-direction: row;
-    height: 100%;
-    flex-wrap: wrap;
-    overflow: hidden;
-    align-items: center;
-    padding-top: 5vh;
-    justify-content: flex-end;
-    align-content: baseline;
-	padding-top:20vh;
-	
-	}
-	
-	#fanart-window-display{
+        background-position: bottom+5% right+10%, bottom+5% right+40%, 26vw 63vh, center;
+        background-size:     100px, 150px, 200px, 100% 100%;
+    }
+
+    #fanart-window-inner
+    {
+        display:         flex;
+        overflow:        hidden;
+        align-content:   baseline;
+        align-items:     center;
+        flex-direction:  row;
+        flex-wrap:       wrap;
+        justify-content: flex-end;
+        height:          100%;
+        padding-top:     5vh;
+        padding-top:     20vh;
+
+    }
+
+    #fanart-window-display{
 		flex:1 1 100%;
 		max-height:initial;
 		max-width:initial;
 		width:100%;
 		margin-bottom:5vh;
 	}
-	
-	#fanart-image{
-				object-fit: contain;
-		flex: 1 1 100%;
-		width: 100%;
-		height: auto;
-		
-		border-radius: 5px;
-	}
-	
-	#fanart-info{
+
+    #fanart-image
+    {
+        flex:          1 1 100%;
+        width:         100%;
+        height:        auto;
+        border-radius: 5px;
+
+        object-fit:    contain;
+    }
+
+    #fanart-info{
 		flex:1 1 100%;
 		max-height:initial;
 		max-width:initial;
@@ -1454,8 +1472,8 @@ svg path
     {
         text-align: left;
     }
-	
-	.pond-btn{
+
+    .pond-btn{
 		display: inline-block;
 		flex: 0 1 50px;
 		/* background-color: #FF706F; */
@@ -1476,21 +1494,21 @@ svg path
 	#pond-ui, #fanart-ui{
 		align-items:flex-end;
 	}
-	
-	.button--next, .button--previous{
+
+    .button--next, .button--previous{
 		top:2vh;
 	}
-	
-	#ponds-logo-home{
+
+    #ponds-logo-home{
 		width:30vw;
 	}
-	
-	#ponds-to-fanart{
+
+    #ponds-to-fanart{
 		width:30vw;
 		background-position:top center;
 	}
-	
-	#ponds-volume{
+
+    #ponds-volume{
 		height:8vh;
 		width:8vh;
 		left:10px;

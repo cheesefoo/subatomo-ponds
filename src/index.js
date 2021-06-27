@@ -177,7 +177,7 @@ function startHomepageAnimation() {
     gsap.set(".modal-window", {visibility: "inherit", delay: 5});
     let tl = gsap.timeline();
 
-    if (innerWidth > MOBILE_MAX_WIDTH) {
+    if (!IS_MOBILE) {
         tl.fromTo(".logo-panel", {
             autoAlpha: 0,
             opacity: 0,
@@ -208,7 +208,7 @@ function startHomepageAnimation() {
     tl.fromTo(".logo-front", {
         autoAlpha: 0,
         opacity: 0,
-        bottom: "200%"
+        bottom: "-200%"
     }, {
         autoAlpha: 1,
         opacity: 1,
@@ -257,7 +257,7 @@ function startHomepageAnimation() {
         delay: 3
     }, 0);
 
-    if (innerWidth > MOBILE_MAX_WIDTH) {
+    if (!IS_MOBILE) {
         tl.fromTo("#enterPondButton", {
             autoAlpha: 0,
             opacity: 0,
@@ -291,7 +291,7 @@ function startHomepageAnimation() {
         }, 0);
     }
 
-    if (innerWidth > MOBILE_MAX_WIDTH) {
+    if (!IS_MOBILE) {
         tl.fromTo(".interior", {
             autoAlpha: 0,
             x: "-100%"
@@ -1648,11 +1648,11 @@ class FanartPond extends Phaser.Scene {
         this.listOfBoats = [];
 
         this.boatLocations = [{x: sceneWidth * 0.5, y: sceneHeight * 0.5},
-            {x: sceneWidth * 0.3, y: sceneHeight * 0.5},
+            {x: sceneWidth * 0.25, y: sceneHeight * 0.5},
             {x: sceneWidth * 0.4, y: sceneHeight * 0.6},
-            {x: sceneWidth * 0.5, y: sceneHeight * 0.3},
-            {x: sceneWidth * 0.7, y: sceneHeight * 0.7},
-            {x: sceneWidth * 0.4, y: sceneHeight * 0.6},
+
+            {x: sceneWidth * 0.7, y: sceneHeight * 0.65},
+            {x: sceneWidth * 0.3, y: sceneHeight * 0.65},
             {x: sceneWidth * 0.8, y: sceneHeight * 0.5}
         ];
 
@@ -1731,24 +1731,22 @@ class FanartPond extends Phaser.Scene {
 
         let locations = IS_MOBILE ? [...this.boatLocations] : [...this.boatLocations];
 
-        let that = this;
+
         for (let i = 0; i < fanartsByPond.length; i++) {
 
-            //just for a little animation variation on boats
-            setTimeout(function () {
-                if (shuffle)
-                    shuffleArray(locations);
-                let posn = locations.pop();
-                let x = posn.x + (Math.random() > 0.5) ? 0.05 : -0.05;
-                let y = posn.y + (Math.random() > 0.5) ? 0.05 : -0.05;
-                try {
-                    let newBoat = that.makeBoat(fanartsByPond[i], x, y);
-                    that.listOfBoats.push(newBoat);
-                } catch (e) {
-                    console.log(e);
-                    console.log("ran out of spots to put a boat, make more spots");
-                }
-            }, 100,);
+            if (shuffle)
+                shuffleArray(locations);
+            let posn = locations.pop();
+            let x = (Math.random() > 0.5) ? 0.05 : -0.05;
+            let y = (Math.random() > 0.5) ? 0.05 : -0.05;
+
+            try {
+                let newBoat = this.makeBoat(fanartsByPond[i], posn.x + x, posn.y + y);
+                this.listOfBoats.push(newBoat);
+            } catch (e) {
+                console.log(e);
+                console.log("ran out of spots to put a boat, make more spots");
+            }
         }
     }
 
