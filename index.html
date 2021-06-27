@@ -3,6 +3,9 @@
 <head>
     <meta content="width=device-width, user-scalable=no" name="viewport"/>
     <meta charset="utf-8"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
     </style>
@@ -1597,7 +1600,7 @@
             million subscribers, Subaru!!!
         </div>
 
-        <a class="nav-link logo main-text main" href="#" id="enterPondButton" text="main-11"></a>
+        <a class="nav-link logo " href="#" id="enterPondButton" ><div class="main-text main" text="main-11"></div></a>
     </div>
 
     <div class="lang-container">
@@ -1757,7 +1760,7 @@
 
                 <!--<div class="credits-category"><h2>Programming</h2></div>!-->
 
-                <div class="credits-category">
+                <div id="credits-second-column" class="credits-category">
                     <h4>Translation</h4>
                     <div class="credits-tl">
                         <ul class="credits-lang">
@@ -1826,35 +1829,32 @@
                             </li>
                         </ul>
 
-                        <ul class="credits-lang">
+                        <ul class="credits-lang es-column">
                             <li>
                                 <a class="social-icon" href="https://twitter.com/ace_highwind">
                                     <i class="flag-icon flag-icon-es"></i><i class="fab fa-twitter"></i>Yurian
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="credits-lang">
+                       
                             <li>
                                 <a class="social-icon" href="https://twitter.com/SuperSimpxX">
                                     <i class="flag-icon flag-icon-es"></i><i class="fab fa-twitter"></i>LauHerondale
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="credits-lang">
+                        
                             <li>
                                 <a class="social-icon" href="https://twitter.com/Lauvani_05">
                                     <i class="flag-icon flag-icon-es"></i><i class="fab fa-twitter"></i>Asbasxadas
                                 </a>
                             </li>
                         </ul>
-                        <ul class="credits-lang">
+                        <ul class="credits-lang ger-column">
                             <li>
                                 <a class="social-icon" href="#">
                                     <i class="flag-icon flag-icon-de"></i><i class="fas fa-ambulance"></i>Joshiv Puni
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="credits-lang">
+                        
                             <li>
                                 <a class="social-icon" href="https://twitter.com/sunrisevalley_">
                                     <i class="flag-icon flag-icon-de"></i><i class="fas fa-ambulance"></i>SunriseValley
@@ -1926,6 +1926,7 @@
         let creditsTags = $(".credits");
 		var langHTML=$('input[lang="'+lang+'"]').parent().html();
 		$(".placeholder.main").html(" ");
+		$("body").attr("lang",lang);
 		$(".placeholder.main").append(langHTML);
 		$(".placeholder.main input").remove();
         let mainTexts = strings[lang]["Main page"];
