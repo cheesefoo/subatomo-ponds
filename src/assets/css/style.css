@@ -344,7 +344,7 @@ canvas
     font-family:    'Hachi Maru Pop', cursive;
     font-size:      1.3rem;
     position:       absolute;
-    top:            55%;
+    top:            50%;
     width:          100%;
     height:         100%;
     text-transform: capitalize;
@@ -367,7 +367,7 @@ canvas
     /*max-height: 231px;*/
     height:                  100%;
     opacity:                 0;
-    background-image:        url(../images/intro/LogoAdjustedSize.png);
+    background-image:        url(../images/intro/LogoFullSizeredoutline.png);
     background-repeat:       no-repeat;
     -moz-background-size:    contain;
     -o-background-size:      contain;
@@ -377,19 +377,34 @@ canvas
 
 #ponds-logo-home
 {
+	background-image:url(../images/ui/Home_button.png);
     position: fixed;
     top:      8px;
     left:     8px;
     width:    15vw;
     height:   10vh;
-    opacity:  .7;
+    opacity:  1;
 	cursor:pointer;
 }
 
-#ponds-logo-home:hover
-{
-    opacity:            1;
+#ponds-logo-home:after{
+	content:" ";
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;	
+	width:100%;
+	height:100%;
+	opacity:opacity;
+	background-image:url(../images/ui/Home_button_glow.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	transition:0.5s;
+	opacity:0;
+}
 
+#ponds-logo-home:hover:after{
+	opacity:1;
 }
 
 #enterPondButton
@@ -414,12 +429,19 @@ canvas
 background-size: 1px 1px, calc(100% - 2px) 4px, 1px 1px, 4px calc(100% - 2px);
 background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
 background-repeat: no-repeat;
+display:inline-block;
+transition:0.5s;
+}
+
+#enterPondButton:hover{
+	background:white;
 }
 
 #enterPondButton div{
 	background: rgb(59,187,205);
 background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%, rgba(232,93,55,1) 100%);
 	padding:10px 15px;
+	display:inline-block;
 }
 
 #pond-ui, #fanart-ui
@@ -1070,7 +1092,7 @@ svg path
 }
 
 
-#ponds-to-fanart::before{
+.scene-switch-btn::before{
 	position:absolute;
 	content:" ";
 	width:100%;
@@ -1109,11 +1131,34 @@ svg path
 	background-size:contain;
 	background-position:center;
 	background-repeat:no-repeat;
+	cursor:pointer;
+}
+
+#ponds-to-fanart::before{
+	background-image: url("../images/fanartlogoglowup.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#ponds-to-ducks::before{
+	background-image: url("../images/ui/Subatomologoglowresized.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#ponds-to-ducks:hover::before{
+	opacity:1;
 }
 
 #ponds-to-ducks
 {
-    background-image: url("../images/intro/LogoAdjustedSize.png");
+    background-image: url("../images/ui/Subatomologoresized.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	cursor:pointer;
 }
 
 
@@ -1524,8 +1569,12 @@ svg path
 		width:30vw;
 	}
 
-    #ponds-to-fanart{
+    #ponds-to-fanart,#ponds-to-ducks{
 		width:30vw;
+		background-position:top center;
+	}
+	
+	#ponds-to-fanart::before,#ponds-to-ducks::before{
 		background-position:top center;
 	}
 
@@ -1534,6 +1583,9 @@ svg path
 		width:8vh;
 		left:10px;
 		bottom:11vh;
+	}
+	#enterPondButton div{
+		display:block;
 	}
 }
 
