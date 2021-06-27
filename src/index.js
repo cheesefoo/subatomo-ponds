@@ -169,7 +169,6 @@ const animationNames = [
     ["quack", 3, 3],
 ];
 
-let desktopCoords = [];
 
 let $body = $("body");
 
@@ -582,8 +581,8 @@ class SubatomoPond extends Phaser.Scene {
         let totalNumSubmissions = submissions["submissions"].length;
         console.log(`Wow, ${totalNumSubmissions} in ${Math.ceil(totalNumSubmissions / 20)} ponds!!!`);
 
-        // game.scale.setGameSize(sceneWidth, sceneHeight);
-        game.scale.setGameSize(newWidth, newHeight);
+        game.scale.setGameSize(sceneWidth, sceneHeight);
+        // game.scale.setGameSize(newWidth, newHeight);
     }
 
     makeSounds() {
@@ -612,18 +611,6 @@ class SubatomoPond extends Phaser.Scene {
         obstacleLayer = this.map.createLayer("obstacle", tileset);
         obstacleLayer.setCollisionByProperty({collides: true});
         let that = this;
-        this.time.addEvent({
-            delay: 1000, callback: function () {
-
-                desktopCoords = pondTileIndices.map(function (p) {
-                    let worldX = that.map.tileToWorldX(p, that.cameras.main, "pond");
-                    let worldY = that.map.tileToWorldY(p, that.cameras.main, "pond");
-                    return {x: worldX, y: worldY};
-
-                });
-                console.log(desktopCoords);
-            }
-        });
         let layers = [groundLayer, pondLayer, obstacleLayer];
 
         if (!IS_MOBILE) {
@@ -1484,10 +1471,10 @@ class PondManager extends Phaser.Scene {
             messagePanel = this.duckPond.add.container();
         } else {
             messagePanel = this.duckPond.add.container(x - 50, y - 120);
-            namePanel = this.duckPond.add.container(0, 0);
         }
         //let img = pond.add.image(0, 0, "panel");
 
+        namePanel = this.duckPond.add.container(0, 0);
 
         let name = this.duckPond.add.text(8, 6, gameObject.displayName, {
             fontFamily: "meyro",
@@ -1549,7 +1536,7 @@ class PondManager extends Phaser.Scene {
         messagePanel.setDepth(9999);
         messagePanel.setAlpha(0);
 
-        if (sceneWidth < 900) {
+        if (IS_MOBILE) {
             if (x > this.duckPond.boundsMidPtX) {
                 if (panelImg.displayWidth > this.duckPond.halfWidth)
                     messagePanel.setPosition(Math.max(this.duckPond.boundsLeft, this.duckPond.boundsRight - panelImg.displayWidth), y - SPRITE_HEIGHT);
@@ -1659,24 +1646,16 @@ class FanartPond extends Phaser.Scene {
         this.fanartLink = $("#fanart-link");
         this.fanartImage = $("#fanart-image");
         this.listOfBoats = [];
-        /*        this.boatLocationsDesktop = [{x: 550, y: 390}, {x: 890, y: 360}, {x: 1050, y: 340},
-                    {x: 450, y: 500}, {x: 600, y: 510}, {x: 750, y: 515}, {x: 910, y: 500}, {x: 1090, y: 510}, {
-                        x: 1210,
-                        y: 485
-                    }, {x: 1400, y: 500}, {x: 1550, y: 515},
-                    {x: 440, y: 650}, {x: 615, y: 610}, {x: 735, y: 645}, {x: 890, y: 650}, {x: 1010, y: 660}, {
-                        x: 1200,
-                        y: 650
-                    }, {x: 1380, y: 645}, {x: 1535, y: 660},
-                    {x: 485, y: 750}, {x: 635, y: 725}, {x: 790, y: 725}, {x: 920, y: 770}, {x: 1100, y: 780}, {
-                        x: 1290,
-                        y: 710
-                    },];*/
 
-        this.boatLocationsMobile = [{x: 50, y: 400}, {x: 150, y: 450}, {x: 75, y: 500}, {x: 290, y: 450}, {
-            x: 305,
-            y: 300
-        }];
+        this.boatLocations = [{x: sceneWidth * 0.5, y: sceneHeight * 0.5},
+            {x: sceneWidth * 0.3, y: sceneHeight * 0.5},
+            {x: sceneWidth * 0.4, y: sceneHeight * 0.6},
+            {x: sceneWidth * 0.5, y: sceneHeight * 0.3},
+            {x: sceneWidth * 0.7, y: sceneHeight * 0.7},
+            {x: sceneWidth * 0.4, y: sceneHeight * 0.6},
+            {x: sceneWidth * 0.8, y: sceneHeight * 0.5}
+        ];
+
         $("#fanart .modal-close,#fanart .modal-bg").on("click", function () {
             game.input.enabled = true;
             $("body > canvas").css("cursor", "initial");
@@ -1702,12 +1681,6 @@ class FanartPond extends Phaser.Scene {
             },
             this
         );
-        this.boatLocationsDesktop = [{x: sceneWidth / 2, y: sceneHeight / 2},
-            {x: sceneWidth / 3, y: sceneHeight / 3},
-            {x: sceneWidth / 2, y: sceneHeight / 3},
-            {x: sceneWidth * 7, y: sceneHeight * .7},
-            {x: sceneWidth * 8, y: sceneHeight * .2}
-        ];
         this.makeBoatAnimations();
         let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
         pondImg.setDisplaySize(newWidth, newHeight);
@@ -1755,23 +1728,27 @@ class FanartPond extends Phaser.Scene {
             return parseInt(obj.pond) === pond;
         });
 
-        let locations = IS_MOBILE ? [...pondTileIndices] : [...pondTileIndices];
-        // let locations = IS_MOBILE ? [...this.boatLocationsMobile] : [...this.boatLocationsDesktop];
 
+        let locations = IS_MOBILE ? [...this.boatLocations] : [...this.boatLocations];
+
+        let that = this;
         for (let i = 0; i < fanartsByPond.length; i++) {
-            if (shuffle)
-                shuffleArray(locations);
-            let posn = locations.pop();
 
-            try {
-                let newBoat = this.makeBoat(fanartsByPond[i], posn.x, posn.y);
-                this.listOfBoats.push(newBoat);
-            } catch (e) {
-                console.log(e);
-                console.log("ran out of spots to put a boat, make more spots");
-            }
-
-
+            //just for a little animation variation on boats
+            setTimeout(function () {
+                if (shuffle)
+                    shuffleArray(locations);
+                let posn = locations.pop();
+                let x = posn.x + (Math.random() > 0.5) ? 0.05 : -0.05;
+                let y = posn.y + (Math.random() > 0.5) ? 0.05 : -0.05;
+                try {
+                    let newBoat = that.makeBoat(fanartsByPond[i], x, y);
+                    that.listOfBoats.push(newBoat);
+                } catch (e) {
+                    console.log(e);
+                    console.log("ran out of spots to put a boat, make more spots");
+                }
+            }, 100,);
         }
     }
 
