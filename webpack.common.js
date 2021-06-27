@@ -67,6 +67,7 @@ module.exports = {
                     from: "src/assets/submissions/template.json",
                     to: path.resolve(__dirname, "dist/assets/template.json")
                 },
+                {from: "src/404.html", to: "404.html"},
                 {from: "src/assets/images/intro/sky.png", to: "comingsoon/Sky.png"},
                 {from: "src/assets/images/LogoFullSize.png", to: "comingsoon/LogoFullSize.png"},
                 {from: "src/assets/images/shitty_button.png", to: "comingsoon/enter.png"},

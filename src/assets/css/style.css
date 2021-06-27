@@ -341,16 +341,16 @@ canvas
 
 .logo-text
 {
-    font-family:    'Hachi Maru Pop', cursive;
+    font-family:    "Hachi Maru Pop", cursive;
     font-size:      1.3rem;
+    font-weight:    bold;
     position:       absolute;
     top:            55%;
     width:          100%;
     height:         100%;
     text-transform: capitalize;
     color:          #E54E17;
-	text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
-	font-weight:bold;
+    text-shadow:    -2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF;
 
 }
 
@@ -382,44 +382,45 @@ canvas
     left:     8px;
     width:    15vw;
     height:   10vh;
+    cursor:   pointer;
     opacity:  .7;
-	cursor:pointer;
 }
 
 #ponds-logo-home:hover
 {
-    opacity:            1;
+    opacity: 1;
 
 }
 
 #enterPondButton
 {
-    font-size:        2rem;
-    font-weight:      bold;
-    position:         relative;
-    z-index:          9;
-    width:            auto;
-    max-width:        initial;
-    margin:           auto;
-    padding:          4px;
+    font-size:           2rem;
+    font-weight:         bold;
+    position:            relative;
+    z-index:             9;
+    width:               auto;
+    max-width:           initial;
+    margin:              auto;
+    padding:             4px;
     /* width: 20%; */
-    text-align:       center;
-    text-decoration:  none;
-    text-transform:   capitalize;
-    opacity:          0;
-    color:            #FFFFEF;
+    text-align:          center;
+    text-decoration:     none;
+    text-transform:      capitalize;
+    opacity:             0;
+    color:               #FFFFEF;
     /*border:           5px solid #994115;*/
-    border-radius:    5px;
-   background-image: radial-gradient(circle at 100% 100%, transparent -3px, #df8972 -3px, #df8972 1px, transparent 1px), linear-gradient(to right, #df8972, #df8972), radial-gradient(circle at 0% 100%, transparent -3px, #df8972 -3px, #df8972 1px, transparent 1px), linear-gradient(to bottom, #df8972, #b4c1ca), radial-gradient(circle at 0% 0%, transparent -3px, #b4c1ca -3px, #b4c1ca 1px, transparent 1px), linear-gradient(to left, #b4c1ca, #b4c1ca), radial-gradient(circle at 100% 0%, transparent -3px, #b4c1ca -3px, #b4c1ca 1px, transparent 1px), linear-gradient(to top, #b4c1ca, #df8972);
-background-size: 1px 1px, calc(100% - 2px) 4px, 1px 1px, 4px calc(100% - 2px);
-background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
-background-repeat: no-repeat;
+    border-radius:       5px;
+    background-image:    radial-gradient(circle at 100% 100%, transparent -3px, #DF8972 -3px, #DF8972 1px, transparent 1px), linear-gradient(to right, #DF8972, #DF8972), radial-gradient(circle at 0% 100%, transparent -3px, #DF8972 -3px, #DF8972 1px, transparent 1px), linear-gradient(to bottom, #DF8972, #B4C1CA), radial-gradient(circle at 0% 0%, transparent -3px, #B4C1CA -3px, #B4C1CA 1px, transparent 1px), linear-gradient(to left, #B4C1CA, #B4C1CA), radial-gradient(circle at 100% 0%, transparent -3px, #B4C1CA -3px, #B4C1CA 1px, transparent 1px), linear-gradient(to top, #B4C1CA, #DF8972);
+    background-repeat:   no-repeat;
+    background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left;
+    background-size:     1px 1px, calc(100% - 2px) 4px, 1px 1px, 4px calc(100% - 2px);
 }
 
-#enterPondButton div{
-	background: rgb(59,187,205);
-background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%, rgba(232,93,55,1) 100%);
-	padding:10px 15px;
+#enterPondButton div
+{
+    padding:    10px 15px;
+    background: rgb(59, 187, 205);
+    background: linear-gradient(0deg, rgba(59, 187, 205, 1) 0%, rgba(114, 157, 157, 1) 16%, rgba(232, 93, 55, 1) 100%);
 }
 
 #pond-ui, #fanart-ui
@@ -471,10 +472,10 @@ background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%
 .carousel
 {
     z-index:       2;
+    box-sizing:    border-box;
     width:         100%;
     padding-right: 20px;
     padding-left:  20px;
-	box-sizing:border-box;
 }
 
 .carousel-cell
@@ -494,21 +495,7 @@ background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%
 
 .carousel-cell:last-child
 {
-    display:           flex;
-    align-items:       center;
-    flex-direction:    row;
-    flex-wrap:         wrap;
-    justify-content:   flex-start;
-    width:             100%;
-    height:            9vh;
-    margin:            0;
-    padding:           0 20px;
-    counter-increment: carousel-cell;
-    background:        transparent;
-}
-
-.carousel-cell:last-child{
-	justify-content:flex-start;
+    justify-content: flex-start;
 }
 
 /*.carousel-cell {
@@ -532,22 +519,23 @@ background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%
 
 .button--next, .button--previous
 {
-       overflow: hidden;
-    width: 13vh;
-    height: 13vh;
-    border: none;
-    background: transparent;
-    background-size: 100% 100%;
-	background-repeat:no-repeat;
-	background-position:center;
+    position:            relative;
+    top:                 -2vh;
+    overflow:            hidden;
+    width:               13vh;
+    height:              13vh;
+    transition:          0.5s;
+    border:              none;
+    background:          transparent;
     /* zoom: 1.4; */
-    position: relative;
-    top: -2vh;
-	transition:0.5s;
+    background-repeat:   no-repeat;
+    background-position: center;
+    background-size:     100% 100%;
 }
 
-.button--next:hover, .button--previous:hover{
-	background-size:80%;
+.button--next:hover, .button--previous:hover
+{
+    background-size: 80%;
 }
 
 .button--next
@@ -557,8 +545,8 @@ background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%
 
 .button--previous
 {
+    transform:        rotateY(180deg);
     background-image: url(../images/ui/PondArrowButtonshadow.png);
-	transform:rotateY(180deg);
 }
 
 .pond-btn:disabled
@@ -586,7 +574,7 @@ background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%
 
 .pond-btn:hover
 {
-	color:#ffbc94;
+    color: #FFBC94;
 }
 
 .pond-btn.selectedPond
@@ -731,24 +719,24 @@ img
 
 .lang-container
 {
-        position: fixed;
-    z-index: 10;
-    top: 0;
-    right: 0;
-    left: initial;
-    width: 120px;
-    max-width: 150px;
-    min-height: initial;
+    position:     fixed;
+    z-index:      10;
+    top:          0;
+    right:        0;
+    left:         initial;
+    width:        120px;
+    max-width:    150px;
+    min-height:   initial;
     margin-right: 10px;
 }
 
 .lang-container .select, .lang-container .select > span.placeholder
 {
+    font-size:        1rem;
+    font-weight:      bold;
     padding:          0;
     background-color: transparent;
     box-shadow:       none;
-	font-size:1rem;
-	font-weight:bold;
 }
 
 .lang-container .select > span.placeholder
@@ -759,38 +747,42 @@ img
     padding-bottom: 0;
 }
 
-.lang-container .select > span.placeholder .flag-icon{
-	margin-right:20px;
+.lang-container .select > span.placeholder .flag-icon
+{
+    margin-right: 20px;
 }
-.lang-container .select > span.placeholder:after{
-	    display: inline-block;
-    margin-left: .255em;
+
+.lang-container .select > span.placeholder:after
+{
+    display:        inline-block;
+    float:          right;
+    margin-top:     20px;
+    margin-left:    .255em;
+    content:        "";
     vertical-align: .255em;
-    content: "";
-    border-top: .3em solid;
-    border-right: .3em solid transparent;
-    border-bottom: 0;
-    border-left: .3em solid transparent;
-	float:right;
-	margin-top:20px;
+    border-top:     .3em solid;
+    border-right:   .3em solid transparent;
+    border-bottom:  0;
+    border-left:    .3em solid transparent;
 }
 
 .lang-container .select .placeholder, .lang-container .select .title
 {
+    display: inline-block;
+    width:   auto;
     padding: 10px;
-	display:inline-block;
-	width:auto;
 }
 
-.select .placeholder, .select .title{
-	background:transparent;
+.select .placeholder, .select .title
+{
+    background: transparent;
 }
 
 .lang-container .select label.option span.title
 {
+    width:      100%;
     color:      #5DCDE3 !important;
-    background: #fefefe;
-	width:100%;
+    background: #FEFEFE;
 }
 
 .nav-button-container .container
@@ -827,6 +819,29 @@ img
 /*{*/
 /*    font-size:16px;*/
 /*}*/
+.container-links
+{
+    display:         inline-flex;
+    flex-direction:  row;
+    justify-content: space-evenly;
+    width:           100%;
+}
+
+.container-links > button
+{
+    border:     none;
+    background: transparent;
+}
+
+.container-links > button > a > svg
+{
+    fill: #5DCDE3;
+}
+
+.container-links > button > a > svg:hover
+{
+    fill: #FD7062;
+}
 
 .nav-button-container .container .interior
 {
@@ -837,9 +852,9 @@ img
 
 .select label.option input:checked ~ span.title
 {
+    font-size:        1rem;
     position:         relative;
-    background-color: #e4ec7c;
-	font-size:1rem;
+    background-color: #E4EC7C;
 }
 
 .modal-window > div
@@ -986,12 +1001,10 @@ img
 .credits-category h4
 {
     font-size:  20px;
+    font-size:  1.1rem;
     margin:     0;
     text-align: center;
-	font-size:1.1rem;
 }
-
-
 
 
 use.ic-1
@@ -1070,20 +1083,23 @@ svg path
 }
 
 
-#ponds-to-fanart::before{
-	position:absolute;
-	content:" ";
-	width:100%;
-	height:100%;
-	background-image: url("../images/fanartlogoglowup.png");
-	background-position:center;
-	background-size:contain;
-	background-repeat:no-repeat;
-	opacity:0.1;
-	transition:0.6s;
+#ponds-to-fanart::before
+{
+    position:            absolute;
+    width:               100%;
+    height:              100%;
+    content:             " ";
+    transition:          0.6s;
+    opacity:             0.1;
+    background-image:    url("../images/fanartlogoglowup.png");
+    background-repeat:   no-repeat;
+    background-position: center;
+    background-size:     contain;
 }
-#ponds-to-fanart:hover::before{
-	opacity:1;
+
+#ponds-to-fanart:hover::before
+{
+    opacity: 1;
 }
 
 .scene-switch-btn
@@ -1105,10 +1121,10 @@ svg path
 
 #ponds-to-fanart
 {
-    background-image: url("../images/fanartlogocleanedup.png");
-	background-size:contain;
-	background-position:center;
-	background-repeat:no-repeat;
+    background-image:    url("../images/fanartlogocleanedup.png");
+    background-repeat:   no-repeat;
+    background-position: center;
+    background-size:     contain;
 }
 
 #ponds-to-ducks
@@ -1130,7 +1146,6 @@ svg path
     height:            calc(80vw * 0.55);
 
 
-
     padding:           70px;
     background-color:  transparent;
     background-image:  url(../images/subamodal-min.png);
@@ -1148,17 +1163,17 @@ svg path
 
 #fanart-window-inner
 {
-	display: flex;
+    display:        flex;
+    overflow:       hidden;
     flex-direction: row;
-    height: 100%;
-    flex-wrap: wrap;
-    overflow: hidden;
+    flex-wrap:      wrap;
+    height:         100%;
 }
 
 #fanart-image
 {
+    height:     100%;
     object-fit: contain;
-	height:100%;
 }
 
 #fanart-info
@@ -1178,10 +1193,12 @@ svg path
 
 /*Lang font fixes*/
 
-[lang='ID'] [text="main-23"],[lang='NL'] [text="main-23"],[lang='KR'] [text="main-23"],[lang='DE'] [text="main-23"]{
-	/*font-size: 11px;
+[lang="ID"] [text="main-23"], [lang="NL"] [text="main-23"], [lang="KR"] [text="main-23"], [lang="DE"] [text="main-23"]
+{
+    /*font-size: 11px;
     margin-top: 3px;*/
 }
+
 /*End lang fixes**/
 
 @media (max-width: 900px)
@@ -1342,7 +1359,7 @@ svg path
         right: 40px;
     }
 
-    #about-subaru.modal-window > div, #about-project.modal-window > div,#fanart.modal-window > div
+    #about-subaru.modal-window > div, #about-project.modal-window > div, #fanart.modal-window > div
     {
         padding-top:         40vh;
         background-image:    url(../images/subaru_ShigUi_profilev4fix-min.png),
@@ -1376,7 +1393,7 @@ svg path
         height:   42vh;
     }
 
-	#fanart.modal-window > div
+    #fanart.modal-window > div
     {
 
         width:               100vw;
@@ -1404,13 +1421,14 @@ svg path
 
     }
 
-    #fanart-window-display{
-		flex:1 1 100%;
-		max-height:initial;
-		max-width:initial;
-		width:100%;
-		margin-bottom:5vh;
-	}
+    #fanart-window-display
+    {
+        flex:          1 1 100%;
+        width:         100%;
+        max-width:     initial;
+        max-height:    initial;
+        margin-bottom: 5vh;
+    }
 
     #fanart-image
     {
@@ -1422,12 +1440,13 @@ svg path
         object-fit:    contain;
     }
 
-    #fanart-info{
-		flex:1 1 100%;
-		max-height:initial;
-		max-width:initial;
-		width:100%;
-	}
+    #fanart-info
+    {
+        flex:       1 1 100%;
+        width:      100%;
+        max-width:  initial;
+        max-height: initial;
+    }
 
     .oozora-socials
     {
@@ -1494,51 +1513,60 @@ svg path
         text-align: left;
     }
 
-    .pond-btn{
-		display: inline-block;
-		flex: 0 1 50px;
-		/* background-color: #FF706F; */
-		box-sizing: border-box;
-		width: 50px;
-		height: 50px;
-		cursor: pointer;
-		transition: 0.5s;
-		color: #FF706F;
-		border: none;
-		border-radius: 50%;
-		background: transparent;
-		text-shadow: 0px 0px 9px rgba(150, 150, 150, 1);
-		width: 35px;
-		height: 35px;
-		flex: 0 1 35px;
-	}
-	#pond-ui, #fanart-ui{
-		align-items:flex-end;
-	}
+    .pond-btn
+    {
+        display:       inline-block;
+        flex:          0 1 50px;
+        /* background-color: #FF706F; */
+        flex:          0 1 35px;
+        box-sizing:    border-box;
+        width:         50px;
+        width:         35px;
+        height:        50px;
+        height:        35px;
+        cursor:        pointer;
+        transition:    0.5s;
+        color:         #FF706F;
+        border:        none;
+        border-radius: 50%;
+        background:    transparent;
+        text-shadow:   0px 0px 9px rgba(150, 150, 150, 1);
+    }
 
-    .button--next, .button--previous{
-		top:2vh;
-	}
+    #pond-ui, #fanart-ui
+    {
+        align-items: flex-end;
+    }
 
-    #ponds-logo-home{
-		width:30vw;
-	}
+    .button--next, .button--previous
+    {
+        top: 2vh;
+    }
 
-    #ponds-to-fanart{
-		width:30vw;
-		background-position:top center;
-	}
+    #ponds-logo-home
+    {
+        width: 30vw;
+    }
 
-    #ponds-volume{
-		height:8vh;
-		width:8vh;
-		left:10px;
-		bottom:11vh;
-	}
+    #ponds-to-fanart
+    {
+        width:               30vw;
+        background-position: top center;
+    }
+
+    #ponds-volume
+    {
+        bottom: 11vh;
+        left:   10px;
+        width:  8vh;
+        height: 8vh;
+    }
 }
 
-@media (max-width: 420px) and (max-height:840px){
-	#fanart.modal-window > div{
-		background-position:bottom+5% right+10%,bottom+5% right+40%,26vw 58vh, center;
-	}
+@media (max-width: 420px) and (max-height: 840px)
+{
+    #fanart.modal-window > div
+    {
+        background-position: bottom+5% right+10%, bottom+5% right+40%, 26vw 58vh, center;
+    }
 }

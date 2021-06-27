@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+</head>
+<body>
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer>
+    const labels = [
+        "Short", "Long", "Twintails", "Can't decide"
+    ];
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: "Best Hairstyle?",
+            borderColor: "rgb(255,255,255)",
+            data: [1114, 483, 241, 49],
+            backgroundColor: [
+                "rgb(255, 99, 132)",
+                "rgb(54, 162, 235)",
+                "rgb(255, 205, 86)"
+            ],
+            hoverOffset: 4
+        }]
+    };
+    const config = {
+        type: "pie",
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "top",
+                },
+                title: {
+                    display: true,
+                    text: "Best Hairstyle?"
+                }
+            }
+        },
+    };
+
+    var myChart = new Chart(
+        document.getElementById("myChart"),
+        config
+    );
+</script>
+</body>
+</html>
