@@ -268,7 +268,7 @@ function startHomepageAnimation() {
             autoAlpha: 1,
             opacity: 1,
             x: 0,
-            y: "20vh",
+            y: "0vh",
             top: "66.5vh",
             duration: 5,
             delay: 4
@@ -435,7 +435,7 @@ if (sceneHeight > sceneWidth) {
     newWidth = sceneHeight;// * (2003 / 1080);
 
 } else {
-    newHeight = sceneWidth * (1080 / 2003);
+    newHeight = sceneWidth * (1080 / 1920);
     newWidth = sceneWidth;
 }
 

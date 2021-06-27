@@ -345,7 +345,7 @@ canvas
     font-size:      1.3rem;
     font-weight:    bold;
     position:       absolute;
-    top:            55%;
+    top:            50%;
     width:          100%;
     height:         100%;
     text-transform: capitalize;
@@ -367,7 +367,7 @@ canvas
     /*max-height: 231px;*/
     height:                  100%;
     opacity:                 0;
-    background-image:        url(../images/intro/LogoAdjustedSize.png);
+    background-image:        url(../images/intro/LogoFullSizeredoutline.png);
     background-repeat:       no-repeat;
     -moz-background-size:    contain;
     -o-background-size:      contain;
@@ -377,19 +377,34 @@ canvas
 
 #ponds-logo-home
 {
+	background-image:url(../images/ui/Home_button.png);
     position: fixed;
     top:      8px;
     left:     8px;
     width:    15vw;
     height:   10vh;
-    cursor:   pointer;
-    opacity:  .7;
+    opacity:  1;
+	cursor:pointer;
 }
 
-#ponds-logo-home:hover
-{
-    opacity: 1;
+#ponds-logo-home:after{
+	content:" ";
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	opacity:opacity;
+	background-image:url(../images/ui/Home_button_glow.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	transition:0.5s;
+	opacity:0;
+}
 
+#ponds-logo-home:hover:after{
+	opacity:1;
 }
 
 #enterPondButton
@@ -409,18 +424,24 @@ canvas
     opacity:             0;
     color:               #FFFFEF;
     /*border:           5px solid #994115;*/
-    border-radius:       5px;
-    background-image:    radial-gradient(circle at 100% 100%, transparent -3px, #DF8972 -3px, #DF8972 1px, transparent 1px), linear-gradient(to right, #DF8972, #DF8972), radial-gradient(circle at 0% 100%, transparent -3px, #DF8972 -3px, #DF8972 1px, transparent 1px), linear-gradient(to bottom, #DF8972, #B4C1CA), radial-gradient(circle at 0% 0%, transparent -3px, #B4C1CA -3px, #B4C1CA 1px, transparent 1px), linear-gradient(to left, #B4C1CA, #B4C1CA), radial-gradient(circle at 100% 0%, transparent -3px, #B4C1CA -3px, #B4C1CA 1px, transparent 1px), linear-gradient(to top, #B4C1CA, #DF8972);
-    background-repeat:   no-repeat;
-    background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left;
-    background-size:     1px 1px, calc(100% - 2px) 4px, 1px 1px, 4px calc(100% - 2px);
+    border-radius:    5px;
+   background-image: radial-gradient(circle at 100% 100%, transparent -3px, #df8972 -3px, #df8972 1px, transparent 1px), linear-gradient(to right, #df8972, #df8972), radial-gradient(circle at 0% 100%, transparent -3px, #df8972 -3px, #df8972 1px, transparent 1px), linear-gradient(to bottom, #df8972, #b4c1ca), radial-gradient(circle at 0% 0%, transparent -3px, #b4c1ca -3px, #b4c1ca 1px, transparent 1px), linear-gradient(to left, #b4c1ca, #b4c1ca), radial-gradient(circle at 100% 0%, transparent -3px, #b4c1ca -3px, #b4c1ca 1px, transparent 1px), linear-gradient(to top, #b4c1ca, #df8972);
+background-size: 1px 1px, calc(100% - 2px) 4px, 1px 1px, 4px calc(100% - 2px);
+background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+background-repeat: no-repeat;
+display:inline-block;
+transition:0.5s;
 }
 
-#enterPondButton div
-{
-    padding:    10px 15px;
-    background: rgb(59, 187, 205);
-    background: linear-gradient(0deg, rgba(59, 187, 205, 1) 0%, rgba(114, 157, 157, 1) 16%, rgba(232, 93, 55, 1) 100%);
+#enterPondButton:hover{
+	background:white;
+}
+
+#enterPondButton div{
+	background: rgb(59,187,205);
+background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%, rgba(232,93,55,1) 100%);
+	padding:10px 15px;
+	display:inline-block;
 }
 
 #pond-ui, #fanart-ui
@@ -1083,18 +1104,17 @@ svg path
 }
 
 
-#ponds-to-fanart::before
-{
-    position:            absolute;
-    width:               100%;
-    height:              100%;
-    content:             " ";
-    transition:          0.6s;
-    opacity:             0.1;
-    background-image:    url("../images/fanartlogoglowup.png");
-    background-repeat:   no-repeat;
-    background-position: center;
-    background-size:     contain;
+.scene-switch-btn::before{
+	position:absolute;
+	content:" ";
+	width:100%;
+	height:100%;
+	background-image: url("../images/fanartlogoglowup.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	opacity:0.1;
+	transition:0.6s;
 }
 
 #ponds-to-fanart:hover::before
@@ -1121,15 +1141,38 @@ svg path
 
 #ponds-to-fanart
 {
-    background-image:    url("../images/fanartlogocleanedup.png");
-    background-repeat:   no-repeat;
-    background-position: center;
-    background-size:     contain;
+    background-image: url("../images/fanartlogocleanedup.png");
+	background-size:contain;
+	background-position:center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+
+#ponds-to-fanart::before{
+	background-image: url("../images/fanartlogoglowup.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#ponds-to-ducks::before{
+	background-image: url("../images/ui/Subatomologoglowresized.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#ponds-to-ducks:hover::before{
+	opacity:1;
 }
 
 #ponds-to-ducks
 {
-    background-image: url("../images/intro/LogoAdjustedSize.png");
+    background-image: url("../images/ui/Subatomologoresized.png");
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	cursor:pointer;
 }
 
 
@@ -1548,19 +1591,24 @@ svg path
         width: 30vw;
     }
 
-    #ponds-to-fanart
-    {
-        width:               30vw;
-        background-position: top center;
-    }
+    #ponds-to-fanart,#ponds-to-ducks{
+		width:30vw;
+		background-position:top center;
+	}
 
-    #ponds-volume
-    {
-        bottom: 11vh;
-        left:   10px;
-        width:  8vh;
-        height: 8vh;
-    }
+	#ponds-to-fanart::before,#ponds-to-ducks::before{
+		background-position:top center;
+	}
+
+    #ponds-volume{
+		height:8vh;
+		width:8vh;
+		left:10px;
+		bottom:11vh;
+	}
+	#enterPondButton div{
+		display:block;
+	}
 }
 
 @media (max-width: 420px) and (max-height: 840px)
