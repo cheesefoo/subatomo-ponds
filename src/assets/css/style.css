@@ -341,14 +341,16 @@ canvas
 
 .logo-text
 {
-    font-family:    "corsva";
-    font-size:      1.6rem;
+    font-family:    'Hachi Maru Pop', cursive;
+    font-size:      1.3rem;
     position:       absolute;
     top:            55%;
     width:          100%;
     height:         100%;
     text-transform: capitalize;
-    color:          #0D191E;
+    color:          #E54E17;
+	text-shadow: -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
+	font-weight:bold;
 
 }
 
@@ -399,18 +401,25 @@ canvas
     width:            auto;
     max-width:        initial;
     margin:           auto;
-    padding:          10px 15px;
+    padding:          4px;
     /* width: 20%; */
     text-align:       center;
     text-decoration:  none;
     text-transform:   capitalize;
     opacity:          0;
     color:            #FFFFEF;
-    border:           5px solid #994115;
+    /*border:           5px solid #994115;*/
     border-radius:    5px;
-    background:       rgb(171, 71, 18);
-    background:       linear-gradient(0deg, rgba(171, 71, 18, 1) 0%, rgba(231, 92, 55, 1) 48%);
-    background-color: #E54E17;
+   background-image: radial-gradient(circle at 100% 100%, transparent -3px, #df8972 -3px, #df8972 1px, transparent 1px), linear-gradient(to right, #df8972, #df8972), radial-gradient(circle at 0% 100%, transparent -3px, #df8972 -3px, #df8972 1px, transparent 1px), linear-gradient(to bottom, #df8972, #b4c1ca), radial-gradient(circle at 0% 0%, transparent -3px, #b4c1ca -3px, #b4c1ca 1px, transparent 1px), linear-gradient(to left, #b4c1ca, #b4c1ca), radial-gradient(circle at 100% 0%, transparent -3px, #b4c1ca -3px, #b4c1ca 1px, transparent 1px), linear-gradient(to top, #b4c1ca, #df8972);
+background-size: 1px 1px, calc(100% - 2px) 4px, 1px 1px, 4px calc(100% - 2px);
+background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+background-repeat: no-repeat;
+}
+
+#enterPondButton div{
+	background: rgb(59,187,205);
+background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%, rgba(232,93,55,1) 100%);
+	padding:10px 15px;
 }
 
 #pond-ui, #fanart-ui
@@ -496,6 +505,10 @@ canvas
     padding:           0 20px;
     counter-increment: carousel-cell;
     background:        transparent;
+}
+
+.carousel-cell:last-child{
+	justify-content:flex-start;
 }
 
 /*.carousel-cell {
@@ -975,6 +988,7 @@ img
     font-size:  20px;
     margin:     0;
     text-align: center;
+	font-size:1.1rem;
 }
 
 
@@ -1162,6 +1176,13 @@ svg path
     text-wrap: normal;
 }
 
+/*Lang font fixes*/
+
+[lang='ID'] [text="main-23"],[lang='NL'] [text="main-23"],[lang='KR'] [text="main-23"],[lang='DE'] [text="main-23"]{
+	/*font-size: 11px;
+    margin-top: 3px;*/
+}
+/*End lang fixes**/
 
 @media (max-width: 900px)
 {
@@ -1512,6 +1533,12 @@ svg path
 		height:8vh;
 		width:8vh;
 		left:10px;
-		top:10vh;
+		bottom:11vh;
+	}
+}
+
+@media (max-width: 420px) and (max-height:840px){
+	#fanart.modal-window > div{
+		background-position:bottom+5% right+10%,bottom+5% right+40%,26vw 58vh, center;
 	}
 }
