@@ -354,7 +354,7 @@ canvas
 {
     font-family:    "Hachi Maru Pop", cursive;
     font-size:      1.3rem;
-    position:       absolute;
+    position:       initial;
     top:            50%;
 	font-weight:    bold;
     width:          100%;
