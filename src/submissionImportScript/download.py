@@ -6,7 +6,7 @@ import time
 from json import dumps, load, loads
 from os import listdir
 from os.path import isfile, join, dirname, abspath
-from pathlib import PurePath
+from pathlib import PurePath, Path
 
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -24,6 +24,7 @@ JSON_DESTINATION_DIR = join(ASSETS_DIR, 'submissions')
 RAW_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_raw')
 SPLIT_IMAGES_DIR = join(ASSETS_DIR, 'all_submissions_split')
 FANART_DIR = join(ASSETS_DIR, 'fanart')
+RAW_FANART_DIR = join(ASSETS_DIR, 'fanart_uncompressed')
 SPRITESHEET_DIR = join(ASSETS_DIR, 'submissions')
 TEMP_IMAGE_DIR = join(ASSETS_DIR, 'all_submissions_temp')
 TEMP_ATLAS_DIR = join(ASSETS_DIR, 'all_submissions_atlas_temp')
@@ -127,7 +128,7 @@ def download_images():
     gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name('client_secrets.json', scope)
     drive = GoogleDrive(gauth)
 
-    @retry(wait=wait_random_exponential(multiplier=1, max=60))
+    @retry(wait=wait_random_exponential(multiplier=1, max=2))
     def try_download(f, destination):
         f.GetContentFile(destination)
 
@@ -139,12 +140,17 @@ def download_images():
     for file in file_list:
         progress = progress + 1
         filename = file['title']
+        if filename.startswith("TEMPLATE"):
+            continue
         if filename.startswith("FANART"):
-            dest = join(FANART_DIR, filename + ".png")
+            dest = join(RAW_FANART_DIR, filename + ".png")
         else:
             dest = join(RAW_IMAGES_DIR, filename + ".png")
+        if Path(dest).exists():
+            print(str(progress) + ") " + filename + " already on disk")
+            continue
+        print(str(progress) + ") " + " getting " + filename + " " + str(progress) + " out of " + str(total))
         try_download(file, dest)
-        print(str(progress) + "out of" + str(total))
     print("downloaded {} files".format(total))
 
 
@@ -170,7 +176,7 @@ def pack_spritesheets_per_atlas():
     SUBMISSIONS = SUBMISSIONS["submissions"]
     print("gonna put " + str(total_num_ponds) + " ponds into " + str(total_iterations) + " atlases")
     atlas_num = 1
-    for i in range(1, total_iterations+1):
+    for i in range(1, total_iterations + 1):
         for i2 in range(i, i + PONDS_PER_ATLAS):
             subs_by_pond = [x for x in SUBMISSIONS if x['pond'] == str(i2)]
             move_some(subs_by_pond)
@@ -272,10 +278,10 @@ def pack_spritesheet():
 
 
 def main():
-    get_duck_subs()
-    get_fanart_subs()
-#     download_images()
-    split_images()
+    # get_duck_subs()
+    # get_fanart_subs()
+    # download_images()
+    # split_images()
     pack_spritesheets_per_atlas()
 
 

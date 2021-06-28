@@ -2,6 +2,8 @@ const webpack = require("webpack");
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+
 module.exports = {
 
     entry: {
@@ -68,6 +70,7 @@ module.exports = {
                     to: path.resolve(__dirname, "dist/assets/template.json")
                 },
                 {from: "src/404/404.html", to: "404.html"},
+                {from: "src/stats/stats.html", to: "stats.html"},
                 {from: "src/assets/images/intro/sky.png", to: "comingsoon/Sky.png"},
                 {from: "src/assets/images/LogoFullSize.png", to: "comingsoon/LogoFullSize.png"},
                 {from: "src/assets/images/shitty_button.png", to: "comingsoon/enter.png"},
@@ -80,8 +83,8 @@ module.exports = {
                 // {from: "src/assets/images/bg1-gr-white.png", to: "docs/bg1-gr-white.png"},
                 {from: "src/assets/css", to: "css"},
                 {from: "src/assets/fonts", to: "fonts"},
-                {from: "manifest.webmanifest", to: "manifest.webmanifest"},
-                {from: "sw.js", to: "sw.js"},
+                // {from: "manifest.webmanifest", to: "manifest.webmanifest"},
+                // {from: "sw.js", to: "sw.js"},
                 // {from: "src/assets/favicon", to: ""},
                 // {from: "src/assets/favicon", to: "docs"},
             ],
@@ -89,9 +92,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "index.html"
         }),
+        new FaviconsWebpackPlugin("src/assets/images/windowIcon2.png"),
         new webpack.DefinePlugin({
             CANVAS_RENDERER: JSON.stringify(true),
             WEBGL_RENDERER: JSON.stringify(true),
         }),
+
     ],
 };

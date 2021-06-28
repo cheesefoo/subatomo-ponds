@@ -64,7 +64,7 @@ const splashj = require("./assets/pond/WaterSplashAnimation/splash.json");
 const pondTileJson = require("./assets/pond/pond.json");
 const pond_1024 = require("./assets/pond/pond_1024.json");
 const soundsj = require("./assets/sound/soundfilemap.json");
-
+let numberOfSounds = 0;
 window.logSwim = true;
 
 require("phaser");
@@ -84,7 +84,8 @@ else
     require("./assets/pond/Subapond_vibrantHD-min.jpg");
 
 
-importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
+// importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
+require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.png");
 importAll(require.context("./", true, /pond.*\.(json)$/));
 importAll(require.context("./assets/sound/", true, /.*\.(mp3|ogg|wav)$/));
 
@@ -382,7 +383,7 @@ function startHomepageAnimation() {
             $("canvas").show();
             $("#home").hide();
             tl2.fromTo("#ponds-collapse", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
-            tl2.fromTo("#ponds-volume", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
+            // tl2.fromTo("#ponds-volume", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("#ponds-to-fanart", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("#ponds-logo-home", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("canvas", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
@@ -488,6 +489,7 @@ class Preloader extends Phaser.Scene {
         for (let i = 0; i < soundsLen; i++) {
             this.load.audio("suba_" + i, "assets/" + sounds[i]);
         }
+        this.load.audio("bgm", "assets/bgm.mp3");
         // this.load.image("tiles", "assets/pond_vibrant_1920x1080.jpg");
 
         if (IS_MOBILE) {
@@ -499,6 +501,36 @@ class Preloader extends Phaser.Scene {
             this.load.image("col", "assets/pond_color_invert.png");
             this.load.tilemapTiledJSON("map", pondTileJson);
         }
+    }
+
+    create() {
+
+        this.makeSounds();
+        this.sound.play("bgm");
+        this.makeVolumeButton();
+    }
+
+    makeSounds() {
+        let sounds = soundsj.sounds;
+        let numberOfSounds = sounds.length;
+        for (let i = 0; i < numberOfSounds; i++) {
+            this.sound.add("suba_" + i);
+        }
+        this.sound.add("bgm");
+    }
+
+    makeVolumeButton() {
+        //volume toggler
+        let scene = this;
+        $("#ponds-volume").on("click", function () {
+            isMuted = !isMuted;
+            if (isMuted) {
+                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/Little_Megaphone_no_volume_v2.png)";
+            } else {
+                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/Little_Megaphone_volume.png)";
+            }
+            scene.sound.setMute(isMuted);
+        });
     }
 
 }
@@ -560,8 +592,6 @@ class SubatomoPond extends Phaser.Scene {
         );
 
 
-        this.makeSounds();
-        this.makeVolumeButton();
         this.makeTileMap();
         if (!IS_MOBILE)
             this.addGhostTexture();
@@ -583,14 +613,6 @@ class SubatomoPond extends Phaser.Scene {
 
         game.scale.setGameSize(sceneWidth, sceneHeight);
         // game.scale.setGameSize(newWidth, newHeight);
-    }
-
-    makeSounds() {
-        let sounds = soundsj.sounds;
-        this.numberOfSounds = sounds.length;
-        for (let i = 0; i < this.numberOfSounds; i++) {
-            this.sound.add("suba_" + i);
-        }
     }
 
     makeTileMap() {
@@ -694,20 +716,6 @@ class SubatomoPond extends Phaser.Scene {
         }
 
 
-    }
-
-    makeVolumeButton() {
-        //volume toggler
-        let scene = this;
-        $("#ponds-volume").on("click", function () {
-            isMuted = !isMuted;
-            if (isMuted) {
-                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/Little_Megaphone_no_volume_v2.png)";
-            } else {
-                document.getElementById("ponds-volume").style.backgroundImage = "url(../assets/Little_Megaphone_volume.png)";
-            }
-            scene.sound.setMute(isMuted);
-        });
     }
 
 
@@ -1004,7 +1012,7 @@ class SubatomoPond extends Phaser.Scene {
 
             //Assign sound if it was blank, and assign random one for random pickers
             duckGameObject.sound = ducks[i].sound ? ducks[i].sound : -1;
-            duckGameObject.sound = ducks[i].sound == -1 ? getRandomInt(0, this.numberOfSounds) : ducks[i].sound;
+            duckGameObject.sound = ducks[i].sound == -1 ? getRandomInt(0, numberOfSounds) : ducks[i].sound;
 
             duckGameObject.setOrigin(0.5, 0.5);
             duckGameObject.displayWidth = SPRITE_WIDTH;
@@ -1488,12 +1496,7 @@ class PondManager extends Phaser.Scene {
         let msg = this.duckPond.add.text(0, name.displayHeight + 12, gameObject.message, MSG_TEXT_CONFIG);
         //console.log("mensaje",msg,img);
         gameObject.msgPopup = msg;
-        this.duckPond.time.addEvent({
-            delay: 1000,
-            callback: function () {
-                console.log("delayed " + msg.displayHeight);
-            }
-        });
+
 
         let panelImg = this.duckPond.add.nineslice(
             -10, -10,   // this is the starting x/y location

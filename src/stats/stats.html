@@ -3,34 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Statistics</title>
+    <style>
+        @font-face
+        {
+            font-family: kei;
+            src:         url("../fonts/keifont.ttf");
+        }
+
+        body
+        {
+            /*background:  url("bg1-gr-white.png");*/
+            font-family: kei, Roboto, serif;
+            font-size:   12px;
+            color:       #518DB9;
+            background:  repeating-linear-gradient(
+                                 to right,
+                                 #AED9FF,
+                                 #AED9FF 30px,
+                                 #D2EAFF 20px,
+                                 #D2EAFF 50px);
+        }
+
+    </style>
 </head>
 <body>
 <div>
-    <canvas id="myChart"></canvas>
+    <canvas id="hairstyle"></canvas>
+    <canvas id="submissions"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script defer>
-    const labels = [
+    const labelsHairstyle = [
         "Short", "Long", "Twintails", "Can't decide"
     ];
-    const data = {
-        labels: labels,
+    const dataHairstyle = {
+        labels: labelsHairstyle,
         datasets: [{
             label: "Best Hairstyle?",
             borderColor: "rgb(255,255,255)",
             data: [1114, 483, 241, 49],
             backgroundColor: [
-                "rgb(255, 99, 132)",
-                "rgb(54, 162, 235)",
-                "rgb(255, 205, 86)"
+                "#FD7062",
+                "#03A4DB",
+                "#FCD73F",
+                "#E8F082"
             ],
             hoverOffset: 4
         }]
     };
-    const config = {
+    const configHairstyle = {
         type: "pie",
-        data: data,
+        data: dataHairstyle,
         options: {
             responsive: true,
             plugins: {
@@ -45,9 +69,48 @@
         },
     };
 
-    var myChart = new Chart(
-        document.getElementById("myChart"),
-        config
+    let hairstyle = new Chart(
+        document.getElementById("hairstyle"),
+        configHairstyle
+    );
+    const labelsSubmissions = [
+        "Fanart", "Default Duck", "Editor-made Duck", "Uploaded Duck"
+    ];
+    const dataSubmissions = {
+        labels: labelsSubmissions,
+        datasets: [{
+            label: "Submissions",
+            borderColor: "rgb(255,255,255)",
+            data: [1114, 483, 241, 49],
+            backgroundColor: [
+                "#FD7062",
+                "#03A4DB",
+                "#FCD73F",
+                "#E8F082"
+            ],
+            hoverOffset: 4
+        }]
+    };
+    const configSubmissions = {
+        type: "pie",
+        data: dataSubmissions,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "top",
+                },
+                title: {
+                    display: true,
+                    text: "Submission Type"
+                }
+            }
+        },
+    };
+
+    let submissions = new Chart(
+        document.getElementById("submissions"),
+        configSubmissions
     );
 </script>
 </body>

@@ -1,6 +1,6 @@
 *
 {
-    font-family: meyro;
+    font-family: meyro, paybooc;
 
 }
 
@@ -28,7 +28,7 @@ body
 
 button
 {
-    font-family: kei;
+    font-family: kei, paybooc;
     font-size:   1.5rem;
 }
 
@@ -668,7 +668,7 @@ background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%
 
 .modal-window h1
 {
-    font-family:       "kei";
+    font-family:       "kei", paybooc;
     font-size:         40px;
     font-weight:       100;
     display:           inline-block;
@@ -843,7 +843,7 @@ img
 
 .nav-button-container .btn
 {
-    font-family:    kei;
+    font-family:    kei, paybooc;
     font-size:      16px;
     font-weight:    800;
     position:       relative;
@@ -976,7 +976,7 @@ img
 #ponds-volume
 {
     position:                fixed;
-    z-index:                 10;
+    z-index:                 11;
 
     right:                   10px;
     bottom:                  50px;
@@ -1083,12 +1083,12 @@ use.ic-3
     height:   100%;
 }
 
-.loading-text
-{
-    font-family: meyro;
-    font-size:   40px;
-    fill:        red;
-}
+/*.loading-text*/
+/*{*/
+/*    font-family: meyro,paybooc;*/
+/*    font-size:   xxx-large;*/
+/*    fill:        red;*/
+/*}*/
 
 svg path
 {

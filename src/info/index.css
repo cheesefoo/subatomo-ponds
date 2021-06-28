@@ -39,6 +39,13 @@ a:hover
     color:           #F45702;
 }
 
+#txt-closed
+{
+    font-size:   5em;
+    font-weight: bolder;
+    color:       #FD7062;
+}
+
 .top-bar
 {
     height:          10vh;
@@ -47,7 +54,7 @@ a:hover
     background-size: 100%;
 }
 
-#yt-embed
+.video-container
 {
     width:      auto;
     max-width:  100%;
@@ -55,7 +62,7 @@ a:hover
     text-align: center;
 }
 
-#yt-embed iframe
+.video-container iframe
 {
     width:     100%;
     max-width: 100%;
