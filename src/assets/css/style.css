@@ -401,6 +401,7 @@ canvas
     height:   10vh;
     opacity:  1;
 	cursor:pointer;
+	background-position:center;
 }
 
 #ponds-logo-home:after{
@@ -417,6 +418,7 @@ canvas
 	background-repeat:no-repeat;
 	transition:0.5s;
 	opacity:0;
+	background-position:center;
 }
 
 #ponds-logo-home:hover:after{
