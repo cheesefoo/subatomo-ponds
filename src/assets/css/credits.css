@@ -201,6 +201,10 @@ ul.social-icons
 
 }
 
+#final-thanks p{
+	margin-bottom:0;
+}
+
 #credits-content .credits-category ul{
 	display:flex;
 	flex-wrap:wrap;
