@@ -3,6 +3,26 @@
     font-family: meyro, paybooc;
 
 }
+::-webkit-scrollbar-track
+{
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
 
 body
 {
@@ -1021,10 +1041,24 @@ img
 {
     display:        flex;
     overflow:       auto;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap:      wrap;
     width:          100%;
     height:         100%;
+	padding-bottom:5vh;
+	box-sizing:border-box;
+}
+
+#credits-perse{
+	flex: 1 1 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+	overflow:auto;
+	padding-top:10vh;
+	padding-bottom:10vh;
 }
 
 #credits-content h1
@@ -1033,12 +1067,13 @@ img
     width: 100%;
 }
 
-#credits-content > .credits-category
+#credits-content .credits-category
 {
     display:        flex;
-    flex:           1 1 50%;
+    flex:           1 1 100%;
     flex-direction: column;
     flex-wrap:      wrap;
+	text-align:center;
 }
 
 .credits-category h4
