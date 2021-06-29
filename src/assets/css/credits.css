@@ -257,7 +257,7 @@ ul.social-icons
 
     #credits.modal-window > div
     {
-        background-image:    url(http://localhost:8080/assets/star-bg.jpg), url(http://localhost:8080/assets/modal-mobile.png);
+        background-image:    url(/assets/star-bg.jpg), url(/assets/modal-mobile.png);
         background-position: 26vw 63vh, center;
         background-size:     200px, 100% 100%;
     }
