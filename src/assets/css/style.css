@@ -1679,11 +1679,11 @@ svg path
 	}
 
     #ponds-volume{
-		height:8vh;
-		width:8vh;
-		left:10px;
-		bottom:11vh;
-	}
+        right:  10px;
+        bottom: 11vh;
+        width:  8vh;
+        height: 8vh;
+    }
 	#enterPondButton div{
 		display:block;
 	}

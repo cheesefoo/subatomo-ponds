@@ -506,7 +506,7 @@ class Preloader extends Phaser.Scene {
     create() {
 
         this.makeSounds();
-        this.sound.play("bgm");
+        this.sound.play("bgm", {loop: true});
         this.makeVolumeButton();
     }
 
