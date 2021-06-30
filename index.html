@@ -48,6 +48,8 @@
 </head>
 <body style="background-color: #97CAFD;">
 <div id="ghost" style="display:none;"></div>
+<div id="fade"
+     style="position:fixed;top:0;left:0;visibility: hidden;background-color:#97CAFD;width:100vw;height:100vh"></div>
 <div id="loadingDuckContainer"
      style="display:flex;justify-content:center;width:33%;height:33%;position:fixed;top:33%;left:33%">
     <svg id="etusofnMH4z1" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision"
@@ -1584,12 +1586,12 @@
     <div class="logo logo-bg logo-sky"></div>
     <div class="logo logo-bg logo-mid"></div>
     <div class="logo logo-bg logo-front">
-        <!--        <div class="logo logo-bg logo-front-L">-->
-        <!--            <div id="grass-L"></div>-->
-        <!--        </div>-->
-        <!--        <div class="logo logo-bg logo-front-R">-->
-        <!--            <div id="grass-R"></div>-->
-        <!--        </div>-->
+        <div class="logo logo-bg logo-front-L">
+            <div id="grass-L"></div>
+        </div>
+        <div class="logo logo-bg logo-front-R">
+            <div id="grass-R"></div>
+        </div>
     </div>
     <!--			<img src="../images/HHeader.svg" onerror="this.onerror=null; this.src='../images/HHeader.png'">-->
 
@@ -1636,7 +1638,7 @@
             </label>
             <label class="option">
                 <input class="lang-radio" lang="PT" name="option" type="radio">
-                <span class="title"><i class="icon flag-icon flag-icon-pt selectLang"></i>PT</span>
+                <span class="title"><i class="icon flag-icon flag-icon-br selectLang"></i>PT</span>
             </label>
             <label class="option">
                 <input class="lang-radio" lang="KR" name="option" type="radio">
@@ -1768,7 +1770,7 @@
                         <h5 class="credits" text="c-1">Text</h5>
                     </div>
                     <div class="credits-category">
-                        <h4 text="c-2">Project Leads & Programming</h4>
+                        <h4 class="credits" text="c-2">Project Leads & Programming</h4>
                         <ul>
                             <li>
                                 <a class="social-icon" href="https://twitter.com/cheesefoo2" target="_blank">
@@ -1783,7 +1785,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>Art Lead</h4>
+                        <h4 class="credits" text="c-3">Art Lead</h4>
                         <ul>
                             <li>
                                 <a class="social-icon" href="https://twitter.com/RinnemiNoMore" target="_blank">
@@ -1793,7 +1795,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>UI and Homepage Design</h4>
+                        <h4 class="credits" text="c-4">UI and Homepage Design</h4>
                         <ul>
                             <li>
                                 <a class="social-icon" href="https://twitter.com/Cryovol" target="_blank">
@@ -1803,7 +1805,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>Animation</h4>
+                        <h4 class="credits" text="c-5">Animation</h4>
                         <ul>
                             <li>
                                 <a class="social-icon" href="https://twitter.com/NagiRaik" target="_blank">
@@ -1813,7 +1815,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>Boat concept and Pond art</h4>
+                        <h4 class="credits" text="c-6">Boat concept and Pond art</h4>
                         <ul>
                             <li>
                                 <a class="social-icon" href="https://twitter.com/H21Garry" target="_blank">
@@ -1823,7 +1825,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>JP Translation</h4>
+                        <h4>JP <i class="credits" text="c-7"></i></h4>
                         <ul class="credits-lang">
                             <li>
                                 <a class="social-icon" href="https://twitter.com/DoctorEevee" target="_blank">
@@ -1848,7 +1850,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>BR Translation</h4>
+                        <h4>PT-BR <i class="credits" text="c-7"></i></h4>
                         <ul class="credits-lang">
 
                             <li>
@@ -1869,7 +1871,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>ID Translation</h4>
+                        <h4>ID <i class="credits" text="c-7"></i></h4>
                         <ul class="credits-lang">
 
                             <li>
@@ -1885,7 +1887,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>KR Translation</h4>
+                        <h4>KR <i class="credits" text="c-7"></i></h4>
                         <ul class="credits-lang">
 
                             <li>
@@ -1896,7 +1898,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>NL Translation</h4>
+                        <h4>NL <i class="credits" text="c-7"></i></h4>
                         <ul class="credits-lang">
 
                             <li>
@@ -1907,7 +1909,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>ES Translation</h4>
+                        <h4>ES <i class="credits" text="c-7"></i></h4>
                         <ul class="credits-lang es-column">
                             <li>
                                 <a class="social-icon" href="https://twitter.com/ace_highwind" target="_blank">
@@ -1944,7 +1946,7 @@
                         </ul>
                     </div>
                     <div class="credits-category">
-                        <h4>DE Translation</h4>
+                        <h4>DE <i class="credits" text="c-7"></i></h4>
                         <ul class="credits-lang ger-column">
                             <li>
                                 <a class="social-icon" target="_blank">
@@ -1961,7 +1963,7 @@
                     </div>
 
                     <div class="credits-category">
-                        <h4>Video editing</h4>
+                        <h4 class="credits" text="c-8">Video editing</h4>
                         <ul class="credits-lang">
                             <li>
                                 <a class="social-icon" href="https://www.youtube.com/user/Gundamfinal" target="_blank">
@@ -1978,7 +1980,7 @@
                     </div>
 
                     <div class="credits-category">
-                        <h4>Special thanks to</h4>
+                        <h4 class="credits" text="c-9">Special thanks to</h4>
                         <ul class="credits-lang">
                             <li>
                                 <a class="social-icon" href="https://www.youtube.com/c/SushiHololiveandVtubers"
@@ -2017,17 +2019,17 @@
                                 </a>
                             </li>
                             <li style="flex:1 1 100%;">
-                                <p class="social-icon">
+                                <p class="social-icon credits" text="c-10">
                                     To everyone in the Hololive community for supporting us
                                 </p>
                             </li>
                             <li style="flex:1 1 100%;">
-                                <p class="social-icon">
+                                <p class="social-icon credits" text="c-11">
                                     Our JP Subatomo friends in our fan server
                                 </p>
                             </li>
                             <li style="flex:1 1 100%;">
-                                <p class="social-icon">
+                                <p class="social-icon  credits" text="c-12">
                                     And you for submitting your duck!
                                 </p>
                             </li>
@@ -2036,11 +2038,12 @@
                     </div>
 
                     <div class="credits-category" id="final-thanks" style="margin-top:30vh;">
-                        <p>Thank you to Subaru for always working so hard for everyone!</p>
-                        <p>We hope you love this gift that we made for you.</p>
-                        <p>Happy Birthday and congratulations on 1 million subscribers!</p><br>
+                        <p class="credits" text="c-13">Thank you to Subaru for always working so hard for everyone!</p>
+                        <p class="credits" text="c-14">We hope you love this gift that we made for you.</p>
+                        <p class="credits" text="c-15">Happy Birthday and congratulations on 1 million subscribers!</p>
+                        <br>
 
-                        <p>Otsubaru!</p>
+                        <p class="credits" text="c-16">Otsubaru!</p>
                     </div>
                 </div>
             </div>
@@ -2136,7 +2139,7 @@
         $(".placeholder.main").append(langHTML);
         $(".placeholder.main input").remove();
         let mainTexts = strings[lang]["Main page"];
-        let creditsTexts = strings[lang]["CREDITS"];
+        let creditsTexts = strings[lang]["credits2"];
         // console.log(texts);
         [...tags].forEach(function (t) {
             let textAttr = t.getAttribute("text");

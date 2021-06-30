@@ -78,11 +78,13 @@ require("./assets/pond/pond_color_invert.png");
 
 require("./assets/pond/WaterSplashAnimation/splash.png");
 require("./assets/images/ui/subaru_uitest_1.png");
-if (IS_MOBILE)
+if (IS_MOBILE) {
     require("./assets/pond/Subapond_vibrant_1024x1024.jpg");
-else
+    require("./assets/pond/fanartpondmobilev2.jpg");
+} else {
+    require("./assets/pond/artpond.jpg");
     require("./assets/pond/Subapond_vibrantHD-min.jpg");
-
+}
 
 // importAll(require.context("./assets/Duck Templates Resized/Duck Leg Cut/legs/", true, /legs.*\.(png|jpe?g|svg)$/));
 require("./assets/Duck Templates Resized/Duck Leg Cut/legs/legs.png");
@@ -343,25 +345,23 @@ function startHomepageAnimation() {
         delay: 7
     });
 
-    /*
     let grassFrames = 29;
     let grassLwidth = 598;
     // let grassLwidth = 597.86;
     // let grassRwidth = 307.66;
     let grassRwidth = 308.2;
-    */
-    /*    gsap.to("#grass-L", {
-            backgroundPosition: (-grassLwidth * grassFrames) + "px 0",
-            ease: "steps(" + grassFrames + ")",
-            duration: 2,
-            repeat: -1
-        }, 0);
-        gsap.to("#grass-R", {
-            backgroundPosition: (-grassRwidth * grassFrames) + "px 0",
-            ease: "steps(" + grassFrames + ")",
-            duration: 2,
-            repeat: -1
-        }, 0);*/
+    gsap.to("#grass-L", {
+        backgroundPosition: (-grassLwidth * grassFrames) + "px 0",
+        ease: "steps(" + grassFrames + ")",
+        duration: 2,
+        repeat: -1
+    }, 0);
+    gsap.to("#grass-R", {
+        backgroundPosition: (-grassRwidth * grassFrames) + "px 0",
+        ease: "steps(" + grassFrames + ")",
+        duration: 2,
+        repeat: -1
+    }, 0);
 
 
     let tl2 = gsap.timeline();
@@ -506,7 +506,20 @@ class Preloader extends Phaser.Scene {
     create() {
 
         this.makeSounds();
-        this.sound.play("bgm", {loop: true});
+        let bgm = this.sound.add("bgm", {volume: 0.1});
+
+        bgm.play();
+        let tween = this.tweens.add({
+            targets: bgm,
+            volume: {from: 0.1, to: 1},
+            duration: 5000,
+        });
+        bgm.on(Phaser.Sound.Events.COMPLETE, () => {
+            bgm.destroy();
+            tween.stop();
+            this.sound.play("bgm", {volume: 1, loop: true});
+        });
+
         this.makeVolumeButton();
     }
 
@@ -516,7 +529,6 @@ class Preloader extends Phaser.Scene {
         for (let i = 0; i < numberOfSounds; i++) {
             this.sound.add("suba_" + i);
         }
-        this.sound.add("bgm");
     }
 
     makeVolumeButton() {
@@ -632,7 +644,7 @@ class SubatomoPond extends Phaser.Scene {
         pondLayer.setCollisionByProperty({collides: true});
         obstacleLayer = this.map.createLayer("obstacle", tileset);
         obstacleLayer.setCollisionByProperty({collides: true});
-        let that = this;
+
         let layers = [groundLayer, pondLayer, obstacleLayer];
 
         if (!IS_MOBILE) {
@@ -641,28 +653,18 @@ class SubatomoPond extends Phaser.Scene {
             layers.push(transitionLayer);
         }
 
-        console.log(`pond size (${innerWidth}, ${innerHeight})->(${newWidth}, ${newHeight})`);
-
         layers.forEach(function (l) {
             l.setDisplaySize(newWidth, newHeight);
             l.alpha = 0;
         });
-        if (!IS_MOBILE) {
-        }
-
         let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
         pondImg.setDisplaySize(newWidth, newHeight);
         pondImg.setOrigin(0.5);
 
-        /*     if (IS_MOBILE) {
-                 let pondImg = this.add.image(0, 0, "tiles");
-                 pondImg.setOrigin(0.5,0);
-             } else {  }*/
 
     }
 
     addGhostTexture() {
-        // pondImg.setDisplayOrigin();
         console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
         $("#ghost img").attr("id", "ghostIMG");
@@ -1313,23 +1315,30 @@ class PondManager extends Phaser.Scene {
 
     switchScene(from, to) {
         let fromScene = this.scene.get(from);
-        fromScene.scene.transition({target: to, duration: 1500, sleep: true, moveAbove: true});
+
+        gsap.to("#fade", {autoAlpha: 1, duration: 1.5}).then(() => {
+            fromScene.scene.transition({target: to, duration: 1500, sleep: true, moveAbove: true});
+            gsap.to("#fade", {autoAlpha: 0, duration: 1.5});
+        });
+
         this.activeScene = to;
-        /*        this.cameras.main.fadeOut(500, 0, 0, 0);
-    /*        this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
-                   this.time.delayedCall(1000, () => {
-                       this.cameras.main.fadeIn(500, 0, 0, 0);
-                   });
-               });
-               this.cameras.main.once(Phaser.Cameras.Scene2d.Events.FADE_IN_COMPLETE, (cam, effect) => {
-                   cam.resetFX();
-               });*/
+        /*   gsap.to("canvas", {autoAlpha: 0, duration: 0.5});
+         gsap.to("canvas", {autoAlpha: 1, duration: 1, delay: 2});
+      *        this.cameras.main.fadeOut(500, 0, 0, 0);
+                 this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+                     this.time.delayedCall(1000, () => {
+                         cam.fadeIn(1000, 0, 0, 0);
+                     });
+                 });
+                 this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_IN_COMPLETE, (cam, effect) => {
+                     cam.resetFX();
+                 });*/
     }
 
     toFanartTransitionAnimation() {
         let tl = gsap.timeline();
         //fade in art duck
-        tl.to(".fanart-splash", {autoAlpha: 1, duration: 1}, 0);
+        tl.to(".fanart-splash", {autoAlpha: 1, duration: 2}, 0);
         //fade out pond ui
         tl.to("#ponds-to-fanart", {autoAlpha: 0, duration: 2}, 0);
         tl.to("#pond-ui", {autoAlpha: 0, duration: 2}, 0);
@@ -1378,6 +1387,7 @@ class PondManager extends Phaser.Scene {
 
 
     create() {
+
 
         let that = this;
         $body.on("click", ".pond-btn", function () {
@@ -1633,6 +1643,30 @@ class PondManager extends Phaser.Scene {
     }
 }
 
+/*class Transition extends Phaser.Scene {
+    constructor() {
+        super({key: "transition", active: false});
+    }
+
+    create() {
+        let to;
+        this.events.on(
+            "transitionstart",
+            function (fromScene, duration) {
+
+                if (fromScene.name == "pond") {
+                    to = "fanart";
+                } else {
+                    to = "pond";
+                }
+                gsap.set("canvas", {autoAlpha: duration});
+            }, this);
+        this.events.on("transitioncomplete", function () {
+            this.scene.transition({target: to, duration: 1500, sleep: false, moveAbove: true});
+        });
+    }
+}*/
+
 class FanartPond extends Phaser.Scene {
     constructor() {
         super({
@@ -1650,13 +1684,13 @@ class FanartPond extends Phaser.Scene {
         this.fanartImage = $("#fanart-image");
         this.listOfBoats = [];
 
-        this.boatLocations = [{x: sceneWidth * 0.5, y: sceneHeight * 0.5},
-            {x: sceneWidth * 0.25, y: sceneHeight * 0.5},
-            {x: sceneWidth * 0.4, y: sceneHeight * 0.6},
+        this.boatLocations = [{x: sceneWidth * 0.5, y: sceneHeight * 0.8},
+            {x: sceneWidth * 0.25, y: sceneHeight * 0.55},
+            {x: sceneWidth * 0.45, y: sceneHeight * 0.65},
 
-            {x: sceneWidth * 0.7, y: sceneHeight * 0.65},
-            {x: sceneWidth * 0.3, y: sceneHeight * 0.65},
-            {x: sceneWidth * 0.8, y: sceneHeight * 0.5}
+            {x: sceneWidth * 0.75, y: sceneHeight * 0.65},
+            {x: sceneWidth * 0.35, y: sceneHeight * 0.65},
+            {x: sceneWidth * 0.8, y: sceneHeight * 0.55}
         ];
 
         $("#fanart .modal-close,#fanart .modal-bg").on("click", function () {
@@ -1670,6 +1704,12 @@ class FanartPond extends Phaser.Scene {
         console.log("fanart scene preload");
         this.load.multiatlas("boat", boatj, "assets",);
         this.load.multiatlas("explode", explodej, "assets",);
+        if (!IS_MOBILE) {
+            this.load.image("artpond", "assets/artpond.jpg");
+        } else {
+            this.load.image("artpond", "assets/fanartpondmobilev2.jpg");
+        }
+        this.load.audio("paper", "assets/paper.mp3");
     }
 
     create() {
@@ -1685,9 +1725,14 @@ class FanartPond extends Phaser.Scene {
             this
         );
         this.makeBoatAnimations();
-        let pondImg = this.add.image(newWidth / 2, newHeight / 2, "tiles");
+
+        let pondImg = this.add.image(newWidth / 2, newHeight / 2, "artpond");
         pondImg.setDisplaySize(newWidth, newHeight);
-        pondImg.setOrigin(0.5);
+        if (!IS_MOBILE) {
+            pondImg.setOrigin(0.5);
+        } else {
+            pondImg.setOrigin(0.75, 0.5);
+        }
         this.createSubmissions(this.currentPond);
         this.input.on("gameobjectup", this.onObjectClicked, this);
         this.generatePondUI();
@@ -1805,7 +1850,7 @@ class FanartPond extends Phaser.Scene {
 
         if (gameObject.gameObjectType == "boat") {
             // console.log("boat onclick");
-
+            this.sound.play("paper");
             let boat = gameObject;
 
             this.fanartImage.prop("src", "assets/" + boat.filename + ".png");
@@ -1818,6 +1863,10 @@ class FanartPond extends Phaser.Scene {
 
                 this.fanartSocial.addClass("fas");
                 this.fanartSocial.addClass("fa-ambulance");
+            } else if (boat.fanartLink.startsWith("[i]")) {
+
+                this.fanartSocial.addClass("fab");
+                this.fanartSocial.addClass("fa-instagram");
             }
             if (boat.link != "") {
                 this.fanartLink.prop("href", boat.fanartLink);
