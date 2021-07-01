@@ -139,13 +139,13 @@
     <div aria-labelledby="home-tab" class="screen justify-content-center tab-pane fade show active" id="home"
          role="tabpanel">
         <div class="screen-inner">
-            <h1 id="txt-closed" text="m-9">Submissions for the project are now closed. Thank you!!!</h1>
+            <h1 class="txt-closed" text="m-9">Submissions for the project are now closed. Thank you!!!</h1>
             <br><br><br>
-            <div class="video-container">
-                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/pyH6z4zxWa8"
-                        title="YouTube video player" width="560"></iframe>
-            </div>
+            <!--            <div class="video-container">
+                            <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/pyH6z4zxWa8"
+                                    title="YouTube video player" width="560"></iframe>
+                        </div>-->
             <h1 text="m-0">Subaru 1 Million Subscribers and Birthday Celebration!</h1>
             <div text="m-1">The Subatomo EN Fan Server has created a website to show our support for Subaru, and
                 everyone is invited to participate!
@@ -178,6 +178,9 @@
     </div>
     <div aria-labelledby="upload-tab" class="screen tab-pane fade" id="upload-container" role="tabpanel">
         <div class="screen-inner">
+            <h1 class="txt-closed" id="txt-closed" text="m-9">Submissions for the project are now closed. Thank
+                you!!!</h1>
+            <br><br><br>
             <div text="u-0">Basic common sense rules apply - no references to religion or politics, no swear words,
                 slurs,
                 etc. or any combination of letters, numbers, characters, symbols, etc. that can be interpreted as such.
@@ -1106,7 +1109,7 @@
                                 before
                                 submitting.</label>
                         </div>
-                        <input class="form-control" id="submit" text="u-33" type="submit"/>
+                        <!--                        <input class="form-control" id="submit" text="u-33" type="submit"/>-->
                     </div>
 
                 </div>
@@ -1299,6 +1302,8 @@
         //     let span = `<span id="jp-ex-3">${texts[1]}</span>`;
         //     ln106.parent().append(span);
         // }
+        document.getElementById("txt-closed").textContent = home[9];
+
     }
 
     function addLangToForm() {
@@ -1485,9 +1490,6 @@
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
 
 <script>
