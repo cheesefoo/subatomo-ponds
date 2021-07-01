@@ -174,6 +174,7 @@ const animationNames = [
 
 
 let $body = $("body");
+let activeScene = "pond";
 
 function startHomepageAnimation() {
     $("#home").show();
@@ -388,9 +389,12 @@ function startHomepageAnimation() {
             tl2.fromTo("#ponds-logo-home", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
             tl2.fromTo("canvas", {autoAlpha: 0}, {autoAlpha: 1, duration: 3}, 0);
 
+            let ui = activeScene == "pond" ? "#pond-ui" : "#fanart-ui";
+            // console.log(ui)
 
-            tl2.fromTo("#pond-ui", {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, 0).then(function () {
-                $("#pond-ui").show();
+            tl2.fromTo(ui, {autoAlpha: 0}, {autoAlpha: 1, duration: 1}, 0).then(function () {
+                $(ui).show();
+                // console.log(ui)
                 window.game.input.enabled = true;
                 // window.game.scene.getScene("pond").updatePagination();
                 isEnteringPond = false;
@@ -476,9 +480,9 @@ class Preloader extends Phaser.Scene {
 
 
         //Load sprite atlas
-        this.load.multiatlas("TEMPLATE", templatej, "assets");
+        // this.load.multiatlas("TEMPLATE", templatej, "assets");
 
-        // this.load.multiatlas("TEMPLATE", "assets/TEMPLATE.json", "assets");
+        this.load.multiatlas("TEMPLATE", "assets/TEMPLATE.json", "assets");
         this.load.multiatlas("pondbatch-1", "assets/pondbatch-1.json", "assets");
         this.load.multiatlas("legs", legsj, "assets");
         this.load.multiatlas("splash", splashj, "assets");
@@ -665,7 +669,7 @@ class SubatomoPond extends Phaser.Scene {
     }
 
     addGhostTexture() {
-        console.log("img", this.textures.list.col.source[0].source);
+        // console.log("img", this.textures.list.col.source[0].source);
         $("#ghost").append(this.textures.list.col.source[0].source);
         $("#ghost img").attr("id", "ghostIMG");
 
@@ -1296,7 +1300,7 @@ class PondManager extends Phaser.Scene {
         this.activeMessagesDuck = [];
         this.activeMessagesPanel = [];
         this.sceneSwitchBtn = $(".scene-switch-btn");
-        this.activeScene = "pond";
+
         this.duckPond = null;
         this.fanartPond = null;
 
@@ -1318,12 +1322,12 @@ class PondManager extends Phaser.Scene {
     switchScene(from, to) {
         let fromScene = this.scene.get(from);
 
-        gsap.to("#fade", {autoAlpha: 1, duration: 1.5}).then(() => {
+        gsap.to("#fade", {autoAlpha: 1, duration: 2}).then(() => {
             fromScene.scene.transition({target: to, duration: 1500, sleep: true, moveAbove: true});
-            gsap.to("#fade", {autoAlpha: 0, duration: 1.5});
+            gsap.to("#fade", {autoAlpha: 0, duration: 2});
         });
 
-        this.activeScene = to;
+        activeScene = to;
         /*   gsap.to("canvas", {autoAlpha: 0, duration: 0.5});
          gsap.to("canvas", {autoAlpha: 1, duration: 1, delay: 2});
       *        this.cameras.main.fadeOut(500, 0, 0, 0);
@@ -1395,7 +1399,7 @@ class PondManager extends Phaser.Scene {
         $body.on("click", ".pond-btn", function () {
             $(".pond-btn").removeClass("selectedPond");
             $(this).addClass("selectedPond");
-            if (that.activeScene == "pond")
+            if (activeScene == "pond")
                 that.loadDuckPond(parseInt($(this).attr("pond")));
             else {
                 that.loadFanartPond(parseInt($(this).attr("pond")));
@@ -1414,17 +1418,17 @@ class PondManager extends Phaser.Scene {
 
 
         this.sceneSwitchBtn.on("click", function () {
-            console.log("scene switch button clicked");
+            // console.log("scene switch button clicked");
             if ($(this).attr("locked") == "true")
                 return;
             $(this).attr("locked", "true");
             $("#ponds-logo-home").attr("locked", "true");
             if (that.scene.manager.isActive("pond") && !(that.scene.manager.isActive("fanart"))) {
-                that.toFanartTransitionAnimation();
                 that.switchScene("pond", "fanart");
+                that.toFanartTransitionAnimation();
             } else {
-                that.toDucksTransitionAnimation();
                 that.switchScene("fanart", "pond");
+                that.toDucksTransitionAnimation();
             }
 
         });
@@ -1434,7 +1438,7 @@ class PondManager extends Phaser.Scene {
         // uiscene.add.text();
         this.duckPond.events.on("clearmessages", function () {
 
-            console.log(this);
+            // console.log(this);
             if (that.activeMessagesEvents.length == 0 ||
                 that.activeMessagesPanel.length == 0 ||
                 that.activeMessagesDuck.length == 0)
@@ -1531,7 +1535,7 @@ class PondManager extends Phaser.Scene {
         starsGroup.setOrigin(1, 0);
         let megaphone = this.add.image(panelImg.displayWidth, panelImg.displayHeight + 10, "megaphone");
         megaphone.setOrigin(1, 1);
-        console.log("panelimg displayheight", panelImg.displayHeight);
+        // console.log("panelimg displayheight", panelImg.displayHeight);
 
 
         namePanel.add(nameImg);
@@ -1701,7 +1705,7 @@ class FanartPond extends Phaser.Scene {
     }
 
     preload() {
-        console.log("fanart scene preload");
+        // console.log("fanart scene preload");
         this.load.multiatlas("boat", boatj, "assets",);
         this.load.multiatlas("explode", explodej, "assets",);
         if (!IS_MOBILE) {
@@ -1714,7 +1718,7 @@ class FanartPond extends Phaser.Scene {
 
     create() {
         this.maxPond = fanartSubmissions.submissions[fanartSubmissions.submissions.length - 1].pond;
-        console.log("fanart scene create");
+        // console.log("fanart scene create");
         let pondManager = this.scene.get("pond-manager");
         pondManager.events.on(
             "reloadFanartPond",
@@ -1770,7 +1774,7 @@ class FanartPond extends Phaser.Scene {
     createSubmissions(pond, shuffle = true) {
         //Get submission reference sheet from google sheet and filter by pond #
         const fanartSubsArray = fanartSubmissions["submissions"];
-        console.log(`Creating boats for pond #${pond}`);
+        // console.log(`Creating boats for pond #${pond}`);
 
         let fanartsByPond = fanartSubsArray.filter(function (obj) {
             return parseInt(obj.pond) === pond;
@@ -1792,8 +1796,8 @@ class FanartPond extends Phaser.Scene {
                 let newBoat = this.makeBoat(fanartsByPond[i], posn.x + x, posn.y + y);
                 this.listOfBoats.push(newBoat);
             } catch (e) {
-                console.log(e);
-                console.log("ran out of spots to put a boat, make more spots");
+                // console.log(e);
+                // console.log("ran out of spots to put a boat, make more spots");
             }
         }
     }

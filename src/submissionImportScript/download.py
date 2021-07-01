@@ -176,16 +176,20 @@ def pack_spritesheets_per_atlas():
     SUBMISSIONS = SUBMISSIONS["submissions"]
     print("gonna put " + str(total_num_ponds) + " ponds into " + str(total_iterations) + " atlases")
     atlas_num = 1
-    for i in range(1, total_iterations + 1):
+    for i in range(1, total_num_ponds + 1, PONDS_PER_ATLAS):
         for i2 in range(i, i + PONDS_PER_ATLAS):
             subs_by_pond = [x for x in SUBMISSIONS if x['pond'] == str(i2)]
             move_some(subs_by_pond)
-        time.sleep(0.5)
+        time.sleep(1)
         pack_spritesheet_free_batches(TEMP_ATLAS_DIR)
-        rename_atlas(i)
-        remove_files(TEMP_IMAGE_DIR)
+        print("packed " + str(atlas_num))
+        time.sleep(1)
+        rename_atlas(atlas_num)
+        time.sleep(1)
         remove_files(TEMP_ATLAS_DIR)
+        remove_files(TEMP_IMAGE_DIR)
         atlas_num = atlas_num + 1
+        time.sleep(1)
 
 
 suffixes = ["-0.png", "-1.png", "-2.png", "-3.png"]
@@ -193,7 +197,12 @@ suffixes = ["-0.png", "-1.png", "-2.png", "-3.png"]
 
 def remove_files(dir):
     for files in os.listdir(dir):
-        os.remove(join(dir, files))
+        try:
+            os.remove(join(dir, files))
+        except Exception as e:
+            print("couldn't delete "+ files.name)
+
+
 
 
 def move_some(subs_by_pond):
@@ -206,7 +215,7 @@ def move_some(subs_by_pond):
             try:
                 shutil.move(join(SPLIT_IMAGES_DIR, filename), join(TEMP_IMAGE_DIR, filename))
             except Exception as e:
-                print(e)
+                 print("couldn't MOVE "+ filename)
 
 
 def rename_atlas(pondnum):
@@ -278,11 +287,11 @@ def pack_spritesheet():
 
 
 def main():
-    get_duck_subs()
+#     get_duck_subs()
     get_fanart_subs()
     # download_images()
     # split_images()
-    # pack_spritesheets_per_atlas()
+#     pack_spritesheets_per_atlas()
 
 
 #     pack_spritesheet_free()

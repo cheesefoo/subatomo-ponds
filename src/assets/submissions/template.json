@@ -4,8 +4,8 @@
       "image": "TEMPLATE.png",
       "format": "RGBA8888",
       "size": {
-        "w": 664,
-        "h": 119
+        "w": 1024,
+        "h": 128
       },
       "scale": 1,
       "frames": [

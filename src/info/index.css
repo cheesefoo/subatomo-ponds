@@ -387,6 +387,14 @@ a:hover
 
 @media (max-width: 900px)
 {
+
+    .txt-closed
+    {
+        font-size:   3em;
+        font-weight: bolder;
+        color:       #FD7062;
+    }
+
     .screen-inner
     {
         margin:  3px;
