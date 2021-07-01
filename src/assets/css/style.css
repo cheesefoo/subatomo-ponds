@@ -620,19 +620,20 @@ background: linear-gradient(0deg, rgba(59,187,205,1) 0%, rgba(114,157,157,1) 16%
 
 .pond-btn
 {
-    display:       inline-block;
-    flex:          0 1 50px;
-    /*background-color: #FF706F;*/
-    box-sizing:    border-box;
-    width:         50px;
-    height:        50px;
-    cursor:        pointer;
-    transition:    0.5s;
-    color:         #FF706F;
-    border:        none;
+	display: inline-block;
+    flex: 0 1 45px;
+    /* background-color: #FF706F; */
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #FF706F;
+    border: none;
     border-radius: 50%;
-    background:    transparent;
-    text-shadow:   0px 0px 9px rgba(150, 150, 150, 1);
+    background: transparent;
+    text-shadow: 0px 0px 9px rgba(150, 150, 150, 1);
+    font-size: 1.1rem;
 }
 
 .pond-btn:hover
@@ -1636,23 +1637,27 @@ svg path
 
     .pond-btn
     {
-        display:       inline-block;
-        flex:          0 1 50px;
-        /* background-color: #FF706F; */
-        flex:          0 1 35px;
-        box-sizing:    border-box;
-        width:         50px;
-        width:         35px;
-        height:        50px;
-        height:        35px;
-        cursor:        pointer;
-        transition:    0.5s;
-        color:         #FF706F;
-        border:        none;
-        border-radius: 50%;
-        background:    transparent;
-        text-shadow:   0px 0px 9px rgba(150, 150, 150, 1);
+		display: inline-block;
+		flex: 0 1 50px;
+		/* background-color: #FF706F; */
+		flex: 0 1 35px;
+		box-sizing: border-box;
+		width: 50px;
+		width: 35px;
+		height: 50px;
+		height: 35px;
+		cursor: pointer;
+		transition: 0.5s;
+		color: #FF706F;
+		border: none;
+		border-radius: 50%;
+		background: transparent;
+		text-shadow: 0px 0px 9px rgba(150, 150, 150, 1);
+		font-size: 1.2rem;
     }
+	.carousel-cell:nth-child(n+20) .pond-btn{
+		font-size: 0.8rem;
+	}
 
     #pond-ui, #fanart-ui
     {
@@ -1700,4 +1705,94 @@ svg path
 		font-size:1.5rem;
 	}
 
+}
+
+
+/* Ipad Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+	.modal-window > div{
+		padding:50px;
+	}
+	.modal-close{
+		top:70px;
+		right:70px;
+	}
+	#about-subaru.modal-window > div{
+		padding-top:30vh;
+	}
+	#about-disclaimer{
+		top:60px;
+		left:70px;
+	}
+	#about-project.modal-window > div{
+		padding-top:60vh;
+	}
+	#hamburger{
+		top:25px;
+		left:20px;
+	}
+	#enterPondButton{
+		top:10vh;
+	}
+	#fanart .modal-close{
+		top: 75px;
+		right: 85px;
+	}
+	#fanart.modal-window > div{
+		width: 100vw;
+		height: calc(100vw * 1.802);
+		padding-top: 0;
+		box-sizing: border-box;
+		max-height: 100vh;
+		padding:70px 90px;
+	}
+	#fanart-window-inner{
+		display: flex;
+		overflow: hidden;
+		align-content: flex-end;
+		/* align-items: center; */
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		height: 100%;
+		padding-top: 5vh;
+		padding-top: 20vh;
+		padding-bottom: 10vh;
+		height: 100vh;
+		box-sizing: border-box;
+		width: 100vw;
+	}
+	#fanart-window-display{
+		flex: 1 1 100%;
+		width: 100%;
+		max-width: initial;
+		max-height: initial;
+		margin-bottom: 5vh;
+		padding-top: 10vh;
+		height: 60vh;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-content: space-around;
+		justify-content: flex-start;
+	}
+	#fanart-image{
+		flex: 1 1 100%;
+		width: 100%;
+		height: auto;
+		border-radius: 5px;
+		object-fit: contain;
+		/* flex: 1 1 50%; */
+		/* margin-top: 10vh; */
+		height: 100%;
+	}
+	#fanart-info{
+		flex: 1 1 50%;
+		width: 100%;
+		max-width: initial;
+		max-height: initial;
+	}
 }

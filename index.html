@@ -2093,9 +2093,12 @@
             $("#credits-perse").stop();
         });
         $("#credits-perse").animate({scrollTop: document.getElementById("credits-perse").scrollHeight}, 60000, "linear", function () {
-            setTimeout(function () {
-                $("#credits-perse .credits-category:nth-child(1)").attr("style", "");
-            }, 5000);
+            setTimeout(function(){
+			$("#credits-perse").clearQueue();
+            $("#credits-perse").stop();
+			 $("#credits-perse .credits-category:nth-child(1)").attr("style", "");
+			 },1000);
+			
         });
     }
 
