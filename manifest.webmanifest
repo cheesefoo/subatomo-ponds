@@ -1,30 +1,31 @@
 {
-    "theme_color": "#b5d0ef",
-    "background_color": "#167cac",
+    "theme_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "background_color": "#97cafd",
     "display": "standalone",
     "scope": "/",
     "start_url": "/index.html",
-    "name": "Subatomo Pond",
+    "name": "Subatomo Ponds",
     "short_name": "shuba-pond",
     "description": "Gift to subaru from the subatomo community!",
     "icons": [
         {
-            "src": "/images/icon-192x192.png",
+            "src": "/assets/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/images/icon-256x256.png",
+            "src": "/assets/icon-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/images/icon-384x384.png",
+            "src": "/assets/icon-384x384.png",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "/images/icon-512x512.png",
+            "src": "/assets/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

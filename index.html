@@ -45,6 +45,19 @@
         }
 
     </style>
+	<script>
+	if ('serviceWorker' in navigator) {
+	  // Register a service worker hosted at the root of the
+	  // site using the default scope.
+	  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+		console.log('Service worker registration succeeded:', registration);
+	  }).catch(function(error) {
+		console.log('Service worker registration failed:', error);
+	  });
+	} else {
+	  console.log('Service workers are not supported.');
+	}
+	</script>
 </head>
 <body style="background-color: #97CAFD;">
 <div id="ghost" style="display:none;"></div>
@@ -2093,9 +2106,12 @@
             $("#credits-perse").stop();
         });
         $("#credits-perse").animate({scrollTop: document.getElementById("credits-perse").scrollHeight}, 60000, "linear", function () {
-            setTimeout(function () {
-                $("#credits-perse .credits-category:nth-child(1)").attr("style", "");
-            }, 5000);
+            setTimeout(function(){
+			$("#credits-perse").clearQueue();
+            $("#credits-perse").stop();
+			 $("#credits-perse .credits-category:nth-child(1)").attr("style", "");
+			 },1000);
+			
         });
     }
 
