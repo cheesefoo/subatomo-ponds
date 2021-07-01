@@ -21,7 +21,7 @@ self.addEventListener('fetch', function(event) {
 	//request.url.indexOf('https://fonts.gstatic.com/')
     if (true) {
       event.respondWith(
-        caches.open('haceclick_dinamic').then(function(cache) {
+        caches.open('subatomo-ponds').then(function(cache) {
           return cache.match(event.request).then(function (response) {
             return response || fetch(event.request).then(function(response) {
               cache.put(event.request, response.clone());
