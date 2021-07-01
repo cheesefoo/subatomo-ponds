@@ -33,7 +33,7 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
-let templatej = require("./assets/submissions/TEMPLATE.json");
+let templatej = require("./assets/submissions/template.json");
 require("./assets/submissions/TEMPLATE.png");
 
 
@@ -482,7 +482,7 @@ class Preloader extends Phaser.Scene {
         //Load sprite atlas
         // this.load.multiatlas("TEMPLATE", templatej, "assets");
 
-        this.load.multiatlas("TEMPLATE", "assets/TEMPLATE.json", "assets");
+        this.load.multiatlas("TEMPLATE", "assets/template.json", "assets");
         this.load.multiatlas("pondbatch-1", "assets/pondbatch-1.json", "assets");
         this.load.multiatlas("legs", legsj, "assets");
         this.load.multiatlas("splash", splashj, "assets");
