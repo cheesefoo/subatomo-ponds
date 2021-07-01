@@ -985,6 +985,8 @@ class SubatomoPond extends Phaser.Scene {
             splashOverlay.setScale(0.6);
             splashOverlay.y = 40;
 
+            // let duckContainer = this.add.container(newWidth,newHeight/2);
+
             let duckContainer = this.add.container(
                 getRandomIntInclusive(this.boundsRight * .25, this.boundsRight * .6),
                 getRandomIntInclusive(newHeight * 0.3, newHeight * 0.7),
@@ -1686,10 +1688,8 @@ class FanartPond extends Phaser.Scene {
 
         this.boatLocations = [{x: sceneWidth * 0.5, y: sceneHeight * 0.8},
             {x: sceneWidth * 0.25, y: sceneHeight * 0.55},
-            {x: sceneWidth * 0.45, y: sceneHeight * 0.65},
-
-            {x: sceneWidth * 0.75, y: sceneHeight * 0.65},
             {x: sceneWidth * 0.35, y: sceneHeight * 0.65},
+            {x: sceneWidth * 0.75, y: sceneHeight * 0.65},
             {x: sceneWidth * 0.8, y: sceneHeight * 0.55}
         ];
 
