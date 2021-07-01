@@ -53,9 +53,9 @@ def get_duck_subs():
         row = all_rows[index]
         name = row[0]
         filename = row[1]
-        pond = row[2]
-        msg = row[3]
-        sound = row[4]
+        pond = row[4]
+        msg = row[2]
+        sound = row[3]
         entry = {"name": name,
                  "image": filename,
                  "pond": pond,
@@ -278,11 +278,11 @@ def pack_spritesheet():
 
 
 def main():
-    # get_duck_subs()
-    # get_fanart_subs()
+    get_duck_subs()
+    get_fanart_subs()
     # download_images()
     # split_images()
-    pack_spritesheets_per_atlas()
+    # pack_spritesheets_per_atlas()
 
 
 #     pack_spritesheet_free()

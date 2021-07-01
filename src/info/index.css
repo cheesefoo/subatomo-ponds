@@ -39,7 +39,7 @@ a:hover
     color:           #F45702;
 }
 
-#txt-closed
+.txt-closed
 {
     font-size:   5em;
     font-weight: bolder;
